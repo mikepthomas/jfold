@@ -22,12 +22,13 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  *
  * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
  */
-public class SimulationInfo implements ISimulationInfo , Serializable {
+public class SimulationInfo implements ISimulationInfo, Serializable {
 
     @SerializedName("user") private String user;
     @SerializedName("team") private int team;
@@ -50,94 +51,146 @@ public class SimulationInfo implements ISimulationInfo , Serializable {
     @SerializedName("eta") private int eta;
     @SerializedName("news") private String news;
     
-    private Calendar cal = Calendar.getInstance();
-    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+    private Calendar cal;
+    private SimpleDateFormat sdf;
 
+    /**
+     * Default constructor
+     */
+    public SimulationInfo() {
+        cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+        sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+    }
+    
+    @Override
     public String getUser() {
         return user;
     }
 
+    @Override
     public int getTeam() {
         return team;
     }
 
+    @Override
     public int getProject() {
         return project;
     }
 
+    @Override
     public int getRun() {
         return run;
     }
     
+    @Override
     public int getClone() {
         return clone;
     }
 
+    @Override
     public int getGen() {
         return gen;
     }
 
+    @Override
     public int getCoreType() {
         return coreType;
     }
 
+    @Override
     public String getCore() {
         return core;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }
 
+    @Override
     public int getTotalIterations() {
         return totalIterations;
     }
 
+    @Override
     public int getIterationsDone() {
         return iterationsDone;
     }
 
+    @Override
     public int getEnergy() {
         return energy;
     }
 
+    @Override
     public int getTemperature() {
         return temperature;
     }
 
-    public String getStartTime() {
-        return startTime;
+    @Override
+    public Date getStartTime() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+    @Override
+    public Date getTimeout() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public String getTimeout() {
+    /**
+     * 
+     * @return 
+     */
+    private String getTimeoutString() {
         cal.clear();
         cal.add(Calendar.SECOND, timeout);
         Date date = cal.getTime();
         return sdf.format(date);
     }
 
-    public String getDeadline() {
+    @Override
+    public Date getDeadline() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+    /**
+     * 
+     * @return 
+     */
+    private String getDeadlineString() {
         cal.clear();
         cal.add(Calendar.SECOND, deadline);
         Date date = cal.getTime();
         return sdf.format(date);
     }
 
+    @Override
     public String getRunTime() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    @Override
     public String getSimulationTime() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public String getEta() {
+    @Override
+    public Date getEta() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+    /**
+     * 
+     * @return 
+     */
+    private String getEtaString() {
         cal.setTime(new Date());
         cal.add(Calendar.SECOND, eta);
         Date date = cal.getTime();
         return sdf.format(date);
     }
 
+    @Override
     public String getNews() {
         return news;
     }

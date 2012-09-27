@@ -98,4 +98,11 @@ public interface ISlotOptions {
      * @return the value of <code>gpu-device-id</code> from <code>slot-options</code>
      */
     public String getGpuDeviceId();
+    
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String toString();
 }

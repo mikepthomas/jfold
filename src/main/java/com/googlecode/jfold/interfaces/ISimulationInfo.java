@@ -142,7 +142,7 @@ public interface ISimulationInfo {
      * @return the value of <code>start_time</code>
      * from <code>simulation-info</code>
      */
-    public String getStartTime();
+    public Date getStartTime();
 
     /**
      * Get the value of
@@ -151,7 +151,7 @@ public interface ISimulationInfo {
      * @return the value of <code>timeout</code>
      * from <code>simulation-info</code>
      */
-    public String getTimeout();
+    public Date getTimeout();
 
     /**
      * Get the value of
@@ -160,7 +160,7 @@ public interface ISimulationInfo {
      * @return the value of <code>deadline</code>
      * from <code>simulation-info</code>
      */
-    public String getDeadline();
+    public Date getDeadline();
 
     /**
      * Get the value of
@@ -186,9 +186,10 @@ public interface ISimulationInfo {
      * Get the value of
      * <code>eta</code>
      *
-     * @return the value of <code>eta</code> from <code>simulation-info</code>
+     * @return the value of <code>eta</code>
+     * from <code>simulation-info</code>
      */
-    public String getEta();
+    public Date getEta();
 
     /**
      * Get the value of
@@ -197,4 +198,11 @@ public interface ISimulationInfo {
      * @return the value of <code>news</code> from <code>simulation-info</code>
      */
     public String getNews();
+    
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String toString();
 }
