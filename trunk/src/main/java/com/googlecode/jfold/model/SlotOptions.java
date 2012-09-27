@@ -16,6 +16,7 @@
  */
 package com.googlecode.jfold.model;
 
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.googlecode.jfold.interfaces.ISlotOptions;
 import java.io.Serializable;
@@ -37,47 +38,76 @@ public class SlotOptions implements ISlotOptions, Serializable {
     @SerializedName("pause-on-start") private boolean pauseOnStart;
     @SerializedName("gpu-vendor-id") private String gpuVendorId;
     @SerializedName("gpu-device-id") private String gpuDeviceId;
+    
+    public SlotOptions() {}
 
+    public SlotOptions(String json) {
+        SlotOptions jsonSlotOptions = new Gson().fromJson(json, SlotOptions.class);
+        
+        this.clientType = jsonSlotOptions.clientType;
+        this.clientSubtype = jsonSlotOptions.clientSubtype;
+        this.machineId = jsonSlotOptions.machineId;
+        this.maxPacketSize = jsonSlotOptions.maxPacketSize;
+        this.corePriority = jsonSlotOptions.corePriority;
+        this.nextUnitPercentage = jsonSlotOptions.nextUnitPercentage;
+        this.maxUnits = jsonSlotOptions.maxUnits;
+        this.checkpoint = jsonSlotOptions.checkpoint;
+        this.pauseOnStart = jsonSlotOptions.pauseOnStart;
+        this.gpuVendorId = jsonSlotOptions.gpuVendorId;
+        this.gpuDeviceId = jsonSlotOptions.gpuDeviceId;
+    }
+
+    @Override
     public String getClientType() {
         return clientType;
     }
 
+    @Override
     public String getClientSubtype() {
         return clientSubtype;
     }
 
+    @Override
     public int getMachineId() {
         return machineId;
     }
 
+    @Override
     public String getMaxPacketSize() {
         return maxPacketSize;
     }
 
+    @Override
     public String getCorePriority() {
         return corePriority;
     }
 
+    @Override
     public int getNextUnitPercentage() {
         return nextUnitPercentage;
     }
 
+    @Override
     public int getMaxUnits() {
         return maxUnits;
     }
 
+    @Override
     public int getCheckpoint() {
         return checkpoint;
     }
 
+    @Override
     public boolean getPauseOnStart() {
         return pauseOnStart;
     }
 
+    @Override
     public String getGpuVendorId() {
         return gpuVendorId;
     }
 
+    @Override
     public String getGpuDeviceId() {
         return gpuDeviceId;
     }

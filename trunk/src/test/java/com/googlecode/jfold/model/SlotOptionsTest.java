@@ -16,7 +16,7 @@
  */
 package com.googlecode.jfold.model;
 
-import com.google.gson.Gson;
+import com.googlecode.jfold.model.examples.ExampleSlotOptions;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
@@ -35,22 +35,7 @@ public class SlotOptionsTest {
     
     @BeforeClass
     public static void setUpClass() {
-        String json = "{\n" +
-                      "  \"client-type\": \"normal\",\n" +
-                      "  \"client-subtype\": \"SMP\",\n" +
-                      "  \"machine-id\": \"0\",\n" +
-                      "  \"max-packet-size\": \"normal\",\n" +
-                      "  \"core-priority\": \"idle\",\n" +
-                      "  \"next-unit-percentage\": \"99\",\n" +
-                      "  \"max-units\": \"0\",\n" +
-                      "  \"checkpoint\": \"15\",\n" +
-                      "  \"pause-on-start\": \"true\",\n" +
-                      "  \"gpu-vendor-id\": None,\n" +
-                      "  \"gpu-device-id\": None\n" +
-                      "}";
-        
-        Gson gson = new Gson();
-        instance = gson.fromJson(json, SlotOptions.class);
+        instance = new ExampleSlotOptions();
     }
     
     @AfterClass
