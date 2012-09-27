@@ -24,8 +24,8 @@ public interface IInfo {
     
     /**
      *
-     * @return
+     * @return String representation of this <code>IInfo</code>
      */
     @Override
-    public String toString();
+    String toString();
 }

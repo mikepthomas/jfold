@@ -29,75 +29,75 @@ public interface IClient {
      *
      * @return the value of <code>Website</code> from <code>info</code>
      */
-    public URL getWebsite();
+    URL getWebsite();
     
     /**
      * Get the value of <code>Copyright</code>
      *
      * @return the value of <code>Copyright</code> from <code>info</code>
      */
-    public String getCopyright();
+    String getCopyright();
     
     /**
      * Get the value of <code>Author</code>
      *
      * @return the value of <code>Author</code> from <code>info</code>
      */
-    public String getAuthor();
+    String getAuthor();
     
     /**
      * Get the value of <code>Args</code>
      *
      * @return the value of <code>Args</code> from <code>info</code>
      */
-    public String getArgs();
+    String getArgs();
     
     /**
      * Get the value of <code>Config</code>
      *
      * @return the value of <code>Config</code> from <code>info</code>
      */
-    public String getConfig();
+    String getConfig();
     
     /**
      * Set the value of <code>Webside</code>
      *
-     * @param URL value of <code>Website</code> from <code>info</code>
+     * @param website URL value of <code>Website</code> from <code>info</code>
      */
-    public void setWebsite(URL website);
+    void setWebsite(URL website);
     
     /**
      * Set the value of <code>Copyright</code>
      *
-     * @param String value of <code>Copyright</code> from <code>info</code>
+     * @param copyright String value of <code>Copyright</code> from <code>info</code>
      */
-    public void setCopyright(String copyright);
+    void setCopyright(String copyright);
     
     /**
      * Set the value of <code>Author</code>
      *
-     * @param String value of <code>Author</code> from <code>info</code>
+     * @param author String value of <code>Author</code> from <code>info</code>
      */
-    public void setAuthor(String author);
+    void setAuthor(String author);
     
     /**
      * Set the value of <code>Args</code>
      *
-     * @param String value of <code>Args</code> from <code>info</code>
+     * @param args String value of <code>Args</code> from <code>info</code>
      */
-    public void setArgs(String args);
+    void setArgs(String args);
     
     /**
      * Set the value of <code>Config</code>
      *
-     * @param String value of <code>Config</code> from <code>info</code>
+     * @param config String value of <code>Config</code> from <code>info</code>
      */
-    public void setConfig(String config);
+    void setConfig(String config);
     
     /**
      *
-     * @return
+     * @return String representation of this <code>IClient</code>
      */
     @Override
-    public String toString();
+    String toString();
 }

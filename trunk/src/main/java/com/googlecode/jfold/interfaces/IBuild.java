@@ -30,145 +30,145 @@ public interface IBuild {
      *
      * @return the value of <code>Version</code> from <code>info</code>
      */
-    public String getVersion();
+    String getVersion();
     
     /**
      * Get the value of <code>Date</code>
      *
      * @return the value of <code>Date</code> from <code>info</code>
      */
-    public Date getDate();
+    Date getDate();
     
     /**
      * Get the value of <code>Time</code>
      *
      * @return the value of <code>Time</code> from <code>info</code>
      */
-    public Time getTime();
+    Time getTime();
     
     /**
      * Get the value of <code>SVN Rev</code>
      *
      * @return the value of <code>SVN Rev</code> from <code>info</code>
      */
-    public int getSvnRev();
+    int getSvnRev();
     
     /**
      * Get the value of <code>Branch</code>
      *
      * @return the value of <code>Branch</code> from <code>info</code>
      */
-    public String getBranch();
+    String getBranch();
     
     /**
      * Get the value of <code>Compiler</code>
      *
      * @return the value of <code>Compiler</code> from <code>info</code>
      */
-    public String getCompiler();
+    String getCompiler();
     
     /**
      * Get the value of <code>Options</code>
      *
      * @return the value of <code>Options</code> from <code>info</code>
      */
-    public String getOptions();
+    String getOptions();
     
     /**
      * Get the value of <code>Platform</code>
      *
      * @return the value of <code>Platform</code> from <code>info</code>
      */
-    public String getPlatform();
+    String getPlatform();
     
     /**
      * Get the value of <code>Bits</code>
      *
      * @return the value of <code>Bits</code> from <code>info</code>
      */
-    public int getBits();
+    int getBits();
     
     /**
      * Get the value of <code>Mode</code>
      *
      * @return the value of <code>Mode</code> from <code>info</code>
      */
-    public String getMode();
+    String getMode();
     
     /**
      * Get the value of <code>Version</code>
      *
-     * @param String value of <code>Version</code> from <code>info</code>
+     * @param version String value of <code>Version</code> from <code>info</code>
      */
-    public void setVersion(String version);
+    void setVersion(String version);
     
     /**
      * Set the value of <code>Date</code>
      *
-     * @param Date value of <code>Date</code> from <code>info</code>
+     * @param date Date value of <code>Date</code> from <code>info</code>
      */
-    public void setDate(Date date);
+    void setDate(Date date);
     
     /**
      * Set the value of <code>Time</code>
      *
-     * @param Time value of <code>Time</code> from <code>info</code>
+     * @param time Time value of <code>Time</code> from <code>info</code>
      */
-    public void setTime(Time time);
+    void setTime(Time time);
     
     /**
      * Set the value of <code>SVN Rev</code>
      *
-     * @param int value of <code>SVN Rev</code> from <code>info</code>
+     * @param svnRev int value of <code>SVN Rev</code> from <code>info</code>
      */
-    public void setSvnRev(int svnRev);
+    void setSvnRev(int svnRev);
     
     /**
      * Set the value of <code>Branch</code>
      *
-     * @param String value of <code>Branch</code> from <code>info</code>
+     * @param branch String value of <code>Branch</code> from <code>info</code>
      */
-    public void setBranch(String branch);
+    void setBranch(String branch);
     
     /**
      * Set the value of <code>Compiler</code>
      *
-     * @param String value of <code>Compiler</code> from <code>info</code>
+     * @param compiler String value of <code>Compiler</code> from <code>info</code>
      */
-    public void setCompiler(String compiler);
+    void setCompiler(String compiler);
     
     /**
      * Set the value of <code>Options</code>
      *
-     * @param String value of <code>Options</code> from <code>info</code>
+     * @param options String value of <code>Options</code> from <code>info</code>
      */
-    public void setOptions(String options);
+    void setOptions(String options);
     
     /**
      * Set the value of <code>Platform</code>
      *
-     * @param String value of <code>Platform</code> from <code>info</code>
+     * @param platform String value of <code>Platform</code> from <code>info</code>
      */
-    public void setPlatform(String platform);
+    void setPlatform(String platform);
     
     /**
      * Set the value of <code>Bits</code>
      *
-     * @param int value of <code>Bits</code> from <code>info</code>
+     * @param bits int value of <code>Bits</code> from <code>info</code>
      */
-    public void setBits(int bits);
+    void setBits(int bits);
     
     /**
      * Set the value of <code>Mode</code>
      *
-     * @param String value of <code>Mode</code> from <code>info</code>
+     * @param mode String value of <code>Mode</code> from <code>info</code>
      */
-    public void setMode(String mode);
+    void setMode(String mode);
     
     /**
      *
-     * @return
+     * @return String representation of this <code>IBuild</code>
      */
     @Override
-    public String toString();
+    String toString();
 }

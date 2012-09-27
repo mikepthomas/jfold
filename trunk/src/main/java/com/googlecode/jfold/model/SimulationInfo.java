@@ -139,7 +139,7 @@ public class SimulationInfo implements ISimulationInfo, Serializable {
 
     /**
      * 
-     * @return 
+     * @return String representation of the timeout
      */
     private String getTimeoutString() {
         cal.clear();
@@ -155,7 +155,7 @@ public class SimulationInfo implements ISimulationInfo, Serializable {
     
     /**
      * 
-     * @return 
+     * @return String representation of the deadline
      */
     private String getDeadlineString() {
         cal.clear();
@@ -181,7 +181,7 @@ public class SimulationInfo implements ISimulationInfo, Serializable {
     
     /**
      * 
-     * @return 
+     * @return String representation of the eta
      */
     private String getEtaString() {
         cal.setTime(new Date());

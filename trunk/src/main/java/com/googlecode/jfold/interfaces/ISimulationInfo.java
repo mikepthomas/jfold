@@ -30,7 +30,7 @@ public interface ISimulationInfo {
      *
      * @return the value of <code>user</code> from <code>simulation-info</code>
      */
-    public String getUser();
+    String getUser();
 
     /**
      * Get the value of
@@ -38,7 +38,7 @@ public interface ISimulationInfo {
      *
      * @return the value of <code>team</code> from <code>simulation-info</code>
      */
-    public int getTeam();
+    int getTeam();
 
     /**
      * Get the value of
@@ -47,7 +47,7 @@ public interface ISimulationInfo {
      * @return the value of <code>project</code>
      * from <code>simulation-info</code>
      */
-    public int getProject();
+    int getProject();
 
     /**
      * Get the value of
@@ -55,7 +55,7 @@ public interface ISimulationInfo {
      *
      * @return the value of <code>run</code> from <code>simulation-info</code>
      */
-    public int getRun();
+    int getRun();
 
     /**
      * Get the value of
@@ -63,7 +63,7 @@ public interface ISimulationInfo {
      *
      * @return the value of <code>clone</code> from <code>simulation-info</code>
      */
-    public int getClone();
+    int getClone();
     
     /**
      * Get the value of
@@ -71,7 +71,7 @@ public interface ISimulationInfo {
      *
      * @return the value of <code>gen</code> from <code>simulation-info</code>
      */
-    public int getGen();
+    int getGen();
 
     /**
      * Get the value of
@@ -80,7 +80,7 @@ public interface ISimulationInfo {
      * @return the value of <code>core_type</code>
      * from <code>simulation-info</code>
      */
-    public int getCoreType();
+    int getCoreType();
 
     /**
      * Get the value of
@@ -88,7 +88,7 @@ public interface ISimulationInfo {
      *
      * @return the value of <code>core</code> from <code>simulation-info</code>
      */
-    public String getCore();
+    String getCore();
 
     /**
      * Get the value of
@@ -97,7 +97,7 @@ public interface ISimulationInfo {
      * @return the value of <code>description</code>
      * from <code>simulation-info</code>
      */
-    public String getDescription();
+    String getDescription();
 
     /**
      * Get the value of
@@ -106,7 +106,7 @@ public interface ISimulationInfo {
      * @return the value of <code>total_iterations</code>
      * from <code>simulation-info</code>
      */
-    public int getTotalIterations();
+    int getTotalIterations();
 
     /**
      * Get the value of
@@ -115,7 +115,7 @@ public interface ISimulationInfo {
      * @return the value of <code>iterations_done</code>
      * from <code>simulation-info</code>
      */
-    public int getIterationsDone();
+    int getIterationsDone();
 
     /**
      * Get the value of
@@ -124,7 +124,7 @@ public interface ISimulationInfo {
      * @return the value of <code>energy</code>
      * from <code>simulation-info</code>
      */
-    public int getEnergy();
+    int getEnergy();
 
     /**
      * Get the value of
@@ -133,7 +133,7 @@ public interface ISimulationInfo {
      * @return the value of <code>temperature</code>
      * from <code>simulation-info</code>
      */
-    public int getTemperature();
+    int getTemperature();
 
     /**
      * Get the value of
@@ -142,7 +142,7 @@ public interface ISimulationInfo {
      * @return the value of <code>start_time</code>
      * from <code>simulation-info</code>
      */
-    public Date getStartTime();
+    Date getStartTime();
 
     /**
      * Get the value of
@@ -151,7 +151,7 @@ public interface ISimulationInfo {
      * @return the value of <code>timeout</code>
      * from <code>simulation-info</code>
      */
-    public Date getTimeout();
+    Date getTimeout();
 
     /**
      * Get the value of
@@ -160,7 +160,7 @@ public interface ISimulationInfo {
      * @return the value of <code>deadline</code>
      * from <code>simulation-info</code>
      */
-    public Date getDeadline();
+    Date getDeadline();
 
     /**
      * Get the value of
@@ -170,7 +170,7 @@ public interface ISimulationInfo {
      * @return the value of <code>run_time</code>
      * from <code>simulation-info</code>
      */
-    public String getRunTime();
+    String getRunTime();
 
     /**
      * Get the value of
@@ -180,7 +180,7 @@ public interface ISimulationInfo {
      * @return the value of <code>simulation_time</code>
      * from <code>simulation-info</code>
      */
-    public String getSimulationTime();
+    String getSimulationTime();
 
     /**
      * Get the value of
@@ -189,7 +189,7 @@ public interface ISimulationInfo {
      * @return the value of <code>eta</code>
      * from <code>simulation-info</code>
      */
-    public Date getEta();
+    Date getEta();
 
     /**
      * Get the value of
@@ -197,12 +197,12 @@ public interface ISimulationInfo {
      *
      * @return the value of <code>news</code> from <code>simulation-info</code>
      */
-    public String getNews();
+    String getNews();
     
     /**
      *
-     * @return
+     * @return String representation of this <code>ISimulationInfo</code>
      */
     @Override
-    public String toString();
+    String toString();
 }

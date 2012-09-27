@@ -27,229 +27,230 @@ public interface ISystem {
      *
      * @return the value of <code>CPU</code> from <code>info</code>
      */
-    public String getCpu();
+    String getCpu();
     
     /**
      * Get the value of <code>CPU ID</code>
      *
      * @return the value of <code>CPU ID</code> from <code>info</code>
      */
-    public String getCpuId();
+    String getCpuId();
     
     /**
      * Get the value of <code>CPUs</code>
      *
      * @return the value of <code>CPUs</code> from <code>info</code>
      */
-    public int getCpus();
+    int getCpus();
     
     /**
      * Get the value of <code>Memory</code>
      *
      * @return the value of <code>Memory</code> from <code>info</code>
      */
-    public String getMemory();
+    String getMemory();
     
     /**
      * Get the value of <code>Free Memory</code>
      *
      * @return the value of <code>Free Memory</code> from <code>info</code>
      */
-    public String getFreeMemory();
+    String getFreeMemory();
     
     /**
      * Get the value of <code>Threads</code>
      *
      * @return the value of <code>Threads</code> from <code>info</code>
      */
-    public String getThreads();
+    String getThreads();
     
     /**
      * Get the value of <code>On Battery</code>
      *
      * @return the value of <code>On Battery</code> from <code>info</code>
      */
-    public boolean getOnBattery();
+    boolean getOnBattery();
     
     /**
      * Get the value of <code>UTC offset</code>
      *
      * @return the value of <code>UTC offset</code> from <code>info</code>
      */
-    public int getUtcOffset();
+    int getUtcOffset();
     
     /**
      * Get the value of <code>PID</code>
      *
      * @return the value of <code>PID</code> from <code>info</code>
      */
-    public int getPid();
+    int getPid();
     
     /**
      * Get the value of <code>CWD</code>
      *
      * @return the value of <code>CWD</code> from <code>info</code>
      */
-    public String getCwd();
+    String getCwd();
     
     /**
      * Get the value of <code>OS</code>
      *
      * @return the value of <code>OS</code> from <code>info</code>
      */
-    public String getOs();
+    String getOs();
     
     /**
      * Get the value of <code>OS Arch</code>
      *
      * @return the value of <code>OS Arch</code> from <code>info</code>
      */
-    public String getOsArch();
+    String getOsArch();
     
     /**
      * Get the value of <code>GPUs</code>
      *
      * @return the value of <code>GPUs</code> from <code>info</code>
      */
-    public int getGpus();
+    int getGpus();
     
     /**
      * Get the value of <code>GPU #</code>
      *
      * @return the value of <code>GPU #</code> from <code>info</code>
      */
-    public String[] getGpu(int index);
+    String[] getGpu(int index);
     
     /**
      * Get the value of <code>CUDA</code>
      *
      * @return the value of <code>CUDA</code> from <code>info</code>
      */
-    public String getCuda();
+    String getCuda();
     
     /**
      * Get the value of <code>Win32 Service</code>
      *
      * @return the value of <code>Win32 Service</code> from <code>info</code>
      */
-    public String getWin32Service();
+    String getWin32Service();
     
     /**
      * Set the value of <code>CPU</code>
      *
-     * @param String value of <code>CPU</code> from <code>info</code>
+     * @param cpu String value of <code>CPU</code> from <code>info</code>
      */
-    public void setCpu(String cpu);
+    void setCpu(String cpu);
     
     /**
      * Set the value of <code>CPU ID</code>
      *
-     * @param String value of <code>CPU ID</code> from <code>info</code>
+     * @param cpuId String value of <code>CPU ID</code> from <code>info</code>
      */
-    public void setCpuId(String cpuId);
+    void setCpuId(String cpuId);
     
     /**
      * Set the value of <code>CPUs</code>
      *
-     * @param int value of <code>CPUs</code> from <code>info</code>
+     * @param cpus int value of <code>CPUs</code> from <code>info</code>
      */
-    public void setCpus(int cpus);
+    void setCpus(int cpus);
     
     /**
      * Set the value of <code>Memory</code>
      *
-     * @param String value of <code>Memory</code> from <code>info</code>
+     * @param memory String value of <code>Memory</code> from <code>info</code>
      */
-    public void setMemory(String memory);
+    void setMemory(String memory);
     
     /**
      * Set the value of <code>Free Memory</code>
      *
-     * @param String value of <code>Free Memory</code> from <code>info</code>
+     * @param freeMemory String value of <code>Free Memory</code> from <code>info</code>
      */
-    public void setFreeMemory(String FreeMemory);
+    void setFreeMemory(String freeMemory);
     
     /**
      * Set the value of <code>Threads</code>
      *
-     * @param String value of <code>Threads</code> from <code>info</code>
+     * @param threads String value of <code>Threads</code> from <code>info</code>
      */
-    public void setThreads(String threads);
+    void setThreads(String threads);
     
     /**
      * Set the value of <code>On Battery</code>
      *
-     * @param boolean value of <code>On Battery</code> from <code>info</code>
+     * @param onBattery boolean value of <code>On Battery</code> from <code>info</code>
      */
-    public void setOnBattery(boolean onBattery);
+    void setOnBattery(boolean onBattery);
     
     /**
      * Set the value of <code>UTC offset</code>
      *
-     * @param int value of <code>UTC offset</code> from <code>info</code>
+     * @param utcOffset int value of <code>UTC offset</code> from <code>info</code>
      */
-    public void setUtcOffset(int utcOffset);
+    void setUtcOffset(int utcOffset);
     
     /**
      * Set the value of <code>PID</code>
      *
-     * @param int value of <code>PID</code> from <code>info</code>
+     * @param pid int value of <code>PID</code> from <code>info</code>
      */
-    public void setPid(int pid);
+    void setPid(int pid);
     
     /**
      * Set the value of <code>CWD</code>
      *
-     * @param String value of <code>CWD</code> from <code>info</code>
+     * @param cwd String value of <code>CWD</code> from <code>info</code>
      */
-    public void setCwd(String cwd);
+    void setCwd(String cwd);
     
     /**
      * Set the value of <code>OS</code>
      *
-     * @param String value of <code>OS</code> from <code>info</code>
+     * @param os String value of <code>OS</code> from <code>info</code>
      */
-    public void SetOs(String os);
+    void SetOs(String os);
     
     /**
      * Set the value of <code>OS Arch</code>
      *
-     * @param String value of <code>OS Arch</code> from <code>info</code>
+     * @param osArch String value of <code>OS Arch</code> from <code>info</code>
      */
-    public void setOsArch(String osArch);
+    void setOsArch(String osArch);
     
     /**
      * Set the value of <code>GPUs</code>
      *
-     * @param int value of <code>GPUs</code> from <code>info</code>
+     * @param gpus int value of <code>GPUs</code> from <code>info</code>
      */
-    public void setGpus(int gpus);
+    void setGpus(int gpus);
     
     /**
      * Set the value of <code>GPU #</code>
      *
-     * @param String value of <code>GPU #</code> from <code>info</code> at index
+     * @param index
+     * @param gpu String value of <code>GPU #</code> from <code>info</code> at index
      */
-    public String[] getGpu(int index, String gpu);
+    String[] getGpu(int index, String gpu);
     
     /**
      * Set the value of <code>CUDA</code>
      *
-     * @param String value of <code>CUDA</code> from <code>info</code>
+     * @param cuda String value of <code>CUDA</code> from <code>info</code>
      */
-    public void setCuda(String cuda);
+    void setCuda(String cuda);
     
     /**
      * Set the value of <code>Win32 Service</code>
      *
-     * @param String value of <code>Win32 Service</code> from <code>info</code>
+     * @param win32Service String value of <code>Win32 Service</code> from <code>info</code>
      */
-    public void setWin32Service(String win32Service);
+    void setWin32Service(String win32Service);
     
     /**
      *
-     * @return
+     * @return String representation of this <code>ISystem</code>
      */
     @Override
-    public String toString();
+    String toString();
 }
