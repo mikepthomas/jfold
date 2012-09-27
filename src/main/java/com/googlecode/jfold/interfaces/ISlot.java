@@ -27,33 +27,33 @@ public interface ISlot {
      *
      * @return the value of <code>id</code> from <code>slot-info</code>
      */
-    public int getId();
+    int getId();
     
     /**
      * Get the value of <code>status</code>
      *
      * @return the value of <code>status</code> from <code>slot-info</code>
      */
-    public String getStatus();
+    String getStatus();
     
     /**
      * Get the value of <code>description</code>
      *
      * @return the value of <code>description</code> from <code>slot-info</code>
      */
-    public String getDescription();
+    String getDescription();
     
     /**
      * Get the value of <code>options</code>
      *
      * @return the value of <code>options</code> from <code>slot-info</code>
      */
-    public ISlotOptions getOptions();
+    ISlotOptions getOptions();
     
     /**
      *
-     * @return
+     * @return String representation of this <code>ISlot</code>
      */
     @Override
-    public String toString();
+    String toString();
 }

@@ -27,82 +27,82 @@ public interface ISlotOptions {
      *
      * @return the value of <code>client-type</code> from <code>slot-options</code>
      */
-    public String getClientType();
+    String getClientType();
     
     /**
      * Get the value of <code>client-subtype</code>
      *
      * @return the value of <code>client-subtype</code> from <code>slot-options</code>
      */
-    public String getClientSubtype();
+    String getClientSubtype();
     
     /**
      * Get the value of <code>machine-id</code>
      *
      * @return the value of <code>machine-id</code> from <code>slot-options</code>
      */
-    public int getMachineId();
+    int getMachineId();
     
     /**
      * Get the value of <code>max-packet-size</code>
      *
      * @return the value of <code>max-packet-size</code> from <code>slot-options</code>
      */
-    public String getMaxPacketSize();
+    String getMaxPacketSize();
     
     /**
      * Get the value of <code>core-priority</code>
      *
      * @return the value of <code>core-priority</code> from <code>slot-options</code>
      */
-    public String getCorePriority();
+    String getCorePriority();
     
     /**
      * Get the value of <code>next-unit-percentage</code>
      *
      * @return the value of <code>next-unit-percentage</code> from <code>slot-options</code>
      */
-    public int getNextUnitPercentage();
+    int getNextUnitPercentage();
     
     /**
      * Get the value of <code>max-units</code>
      *
      * @return the value of <code>max-units</code> from <code>slot-options</code>
      */
-    public int getMaxUnits();
+    int getMaxUnits();
     
     /**
      * Get the value of <code>checkpoint</code>
      *
      * @return the value of <code>checkpoint</code> from <code>slot-options</code>
      */
-    public int getCheckpoint();
+    int getCheckpoint();
     
     /**
      * Get the value of <code>pause-on-start</code>
      *
      * @return the value of <code>pause-on-start</code> from <code>slot-options</code>
      */
-    public boolean getPauseOnStart();
+    boolean getPauseOnStart();
     
     /**
      * Get the value of <code>gpu-vendor-id</code>
      *
      * @return the value of <code>client-type</code> from <code>slot-options</code>
      */
-    public String getGpuVendorId();
+    String getGpuVendorId();
     
     /**
      * Get the value of <code>gpu-device-id</code>
      *
      * @return the value of <code>gpu-device-id</code> from <code>slot-options</code>
      */
-    public String getGpuDeviceId();
+    String getGpuDeviceId();
     
     /**
      *
-     * @return
+     * @return String representation of this <code>ISlotOptions</code>
      */
     @Override
-    public String toString();
+    String toString();
 }
