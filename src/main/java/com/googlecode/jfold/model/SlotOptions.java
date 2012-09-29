@@ -39,7 +39,11 @@ public class SlotOptions implements ISlotOptions, Serializable {
     @SerializedName("gpu-vendor-id") private String gpuVendorId;
     @SerializedName("gpu-device-id") private String gpuDeviceId;
     
-    public SlotOptions() {}
+    /**
+     * Default constructor
+     */
+    public SlotOptions() {
+    }
 
     public SlotOptions(String json) {
         SlotOptions jsonSlotOptions = new Gson().fromJson(json, SlotOptions.class);

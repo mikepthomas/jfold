@@ -209,7 +209,7 @@ public interface ISystem {
      *
      * @param os String value of <code>OS</code> from <code>info</code>
      */
-    void SetOs(String os);
+    void setOs(String os);
     
     /**
      * Set the value of <code>OS Arch</code>

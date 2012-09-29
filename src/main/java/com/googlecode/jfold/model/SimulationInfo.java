@@ -16,6 +16,7 @@
  */
 package com.googlecode.jfold.model;
 
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.googlecode.jfold.interfaces.ISimulationInfo;
 import java.io.Serializable;
@@ -51,17 +52,40 @@ public class SimulationInfo implements ISimulationInfo, Serializable {
     @SerializedName("eta") private int eta;
     @SerializedName("news") private String news;
     
-    private Calendar cal;
-    private SimpleDateFormat sdf;
+    private Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
     /**
      * Default constructor
      */
     public SimulationInfo() {
-        cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-        sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
     }
     
+    public SimulationInfo(String json) {
+        SimulationInfo jsonSimulationInfo = new Gson().fromJson(json, SimulationInfo.class);
+        
+        this.user = jsonSimulationInfo.user;
+        this.team = jsonSimulationInfo.team;
+        this.project = jsonSimulationInfo.project;
+        this.run = jsonSimulationInfo.run;
+        this.clone = jsonSimulationInfo.clone;
+        this.gen = jsonSimulationInfo.gen;
+        this.coreType = jsonSimulationInfo.coreType;
+        this.core = jsonSimulationInfo.core;
+        this.description = jsonSimulationInfo.description;
+        this.totalIterations = jsonSimulationInfo.totalIterations;
+        this.iterationsDone = jsonSimulationInfo.iterationsDone;
+        this.energy = jsonSimulationInfo.energy;
+        this.temperature = jsonSimulationInfo.temperature;
+        this.startTime = jsonSimulationInfo.startTime;
+        this.timeout = jsonSimulationInfo.timeout;
+        this.deadline = jsonSimulationInfo.deadline;
+        this.runTime = jsonSimulationInfo.runTime;
+        this.simulationTime = jsonSimulationInfo.simulationTime;
+        this.eta = jsonSimulationInfo.eta;
+        this.news = jsonSimulationInfo.news;
+    }
+
     @Override
     public String getUser() {
         return user;
