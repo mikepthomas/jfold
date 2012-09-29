@@ -59,7 +59,11 @@ public class Unit implements IUnit, Serializable {
     @SerializedName("creditestimate") private double creditEstimate;
     @SerializedName("description") private String description;
     
-    public Unit() {};
+    /**
+     * Default constructor
+     */
+    public Unit() {
+    }
 
     public Unit(String json) {
         Unit jsonUnit = new Gson().fromJson(json, Unit.class);

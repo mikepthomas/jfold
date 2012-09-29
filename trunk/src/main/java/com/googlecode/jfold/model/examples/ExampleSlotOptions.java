@@ -23,22 +23,22 @@ import com.googlecode.jfold.model.SlotOptions;
  * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
  */
 public class ExampleSlotOptions extends SlotOptions {
-    
-    private static String json = "{\n" +
-        "  \"client-type\": \"normal\",\n" +
-        "  \"client-subtype\": \"SMP\",\n" +
-        "  \"machine-id\": \"0\",\n" +
-        "  \"max-packet-size\": \"normal\",\n" +
-        "  \"core-priority\": \"idle\",\n" +
-        "  \"next-unit-percentage\": \"99\",\n" +
-        "  \"max-units\": \"0\",\n" +
-        "  \"checkpoint\": \"15\",\n" +
-        "  \"pause-on-start\": \"true\",\n" +
-        "  \"gpu-vendor-id\": None,\n" +
-        "  \"gpu-device-id\": None\n" +
-        "}";
-            
+
+    public static final String JSON = "{\n"
+            + "  \"client-type\": \"normal\",\n"
+            + "  \"client-subtype\": \"SMP\",\n"
+            + "  \"machine-id\": \"0\",\n"
+            + "  \"max-packet-size\": \"normal\",\n"
+            + "  \"core-priority\": \"idle\",\n"
+            + "  \"next-unit-percentage\": \"99\",\n"
+            + "  \"max-units\": \"0\",\n"
+            + "  \"checkpoint\": \"15\",\n"
+            + "  \"pause-on-start\": \"true\",\n"
+            + "  \"gpu-vendor-id\": None,\n"
+            + "  \"gpu-device-id\": None\n"
+            + "}";
+
     public ExampleSlotOptions() {
-        super(json);
+        super(JSON);
     }
 }
