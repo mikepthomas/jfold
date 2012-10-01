@@ -27,7 +27,7 @@ public interface ISlot {
      *
      * @return the value of <code>id</code> from <code>slot-info</code>
      */
-    int getId();
+    String getId();
     
     /**
      * Get the value of <code>status</code>

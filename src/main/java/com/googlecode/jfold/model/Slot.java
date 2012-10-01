@@ -16,6 +16,7 @@
  */
 package com.googlecode.jfold.model;
 
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.googlecode.jfold.interfaces.ISlot;
 import com.googlecode.jfold.interfaces.ISlotOptions;
@@ -27,13 +28,28 @@ import java.io.Serializable;
  */
 public class Slot implements ISlot, Serializable {
 
-    @SerializedName("id") private int id;
+    @SerializedName("id") private String id;
     @SerializedName("status") private String status;
     @SerializedName("description") private String description;
-    @SerializedName("options") private ISlotOptions options;
+    @SerializedName("options") private SlotOptions options;
+
+    /**
+     * Default constructor
+     */
+    public Slot() {
+    }
+    
+    public Slot(String json) {
+        Slot jsonSlot = new Gson().fromJson(json, Slot.class);
+        
+        this.id = jsonSlot.id;
+        this.status = jsonSlot.status;
+        this.description = jsonSlot.description;
+        this.options = jsonSlot.options;
+    }
     
     @Override
-    public int getId() {
+    public String getId() {
         return id;
     }
 
