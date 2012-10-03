@@ -16,6 +16,7 @@
  */
 package com.googlecode.jfold.model;
 
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.googlecode.jfold.interfaces.IOptions;
 import java.io.Serializable;
@@ -68,7 +69,7 @@ public class Options implements IOptions, Serializable {
     @SerializedName("force-ws") private boolean forceWs;
     @SerializedName("gpu") private boolean gpu;
     @SerializedName("gpu-assignment-servers") private String gpuAssignmentServers;
-    @SerializedName("gpu-index") private int gpuIndex;
+    @SerializedName("gpu-index") private String gpuIndex;
     @SerializedName("gpu-usage") private int gpuUsage;
     @SerializedName("log") private String log;
     @SerializedName("log-color") private boolean logColor;
@@ -98,7 +99,7 @@ public class Options implements IOptions, Serializable {
     @SerializedName("max-slot-errors") private int maxSlotErrors;
     @SerializedName("max-unit-errors") private int maxUnitErrors;
     @SerializedName("max-units") private int maxUnits;
-    @SerializedName("memory") private int memory;
+    @SerializedName("memory") private String memory;
     @SerializedName("min-delay") private int minDelay;
     @SerializedName("next-unit-percentage") private int nextUnitPercentage;
     @SerializedName("priority") private String priority;
@@ -130,6 +131,119 @@ public class Options implements IOptions, Serializable {
     @SerializedName("user") private String user;
     @SerializedName("verbosity") private int verbosity;
 
+    /**
+     * Default constructor
+     */
+    public Options() {
+    }
+
+    public Options(String json) {
+        Options jsonOptions = new Gson().fromJson(json, Options.class);
+        
+        this.assignmentServers = jsonOptions.assignmentServers;
+        this.captureDirectory = jsonOptions.captureDirectory;
+        this.captureSockets = jsonOptions.captureSockets;
+        this.checkpoint = jsonOptions.checkpoint;
+        this.child = jsonOptions.child;
+        this.clientSubtype = jsonOptions.clientSubtype;
+        this.clientType = jsonOptions.clientType;
+        this.commandAddress = jsonOptions.commandAddress;
+        this.commandAllow = jsonOptions.commandAllow;
+        this.commandAllowNoPass = jsonOptions.commandAllowNoPass;
+        this.commandDeny = jsonOptions.commandDeny;
+        this.commandDenyNoPass = jsonOptions.commandDenyNoPass;
+        this.commandPort = jsonOptions.commandPort;
+        this.configRotate = jsonOptions.configRotate;
+        this.configRotateDir = jsonOptions.configRotateDir;
+        this.configRotateMax = jsonOptions.configRotateMax;
+        this.coreDir = jsonOptions.coreDir;
+        this.coreKey = jsonOptions.coreKey;
+        this.corePrep = jsonOptions.corePrep;
+        this.corePriority = jsonOptions.corePriority;
+        this.coreServer = jsonOptions.coreServer;
+        this.cpuAffinity = jsonOptions.cpuAffinity;
+        this.cpuSpecies = jsonOptions.cpuSpecies;
+        this.cpuType = jsonOptions.cpuType;
+        this.cpuUsage = jsonOptions.cpuUsage;
+        this.cpus = jsonOptions.cpus;
+        this.cudaIndex = jsonOptions.cudaIndex;
+        this.cycleRate = jsonOptions.cycleRate;
+        this.cycles = jsonOptions.cycles;
+        this.daemon = jsonOptions.daemon;
+        this.dataDirectory = jsonOptions.dataDirectory;
+        this.debugSockets = jsonOptions.debugSockets;
+        this.dumpAfterDeadline = jsonOptions.dumpAfterDeadline;
+        this.eval = jsonOptions.eval;
+        this.exceptionLocations = jsonOptions.exceptionLocations;
+        this.execDirectory = jsonOptions.execDirectory;
+        this.exitWhenDone = jsonOptions.exitWhenDone;
+        this.extraCoreArgs = jsonOptions.extraCoreArgs;
+        this.forceWs = jsonOptions.forceWs;
+        this.gpu = jsonOptions.gpu;
+        this.gpuAssignmentServers = jsonOptions.gpuAssignmentServers;
+        this.gpuIndex = jsonOptions.gpuIndex;
+        this.gpuUsage = jsonOptions.gpuUsage;
+        this.log = jsonOptions.log;
+        this.logColor = jsonOptions.logColor;
+        this.logCrlf = jsonOptions.logCrlf;
+        this.logDate = jsonOptions.logDate;
+        this.logDebug = jsonOptions.logDebug;
+        this.logDomain = jsonOptions.logDomain;
+        this.logDomainLevels = jsonOptions.logDomainLevels;
+        this.logHeader = jsonOptions.logHeader;
+        this.logLevel = jsonOptions.logLevel;
+        this.logNoInfoHeader = jsonOptions.logNoInfoHeader;
+        this.logRedirect = jsonOptions.logRedirect;
+        this.logRotate = jsonOptions.logRotate;
+        this.logRotateDir = jsonOptions.logRotateDir;
+        this.logRotateMax = jsonOptions.logRotateMax;
+        this.logShortLevel = jsonOptions.logShortLevel;
+        this.logSimpleDomains = jsonOptions.logSimpleDomains;
+        this.logThreadId = jsonOptions.logThreadId;
+        this.logTime = jsonOptions.logTime;
+        this.logToScreen = jsonOptions.logToScreen;
+        this.logTruncate = jsonOptions.logTruncate;
+        this.machineId = jsonOptions.machineId;
+        this.maxDelay = jsonOptions.maxDelay;
+        this.maxPacketSize = jsonOptions.maxPacketSize;
+        this.maxQueue = jsonOptions.maxQueue;
+        this.maxShutdownWait = jsonOptions.maxShutdownWait;
+        this.maxSlotErrors = jsonOptions.maxSlotErrors;
+        this.maxUnitErrors = jsonOptions.maxUnitErrors;
+        this.maxUnits = jsonOptions.maxUnits;
+        this.memory = jsonOptions.memory;
+        this.minDelay = jsonOptions.minDelay;
+        this.nextUnitPercentage = jsonOptions.nextUnitPercentage;
+        this.priority = jsonOptions.priority;
+        this.noAssembly = jsonOptions.noAssembly;
+        this.openclIndex = jsonOptions.openclIndex;
+        this.osSpecies = jsonOptions.osSpecies;
+        this.osType = jsonOptions.osType;
+        this.passkey = jsonOptions.passkey;
+        this.password = jsonOptions.password;
+        this.pauseOnBattery = jsonOptions.pauseOnBattery;
+        this.pauseOnStart = jsonOptions.pauseOnStart;
+        this.pid = jsonOptions.pid;
+        this.pidFile = jsonOptions.pidFile;
+        this.projectKey = jsonOptions.projectKey;
+        this.proxy = jsonOptions.proxy;
+        this.proxyEnable = jsonOptions.proxyEnable;
+        this.proxyPass = jsonOptions.proxyPass;
+        this.proxyUser = jsonOptions.proxyUser;
+        this.respawn = jsonOptions.respawn;
+        this.script = jsonOptions.script;
+        this.service = jsonOptions.service;
+        this.serviceDescription = jsonOptions.serviceDescription;
+        this.serviceRestart = jsonOptions.serviceRestart;
+        this.serviceRestartDelay = jsonOptions.serviceRestartDelay;
+        this.smp = jsonOptions.smp;
+        this.stackTraces = jsonOptions.stackTraces;
+        this.team = jsonOptions.team;
+        this.threads = jsonOptions.threads;
+        this.user = jsonOptions.user;
+        this.verbosity = jsonOptions.verbosity;
+    }
+    
     @Override
     public String getAssignmentServers() {
         return assignmentServers;
@@ -336,7 +450,7 @@ public class Options implements IOptions, Serializable {
     }
 
     @Override
-    public int getGpuIndex() {
+    public String getGpuIndex() {
         return gpuIndex;
     }
 
@@ -486,7 +600,7 @@ public class Options implements IOptions, Serializable {
     }
 
     @Override
-    public int getMemory() {
+    public String getMemory() {
         return memory;
     }
 

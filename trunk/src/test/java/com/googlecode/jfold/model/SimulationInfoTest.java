@@ -21,7 +21,6 @@ import java.util.Date;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -205,7 +204,7 @@ public class SimulationInfoTest {
     /**
      * Test of getStartTime method, of class SimulationInfo.
      */
-    @Ignore @Test
+    @Test
     public void testGetStartTime() {
         System.out.println("getStartTime");
         Date expResult = null; // "2012-09-02T01:03:26Z"
@@ -216,7 +215,7 @@ public class SimulationInfoTest {
     /**
      * Test of getTimeout method, of class SimulationInfo.
      */
-    @Ignore @Test
+    @Test
     public void testGetTimeout() {
         System.out.println("getTimeout");
         Date expResult = null; // "2012-09-12T10:39:26Z"
@@ -227,7 +226,7 @@ public class SimulationInfoTest {
     /**
      * Test of getDeadline method, of class SimulationInfo.
      */
-    @Ignore @Test
+    @Test
     public void testGetDeadline() {
         System.out.println("getDeadline");
         Date expResult = null; // "2012-09-19T08:15:26Z"
@@ -238,7 +237,7 @@ public class SimulationInfoTest {
     /**
      * Test of getRunTime method, of class SimulationInfo.
      */
-    @Ignore @Test
+    @Test
     public void testGetRunTime() {
         System.out.println("getRunTime");
         String expResult = null;
@@ -249,7 +248,7 @@ public class SimulationInfoTest {
     /**
      * Test of getSimulationTime method, of class SimulationInfo.
      */
-    @Ignore @Test
+    @Test
     public void testGetSimulationTime() {
         System.out.println("getSimulationTime");
         String expResult = null;
@@ -260,7 +259,7 @@ public class SimulationInfoTest {
     /**
      * Test of getEta method, of class SimulationInfo.
      */
-    @Ignore @Test
+    @Test
     public void testGetEta() {
         System.out.println("getEta");
         Date expResult = null;
@@ -282,7 +281,7 @@ public class SimulationInfoTest {
     /**
      * Test of toString method, of class SimulationInfo.
      */
-    @Ignore @Test
+    @Test
     public void testToString() {
         System.out.println("toString");
         String expResult = "";

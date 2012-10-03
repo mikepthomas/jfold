@@ -316,7 +316,7 @@ public interface IOptions {
      *
      * @return the value of <code>gpu-index</code> from <code>options</code>
      */
-    int getGpuIndex();
+    String getGpuIndex();
     
     /**
      * Get the value of <code>gpu-usage</code>
@@ -526,7 +526,7 @@ public interface IOptions {
      *
      * @return the value of <code>memory</code> from <code>options</code>
      */
-    int getMemory();
+    String getMemory();
     
     /**
      * Get the value of <code>min-delay</code>
