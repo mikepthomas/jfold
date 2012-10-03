@@ -19,9 +19,9 @@ package com.googlecode.jfold.model;
 import com.googlecode.jfold.interfaces.ISlotOptions;
 import com.googlecode.jfold.model.examples.ExampleSlot;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
