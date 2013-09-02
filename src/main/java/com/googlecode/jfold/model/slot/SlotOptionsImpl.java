@@ -14,40 +14,50 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.googlecode.jfold.model;
+package com.googlecode.jfold.model.slot;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
-import com.googlecode.jfold.interfaces.ISlotOptions;
 import java.io.Serializable;
 
 /**
  *
  * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
  */
-public class SlotOptions implements ISlotOptions, Serializable {
-    
-    @SerializedName("client-type") private String clientType;
-    @SerializedName("client-subtype") private String clientSubtype;
-    @SerializedName("machine-id") private int machineId;
-    @SerializedName("max-packet-size") private String maxPacketSize;
-    @SerializedName("core-priority") private String corePriority;
-    @SerializedName("next-unit-percentage") private int nextUnitPercentage;
-    @SerializedName("max-units") private int maxUnits;
-    @SerializedName("checkpoint") private int checkpoint;
-    @SerializedName("pause-on-start") private boolean pauseOnStart;
-    @SerializedName("gpu-vendor-id") private String gpuVendorId;
-    @SerializedName("gpu-device-id") private String gpuDeviceId;
-    
+public class SlotOptionsImpl implements SlotOptions, Serializable {
+
+    @SerializedName("client-type")
+    private String clientType;
+    @SerializedName("client-subtype")
+    private String clientSubtype;
+    @SerializedName("machine-id")
+    private int machineId;
+    @SerializedName("max-packet-size")
+    private String maxPacketSize;
+    @SerializedName("core-priority")
+    private String corePriority;
+    @SerializedName("next-unit-percentage")
+    private int nextUnitPercentage;
+    @SerializedName("max-units")
+    private int maxUnits;
+    @SerializedName("checkpoint")
+    private int checkpoint;
+    @SerializedName("pause-on-start")
+    private boolean pauseOnStart;
+    @SerializedName("gpu-vendor-id")
+    private String gpuVendorId;
+    @SerializedName("gpu-device-id")
+    private String gpuDeviceId;
+
     /**
-     * Default constructor
+     * Default constructor.
      */
-    public SlotOptions() {
+    public SlotOptionsImpl() {
     }
 
-    public SlotOptions(String json) {
-        SlotOptions jsonSlotOptions = new Gson().fromJson(json, SlotOptions.class);
-        
+    public SlotOptionsImpl(String json) {
+        SlotOptionsImpl jsonSlotOptions = new Gson().fromJson(json, SlotOptionsImpl.class);
+
         this.clientType = jsonSlotOptions.clientType;
         this.clientSubtype = jsonSlotOptions.clientSubtype;
         this.machineId = jsonSlotOptions.machineId;
@@ -115,19 +125,19 @@ public class SlotOptions implements ISlotOptions, Serializable {
     public String getGpuDeviceId() {
         return gpuDeviceId;
     }
-    
+
     @Override
     public String toString() {
-        return "clientType = " + clientType +
-               "\nclientSubtype = " + clientSubtype +
-               "\nmachineId = " + machineId +
-               "\nmaxPacketSize = " + maxPacketSize +
-               "\ncorePriority = " + corePriority +
-               "\nnextUnitPercentage = " + nextUnitPercentage +
-               "\nmaxUnits = " + maxUnits +
-               "\ncheckpoint = " + checkpoint +
-               "\npauseOnStart = " + pauseOnStart +
-               "\ngpuVendorId = " + gpuVendorId +
-               "\ngpuDeviceId = " + gpuDeviceId;
+        return "clientType = " + clientType
+                + "\nclientSubtype = " + clientSubtype
+                + "\nmachineId = " + machineId
+                + "\nmaxPacketSize = " + maxPacketSize
+                + "\ncorePriority = " + corePriority
+                + "\nnextUnitPercentage = " + nextUnitPercentage
+                + "\nmaxUnits = " + maxUnits
+                + "\ncheckpoint = " + checkpoint
+                + "\npauseOnStart = " + pauseOnStart
+                + "\ngpuVendorId = " + gpuVendorId
+                + "\ngpuDeviceId = " + gpuDeviceId;
     }
 }

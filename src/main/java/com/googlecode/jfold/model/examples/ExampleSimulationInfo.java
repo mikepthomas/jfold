@@ -16,13 +16,14 @@
  */
 package com.googlecode.jfold.model.examples;
 
-import com.googlecode.jfold.model.SimulationInfo;
+import com.googlecode.jfold.model.simulation.SimulationInfo;
+import com.googlecode.jfold.model.simulation.SimulationInfoImpl;
 
 /**
  *
  * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
  */
-public class ExampleSimulationInfo extends SimulationInfo {
+public class ExampleSimulationInfo extends SimulationInfoImpl implements SimulationInfo {
 
     public static final String JSON = "{\n"
             + "  \"user\": \"Anonymous\",\n"

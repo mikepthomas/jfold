@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.googlecode.jfold.model;
+package com.googlecode.jfold.model.unit;
 
 import com.googlecode.jfold.model.examples.ExampleUnit;
 import java.net.Inet4Address;
@@ -32,7 +32,7 @@ import org.junit.Test;
  */
 public class UnitTest {
 
-    private static Unit instance;
+    private static UnitImpl instance;
 
     public UnitTest() {
     }
@@ -47,7 +47,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getId method, of class Unit.
+     * Test of getId method, of class UnitImpl.
      */
     @Test
     public void testGetId() {
@@ -58,7 +58,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getState method, of class Unit.
+     * Test of getState method, of class UnitImpl.
      */
     @Test
     public void testGetState() {
@@ -69,7 +69,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getProject method, of class Unit.
+     * Test of getProject method, of class UnitImpl.
      */
     @Test
     public void testGetProject() {
@@ -80,7 +80,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getRun method, of class Unit.
+     * Test of getRun method, of class UnitImpl.
      */
     @Test
     public void testGetRun() {
@@ -91,7 +91,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getClone method, of class Unit.
+     * Test of getClone method, of class UnitImpl.
      */
     @Test
     public void testGetClone() {
@@ -102,7 +102,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getGen method, of class Unit.
+     * Test of getGen method, of class UnitImpl.
      */
     @Test
     public void testGetGen() {
@@ -113,7 +113,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getCore method, of class Unit.
+     * Test of getCore method, of class UnitImpl.
      */
     @Test
     public void testGetCore() {
@@ -124,7 +124,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getUnit method, of class Unit.
+     * Test of getUnit method, of class UnitImpl.
      */
     @Test
     public void testGetUnit() {
@@ -135,7 +135,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getPercentDone method, of class Unit.
+     * Test of getPercentDone method, of class UnitImpl.
      */
     @Test
     public void testGetPercentDone() {
@@ -146,7 +146,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getTotalFrames method, of class Unit.
+     * Test of getTotalFrames method, of class UnitImpl.
      */
     @Test
     public void testGetTotalFrames() {
@@ -157,7 +157,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getFramesDone method, of class Unit.
+     * Test of getFramesDone method, of class UnitImpl.
      */
     @Test
     public void testGetFramesDone() {
@@ -168,7 +168,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getAssigned method, of class Unit.
+     * Test of getAssigned method, of class UnitImpl.
      */
     @Test
     public void testGetAssigned() {
@@ -181,7 +181,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getTimeout method, of class Unit.
+     * Test of getTimeout method, of class UnitImpl.
      */
     @Test
     public void testGetTimeout() {
@@ -194,7 +194,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getDeadline method, of class Unit.
+     * Test of getDeadline method, of class UnitImpl.
      */
     @Test
     public void testGetDeadline() {
@@ -207,7 +207,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getWs method, of class Unit.
+     * Test of getWs method, of class UnitImpl.
      */
     @Test
     public void testGetWs() throws UnknownHostException {
@@ -218,7 +218,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getCs method, of class Unit.
+     * Test of getCs method, of class UnitImpl.
      */
     @Test
     public void testGetCs() throws UnknownHostException {
@@ -229,7 +229,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getWaitingOn method, of class Unit.
+     * Test of getWaitingOn method, of class UnitImpl.
      */
     @Test
     public void testGetWaitingOn() {
@@ -240,7 +240,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getAttempts method, of class Unit.
+     * Test of getAttempts method, of class UnitImpl.
      */
     @Test
     public void testGetAttempts() {
@@ -251,7 +251,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getNextAttempt method, of class Unit.
+     * Test of getNextAttempt method, of class UnitImpl.
      */
     @Test
     public void testGetNextAttempt() {
@@ -262,7 +262,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getSlot method, of class Unit.
+     * Test of getSlot method, of class UnitImpl.
      */
     @Test
     public void testGetSlot() {
@@ -273,7 +273,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getEta method, of class Unit.
+     * Test of getEta method, of class UnitImpl.
      */
     @Test
     public void testGetEta() {
@@ -284,7 +284,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getPpd method, of class Unit.
+     * Test of getPpd method, of class UnitImpl.
      */
     @Test
     public void testGetPpd() {
@@ -295,7 +295,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getTpf method, of class Unit.
+     * Test of getTpf method, of class UnitImpl.
      */
     @Test
     public void testGetTpf() {
@@ -306,7 +306,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getBaseCredit method, of class Unit.
+     * Test of getBaseCredit method, of class UnitImpl.
      */
     @Test
     public void testGetBaseCredit() {
@@ -317,7 +317,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getCreditEstimate method, of class Unit.
+     * Test of getCreditEstimate method, of class UnitImpl.
      */
     @Test
     public void testGetCreditEstimate() {
@@ -328,7 +328,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getDescription method, of class Unit.
+     * Test of getDescription method, of class UnitImpl.
      */
     @Test
     public void testGetDescription() {
@@ -369,7 +369,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of toString method, of class Unit.
+     * Test of toString method, of class UnitImpl.
      */
     @Test
     public void testToString() {

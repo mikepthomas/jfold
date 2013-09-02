@@ -16,13 +16,14 @@
  */
 package com.googlecode.jfold.model.examples;
 
-import com.googlecode.jfold.model.Options;
+import com.googlecode.jfold.model.options.Options;
+import com.googlecode.jfold.model.options.OptionsImpl;
 
 /**
  *
  * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
  */
-public class ExampleOptions extends Options {
+public class ExampleOptions extends OptionsImpl implements Options {
 
     private static final String JSON = "{"
             + "  \"assignment-servers\": \"assign3.stanford.edu:8080 assign4.stanford.edu:80\","

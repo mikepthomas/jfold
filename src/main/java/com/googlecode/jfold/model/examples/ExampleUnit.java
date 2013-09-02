@@ -16,13 +16,14 @@
  */
 package com.googlecode.jfold.model.examples;
 
-import com.googlecode.jfold.model.Unit;
+import com.googlecode.jfold.model.unit.Unit;
+import com.googlecode.jfold.model.unit.UnitImpl;
 
 /**
  *
  * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
  */
-public class ExampleUnit extends Unit {
+public class ExampleUnit extends UnitImpl implements Unit {
 
     public static final String JSON = "{"
             + "  \"id\": \"01\","

@@ -16,13 +16,14 @@
  */
 package com.googlecode.jfold.model.examples;
 
-import com.googlecode.jfold.model.SlotOptions;
+import com.googlecode.jfold.model.slot.SlotOptions;
+import com.googlecode.jfold.model.slot.SlotOptionsImpl;
 
 /**
  *
  * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
  */
-public class ExampleSlotOptions extends SlotOptions {
+public class ExampleSlotOptions extends SlotOptionsImpl implements SlotOptions {
 
     public static final String JSON = "{\n"
             + "  \"client-type\": \"normal\",\n"

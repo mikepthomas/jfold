@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.googlecode.jfold.model;
+package com.googlecode.jfold.model.slot;
 
 import com.googlecode.jfold.model.examples.ExampleSlotOptions;
 import org.junit.AfterClass;
@@ -28,7 +28,7 @@ import org.junit.Test;
  */
 public class SlotOptionsTest {
     
-    private static SlotOptions instance;
+    private static SlotOptionsImpl instance;
     
     public SlotOptionsTest() {
     }
@@ -43,7 +43,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getClientType method, of class SlotOptions.
+     * Test of getClientType method, of class SlotOptionsImpl.
      */
     @Test
     public void testGetClientType() {
@@ -54,7 +54,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getClientSubtype method, of class SlotOptions.
+     * Test of getClientSubtype method, of class SlotOptionsImpl.
      */
     @Test
     public void testGetClientSubtype() {
@@ -65,7 +65,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getMachineId method, of class SlotOptions.
+     * Test of getMachineId method, of class SlotOptionsImpl.
      */
     @Test
     public void testGetMachineId() {
@@ -76,7 +76,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getMaxPacketSize method, of class SlotOptions.
+     * Test of getMaxPacketSize method, of class SlotOptionsImpl.
      */
     @Test
     public void testGetMaxPacketSize() {
@@ -87,7 +87,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getCorePriority method, of class SlotOptions.
+     * Test of getCorePriority method, of class SlotOptionsImpl.
      */
     @Test
     public void testGetCorePriority() {
@@ -98,7 +98,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getNextUnitPercentage method, of class SlotOptions.
+     * Test of getNextUnitPercentage method, of class SlotOptionsImpl.
      */
     @Test
     public void testGetNextUnitPercentage() {
@@ -109,7 +109,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getMaxUnits method, of class SlotOptions.
+     * Test of getMaxUnits method, of class SlotOptionsImpl.
      */
     @Test
     public void testGetMaxUnits() {
@@ -120,7 +120,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getCheckpoint method, of class SlotOptions.
+     * Test of getCheckpoint method, of class SlotOptionsImpl.
      */
     @Test
     public void testGetCheckpoint() {
@@ -131,7 +131,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getPauseOnStart method, of class SlotOptions.
+     * Test of getPauseOnStart method, of class SlotOptionsImpl.
      */
     @Test
     public void testGetPauseOnStart() {
@@ -142,7 +142,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getGpuVendorId method, of class SlotOptions.
+     * Test of getGpuVendorId method, of class SlotOptionsImpl.
      */
     @Test
     public void testGetGpuVendorId() {
@@ -153,7 +153,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getGpuDeviceId method, of class SlotOptions.
+     * Test of getGpuDeviceId method, of class SlotOptionsImpl.
      */
     @Test
     public void testGetGpuDeviceId() {
@@ -164,7 +164,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of toString method, of class SlotOptions.
+     * Test of toString method, of class SlotOptionsImpl.
      */
     @Test
     public void testToString() {

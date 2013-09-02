@@ -14,11 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.googlecode.jfold.model;
+package com.googlecode.jfold.model.unit;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
-import com.googlecode.jfold.interfaces.IUnit;
 import java.io.Serializable;
 import java.net.Inet4Address;
 import java.net.UnknownHostException;
@@ -30,44 +29,70 @@ import java.util.logging.Logger;
  *
  * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
  */
-public class Unit implements IUnit, Serializable {
-    
-    @SerializedName("id") private String id;
-    @SerializedName("state") private String state;
-    @SerializedName("project") private int project;
-    @SerializedName("run") private int run;
-    @SerializedName("clone") private int clone;
-    @SerializedName("gen") private int gen;
-    @SerializedName("core") private String core;
-    @SerializedName("unit") private String unit;
-    @SerializedName("percentdone") private String percentDone;
-    @SerializedName("totalframes") private int totalFrames;
-    @SerializedName("framesdone") private int framesDone;
-    @SerializedName("assigned") private String assigned;
-    @SerializedName("timeout") private String timeout;
-    @SerializedName("deadline") private String deadline;
-    @SerializedName("ws") private String ws;
-    @SerializedName("cs") private String cs;
-    @SerializedName("waitingon") private String waitingOn;
-    @SerializedName("attempts") private int attempts;
-    @SerializedName("nextattempt") private String nextAttempt;
-    @SerializedName("slot") private int slot;
-    @SerializedName("eta") private String eta;
-    @SerializedName("ppd") private double ppd;
-    @SerializedName("tpf") private String tpf;
-    @SerializedName("basecredit") private double baseCredit;
-    @SerializedName("creditestimate") private double creditEstimate;
-    @SerializedName("description") private String description;
-    
+public class UnitImpl implements Unit, Serializable {
+
+    @SerializedName("id")
+    private String id;
+    @SerializedName("state")
+    private String state;
+    @SerializedName("project")
+    private int project;
+    @SerializedName("run")
+    private int run;
+    @SerializedName("clone")
+    private int clone;
+    @SerializedName("gen")
+    private int gen;
+    @SerializedName("core")
+    private String core;
+    @SerializedName("unit")
+    private String unit;
+    @SerializedName("percentdone")
+    private String percentDone;
+    @SerializedName("totalframes")
+    private int totalFrames;
+    @SerializedName("framesdone")
+    private int framesDone;
+    @SerializedName("assigned")
+    private String assigned;
+    @SerializedName("timeout")
+    private String timeout;
+    @SerializedName("deadline")
+    private String deadline;
+    @SerializedName("ws")
+    private String ws;
+    @SerializedName("cs")
+    private String cs;
+    @SerializedName("waitingon")
+    private String waitingOn;
+    @SerializedName("attempts")
+    private int attempts;
+    @SerializedName("nextattempt")
+    private String nextAttempt;
+    @SerializedName("slot")
+    private int slot;
+    @SerializedName("eta")
+    private String eta;
+    @SerializedName("ppd")
+    private double ppd;
+    @SerializedName("tpf")
+    private String tpf;
+    @SerializedName("basecredit")
+    private double baseCredit;
+    @SerializedName("creditestimate")
+    private double creditEstimate;
+    @SerializedName("description")
+    private String description;
+
     /**
-     * Default constructor
+     * Default constructor.
      */
-    public Unit() {
+    public UnitImpl() {
     }
 
-    public Unit(String json) {
-        Unit jsonUnit = new Gson().fromJson(json, Unit.class);
-                
+    public UnitImpl(String json) {
+        UnitImpl jsonUnit = new Gson().fromJson(json, UnitImpl.class);
+
         this.id = jsonUnit.id;
         this.state = jsonUnit.state;
         this.project = jsonUnit.project;
@@ -171,8 +196,9 @@ public class Unit implements IUnit, Serializable {
         Inet4Address workServer = null;
         try {
             workServer = (Inet4Address) Inet4Address.getByName(ws);
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(Unit.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (UnknownHostException ex) {
+            Logger.getLogger(UnitImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
         return workServer;
     }
@@ -182,8 +208,9 @@ public class Unit implements IUnit, Serializable {
         Inet4Address collectionServer = null;
         try {
             collectionServer = (Inet4Address) Inet4Address.getByName(cs);
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(Unit.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (UnknownHostException ex) {
+            Logger.getLogger(UnitImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
         return collectionServer;
     }
@@ -232,12 +259,12 @@ public class Unit implements IUnit, Serializable {
     public double getCreditEstimate() {
         return creditEstimate;
     }
-    
+
     @Override
     public String getDescription() {
         return description;
     }
-    
+
     @Override
     public String toString() {
         throw new UnsupportedOperationException("Not supported yet.");
