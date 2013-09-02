@@ -16,13 +16,14 @@
  */
 package com.googlecode.jfold.model.examples;
 
-import com.googlecode.jfold.model.Slot;
+import com.googlecode.jfold.model.slot.Slot;
+import com.googlecode.jfold.model.slot.SlotImpl;
 
 /**
  *
  * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
  */
-public class ExampleSlot extends Slot {
+public class ExampleSlot extends SlotImpl implements Slot {
 
     public static final String JSON = "{"
             + "  \"id\": \"01\","
@@ -34,7 +35,7 @@ public class ExampleSlot extends Slot {
             + "    \"next-unit-percentage\": \"100\""
             + "  }"
             + "}";
-    
+
     public ExampleSlot() {
         super(JSON);
     }

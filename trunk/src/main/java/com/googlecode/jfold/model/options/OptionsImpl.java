@@ -14,11 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.googlecode.jfold.model;
+package com.googlecode.jfold.model.options;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
-import com.googlecode.jfold.interfaces.IOptions;
 import java.io.Serializable;
 import java.net.InetAddress;
 
@@ -26,120 +25,222 @@ import java.net.InetAddress;
  *
  * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
  */
-public class Options implements IOptions, Serializable {
-    
-    @SerializedName("assignment-servers") private String assignmentServers;
-    @SerializedName("capture-directory") private String captureDirectory;
-    @SerializedName("capture-sockets") private boolean captureSockets;
-    @SerializedName("checkpoint") private int checkpoint;
-    @SerializedName("child") private boolean child;
-    @SerializedName("client-subtype") private String clientSubtype;
-    @SerializedName("client-type") private String clientType;
-    @SerializedName("command-address") private String commandAddress;
-    @SerializedName("command-allow") private String commandAllow;
-    @SerializedName("command-allow-no-pass") private String commandAllowNoPass;
-    @SerializedName("command-deny") private String commandDeny;
-    @SerializedName("command-deny-no-pass") private String commandDenyNoPass;
-    @SerializedName("command-port") private int commandPort;
-    @SerializedName("config-rotate") private boolean configRotate;
-    @SerializedName("config-rotate-dir") private String configRotateDir;
-    @SerializedName("config-rotate-max") private int configRotateMax;
-    @SerializedName("core-dir") private String coreDir;
-    @SerializedName("core-key") private String coreKey;
-    @SerializedName("core-prep") private String corePrep;
-    @SerializedName("core-priority") private String corePriority;
-    @SerializedName("core-server") private String coreServer;
-    @SerializedName("cpu-affinity") private boolean cpuAffinity;
-    @SerializedName("cpu-species") private String cpuSpecies;
-    @SerializedName("cpu-type") private String cpuType;
-    @SerializedName("cpu-usage") private int cpuUsage;
-    @SerializedName("cpus") private int cpus;
-    @SerializedName("cuda-index") private int cudaIndex;
-    @SerializedName("cycle-rate") private int cycleRate;
-    @SerializedName("cycles") private int cycles;
-    @SerializedName("daemon") private boolean daemon;
-    @SerializedName("data-directory") private String dataDirectory;
-    @SerializedName("debug-sockets") private boolean debugSockets;
-    @SerializedName("dump-after-deadline") private boolean dumpAfterDeadline;
-    @SerializedName("eval") private String eval;
-    @SerializedName("exception-locations") private boolean exceptionLocations;
-    @SerializedName("exec-directory") private String execDirectory;
-    @SerializedName("exit-when-done") private boolean exitWhenDone;
-    @SerializedName("extra-core-args") private String extraCoreArgs;
-    @SerializedName("force-ws") private boolean forceWs;
-    @SerializedName("gpu") private boolean gpu;
-    @SerializedName("gpu-assignment-servers") private String gpuAssignmentServers;
-    @SerializedName("gpu-index") private String gpuIndex;
-    @SerializedName("gpu-usage") private int gpuUsage;
-    @SerializedName("log") private String log;
-    @SerializedName("log-color") private boolean logColor;
-    @SerializedName("log-crlf") private boolean logCrlf;
-    @SerializedName("log-date") private boolean logDate;
-    @SerializedName("log-debug") private boolean logDebug;
-    @SerializedName("log-domain") private boolean logDomain;
-    @SerializedName("log-domain-levels") private boolean logDomainLevels;
-    @SerializedName("log-header") private boolean logHeader;
-    @SerializedName("log-level") private boolean logLevel;
-    @SerializedName("log-no-info-header") private boolean logNoInfoHeader;
-    @SerializedName("log-redirect") private boolean logRedirect;
-    @SerializedName("log-rotate") private boolean logRotate;
-    @SerializedName("log-rotate-dir") private String logRotateDir;
-    @SerializedName("log-rotate-max") private int logRotateMax;
-    @SerializedName("log-short-level") private boolean logShortLevel;
-    @SerializedName("log-simple-domains") private boolean logSimpleDomains;
-    @SerializedName("log-thread-id") private boolean logThreadId;
-    @SerializedName("log-time") private boolean logTime;
-    @SerializedName("log-to-screen") private boolean logToScreen;
-    @SerializedName("log-truncate") private boolean logTruncate;
-    @SerializedName("machine-id") private int machineId;
-    @SerializedName("max-delay") private int maxDelay;
-    @SerializedName("max-packet-size") private String maxPacketSize;
-    @SerializedName("max-queue") private int maxQueue;
-    @SerializedName("max-shutdown-wait") private int maxShutdownWait;
-    @SerializedName("max-slot-errors") private int maxSlotErrors;
-    @SerializedName("max-unit-errors") private int maxUnitErrors;
-    @SerializedName("max-units") private int maxUnits;
-    @SerializedName("memory") private String memory;
-    @SerializedName("min-delay") private int minDelay;
-    @SerializedName("next-unit-percentage") private int nextUnitPercentage;
-    @SerializedName("priority") private String priority;
-    @SerializedName("no-assembly") private boolean noAssembly;
-    @SerializedName("opencl-index") private int openclIndex;
-    @SerializedName("os-species") private String osSpecies;
-    @SerializedName("os-type") private String osType;
-    @SerializedName("passkey") private String passkey;
-    @SerializedName("password") private String password;
-    @SerializedName("pause-on-battery") private boolean pauseOnBattery;
-    @SerializedName("pause-on-start") private boolean pauseOnStart;
-    @SerializedName("pid") private boolean pid;
-    @SerializedName("pid-file") private String pidFile;
-    @SerializedName("project-key") private int projectKey;
-    @SerializedName("proxy") private String proxy;
-    @SerializedName("proxy-enable") private boolean proxyEnable;
-    @SerializedName("proxy-pass") private String proxyPass;
-    @SerializedName("proxy-user") private String proxyUser;
-    @SerializedName("respawn") private boolean respawn;
-    @SerializedName("script") private String script;
-    @SerializedName("service") private boolean service;
-    @SerializedName("service-description") private String serviceDescription;
-    @SerializedName("service-restart") private boolean serviceRestart;
-    @SerializedName("service-restart-delay") private int serviceRestartDelay;
-    @SerializedName("smp") private boolean smp;
-    @SerializedName("stack-traces") private boolean stackTraces;
-    @SerializedName("team") private int team;
-    @SerializedName("threads") private int threads;
-    @SerializedName("user") private String user;
-    @SerializedName("verbosity") private int verbosity;
+public class OptionsImpl implements Options, Serializable {
+
+    @SerializedName("assignment-servers")
+    private String assignmentServers;
+    @SerializedName("capture-directory")
+    private String captureDirectory;
+    @SerializedName("capture-sockets")
+    private boolean captureSockets;
+    @SerializedName("checkpoint")
+    private int checkpoint;
+    @SerializedName("child")
+    private boolean child;
+    @SerializedName("client-subtype")
+    private String clientSubtype;
+    @SerializedName("client-type")
+    private String clientType;
+    @SerializedName("command-address")
+    private String commandAddress;
+    @SerializedName("command-allow")
+    private String commandAllow;
+    @SerializedName("command-allow-no-pass")
+    private String commandAllowNoPass;
+    @SerializedName("command-deny")
+    private String commandDeny;
+    @SerializedName("command-deny-no-pass")
+    private String commandDenyNoPass;
+    @SerializedName("command-port")
+    private int commandPort;
+    @SerializedName("config-rotate")
+    private boolean configRotate;
+    @SerializedName("config-rotate-dir")
+    private String configRotateDir;
+    @SerializedName("config-rotate-max")
+    private int configRotateMax;
+    @SerializedName("core-dir")
+    private String coreDir;
+    @SerializedName("core-key")
+    private String coreKey;
+    @SerializedName("core-prep")
+    private String corePrep;
+    @SerializedName("core-priority")
+    private String corePriority;
+    @SerializedName("core-server")
+    private String coreServer;
+    @SerializedName("cpu-affinity")
+    private boolean cpuAffinity;
+    @SerializedName("cpu-species")
+    private String cpuSpecies;
+    @SerializedName("cpu-type")
+    private String cpuType;
+    @SerializedName("cpu-usage")
+    private int cpuUsage;
+    @SerializedName("cpus")
+    private int cpus;
+    @SerializedName("cuda-index")
+    private int cudaIndex;
+    @SerializedName("cycle-rate")
+    private int cycleRate;
+    @SerializedName("cycles")
+    private int cycles;
+    @SerializedName("daemon")
+    private boolean daemon;
+    @SerializedName("data-directory")
+    private String dataDirectory;
+    @SerializedName("debug-sockets")
+    private boolean debugSockets;
+    @SerializedName("dump-after-deadline")
+    private boolean dumpAfterDeadline;
+    @SerializedName("eval")
+    private String eval;
+    @SerializedName("exception-locations")
+    private boolean exceptionLocations;
+    @SerializedName("exec-directory")
+    private String execDirectory;
+    @SerializedName("exit-when-done")
+    private boolean exitWhenDone;
+    @SerializedName("extra-core-args")
+    private String extraCoreArgs;
+    @SerializedName("force-ws")
+    private boolean forceWs;
+    @SerializedName("gpu")
+    private boolean gpu;
+    @SerializedName("gpu-assignment-servers")
+    private String gpuAssignmentServers;
+    @SerializedName("gpu-index")
+    private String gpuIndex;
+    @SerializedName("gpu-usage")
+    private int gpuUsage;
+    @SerializedName("log")
+    private String log;
+    @SerializedName("log-color")
+    private boolean logColor;
+    @SerializedName("log-crlf")
+    private boolean logCrlf;
+    @SerializedName("log-date")
+    private boolean logDate;
+    @SerializedName("log-debug")
+    private boolean logDebug;
+    @SerializedName("log-domain")
+    private boolean logDomain;
+    @SerializedName("log-domain-levels")
+    private boolean logDomainLevels;
+    @SerializedName("log-header")
+    private boolean logHeader;
+    @SerializedName("log-level")
+    private boolean logLevel;
+    @SerializedName("log-no-info-header")
+    private boolean logNoInfoHeader;
+    @SerializedName("log-redirect")
+    private boolean logRedirect;
+    @SerializedName("log-rotate")
+    private boolean logRotate;
+    @SerializedName("log-rotate-dir")
+    private String logRotateDir;
+    @SerializedName("log-rotate-max")
+    private int logRotateMax;
+    @SerializedName("log-short-level")
+    private boolean logShortLevel;
+    @SerializedName("log-simple-domains")
+    private boolean logSimpleDomains;
+    @SerializedName("log-thread-id")
+    private boolean logThreadId;
+    @SerializedName("log-time")
+    private boolean logTime;
+    @SerializedName("log-to-screen")
+    private boolean logToScreen;
+    @SerializedName("log-truncate")
+    private boolean logTruncate;
+    @SerializedName("machine-id")
+    private int machineId;
+    @SerializedName("max-delay")
+    private int maxDelay;
+    @SerializedName("max-packet-size")
+    private String maxPacketSize;
+    @SerializedName("max-queue")
+    private int maxQueue;
+    @SerializedName("max-shutdown-wait")
+    private int maxShutdownWait;
+    @SerializedName("max-slot-errors")
+    private int maxSlotErrors;
+    @SerializedName("max-unit-errors")
+    private int maxUnitErrors;
+    @SerializedName("max-units")
+    private int maxUnits;
+    @SerializedName("memory")
+    private String memory;
+    @SerializedName("min-delay")
+    private int minDelay;
+    @SerializedName("next-unit-percentage")
+    private int nextUnitPercentage;
+    @SerializedName("priority")
+    private String priority;
+    @SerializedName("no-assembly")
+    private boolean noAssembly;
+    @SerializedName("opencl-index")
+    private int openclIndex;
+    @SerializedName("os-species")
+    private String osSpecies;
+    @SerializedName("os-type")
+    private String osType;
+    @SerializedName("passkey")
+    private String passkey;
+    @SerializedName("password")
+    private String password;
+    @SerializedName("pause-on-battery")
+    private boolean pauseOnBattery;
+    @SerializedName("pause-on-start")
+    private boolean pauseOnStart;
+    @SerializedName("pid")
+    private boolean pid;
+    @SerializedName("pid-file")
+    private String pidFile;
+    @SerializedName("project-key")
+    private int projectKey;
+    @SerializedName("proxy")
+    private String proxy;
+    @SerializedName("proxy-enable")
+    private boolean proxyEnable;
+    @SerializedName("proxy-pass")
+    private String proxyPass;
+    @SerializedName("proxy-user")
+    private String proxyUser;
+    @SerializedName("respawn")
+    private boolean respawn;
+    @SerializedName("script")
+    private String script;
+    @SerializedName("service")
+    private boolean service;
+    @SerializedName("service-description")
+    private String serviceDescription;
+    @SerializedName("service-restart")
+    private boolean serviceRestart;
+    @SerializedName("service-restart-delay")
+    private int serviceRestartDelay;
+    @SerializedName("smp")
+    private boolean smp;
+    @SerializedName("stack-traces")
+    private boolean stackTraces;
+    @SerializedName("team")
+    private int team;
+    @SerializedName("threads")
+    private int threads;
+    @SerializedName("user")
+    private String user;
+    @SerializedName("verbosity")
+    private int verbosity;
 
     /**
-     * Default constructor
+     * Default constructor.
      */
-    public Options() {
+    public OptionsImpl() {
     }
 
-    public Options(String json) {
-        Options jsonOptions = new Gson().fromJson(json, Options.class);
-        
+    public OptionsImpl(String json) {
+        OptionsImpl jsonOptions = new Gson().fromJson(json, OptionsImpl.class);
+
         this.assignmentServers = jsonOptions.assignmentServers;
         this.captureDirectory = jsonOptions.captureDirectory;
         this.captureSockets = jsonOptions.captureSockets;
@@ -243,7 +344,7 @@ public class Options implements IOptions, Serializable {
         this.user = jsonOptions.user;
         this.verbosity = jsonOptions.verbosity;
     }
-    
+
     @Override
     public String getAssignmentServers() {
         return assignmentServers;

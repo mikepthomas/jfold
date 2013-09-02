@@ -14,40 +14,42 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.googlecode.jfold.model;
+package com.googlecode.jfold.model.slot;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
-import com.googlecode.jfold.interfaces.ISlot;
-import com.googlecode.jfold.interfaces.ISlotOptions;
 import java.io.Serializable;
 
 /**
  *
  * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
  */
-public class Slot implements ISlot, Serializable {
+public class SlotImpl implements Slot, Serializable {
 
-    @SerializedName("id") private String id;
-    @SerializedName("status") private String status;
-    @SerializedName("description") private String description;
-    @SerializedName("options") private SlotOptions options;
+    @SerializedName("id")
+    private String id;
+    @SerializedName("status")
+    private String status;
+    @SerializedName("description")
+    private String description;
+    @SerializedName("options")
+    private SlotOptionsImpl options;
 
     /**
-     * Default constructor
+     * Default constructor.
      */
-    public Slot() {
+    public SlotImpl() {
     }
-    
-    public Slot(String json) {
-        Slot jsonSlot = new Gson().fromJson(json, Slot.class);
-        
+
+    public SlotImpl(String json) {
+        SlotImpl jsonSlot = new Gson().fromJson(json, SlotImpl.class);
+
         this.id = jsonSlot.id;
         this.status = jsonSlot.status;
         this.description = jsonSlot.description;
         this.options = jsonSlot.options;
     }
-    
+
     @Override
     public String getId() {
         return id;
@@ -64,7 +66,7 @@ public class Slot implements ISlot, Serializable {
     }
 
     @Override
-    public ISlotOptions getOptions() {
+    public SlotOptions getOptions() {
         return options;
     }
 }

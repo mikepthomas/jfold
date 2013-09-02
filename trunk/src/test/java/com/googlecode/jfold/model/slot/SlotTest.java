@@ -14,9 +14,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.googlecode.jfold.model;
+package com.googlecode.jfold.model.slot;
 
-import com.googlecode.jfold.interfaces.ISlotOptions;
 import com.googlecode.jfold.model.examples.ExampleSlot;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
@@ -29,7 +28,7 @@ import org.junit.Test;
  */
 public class SlotTest {
     
-    private static Slot instance;
+    private static SlotImpl instance;
     
     public SlotTest() {
     }
@@ -44,7 +43,7 @@ public class SlotTest {
     }
 
     /**
-     * Test of getId method, of class Slot.
+     * Test of getId method, of class SlotImpl.
      */
     @Test
     public void testGetId() {
@@ -55,7 +54,7 @@ public class SlotTest {
     }
 
     /**
-     * Test of getStatus method, of class Slot.
+     * Test of getStatus method, of class SlotImpl.
      */
     @Test
     public void testGetStatus() {
@@ -66,7 +65,7 @@ public class SlotTest {
     }
 
     /**
-     * Test of getDescription method, of class Slot.
+     * Test of getDescription method, of class SlotImpl.
      */
     @Test
     public void testGetDescription() {
@@ -77,13 +76,13 @@ public class SlotTest {
     }
 
     /**
-     * Test of getOptions method, of class Slot.
+     * Test of getOptions method, of class SlotImpl.
      */
     @Test
     public void testGetOptions() {
         System.out.println("getOptions");
-        ISlotOptions expResult = null;
-        ISlotOptions result = instance.getOptions();
+        SlotOptions expResult = null;
+        SlotOptions result = instance.getOptions();
         assertEquals(expResult, result);
     }
 }

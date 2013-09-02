@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.googlecode.jfold.model;
+package com.googlecode.jfold.model.simulation;
 
 import com.googlecode.jfold.model.examples.ExampleSimulationInfo;
 import java.util.Date;
@@ -29,7 +29,7 @@ import org.junit.Test;
  */
 public class SimulationInfoTest {
     
-    public static SimulationInfo instance;
+    public static SimulationInfoImpl instance;
     
     public SimulationInfoTest() {
     }
@@ -44,7 +44,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getUser method, of class SimulationInfo.
+     * Test of getUser method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetUser() {
@@ -55,7 +55,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getTeam method, of class SimulationInfo.
+     * Test of getTeam method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetTeam() {
@@ -66,7 +66,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getProject method, of class SimulationInfo.
+     * Test of getProject method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetProject() {
@@ -77,7 +77,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getRun method, of class SimulationInfo.
+     * Test of getRun method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetRun() {
@@ -88,7 +88,7 @@ public class SimulationInfoTest {
     }
     
     /**
-     * Test of getClone method, of class SimulationInfo.
+     * Test of getClone method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetClone() {
@@ -99,7 +99,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getGen method, of class SimulationInfo.
+     * Test of getGen method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetGen() {
@@ -110,7 +110,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getCoreType method, of class SimulationInfo.
+     * Test of getCoreType method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetCoreType() {
@@ -121,7 +121,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getCore method, of class SimulationInfo.
+     * Test of getCore method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetCore() {
@@ -132,7 +132,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getDescription method, of class SimulationInfo.
+     * Test of getDescription method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetDescription() {
@@ -158,7 +158,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getTotalIterations method, of class SimulationInfo.
+     * Test of getTotalIterations method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetTotalIterations() {
@@ -169,7 +169,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getIterationsDone method, of class SimulationInfo.
+     * Test of getIterationsDone method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetIterationsDone() {
@@ -180,7 +180,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getEnergy method, of class SimulationInfo.
+     * Test of getEnergy method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetEnergy() {
@@ -191,7 +191,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getTemperature method, of class SimulationInfo.
+     * Test of getTemperature method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetTemperature() {
@@ -202,7 +202,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getStartTime method, of class SimulationInfo.
+     * Test of getStartTime method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetStartTime() {
@@ -213,7 +213,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getTimeout method, of class SimulationInfo.
+     * Test of getTimeout method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetTimeout() {
@@ -224,7 +224,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getDeadline method, of class SimulationInfo.
+     * Test of getDeadline method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetDeadline() {
@@ -235,7 +235,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getRunTime method, of class SimulationInfo.
+     * Test of getRunTime method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetRunTime() {
@@ -246,7 +246,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getSimulationTime method, of class SimulationInfo.
+     * Test of getSimulationTime method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetSimulationTime() {
@@ -257,7 +257,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getEta method, of class SimulationInfo.
+     * Test of getEta method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetEta() {
@@ -268,7 +268,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getNews method, of class SimulationInfo.
+     * Test of getNews method, of class SimulationInfoImpl.
      */
     @Test
     public void testGetNews() {
@@ -279,7 +279,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of toString method, of class SimulationInfo.
+     * Test of toString method, of class SimulationInfoImpl.
      */
     @Test
     public void testToString() {
