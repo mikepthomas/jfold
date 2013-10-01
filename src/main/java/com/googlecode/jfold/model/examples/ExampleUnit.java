@@ -26,11 +26,14 @@ import com.googlecode.jfold.model.unit.Unit;
 import com.googlecode.jfold.model.unit.UnitImpl;
 
 /**
+ * <p>ExampleUnit class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public class ExampleUnit extends UnitImpl implements Unit {
 
+    /** Constant <code>JSON="{  \"id\": \"01\",  \"state\": \"RUNNIN"{trunked}</code> */
     public static final String JSON = "{"
             + "  \"id\": \"01\","
             + "  \"state\": \"RUNNING\","
@@ -91,6 +94,9 @@ public class ExampleUnit extends UnitImpl implements Unit {
             + "recent work from our group][4].\\n\""
             + "}";
 
+    /**
+     * <p>Constructor for ExampleUnit.</p>
+     */
     public ExampleUnit() {
         super(JSON);
     }

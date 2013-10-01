@@ -26,11 +26,14 @@ import com.googlecode.jfold.model.simulation.SimulationInfo;
 import com.googlecode.jfold.model.simulation.SimulationInfoImpl;
 
 /**
+ * <p>ExampleSimulationInfo class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public class ExampleSimulationInfo extends SimulationInfoImpl implements SimulationInfo {
 
+    /** Constant <code>JSON="{\n  \"user\": \"Anonymous\",\n  \"team"{trunked}</code> */
     public static final String JSON = "{\n"
             + "  \"user\": \"Anonymous\",\n"
             + "  \"team\": \"0\",\n"
@@ -69,6 +72,9 @@ public class ExampleSimulationInfo extends SimulationInfoImpl implements Simulat
             + "  \"news\": \"\"\n"
             + "}";
 
+    /**
+     * <p>Constructor for ExampleSimulationInfo.</p>
+     */
     public ExampleSimulationInfo() {
         super(JSON);
     }

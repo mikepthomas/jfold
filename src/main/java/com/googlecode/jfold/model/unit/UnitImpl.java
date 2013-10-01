@@ -32,8 +32,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * <p>UnitImpl class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public class UnitImpl implements Unit, Serializable {
 
@@ -96,6 +98,11 @@ public class UnitImpl implements Unit, Serializable {
     public UnitImpl() {
     }
 
+    /**
+     * <p>Constructor for UnitImpl.</p>
+     *
+     * @param json a {@link java.lang.String} object.
+     */
     public UnitImpl(String json) {
         UnitImpl jsonUnit = new Gson().fromJson(json, UnitImpl.class);
 
@@ -127,76 +134,91 @@ public class UnitImpl implements Unit, Serializable {
         this.description = jsonUnit.description;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getId() {
         return id;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getState() {
         return state;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getProject() {
         return project;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getRun() {
         return run;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getClone() {
         return clone;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getGen() {
         return gen;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getCore() {
         return core;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getUnit() {
         return unit;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getPercentDone() {
         return percentDone;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getTotalFrames() {
         return totalFrames;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getFramesDone() {
         return framesDone;
     }
 
+    /** {@inheritDoc} */
     @Override
     public Date getAssigned() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /** {@inheritDoc} */
     @Override
     public Date getTimeout() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /** {@inheritDoc} */
     @Override
     public Date getDeadline() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /** {@inheritDoc} */
     @Override
     public Inet4Address getWs() {
         Inet4Address workServer = null;
@@ -209,6 +231,7 @@ public class UnitImpl implements Unit, Serializable {
         return workServer;
     }
 
+    /** {@inheritDoc} */
     @Override
     public Inet4Address getCs() {
         Inet4Address collectionServer = null;
@@ -221,56 +244,67 @@ public class UnitImpl implements Unit, Serializable {
         return collectionServer;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getWaitingOn() {
         return waitingOn;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getAttempts() {
         return attempts;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getNextAttempt() {
         return nextAttempt;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getSlot() {
         return slot;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getEta() {
         return eta;
     }
 
+    /** {@inheritDoc} */
     @Override
     public double getPpd() {
         return ppd;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getTpf() {
         return tpf;
     }
 
+    /** {@inheritDoc} */
     @Override
     public double getBaseCredit() {
         return baseCredit;
     }
 
+    /** {@inheritDoc} */
     @Override
     public double getCreditEstimate() {
         return creditEstimate;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getDescription() {
         return description;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString() {
         throw new UnsupportedOperationException("Not supported yet.");

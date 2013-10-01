@@ -26,8 +26,10 @@ import java.net.InetAddress;
 import java.util.Date;
 
 /**
+ * <p>Unit interface.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public interface Unit {
 
@@ -213,10 +215,7 @@ public interface Unit {
      */
     String getDescription();
 
-    /**
-     *
-     * @return String representation of this <code>Unit</code>.
-     */
+    /** {@inheritDoc} */
     @Override
     String toString();
 }

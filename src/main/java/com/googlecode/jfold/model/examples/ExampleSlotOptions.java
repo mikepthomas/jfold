@@ -26,11 +26,14 @@ import com.googlecode.jfold.model.slot.SlotOptions;
 import com.googlecode.jfold.model.slot.SlotOptionsImpl;
 
 /**
+ * <p>ExampleSlotOptions class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public class ExampleSlotOptions extends SlotOptionsImpl implements SlotOptions {
 
+    /** Constant <code>JSON="{\n  \"client-type\": \"normal\",\n  \""{trunked}</code> */
     public static final String JSON = "{\n"
             + "  \"client-type\": \"normal\",\n"
             + "  \"client-subtype\": \"SMP\",\n"
@@ -45,6 +48,9 @@ public class ExampleSlotOptions extends SlotOptionsImpl implements SlotOptions {
             + "  \"gpu-device-id\": None\n"
             + "}";
 
+    /**
+     * <p>Constructor for ExampleSlotOptions.</p>
+     */
     public ExampleSlotOptions() {
         super(JSON);
     }

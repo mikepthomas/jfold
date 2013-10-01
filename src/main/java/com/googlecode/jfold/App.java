@@ -30,9 +30,15 @@ import java.util.List;
  * Hello world!
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public class App {
 
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
     public static void main(String[] args) {
         String json = "[\n"
                 + "  [\n"

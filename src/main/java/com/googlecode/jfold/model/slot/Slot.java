@@ -23,8 +23,10 @@ package com.googlecode.jfold.model.slot;
  */
 
 /**
+ * <p>Slot interface.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public interface Slot {
 
@@ -56,10 +58,7 @@ public interface Slot {
      */
     SlotOptions getOptions();
 
-    /**
-     *
-     * @return String representation of this <code>Slot</code>
-     */
+    /** {@inheritDoc} */
     @Override
     String toString();
 }
