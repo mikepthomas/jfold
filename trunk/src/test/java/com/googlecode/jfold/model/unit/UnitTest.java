@@ -34,21 +34,33 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
+ * <p>UnitTest class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
+ * @since 1.0
  */
 public class UnitTest {
 
     private static UnitImpl instance;
 
+    /**
+     * <p>Constructor for UnitTest.</p>
+     */
     public UnitTest() {
     }
 
+    /**
+     * <p>setUpClass.</p>
+     */
     @BeforeClass
     public static void setUpClass() {
         instance = new ExampleUnit();
     }
 
+    /**
+     * <p>tearDownClass.</p>
+     */
     @AfterClass
     public static void tearDownClass() {
     }
@@ -215,6 +227,8 @@ public class UnitTest {
 
     /**
      * Test of getWs method, of class UnitImpl.
+     *
+     * @throws java.net.UnknownHostException if any.
      */
     @Test
     public void testGetWs() throws UnknownHostException {
@@ -226,6 +240,8 @@ public class UnitTest {
 
     /**
      * Test of getCs method, of class UnitImpl.
+     *
+     * @throws java.net.UnknownHostException if any.
      */
     @Test
     public void testGetCs() throws UnknownHostException {

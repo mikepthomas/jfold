@@ -29,21 +29,33 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
+ * <p>SlotOptionsTest class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
+ * @since 1.0
  */
 public class SlotOptionsTest {
     
     private static SlotOptionsImpl instance;
     
+    /**
+     * <p>Constructor for SlotOptionsTest.</p>
+     */
     public SlotOptionsTest() {
     }
     
+    /**
+     * <p>setUpClass.</p>
+     */
     @BeforeClass
     public static void setUpClass() {
         instance = new ExampleSlotOptions();
     }
     
+    /**
+     * <p>tearDownClass.</p>
+     */
     @AfterClass
     public static void tearDownClass() {
     }

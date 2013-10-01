@@ -31,21 +31,34 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
+ * <p>SimulationInfoTest class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
+ * @since 1.0
  */
 public class SimulationInfoTest {
     
+    /** Constant <code>instance</code> */
     public static SimulationInfoImpl instance;
     
+    /**
+     * <p>Constructor for SimulationInfoTest.</p>
+     */
     public SimulationInfoTest() {
     }
     
+    /**
+     * <p>setUpClass.</p>
+     */
     @BeforeClass
     public static void setUpClass() {
         instance = new ExampleSimulationInfo();
     }
     
+    /**
+     * <p>tearDownClass.</p>
+     */
     @AfterClass
     public static void tearDownClass() {
     }
