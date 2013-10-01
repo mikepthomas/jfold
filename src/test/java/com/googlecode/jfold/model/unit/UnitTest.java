@@ -1,20 +1,26 @@
+package com.googlecode.jfold.model.unit;
+
 /*
- * Copyright (C) 2012 Michael Thomas <michael4.thomas@live.uwe.ac.uk>
- *
+ * #%L
+ * jFold
+ * %%
+ * Copyright (C) 2012 - 2013 Michael Thomas <mikepthomas@outlook.com>
+ * %%
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
+ * it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the 
+ * License, or (at your option) any later version.
+ * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * You should have received a copy of the GNU General Public 
+ * License along with this program.  If not, see
+ * <http://www.gnu.org/licenses/gpl-3.0.html>.
+ * #L%
  */
-package com.googlecode.jfold.model.unit;
 
 import com.googlecode.jfold.model.examples.ExampleUnit;
 import java.net.Inet4Address;
@@ -24,11 +30,12 @@ import java.util.Date;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
  *
- * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
+ * @author Michael Thomas <mikepthomas@outlook.com>
  */
 public class UnitTest {
 
@@ -170,7 +177,7 @@ public class UnitTest {
     /**
      * Test of getAssigned method, of class UnitImpl.
      */
-    @Test
+    @Test @Ignore
     public void testGetAssigned() {
         System.out.println("getAssigned");
         Date expResult = null;
@@ -183,7 +190,7 @@ public class UnitTest {
     /**
      * Test of getTimeout method, of class UnitImpl.
      */
-    @Test
+    @Test @Ignore
     public void testGetTimeout() {
         System.out.println("getTimeout");
         Date expResult = null;
@@ -196,7 +203,7 @@ public class UnitTest {
     /**
      * Test of getDeadline method, of class UnitImpl.
      */
-    @Test
+    @Test @Ignore
     public void testGetDeadline() {
         System.out.println("getDeadline");
         Date expResult = null;
@@ -371,7 +378,7 @@ public class UnitTest {
     /**
      * Test of toString method, of class UnitImpl.
      */
-    @Test
+    @Test @Ignore
     public void testToString() {
         System.out.println("toString");
         String expResult = "";

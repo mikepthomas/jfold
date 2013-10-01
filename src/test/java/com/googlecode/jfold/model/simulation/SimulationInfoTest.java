@@ -1,31 +1,38 @@
+package com.googlecode.jfold.model.simulation;
+
 /*
- * Copyright (C) 2012 Michael Thomas <michael4.thomas@live.uwe.ac.uk>
- *
+ * #%L
+ * jFold
+ * %%
+ * Copyright (C) 2012 - 2013 Michael Thomas <mikepthomas@outlook.com>
+ * %%
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
+ * it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the 
+ * License, or (at your option) any later version.
+ * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * You should have received a copy of the GNU General Public 
+ * License along with this program.  If not, see
+ * <http://www.gnu.org/licenses/gpl-3.0.html>.
+ * #L%
  */
-package com.googlecode.jfold.model.simulation;
 
 import com.googlecode.jfold.model.examples.ExampleSimulationInfo;
 import java.util.Date;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
  *
- * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
+ * @author Michael Thomas <mikepthomas@outlook.com>
  */
 public class SimulationInfoTest {
     
@@ -204,7 +211,7 @@ public class SimulationInfoTest {
     /**
      * Test of getStartTime method, of class SimulationInfoImpl.
      */
-    @Test
+    @Test @Ignore
     public void testGetStartTime() {
         System.out.println("getStartTime");
         Date expResult = null; // "2012-09-02T01:03:26Z"
@@ -215,7 +222,7 @@ public class SimulationInfoTest {
     /**
      * Test of getTimeout method, of class SimulationInfoImpl.
      */
-    @Test
+    @Test @Ignore
     public void testGetTimeout() {
         System.out.println("getTimeout");
         Date expResult = null; // "2012-09-12T10:39:26Z"
@@ -226,7 +233,7 @@ public class SimulationInfoTest {
     /**
      * Test of getDeadline method, of class SimulationInfoImpl.
      */
-    @Test
+    @Test @Ignore
     public void testGetDeadline() {
         System.out.println("getDeadline");
         Date expResult = null; // "2012-09-19T08:15:26Z"
@@ -237,7 +244,7 @@ public class SimulationInfoTest {
     /**
      * Test of getRunTime method, of class SimulationInfoImpl.
      */
-    @Test
+    @Test @Ignore
     public void testGetRunTime() {
         System.out.println("getRunTime");
         String expResult = null;
@@ -248,7 +255,7 @@ public class SimulationInfoTest {
     /**
      * Test of getSimulationTime method, of class SimulationInfoImpl.
      */
-    @Test
+    @Test @Ignore
     public void testGetSimulationTime() {
         System.out.println("getSimulationTime");
         String expResult = null;
@@ -259,7 +266,7 @@ public class SimulationInfoTest {
     /**
      * Test of getEta method, of class SimulationInfoImpl.
      */
-    @Test
+    @Test @Ignore
     public void testGetEta() {
         System.out.println("getEta");
         Date expResult = null;
@@ -281,7 +288,7 @@ public class SimulationInfoTest {
     /**
      * Test of toString method, of class SimulationInfoImpl.
      */
-    @Test
+    @Test @Ignore
     public void testToString() {
         System.out.println("toString");
         String expResult = "";
