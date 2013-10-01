@@ -1,0 +1,22 @@
+{
+    "user": "Anonymous",
+    "team": "0",
+    "project": 7647,
+    "run": 104,
+    "clone": 0,
+    "gen": 27,
+    "core_type": 164,
+    "core": "GROGBA4",
+    "description": "No information is currently available for this project.   \n\n### _Other details_\n\nThis project (p7647) is set for 2250.00 points, a preferred deadline of 10.40 days, and a final deadline 17.30 days. This project uses the GRO-A4 FAH core software and is hosted by Folding@home server 171.64.65.101.  \n\n### _Manager for this FAH project_\n\n![][3] TJ Lane has been a grad student in the Pande lab since 2010. His research focuses on applying Markov models to understand the kinetics that determine how proteins fold. He is interested in what these models, parameterized from data from Folding@home, can tell us about how proteins fold on timescales much faster than what would be expected from naive physics (Levinthal Paradox).\n",
+    "total_iterations": 2500,
+    "iterations_done": 25,
+    "energy": 0,
+    "temperature": 0,
+    "start_time": "2012-09-02T01:03:26Z",
+    "timeout": 1347446366,
+    "deadline": 1348042526,
+    "run_time": 13028,
+    "simulation_time": 0,
+    "eta": 278241,
+    "news": ""
+}
