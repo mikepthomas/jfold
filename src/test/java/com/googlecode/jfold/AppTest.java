@@ -30,6 +30,8 @@ import junit.framework.TestSuite;
  * Unit test for simple App.
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
+ * @since 1.0
  */
 public class AppTest 
     extends TestCase
@@ -45,6 +47,8 @@ public class AppTest
     }
 
     /**
+     * <p>suite.</p>
+     *
      * @return the suite of tests being tested
      */
     public static Test suite()

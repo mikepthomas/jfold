@@ -31,21 +31,34 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
+ * <p>OptionsTest class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
+ * @since 1.0
  */
 public class OptionsTest {
     
+    /** Constant <code>instance</code> */
     public static OptionsImpl instance;
     
+    /**
+     * <p>Constructor for OptionsTest.</p>
+     */
     public OptionsTest() {
     }
     
+    /**
+     * <p>setUpClass.</p>
+     */
     @BeforeClass
     public static void setUpClass() {
         instance = new ExampleOptions();
     }
     
+    /**
+     * <p>tearDownClass.</p>
+     */
     @AfterClass
     public static void tearDownClass() {
     }

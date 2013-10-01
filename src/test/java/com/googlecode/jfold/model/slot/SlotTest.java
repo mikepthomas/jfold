@@ -30,21 +30,33 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
+ * <p>SlotTest class.</p>
  *
  * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
+ * @version $Id: $Id
+ * @since 1.0
  */
 public class SlotTest {
     
     private static SlotImpl instance;
     
+    /**
+     * <p>Constructor for SlotTest.</p>
+     */
     public SlotTest() {
     }
     
+    /**
+     * <p>setUpClass.</p>
+     */
     @BeforeClass
     public static void setUpClass() {
         instance = new ExampleSlot();
     }
     
+    /**
+     * <p>tearDownClass.</p>
+     */
     @AfterClass
     public static void tearDownClass() {
     }
