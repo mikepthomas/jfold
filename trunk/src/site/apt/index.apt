@@ -1,0 +1,22 @@
+                                ----------------
+                                  About jFold
+                                ----------------
+                                 Michael Thomas
+                                ----------------
+                                 1 October 2013
+
+About jFold
+
+  Java Library to connect to the Client Remote Interface
+  in the new new Folding@Home V7 Client.
+
+* Client Remote Interface
+
+  jFold is an API written in the Java programming language aiming to implement
+  the <<Socket Interface>> of the
+  {{{https://fah-web.stanford.edu/projects/FAHClient/wiki/ClientRemoteInterface#GuidelinesforDevelopingaLanguageSpecificAPILayer}Client Remote Interface}}
+  using the guidelines set out by Stanford University.
+
+================================================================================
+
+  Copyright \251 Michael Thomas
