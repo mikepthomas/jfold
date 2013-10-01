@@ -25,8 +25,10 @@ package com.googlecode.jfold.model.simulation;
 import java.util.Date;
 
 /**
+ * <p>SimulationInfo interface.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public interface SimulationInfo {
 
@@ -172,10 +174,7 @@ public interface SimulationInfo {
      */
     String getNews();
 
-    /**
-     *
-     * @return String representation of this <code>SimulationInfo</code>
-     */
+    /** {@inheritDoc} */
     @Override
     String toString();
 }

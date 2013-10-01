@@ -27,8 +27,10 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 /**
+ * <p>SlotImpl class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public class SlotImpl implements Slot, Serializable {
 
@@ -47,6 +49,11 @@ public class SlotImpl implements Slot, Serializable {
     public SlotImpl() {
     }
 
+    /**
+     * <p>Constructor for SlotImpl.</p>
+     *
+     * @param json a {@link java.lang.String} object.
+     */
     public SlotImpl(String json) {
         SlotImpl jsonSlot = new Gson().fromJson(json, SlotImpl.class);
 
@@ -56,21 +63,25 @@ public class SlotImpl implements Slot, Serializable {
         this.options = jsonSlot.options;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getId() {
         return id;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getStatus() {
         return status;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getDescription() {
         return description;
     }
 
+    /** {@inheritDoc} */
     @Override
     public SlotOptions getOptions() {
         return options;

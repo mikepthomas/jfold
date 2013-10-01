@@ -32,22 +32,34 @@ import java.net.URL;
 import java.util.List;
 
 /**
+ * <p>Connection interface.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
  * @version 7.3.6
  */
 public interface Connection {
 
+    /**
+     * <p>open.</p>
+     */
     void open();
+    /**
+     * <p>close.</p>
+     */
     void close();
+    /**
+     * <p>isConnected.</p>
+     *
+     * @return a boolean.
+     */
     boolean isConnected();
 
     /**
      * Bond a packet file to a outgoing debug socket connection.
      *
-     * @param ip
-     * @param port
-     * @param input
+     * @param ip a {@link java.net.Inet4Address} object.
+     * @param port a int.
+     * @param input a {@link java.lang.String} object.
      */
     void bond(Inet4Address ip, int port, String input);
 
@@ -102,9 +114,9 @@ public interface Connection {
      * Inject a packet file to a listening debug socket.
      * Will wait until packet is processed.
      *
-     * @param ip
-     * @param port
-     * @param input
+     * @param ip a {@link java.net.Inet4Address} object.
+     * @param port a int.
+     * @param input a {@link java.lang.String} object.
      */
     void inject(Inet4Address ip, int port, String input);
 
@@ -240,6 +252,7 @@ public interface Connection {
      * Get slot options.
      *
      * @return SlotOptionsImpl options
+     * @param slot a int.
      */
     SlotOptionsImpl slotOptions(int slot);
 

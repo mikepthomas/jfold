@@ -26,11 +26,14 @@ import com.googlecode.jfold.model.slot.Slot;
 import com.googlecode.jfold.model.slot.SlotImpl;
 
 /**
+ * <p>ExampleSlot class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public class ExampleSlot extends SlotImpl implements Slot {
 
+    /** Constant <code>JSON="{  \"id\": \"01\",  \"status\": \"FINIS"{trunked}</code> */
     public static final String JSON = "{"
             + "  \"id\": \"01\","
             + "  \"status\": \"FINISHING\","
@@ -42,6 +45,9 @@ public class ExampleSlot extends SlotImpl implements Slot {
             + "  }"
             + "}";
 
+    /**
+     * <p>Constructor for ExampleSlot.</p>
+     */
     public ExampleSlot() {
         super(JSON);
     }

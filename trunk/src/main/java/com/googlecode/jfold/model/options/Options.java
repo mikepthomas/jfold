@@ -25,8 +25,10 @@ package com.googlecode.jfold.model.options;
 import java.net.InetAddress;
 
 /**
+ * <p>Options interface.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public interface Options {
 
@@ -744,10 +746,7 @@ public interface Options {
      */
     int getVerbosity();
 
-    /**
-     *
-     * @return String representation of this <code>Options</code>
-     */
+    /** {@inheritDoc} */
     @Override
     String toString();
 }

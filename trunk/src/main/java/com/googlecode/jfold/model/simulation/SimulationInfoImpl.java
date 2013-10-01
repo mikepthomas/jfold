@@ -31,8 +31,10 @@ import java.util.Date;
 import java.util.TimeZone;
 
 /**
+ * <p>SimulationInfoImpl class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public class SimulationInfoImpl implements SimulationInfo, Serializable {
 
@@ -85,6 +87,11 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
     public SimulationInfoImpl() {
     }
 
+    /**
+     * <p>Constructor for SimulationInfoImpl.</p>
+     *
+     * @param json a {@link java.lang.String} object.
+     */
     public SimulationInfoImpl(String json) {
         SimulationInfoImpl jsonSimulationInfo = new Gson().fromJson(json, SimulationInfoImpl.class);
 
@@ -110,76 +117,91 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
         this.news = jsonSimulationInfo.news;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getUser() {
         return user;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getTeam() {
         return team;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getProject() {
         return project;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getRun() {
         return run;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getClone() {
         return clone;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getGen() {
         return gen;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getCoreType() {
         return coreType;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getCore() {
         return core;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getDescription() {
         return description;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getTotalIterations() {
         return totalIterations;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getIterationsDone() {
         return iterationsDone;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getEnergy() {
         return energy;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getTemperature() {
         return temperature;
     }
 
+    /** {@inheritDoc} */
     @Override
     public Date getStartTime() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /** {@inheritDoc} */
     @Override
     public Date getTimeout() {
         throw new UnsupportedOperationException("Not supported yet.");
@@ -196,6 +218,7 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
         return sdf.format(date);
     }
 
+    /** {@inheritDoc} */
     @Override
     public Date getDeadline() {
         throw new UnsupportedOperationException("Not supported yet.");
@@ -212,16 +235,19 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
         return sdf.format(date);
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getRunTime() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getSimulationTime() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /** {@inheritDoc} */
     @Override
     public Date getEta() {
         throw new UnsupportedOperationException("Not supported yet.");
@@ -238,11 +264,13 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
         return sdf.format(date);
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getNews() {
         return news;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString() {
         return "user = " + user

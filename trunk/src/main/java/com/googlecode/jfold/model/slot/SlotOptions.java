@@ -23,8 +23,10 @@ package com.googlecode.jfold.model.slot;
  */
 
 /**
+ * <p>SlotOptions interface.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public interface SlotOptions {
 
@@ -105,10 +107,7 @@ public interface SlotOptions {
      */
     String getGpuDeviceId();
 
-    /**
-     *
-     * @return String representation of this <code>SlotOptions</code>
-     */
+    /** {@inheritDoc} */
     @Override
     String toString();
 }

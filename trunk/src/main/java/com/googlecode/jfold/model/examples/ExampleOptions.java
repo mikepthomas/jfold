@@ -26,8 +26,10 @@ import com.googlecode.jfold.model.options.Options;
 import com.googlecode.jfold.model.options.OptionsImpl;
 
 /**
+ * <p>ExampleOptions class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public class ExampleOptions extends OptionsImpl implements Options {
 
@@ -136,6 +138,9 @@ public class ExampleOptions extends OptionsImpl implements Options {
             + "  \"verbosity\": \"3\""
             + "}";
 
+    /**
+     * <p>Constructor for ExampleOptions.</p>
+     */
     public ExampleOptions() {
         super(JSON);
     }

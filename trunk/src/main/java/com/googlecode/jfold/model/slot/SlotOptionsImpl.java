@@ -27,8 +27,10 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 /**
+ * <p>SlotOptionsImpl class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public class SlotOptionsImpl implements SlotOptions, Serializable {
 
@@ -61,6 +63,11 @@ public class SlotOptionsImpl implements SlotOptions, Serializable {
     public SlotOptionsImpl() {
     }
 
+    /**
+     * <p>Constructor for SlotOptionsImpl.</p>
+     *
+     * @param json a {@link java.lang.String} object.
+     */
     public SlotOptionsImpl(String json) {
         SlotOptionsImpl jsonSlotOptions = new Gson().fromJson(json, SlotOptionsImpl.class);
 
@@ -77,61 +84,73 @@ public class SlotOptionsImpl implements SlotOptions, Serializable {
         this.gpuDeviceId = jsonSlotOptions.gpuDeviceId;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getClientType() {
         return clientType;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getClientSubtype() {
         return clientSubtype;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getMachineId() {
         return machineId;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getMaxPacketSize() {
         return maxPacketSize;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getCorePriority() {
         return corePriority;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getNextUnitPercentage() {
         return nextUnitPercentage;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getMaxUnits() {
         return maxUnits;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getCheckpoint() {
         return checkpoint;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getPauseOnStart() {
         return pauseOnStart;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getGpuVendorId() {
         return gpuVendorId;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getGpuDeviceId() {
         return gpuDeviceId;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String toString() {
         return "clientType = " + clientType

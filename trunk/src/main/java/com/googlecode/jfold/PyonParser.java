@@ -23,12 +23,16 @@ package com.googlecode.jfold;
  */
 
 /**
+ * <p>PyonParser class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public class PyonParser {
 
+    /** Constant <code>PYON_HEADER="\nPyON "</code> */
     public static final String PYON_HEADER = "\nPyON ";
+    /** Constant <code>PYON_TRAILER="\n---\n"</code> */
     public static final String PYON_TRAILER = "\n---\n";
 
     private String pyonToJson(String pyon) {

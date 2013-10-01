@@ -28,8 +28,10 @@ import java.io.Serializable;
 import java.net.InetAddress;
 
 /**
+ * <p>OptionsImpl class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
 public class OptionsImpl implements Options, Serializable {
 
@@ -244,6 +246,11 @@ public class OptionsImpl implements Options, Serializable {
     public OptionsImpl() {
     }
 
+    /**
+     * <p>Constructor for OptionsImpl.</p>
+     *
+     * @param json a {@link java.lang.String} object.
+     */
     public OptionsImpl(String json) {
         OptionsImpl jsonOptions = new Gson().fromJson(json, OptionsImpl.class);
 
@@ -351,511 +358,613 @@ public class OptionsImpl implements Options, Serializable {
         this.verbosity = jsonOptions.verbosity;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getAssignmentServers() {
         return assignmentServers;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getCaptureDirectory() {
         return captureDirectory;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getCaptureSockets() {
         return captureSockets;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getCheckpoint() {
         return checkpoint;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getChild() {
         return child;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getClientSubtype() {
         return clientSubtype;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getClientType() {
         return clientType;
     }
 
+    /** {@inheritDoc} */
     @Override
     public InetAddress getCommandAddress() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /** {@inheritDoc} */
     @Override
     public InetAddress getCommandAllow() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /** {@inheritDoc} */
     @Override
     public InetAddress getCommandAllowNoPass() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /** {@inheritDoc} */
     @Override
     public InetAddress getCommandDeny() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /** {@inheritDoc} */
     @Override
     public InetAddress getCommandDenyNoPass() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getCommandPort() {
         return commandPort;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getConfigRotate() {
         return configRotate;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getConfigRotateDir() {
         return configRotateDir;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getConfigRotateMax() {
         return configRotateMax;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getCoreDir() {
         return coreDir;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getCoreKey() {
         return coreKey;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getCorePrep() {
         return corePrep;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getCorePriority() {
         return corePriority;
     }
 
+    /** {@inheritDoc} */
     @Override
     public InetAddress getCoreServer() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getCpuAffinity() {
         return cpuAffinity;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getCpuSpecies() {
         return cpuSpecies;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getCpuType() {
         return cpuType;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getCpuUsage() {
         return cpuUsage;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getCpus() {
         return cpus;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getCudaIndex() {
         return cudaIndex;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getCycleRate() {
         return cycleRate;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getCycles() {
         return cycles;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getDaemon() {
         return daemon;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getDataDirectory() {
         return dataDirectory;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getDebugSockets() {
         return debugSockets;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getDumpAfterDeadline() {
         return dumpAfterDeadline;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getEval() {
         return eval;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getExceptionLocations() {
         return exceptionLocations;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getExecDirectory() {
         return execDirectory;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getExitWhenDone() {
         return exitWhenDone;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getExtraCoreArgs() {
         return extraCoreArgs;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getForceWs() {
         return forceWs;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getGpu() {
         return gpu;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getGpuAssignmentServers() {
         return assignmentServers;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getGpuIndex() {
         return gpuIndex;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getGpuUsage() {
         return gpuUsage;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getLog() {
         return log;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogColor() {
         return logColor;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogCrlf() {
         return logCrlf;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogDate() {
         return logDate;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogDebug() {
         return logDebug;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogDomain() {
         return logDomain;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogDomainLevels() {
         return logDomainLevels;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogHeader() {
         return logHeader;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogLevel() {
         return logLevel;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogNoInfoHeader() {
         return logNoInfoHeader;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogRedirect() {
         return logRedirect;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogRotate() {
         return logRotate;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getLogRotateDir() {
         return logRotateDir;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getLogRotateMax() {
         return logRotateMax;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogShortLevel() {
         return logShortLevel;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogSimpleDomains() {
         return logSimpleDomains;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogThreadId() {
         return logThreadId;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogTime() {
         return logTime;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogToScreen() {
         return logToScreen;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getLogTruncate() {
         return logTruncate;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getMachineId() {
         return machineId;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getMaxDelay() {
         return maxDelay;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getMaxPacketSize() {
         return maxPacketSize;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getMaxQueue() {
         return maxQueue;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getMaxShutdownWait() {
         return maxShutdownWait;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getMaxSlotErrors() {
         return maxSlotErrors;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getMaxUnitErrors() {
         return maxUnitErrors;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getMaxUnits() {
         return maxUnits;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getMemory() {
         return memory;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getMinDelay() {
         return minDelay;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getNextUnitPercentage() {
         return nextUnitPercentage;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getPriority() {
         return priority;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getNoAssembly() {
         return noAssembly;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getOpenclIndex() {
         return openclIndex;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getOsSpecies() {
         return osSpecies;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getOsType() {
         return osType;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getPasskey() {
         return passkey;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getPassword() {
         return password;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getPauseOnBattery() {
         return pauseOnBattery;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getPauseOnStart() {
         return pauseOnStart;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getPid() {
         return pid;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getPidFile() {
         return pidFile;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getProjectKey() {
         return projectKey;
     }
 
+    /** {@inheritDoc} */
     @Override
     public InetAddress getProxy() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getProxyEnable() {
         return proxyEnable;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getProxyPass() {
         return proxyPass;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getProxyUser() {
         return proxyUser;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getRespawn() {
         return respawn;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getScript() {
         return script;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getService() {
         return service;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getServiceDescription() {
         return serviceDescription;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getServiceRestart() {
         return serviceRestart;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getServiceRestartDelay() {
         return serviceRestartDelay;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getSmp() {
         return smp;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean getStackTraces() {
         return stackTraces;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getTeam() {
         return team;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getThreads() {
         return threads;
     }
 
+    /** {@inheritDoc} */
     @Override
     public String getUser() {
         return user;
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getVerbosity() {
         return verbosity;
