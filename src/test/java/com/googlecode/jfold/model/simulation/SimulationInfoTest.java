@@ -22,7 +22,8 @@ package com.googlecode.jfold.model.simulation;
  * #L%
  */
 
-import com.googlecode.jfold.model.examples.ExampleSimulationInfo;
+import com.googlecode.jfold.Connection;
+import com.googlecode.jfold.MockConnection;
 import java.util.Date;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
@@ -40,7 +41,7 @@ import org.junit.Test;
 public class SimulationInfoTest {
     
     /** Constant <code>instance</code> */
-    public static SimulationInfoImpl instance;
+    public static SimulationInfo instance;
     
     /**
      * <p>Constructor for SimulationInfoTest.</p>
@@ -53,7 +54,8 @@ public class SimulationInfoTest {
      */
     @BeforeClass
     public static void setUpClass() {
-        instance = new ExampleSimulationInfo();
+        Connection connection = new MockConnection();
+        instance = connection.simulationInfo(0);
     }
     
     /**

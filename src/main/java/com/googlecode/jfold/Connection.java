@@ -22,11 +22,11 @@ package com.googlecode.jfold;
  * #L%
  */
 
-import com.googlecode.jfold.model.options.OptionsImpl;
-import com.googlecode.jfold.model.simulation.SimulationInfoImpl;
-import com.googlecode.jfold.model.slot.SlotImpl;
-import com.googlecode.jfold.model.slot.SlotOptionsImpl;
-import com.googlecode.jfold.model.unit.UnitImpl;
+import com.googlecode.jfold.model.options.Options;
+import com.googlecode.jfold.model.simulation.SimulationInfo;
+import com.googlecode.jfold.model.slot.Slot;
+import com.googlecode.jfold.model.slot.SlotOptions;
+import com.googlecode.jfold.model.unit.Unit;
 import java.net.Inet4Address;
 import java.net.URL;
 import java.util.List;
@@ -152,9 +152,9 @@ public interface Connection {
     /**
      * List all options with their non-default values.
      *
-     * @return OptionsImpl
+     * @return Options
      */
-    OptionsImpl options();
+    Options options();
 
     /**
      * Pause all slots.
@@ -178,9 +178,9 @@ public interface Connection {
     /**
      * Get work unit queue information.
      *
-     * @return List UnitImpl
+     * @return List Unit
      */
-    List<UnitImpl> queueInfo();
+    List<Unit> queueInfo();
 
     /**
      * Request an ID from the assignment server.
@@ -214,9 +214,9 @@ public interface Connection {
      * Get current simulation information.
      *
      * @param slot number
-     * @return SimulationInfoImpl
+     * @return SimulationInfo
      */
-    SimulationInfoImpl simulationInfo(int slot);
+    SimulationInfo simulationInfo(int slot);
 
     /**
      * Add a new slot.
@@ -236,9 +236,9 @@ public interface Connection {
     /**
      * Get slot information.
      *
-     * @return List SlotImpl
+     * @return List Slot
      */
-    List<SlotImpl> slotInfo();
+    List<Slot> slotInfo();
 
     /**
      * Modify an existing slot.
@@ -251,10 +251,10 @@ public interface Connection {
     /**
      * Get slot options.
      *
-     * @return SlotOptionsImpl options
+     * @return SlotOptions options
      * @param slot a int.
      */
-    SlotOptionsImpl slotOptions(int slot);
+    SlotOptions slotOptions(int slot);
 
     /**
      * Get current protein trajectory.
