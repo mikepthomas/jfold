@@ -442,10 +442,8 @@
                         </configuration>
                         <executions>
                             <execution>
-                                <phase>generate-sources</phase>
                                 <goals>
                                     <goal>add-third-party</goal>
-                                    <goal>update-file-header</goal>
                                     <goal>update-project-license</goal>
                                 </goals>
                             </execution>
