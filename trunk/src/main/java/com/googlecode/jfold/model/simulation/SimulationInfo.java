@@ -91,6 +91,7 @@ public interface SimulationInfo {
     /**
      * Get the value of <code>description</code>.
      *
+     * @deprecated
      * @return the <code>description</code> from <code>simulation-info</code>
      */
     String getDescription();
@@ -173,6 +174,13 @@ public interface SimulationInfo {
      * @return the <code>news</code> from <code>simulation-info</code>
      */
     String getNews();
+
+    /**
+     * Get the value of <code>slot</code>.
+     *
+     * @return the <code>slot</code> from <code>simulation-info</code>
+     */
+    int getSlot();
 
     /** {@inheritDoc} */
     @Override

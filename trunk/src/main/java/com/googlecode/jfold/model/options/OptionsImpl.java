@@ -244,6 +244,7 @@ public class OptionsImpl implements Options, Serializable {
      * Default constructor.
      */
     public OptionsImpl() {
+        super();
     }
 
     /**

@@ -23,7 +23,6 @@ package com.googlecode.jfold;
  */
 
 import com.google.gson.Gson;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -173,7 +172,7 @@ public class App {
                 + "]";
 
         Gson gson = new Gson();
-        List list = gson.fromJson(json, ArrayList.class);
+        List list = gson.fromJson(json, List.class);
 
         System.out.println(list);
     }

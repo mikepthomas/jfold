@@ -22,7 +22,8 @@ package com.googlecode.jfold.model.slot;
  * #L%
  */
 
-import com.googlecode.jfold.model.examples.ExampleSlotOptions;
+import com.googlecode.jfold.Connection;
+import com.googlecode.jfold.MockConnection;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
@@ -37,7 +38,7 @@ import org.junit.Test;
  */
 public class SlotOptionsTest {
     
-    private static SlotOptionsImpl instance;
+    private static SlotOptions instance;
     
     /**
      * <p>Constructor for SlotOptionsTest.</p>
@@ -50,7 +51,8 @@ public class SlotOptionsTest {
      */
     @BeforeClass
     public static void setUpClass() {
-        instance = new ExampleSlotOptions();
+        Connection connection = new MockConnection();
+        instance = connection.slotOptions(0);
     }
     
     /**
@@ -61,7 +63,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getClientType method, of class SlotOptionsImpl.
+     * Test of getClientType method, of class SlotOptions.
      */
     @Test
     public void testGetClientType() {
@@ -72,7 +74,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getClientSubtype method, of class SlotOptionsImpl.
+     * Test of getClientSubtype method, of class SlotOptions.
      */
     @Test
     public void testGetClientSubtype() {
@@ -83,7 +85,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getMachineId method, of class SlotOptionsImpl.
+     * Test of getMachineId method, of class SlotOptions.
      */
     @Test
     public void testGetMachineId() {
@@ -94,7 +96,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getMaxPacketSize method, of class SlotOptionsImpl.
+     * Test of getMaxPacketSize method, of class SlotOptions.
      */
     @Test
     public void testGetMaxPacketSize() {
@@ -105,7 +107,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getCorePriority method, of class SlotOptionsImpl.
+     * Test of getCorePriority method, of class SlotOptions.
      */
     @Test
     public void testGetCorePriority() {
@@ -116,7 +118,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getNextUnitPercentage method, of class SlotOptionsImpl.
+     * Test of getNextUnitPercentage method, of class SlotOptions.
      */
     @Test
     public void testGetNextUnitPercentage() {
@@ -127,7 +129,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getMaxUnits method, of class SlotOptionsImpl.
+     * Test of getMaxUnits method, of class SlotOptions.
      */
     @Test
     public void testGetMaxUnits() {
@@ -138,7 +140,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getCheckpoint method, of class SlotOptionsImpl.
+     * Test of getCheckpoint method, of class SlotOptions.
      */
     @Test
     public void testGetCheckpoint() {
@@ -149,7 +151,7 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getPauseOnStart method, of class SlotOptionsImpl.
+     * Test of getPauseOnStart method, of class SlotOptions.
      */
     @Test
     public void testGetPauseOnStart() {
@@ -160,29 +162,29 @@ public class SlotOptionsTest {
     }
 
     /**
-     * Test of getGpuVendorId method, of class SlotOptionsImpl.
+     * Test of getGpuVendorId method, of class SlotOptions.
      */
     @Test
     public void testGetGpuVendorId() {
         System.out.println("getGpuVendorId");
-        String expResult = "None";
+        String expResult = null;
         String result = instance.getGpuVendorId();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getGpuDeviceId method, of class SlotOptionsImpl.
+     * Test of getGpuDeviceId method, of class SlotOptions.
      */
     @Test
     public void testGetGpuDeviceId() {
         System.out.println("getGpuDeviceId");
-        String expResult = "None";
+        String expResult = null;
         String result = instance.getGpuDeviceId();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of toString method, of class SlotOptionsImpl.
+     * Test of toString method, of class SlotOptions.
      */
     @Test
     public void testToString() {
@@ -196,8 +198,8 @@ public class SlotOptionsTest {
                            "\nmaxUnits = 0" +
                            "\ncheckpoint = 15" +
                            "\npauseOnStart = true" +
-                           "\ngpuVendorId = None" +
-                           "\ngpuDeviceId = None";
+                           "\ngpuVendorId = null" +
+                           "\ngpuDeviceId = null";
         String result = instance.toString();
         assertEquals(expResult, result);
     }

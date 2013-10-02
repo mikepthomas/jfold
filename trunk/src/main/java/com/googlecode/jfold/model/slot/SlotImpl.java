@@ -47,6 +47,7 @@ public class SlotImpl implements Slot, Serializable {
      * Default constructor.
      */
     public SlotImpl() {
+        super();
     }
 
     /**
