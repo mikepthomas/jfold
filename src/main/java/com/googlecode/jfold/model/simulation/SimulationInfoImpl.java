@@ -22,7 +22,6 @@ package com.googlecode.jfold.model.simulation;
  * #L%
  */
 
-import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
@@ -89,37 +88,6 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
      */
     public SimulationInfoImpl() {
         super();
-    }
-
-    /**
-     * <p>Constructor for SimulationInfoImpl.</p>
-     *
-     * @param json a {@link java.lang.String} object.
-     */
-    public SimulationInfoImpl(String json) {
-        SimulationInfoImpl jsonSimulationInfo = new Gson().fromJson(json, SimulationInfoImpl.class);
-
-        this.user = jsonSimulationInfo.user;
-        this.team = jsonSimulationInfo.team;
-        this.project = jsonSimulationInfo.project;
-        this.run = jsonSimulationInfo.run;
-        this.clone = jsonSimulationInfo.clone;
-        this.gen = jsonSimulationInfo.gen;
-        this.coreType = jsonSimulationInfo.coreType;
-        this.core = jsonSimulationInfo.core;
-        this.description = jsonSimulationInfo.description;
-        this.totalIterations = jsonSimulationInfo.totalIterations;
-        this.iterationsDone = jsonSimulationInfo.iterationsDone;
-        this.energy = jsonSimulationInfo.energy;
-        this.temperature = jsonSimulationInfo.temperature;
-        this.startTime = jsonSimulationInfo.startTime;
-        this.timeout = jsonSimulationInfo.timeout;
-        this.deadline = jsonSimulationInfo.deadline;
-        this.runTime = jsonSimulationInfo.runTime;
-        this.simulationTime = jsonSimulationInfo.simulationTime;
-        this.eta = jsonSimulationInfo.eta;
-        this.news = jsonSimulationInfo.news;
-        this.slot = jsonSimulationInfo.slot;
     }
 
     /** {@inheritDoc} */

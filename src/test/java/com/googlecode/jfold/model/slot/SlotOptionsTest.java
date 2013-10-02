@@ -44,6 +44,7 @@ public class SlotOptionsTest {
      * <p>Constructor for SlotOptionsTest.</p>
      */
     public SlotOptionsTest() {
+        super();
     }
     
     /**

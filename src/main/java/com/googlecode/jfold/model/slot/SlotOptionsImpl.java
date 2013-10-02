@@ -22,7 +22,6 @@ package com.googlecode.jfold.model.slot;
  * #L%
  */
 
-import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
@@ -62,27 +61,6 @@ public class SlotOptionsImpl implements SlotOptions, Serializable {
      */
     public SlotOptionsImpl() {
         super();
-    }
-
-    /**
-     * <p>Constructor for SlotOptionsImpl.</p>
-     *
-     * @param json a {@link java.lang.String} object.
-     */
-    public SlotOptionsImpl(String json) {
-        SlotOptionsImpl jsonSlotOptions = new Gson().fromJson(json, SlotOptionsImpl.class);
-
-        this.clientType = jsonSlotOptions.clientType;
-        this.clientSubtype = jsonSlotOptions.clientSubtype;
-        this.machineId = jsonSlotOptions.machineId;
-        this.maxPacketSize = jsonSlotOptions.maxPacketSize;
-        this.corePriority = jsonSlotOptions.corePriority;
-        this.nextUnitPercentage = jsonSlotOptions.nextUnitPercentage;
-        this.maxUnits = jsonSlotOptions.maxUnits;
-        this.checkpoint = jsonSlotOptions.checkpoint;
-        this.pauseOnStart = jsonSlotOptions.pauseOnStart;
-        this.gpuVendorId = jsonSlotOptions.gpuVendorId;
-        this.gpuDeviceId = jsonSlotOptions.gpuDeviceId;
     }
 
     /** {@inheritDoc} */

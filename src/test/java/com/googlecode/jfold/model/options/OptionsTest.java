@@ -46,6 +46,7 @@ public class OptionsTest {
      * <p>Constructor for OptionsTest.</p>
      */
     public OptionsTest() {
+        super();
     }
     
     /**

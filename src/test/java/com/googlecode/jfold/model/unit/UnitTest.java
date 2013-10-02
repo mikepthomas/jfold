@@ -48,6 +48,7 @@ public class UnitTest {
      * <p>Constructor for UnitTest.</p>
      */
     public UnitTest() {
+        super();
     }
 
     /**
