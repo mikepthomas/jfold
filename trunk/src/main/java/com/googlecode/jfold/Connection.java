@@ -41,21 +41,6 @@ public interface Connection {
     String ENCODING = "UTF-8";
 
     /**
-     * <p>open.</p>
-     */
-    void open();
-    /**
-     * <p>close.</p>
-     */
-    void close();
-    /**
-     * <p>isConnected.</p>
-     *
-     * @return a boolean.
-     */
-    boolean isConnected();
-
-    /**
      * Bond a packet file to a outgoing debug socket connection.
      *
      * @param ip a {@link java.net.Inet4Address} object.

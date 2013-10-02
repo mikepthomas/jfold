@@ -47,6 +47,7 @@ public class SimulationInfoTest {
      * <p>Constructor for SimulationInfoTest.</p>
      */
     public SimulationInfoTest() {
+        super();
     }
     
     /**

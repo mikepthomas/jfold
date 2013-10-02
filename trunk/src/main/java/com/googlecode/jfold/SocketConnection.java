@@ -22,10 +22,13 @@ package com.googlecode.jfold;
  * #L%
  */
 
+import com.google.gson.Gson;
 import com.googlecode.jfold.model.options.Options;
 import com.googlecode.jfold.model.simulation.SimulationInfo;
+import com.googlecode.jfold.model.simulation.SimulationInfoImpl;
 import com.googlecode.jfold.model.slot.Slot;
 import com.googlecode.jfold.model.slot.SlotOptions;
+import com.googlecode.jfold.model.slot.SlotOptionsImpl;
 import com.googlecode.jfold.model.unit.Unit;
 import java.io.IOException;
 import java.net.Inet4Address;
@@ -35,21 +38,22 @@ import java.util.List;
 import java.util.Properties;
 
 /**
- * <p>ConnectionImpl class.</p>
+ * <p>SocketConnection class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
  * @version $Id: $Id
  */
-public class ConnectionImpl implements Connection {
+public class SocketConnection extends Socket implements Connection {
 
     private String address, password;
     private int port, retryRate;
-    private Socket socket;
 
     /**
      * <p>Constructor for ConnectionImpl.</p>
      */
-    public ConnectionImpl() {
+    public SocketConnection() {
+        super();
+
         try {
             Properties props = new Properties();
             props.load(this.getClass().getResourceAsStream("/config.properties"));
@@ -71,32 +75,13 @@ public class ConnectionImpl implements Connection {
      * @param password a {@link java.lang.String} object.
      * @param retryRate a int.
      */
-    public ConnectionImpl(String address, int port, String password, int retryRate) {
+    public SocketConnection(String address, int port, String password, int retryRate) {
+        super();
+        
         this.address = address;
         this.port = port;
         this.password = password;
         this.retryRate = retryRate;
-    }
-
-    /**
-     * <p>open.</p>
-     */
-    public void open() {
-    }
-
-    /**
-     * <p>close.</p>
-     */
-    public void close() {
-    }
-
-    /**
-     * <p>isConnected.</p>
-     *
-     * @return a boolean.
-     */
-    public boolean isConnected() {
-        return socket.isConnected();
     }
 
     /** {@inheritDoc} */
@@ -240,7 +225,7 @@ public class ConnectionImpl implements Connection {
     /** {@inheritDoc} */
     @Override
     public SimulationInfo simulationInfo(int slot) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new Gson().fromJson(getSimulationInfoJson(), SimulationInfoImpl.class);
     }
 
     /** {@inheritDoc} */
@@ -270,7 +255,7 @@ public class ConnectionImpl implements Connection {
     /** {@inheritDoc} */
     @Override
     public SlotOptions slotOptions(int slot) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new Gson().fromJson(getSlotOptionsJson(), SlotOptionsImpl.class);
     }
 
     /** {@inheritDoc} */
@@ -306,6 +291,14 @@ public class ConnectionImpl implements Connection {
     /** {@inheritDoc} */
     @Override
     public void waitForUnits() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    protected String getSimulationInfoJson() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    protected String getSlotOptionsJson() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
