@@ -24,6 +24,8 @@ package com.googlecode.jfold;
 
 import com.google.gson.Gson;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Hello world!
@@ -174,6 +176,6 @@ public class App {
         Gson gson = new Gson();
         List list = gson.fromJson(json, List.class);
 
-        System.out.println(list);
+        Logger.getLogger(App.class.getName()).log(Level.INFO, json);
     }
 }
