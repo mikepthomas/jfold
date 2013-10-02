@@ -31,11 +31,14 @@ import com.googlecode.jfold.model.slot.SlotOptions;
 import com.googlecode.jfold.model.slot.SlotOptionsImpl;
 import com.googlecode.jfold.model.unit.Unit;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.Inet4Address;
 import java.net.Socket;
 import java.net.URL;
 import java.util.List;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * <p>SocketConnection class.</p>
@@ -55,15 +58,19 @@ public class SocketConnection extends Socket implements Connection {
         super();
 
         try {
+            InputStream input = this.getClass().getResourceAsStream("/config.properties");
+
             Properties props = new Properties();
-            props.load(this.getClass().getResourceAsStream("/config.properties"));
+            props.load(input);
             this.address = props.getProperty("address");
             this.port = Integer.parseInt(props.getProperty("port"));
             this.password = props.getProperty("password");
             this.retryRate = Integer.parseInt(props.getProperty("retry_rate"));
+
+            input.close();
         }
         catch (IOException ex) {
-            System.err.println("Could not load default properties from file");
+            Logger.getLogger(this.getClass().getName()).log(Level.WARNING, ex.getMessage());
         }
     }
 
