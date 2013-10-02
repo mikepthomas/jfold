@@ -428,17 +428,21 @@
                         <artifactId>license-maven-plugin</artifactId>
                         <version>1.5</version>
                         <configuration>
+                            <canUpdateCopyright>true</canUpdateCopyright>
                             <encoding>${project.build.sourceEncoding}</encoding>
+                            <excludes>
+                                <exclude>**/*.json</exclude>
+                            </excludes>
                             <licenseFile>${project.basedir}/src/COPYING</licenseFile>
                             <licenseName>gpl_v3</licenseName>
                             <organizationName>
                                 Michael Thomas &lt;mikepthomas@outlook.com&gt;
                             </organizationName>
                             <thirdPartyFilename>LICENSE</thirdPartyFilename>
-                            <canUpdateCopyright>true</canUpdateCopyright>
                         </configuration>
                         <executions>
                             <execution>
+                                <phase>generate-sources</phase>
                                 <goals>
                                     <goal>add-third-party</goal>
                                     <goal>update-file-header</goal>
