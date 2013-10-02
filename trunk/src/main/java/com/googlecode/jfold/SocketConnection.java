@@ -57,21 +57,24 @@ public class SocketConnection extends Socket implements Connection {
     public SocketConnection() {
         super();
 
+        Properties props = new Properties();
+        InputStream input = this.getClass().getResourceAsStream("/config.properties");
         try {
-            InputStream input = this.getClass().getResourceAsStream("/config.properties");
-
-            Properties props = new Properties();
-            props.load(input);
-            this.address = props.getProperty("address");
-            this.port = Integer.parseInt(props.getProperty("port"));
-            this.password = props.getProperty("password");
-            this.retryRate = Integer.parseInt(props.getProperty("retry_rate"));
-
-            input.close();
+            try {
+                props.load(input);
+            }
+            finally {
+                input.close();
+            }
         }
         catch (IOException ex) {
             Logger.getLogger(this.getClass().getName()).log(Level.WARNING, ex.getMessage());
         }
+
+        this.address = props.getProperty("address");
+        this.port = Integer.parseInt(props.getProperty("port"));
+        this.password = props.getProperty("password");
+        this.retryRate = Integer.parseInt(props.getProperty("retry_rate"));
     }
 
     /**
