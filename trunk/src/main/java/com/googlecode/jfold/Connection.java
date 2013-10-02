@@ -38,6 +38,7 @@ import java.util.List;
  * @version 7.3.6
  */
 public interface Connection {
+    String ENCODING = "UTF-8";
 
     /**
      * <p>open.</p>

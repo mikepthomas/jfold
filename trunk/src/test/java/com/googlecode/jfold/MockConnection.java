@@ -173,7 +173,7 @@ public class MockConnection implements Connection {
         try {
             URL url = SimulationInfo.class.getResource("ExampleSimulationInfo.json");
             File file = FileUtils.toFile(url);
-            json = FileUtils.readFileToString(file, "UTF-8");
+            json = FileUtils.readFileToString(file, ENCODING);
         } catch (IOException e) {
             return new SimulationInfoImpl();
         }
