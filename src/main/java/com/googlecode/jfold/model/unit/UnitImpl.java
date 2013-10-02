@@ -96,6 +96,7 @@ public class UnitImpl implements Unit, Serializable {
      * Default constructor.
      */
     public UnitImpl() {
+        super();
     }
 
     /**

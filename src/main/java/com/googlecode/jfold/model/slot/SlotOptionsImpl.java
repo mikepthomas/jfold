@@ -61,6 +61,7 @@ public class SlotOptionsImpl implements SlotOptions, Serializable {
      * Default constructor.
      */
     public SlotOptionsImpl() {
+        super();
     }
 
     /**

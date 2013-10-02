@@ -34,7 +34,7 @@ import java.util.TimeZone;
  * <p>SimulationInfoImpl class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
- * @version $Id: $Id
+ * @version 7.3.6
  */
 public class SimulationInfoImpl implements SimulationInfo, Serializable {
 
@@ -78,6 +78,9 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
     private int eta;
     @SerializedName("news")
     private String news;
+    @SerializedName("slot")
+    private int slot;
+
     private Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
     private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
@@ -85,6 +88,7 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
      * Default constructor.
      */
     public SimulationInfoImpl() {
+        super();
     }
 
     /**
@@ -115,6 +119,7 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
         this.simulationTime = jsonSimulationInfo.simulationTime;
         this.eta = jsonSimulationInfo.eta;
         this.news = jsonSimulationInfo.news;
+        this.slot = jsonSimulationInfo.slot;
     }
 
     /** {@inheritDoc} */
@@ -272,6 +277,12 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
 
     /** {@inheritDoc} */
     @Override
+    public int getSlot() {
+        return slot;
+    }
+
+    /** {@inheritDoc} */
+    @Override
     public String toString() {
         return "user = " + user
                 + "\nteam = " + team
@@ -292,6 +303,7 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
                 + "\nrunTime = " + runTime
                 + "\nsimulationTime = " + simulationTime
                 + "\neta = " + eta
-                + "\nnews = " + news;
+                + "\nnews = " + news
+                + "\nslot = " + slot;
     }
 }

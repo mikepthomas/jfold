@@ -23,6 +23,7 @@ import com.googlecode.jfold.model.simulation.SimulationInfo;
 import com.googlecode.jfold.model.simulation.SimulationInfoImpl;
 import com.googlecode.jfold.model.slot.Slot;
 import com.googlecode.jfold.model.slot.SlotOptions;
+import com.googlecode.jfold.model.slot.SlotOptionsImpl;
 import com.googlecode.jfold.model.unit.Unit;
 import java.io.File;
 import java.io.IOException;
@@ -202,7 +203,15 @@ public class MockConnection implements Connection {
 
     @Override
     public SlotOptions slotOptions(int slot) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String json;
+        try {
+            URL url = SlotOptions.class.getResource("ExampleSlotOptions.json");
+            File file = FileUtils.toFile(url);
+            json = FileUtils.readFileToString(file, ENCODING);
+        } catch (IOException e) {
+            return new SlotOptionsImpl();
+        }
+        return new Gson().fromJson(json, SlotOptionsImpl.class);
     }
 
     @Override

@@ -66,73 +66,73 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getUser method, of class SimulationInfoImpl.
+     * Test of getUser method, of class SimulationInfo.
      */
     @Test
     public void testGetUser() {
         System.out.println("getUser");
-        String expResult = "Anonymous";
+        String expResult = "montycrabapple";
         String result = instance.getUser();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getTeam method, of class SimulationInfoImpl.
+     * Test of getTeam method, of class SimulationInfo.
      */
     @Test
     public void testGetTeam() {
         System.out.println("getTeam");
-        int expResult = 0;
+        int expResult = 39299;
         int result = instance.getTeam();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getProject method, of class SimulationInfoImpl.
+     * Test of getProject method, of class SimulationInfo.
      */
     @Test
     public void testGetProject() {
         System.out.println("getProject");
-        int expResult = 7647;
+        int expResult = 7808;
         int result = instance.getProject();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getRun method, of class SimulationInfoImpl.
+     * Test of getRun method, of class SimulationInfo.
      */
     @Test
     public void testGetRun() {
         System.out.println("getRun");
-        int expResult = 104;
+        int expResult = 6;
         int result = instance.getRun();
         assertEquals(expResult, result);
     }
     
     /**
-     * Test of getClone method, of class SimulationInfoImpl.
+     * Test of getClone method, of class SimulationInfo.
      */
     @Test
     public void testGetClone() {
         System.out.println("getClone");
-        int expResult = 0;
+        int expResult = 193;
         int result = instance.getClone();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getGen method, of class SimulationInfoImpl.
+     * Test of getGen method, of class SimulationInfo.
      */
     @Test
     public void testGetGen() {
         System.out.println("getGen");
-        int expResult = 27;
+        int expResult = 221;
         int result = instance.getGen();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getCoreType method, of class SimulationInfoImpl.
+     * Test of getCoreType method, of class SimulationInfo.
      */
     @Test
     public void testGetCoreType() {
@@ -143,66 +143,51 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getCore method, of class SimulationInfoImpl.
+     * Test of getCore method, of class SimulationInfo.
      */
     @Test
     public void testGetCore() {
         System.out.println("getCore");
-        String expResult = "GROGBA4";
+        String expResult = "GRO_A4";
         String result = instance.getCore();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getDescription method, of class SimulationInfoImpl.
+     * Test of getDescription method, of class SimulationInfo.
      */
     @Test
     public void testGetDescription() {
         System.out.println("getDescription");
-        String expResult = "No information is currently " +
-                       "available for this project.   \n\n### _Other " +
-                       "details_\n\nThis project (p7647) is set for " +
-                       "2250.00 points, a preferred deadline of 10.40 days, " +
-                       "and a final deadline 17.30 days. This project uses " +
-                       "the GRO-A4 FAH core software and is hosted by " +
-                       "Folding@home server 171.64.65.101.  \n\n### " +
-                       "_Manager for this FAH project_\n\n![][3] TJ Lane has " +
-                       "been a grad student in the Pande lab since 2010. His " +
-                       "research focuses on applying Markov models to " +
-                       "understand the kinetics that determine how proteins " +
-                       "fold. He is interested in what these models, " +
-                       "parameterized from data from Folding@home, can tell " +
-                       "us about how proteins fold on timescales much faster " +
-                       "than what would be expected from naive physics " +
-                       "(Levinthal Paradox).\n";
+        String expResult = null;
         String result = instance.getDescription();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getTotalIterations method, of class SimulationInfoImpl.
+     * Test of getTotalIterations method, of class SimulationInfo.
      */
     @Test
     public void testGetTotalIterations() {
         System.out.println("getTotalIterations");
-        int expResult = 2500;
+        int expResult = 1500;
         int result = instance.getTotalIterations();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getIterationsDone method, of class SimulationInfoImpl.
+     * Test of getIterationsDone method, of class SimulationInfo.
      */
     @Test
     public void testGetIterationsDone() {
         System.out.println("getIterationsDone");
-        int expResult = 25;
+        int expResult = 514;
         int result = instance.getIterationsDone();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getEnergy method, of class SimulationInfoImpl.
+     * Test of getEnergy method, of class SimulationInfo.
      */
     @Test
     public void testGetEnergy() {
@@ -213,7 +198,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getTemperature method, of class SimulationInfoImpl.
+     * Test of getTemperature method, of class SimulationInfo.
      */
     @Test
     public void testGetTemperature() {
@@ -224,7 +209,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getStartTime method, of class SimulationInfoImpl.
+     * Test of getStartTime method, of class SimulationInfo.
      */
     @Test @Ignore
     public void testGetStartTime() {
@@ -235,7 +220,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getTimeout method, of class SimulationInfoImpl.
+     * Test of getTimeout method, of class SimulationInfo.
      */
     @Test @Ignore
     public void testGetTimeout() {
@@ -246,7 +231,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getDeadline method, of class SimulationInfoImpl.
+     * Test of getDeadline method, of class SimulationInfo.
      */
     @Test @Ignore
     public void testGetDeadline() {
@@ -257,7 +242,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getRunTime method, of class SimulationInfoImpl.
+     * Test of getRunTime method, of class SimulationInfo.
      */
     @Test @Ignore
     public void testGetRunTime() {
@@ -268,7 +253,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getSimulationTime method, of class SimulationInfoImpl.
+     * Test of getSimulationTime method, of class SimulationInfo.
      */
     @Test @Ignore
     public void testGetSimulationTime() {
@@ -279,7 +264,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getEta method, of class SimulationInfoImpl.
+     * Test of getEta method, of class SimulationInfo.
      */
     @Test @Ignore
     public void testGetEta() {
@@ -290,7 +275,7 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of getNews method, of class SimulationInfoImpl.
+     * Test of getNews method, of class SimulationInfo.
      */
     @Test
     public void testGetNews() {
@@ -301,7 +286,18 @@ public class SimulationInfoTest {
     }
 
     /**
-     * Test of toString method, of class SimulationInfoImpl.
+     * Test of getSlot method, of class SimulationInfo.
+     */
+    @Test
+    public void testGetSlot() {
+        System.out.println("getSlot");
+        int expResult = 0;
+        int result = instance.getSlot();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of toString method, of class SimulationInfo.
      */
     @Test @Ignore
     public void testToString() {
