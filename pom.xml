@@ -19,7 +19,7 @@
         Java Library to connect to the Client Remote Interface
         in the new new Folding@Home V7 Client
     </description>
-    <url>http://${project.domain.reports}/${project.name}/</url>
+    <url>http://${project.domain.reports}/${project.name}</url>
     <inceptionYear>2012</inceptionYear>
     <organization/>
     <licenses>
@@ -39,7 +39,7 @@
             <id>montycrabapple1@gmail.com</id>
             <name>Mike Thomas</name>
             <email>montycrabapple@hotmail.com</email>
-            <url>http://www.mikethomas.info/</url>
+            <url>http://www.mikethomas.info</url>
             <timezone>0</timezone>
             <roles>
                 <role>Owner</role>
@@ -55,29 +55,29 @@
     <modules/>
 
     <scm>
-        <connection>scm:svn:http://${project.domain.source}/svn/trunk/</connection>
-        <developerConnection>scm:svn:https://${project.domain.source}/svn/trunk/</developerConnection>
+        <connection>scm:svn:http://${project.domain.source}/svn/trunk</connection>
+        <developerConnection>scm:svn:https://${project.domain.source}/svn/trunk</developerConnection>
         <tag>HEAD</tag>
-        <url>http://code.google.com/p/jfold/source/browse/</url>
+        <url>http://code.google.com/p/jfold/source/browse</url>
     </scm>
     <issueManagement>
         <system>Google Code</system>
-        <url>http://code.google.com/p/jfold/issues/</url>
+        <url>http://code.google.com/p/jfold/issues</url>
     </issueManagement>
     <ciManagement>
         <system>Jenkins</system>
-        <url>http://${project.domain.reports}/jenkins/job/${project.name}/</url>
+        <url>http://${project.domain.reports}/jenkins/job/${project.name}</url>
     </ciManagement>
     <distributionManagement>
         <repository>
             <id>sonatype-nexus-staging</id>
             <name>Nexus Staging Repository</name>
-            <url>https://${project.domain.deployment}/service/local/staging/deploy/maven2/</url>
+            <url>https://${project.domain.deployment}/service/local/staging/deploy/maven2</url>
         </repository>
         <snapshotRepository>
             <id>sonatype-nexus-snapshots</id>
             <name>Nexus Snapshots Repository</name>
-            <url>https://${project.domain.deployment}/content/repositories/snapshots/</url>
+            <url>https://${project.domain.deployment}/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -267,7 +267,7 @@
                 <reportSets>
                     <reportSet>
                         <reports>
-                            <report>index</report>
+                            <!--report>index</report-->
                             <!--report>modules</report-->
                             <report>plugin-management</report>
                             <report>distribution-management</report>
@@ -295,12 +295,14 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.5.2</version>
+                <version>2.6</version>
                 <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                     <formats>
                         <format>html</format>
                         <format>xml</format>
                     </formats>
+                    <quiet>true</quiet>
                 </configuration>
             </plugin>
             <plugin>
