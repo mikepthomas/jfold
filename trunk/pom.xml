@@ -70,13 +70,13 @@
     </ciManagement>
     <distributionManagement>
         <repository>
-            <id>releases</id>
-            <name>Releases (Nexus)</name>
+            <id>sonatype-nexus-staging</id>
+            <name>Nexus Staging Repository</name>
             <url>https://${project.domain.deployment}/service/local/staging/deploy/maven2/</url>
         </repository>
         <snapshotRepository>
-            <id>snapshots</id>
-            <name>Snapshots (Nexus)</name>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Nexus Snapshots Repository</name>
             <url>https://${project.domain.deployment}/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
