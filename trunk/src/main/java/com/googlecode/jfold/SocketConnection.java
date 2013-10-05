@@ -23,6 +23,7 @@ package com.googlecode.jfold;
  */
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.googlecode.jfold.model.options.Options;
 import com.googlecode.jfold.model.simulation.SimulationInfo;
 import com.googlecode.jfold.model.simulation.SimulationInfoImpl;
@@ -48,8 +49,11 @@ import java.util.logging.Logger;
  */
 public class SocketConnection extends Socket implements Connection {
 
-    private String address, password;
-    private int port, retryRate;
+    public static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
+
+    private final Gson gson;
+    private final String address, password;
+    private final int port, retryRate;
 
     /**
      * <p>Constructor for ConnectionImpl.</p>
@@ -75,6 +79,7 @@ public class SocketConnection extends Socket implements Connection {
         this.port = Integer.parseInt(props.getProperty("port"));
         this.password = props.getProperty("password");
         this.retryRate = Integer.parseInt(props.getProperty("retry_rate"));
+        this.gson = getGson();
     }
 
     /**
@@ -92,6 +97,12 @@ public class SocketConnection extends Socket implements Connection {
         this.port = port;
         this.password = password;
         this.retryRate = retryRate;
+        this.gson = getGson();
+    }
+
+    private Gson getGson()
+    {
+        return new GsonBuilder().setDateFormat(DATE_FORMAT).create();
     }
 
     /** {@inheritDoc} */
@@ -235,7 +246,7 @@ public class SocketConnection extends Socket implements Connection {
     /** {@inheritDoc} */
     @Override
     public SimulationInfo simulationInfo(int slot) {
-        return new Gson().fromJson(getSimulationInfoJson(), SimulationInfoImpl.class);
+        return gson.fromJson(getSimulationInfoJson(), SimulationInfoImpl.class);
     }
 
     /** {@inheritDoc} */
@@ -265,7 +276,7 @@ public class SocketConnection extends Socket implements Connection {
     /** {@inheritDoc} */
     @Override
     public SlotOptions slotOptions(int slot) {
-        return new Gson().fromJson(getSlotOptionsJson(), SlotOptionsImpl.class);
+        return gson.fromJson(getSlotOptionsJson(), SlotOptionsImpl.class);
     }
 
     /** {@inheritDoc} */
