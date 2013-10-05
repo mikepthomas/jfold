@@ -24,15 +24,18 @@ package com.googlecode.jfold;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.googlecode.jfold.model.options.Options;
 import com.googlecode.jfold.model.simulation.SimulationInfo;
 import com.googlecode.jfold.model.simulation.SimulationInfoImpl;
 import com.googlecode.jfold.model.slot.Slot;
+import com.googlecode.jfold.model.slot.SlotImpl;
 import com.googlecode.jfold.model.slot.SlotOptions;
 import com.googlecode.jfold.model.slot.SlotOptionsImpl;
 import com.googlecode.jfold.model.unit.Unit;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Type;
 import java.net.Inet4Address;
 import java.net.Socket;
 import java.net.URL;
@@ -264,7 +267,8 @@ public class SocketConnection extends Socket implements Connection {
     /** {@inheritDoc} */
     @Override
     public List<Slot> slotInfo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Type slotInfoType = new TypeToken<List<SlotImpl>>(){}.getType();
+        return gson.fromJson(getSlotInfoJson(), slotInfoType);
     }
 
     /** {@inheritDoc} */
@@ -316,6 +320,10 @@ public class SocketConnection extends Socket implements Connection {
     }
 
     protected String getSimulationInfoJson() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    protected String getSlotInfoJson() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
