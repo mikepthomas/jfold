@@ -24,10 +24,7 @@ package com.googlecode.jfold.model.simulation;
 
 import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.TimeZone;
 
 /**
  * <p>SimulationInfoImpl class.</p>
@@ -40,7 +37,7 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
     @SerializedName("user")
     private String user;
     @SerializedName("team")
-    private int team;
+    private long team;
     @SerializedName("project")
     private int project;
     @SerializedName("run")
@@ -64,24 +61,21 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
     @SerializedName("temperature")
     private int temperature;
     @SerializedName("start_time")
-    private String startTime;
+    private Date startTime;
     @SerializedName("timeout")
-    private int timeout;
+    private long timeout;
     @SerializedName("deadline")
-    private int deadline;
+    private long deadline;
     @SerializedName("run_time")
-    private int runTime;
+    private long runTime;
     @SerializedName("simulation_time")
-    private int simulationTime;
+    private long simulationTime;
     @SerializedName("eta")
-    private int eta;
+    private long eta;
     @SerializedName("news")
     private String news;
     @SerializedName("slot")
     private int slot;
-
-    private Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
     /**
      * Default constructor.
@@ -98,7 +92,7 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
 
     /** {@inheritDoc} */
     @Override
-    public int getTeam() {
+    public long getTeam() {
         return team;
     }
 
@@ -171,70 +165,37 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
     /** {@inheritDoc} */
     @Override
     public Date getStartTime() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return startTime;
     }
 
     /** {@inheritDoc} */
     @Override
     public Date getTimeout() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /**
-     *
-     * @return String representation of the timeout
-     */
-    private String getTimeoutString() {
-        cal.clear();
-        cal.add(Calendar.SECOND, timeout);
-        Date date = cal.getTime();
-        return sdf.format(date);
+        return new Date(timeout + getStartTime().getTime());
     }
 
     /** {@inheritDoc} */
     @Override
     public Date getDeadline() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /**
-     *
-     * @return String representation of the deadline
-     */
-    private String getDeadlineString() {
-        cal.clear();
-        cal.add(Calendar.SECOND, deadline);
-        Date date = cal.getTime();
-        return sdf.format(date);
+        return new Date(deadline + getStartTime().getTime());
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getRunTime() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Date getRunTime() {
+        return new Date(runTime);
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getSimulationTime() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Date getSimulationTime() {
+        return new Date(simulationTime);
     }
 
     /** {@inheritDoc} */
     @Override
     public Date getEta() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /**
-     *
-     * @return String representation of the eta
-     */
-    private String getEtaString() {
-        cal.setTime(new Date());
-        cal.add(Calendar.SECOND, eta);
-        Date date = cal.getTime();
-        return sdf.format(date);
+        return new Date(eta + getStartTime().getTime());
     }
 
     /** {@inheritDoc} */

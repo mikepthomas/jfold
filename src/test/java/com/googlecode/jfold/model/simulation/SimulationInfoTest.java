@@ -83,8 +83,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetTeam() {
         System.out.println("getTeam");
-        int expResult = 39299;
-        int result = instance.getTeam();
+        long expResult = 39299;
+        long result = instance.getTeam();
         assertEquals(expResult, result);
     }
 
@@ -212,33 +212,33 @@ public class SimulationInfoTest {
     /**
      * Test of getStartTime method, of class SimulationInfo.
      */
-    @Test @Ignore
+    @Test
     public void testGetStartTime() {
         System.out.println("getStartTime");
-        Date expResult = null; // "2012-09-02T01:03:26Z"
-        Date result = instance.getStartTime();
+        String expResult = "Tue Sep 17 19:43:46 BST 2013";
+        String result = instance.getStartTime().toString();
         assertEquals(expResult, result);
     }
 
     /**
      * Test of getTimeout method, of class SimulationInfo.
      */
-    @Test @Ignore
+    @Test
     public void testGetTimeout() {
         System.out.println("getTimeout");
-        Date expResult = null; // "2012-09-12T10:39:26Z"
-        Date result = instance.getTimeout();
+        String expResult = "Thu Oct 03 19:30:52 BST 2013";
+        String result = instance.getTimeout().toString();
         assertEquals(expResult, result);
     }
 
     /**
      * Test of getDeadline method, of class SimulationInfo.
      */
-    @Test @Ignore
+    @Test
     public void testGetDeadline() {
         System.out.println("getDeadline");
-        Date expResult = null; // "2012-09-19T08:15:26Z"
-        Date result = instance.getDeadline();
+        String expResult = "Thu Oct 03 20:13:15 BST 2013";
+        String result = instance.getDeadline().toString();
         assertEquals(expResult, result);
     }
 
@@ -248,8 +248,8 @@ public class SimulationInfoTest {
     @Test @Ignore
     public void testGetRunTime() {
         System.out.println("getRunTime");
-        String expResult = null;
-        String result = instance.getRunTime();
+        Date expResult = null;
+        Date result = instance.getRunTime();
         assertEquals(expResult, result);
     }
 
@@ -259,19 +259,19 @@ public class SimulationInfoTest {
     @Test @Ignore
     public void testGetSimulationTime() {
         System.out.println("getSimulationTime");
-        String expResult = null;
-        String result = instance.getSimulationTime();
+        Date expResult = null;
+        Date result = instance.getSimulationTime();
         assertEquals(expResult, result);
     }
 
     /**
      * Test of getEta method, of class SimulationInfo.
      */
-    @Test @Ignore
+    @Test
     public void testGetEta() {
         System.out.println("getEta");
-        Date expResult = null;
-        Date result = instance.getEta();
+        String expResult = "Tue Sep 17 19:45:34 BST 2013";
+        String result = instance.getEta().toString();
         assertEquals(expResult, result);
     }
 

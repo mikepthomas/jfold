@@ -44,7 +44,7 @@ public interface SimulationInfo {
      *
      * @return the <code>team</code> from <code>simulation-info</code>
      */
-    int getTeam();
+    long getTeam();
 
     /**
      * Get the value of <code>project</code>.
@@ -151,7 +151,7 @@ public interface SimulationInfo {
      * @deprecated
      * @return the <code>run_time</code> from <code>simulation-info</code>
      */
-    String getRunTime();
+    Date getRunTime();
 
     /**
      * Get the value of <code>simulation_time</code>.
@@ -159,7 +159,7 @@ public interface SimulationInfo {
      * @deprecated
      * @return the <code>simulation_time</code> from <code>simulation-info</code>
      */
-    String getSimulationTime();
+    Date getSimulationTime();
 
     /**
      * Get the value of <code>eta</code>.
