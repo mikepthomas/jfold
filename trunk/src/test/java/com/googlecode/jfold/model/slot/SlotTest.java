@@ -22,7 +22,8 @@ package com.googlecode.jfold.model.slot;
  * #L%
  */
 
-import com.googlecode.jfold.model.examples.ExampleSlot;
+import com.googlecode.jfold.Connection;
+import com.googlecode.jfold.MockConnection;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
@@ -38,7 +39,7 @@ import org.junit.Test;
  */
 public class SlotTest {
     
-    private static SlotImpl instance;
+    private static Slot instance;
     
     /**
      * <p>Constructor for SlotTest.</p>
@@ -52,7 +53,8 @@ public class SlotTest {
      */
     @BeforeClass
     public static void setUpClass() {
-        instance = new ExampleSlot();
+        Connection connection = new MockConnection();
+        instance = connection.slotInfo().get(0);
     }
     
     /**
