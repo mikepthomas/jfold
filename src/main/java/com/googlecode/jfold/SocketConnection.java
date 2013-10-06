@@ -26,6 +26,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.googlecode.jfold.model.options.Options;
+import com.googlecode.jfold.model.options.OptionsImpl;
 import com.googlecode.jfold.model.simulation.SimulationInfo;
 import com.googlecode.jfold.model.simulation.SimulationInfoImpl;
 import com.googlecode.jfold.model.slot.Slot;
@@ -189,7 +190,7 @@ public class SocketConnection extends Socket implements Connection {
     /** {@inheritDoc} */
     @Override
     public Options options() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return gson.fromJson(getOptionsJson(), OptionsImpl.class);
     }
 
     /** {@inheritDoc} */
@@ -316,6 +317,10 @@ public class SocketConnection extends Socket implements Connection {
     /** {@inheritDoc} */
     @Override
     public void waitForUnits() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    protected String getOptionsJson() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
