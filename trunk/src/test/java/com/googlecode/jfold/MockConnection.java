@@ -22,6 +22,7 @@ package com.googlecode.jfold;
  * #L%
  */
 
+import com.googlecode.jfold.model.options.Options;
 import com.googlecode.jfold.model.simulation.SimulationInfo;
 import com.googlecode.jfold.model.slot.Slot;
 import com.googlecode.jfold.model.slot.SlotOptions;
@@ -37,6 +38,11 @@ import org.apache.commons.io.FileUtils;
  * @since 1.0
  */
 public class MockConnection extends SocketConnection implements Connection {
+
+    @Override
+    protected String getOptionsJson() {
+        return getJson(Options.class);
+    }
 
     @Override
     protected String getSimulationInfoJson() {

@@ -33,7 +33,7 @@ import org.junit.Test;
 /**
  * <p>SlotTest class.</p>
  *
- * @author Michael Thomas <michael4.thomas@live.uwe.ac.uk>
+ * @author Michael Thomas <mikepthomas@outlook.com>
  * @version $Id: $Id
  * @since 1.0
  */

@@ -22,7 +22,8 @@ package com.googlecode.jfold.model.options;
  * #L%
  */
 
-import com.googlecode.jfold.model.examples.ExampleOptions;
+import com.googlecode.jfold.Connection;
+import com.googlecode.jfold.MockConnection;
 import java.net.InetAddress;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
@@ -40,7 +41,7 @@ import org.junit.Test;
 public class OptionsTest {
     
     /** Constant <code>instance</code> */
-    public static OptionsImpl instance;
+    public static Options instance;
     
     /**
      * <p>Constructor for OptionsTest.</p>
@@ -54,7 +55,8 @@ public class OptionsTest {
      */
     @BeforeClass
     public static void setUpClass() {
-        instance = new ExampleOptions();
+        Connection connection = new MockConnection();
+        instance = connection.options();
     }
     
     /**
@@ -257,7 +259,7 @@ public class OptionsTest {
     @Test
     public void testGetCoreKey() {
         System.out.println("getCoreKey");
-        String expResult = "None";
+        String expResult = null;
         String result = instance.getCoreKey();
         assertEquals(expResult, result);
     }
@@ -268,7 +270,7 @@ public class OptionsTest {
     @Test
     public void testGetCorePrep() {
         System.out.println("getCorePrep");
-        String expResult = "None";
+        String expResult = null;
         String result = instance.getCorePrep();
         assertEquals(expResult, result);
     }
@@ -433,7 +435,7 @@ public class OptionsTest {
     @Test
     public void testGetEval() {
         System.out.println("getEval");
-        String expResult = "None";
+        String expResult = null;
         String result = instance.getEval();
         assertEquals(expResult, result);
     }
@@ -477,7 +479,7 @@ public class OptionsTest {
     @Test
     public void testGetExtraCoreArgs() {
         System.out.println("getExtraCoreArgs");
-        String expResult = "None";
+        String expResult = null;
         String result = instance.getExtraCoreArgs();
         assertEquals(expResult, result);
     }
@@ -521,7 +523,7 @@ public class OptionsTest {
     @Test
     public void testGetGpuIndex() {
         System.out.println("getGpuIndex");
-        String expResult = "None";
+        String expResult = null;
         String result = instance.getGpuIndex();
         assertEquals(expResult, result);
     }
@@ -851,7 +853,7 @@ public class OptionsTest {
     @Test
     public void testGetMemory() {
         System.out.println("getMemory");
-        String expResult = "None";
+        String expResult = null;
         String result = instance.getMemory();
         assertEquals(expResult, result);
     }
@@ -884,7 +886,7 @@ public class OptionsTest {
     @Test
     public void testGetPriority() {
         System.out.println("getPriority");
-        String expResult = "None";
+        String expResult = null;
         String result = instance.getPriority();
         assertEquals(expResult, result);
     }
@@ -1071,7 +1073,7 @@ public class OptionsTest {
     @Test
     public void testGetScript() {
         System.out.println("getScript");
-        String expResult = "None";
+        String expResult = null;
         String result = instance.getScript();
         assertEquals(expResult, result);
     }
