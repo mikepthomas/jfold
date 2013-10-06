@@ -165,7 +165,7 @@ public class SimulationInfoImpl implements SimulationInfo, Serializable {
     /** {@inheritDoc} */
     @Override
     public Date getStartTime() {
-        return startTime;
+        return (Date) startTime.clone();
     }
 
     /** {@inheritDoc} */
