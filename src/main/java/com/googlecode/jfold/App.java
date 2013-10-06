@@ -176,6 +176,6 @@ public class App {
         Gson gson = new Gson();
         List list = gson.fromJson(json, List.class);
 
-        Logger.getLogger(App.class.getName()).log(Level.INFO, json);
+        Logger.getLogger(App.class.getName()).log(Level.INFO, list.toString());
     }
 }
