@@ -23,7 +23,10 @@ package com.googlecode.jfold;
  */
 
 import com.google.gson.Gson;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -41,7 +44,7 @@ public class App {
      * @param args an array of {@link java.lang.String} objects.
      */
     public static void main(String[] args) {
-        String json = "[\n"
+        String info = "[\n"
                 + "  [\n"
                 + "    \"Folding@home Client\",\n"
                 + "    [\n"
@@ -174,8 +177,43 @@ public class App {
                 + "]";
 
         Gson gson = new Gson();
-        List list = gson.fromJson(json, List.class);
+        List list = gson.fromJson(info, List.class);
 
         Logger.getLogger(App.class.getName()).log(Level.INFO, list.toString());
+
+        Properties props = new Properties();
+        InputStream input = App.class.getResourceAsStream("/config.properties");
+        try {
+            try {
+                props.load(input);
+            }
+            finally {
+                input.close();
+            }
+        }
+        catch (IOException ex) {
+            Logger.getLogger(App.class.getName()).log(Level.WARNING, ex.getMessage());
+        }
+
+        String address = props.getProperty("address");
+        int port = Integer.parseInt(props.getProperty("port"));
+        String password = props.getProperty("password");
+        int retryRate = Integer.parseInt(props.getProperty("retry_rate"));
+        
+        try {
+            Connection connection = new SocketConnection(address, port, password, retryRate);
+
+            connection.numSlots();
+            connection.options();
+            connection.options(true, true);
+            connection.ppd();
+            connection.simulationInfo(0);
+            connection.slotInfo();
+            connection.slotOptions(0);
+            connection.uptime();
+        }
+        catch (IOException ex) {
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

@@ -143,6 +143,15 @@ public interface Connection {
     Options options();
 
     /**
+     * List all options with their non-default values.
+     *
+     * @param listDefault if true defaulted options will be listed
+     * @param listUnset if true unset options will also be listed
+     * @return Options
+     */
+    Options options(boolean listDefault, boolean listUnset);
+
+    /**
      * Pause all slots.
      */
     void pause();

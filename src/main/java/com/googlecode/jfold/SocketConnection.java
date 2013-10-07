@@ -34,14 +34,15 @@ import com.googlecode.jfold.model.slot.SlotImpl;
 import com.googlecode.jfold.model.slot.SlotOptions;
 import com.googlecode.jfold.model.slot.SlotOptionsImpl;
 import com.googlecode.jfold.model.unit.Unit;
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.lang.reflect.Type;
 import java.net.Inet4Address;
 import java.net.Socket;
 import java.net.URL;
 import java.util.List;
-import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -56,34 +57,26 @@ public class SocketConnection extends Socket implements Connection {
     public static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
 
     private final Gson gson;
-    private final String address, password;
-    private final int port, retryRate;
+    private final BufferedReader in;
+    private final PrintWriter out;
 
     /**
      * <p>Constructor for ConnectionImpl.</p>
+     *
+     * @param address a {@link java.lang.String} object.
+     * @param port a int.
+     * @throws java.io.IOException a int.
      */
-    public SocketConnection() {
-        super();
+    public SocketConnection(String address, int port) throws IOException {
+        super(address, port);
 
-        Properties props = new Properties();
-        InputStream input = this.getClass().getResourceAsStream("/config.properties");
-        try {
-            try {
-                props.load(input);
-            }
-            finally {
-                input.close();
-            }
-        }
-        catch (IOException ex) {
-            Logger.getLogger(this.getClass().getName()).log(Level.WARNING, ex.getMessage());
-        }
+        gson = getGson();
 
-        this.address = props.getProperty("address");
-        this.port = Integer.parseInt(props.getProperty("port"));
-        this.password = props.getProperty("password");
-        this.retryRate = Integer.parseInt(props.getProperty("retry_rate"));
-        this.gson = getGson();
+        in = new BufferedReader(new InputStreamReader(this.getInputStream()));
+        out = new PrintWriter(this.getOutputStream(), true);
+
+        // Welcome to the Folding@home Client command server. TODO: check input
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, in.readLine());
     }
 
     /**
@@ -92,16 +85,11 @@ public class SocketConnection extends Socket implements Connection {
      * @param address a {@link java.lang.String} object.
      * @param port a int.
      * @param password a {@link java.lang.String} object.
-     * @param retryRate a int.
+     * @param retryRate
+     * @throws java.io.IOException a int.
      */
-    public SocketConnection(String address, int port, String password, int retryRate) {
-        super();
-        
-        this.address = address;
-        this.port = port;
-        this.password = password;
-        this.retryRate = retryRate;
-        this.gson = getGson();
+    public SocketConnection(String address, int port, String password, int retryRate) throws IOException {
+        this(address, port);
     }
 
     private Gson getGson()
@@ -172,7 +160,7 @@ public class SocketConnection extends Socket implements Connection {
     /** {@inheritDoc} */
     @Override
     public int numSlots() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return gson.fromJson(getNumSlotsJson(), Integer.class);
     }
 
     /** {@inheritDoc} */
@@ -190,7 +178,13 @@ public class SocketConnection extends Socket implements Connection {
     /** {@inheritDoc} */
     @Override
     public Options options() {
-        return gson.fromJson(getOptionsJson(), OptionsImpl.class);
+        return options(false, false);
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public Options options(boolean listDefault, boolean listUnset) {
+        return gson.fromJson(getOptionsJson(listDefault, listUnset), OptionsImpl.class);
     }
 
     /** {@inheritDoc} */
@@ -208,7 +202,7 @@ public class SocketConnection extends Socket implements Connection {
     /** {@inheritDoc} */
     @Override
     public int ppd() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return gson.fromJson(getPpdJson(), Integer.class);
     }
 
     /** {@inheritDoc} */
@@ -250,7 +244,7 @@ public class SocketConnection extends Socket implements Connection {
     /** {@inheritDoc} */
     @Override
     public SimulationInfo simulationInfo(int slot) {
-        return gson.fromJson(getSimulationInfoJson(), SimulationInfoImpl.class);
+        return gson.fromJson(getSimulationInfoJson(slot), SimulationInfoImpl.class);
     }
 
     /** {@inheritDoc} */
@@ -281,7 +275,7 @@ public class SocketConnection extends Socket implements Connection {
     /** {@inheritDoc} */
     @Override
     public SlotOptions slotOptions(int slot) {
-        return gson.fromJson(getSlotOptionsJson(), SlotOptionsImpl.class);
+        return gson.fromJson(getSlotOptionsJson(slot), SlotOptionsImpl.class);
     }
 
     /** {@inheritDoc} */
@@ -311,7 +305,8 @@ public class SocketConnection extends Socket implements Connection {
     /** {@inheritDoc} */
     @Override
     public String uptime() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        sendCommand("uptime");
+        return getString();
     }
 
     /** {@inheritDoc} */
@@ -320,19 +315,64 @@ public class SocketConnection extends Socket implements Connection {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    protected String getOptionsJson() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    protected String getNumSlotsJson() {
+        sendCommand("num-slots");
+        return PyonParser.pyonToJson(getString());
     }
 
-    protected String getSimulationInfoJson() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    protected String getOptionsJson(boolean listDefault, boolean listUnset) {
+        String defaultValue = listDefault ? " -d" : "";
+        String unsetValue = listUnset ? " -a" : "";
+        sendCommand("options" + defaultValue + unsetValue);
+        return PyonParser.pyonToJson(getString());
+    }
+
+    protected String getPpdJson() {
+        sendCommand("ppd");
+        return PyonParser.pyonToJson(getString());
+    }
+
+    protected String getSimulationInfoJson(int slot) {
+        sendCommand("simulation-info " + slot);
+        return PyonParser.pyonToJson(getString());
     }
 
     protected String getSlotInfoJson() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        sendCommand("slot-info");
+        return PyonParser.pyonToJson(getString());
     }
 
-    protected String getSlotOptionsJson() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    protected String getSlotOptionsJson(int slot) {
+        sendCommand("slot-options " + slot + " -a");
+        return PyonParser.pyonToJson(getString());
+    }
+
+    private void sendCommand(String command) {
+        out.println(command);
+
+        String message = "Sent: " + command;
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, message);
+    }
+
+    private String getString() {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        try {
+            in.read(); // first char is '>'
+            char ch;
+            while((ch = (char) in.read()) != '>') {
+                stringBuilder.append((char) ch);
+            }
+        }
+        catch (IOException ex) {
+            Logger.getLogger(SocketConnection.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String string = stringBuilder.toString().trim();
+        
+        String message = "Recieved String: " + string;
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, message);
+
+        return string;
     }
 }

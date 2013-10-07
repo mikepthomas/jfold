@@ -39,13 +39,27 @@ import org.apache.commons.io.FileUtils;
  */
 public class MockConnection extends SocketConnection implements Connection {
 
+    public MockConnection() throws IOException {
+        super("localhost", 36330);
+    }
+
     @Override
-    protected String getOptionsJson() {
+    protected String getNumSlotsJson() {
+        return "1";
+    }
+
+    @Override
+    protected String getOptionsJson(boolean listDefault, boolean listUnset) {
         return getJson(Options.class);
     }
 
     @Override
-    protected String getSimulationInfoJson() {
+    protected String getPpdJson() {
+        return "0";
+    }
+
+    @Override
+    protected String getSimulationInfoJson(int slot) {
         return getJson(SimulationInfo.class);
     }
 
@@ -55,7 +69,7 @@ public class MockConnection extends SocketConnection implements Connection {
     }
 
     @Override
-    protected String getSlotOptionsJson() {
+    protected String getSlotOptionsJson(int slot) {
         return getJson(SlotOptions.class);
     }
 

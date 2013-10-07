@@ -24,6 +24,9 @@ package com.googlecode.jfold.model.slot;
 
 import com.googlecode.jfold.Connection;
 import com.googlecode.jfold.MockConnection;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
@@ -53,8 +56,13 @@ public class SlotTest {
      */
     @BeforeClass
     public static void setUpClass() {
-        Connection connection = new MockConnection();
-        instance = connection.slotInfo().get(0);
+        try {
+            Connection connection = new MockConnection();
+            instance = connection.slotInfo().get(0);
+        }
+        catch (IOException ex) {
+            Logger.getLogger(SlotTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     /**
