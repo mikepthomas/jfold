@@ -1,5 +1,8 @@
 package com.googlecode.jfold;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * #%L
  * jFold
@@ -30,15 +33,46 @@ package com.googlecode.jfold;
  */
 public class PyonParser {
 
-    /** Constant <code>PYON_HEADER="\nPyON "</code> */
-    public static final String PYON_HEADER = "\nPyON ";
-    /** Constant <code>PYON_TRAILER="\n---\n"</code> */
-    public static final String PYON_TRAILER = "\n---\n";
+    /** Constant <code>PYON_HEADER</code> */
+    public static final String PYON_HEADER = "PyON 1 (.*)\n";
+    /** Constant <code>PYON_TRAILER</code> */
+    public static final String PYON_TRAILER = "\n---";
 
-    private String pyonToJson(String pyon) {
-        // None is used instead of null
-        // boolean values start with an upper case letter as in Python.
-        // E.g. True and False. 
-        throw new UnsupportedOperationException("Not supported yet.");
+    /** Constant <code>NONE</code> */
+    public static final String NONE = ": None,\n";
+    /** Constant <code>NULL</code> */
+    public static final String NULL = ": null,\n";
+
+    /** Constant <code>True</code> */
+    public static final String TRUE = "True";
+    /** Constant <code>FALSE</code> */
+    public static final String FALSE = "False";
+
+    public static String pyonToJson(String pyon) {
+        if (pyon.startsWith("PyON 1 "))
+        {
+            // Replace PyON Header
+            String json = pyon.replaceAll(PYON_HEADER, "");
+            json = json.replaceAll(PYON_TRAILER, "");
+
+            // None is used instead of null
+            json = json.replaceAll(NONE, NULL);
+
+            // Boolean values start with an upper case letter as in Python.
+            json = json.replaceAll('"' + TRUE.toLowerCase() + '"', TRUE);
+            json = json.replaceAll(TRUE, TRUE.toLowerCase());
+            json = json.replaceAll('"' + FALSE.toLowerCase() + '"', FALSE);
+            json = json.replaceAll(FALSE, FALSE.toLowerCase());
+
+            String message = "Parsed JSON: " + json;
+            Logger.getLogger(PyonParser.class.getName()).log(Level.INFO, message);
+
+            return json;
+        }
+
+        String message = "Not PyON String: " + pyon;
+        Logger.getLogger(PyonParser.class.getName()).log(Level.WARNING, message);
+        
+        return pyon;
     }
 }

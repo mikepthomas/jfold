@@ -24,7 +24,10 @@ package com.googlecode.jfold.model.options;
 
 import com.googlecode.jfold.Connection;
 import com.googlecode.jfold.MockConnection;
+import java.io.IOException;
 import java.net.InetAddress;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
@@ -55,8 +58,13 @@ public class OptionsTest {
      */
     @BeforeClass
     public static void setUpClass() {
-        Connection connection = new MockConnection();
-        instance = connection.options();
+        try {
+            Connection connection = new MockConnection();
+            instance = connection.options();
+        }
+        catch (IOException ex) {
+            Logger.getLogger(OptionsTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     /**
@@ -127,7 +135,7 @@ public class OptionsTest {
     @Test
     public void testGetClientSubtype() {
         System.out.println("getClientSubtype");
-        String expResult = "STDCLI";
+        String expResult = "MACOSX";
         String result = instance.getClientSubtype();
         assertEquals(expResult, result);
     }
@@ -325,7 +333,7 @@ public class OptionsTest {
     @Test
     public void testGetCpuType() {
         System.out.println("getCpuType");
-        String expResult = "X86";
+        String expResult = "AMD64";
         String result = instance.getCpuType();
         assertEquals(expResult, result);
     }
@@ -347,7 +355,7 @@ public class OptionsTest {
     @Test
     public void testGetCpus() {
         System.out.println("getCpus");
-        int expResult = 4;
+        int expResult = -1;
         int result = instance.getCpus();
         assertEquals(expResult, result);
     }
@@ -457,7 +465,7 @@ public class OptionsTest {
     @Test
     public void testGetExecDirectory() {
         System.out.println("getExecDirectory");
-        String expResult = "C:\\folding\\FAH-V7\\FAHClient";
+        String expResult = "/usr/bin";
         String result = instance.getExecDirectory();
         assertEquals(expResult, result);
     }
@@ -534,7 +542,7 @@ public class OptionsTest {
     @Test
     public void testGetGpuUsage() {
         System.out.println("getGpuUsage");
-        int expResult = 0;
+        int expResult = 100;
         int result = instance.getGpuUsage();
         assertEquals(expResult, result);
     }
@@ -556,7 +564,7 @@ public class OptionsTest {
     @Test
     public void testGetLogColor() {
         System.out.println("getLogColor");
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.getLogColor();
         assertEquals(expResult, result);
     }
@@ -567,7 +575,7 @@ public class OptionsTest {
     @Test
     public void testGetLogCrlf() {
         System.out.println("getLogCrlf");
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.getLogCrlf();
         assertEquals(expResult, result);
     }
@@ -776,7 +784,7 @@ public class OptionsTest {
     @Test
     public void testGetMaxDelay() {
         System.out.println("getMaxDelay");
-        int expResult = 21600;
+        int expResult = 0;
         int result = instance.getMaxDelay();
         assertEquals(expResult, result);
     }
@@ -864,7 +872,7 @@ public class OptionsTest {
     @Test
     public void testGetMinDelay() {
         System.out.println("getMinDelay");
-        int expResult = 60;
+        int expResult = 0;
         int result = instance.getMinDelay();
         assertEquals(expResult, result);
     }
@@ -919,7 +927,7 @@ public class OptionsTest {
     @Test
     public void testGetOsSpecies() {
         System.out.println("getOsSpecies");
-        String expResult = "WIN_XP";
+        String expResult = "UNKNOWN";
         String result = instance.getOsSpecies();
         assertEquals(expResult, result);
     }
@@ -930,7 +938,7 @@ public class OptionsTest {
     @Test
     public void testGetOsType() {
         System.out.println("getOsType");
-        String expResult = "WIN32";
+        String expResult = "MACOSX";
         String result = instance.getOsType();
         assertEquals(expResult, result);
     }
@@ -952,7 +960,7 @@ public class OptionsTest {
     @Test
     public void testGetPassword() {
         System.out.println("getPassword");
-        String expResult = "password";
+        String expResult = null;
         String result = instance.getPassword();
         assertEquals(expResult, result);
     }
@@ -963,7 +971,7 @@ public class OptionsTest {
     @Test
     public void testGetPauseOnBattery() {
         System.out.println("getPauseOnBattery");
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.getPauseOnBattery();
         assertEquals(expResult, result);
     }
@@ -1095,7 +1103,7 @@ public class OptionsTest {
     @Test
     public void testGetServiceDescription() {
         System.out.println("getServiceDescription");
-        String expResult = "Folding@home Client";
+        String expResult = null;
         String result = instance.getServiceDescription();
         assertEquals(expResult, result);
     }
@@ -1106,7 +1114,7 @@ public class OptionsTest {
     @Test
     public void testGetServiceRestart() {
         System.out.println("getServiceRestart");
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.getServiceRestart();
         assertEquals(expResult, result);
     }
@@ -1117,7 +1125,7 @@ public class OptionsTest {
     @Test
     public void testGetServiceRestartDelay() {
         System.out.println("getServiceRestartDelay");
-        int expResult = 5000;
+        int expResult = 0;
         int result = instance.getServiceRestartDelay();
         assertEquals(expResult, result);
     }
@@ -1150,7 +1158,7 @@ public class OptionsTest {
     @Test
     public void testGetTeam() {
         System.out.println("getTeam");
-        int expResult = 0;
+        int expResult = 39299;
         int result = instance.getTeam();
         assertEquals(expResult, result);
     }
@@ -1172,7 +1180,7 @@ public class OptionsTest {
     @Test
     public void testGetUser() {
         System.out.println("getUser");
-        String expResult = "Anonymous";
+        String expResult = "montycrabapple";
         String result = instance.getUser();
         assertEquals(expResult, result);
     }
