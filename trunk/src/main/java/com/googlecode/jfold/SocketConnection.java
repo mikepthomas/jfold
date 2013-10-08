@@ -94,7 +94,7 @@ public class SocketConnection extends GsonConnection implements Connection {
     @Override
     protected String getNumSlotsJson() {
         sendCommand("num-slots");
-        return PyonParser.pyonToJson(getString());
+        return PyonParser.convert(getString());
     }
 
     /** {@inheritDoc} */
@@ -103,35 +103,35 @@ public class SocketConnection extends GsonConnection implements Connection {
         String defaultValue = listDefault ? " -d" : "";
         String unsetValue = listUnset ? " -a" : "";
         sendCommand("options" + defaultValue + unsetValue);
-        return PyonParser.pyonToJson(getString());
+        return PyonParser.convert(getString());
     }
 
     /** {@inheritDoc} */
     @Override
     protected String getPpdJson() {
         sendCommand("ppd");
-        return PyonParser.pyonToJson(getString());
+        return PyonParser.convert(getString());
     }
 
     /** {@inheritDoc} */
     @Override
     protected String getSimulationInfoJson(int slot) {
         sendCommand("simulation-info " + slot);
-        return PyonParser.pyonToJson(getString());
+        return PyonParser.convert(getString());
     }
 
     /** {@inheritDoc} */
     @Override
     protected String getSlotInfoJson() {
         sendCommand("slot-info");
-        return PyonParser.pyonToJson(getString());
+        return PyonParser.convert(getString());
     }
 
     /** {@inheritDoc} */
     @Override
     protected String getSlotOptionsJson(int slot) {
         sendCommand("slot-options " + slot + " -a");
-        return PyonParser.pyonToJson(getString());
+        return PyonParser.convert(getString());
     }
 
     private void sendCommand(String command) {

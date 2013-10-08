@@ -39,22 +39,31 @@ public class PyonParser {
     public static final String PYON_TRAILER = "\n---";
 
     /** Constant <code>NONE</code> */
-    public static final String NONE = ": None,\n";
+    public static final String NONE = "\"(.*)\": None,\n";
     /** Constant <code>NULL</code> */
-    public static final String NULL = ": null,\n";
+    public static final String NULL = "\"$1\": null,\n";
 
-    /** Constant <code>True</code> */
-    public static final String TRUE = "True";
-    /** Constant <code>FALSE</code> */
-    public static final String FALSE = "False";
+    /** Constant <code>JSON_TRUE</code> */
+    public static final String JSON_TRUE = "\"$1\": true,\n";
+    /** Constant <code>PYON_TRUE</code> */
+    public static final String PYON_TRUE = "\"(.*)\": True,\n";
+    /** Constant <code>QUOTED_TRUE</code> */
+    public static final String QUOTED_TRUE = "\"(.*)\": \"true\",\n";
+
+    /** Constant <code>JSON_FALSE</code> */
+    public static final String JSON_FALSE = "\"$1\": false,\n";
+    /** Constant <code>PYON_FALSE</code> */
+    public static final String PYON_FALSE = "\"(.*)\": False,\n";
+    /** Constant <code>QUOTED_FALSE</code> */
+    public static final String QUOTED_FALSE = "\"(.*)\": \"false\",\n";
 
     /**
-     * <p>pyonToJson.</p>
+     * <p>convert.</p>
      *
      * @param pyon a {@link java.lang.String} object.
      * @return a {@link java.lang.String} object.
      */
-    public static String pyonToJson(String pyon) {
+    public static String convert(String pyon) {
         if (pyon.startsWith("PyON 1 "))
         {
             // Replace PyON Header
@@ -65,10 +74,10 @@ public class PyonParser {
             json = json.replaceAll(NONE, NULL);
 
             // Boolean values start with an upper case letter as in Python.
-            json = json.replaceAll('"' + TRUE.toLowerCase() + '"', TRUE);
-            json = json.replaceAll(TRUE, TRUE.toLowerCase());
-            json = json.replaceAll('"' + FALSE.toLowerCase() + '"', FALSE);
-            json = json.replaceAll(FALSE, FALSE.toLowerCase());
+            json = json.replaceAll(PYON_TRUE, JSON_TRUE);
+            json = json.replaceAll(QUOTED_TRUE, JSON_TRUE);
+            json = json.replaceAll(PYON_FALSE, JSON_FALSE);
+            json = json.replaceAll(QUOTED_FALSE, JSON_FALSE);
 
             String message = "Parsed JSON: " + json;
             Logger.getLogger(PyonParser.class.getName()).log(Level.INFO, message);
