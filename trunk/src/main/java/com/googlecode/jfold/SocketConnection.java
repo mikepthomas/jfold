@@ -22,27 +22,11 @@ package com.googlecode.jfold;
  * #L%
  */
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-import com.googlecode.jfold.model.options.Options;
-import com.googlecode.jfold.model.options.OptionsImpl;
-import com.googlecode.jfold.model.simulation.SimulationInfo;
-import com.googlecode.jfold.model.simulation.SimulationInfoImpl;
-import com.googlecode.jfold.model.slot.Slot;
-import com.googlecode.jfold.model.slot.SlotImpl;
-import com.googlecode.jfold.model.slot.SlotOptions;
-import com.googlecode.jfold.model.slot.SlotOptionsImpl;
-import com.googlecode.jfold.model.unit.Unit;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.lang.reflect.Type;
-import java.net.Inet4Address;
 import java.net.Socket;
-import java.net.URL;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -52,35 +36,42 @@ import java.util.logging.Logger;
  * @author Michael Thomas <mikepthomas@outlook.com>
  * @version $Id: $Id
  */
-public class SocketConnection extends Socket implements Connection {
+public class SocketConnection extends AbstractConnection implements Connection {
 
-    public static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
-
-    private final Gson gson;
+    private final Socket socket;
     private final BufferedReader in;
     private final PrintWriter out;
 
     /**
-     * <p>Constructor for ConnectionImpl.</p>
+     * <p>Default Constructor for SocketConnection.</p>
+     *
+     * @throws java.io.IOException a int.
+     */
+    public SocketConnection() throws IOException {
+        this("localhost", 36330);
+    }
+
+    /**
+     * <p>Constructor for SocketConnection.</p>
      *
      * @param address a {@link java.lang.String} object.
      * @param port a int.
      * @throws java.io.IOException a int.
      */
     public SocketConnection(String address, int port) throws IOException {
-        super(address, port);
+        super();
 
-        gson = getGson();
+        socket = new Socket(address, port);
 
-        in = new BufferedReader(new InputStreamReader(this.getInputStream()));
-        out = new PrintWriter(this.getOutputStream(), true);
+        in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        out = new PrintWriter(socket.getOutputStream(), true);
 
         // Welcome to the Folding@home Client command server. TODO: check input
         Logger.getLogger(this.getClass().getName()).log(Level.INFO, in.readLine());
     }
 
     /**
-     * <p>Constructor for ConnectionImpl.</p>
+     * <p>Constructor for SocketConnection.</p>
      *
      * @param address a {@link java.lang.String} object.
      * @param port a int.
@@ -92,216 +83,6 @@ public class SocketConnection extends Socket implements Connection {
         this(address, port);
     }
 
-    private Gson getGson()
-    {
-        return new GsonBuilder().setDateFormat(DATE_FORMAT).create();
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void bond(Inet4Address ip, int port, String input) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void configured() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void doCycle() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void downloadCore(String type, URL url) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void finish() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void finish(int slot) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public String getInfo(String category, String key) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public List info() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void inject(Inet4Address ip, int port, String input) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void maskUnitState() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public int numSlots() {
-        return gson.fromJson(getNumSlotsJson(), Integer.class);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public String option(String name) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public String option(String name, String value) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public Options options() {
-        return options(false, false);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public Options options(boolean listDefault, boolean listUnset) {
-        return gson.fromJson(getOptionsJson(listDefault, listUnset), OptionsImpl.class);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void pause() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void pause(int slot) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public int ppd() {
-        return gson.fromJson(getPpdJson(), Integer.class);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public List<Unit> queueInfo() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void requestId() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void requestWs() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void save() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void save(String file) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void shutdown() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public SimulationInfo simulationInfo(int slot) {
-        return gson.fromJson(getSimulationInfoJson(slot), SimulationInfoImpl.class);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void slotAdd(String type) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void slotDelete(int slot) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public List<Slot> slotInfo() {
-        Type slotInfoType = new TypeToken<List<SlotImpl>>(){}.getType();
-        return gson.fromJson(getSlotInfoJson(), slotInfoType);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void slotModify(String id, String type) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public SlotOptions slotOptions(int slot) {
-        return gson.fromJson(getSlotOptionsJson(slot), SlotOptionsImpl.class);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void trajectory(int slot) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void triggerSave() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void unpause() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void unpause(int slot) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
     /** {@inheritDoc} */
     @Override
     public String uptime() {
@@ -309,17 +90,13 @@ public class SocketConnection extends Socket implements Connection {
         return getString();
     }
 
-    /** {@inheritDoc} */
     @Override
-    public void waitForUnits() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
     protected String getNumSlotsJson() {
         sendCommand("num-slots");
         return PyonParser.pyonToJson(getString());
     }
 
+    @Override
     protected String getOptionsJson(boolean listDefault, boolean listUnset) {
         String defaultValue = listDefault ? " -d" : "";
         String unsetValue = listUnset ? " -a" : "";
@@ -327,21 +104,25 @@ public class SocketConnection extends Socket implements Connection {
         return PyonParser.pyonToJson(getString());
     }
 
+    @Override
     protected String getPpdJson() {
         sendCommand("ppd");
         return PyonParser.pyonToJson(getString());
     }
 
+    @Override
     protected String getSimulationInfoJson(int slot) {
         sendCommand("simulation-info " + slot);
         return PyonParser.pyonToJson(getString());
     }
 
+    @Override
     protected String getSlotInfoJson() {
         sendCommand("slot-info");
         return PyonParser.pyonToJson(getString());
     }
 
+    @Override
     protected String getSlotOptionsJson(int slot) {
         sendCommand("slot-options " + slot + " -a");
         return PyonParser.pyonToJson(getString());

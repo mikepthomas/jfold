@@ -37,11 +37,7 @@ import org.apache.commons.io.FileUtils;
  * @version $Id: $Id
  * @since 1.0
  */
-public class MockConnection extends SocketConnection implements Connection {
-
-    public MockConnection() throws IOException {
-        super("localhost", 36330);
-    }
+public class MockConnection extends AbstractConnection implements Connection {
 
     @Override
     protected String getNumSlotsJson() {
