@@ -1,21 +1,26 @@
+package com.googlecode.jfold;
+
 /*
- * Copyright (C) 2013 Michael Thomas <michael4.thomas@live.uwe.ac.uk>
- *
+ * #%L
+ * jFold
+ * %%
+ * Copyright (C) 2012 - 2013 Michael Thomas <mikepthomas@outlook.com>
+ * %%
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
+ * it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the 
+ * License, or (at your option) any later version.
+ * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * You should have received a copy of the GNU General Public 
+ * License along with this program.  If not, see
+ * <http://www.gnu.org/licenses/gpl-3.0.html>.
+ * #L%
  */
-
-package com.googlecode.jfold;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -35,16 +40,22 @@ import java.net.URL;
 import java.util.List;
 
 /**
+ * <p>Abstract GsonConnection class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
+ * @version $Id: $Id
  */
-public abstract class AbstractConnection implements Connection {
+public abstract class GsonConnection implements Connection {
     
+    /** Constant <code>DATE_FORMAT="yyyy-MM-dd'T'HH:mm:ss'Z'"</code> */
     public static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
 
     private final Gson gson;
 
-    public AbstractConnection()
+    /**
+     * <p>Constructor for AbstractConnection.</p>
+     */
+    public GsonConnection()
     {
         super();
 
@@ -268,15 +279,49 @@ public abstract class AbstractConnection implements Connection {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /**
+     * <p>getNumSlotsJson.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
     protected abstract String getNumSlotsJson();
 
+    /**
+     * <p>getOptionsJson.</p>
+     *
+     * @param listDefault a boolean.
+     * @param listUnset a boolean.
+     * @return a {@link java.lang.String} object.
+     */
     protected abstract String getOptionsJson(boolean listDefault, boolean listUnset);
 
+    /**
+     * <p>getPpdJson.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
     protected abstract String getPpdJson();
 
+    /**
+     * <p>getSimulationInfoJson.</p>
+     *
+     * @param slot a int.
+     * @return a {@link java.lang.String} object.
+     */
     protected abstract String getSimulationInfoJson(int slot);
 
+    /**
+     * <p>getSlotInfoJson.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
     protected abstract String getSlotInfoJson();
 
+    /**
+     * <p>getSlotOptionsJson.</p>
+     *
+     * @param slot a int.
+     * @return a {@link java.lang.String} object.
+     */
     protected abstract String getSlotOptionsJson(int slot);
 }

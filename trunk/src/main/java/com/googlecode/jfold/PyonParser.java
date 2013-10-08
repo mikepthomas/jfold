@@ -48,6 +48,12 @@ public class PyonParser {
     /** Constant <code>FALSE</code> */
     public static final String FALSE = "False";
 
+    /**
+     * <p>pyonToJson.</p>
+     *
+     * @param pyon a {@link java.lang.String} object.
+     * @return a {@link java.lang.String} object.
+     */
     public static String pyonToJson(String pyon) {
         if (pyon.startsWith("PyON 1 "))
         {

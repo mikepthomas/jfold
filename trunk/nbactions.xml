@@ -19,4 +19,12 @@
             <goal>license:update-file-header</goal>
         </goals>
     </action>
+    <action>
+        <actionName>CUSTOM-Fix JavaDoc</actionName>
+        <displayName>Fix JavaDoc</displayName>
+        <goals>
+            <goal>javadoc:fix</goal>
+            <goal>javadoc:test-fix</goal>
+        </goals>
+    </action>
 </actions>

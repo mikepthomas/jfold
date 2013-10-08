@@ -25,7 +25,7 @@ package com.googlecode.jfold;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.PrintStream;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,11 +36,11 @@ import java.util.logging.Logger;
  * @author Michael Thomas <mikepthomas@outlook.com>
  * @version $Id: $Id
  */
-public class SocketConnection extends AbstractConnection implements Connection {
+public class SocketConnection extends GsonConnection implements Connection {
 
     private final Socket socket;
     private final BufferedReader in;
-    private final PrintWriter out;
+    private final PrintStream out;
 
     /**
      * <p>Default Constructor for SocketConnection.</p>
@@ -63,8 +63,8 @@ public class SocketConnection extends AbstractConnection implements Connection {
 
         socket = new Socket(address, port);
 
-        in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        out = new PrintWriter(socket.getOutputStream(), true);
+        in = new BufferedReader(new InputStreamReader(socket.getInputStream(), ENCODING));
+        out = new PrintStream(socket.getOutputStream(), true, ENCODING);
 
         // Welcome to the Folding@home Client command server. TODO: check input
         Logger.getLogger(this.getClass().getName()).log(Level.INFO, in.readLine());
@@ -76,7 +76,7 @@ public class SocketConnection extends AbstractConnection implements Connection {
      * @param address a {@link java.lang.String} object.
      * @param port a int.
      * @param password a {@link java.lang.String} object.
-     * @param retryRate
+     * @param retryRate a int.
      * @throws java.io.IOException a int.
      */
     public SocketConnection(String address, int port, String password, int retryRate) throws IOException {
@@ -90,12 +90,14 @@ public class SocketConnection extends AbstractConnection implements Connection {
         return getString();
     }
 
+    /** {@inheritDoc} */
     @Override
     protected String getNumSlotsJson() {
         sendCommand("num-slots");
         return PyonParser.pyonToJson(getString());
     }
 
+    /** {@inheritDoc} */
     @Override
     protected String getOptionsJson(boolean listDefault, boolean listUnset) {
         String defaultValue = listDefault ? " -d" : "";
@@ -104,24 +106,28 @@ public class SocketConnection extends AbstractConnection implements Connection {
         return PyonParser.pyonToJson(getString());
     }
 
+    /** {@inheritDoc} */
     @Override
     protected String getPpdJson() {
         sendCommand("ppd");
         return PyonParser.pyonToJson(getString());
     }
 
+    /** {@inheritDoc} */
     @Override
     protected String getSimulationInfoJson(int slot) {
         sendCommand("simulation-info " + slot);
         return PyonParser.pyonToJson(getString());
     }
 
+    /** {@inheritDoc} */
     @Override
     protected String getSlotInfoJson() {
         sendCommand("slot-info");
         return PyonParser.pyonToJson(getString());
     }
 
+    /** {@inheritDoc} */
     @Override
     protected String getSlotOptionsJson(int slot) {
         sendCommand("slot-options " + slot + " -a");

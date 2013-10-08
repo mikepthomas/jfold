@@ -32,38 +32,45 @@ import java.net.URL;
 import org.apache.commons.io.FileUtils;
 
 /**
+ * <p>MockConnection class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
  * @version $Id: $Id
  * @since 1.0
  */
-public class MockConnection extends AbstractConnection implements Connection {
+public class MockConnection extends GsonConnection implements Connection {
 
+    /** {@inheritDoc} */
     @Override
     protected String getNumSlotsJson() {
         return "1";
     }
 
+    /** {@inheritDoc} */
     @Override
     protected String getOptionsJson(boolean listDefault, boolean listUnset) {
         return getJson(Options.class);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected String getPpdJson() {
         return "0";
     }
 
+    /** {@inheritDoc} */
     @Override
     protected String getSimulationInfoJson(int slot) {
         return getJson(SimulationInfo.class);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected String getSlotInfoJson() {
         return getJson(Slot.class);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected String getSlotOptionsJson(int slot) {
         return getJson(SlotOptions.class);
