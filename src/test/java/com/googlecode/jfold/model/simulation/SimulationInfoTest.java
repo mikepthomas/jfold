@@ -24,10 +24,7 @@ package com.googlecode.jfold.model.simulation;
 
 import com.googlecode.jfold.Connection;
 import com.googlecode.jfold.MockConnection;
-import java.io.IOException;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
@@ -58,13 +55,8 @@ public class SimulationInfoTest {
      */
     @BeforeClass
     public static void setUpClass() {
-        try {
-            Connection connection = new MockConnection();
-            instance = connection.simulationInfo(0);
-        }
-        catch (IOException ex) {
-            Logger.getLogger(SimulationInfoTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Connection connection = new MockConnection();
+        instance = connection.simulationInfo(0);
     }
     
     /**
