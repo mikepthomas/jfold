@@ -42,44 +42,51 @@ public class MockConnection extends GsonConnection implements Connection {
 
     /** {@inheritDoc} */
     @Override
-    protected String getNumSlotsJson() {
+    protected String getNumSlotsOutput() {
         return "1";
     }
 
     /** {@inheritDoc} */
     @Override
-    protected String getOptionsJson(boolean listDefault, boolean listUnset) {
+    protected String getOptionsOutput(boolean listDefault, boolean listUnset) {
         return getJson(Options.class);
     }
 
     /** {@inheritDoc} */
     @Override
-    protected String getPpdJson() {
+    protected String getPpdOutput() {
         return "0";
     }
 
     /** {@inheritDoc} */
     @Override
-    protected String getSimulationInfoJson(int slot) {
+    protected String getSimulationInfoOutput(int slot) {
         return getJson(SimulationInfo.class);
     }
 
     /** {@inheritDoc} */
     @Override
-    protected String getSlotInfoJson() {
+    protected String getSlotInfoOutput() {
         return getJson(Slot.class);
     }
 
     /** {@inheritDoc} */
     @Override
-    protected String getSlotOptionsJson(int slot) {
+    protected String getSlotOptionsOutput(int slot) {
         return getJson(SlotOptions.class);
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    protected String getUptimeOutput() {
+        return "9d  3h 32m 33s";
     }
 
     private String getJson(Class clazz)
     {
         try {
-            URL url = clazz.getResource("Example" + clazz.getSimpleName() + ".json");
+            String filename = "Example" + clazz.getSimpleName() + ".json";
+            URL url = clazz.getResource(filename);
             File file = FileUtils.toFile(url);
             return FileUtils.readFileToString(file, ENCODING);
         } catch (IOException e) {

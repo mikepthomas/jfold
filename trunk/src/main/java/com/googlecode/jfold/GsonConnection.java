@@ -47,16 +47,16 @@ import java.util.List;
  */
 public abstract class GsonConnection implements Connection {
     
-    /** Constant <code>DATE_FORMAT="yyyy-MM-dd'T'HH:mm:ss'Z'"</code> */
+    /** Constant <code>DATE_FORMAT="yyyy-MM-dd'T'HH:mm:ss'Z'"</code>. */
     public static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
 
+    /** Gson JSON Converter */
     private final Gson gson;
 
     /**
      * <p>Constructor for AbstractConnection.</p>
      */
-    public GsonConnection()
-    {
+    public GsonConnection() {
         super();
 
         gson = new GsonBuilder().setDateFormat(DATE_FORMAT).create();
@@ -64,264 +64,275 @@ public abstract class GsonConnection implements Connection {
 
     /** {@inheritDoc} */
     @Override
-    public void bond(Inet4Address ip, int port, String input) {
+    public final void bond(
+            final Inet4Address ip, final int port, final String input) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void configured() {
+    public final void configured() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void doCycle() {
+    public final void doCycle() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void downloadCore(String type, URL url) {
+    public final void downloadCore(final String type, final URL url) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void finish() {
+    public final void finish() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void finish(int slot) {
+    public final void finish(final int slot) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getInfo(String category, String key) {
+    public final String getInfo(final String category, final String key) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public List info() {
+    public final List info() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void inject(Inet4Address ip, int port, String input) {
+    public final void inject(
+            final Inet4Address ip, final int port, final String input) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void maskUnitState() {
+    public final void maskUnitState() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public int numSlots() {
-        return gson.fromJson(getNumSlotsJson(), Integer.class);
+    public final int numSlots() {
+        return gson.fromJson(getNumSlotsOutput(), Integer.class);
     }
 
     /** {@inheritDoc} */
     @Override
-    public String option(String name) {
+    public final String option(final String name) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public String option(String name, String value) {
+    public final String option(final String name, final String value) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public Options options() {
+    public final Options options() {
         return options(false, false);
     }
 
     /** {@inheritDoc} */
     @Override
-    public Options options(boolean listDefault, boolean listUnset) {
-        return gson.fromJson(getOptionsJson(listDefault, listUnset), OptionsImpl.class);
+    public final Options options(
+            final boolean listDefault,final boolean listUnset) {
+        return gson.fromJson(getOptionsOutput(listDefault, listUnset), OptionsImpl.class);
     }
 
     /** {@inheritDoc} */
     @Override
-    public void pause() {
+    public final void pause() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void pause(int slot) {
+    public final void pause(final int slot) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public int ppd() {
-        return gson.fromJson(getPpdJson(), Integer.class);
+    public final int ppd() {
+        return gson.fromJson(getPpdOutput(), Integer.class);
     }
 
     /** {@inheritDoc} */
     @Override
-    public List<Unit> queueInfo() {
+    public final List<Unit> queueInfo() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void requestId() {
+    public final void requestId() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void requestWs() {
+    public final void requestWs() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void save() {
+    public final void save() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void save(String file) {
+    public final void save(final String file) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void shutdown() {
+    public final void shutdown() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public SimulationInfo simulationInfo(int slot) {
-        return gson.fromJson(getSimulationInfoJson(slot), SimulationInfoImpl.class);
+    public final SimulationInfo simulationInfo(final int slot) {
+        return gson.fromJson(getSimulationInfoOutput(slot), SimulationInfoImpl.class);
     }
 
     /** {@inheritDoc} */
     @Override
-    public void slotAdd(String type) {
+    public final void slotAdd(final String type) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void slotDelete(int slot) {
+    public final void slotDelete(final int slot) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public List<Slot> slotInfo() {
+    public final List<Slot> slotInfo() {
         Type slotInfoType = new TypeToken<List<SlotImpl>>(){}.getType();
-        return gson.fromJson(getSlotInfoJson(), slotInfoType);
+        return gson.fromJson(getSlotInfoOutput(), slotInfoType);
     }
 
     /** {@inheritDoc} */
     @Override
-    public void slotModify(String id, String type) {
+    public final void slotModify(final String id, final String type) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public SlotOptions slotOptions(int slot) {
-        return gson.fromJson(getSlotOptionsJson(slot), SlotOptionsImpl.class);
+    public final SlotOptions slotOptions(final int slot) {
+        return gson.fromJson(getSlotOptionsOutput(slot), SlotOptionsImpl.class);
     }
 
     /** {@inheritDoc} */
     @Override
-    public void trajectory(int slot) {
+    public final void trajectory(final int slot) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void triggerSave() {
+    public final void triggerSave() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void unpause() {
+    public final void unpause() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public void unpause(int slot) {
+    public final void unpause(final int slot) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public String uptime() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public final String uptime() {
+        return getUptimeOutput();
     }
 
     /** {@inheritDoc} */
     @Override
-    public void waitForUnits() {
+    public final void waitForUnits() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /**
-     * <p>getNumSlotsJson.</p>
+     * <p>getNumSlotsOutput.</p>
      *
      * @return a {@link java.lang.String} object.
      */
-    protected abstract String getNumSlotsJson();
+    protected abstract String getNumSlotsOutput();
 
     /**
-     * <p>getOptionsJson.</p>
+     * <p>getOptionsOutput.</p>
      *
      * @param listDefault a boolean.
      * @param listUnset a boolean.
      * @return a {@link java.lang.String} object.
      */
-    protected abstract String getOptionsJson(boolean listDefault, boolean listUnset);
+    protected abstract String getOptionsOutput(
+            boolean listDefault, boolean listUnset);
 
     /**
-     * <p>getPpdJson.</p>
+     * <p>getPpdOutput.</p>
      *
      * @return a {@link java.lang.String} object.
      */
-    protected abstract String getPpdJson();
+    protected abstract String getPpdOutput();
 
     /**
-     * <p>getSimulationInfoJson.</p>
-     *
-     * @param slot a int.
-     * @return a {@link java.lang.String} object.
-     */
-    protected abstract String getSimulationInfoJson(int slot);
-
-    /**
-     * <p>getSlotInfoJson.</p>
-     *
-     * @return a {@link java.lang.String} object.
-     */
-    protected abstract String getSlotInfoJson();
-
-    /**
-     * <p>getSlotOptionsJson.</p>
+     * <p>getSimulationInfoOutput.</p>
      *
      * @param slot a int.
      * @return a {@link java.lang.String} object.
      */
-    protected abstract String getSlotOptionsJson(int slot);
+    protected abstract String getSimulationInfoOutput(int slot);
+
+    /**
+     * <p>getSlotInfoOutput.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    protected abstract String getSlotInfoOutput();
+
+    /**
+     * <p>getSlotOptionsOutput.</p>
+     *
+     * @param slot a int.
+     * @return a {@link java.lang.String} object.
+     */
+    protected abstract String getSlotOptionsOutput(int slot);
+
+    /**
+     * <p>getUptimeOutput.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    protected abstract String getUptimeOutput();
 }
