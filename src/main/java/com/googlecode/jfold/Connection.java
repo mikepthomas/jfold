@@ -38,7 +38,7 @@ import java.util.List;
  * @version 7.3.6
  */
 public interface Connection {
-    /** Constant <code>ENCODING="UTF-8"</code> */
+    /** Constant <code>ENCODING="UTF-8"</code>. */
     String ENCODING = "UTF-8";
 
     /**

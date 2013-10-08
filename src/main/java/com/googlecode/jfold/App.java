@@ -43,7 +43,7 @@ public class App {
      *
      * @param args an array of {@link java.lang.String} objects.
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         String info = "[\n"
                 + "  [\n"
                 + "    \"Folding@home Client\",\n"
@@ -186,12 +186,10 @@ public class App {
         try {
             try {
                 props.load(input);
-            }
-            finally {
+            } finally {
                 input.close();
             }
-        }
-        catch (IOException ex) {
+        } catch (IOException ex) {
             Logger.getLogger(App.class.getName()).log(Level.WARNING, ex.getMessage());
         }
 
@@ -199,7 +197,7 @@ public class App {
         int port = Integer.parseInt(props.getProperty("port"));
         String password = props.getProperty("password");
         int retryRate = Integer.parseInt(props.getProperty("retry_rate"));
-        
+
         try {
             Connection connection = new SocketConnection(address, port, password, retryRate);
 
@@ -211,8 +209,7 @@ public class App {
             connection.slotInfo();
             connection.slotOptions(0);
             connection.uptime();
-        }
-        catch (IOException ex) {
+        } catch (IOException ex) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

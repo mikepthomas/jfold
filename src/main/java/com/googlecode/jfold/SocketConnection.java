@@ -85,21 +85,14 @@ public class SocketConnection extends GsonConnection implements Connection {
 
     /** {@inheritDoc} */
     @Override
-    public String uptime() {
-        sendCommand("uptime");
-        return getString();
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    protected String getNumSlotsJson() {
+    protected String getNumSlotsOutput() {
         sendCommand("num-slots");
         return PyonParser.convert(getString());
     }
 
     /** {@inheritDoc} */
     @Override
-    protected String getOptionsJson(boolean listDefault, boolean listUnset) {
+    protected String getOptionsOutput(boolean listDefault, boolean listUnset) {
         String defaultValue = listDefault ? " -d" : "";
         String unsetValue = listUnset ? " -a" : "";
         sendCommand("options" + defaultValue + unsetValue);
@@ -108,30 +101,37 @@ public class SocketConnection extends GsonConnection implements Connection {
 
     /** {@inheritDoc} */
     @Override
-    protected String getPpdJson() {
+    protected String getPpdOutput() {
         sendCommand("ppd");
         return PyonParser.convert(getString());
     }
 
     /** {@inheritDoc} */
     @Override
-    protected String getSimulationInfoJson(int slot) {
+    protected String getSimulationInfoOutput(int slot) {
         sendCommand("simulation-info " + slot);
         return PyonParser.convert(getString());
     }
 
     /** {@inheritDoc} */
     @Override
-    protected String getSlotInfoJson() {
+    protected String getSlotInfoOutput() {
         sendCommand("slot-info");
         return PyonParser.convert(getString());
     }
 
     /** {@inheritDoc} */
     @Override
-    protected String getSlotOptionsJson(int slot) {
+    protected String getSlotOptionsOutput(int slot) {
         sendCommand("slot-options " + slot + " -a");
         return PyonParser.convert(getString());
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    protected String getUptimeOutput() {
+        sendCommand("uptime");
+        return getString();
     }
 
     private void sendCommand(String command) {
