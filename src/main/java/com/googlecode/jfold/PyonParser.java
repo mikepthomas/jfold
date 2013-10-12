@@ -31,28 +31,28 @@ import java.util.logging.Logger;
  */
 public class PyonParser {
 
-    /** Constant <code>PYON_HEADER</code> */
+    /** Constant <code>PYON_HEADER</code>. */
     public static final String PYON_HEADER = "PyON 1 (.*)\n";
-    /** Constant <code>PYON_TRAILER</code> */
+    /** Constant <code>PYON_TRAILER</code>. */
     public static final String PYON_TRAILER = "\n---";
 
-    /** Constant <code>NONE</code> */
+    /** Constant <code>NONE</code>. */
     public static final String NONE = "\"(.*)\": None,\n";
-    /** Constant <code>NULL</code> */
+    /** Constant <code>NULL</code>. */
     public static final String NULL = "\"$1\": null,\n";
 
-    /** Constant <code>JSON_TRUE</code> */
+    /** Constant <code>JSON_TRUE</code>. */
     public static final String JSON_TRUE = "\"$1\": true,\n";
-    /** Constant <code>PYON_TRUE</code> */
+    /** Constant <code>PYON_TRUE</code>. */
     public static final String PYON_TRUE = "\"(.*)\": True,\n";
-    /** Constant <code>QUOTED_TRUE</code> */
+    /** Constant <code>QUOTED_TRUE</code>. */
     public static final String QUOTED_TRUE = "\"(.*)\": \"true\",\n";
 
-    /** Constant <code>JSON_FALSE</code> */
+    /** Constant <code>JSON_FALSE</code>. */
     public static final String JSON_FALSE = "\"$1\": false,\n";
-    /** Constant <code>PYON_FALSE</code> */
+    /** Constant <code>PYON_FALSE</code>. */
     public static final String PYON_FALSE = "\"(.*)\": False,\n";
-    /** Constant <code>QUOTED_FALSE</code> */
+    /** Constant <code>QUOTED_FALSE</code>. */
     public static final String QUOTED_FALSE = "\"(.*)\": \"false\",\n";
 
     /**
@@ -61,9 +61,8 @@ public class PyonParser {
      * @param pyon a {@link java.lang.String} object.
      * @return a {@link java.lang.String} object.
      */
-    public static String convert(String pyon) {
-        if (pyon.startsWith("PyON 1 "))
-        {
+    public static String convert(final String pyon) {
+        if (pyon.startsWith("PyON 1 ")) {
             // Replace PyON Header
             String json = pyon.replaceAll(PYON_HEADER, "");
             json = json.replaceAll(PYON_TRAILER, "");
@@ -85,7 +84,7 @@ public class PyonParser {
 
         String message = "Not PyON String: " + pyon;
         Logger.getLogger(PyonParser.class.getName()).log(Level.WARNING, message);
-        
+
         return pyon;
     }
 }
