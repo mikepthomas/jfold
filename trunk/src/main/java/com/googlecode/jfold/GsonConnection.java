@@ -44,11 +44,11 @@ import java.util.List;
  * @version $Id: $Id
  */
 public abstract class GsonConnection implements Connection {
-    
+
     /** Constant <code>DATE_FORMAT="yyyy-MM-dd'T'HH:mm:ss'Z'"</code>. */
     public static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
 
-    /** Gson JSON Converter */
+    /** Gson JSON Converter. */
     private final Gson gson;
 
     /**
@@ -149,7 +149,7 @@ public abstract class GsonConnection implements Connection {
     /** {@inheritDoc} */
     @Override
     public final Options options(
-            final boolean listDefault,final boolean listUnset) {
+            final boolean listDefault, final boolean listUnset) {
         return gson.fromJson(getOptionsOutput(listDefault, listUnset), OptionsImpl.class);
     }
 
@@ -228,7 +228,7 @@ public abstract class GsonConnection implements Connection {
     /** {@inheritDoc} */
     @Override
     public final List<Slot> slotInfo() {
-        Type slotInfoType = new TypeToken<List<SlotImpl>>(){}.getType();
+        Type slotInfoType = new TypeToken<List<SlotImpl>>() { } .getType();
         return gson.fromJson(getSlotInfoOutput(), slotInfoType);
     }
 
