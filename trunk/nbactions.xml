@@ -18,6 +18,9 @@
         <goals>
             <goal>license:update-file-header</goal>
         </goals>
+        <activatedProfiles>
+            <activatedProfile>release-profile</activatedProfile>
+        </activatedProfiles>
     </action>
     <action>
         <actionName>CUSTOM-Fix JavaDoc</actionName>
