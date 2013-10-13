@@ -31,16 +31,30 @@ import java.io.Serializable;
  * @version $Id: $Id
  */
 public class SlotImpl implements Slot, Serializable {
-
+// <editor-fold defaultstate="collapsed" desc="Member Variables">
+    /**
+     * Identifier.
+     */
     @SerializedName("id")
     private String id;
+    /**
+     * Status.
+     */
     @SerializedName("status")
     private String status;
+    /**
+     * Description.
+     */
     @SerializedName("description")
     private String description;
+    /**
+     * SlotOptions.
+     */
     @SerializedName("options")
     private SlotOptionsImpl options;
+// </editor-fold>
 
+// <editor-fold desc="Constructors">
     /**
      * Default constructor.
      */
@@ -61,28 +75,37 @@ public class SlotImpl implements Slot, Serializable {
         this.description = jsonSlot.description;
         this.options = jsonSlot.options;
     }
+// </editor-fold>
 
+// <editor-fold desc="Accessors">
     /** {@inheritDoc} */
     @Override
-    public String getId() {
+    public final String getId() {
         return id;
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getStatus() {
+    public final String getStatus() {
         return status;
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getDescription() {
+    public final String getDescription() {
         return description;
     }
 
     /** {@inheritDoc} */
     @Override
-    public SlotOptions getOptions() {
+    public final SlotOptions getOptions() {
         return options;
+    }
+// </editor-fold>
+
+    /** {@inheritDoc} */
+    @Override
+    public final String toString() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
