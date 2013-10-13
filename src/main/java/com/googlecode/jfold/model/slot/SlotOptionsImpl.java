@@ -30,106 +30,144 @@ import java.io.Serializable;
  * @version $Id: $Id
  */
 public class SlotOptionsImpl implements SlotOptions, Serializable {
-
+// <editor-fold defaultstate="collapsed" desc="Member Variables">
+    /**
+     * Client type.
+     */
     @SerializedName("client-type")
     private String clientType;
+    /**
+     * Client sub-type.
+     */
     @SerializedName("client-subtype")
     private String clientSubtype;
+    /**
+     * Machine identifier.
+     */
     @SerializedName("machine-id")
     private int machineId;
+    /**
+     * Maximum packet size.
+     */
     @SerializedName("max-packet-size")
     private String maxPacketSize;
+    /**
+     * Core priority.
+     */
     @SerializedName("core-priority")
     private String corePriority;
+    /**
+     * Next unit percentage.
+     */
     @SerializedName("next-unit-percentage")
     private int nextUnitPercentage;
+    /**
+     * Maximum units.
+     */
     @SerializedName("max-units")
     private int maxUnits;
+    /**
+     * Checkpoint.
+     */
     @SerializedName("checkpoint")
     private int checkpoint;
+    /**
+     * Pause on start.
+     */
     @SerializedName("pause-on-start")
     private boolean pauseOnStart;
+    /**
+     * Graphics processor vendor identifier.
+     */
     @SerializedName("gpu-vendor-id")
     private String gpuVendorId;
+    /**
+     * Graphics processor device identifier.
+     */
     @SerializedName("gpu-device-id")
     private String gpuDeviceId;
+// </editor-fold>
 
+// <editor-fold desc="Constructors">
     /**
      * Default constructor.
      */
     public SlotOptionsImpl() {
         super();
     }
+// </editor-fold>
 
+// <editor-fold desc="Accessors">
     /** {@inheritDoc} */
     @Override
-    public String getClientType() {
+    public final String getClientType() {
         return clientType;
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getClientSubtype() {
+    public final String getClientSubtype() {
         return clientSubtype;
     }
 
     /** {@inheritDoc} */
     @Override
-    public int getMachineId() {
+    public final int getMachineId() {
         return machineId;
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getMaxPacketSize() {
+    public final String getMaxPacketSize() {
         return maxPacketSize;
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getCorePriority() {
+    public final String getCorePriority() {
         return corePriority;
     }
 
     /** {@inheritDoc} */
     @Override
-    public int getNextUnitPercentage() {
+    public final int getNextUnitPercentage() {
         return nextUnitPercentage;
     }
 
     /** {@inheritDoc} */
     @Override
-    public int getMaxUnits() {
+    public final int getMaxUnits() {
         return maxUnits;
     }
 
     /** {@inheritDoc} */
     @Override
-    public int getCheckpoint() {
+    public final int getCheckpoint() {
         return checkpoint;
     }
 
     /** {@inheritDoc} */
     @Override
-    public boolean getPauseOnStart() {
+    public final boolean getPauseOnStart() {
         return pauseOnStart;
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getGpuVendorId() {
+    public final String getGpuVendorId() {
         return gpuVendorId;
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getGpuDeviceId() {
+    public final String getGpuDeviceId() {
         return gpuDeviceId;
     }
+// </editor-fold>
 
     /** {@inheritDoc} */
     @Override
-    public String toString() {
+    public final String toString() {
         return "clientType = " + clientType
                 + "\nclientSubtype = " + clientSubtype
                 + "\nmachineId = " + machineId

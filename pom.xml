@@ -256,6 +256,7 @@
                 <version>${version.maven-checkstyle-plugin}</version>
                 <configuration>
                     <format>sun</format>
+                    <suppressionsLocation>${basedir}/src/main/checkstyle/suppressions.xml</suppressionsLocation>
                 </configuration>
             </plugin>
             <plugin>
