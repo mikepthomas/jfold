@@ -29,5 +29,8 @@
             <goal>javadoc:fix</goal>
             <goal>javadoc:test-fix</goal>
         </goals>
+        <activatedProfiles>
+            <activatedProfile>release-profile</activatedProfile>
+        </activatedProfiles>
     </action>
 </actions>
