@@ -96,6 +96,7 @@
         <version.maven-jxr-plugin>2.3</version.maven-jxr-plugin>
         <version.maven-pmd-plugin>3.0.1</version.maven-pmd-plugin>
         <version.maven-project-info-reports-plugin>2.7</version.maven-project-info-reports-plugin>
+        <version.maven-surefire-plugin>2.16</version.maven-surefire-plugin>
         <version.clirr-maven-plugin>2.6</version.clirr-maven-plugin>
         <version.cobertura-maven-plugin>2.6</version.cobertura-maven-plugin>
         <version.findbugs-maven-plugin>2.5.2</version.findbugs-maven-plugin>
@@ -176,7 +177,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.16</version>
+                    <version>${version.maven-surefire-plugin}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -314,6 +315,11 @@
                         </reports>
                     </reportSet>
                 </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>${version.maven-surefire-plugin}</version>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>

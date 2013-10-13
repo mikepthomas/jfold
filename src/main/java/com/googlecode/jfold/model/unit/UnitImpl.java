@@ -36,60 +36,140 @@ import java.util.logging.Logger;
  * @version $Id: $Id
  */
 public class UnitImpl implements Unit, Serializable {
-
+// <editor-fold defaultstate="collapsed" desc="Member Variables">
+    /**
+     * Identifier.
+     */
     @SerializedName("id")
     private String id;
+    /**
+     * Unit state.
+     */
     @SerializedName("state")
     private String state;
+    /**
+     * Project this Unit belongs to.
+     */
     @SerializedName("project")
     private int project;
+    /**
+     * Run of the Project.
+     */
     @SerializedName("run")
     private int run;
+    /**
+     * Clone of the Project.
+     */
     @SerializedName("clone")
     private int clone;
+    /**
+     * Generation of the Project.
+     */
     @SerializedName("gen")
     private int gen;
+    /**
+     * Core Identifier.
+     */
     @SerializedName("core")
     private String core;
+    /**
+     * Unique ID of the unit.
+     */
     @SerializedName("unit")
     private String unit;
+    /**
+     * Percentage of work completed.
+     */
     @SerializedName("percentdone")
     private String percentDone;
+    /**
+     * Total number of frames in this Unit.
+     */
     @SerializedName("totalframes")
     private int totalFrames;
+    /**
+     * Number of frames completed.
+     */
     @SerializedName("framesdone")
     private int framesDone;
+    /**
+     * Time and date this work unit was assigned.
+     */
     @SerializedName("assigned")
     private String assigned;
+    /**
+     * Time and date this work unit expires.
+     */
     @SerializedName("timeout")
     private String timeout;
+    /**
+     * Time and date this work unit needs to be completed by.
+     */
     @SerializedName("deadline")
     private String deadline;
+    /**
+     * Work server.
+     */
     @SerializedName("ws")
     private String ws;
+    /**
+     * Collection server.
+     */
     @SerializedName("cs")
     private String cs;
+    /**
+     * Reason the Unit is waiting.
+     */
     @SerializedName("waitingon")
     private String waitingOn;
+    /**
+     * Number of attempts to send completed Unit to collection server.
+     */
     @SerializedName("attempts")
     private int attempts;
+    /**
+     * Time until the next attempt to send completed Unit to collection server.
+     */
     @SerializedName("nextattempt")
     private String nextAttempt;
+    /**
+     * Slot number this Unit belongs to.
+     */
     @SerializedName("slot")
     private int slot;
+    /**
+     * Estimated time of arrival.
+     */
     @SerializedName("eta")
     private String eta;
+    /**
+     * Points per day.
+     */
     @SerializedName("ppd")
     private double ppd;
+    /**
+     * Time per frame.
+     */
     @SerializedName("tpf")
     private String tpf;
+    /**
+     * Baseline number of points awarded for completion of this Unit.
+     */
     @SerializedName("basecredit")
     private double baseCredit;
+    /**
+     * Estimated number of points awarded for completion of this Unit.
+     */
     @SerializedName("creditestimate")
     private double creditEstimate;
+    /**
+     * Project Description.
+     */
     @SerializedName("description")
     private String description;
+// </editor-fold>
 
+// <editor-fold desc="Constructors">
     /**
      * Default constructor.
      */
@@ -102,7 +182,9 @@ public class UnitImpl implements Unit, Serializable {
      *
      * @param json a {@link java.lang.String} object.
      */
-    public UnitImpl(String json) {
+    public UnitImpl(final String json) {
+        this();
+
         UnitImpl jsonUnit = new Gson().fromJson(json, UnitImpl.class);
 
         this.id = jsonUnit.id;
@@ -132,99 +214,100 @@ public class UnitImpl implements Unit, Serializable {
         this.creditEstimate = jsonUnit.creditEstimate;
         this.description = jsonUnit.description;
     }
+// </editor-fold>
 
+// <editor-fold desc="Accessors">
     /** {@inheritDoc} */
     @Override
-    public String getId() {
+    public final String getId() {
         return id;
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getState() {
+    public final String getState() {
         return state;
     }
 
     /** {@inheritDoc} */
     @Override
-    public int getProject() {
+    public final int getProject() {
         return project;
     }
 
     /** {@inheritDoc} */
     @Override
-    public int getRun() {
+    public final int getRun() {
         return run;
     }
 
     /** {@inheritDoc} */
     @Override
-    public int getClone() {
+    public final int getClone() {
         return clone;
     }
 
     /** {@inheritDoc} */
     @Override
-    public int getGen() {
+    public final int getGen() {
         return gen;
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getCore() {
+    public final String getCore() {
         return core;
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getUnit() {
+    public final String getUnit() {
         return unit;
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getPercentDone() {
+    public final String getPercentDone() {
         return percentDone;
     }
 
     /** {@inheritDoc} */
     @Override
-    public int getTotalFrames() {
+    public final int getTotalFrames() {
         return totalFrames;
     }
 
     /** {@inheritDoc} */
     @Override
-    public int getFramesDone() {
+    public final int getFramesDone() {
         return framesDone;
     }
 
     /** {@inheritDoc} */
     @Override
-    public Date getAssigned() {
+    public final Date getAssigned() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public Date getTimeout() {
+    public final Date getTimeout() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public Date getDeadline() {
+    public final Date getDeadline() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     /** {@inheritDoc} */
     @Override
-    public Inet4Address getWs() {
+    public final Inet4Address getWs() {
         Inet4Address workServer = null;
         try {
             workServer = (Inet4Address) Inet4Address.getByName(ws);
-        }
-        catch (UnknownHostException ex) {
+        } catch (UnknownHostException ex) {
             Logger.getLogger(UnitImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
         return workServer;
@@ -232,12 +315,11 @@ public class UnitImpl implements Unit, Serializable {
 
     /** {@inheritDoc} */
     @Override
-    public Inet4Address getCs() {
+    public final Inet4Address getCs() {
         Inet4Address collectionServer = null;
         try {
             collectionServer = (Inet4Address) Inet4Address.getByName(cs);
-        }
-        catch (UnknownHostException ex) {
+        } catch (UnknownHostException ex) {
             Logger.getLogger(UnitImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
         return collectionServer;
@@ -245,67 +327,68 @@ public class UnitImpl implements Unit, Serializable {
 
     /** {@inheritDoc} */
     @Override
-    public String getWaitingOn() {
+    public final String getWaitingOn() {
         return waitingOn;
     }
 
     /** {@inheritDoc} */
     @Override
-    public int getAttempts() {
+    public final int getAttempts() {
         return attempts;
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getNextAttempt() {
+    public final String getNextAttempt() {
         return nextAttempt;
     }
 
     /** {@inheritDoc} */
     @Override
-    public int getSlot() {
+    public final int getSlot() {
         return slot;
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getEta() {
+    public final String getEta() {
         return eta;
     }
 
     /** {@inheritDoc} */
     @Override
-    public double getPpd() {
+    public final double getPpd() {
         return ppd;
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getTpf() {
+    public final String getTpf() {
         return tpf;
     }
 
     /** {@inheritDoc} */
     @Override
-    public double getBaseCredit() {
+    public final double getBaseCredit() {
         return baseCredit;
     }
 
     /** {@inheritDoc} */
     @Override
-    public double getCreditEstimate() {
+    public final double getCreditEstimate() {
         return creditEstimate;
     }
 
     /** {@inheritDoc} */
     @Override
-    public String getDescription() {
+    public final String getDescription() {
         return description;
     }
+// </editor-fold>
 
     /** {@inheritDoc} */
     @Override
-    public String toString() {
+    public final String toString() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }
