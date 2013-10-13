@@ -19,7 +19,7 @@
         Java Library to connect to the Client Remote Interface
         in the new new Folding@Home V7 Client
     </description>
-    <url>http://${project.domain.reports}/${project.name}</url>
+    <url>${project.domain.reports}/${project.name}</url>
     <inceptionYear>2012</inceptionYear>
     <organization/>
     <licenses>
@@ -39,7 +39,7 @@
             <id>montycrabapple1@gmail.com</id>
             <name>Mike Thomas</name>
             <email>montycrabapple@hotmail.com</email>
-            <url>http://www.mikethomas.info</url>
+            <url>${project.domain.reports}</url>
             <timezone>0</timezone>
             <roles>
                 <role>Owner</role>
@@ -55,40 +55,55 @@
     <modules/>
 
     <scm>
-        <connection>scm:svn:http://${project.domain.source}/svn/trunk</connection>
-        <developerConnection>scm:svn:https://${project.domain.source}/svn/trunk</developerConnection>
+        <connection>scm:svn:http://jfold.googlecode.com/svn/trunk</connection>
+        <developerConnection>scm:svn:https://jfold.googlecode.com/svn/trunk</developerConnection>
         <tag>HEAD</tag>
-        <url>http://code.google.com/p/jfold/source/browse</url>
+        <url>${project.domain.source}/source/browse</url>
     </scm>
     <issueManagement>
         <system>Google Code</system>
-        <url>http://code.google.com/p/jfold/issues</url>
+        <url>${project.domain.source}/issues</url>
     </issueManagement>
     <ciManagement>
         <system>Jenkins</system>
-        <url>http://${project.domain.reports}/jenkins/job/${project.name}</url>
+        <url>${project.domain.reports}/jenkins/job/${project.name}</url>
     </ciManagement>
     <distributionManagement>
         <repository>
             <id>sonatype-nexus-staging</id>
             <name>Nexus Staging Repository</name>
-            <url>https://${project.domain.deployment}/service/local/staging/deploy/maven2</url>
+            <url>${project.domain.deployment}/service/local/staging/deploy/maven2</url>
         </repository>
         <snapshotRepository>
             <id>sonatype-nexus-snapshots</id>
             <name>Nexus Snapshots Repository</name>
-            <url>https://${project.domain.deployment}/content/repositories/snapshots</url>
+            <url>${project.domain.deployment}/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.targetJdk>1.6</project.build.targetJdk>
-        <project.domain.deployment>oss.sonatype.org</project.domain.deployment>
-        <project.domain.reports>www.mikethomas.info</project.domain.reports>
-        <project.domain.source>jfold.googlecode.com</project.domain.source>
+        <project.domain.deployment>https://oss.sonatype.org</project.domain.deployment>
+        <project.domain.reports>http://www.mikethomas.info</project.domain.reports>
+        <project.domain.source>http://code.google.com/p/jfold</project.domain.source>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <sonar.language>java</sonar.language>
+
+        <version.maven-changelog-plugin>2.2</version.maven-changelog-plugin>
+        <version.maven-checkstyle-plugin>2.10</version.maven-checkstyle-plugin>
+        <version.maven-javadoc-plugin>2.9.1</version.maven-javadoc-plugin>
+        <version.maven-jxr-plugin>2.3</version.maven-jxr-plugin>
+        <version.maven-pmd-plugin>3.0.1</version.maven-pmd-plugin>
+        <version.maven-project-info-reports-plugin>2.7</version.maven-project-info-reports-plugin>
+        <version.clirr-maven-plugin>2.6</version.clirr-maven-plugin>
+        <version.cobertura-maven-plugin>2.6</version.cobertura-maven-plugin>
+        <version.findbugs-maven-plugin>2.5.2</version.findbugs-maven-plugin>
+        <version.javancss-maven-plugin>2.0</version.javancss-maven-plugin>
+        <version.jdepend-maven-plugin>2.0-beta-2</version.jdepend-maven-plugin>
+        <version.license-maven-plugin>1.5</version.license-maven-plugin>
+        <version.taglist-maven-plugin>2.4</version.taglist-maven-plugin>
+        <version.versions-maven-plugin>2.1</version.versions-maven-plugin>
     </properties>
 
     <dependencyManagement/>
@@ -217,8 +232,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-changelog-plugin</artifactId>
-                <version>2.2</version>
+                <version>${version.maven-changelog-plugin}</version>
                 <configuration>
+                    <displayChangeSetDetailUrl>${project.domain.source}/source/detail?r=%REV%</displayChangeSetDetailUrl>
+                    <displayFileDetailUrl>${project.scm.url}%FILE%</displayFileDetailUrl>
+                    <displayFileRevDetailUrl>${project.scm.url}%FILE%?r=%REV%</displayFileRevDetailUrl>
                     <outputEncoding>${project.reporting.outputEncoding}</outputEncoding>
                 </configuration>
                 <reportSets>
@@ -234,15 +252,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.10</version>
+                <version>${version.maven-checkstyle-plugin}</version>
                 <configuration>
-                    <configLocation>config/sun_checks.xml</configLocation>
+                    <format>sun</format>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>${version.maven-javadoc-plugin}</version>
                 <configuration>
                     <quiet>true</quiet>
                     <show>public</show>
@@ -259,17 +277,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <linkJavadoc>true</linkJavadoc>
-                </configuration>
+                <version>${version.maven-jxr-plugin}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>${version.maven-pmd-plugin}</version>
                 <configuration>
-                    <linkXref>true</linkXref>
                     <minimumTokens>100</minimumTokens>
                     <targetJdk>${project.build.targetJdk}</targetJdk>
                 </configuration>
@@ -277,7 +291,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>2.7</version>
+                <version>${version.maven-project-info-reports-plugin}</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -304,12 +318,12 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>clirr-maven-plugin</artifactId>
-                <version>2.5</version>
+                <version>${version.clirr-maven-plugin}</version>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.6</version>
+                <version>${version.cobertura-maven-plugin}</version>
                 <configuration>
                     <formats>
                         <format>html</format>
@@ -321,28 +335,26 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
-                <version>2.5.2</version>
+                <version>${version.findbugs-maven-plugin}</version>
                 <configuration>
                     <effort>Max</effort>
-                    <findbugsXmlOutput>true</findbugsXmlOutput>
-                    <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
                     <xmlOutput>true</xmlOutput>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>javancss-maven-plugin</artifactId>
-                <version>2.0</version>
+                <version>${version.javancss-maven-plugin}</version>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jdepend-maven-plugin</artifactId>
-                <version>2.0-beta-2</version>
+                <version>${version.jdepend-maven-plugin}</version>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
-                <version>1.5</version>
+                <version>${version.license-maven-plugin}</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -353,14 +365,38 @@
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
+                <artifactId>taglist-maven-plugin</artifactId>
+                <version>${version.taglist-maven-plugin}</version>
+                <configuration>
+                    <tagListOptions>
+                        <tagClasses>
+                            <tagClass>
+                                <displayName>Todo Work</displayName>
+                                <tags>
+                                    <tag>
+                                        <matchString>todo</matchString>
+                                        <matchType>ignoreCase</matchType>
+                                    </tag>
+                                    <tag>
+                                        <matchString>FIXME</matchString>
+                                        <matchType>exact</matchType>
+                                    </tag>
+                                </tags>
+                            </tagClass>
+                        </tagClasses>
+                    </tagListOptions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
-                <version>2.1</version>
+                <version>${version.versions-maven-plugin}</version>
                 <reportSets>
                     <reportSet>
                         <reports>
                             <report>dependency-updates-report</report>
                             <report>plugin-updates-report</report>
-                            <!--report>property-updates-report</report-->
+                            <report>property-updates-report</report>
                         </reports>
                     </reportSet>
                 </reportSets>
@@ -437,7 +473,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.9.1</version>
+                        <version>${version.maven-javadoc-plugin}</version>
                         <configuration>
                             <quiet>true</quiet>
                             <show>public</show>
@@ -477,7 +513,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>license-maven-plugin</artifactId>
-                        <version>1.5</version>
+                        <version>${version.license-maven-plugin}</version>
                         <configuration>
                             <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
                             <canUpdateCopyright>true</canUpdateCopyright>
@@ -502,30 +538,6 @@
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>taglist-maven-plugin</artifactId>
-                        <version>2.4</version>
-                        <configuration>
-                            <tagListOptions>
-                                <tagClasses>
-                                    <tagClass>
-                                        <displayName>Todo Work</displayName>
-                                        <tags>
-                                            <tag>
-                                                <matchString>todo</matchString>
-                                                <matchType>ignoreCase</matchType>
-                                            </tag>
-                                            <tag>
-                                                <matchString>FIXME</matchString>
-                                                <matchType>exact</matchType>
-                                            </tag>
-                                        </tags>
-                                    </tagClass>
-                                </tagClasses>
-                            </tagListOptions>
-                        </configuration>
                     </plugin>
                 </plugins>
             </build>
