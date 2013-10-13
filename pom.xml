@@ -98,7 +98,7 @@
             <artifactId>gson</artifactId>
             <version>2.2.4</version>
         </dependency>
-        
+
         <!-- Test Dependencies -->
         <dependency>
             <groupId>junit</groupId>
@@ -202,16 +202,9 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>attach-descriptor</id>
                         <phase>pre-site</phase>
                         <goals>
                             <goal>attach-descriptor</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>package-site</id>
-                        <goals>
-                            <goal>jar</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -221,6 +214,23 @@
 
     <reporting>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-changelog-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <outputEncoding>${project.reporting.outputEncoding}</outputEncoding>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>changelog</report>
+                            <report>dev-activity</report>
+                            <report>file-activity</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
