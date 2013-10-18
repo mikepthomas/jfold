@@ -26,7 +26,7 @@
         <license>
             <name>GNU General Public License (GPL) version 3.0</name>
             <url>http://www.gnu.org/licenses/gpl.txt</url>
-            <distribution>manual</distribution>
+            <distribution>repo</distribution>
             <comments>
                 The GNU General Public License is a free, copyleft license for
                 software and other kinds of works.
@@ -37,8 +37,8 @@
     <developers>
         <developer>
             <id>montycrabapple1@gmail.com</id>
-            <name>Mike Thomas</name>
-            <email>montycrabapple@hotmail.com</email>
+            <name>Michael Thomas</name>
+            <email>mikepthomas@outlook.com</email>
             <url>${project.domain.reports}</url>
             <timezone>0</timezone>
             <roles>
@@ -102,6 +102,7 @@
         <version.findbugs-maven-plugin>2.5.2</version.findbugs-maven-plugin>
         <version.javancss-maven-plugin>2.0</version.javancss-maven-plugin>
         <version.jdepend-maven-plugin>2.0-beta-2</version.jdepend-maven-plugin>
+        <version.l10n-maven-plugin>1.0-alpha-2</version.l10n-maven-plugin>
         <version.license-maven-plugin>1.5</version.license-maven-plugin>
         <version.taglist-maven-plugin>2.4</version.taglist-maven-plugin>
         <version.versions-maven-plugin>2.1</version.versions-maven-plugin>
@@ -255,7 +256,7 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${version.maven-checkstyle-plugin}</version>
                 <configuration>
-                    <format>sun</format>
+                    <configLocation>config/sun_checks.xml</configLocation>
                     <suppressionsLocation>${basedir}/src/main/checkstyle/suppressions.xml</suppressionsLocation>
                 </configuration>
             </plugin>
@@ -357,6 +358,18 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jdepend-maven-plugin</artifactId>
                 <version>${version.jdepend-maven-plugin}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>l10n-maven-plugin</artifactId>
+                <version>${version.l10n-maven-plugin}</version>
+                <configuration>
+                    <locales>
+                        <locale>de</locale>
+                        <locale>fr</locale>
+                        <locale>sv</locale>
+                    </locales>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -498,6 +511,24 @@
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-pdf-plugin</artifactId>
+                        <version>1.2</version>
+                        <configuration>
+                            <includeReports>false</includeReports>
+                            <locales>en</locales>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>pdf</id>
+                                <phase>site</phase>
+                                <goals>
+                                    <goal>pdf</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
                             <skipTests>false</skipTests>
@@ -522,7 +553,6 @@
                         <artifactId>license-maven-plugin</artifactId>
                         <version>${version.license-maven-plugin}</version>
                         <configuration>
-                            <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
                             <canUpdateCopyright>true</canUpdateCopyright>
                             <canUpdateDescription>true</canUpdateDescription>
                             <descriptionTemplate>${basedir}/src/main/license/description-template.ftl</descriptionTemplate>
@@ -533,12 +563,13 @@
                             <licenseName>gpl_v3_jfold</licenseName>
                             <licenseResolver>${project.baseUri}src/main/license</licenseResolver>
                             <organizationName>
-                                Michael Thomas &lt;mikepthomas@outlook.com&gt;
+                                ${project.developers[0].name} &lt;${project.developers[0].email}&gt;
                             </organizationName>
                             <thirdPartyFilename>LICENSE</thirdPartyFilename>
                         </configuration>
                         <executions>
                             <execution>
+                                <phase>prepare-package</phase>
                                 <goals>
                                     <goal>add-third-party</goal>
                                     <goal>update-project-license</goal>
