@@ -23,19 +23,23 @@ package com.googlecode.jfold;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import com.googlecode.jfold.model.options.Options;
-import com.googlecode.jfold.model.options.OptionsImpl;
-import com.googlecode.jfold.model.simulation.SimulationInfo;
-import com.googlecode.jfold.model.simulation.SimulationInfoImpl;
-import com.googlecode.jfold.model.slot.Slot;
-import com.googlecode.jfold.model.slot.SlotImpl;
-import com.googlecode.jfold.model.slot.SlotOptions;
-import com.googlecode.jfold.model.slot.SlotOptionsImpl;
-import com.googlecode.jfold.model.unit.Unit;
+import com.googlecode.jfold.exceptions.*;
+import com.googlecode.jfold.options.Options;
+import com.googlecode.jfold.options.OptionsImpl;
+import com.googlecode.jfold.simulation.SimulationInfo;
+import com.googlecode.jfold.simulation.SimulationInfoImpl;
+import com.googlecode.jfold.slot.Slot;
+import com.googlecode.jfold.slot.SlotImpl;
+import com.googlecode.jfold.slot.SlotOptions;
+import com.googlecode.jfold.slot.SlotOptionsImpl;
+import com.googlecode.jfold.unit.Unit;
 import java.lang.reflect.Type;
 import java.net.Inet4Address;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * <p>Abstract GsonConnection class.</p>
@@ -50,6 +54,8 @@ public abstract class GsonConnection implements Connection {
 
     /** Gson JSON Converter. */
     private final Gson gson;
+    
+    private final Logger logger;
 
     /**
      * <p>Constructor for AbstractConnection.</p>
@@ -58,6 +64,7 @@ public abstract class GsonConnection implements Connection {
         super();
 
         gson = new GsonBuilder().setDateFormat(DATE_FORMAT).create();
+        logger = Logger.getLogger(this.getClass().getName());
     }
 
     /** {@inheritDoc} */
@@ -124,8 +131,16 @@ public abstract class GsonConnection implements Connection {
 
     /** {@inheritDoc} */
     @Override
-    public final int numSlots() {
-        return gson.fromJson(getNumSlotsOutput(), Integer.class);
+    public final int numSlots(){
+        try {
+            return gson.fromJson(getNumSlotsOutput(), Integer.class);
+        }
+        catch (NumSlotsException ex) {
+            // Log Error
+            logger.log(Level.WARNING, ex.getLocalizedMessage());
+            
+            return 0;
+        }
     }
 
     /** {@inheritDoc} */
@@ -150,7 +165,14 @@ public abstract class GsonConnection implements Connection {
     @Override
     public final Options options(
             final boolean listDefault, final boolean listUnset) {
-        return gson.fromJson(getOptionsOutput(listDefault, listUnset), OptionsImpl.class);
+        try {
+            return gson.fromJson(getOptionsOutput(listDefault, listUnset), OptionsImpl.class);
+        }
+        catch (OptionsException ex) {
+            logger.log(Level.WARNING, ex.getLocalizedMessage());
+            
+            return new OptionsImpl();
+        }
     }
 
     /** {@inheritDoc} */
@@ -168,7 +190,14 @@ public abstract class GsonConnection implements Connection {
     /** {@inheritDoc} */
     @Override
     public final int ppd() {
-        return gson.fromJson(getPpdOutput(), Integer.class);
+        try {
+            return gson.fromJson(getPpdOutput(), Integer.class);
+        }
+        catch (PpdException ex) {
+            logger.log(Level.WARNING, ex.getLocalizedMessage());
+            
+            return 0;
+        }
     }
 
     /** {@inheritDoc} */
@@ -210,7 +239,14 @@ public abstract class GsonConnection implements Connection {
     /** {@inheritDoc} */
     @Override
     public final SimulationInfo simulationInfo(final int slot) {
-        return gson.fromJson(getSimulationInfoOutput(slot), SimulationInfoImpl.class);
+        try {
+            return gson.fromJson(getSimulationInfoOutput(slot), SimulationInfoImpl.class);
+        }
+        catch (SimulationInfoException ex) {
+            logger.log(Level.WARNING, ex.getLocalizedMessage());
+            
+            return new SimulationInfoImpl();
+        }
     }
 
     /** {@inheritDoc} */
@@ -229,7 +265,14 @@ public abstract class GsonConnection implements Connection {
     @Override
     public final List<Slot> slotInfo() {
         Type slotInfoType = new TypeToken<List<SlotImpl>>() { } .getType();
-        return gson.fromJson(getSlotInfoOutput(), slotInfoType);
+        try {
+            return gson.fromJson(getSlotInfoOutput(), slotInfoType);
+        }
+        catch (SlotInfoException ex) {
+            logger.log(Level.WARNING, ex.getLocalizedMessage());
+            
+            return new ArrayList<Slot>();
+        }
     }
 
     /** {@inheritDoc} */
@@ -241,7 +284,14 @@ public abstract class GsonConnection implements Connection {
     /** {@inheritDoc} */
     @Override
     public final SlotOptions slotOptions(final int slot) {
-        return gson.fromJson(getSlotOptionsOutput(slot), SlotOptionsImpl.class);
+        try {
+            return gson.fromJson(getSlotOptionsOutput(slot), SlotOptionsImpl.class);
+        }
+        catch (SlotOptionsException ex) {
+            logger.log(Level.WARNING, ex.getLocalizedMessage());
+            
+            return new SlotOptionsImpl();
+        }
     }
 
     /** {@inheritDoc} */
@@ -284,8 +334,9 @@ public abstract class GsonConnection implements Connection {
      * <p>getNumSlotsOutput.</p>
      *
      * @return a {@link java.lang.String} object.
+     * @throws com.googlecode.jfold.exceptions.NumSlotsException if any.
      */
-    protected abstract String getNumSlotsOutput();
+    protected abstract String getNumSlotsOutput() throws NumSlotsException;
 
     /**
      * <p>getOptionsOutput.</p>
@@ -293,39 +344,46 @@ public abstract class GsonConnection implements Connection {
      * @param listDefault a boolean.
      * @param listUnset a boolean.
      * @return a {@link java.lang.String} object.
+     * @throws com.googlecode.jfold.exceptions.OptionsException if any.
      */
     protected abstract String getOptionsOutput(
-            boolean listDefault, boolean listUnset);
+            boolean listDefault, boolean listUnset) throws OptionsException;
 
     /**
      * <p>getPpdOutput.</p>
      *
      * @return a {@link java.lang.String} object.
+     * @throws com.googlecode.jfold.exceptions.PpdException if any.
      */
-    protected abstract String getPpdOutput();
+    protected abstract String getPpdOutput() throws PpdException;
 
     /**
      * <p>getSimulationInfoOutput.</p>
      *
      * @param slot a int.
      * @return a {@link java.lang.String} object.
+     * @throws com.googlecode.jfold.exceptions.SimulationInfoException if any.
      */
-    protected abstract String getSimulationInfoOutput(int slot);
+    protected abstract String getSimulationInfoOutput(int slot)
+            throws SimulationInfoException;
 
     /**
      * <p>getSlotInfoOutput.</p>
      *
      * @return a {@link java.lang.String} object.
+     * @throws com.googlecode.jfold.exceptions.SlotInfoException if any.
      */
-    protected abstract String getSlotInfoOutput();
+    protected abstract String getSlotInfoOutput() throws SlotInfoException;
 
     /**
      * <p>getSlotOptionsOutput.</p>
      *
      * @param slot a int.
      * @return a {@link java.lang.String} object.
+     * @throws com.googlecode.jfold.exceptions.SlotOptionsException if any.
      */
-    protected abstract String getSlotOptionsOutput(int slot);
+    protected abstract String getSlotOptionsOutput(int slot)
+            throws SlotOptionsException;
 
     /**
      * <p>getUptimeOutput.</p>

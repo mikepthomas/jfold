@@ -1,0 +1,12 @@
+[
+  {
+    "id": "01",
+    "status": "FINISHING",
+    "description": "smp:4",
+    "options": {
+      "client-type": "beta",
+      "max-packet-size": "big",
+      "next-unit-percentage": "100"
+    }
+  }
+]
