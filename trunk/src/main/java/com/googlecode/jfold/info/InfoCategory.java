@@ -21,21 +21,19 @@
 package com.googlecode.jfold.info;
 
 /**
- * <p>ClientInfo class.</p>
+ * <p>InfoCategory class.</p>
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
  * @version $Id: $Id
  */
-public enum ClientInfo {
-    WEBSITE("Website"),
-    COPYRIGHT("Copyright"),
-    AUTHOR("Author"),
-    ARGS("Args"),
-    CONFIG("Config");
+public enum InfoCategory {
+    CLIENT("Folding@home Client"),
+    BUILD("Build"),
+    SYSTEM("System");
 
     private final String key;
 
-    ClientInfo(String key) {
+    InfoCategory(String key) {
         this.key = key;
     }
 
