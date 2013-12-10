@@ -20,6 +20,7 @@
  */
 package com.googlecode.jfold;
 
+import com.googlecode.jfold.info.InfoItem;
 import com.googlecode.jfold.options.Options;
 import com.googlecode.jfold.simulation.SimulationInfo;
 import com.googlecode.jfold.slot.Slot;
@@ -80,13 +81,22 @@ public interface Connection {
     void finish(int slot);
 
     /**
-     * Print application information.
+     * Print application information for requested <code>category</code> and
+     * <code>key</code>.
      *
      * @param category to return information from
      * @param key to return information from
      * @return String value from information
      */
     String getInfo(String category, String key);
+    
+    /**
+     * Print application information for requested <code>InfoItem</code>.
+     *
+     * @param infoItem a {@link com.googlecode.jfold.info.InfoItem} object.
+     * @return a {@link java.lang.String} object.
+     */
+    String getInfo(InfoItem infoItem);
 
     /**
      * List application information.

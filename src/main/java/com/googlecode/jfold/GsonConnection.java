@@ -24,6 +24,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.googlecode.jfold.exceptions.*;
+import com.googlecode.jfold.info.InfoItem;
 import com.googlecode.jfold.options.Options;
 import com.googlecode.jfold.options.OptionsImpl;
 import com.googlecode.jfold.simulation.SimulationInfo;
@@ -108,6 +109,12 @@ public abstract class GsonConnection implements Connection {
     @Override
     public final String getInfo(final String category, final String key) {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+    /** {@inheritDoc} */
+    @Override
+    public final String getInfo(final InfoItem infoItem) {
+        return getInfo(infoItem.getCategory().toString(), infoItem.toString());
     }
 
     /** {@inheritDoc} */
