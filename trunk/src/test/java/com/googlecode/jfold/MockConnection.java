@@ -20,10 +20,10 @@
  */
 package com.googlecode.jfold;
 
-import com.googlecode.jfold.model.options.Options;
-import com.googlecode.jfold.model.simulation.SimulationInfo;
-import com.googlecode.jfold.model.slot.Slot;
-import com.googlecode.jfold.model.slot.SlotOptions;
+import com.googlecode.jfold.options.Options;
+import com.googlecode.jfold.simulation.SimulationInfo;
+import com.googlecode.jfold.slot.Slot;
+import com.googlecode.jfold.slot.SlotOptions;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;

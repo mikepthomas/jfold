@@ -20,6 +20,7 @@
  */
 package com.googlecode.jfold;
 
+import com.googlecode.jfold.exceptions.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -36,7 +37,9 @@ import java.util.logging.Logger;
  */
 public class SocketConnection extends GsonConnection implements Connection {
 
+    /** Constant <code>DEFAULT_HOST="localhost"</code> */
     public static final String DEFAULT_HOST = "localhost";
+    /** Constant <code>DEFAULT_PORT=36330</code> */
     public static final int DEFAULT_PORT = 36330;
 
     /**
@@ -99,47 +102,79 @@ public class SocketConnection extends GsonConnection implements Connection {
 
     /** {@inheritDoc} */
     @Override
-    protected final String getNumSlotsOutput() {
+    protected final String getNumSlotsOutput() throws NumSlotsException {
         sendCommand("num-slots");
-        return PyonParser.convert(getString());
+        try {
+            return PyonParser.convert(getString());
+        }
+        catch (PyonParserException ex) {
+            throw new NumSlotsException(ex.getLocalizedMessage());
+        }
     }
 
     /** {@inheritDoc} */
     @Override
     protected final String getOptionsOutput(
-            final boolean listDefault, final boolean listUnset) {
+            final boolean listDefault,
+            final boolean listUnset) throws OptionsException {
         String defaultValue = listDefault ? " -d" : "";
         String unsetValue = listUnset ? " -a" : "";
         sendCommand("options" + defaultValue + unsetValue);
-        return PyonParser.convert(getString());
+        try {
+            return PyonParser.convert(getString());
+        }
+        catch (PyonParserException ex) {
+            throw new OptionsException(ex.getLocalizedMessage());
+        }
     }
 
     /** {@inheritDoc} */
     @Override
-    protected final String getPpdOutput() {
+    protected final String getPpdOutput() throws PpdException{
         sendCommand("ppd");
-        return PyonParser.convert(getString());
+        try {
+            return PyonParser.convert(getString());
+        }
+        catch (PyonParserException ex) {
+            throw new PpdException(ex.getLocalizedMessage());
+        }
     }
 
     /** {@inheritDoc} */
     @Override
-    protected final String getSimulationInfoOutput(final int slot) {
+    protected final String getSimulationInfoOutput(final int slot)
+            throws SimulationInfoException {
         sendCommand("simulation-info " + slot);
-        return PyonParser.convert(getString());
+        try {
+            return PyonParser.convert(getString());
+        }
+        catch (PyonParserException ex) {
+            throw new SimulationInfoException(ex.getLocalizedMessage());
+        }
     }
 
     /** {@inheritDoc} */
     @Override
-    protected final String getSlotInfoOutput() {
-        sendCommand("slot-info");
-        return PyonParser.convert(getString());
+    protected final String getSlotInfoOutput() throws SlotInfoException {
+        try {
+            sendCommand("slot-info");
+            return PyonParser.convert(getString());
+        }
+        catch (PyonParserException ex) {
+            throw new SlotInfoException(ex.getLocalizedMessage());
+        }
     }
 
     /** {@inheritDoc} */
     @Override
-    protected final String getSlotOptionsOutput(final int slot) {
+    protected final String getSlotOptionsOutput(final int slot) throws SlotOptionsException {
         sendCommand("slot-options " + slot + " -a");
-        return PyonParser.convert(getString());
+        try {
+            return PyonParser.convert(getString());
+        }
+        catch (PyonParserException ex) {
+            throw new SlotOptionsException(ex.getLocalizedMessage());
+        }
     }
 
     /** {@inheritDoc} */
@@ -157,8 +192,8 @@ public class SocketConnection extends GsonConnection implements Connection {
     private void sendCommand(String command) {
         out.println(command);
 
-        String message = "Sent: " + command;
-        Logger.getLogger(this.getClass().getName()).log(Level.INFO, message);
+        String msg = "Sent: " + command;
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, msg);
     }
 
     /**

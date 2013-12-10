@@ -553,6 +553,7 @@
                         <artifactId>license-maven-plugin</artifactId>
                         <version>${version.license-maven-plugin}</version>
                         <configuration>
+                            <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
                             <canUpdateCopyright>true</canUpdateCopyright>
                             <canUpdateDescription>true</canUpdateDescription>
                             <descriptionTemplate>${basedir}/src/main/license/description-template.ftl</descriptionTemplate>
