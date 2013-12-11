@@ -99,13 +99,25 @@ public class SocketConnection extends GsonConnection implements Connection {
             final String password, final int retryRate) throws IOException {
         this(address, port);
     }
+    
+    /** {@inheritDoc} */
+    @Override
+    protected final String getInfoOutput() throws InfoException {
+        sendCommand("info");
+        try {
+            return PyonParser.convert(getPyon());
+        }
+        catch (PyonParserException ex) {
+            throw new InfoException(ex.getLocalizedMessage());
+        }
+    }
 
     /** {@inheritDoc} */
     @Override
     protected final String getNumSlotsOutput() throws NumSlotsException {
         sendCommand("num-slots");
         try {
-            return PyonParser.convert(getString());
+            return PyonParser.convert(getPyon());
         }
         catch (PyonParserException ex) {
             throw new NumSlotsException(ex.getLocalizedMessage());
@@ -121,7 +133,7 @@ public class SocketConnection extends GsonConnection implements Connection {
         String unsetValue = listUnset ? " -a" : "";
         sendCommand("options" + defaultValue + unsetValue);
         try {
-            return PyonParser.convert(getString());
+            return PyonParser.convert(getPyon());
         }
         catch (PyonParserException ex) {
             throw new OptionsException(ex.getLocalizedMessage());
@@ -133,7 +145,7 @@ public class SocketConnection extends GsonConnection implements Connection {
     protected final String getPpdOutput() throws PpdException{
         sendCommand("ppd");
         try {
-            return PyonParser.convert(getString());
+            return PyonParser.convert(getPyon());
         }
         catch (PyonParserException ex) {
             throw new PpdException(ex.getLocalizedMessage());
@@ -146,7 +158,7 @@ public class SocketConnection extends GsonConnection implements Connection {
             throws SimulationInfoException {
         sendCommand("simulation-info " + slot);
         try {
-            return PyonParser.convert(getString());
+            return PyonParser.convert(getPyon());
         }
         catch (PyonParserException ex) {
             throw new SimulationInfoException(ex.getLocalizedMessage());
@@ -158,7 +170,7 @@ public class SocketConnection extends GsonConnection implements Connection {
     protected final String getSlotInfoOutput() throws SlotInfoException {
         try {
             sendCommand("slot-info");
-            return PyonParser.convert(getString());
+            return PyonParser.convert(getPyon());
         }
         catch (PyonParserException ex) {
             throw new SlotInfoException(ex.getLocalizedMessage());
@@ -170,7 +182,7 @@ public class SocketConnection extends GsonConnection implements Connection {
     protected final String getSlotOptionsOutput(final int slot) throws SlotOptionsException {
         sendCommand("slot-options " + slot + " -a");
         try {
-            return PyonParser.convert(getString());
+            return PyonParser.convert(getPyon());
         }
         catch (PyonParserException ex) {
             throw new SlotOptionsException(ex.getLocalizedMessage());
@@ -192,12 +204,12 @@ public class SocketConnection extends GsonConnection implements Connection {
     private void sendCommand(String command) {
         out.println(command);
 
-        String msg = "Sent: " + command;
+        String msg = "Sent Command: " + command;
         Logger.getLogger(this.getClass().getName()).log(Level.INFO, msg);
     }
 
     /**
-     * Receive the response from the Folding@home Client.
+     * Receive a String response from the Folding@home Client.
      *
      * @return String response
      */
@@ -206,6 +218,7 @@ public class SocketConnection extends GsonConnection implements Connection {
 
         try {
             in.read(); // first char is '>'
+            in.read(); // second char is ' '
             char ch;
             while ((ch = (char) in.read()) != '>') {
                 stringBuilder.append((char) ch);
@@ -214,9 +227,36 @@ public class SocketConnection extends GsonConnection implements Connection {
             Logger.getLogger(SocketConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String string = stringBuilder.toString().trim();
+        String string = stringBuilder.toString();
 
         String message = "Recieved String: " + string;
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, message);
+
+        return string;
+    }
+    
+    /**
+     * Receive a PyON response from the Folding@home Client.
+     *
+     * @return String response
+     */
+    private String getPyon() {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        try {
+            in.read(); // first char os '>'
+            in.read(); // second char is ' '
+            String string;
+            while (!(string = in.readLine()).equals("---")) {
+                stringBuilder.append(string).append('\n');
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(SocketConnection.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String string = stringBuilder.toString();
+
+        String message = "Recieved PyON: " + string;
         Logger.getLogger(this.getClass().getName()).log(Level.INFO, message);
 
         return string;
