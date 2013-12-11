@@ -20,6 +20,7 @@
  */
 package com.googlecode.jfold;
 
+import com.googlecode.jfold.info.InfoItem;
 import com.googlecode.jfold.options.Options;
 import com.googlecode.jfold.simulation.SimulationInfo;
 import com.googlecode.jfold.slot.Slot;
@@ -38,6 +39,12 @@ import org.apache.commons.io.FileUtils;
  */
 public class MockConnection extends GsonConnection implements Connection {
 
+    /** {@inheritDoc} */
+    @Override
+    protected String getInfoOutput() {
+        return getJson(InfoItem.class);
+    }
+    
     /** {@inheritDoc} */
     @Override
     protected String getNumSlotsOutput() {
