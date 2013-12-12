@@ -27,13 +27,22 @@ package com.googlecode.jfold.info;
  * @version $Id: $Id
  */
 public enum InfoCategory {
+// <editor-fold defaultstate="collapsed" desc="Info Categories">
+
+    /** Represents <code>Folding@home Client</code> category. */
     CLIENT("Folding@home Client"),
+
+    /** Represents <code>Build</code> category. */
     BUILD("Build"),
+
+    /** Represents <code>System</code> category. */
     SYSTEM("System");
+
+// </editor-fold>
 
     private final String key;
 
-    InfoCategory(String key) {
+    InfoCategory(final String key) {
         this.key = key;
     }
 

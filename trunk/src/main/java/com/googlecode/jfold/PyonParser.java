@@ -38,7 +38,7 @@ public class PyonParser {
     public static final String PYON_HEADER = PYON_1 + "(.*)\n";
     /** Constant <code>PYON_TRAILER</code>. */
     public static final String PYON_TRAILER = "\n---";
-    
+
     /** Constant <code>PYON_ERROR</code>. */
     public static final String PYON_ERROR = PYON_HEADER.replace("(.*)", "error");
 
@@ -76,14 +76,15 @@ public class PyonParser {
 
             return pyon;
         }
-        
+
         // Get PyON Body
         String json = pyon.replaceAll(PYON_HEADER, "");
         json = json.replaceAll(PYON_TRAILER, "");
-        
+
         // Check for PyON Error Message
-        if (pyon.contains(PYON_ERROR))
+        if (pyon.contains(PYON_ERROR)) {
             throw new PyonParserException(json);
+        }
 
         // None is used instead of null
         json = json.replaceAll(NONE, NULL);

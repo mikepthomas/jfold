@@ -42,7 +42,7 @@ public class SimulationInfoException extends Exception {
      *
      * @param msg the detail message.
      */
-    public SimulationInfoException(String msg) {
+    public SimulationInfoException(final String msg) {
         super(msg);
     }
 }

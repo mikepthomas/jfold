@@ -42,7 +42,7 @@ public class PpdException extends Exception {
      *
      * @param msg the detail message.
      */
-    public PpdException(String msg) {
+    public PpdException(final String msg) {
         super(msg);
     }
 }

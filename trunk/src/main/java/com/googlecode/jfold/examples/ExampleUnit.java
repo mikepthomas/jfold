@@ -31,7 +31,7 @@ import com.googlecode.jfold.unit.UnitImpl;
  */
 public class ExampleUnit extends UnitImpl implements Unit {
 
-    /** Constant <code>JSON="{  \"id\": \"01\",  \"state\": \"RUNNIN"{trunked}</code> */
+    /** Constant <code>JSON</code>. */
     public static final String JSON = "{"
             + "  \"id\": \"01\","
             + "  \"state\": \"RUNNING\","

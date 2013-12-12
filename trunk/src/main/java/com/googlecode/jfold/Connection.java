@@ -89,7 +89,7 @@ public interface Connection {
      * @return String value from information
      */
     String getInfo(String category, String key);
-    
+
     /**
      * Print application information for requested <code>InfoItem</code>.
      *

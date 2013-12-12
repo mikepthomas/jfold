@@ -42,7 +42,7 @@ public class SlotInfoException extends Exception {
      *
      * @param msg the detail message.
      */
-    public SlotInfoException(String msg) {
+    public SlotInfoException(final String msg) {
         super(msg);
     }
 }

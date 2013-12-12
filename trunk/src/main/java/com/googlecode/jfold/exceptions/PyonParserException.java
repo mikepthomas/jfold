@@ -42,7 +42,7 @@ public class PyonParserException extends Exception {
      *
      * @param msg the detail message.
      */
-    public PyonParserException(String msg) {
+    public PyonParserException(final String msg) {
         super(msg);
     }
 }
