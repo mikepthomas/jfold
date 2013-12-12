@@ -42,7 +42,7 @@ public class NumSlotsException extends Exception {
      *
      * @param msg the detail message.
      */
-    public NumSlotsException(String msg) {
+    public NumSlotsException(final String msg) {
         super(msg);
     }
 }

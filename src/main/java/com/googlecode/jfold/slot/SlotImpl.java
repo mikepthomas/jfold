@@ -67,7 +67,7 @@ public class SlotImpl implements Slot, Serializable {
      *
      * @param json a {@link java.lang.String} object.
      */
-    public SlotImpl(String json) {
+    public SlotImpl(final String json) {
         SlotImpl jsonSlot = new Gson().fromJson(json, SlotImpl.class);
 
         this.id = jsonSlot.id;

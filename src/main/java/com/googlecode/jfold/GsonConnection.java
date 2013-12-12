@@ -23,7 +23,13 @@ package com.googlecode.jfold;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import com.googlecode.jfold.exceptions.*;
+import com.googlecode.jfold.exceptions.InfoException;
+import com.googlecode.jfold.exceptions.NumSlotsException;
+import com.googlecode.jfold.exceptions.OptionsException;
+import com.googlecode.jfold.exceptions.PpdException;
+import com.googlecode.jfold.exceptions.SimulationInfoException;
+import com.googlecode.jfold.exceptions.SlotInfoException;
+import com.googlecode.jfold.exceptions.SlotOptionsException;
 import com.googlecode.jfold.info.InfoItem;
 import com.googlecode.jfold.options.Options;
 import com.googlecode.jfold.options.OptionsImpl;
@@ -55,7 +61,8 @@ public abstract class GsonConnection implements Connection {
 
     /** Gson JSON Converter. */
     private final Gson gson;
-    
+
+    /** Logger. */
     private final Logger logger;
 
     /**
@@ -110,14 +117,13 @@ public abstract class GsonConnection implements Connection {
     public final String getInfo(final String category, final String key) {
         try {
             return getInfoOutput(category, key);
-        }
-        catch (InfoException ex) {
+        } catch (InfoException ex) {
             logger.log(Level.WARNING, "Failed to get Info Output", ex);
-            
+
             return "";
         }
     }
-    
+
     /** {@inheritDoc} */
     @Override
     public final String getInfo(final InfoItem infoItem) {
@@ -129,10 +135,9 @@ public abstract class GsonConnection implements Connection {
     public final List info() {
         try {
             return gson.fromJson(getInfoOutput(), List.class);
-        }
-        catch (InfoException ex) {
+        } catch (InfoException ex) {
             logger.log(Level.WARNING, "Failed to get Info Output", ex);
-            
+
             return new ArrayList();
         }
     }
@@ -152,14 +157,13 @@ public abstract class GsonConnection implements Connection {
 
     /** {@inheritDoc} */
     @Override
-    public final int numSlots(){
+    public final int numSlots() {
         try {
             return gson.fromJson(getNumSlotsOutput(), Integer.class);
-        }
-        catch (NumSlotsException ex) {
+        } catch (NumSlotsException ex) {
             // Log Error
             logger.log(Level.WARNING, "Failed to get Num Slots Output", ex);
-            
+
             return 0;
         }
     }
@@ -188,10 +192,9 @@ public abstract class GsonConnection implements Connection {
             final boolean listDefault, final boolean listUnset) {
         try {
             return gson.fromJson(getOptionsOutput(listDefault, listUnset), OptionsImpl.class);
-        }
-        catch (OptionsException ex) {
+        } catch (OptionsException ex) {
             logger.log(Level.WARNING, "Failed to get Options Output", ex);
-            
+
             return new OptionsImpl();
         }
     }
@@ -213,10 +216,9 @@ public abstract class GsonConnection implements Connection {
     public final int ppd() {
         try {
             return gson.fromJson(getPpdOutput(), Integer.class);
-        }
-        catch (PpdException ex) {
+        } catch (PpdException ex) {
             logger.log(Level.WARNING, "Failed to get PPD Output", ex);
-            
+
             return 0;
         }
     }
@@ -262,10 +264,9 @@ public abstract class GsonConnection implements Connection {
     public final SimulationInfo simulationInfo(final int slot) {
         try {
             return gson.fromJson(getSimulationInfoOutput(slot), SimulationInfoImpl.class);
-        }
-        catch (SimulationInfoException ex) {
+        } catch (SimulationInfoException ex) {
             logger.log(Level.WARNING, "Failed to get Simulation Info Output", ex);
-            
+
             return new SimulationInfoImpl();
         }
     }
@@ -288,10 +289,9 @@ public abstract class GsonConnection implements Connection {
         Type slotInfoType = new TypeToken<List<SlotImpl>>() { } .getType();
         try {
             return gson.fromJson(getSlotInfoOutput(), slotInfoType);
-        }
-        catch (SlotInfoException ex) {
+        } catch (SlotInfoException ex) {
             logger.log(Level.WARNING, "Failed to get Slot Info Output", ex);
-            
+
             return new ArrayList<Slot>();
         }
     }
@@ -307,10 +307,9 @@ public abstract class GsonConnection implements Connection {
     public final SlotOptions slotOptions(final int slot) {
         try {
             return gson.fromJson(getSlotOptionsOutput(slot), SlotOptionsImpl.class);
-        }
-        catch (SlotOptionsException ex) {
+        } catch (SlotOptionsException ex) {
             logger.log(Level.WARNING, "Failed to get Slot Options Output", ex);
-            
+
             return new SlotOptionsImpl();
         }
     }
@@ -350,7 +349,7 @@ public abstract class GsonConnection implements Connection {
     public final void waitForUnits() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-    
+
     /**
      * <p>getInfoOutput.</p>
      *
@@ -361,7 +360,7 @@ public abstract class GsonConnection implements Connection {
      */
     protected abstract String getInfoOutput(String category, String key)
             throws InfoException;
-    
+
     /**
      * <p>getInfoOutput.</p>
      *

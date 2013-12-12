@@ -42,7 +42,7 @@ public class SlotOptionsException extends Exception {
      *
      * @param msg the detail message.
      */
-    public SlotOptionsException(String msg) {
+    public SlotOptionsException(final String msg) {
         super(msg);
     }
 }

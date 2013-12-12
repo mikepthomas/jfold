@@ -20,7 +20,14 @@
  */
 package com.googlecode.jfold;
 
-import com.googlecode.jfold.exceptions.*;
+import com.googlecode.jfold.exceptions.InfoException;
+import com.googlecode.jfold.exceptions.NumSlotsException;
+import com.googlecode.jfold.exceptions.OptionsException;
+import com.googlecode.jfold.exceptions.PpdException;
+import com.googlecode.jfold.exceptions.PyonParserException;
+import com.googlecode.jfold.exceptions.SimulationInfoException;
+import com.googlecode.jfold.exceptions.SlotInfoException;
+import com.googlecode.jfold.exceptions.SlotOptionsException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -37,9 +44,9 @@ import java.util.logging.Logger;
  */
 public class SocketConnection extends GsonConnection implements Connection {
 
-    /** Constant <code>DEFAULT_HOST="localhost"</code> */
+    /** Constant <code>DEFAULT_HOST="localhost"</code>. */
     public static final String DEFAULT_HOST = "localhost";
-    /** Constant <code>DEFAULT_PORT=36330</code> */
+    /** Constant <code>DEFAULT_PORT=36330</code>. */
     public static final int DEFAULT_PORT = 36330;
 
     /**
@@ -99,7 +106,7 @@ public class SocketConnection extends GsonConnection implements Connection {
             final String password, final int retryRate) throws IOException {
         this(address, port);
     }
-    
+
     /** {@inheritDoc} */
     @Override
     protected final String getInfoOutput(final String category, final String key)
@@ -107,15 +114,14 @@ public class SocketConnection extends GsonConnection implements Connection {
         sendCommand("get-info \"" + category + "\" \"" + key + "\"");
         return getString();
     }
-    
+
     /** {@inheritDoc} */
     @Override
     protected final String getInfoOutput() throws InfoException {
         sendCommand("info");
         try {
             return PyonParser.convert(getPyon());
-        }
-        catch (PyonParserException ex) {
+        } catch (PyonParserException ex) {
             throw new InfoException(ex.getLocalizedMessage());
         }
     }
@@ -126,8 +132,7 @@ public class SocketConnection extends GsonConnection implements Connection {
         sendCommand("num-slots");
         try {
             return PyonParser.convert(getPyon());
-        }
-        catch (PyonParserException ex) {
+        } catch (PyonParserException ex) {
             throw new NumSlotsException(ex.getLocalizedMessage());
         }
     }
@@ -142,20 +147,18 @@ public class SocketConnection extends GsonConnection implements Connection {
         sendCommand("options" + defaultValue + unsetValue);
         try {
             return PyonParser.convert(getPyon());
-        }
-        catch (PyonParserException ex) {
+        } catch (PyonParserException ex) {
             throw new OptionsException(ex.getLocalizedMessage());
         }
     }
 
     /** {@inheritDoc} */
     @Override
-    protected final String getPpdOutput() throws PpdException{
+    protected final String getPpdOutput() throws PpdException {
         sendCommand("ppd");
         try {
             return PyonParser.convert(getPyon());
-        }
-        catch (PyonParserException ex) {
+        } catch (PyonParserException ex) {
             throw new PpdException(ex.getLocalizedMessage());
         }
     }
@@ -167,8 +170,7 @@ public class SocketConnection extends GsonConnection implements Connection {
         sendCommand("simulation-info " + slot);
         try {
             return PyonParser.convert(getPyon());
-        }
-        catch (PyonParserException ex) {
+        } catch (PyonParserException ex) {
             throw new SimulationInfoException(ex.getLocalizedMessage());
         }
     }
@@ -179,20 +181,19 @@ public class SocketConnection extends GsonConnection implements Connection {
         try {
             sendCommand("slot-info");
             return PyonParser.convert(getPyon());
-        }
-        catch (PyonParserException ex) {
+        } catch (PyonParserException ex) {
             throw new SlotInfoException(ex.getLocalizedMessage());
         }
     }
 
     /** {@inheritDoc} */
     @Override
-    protected final String getSlotOptionsOutput(final int slot) throws SlotOptionsException {
+    protected final String getSlotOptionsOutput(final int slot)
+            throws SlotOptionsException {
         sendCommand("slot-options " + slot + " -a");
         try {
             return PyonParser.convert(getPyon());
-        }
-        catch (PyonParserException ex) {
+        } catch (PyonParserException ex) {
             throw new SlotOptionsException(ex.getLocalizedMessage());
         }
     }
@@ -207,9 +208,9 @@ public class SocketConnection extends GsonConnection implements Connection {
     /**
      * Send a command to the Folding@home Client.
      *
-     * @param command
+     * @param command command to send to the client
      */
-    private void sendCommand(String command) {
+    private void sendCommand(final String command) {
         out.println(command);
 
         String msg = "Sent Command: " + command;
@@ -241,7 +242,7 @@ public class SocketConnection extends GsonConnection implements Connection {
 
         return string;
     }
-    
+
     /**
      * Receive a PyON response from the Folding@home Client.
      *

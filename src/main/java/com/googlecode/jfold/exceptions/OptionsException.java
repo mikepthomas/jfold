@@ -42,7 +42,7 @@ public class OptionsException extends Exception {
      *
      * @param msg the detail message.
      */
-    public OptionsException(String msg) {
+    public OptionsException(final String msg) {
         super(msg);
     }
 }

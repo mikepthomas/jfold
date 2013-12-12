@@ -42,7 +42,7 @@ public class InfoException extends Exception {
      *
      * @param msg the detail message.
      */
-    public InfoException(String msg) {
+    public InfoException(final String msg) {
         super(msg);
     }
 }
