@@ -20,6 +20,7 @@
  */
 package com.googlecode.jfold;
 
+import com.googlecode.jfold.info.InfoItem;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -61,6 +62,7 @@ public class App {
             Connection connection = new SocketConnection(address, port, password, retryRate);
 
             connection.info();
+            connection.getInfo(InfoItem.CLIENT_WEBSITE);
             connection.numSlots();
             connection.options();
             connection.options(true, true);

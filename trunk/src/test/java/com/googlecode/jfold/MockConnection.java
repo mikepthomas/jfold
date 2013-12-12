@@ -41,6 +41,12 @@ public class MockConnection extends GsonConnection implements Connection {
 
     /** {@inheritDoc} */
     @Override
+    protected String getInfoOutput(String category, String key) {
+        return "http://folding.stanford.edu/";
+    }
+    
+    /** {@inheritDoc} */
+    @Override
     protected String getInfoOutput() {
         return getJson(InfoItem.class);
     }
