@@ -102,6 +102,14 @@ public class SocketConnection extends GsonConnection implements Connection {
     
     /** {@inheritDoc} */
     @Override
+    protected final String getInfoOutput(final String category, final String key)
+            throws InfoException {
+        sendCommand("get-info \"" + category + "\" \"" + key + "\"");
+        return getString();
+    }
+    
+    /** {@inheritDoc} */
+    @Override
     protected final String getInfoOutput() throws InfoException {
         sendCommand("info");
         try {
@@ -218,7 +226,6 @@ public class SocketConnection extends GsonConnection implements Connection {
 
         try {
             in.read(); // first char is '>'
-            in.read(); // second char is ' '
             char ch;
             while ((ch = (char) in.read()) != '>') {
                 stringBuilder.append((char) ch);
@@ -227,7 +234,7 @@ public class SocketConnection extends GsonConnection implements Connection {
             Logger.getLogger(SocketConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String string = stringBuilder.toString();
+        String string = stringBuilder.toString().trim();
 
         String message = "Recieved String: " + string;
         Logger.getLogger(this.getClass().getName()).log(Level.INFO, message);
@@ -244,8 +251,7 @@ public class SocketConnection extends GsonConnection implements Connection {
         StringBuilder stringBuilder = new StringBuilder();
 
         try {
-            in.read(); // first char os '>'
-            in.read(); // second char is ' '
+            in.read(); // first char is '>'
             String string;
             while (!(string = in.readLine()).equals("---")) {
                 stringBuilder.append(string).append('\n');
@@ -254,7 +260,7 @@ public class SocketConnection extends GsonConnection implements Connection {
             Logger.getLogger(SocketConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String string = stringBuilder.toString();
+        String string = stringBuilder.toString().trim();
 
         String message = "Recieved PyON: " + string;
         Logger.getLogger(this.getClass().getName()).log(Level.INFO, message);

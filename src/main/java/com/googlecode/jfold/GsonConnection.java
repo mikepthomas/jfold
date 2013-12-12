@@ -108,7 +108,14 @@ public abstract class GsonConnection implements Connection {
     /** {@inheritDoc} */
     @Override
     public final String getInfo(final String category, final String key) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        try {
+            return getInfoOutput(category, key);
+        }
+        catch (InfoException ex) {
+            logger.log(Level.WARNING, "Failed to get Info Output", ex);
+            
+            return "";
+        }
     }
     
     /** {@inheritDoc} */
@@ -343,6 +350,17 @@ public abstract class GsonConnection implements Connection {
     public final void waitForUnits() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+    
+    /**
+     * <p>getInfoOutput.</p>
+     *
+     * @param category to return information from
+     * @param key to return information from
+     * @return a {@link java.lang.String} object.
+     * @throws com.googlecode.jfold.exceptions.InfoException if any.
+     */
+    protected abstract String getInfoOutput(String category, String key)
+            throws InfoException;
     
     /**
      * <p>getInfoOutput.</p>
