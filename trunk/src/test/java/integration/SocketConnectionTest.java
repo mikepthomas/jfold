@@ -18,31 +18,56 @@
  * along with jFold.  If not, see <http://www.gnu.org/licenses/>.
  * #L%
  */
-package com.googlecode.jfold;
+package integration;
 
+import com.googlecode.jfold.Connection;
+import com.googlecode.jfold.SocketConnection;
 import com.googlecode.jfold.info.InfoItem;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Hello world!
+ * Unit test for simple App.
  *
  * @author Michael Thomas <mikepthomas@outlook.com>
  * @version $Id: $Id
+ * @since 1.0
  */
-public class App {
+public class SocketConnectionTest extends TestCase {
+
+    /** Logger. */
+    private static final Logger logger = LoggerFactory.getLogger(SocketConnectionTest.class);
 
     /**
-     * <p>main.</p>
+     * Create the test case
      *
-     * @param args an array of {@link java.lang.String} objects.
+     * @param testName name of the test case
      */
-    public static void main(final String[] args) {
+    public SocketConnectionTest(String testName) {
+        super(testName);
+    }
+
+    /**
+     * <p>suite.</p>
+     *
+     * @return the suite of tests being tested
+     */
+    public static Test suite() {
+        return new TestSuite(SocketConnectionTest.class);
+    }
+
+    /**
+     * Rigourous Test :-)
+     */
+    public void testApp() {
         Properties props = new Properties();
-        InputStream input = App.class.getResourceAsStream("/config.properties");
+        InputStream input = SocketConnection.class.getResourceAsStream("/config.properties");
         try {
             try {
                 props.load(input);
@@ -50,7 +75,7 @@ public class App {
                 input.close();
             }
         } catch (IOException ex) {
-            Logger.getLogger(App.class.getName()).log(Level.WARNING, ex.getMessage());
+            logger.warn(null, ex);
         }
 
         String address = props.getProperty("address");
@@ -72,7 +97,7 @@ public class App {
             connection.slotOptions(0);
             connection.uptime();
         } catch (IOException ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(null, ex);
         }
     }
 }

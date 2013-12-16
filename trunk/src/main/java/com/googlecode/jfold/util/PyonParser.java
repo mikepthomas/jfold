@@ -18,11 +18,11 @@
  * along with jFold.  If not, see <http://www.gnu.org/licenses/>.
  * #L%
  */
-package com.googlecode.jfold;
+package com.googlecode.jfold.util;
 
 import com.googlecode.jfold.exceptions.PyonParserException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>PyonParser class.</p>
@@ -61,6 +61,9 @@ public class PyonParser {
     /** Constant <code>STRING_FALSE</code>. */
     public static final String STRING_FALSE = "\"(.*)\": \"false\",\n";
 
+    /** Logger. */
+    private static final Logger logger = LoggerFactory.getLogger(PyonParser.class);
+
     /**
      * <p>Convert a PyON String to JSON.</p>
      *
@@ -71,8 +74,7 @@ public class PyonParser {
     public static String convert(final String pyon) throws PyonParserException {
         // Check for valid PyON String
         if (!pyon.startsWith(PYON_1)) {
-            String msg = "PyonParser cannot convert String: " + pyon;
-            Logger.getLogger(PyonParser.class.getName()).log(Level.WARNING, msg);
+            logger.warn("PyonParser cannot convert String: " + pyon);
 
             return pyon;
         }
@@ -95,8 +97,7 @@ public class PyonParser {
         json = json.replaceAll(PYON_FALSE, JSON_FALSE);
         json = json.replaceAll(STRING_FALSE, JSON_FALSE);
 
-        String msg = "Parsed JSON: " + json;
-        Logger.getLogger(PyonParser.class.getName()).log(Level.INFO, msg);
+        logger.info("Parsed JSON: " + json);
 
         return json;
     }
