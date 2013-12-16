@@ -45,8 +45,8 @@ import java.net.Inet4Address;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>Abstract GsonConnection class.</p>
@@ -61,9 +61,8 @@ public abstract class GsonConnection implements Connection {
 
     /** Gson JSON Converter. */
     private final Gson gson;
-
     /** Logger. */
-    private final Logger logger;
+    private static final Logger logger = LoggerFactory.getLogger(GsonConnection.class);
 
     /**
      * <p>Constructor for AbstractConnection.</p>
@@ -72,7 +71,6 @@ public abstract class GsonConnection implements Connection {
         super();
 
         gson = new GsonBuilder().setDateFormat(DATE_FORMAT).create();
-        logger = Logger.getLogger(this.getClass().getName());
     }
 
     /** {@inheritDoc} */
@@ -118,7 +116,7 @@ public abstract class GsonConnection implements Connection {
         try {
             return getInfoOutput(category, key);
         } catch (InfoException ex) {
-            logger.log(Level.WARNING, "Failed to get Info Output", ex);
+            logger.warn("Failed to get Info Output", ex);
 
             return "";
         }
@@ -136,7 +134,7 @@ public abstract class GsonConnection implements Connection {
         try {
             return gson.fromJson(getInfoOutput(), List.class);
         } catch (InfoException ex) {
-            logger.log(Level.WARNING, "Failed to get Info Output", ex);
+            logger.warn("Failed to get Info Output", ex);
 
             return new ArrayList();
         }
@@ -162,7 +160,7 @@ public abstract class GsonConnection implements Connection {
             return gson.fromJson(getNumSlotsOutput(), Integer.class);
         } catch (NumSlotsException ex) {
             // Log Error
-            logger.log(Level.WARNING, "Failed to get Num Slots Output", ex);
+            logger.warn("Failed to get Num Slots Output", ex);
 
             return 0;
         }
@@ -193,7 +191,7 @@ public abstract class GsonConnection implements Connection {
         try {
             return gson.fromJson(getOptionsOutput(listDefault, listUnset), OptionsImpl.class);
         } catch (OptionsException ex) {
-            logger.log(Level.WARNING, "Failed to get Options Output", ex);
+            logger.warn("Failed to get Options Output", ex);
 
             return new OptionsImpl();
         }
@@ -217,7 +215,7 @@ public abstract class GsonConnection implements Connection {
         try {
             return gson.fromJson(getPpdOutput(), Integer.class);
         } catch (PpdException ex) {
-            logger.log(Level.WARNING, "Failed to get PPD Output", ex);
+            logger.warn("Failed to get PPD Output", ex);
 
             return 0;
         }
@@ -265,7 +263,7 @@ public abstract class GsonConnection implements Connection {
         try {
             return gson.fromJson(getSimulationInfoOutput(slot), SimulationInfoImpl.class);
         } catch (SimulationInfoException ex) {
-            logger.log(Level.WARNING, "Failed to get Simulation Info Output", ex);
+            logger.warn("Failed to get Simulation Info Output", ex);
 
             return new SimulationInfoImpl();
         }
@@ -290,7 +288,7 @@ public abstract class GsonConnection implements Connection {
         try {
             return gson.fromJson(getSlotInfoOutput(), slotInfoType);
         } catch (SlotInfoException ex) {
-            logger.log(Level.WARNING, "Failed to get Slot Info Output", ex);
+            logger.warn("Failed to get Slot Info Output", ex);
 
             return new ArrayList<Slot>();
         }
@@ -308,7 +306,7 @@ public abstract class GsonConnection implements Connection {
         try {
             return gson.fromJson(getSlotOptionsOutput(slot), SlotOptionsImpl.class);
         } catch (SlotOptionsException ex) {
-            logger.log(Level.WARNING, "Failed to get Slot Options Output", ex);
+            logger.warn("Failed to get Slot Options Output", ex);
 
             return new SlotOptionsImpl();
         }
