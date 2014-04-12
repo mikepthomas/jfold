@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2013 Michael Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2014 Michael Thomas (mikepthomas@outlook.com)
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ import java.io.Serializable;
 /**
  * <p>SlotOptionsImpl class.</p>
  *
- * @author Michael Thomas <mikepthomas@outlook.com>
+ * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
 public class SlotOptionsImpl implements SlotOptions, Serializable {

@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2013 Michael Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2014 Michael Thomas (mikepthomas@outlook.com)
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ package com.googlecode.jfold.util;
 /**
  * <p>Command class.</p>
  *
- * @author Michael Thomas <mikepthomas@outlook.com>
+ * @author Michael Thomas (mikepthomas@outlook.com)
  * @version 7.3.6
  */
 public enum Command {
@@ -111,7 +111,6 @@ public enum Command {
      * to its default value.
      * Options which are set or reset will also be listed.
      * Options are listed as a PyON format dictionary.
-     * [-d | -a] | [<name>[! | =<value>]]...
      */
     OPTIONS("options", ResponseType.PYON),
 

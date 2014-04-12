@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2013 Michael Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2014 Michael Thomas (mikepthomas@outlook.com)
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@
  * <p>These classes are populated from the simulation-info method of the
  * <code>Folding@home Client command server</code>.</p>
  *
- * @author Michael Thomas <mikepthomas@outlook.com>
+ * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
 package com.googlecode.jfold.simulation;
