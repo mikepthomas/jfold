@@ -25,6 +25,7 @@ import com.googlecode.jfold.exceptions.NumSlotsException;
 import com.googlecode.jfold.exceptions.OptionsException;
 import com.googlecode.jfold.exceptions.PpdException;
 import com.googlecode.jfold.exceptions.PyonParserException;
+import com.googlecode.jfold.exceptions.QueueInfoException;
 import com.googlecode.jfold.exceptions.SimulationInfoException;
 import com.googlecode.jfold.exceptions.SlotInfoException;
 import com.googlecode.jfold.exceptions.SlotOptionsException;
@@ -158,6 +159,17 @@ public class SocketConnection extends GsonConnection implements Connection {
             return PyonParser.convert(getPyon());
         } catch (PyonParserException ex) {
             throw new PpdException(ex.getLocalizedMessage());
+        }
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    protected final String getQueueInfoOutput() throws QueueInfoException {
+        sendCommand(Command.QUEUE_INFO);
+        try {
+            return PyonParser.convert(getPyon());
+        } catch (PyonParserException ex) {
+            throw new QueueInfoException(ex.getLocalizedMessage());
         }
     }
 
