@@ -86,6 +86,11 @@ public class SlotOptionsImpl implements SlotOptions, Serializable {
      */
     @SerializedName("gpu-device-id")
     private String gpuDeviceId;
+    /**
+     * Idle.
+     */
+    @SerializedName("idle")
+    private boolean idle;
 // </editor-fold>
 
 // <editor-fold desc="Constructors">
@@ -162,6 +167,12 @@ public class SlotOptionsImpl implements SlotOptions, Serializable {
     @Override
     public final String getGpuDeviceId() {
         return gpuDeviceId;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public final boolean getIdle() {
+        return idle;
     }
 // </editor-fold>
 

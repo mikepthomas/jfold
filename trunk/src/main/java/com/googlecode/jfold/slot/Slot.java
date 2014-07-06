@@ -55,6 +55,20 @@ public interface Slot {
      * @return the <code>options</code> from <code>slot-info</code>
      */
     SlotOptions getOptions();
+    
+    /**
+     * Get the value of <code>reason</code>.
+     *
+     * @return the <code>reason</code> from <code>slot-info</code>
+     */
+    String getReason();
+
+    /**
+     * Get the value of <code>idle</code>.
+     *
+     * @return the <code>idle</code> from <code>slot-info</code>
+     */
+    boolean getIdle();
 
     /** {@inheritDoc} */
     @Override
