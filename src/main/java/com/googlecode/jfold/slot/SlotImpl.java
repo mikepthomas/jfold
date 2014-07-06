@@ -52,6 +52,16 @@ public class SlotImpl implements Slot, Serializable {
      */
     @SerializedName("options")
     private SlotOptionsImpl options;
+    /**
+     * Reason.
+     */
+    @SerializedName("reason")
+    private String reason;
+    /**
+     * Idle.
+     */
+    @SerializedName("idle")
+    private boolean idle;
 // </editor-fold>
 
 // <editor-fold desc="Constructors">
@@ -100,6 +110,18 @@ public class SlotImpl implements Slot, Serializable {
     @Override
     public final SlotOptions getOptions() {
         return options;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public final String getReason() {
+        return reason;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public final boolean getIdle() {
+        return idle;
     }
 // </editor-fold>
 

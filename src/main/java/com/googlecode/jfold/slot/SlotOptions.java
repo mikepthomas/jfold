@@ -105,6 +105,13 @@ public interface SlotOptions {
      */
     String getGpuDeviceId();
 
+    /**
+     * Get the value of <code>idle</code>.
+     *
+     * @return the <code>idle</code> from <code>slot-options</code>
+     */
+    boolean getIdle();
+
     /** {@inheritDoc} */
     @Override
     String toString();
