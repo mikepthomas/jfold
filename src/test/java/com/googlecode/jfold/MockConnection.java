@@ -25,6 +25,7 @@ import com.googlecode.jfold.options.Options;
 import com.googlecode.jfold.simulation.SimulationInfo;
 import com.googlecode.jfold.slot.Slot;
 import com.googlecode.jfold.slot.SlotOptions;
+import com.googlecode.jfold.unit.Unit;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -67,6 +68,12 @@ public class MockConnection extends GsonConnection implements Connection {
     @Override
     protected String getPpdOutput() {
         return "0";
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    protected String getQueueInfoOutput() {
+        return getJson(Unit.class);
     }
 
     /** {@inheritDoc} */

@@ -27,6 +27,7 @@ import com.googlecode.jfold.exceptions.InfoException;
 import com.googlecode.jfold.exceptions.NumSlotsException;
 import com.googlecode.jfold.exceptions.OptionsException;
 import com.googlecode.jfold.exceptions.PpdException;
+import com.googlecode.jfold.exceptions.QueueInfoException;
 import com.googlecode.jfold.exceptions.SimulationInfoException;
 import com.googlecode.jfold.exceptions.SlotInfoException;
 import com.googlecode.jfold.exceptions.SlotOptionsException;
@@ -40,6 +41,7 @@ import com.googlecode.jfold.slot.SlotImpl;
 import com.googlecode.jfold.slot.SlotOptions;
 import com.googlecode.jfold.slot.SlotOptionsImpl;
 import com.googlecode.jfold.unit.Unit;
+import com.googlecode.jfold.unit.UnitImpl;
 import java.lang.reflect.Type;
 import java.net.Inet4Address;
 import java.net.URL;
@@ -224,7 +226,14 @@ public abstract class GsonConnection implements Connection {
     /** {@inheritDoc} */
     @Override
     public final List<Unit> queueInfo() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Type queueInfoType = new TypeToken<List<UnitImpl>>() { } .getType();
+        try {
+            return gson.fromJson(getQueueInfoOutput(), queueInfoType);
+        } catch (QueueInfoException ex) {
+            logger.warn("Failed to get Queue Info Output", ex);
+
+            return new ArrayList<Unit>();
+        }
     }
 
     /** {@inheritDoc} */
@@ -393,6 +402,14 @@ public abstract class GsonConnection implements Connection {
      * @throws com.googlecode.jfold.exceptions.PpdException if any.
      */
     protected abstract String getPpdOutput() throws PpdException;
+
+    /**
+     * <p>getQueueInfoOutput.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     * @throws com.googlecode.jfold.exceptions.QueueInfoException if any.
+     */
+    protected abstract String getQueueInfoOutput() throws QueueInfoException;
 
     /**
      * <p>getSimulationInfoOutput.</p>

@@ -1,0 +1,3 @@
+[
+  {"id": "00", "state": "READY", "error": "NO_ERROR", "project": 9008, "run": 930, "clone": 0, "gen": 86, "core": "0xa4", "unit": "0x00000059664f2de453826f20b4eba088", "percentdone": "0.00%", "eta": "3.94 days", "ppd": "54", "creditestimate": "213", "waitingon": "", "nextattempt": "0.00 secs", "timeremaining": "8.48 days", "totalframes": 0, "framesdone": 0, "assigned": "2014-07-06T13:49:12Z", "timeout": "2014-07-10T12:22:48Z", "deadline": "2014-07-15T02:32:24Z", "ws": "171.64.65.124", "cs": "171.65.103.160", "attempts": 0, "slot": "00", "tpf": "56 mins 44 secs", "basecredit": "213"}
+]
