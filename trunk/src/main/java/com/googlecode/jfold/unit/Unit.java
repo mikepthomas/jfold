@@ -20,200 +20,435 @@
  */
 package com.googlecode.jfold.unit;
 
-import java.net.InetAddress;
+import java.io.Serializable;
+import java.net.Inet4Address;
+import java.net.UnknownHostException;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * <p>Unit interface.</p>
+ * <p>Unit class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version $Id: $Id
+ * @version 7.4.4
  */
-public interface Unit {
+@XmlRootElement(name = "unit")
+public class Unit implements Serializable {
+// <editor-fold defaultstate="collapsed" desc="Member Variables">
+    /**
+     * Identifier.
+     */
+    @XmlElement(name = "id")
+    private String id;
+    /**
+     * Unit state.
+     */
+    @XmlElement(name = "state")
+    private String state;
+    /**
+     * Unit error.
+     */
+    @XmlElement(name = "error")
+    private String error;
+    /**
+     * Project this Unit belongs to.
+     */
+    @XmlElement(name = "project")
+    private int project;
+    /**
+     * Run of the Project.
+     */
+    @XmlElement(name = "run")
+    private int run;
+    /**
+     * Clone of the Project.
+     */
+    @XmlElement(name = "clone")
+    private int clone;
+    /**
+     * Generation of the Project.
+     */
+    @XmlElement(name = "gen")
+    private int gen;
+    /**
+     * Core Identifier.
+     */
+    @XmlElement(name = "core")
+    private String core;
+    /**
+     * Unique ID of the unit.
+     */
+    @XmlElement(name = "unit")
+    private String unit;
+    /**
+     * Percentage of work completed.
+     */
+    @XmlElement(name = "percentdone")
+    private String percentDone;
+    /**
+     * Total number of frames in this Unit.
+     */
+    @XmlElement(name = "totalframes")
+    private int totalFrames;
+    /**
+     * Number of frames completed.
+     */
+    @XmlElement(name = "framesdone")
+    private int framesDone;
+    /**
+     * Time and date this work unit was assigned.
+     */
+    @XmlElement(name = "assigned")
+    private String assigned;
+    /**
+     * Time and date this work unit expires.
+     */
+    @XmlElement(name = "timeout")
+    private String timeout;
+    /**
+     * Time and date this work unit needs to be completed by.
+     */
+    @XmlElement(name = "deadline")
+    private String deadline;
+    /**
+     * Work server.
+     */
+    @XmlElement(name = "ws")
+    private String ws;
+    /**
+     * Collection server.
+     */
+    @XmlElement(name = "cs")
+    private String cs;
+    /**
+     * Reason the Unit is waiting.
+     */
+    @XmlElement(name = "waitingon")
+    private String waitingOn;
+    /**
+     * Number of attempts to send completed Unit to collection server.
+     */
+    @XmlElement(name = "attempts")
+    private int attempts;
+    /**
+     * Time until the next attempt to send completed Unit to collection server.
+     */
+    @XmlElement(name = "nextattempt")
+    private String nextAttempt;
+    /**
+     * Time remaining.
+     */
+    @XmlElement(name = "timeremaining")
+    private String timeRemaining;
+    /**
+     * Slot number this Unit belongs to.
+     */
+    @XmlElement(name = "slot")
+    private int slot;
+    /**
+     * Estimated time of arrival.
+     */
+    @XmlElement(name = "eta")
+    private String eta;
+    /**
+     * Points per day.
+     */
+    @XmlElement(name = "ppd")
+    private double ppd;
+    /**
+     * Time per frame.
+     */
+    @XmlElement(name = "tpf")
+    private String tpf;
+    /**
+     * Baseline number of points awarded for completion of this Unit.
+     */
+    @XmlElement(name = "basecredit")
+    private double baseCredit;
+    /**
+     * Estimated number of points awarded for completion of this Unit.
+     */
+    @XmlElement(name = "creditestimate")
+    private double creditEstimate;
+    /**
+     * Project Description.
+     */
+    @XmlElement(name = "description")
+    private String description;
+// </editor-fold>
 
+// <editor-fold desc="Accessors">
     /**
      * Get the value of <code>id</code>.
      *
      * @return the <code>id</code> from <code>queue-info</code>
      */
-    String getId();
+    public final String getId() {
+        return id;
+    }
 
     /**
      * Get the value of <code>state</code>.
      *
      * @return the <code>state</code> from <code>queue-info</code>
      */
-    String getState();
+    public final String getState() {
+        return state;
+    }
+
+    /**
+     * Get the value of <code>error</code>.
+     *
+     * @return the <code>error</code> from <code>queue-info</code>
+     */
+    public final String getError() {
+        return error;
+    }
 
     /**
      * Get the value of <code>project</code>.
      *
      * @return the <code>project</code> from <code>queue-info</code>
      */
-    int getProject();
+    public final int getProject() {
+        return project;
+    }
 
     /**
      * Get the value of <code>run</code>.
      *
      * @return the <code>run</code> from <code>queue-info</code>
      */
-    int getRun();
+    public final int getRun() {
+        return run;
+    }
 
     /**
      * Get the value of <code>clone</code>.
      *
      * @return the <code>clone</code> from <code>queue-info</code>
      */
-    int getClone();
+    public final int getClone() {
+        return clone;
+    }
 
     /**
      * Get the value of <code>gen</code>.
      *
      * @return the <code>gen</code> from <code>queue-info</code>
      */
-    int getGen();
+    public final int getGen() {
+        return gen;
+    }
 
     /**
      * Get the value of <code>core</code>.
      *
      * @return the <code>core</code> from <code>queue-info</code>
      */
-    String getCore();
+    public final String getCore() {
+        return core;
+    }
 
     /**
      * Get the value of <code>unit</code>.
      *
      * @return the <code>unit</code> from <code>queue-info</code>
      */
-    String getUnit();
+    public final String getUnit() {
+        return unit;
+    }
 
     /**
      * Get the value of <code>percentdone</code>.
      *
      * @return the <code>percentdone</code> from <code>queue-info</code>
      */
-    String getPercentDone();
+    public final String getPercentDone() {
+        return percentDone;
+    }
 
     /**
      * Get the value of <code>totalframes</code>.
      *
      * @return the <code>totalframes</code> from <code>queue-info</code>
      */
-    int getTotalFrames();
+    public final int getTotalFrames() {
+        return totalFrames;
+    }
 
     /**
      * Get the value of <code>framesdone</code>.
      *
      * @return the <code>framesdone</code> from <code>queue-info</code>
      */
-    int getFramesDone();
+    public final int getFramesDone() {
+        return framesDone;
+    }
 
     /**
      * Get the value of <code>assigned</code>.
      *
      * @return the <code>assigned</code> from <code>queue-info</code>
      */
-    Date getAssigned();
+    public final Date getAssigned() {
+        return new Date();
+    }
 
     /**
      * Get the value of <code>timeout</code>.
      *
      * @return the <code>timeout</code> from <code>queue-info</code>
      */
-    Date getTimeout();
+    public final Date getTimeout() {
+        return new Date();
+    }
 
     /**
      * Get the value of <code>deadline</code>.
      *
      * @return the <code>deadline</code> from <code>queue-info</code>
      */
-    Date getDeadline();
+    public final Date getDeadline() {
+        return new Date();
+    }
 
     /**
      * Get the value of <code>ws</code>.
      *
      * @return the <code>ws</code> from <code>queue-info</code>
      */
-    InetAddress getWs();
+    public final Inet4Address getWs() {
+        Inet4Address workServer = null;
+        try {
+            workServer = (Inet4Address) Inet4Address.getByName(ws);
+        } catch (UnknownHostException ex) {
+            Logger.getLogger(Unit.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return workServer;
+    }
 
     /**
      * Get the value of <code>cs</code>.
      *
      * @return the <code>cs</code> from <code>queue-info</code>
      */
-    InetAddress getCs();
+    public final Inet4Address getCs() {
+        Inet4Address collectionServer = null;
+        try {
+            collectionServer = (Inet4Address) Inet4Address.getByName(cs);
+        } catch (UnknownHostException ex) {
+            Logger.getLogger(Unit.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return collectionServer;
+    }
 
     /**
      * Get the value of <code>waitingon</code>.
      *
      * @return the <code>waitingon</code> from <code>queue-info</code>
      */
-    String getWaitingOn();
+    public final String getWaitingOn() {
+        return waitingOn;
+    }
 
     /**
      * Get the value of <code>attempts</code>.
      *
      * @return the <code>attempts</code> from <code>queue-info</code>
      */
-    int getAttempts();
+    public final int getAttempts() {
+        return attempts;
+    }
 
     /**
      * Get the value of <code>nextattempt</code>.
      *
      * @return the <code>nextattempt</code> from <code>queue-info</code>
      */
-    String getNextAttempt();
+    public final String getNextAttempt() {
+        return nextAttempt;
+    }
+
+    /**
+     * Get the value of <code>timeremaining</code>.
+     *
+     * @return the <code>timeremaining</code> from <code>queue-info</code>
+     */
+    public final String getTimeRemaining() {
+        return timeRemaining;
+    }
 
     /**
      * Get the value of <code>slot</code>.
      *
      * @return the <code>slot</code> from <code>queue-info</code>
      */
-    int getSlot();
+    public final int getSlot() {
+        return slot;
+    }
 
     /**
      * Get the value of <code>eta</code>.
      *
      * @return the <code>eta</code> from <code>queue-info</code>
      */
-    String getEta();
+    public final String getEta() {
+        return eta;
+    }
 
     /**
      * Get the value of <code>ppd</code>.
      *
      * @return the <code>ppd</code> from <code>queue-info</code>
      */
-    double getPpd();
+    public final double getPpd() {
+        return ppd;
+    }
 
     /**
      * Get the value of <code>tpf</code>.
      *
      * @return the <code>tpf</code> from <code>queue-info</code>
      */
-    String getTpf();
+    public final String getTpf() {
+        return tpf;
+    }
 
     /**
      * Get the value of <code>basecredit</code>.
      *
      * @return the <code>basecredit</code> from <code>queue-info</code>
      */
-    double getBaseCredit();
+    public final double getBaseCredit() {
+        return baseCredit;
+    }
 
     /**
      * Get the value of <code>creditestimate</code>.
      *
      * @return the <code>creditestimate</code> from <code>queue-info</code>
      */
-    double getCreditEstimate();
+    public final double getCreditEstimate() {
+        return creditEstimate;
+    }
 
     /**
      * Get the value of <code>description</code>.
      *
      * @return the <code>description</code> from <code>queue-info</code>
      */
-    String getDescription();
+    public final String getDescription() {
+        return description;
+    }
+// </editor-fold>
 
     /** {@inheritDoc} */
     @Override
-    String toString();
+    public final String toString() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

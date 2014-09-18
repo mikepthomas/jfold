@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-public class PyonParser {
+public final class PyonParser {
 
     /** Constant <code>PYON_1</code>. */
     public static final String PYON_1 = "PyON 1 ";
@@ -39,30 +39,40 @@ public class PyonParser {
     /** Constant <code>PYON_TRAILER</code>. */
     public static final String PYON_TRAILER = "\n---";
 
+    /** Constant <code>ERROR</code>. */
+    public static final String ERROR = "error";
     /** Constant <code>PYON_ERROR</code>. */
-    public static final String PYON_ERROR = PYON_HEADER.replace("(.*)", "error");
+    public static final String PYON_ERROR = PYON_HEADER.replace("(.*)", ERROR);
 
     /** Constant <code>NONE</code>. */
-    public static final String NONE = "\"(.*)\": None,\n";
+    public static final String NONE = "\"(.*)\": None";
     /** Constant <code>NULL</code>. */
-    public static final String NULL = "\"$1\": null,\n";
+    public static final String NULL = "\"$1\": null";
 
     /** Constant <code>JSON_TRUE</code>. */
-    public static final String JSON_TRUE = "\"$1\": true,\n";
+    public static final String JSON_TRUE = "\"$1\": true";
     /** Constant <code>PYON_TRUE</code>. */
-    public static final String PYON_TRUE = "\"(.*)\": True,\n";
+    public static final String PYON_TRUE = "\"(.*)\": True";
     /** Constant <code>STRING_TRUE</code>. */
-    public static final String STRING_TRUE = "\"(.*)\": \"true\",\n";
+    public static final String STRING_TRUE = "\"(.*)\": \"true\"";
 
     /** Constant <code>JSON_FALSE</code>. */
-    public static final String JSON_FALSE = "\"$1\": false,\n";
+    public static final String JSON_FALSE = "\"$1\": false";
     /** Constant <code>PYON_FALSE</code>. */
-    public static final String PYON_FALSE = "\"(.*)\": False,\n";
+    public static final String PYON_FALSE = "\"(.*)\": False";
     /** Constant <code>STRING_FALSE</code>. */
-    public static final String STRING_FALSE = "\"(.*)\": \"false\",\n";
+    public static final String STRING_FALSE = "\"(.*)\": \"false\"";
 
     /** Logger. */
-    private static final Logger logger = LoggerFactory.getLogger(PyonParser.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(
+            PyonParser.class);
+
+    /**
+     * Utility classes should not be constructed.
+     */
+    private PyonParser() {
+        super();
+    }
 
     /**
      * <p>Convert a PyON String to JSON.</p>
@@ -71,10 +81,11 @@ public class PyonParser {
      * @return a {@link java.lang.String} object.
      * @throws com.googlecode.jfold.exceptions.PyonParserException if any.
      */
-    public static String convert(final String pyon) throws PyonParserException {
+    public static String convert(final String pyon)
+            throws PyonParserException {
         // Check for valid PyON String
         if (!pyon.startsWith(PYON_1)) {
-            logger.warn("PyonParser cannot convert String: " + pyon);
+            LOGGER.warn("PyonParser cannot convert String: " + pyon);
 
             return pyon;
         }
@@ -88,6 +99,11 @@ public class PyonParser {
             throw new PyonParserException(json);
         }
 
+        // Format JSON
+        json = json.replaceAll("\\{", "{\n  ");
+        json = json.replaceAll(", ", ",\n  ");
+        json = json.replaceAll("\\}", "\n}");
+
         // None is used instead of null
         json = json.replaceAll(NONE, NULL);
 
@@ -97,7 +113,7 @@ public class PyonParser {
         json = json.replaceAll(PYON_FALSE, JSON_FALSE);
         json = json.replaceAll(STRING_FALSE, JSON_FALSE);
 
-        logger.info("Parsed JSON: " + json);
+        LOGGER.debug("Parsed JSON: " + json);
 
         return json;
     }

@@ -24,32 +24,32 @@ package com.googlecode.jfold.exceptions;
 import com.wordnik.swagger.annotations.ApiModel;
 
 /**
- * <p>NumSlotsException class.</p>
+ * <p>UptimeException class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-@ApiModel(value = "Exception in num-slots request")
-public class NumSlotsException extends CommandException {
+@ApiModel(value = "Exception in info request")
+public class UptimeException extends CommandException {
 
     /**
-     * Constructs an instance of <code>NumSlotsException</code> with the
+     * Constructs an instance of <code>UptimeException</code> with the
      * specified detail message.
      *
      * @param message the detail message.
      */
-    public NumSlotsException(final String message) {
+    public UptimeException(final String message) {
         super(message);
     }
 
     /**
-     * Constructs an instance of <code>NumSlotsException</code> with the
+     * Constructs an instance of <code>UptimeException</code> with the
      * specified detail message and the cause of the Exception.
      *
      * @param message the detail message.
      * @param cause the cause of the exception.
      */
-    public NumSlotsException(final String message, final Throwable cause) {
+    public UptimeException(final String message, final Throwable cause) {
         super(message, cause);
     }
 }

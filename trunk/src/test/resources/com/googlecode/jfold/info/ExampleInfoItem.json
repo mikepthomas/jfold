@@ -1,0 +1,42 @@
+[
+    [
+        "Folding@home Client",
+        ["Website", "http://folding.stanford.edu/"],
+        ["Copyright", "(c) 2009-2014 Stanford University"],
+        ["Author", "Joseph Coffland <joseph@cauldrondevelopment.com>"],
+        ["Args", " --child --lifeline 98 --respawn"],
+        ["Config", "/Library/Application Support/FAHClient/config.xml"]
+    ],
+    [
+        "Build",
+        ["Version", "7.4.4"],
+        ["Date", "Mar  4 2014"],
+        ["Time", "20:27:54"],
+        ["SVN Rev", "4130"],
+        ["Branch", "fah/trunk/client"],
+        ["Compiler", "GNU 4.2.1 (Apple Inc. build 5666) (dot 3)"],
+        ["Options", "-std=gnu++98 -O3 -funroll-loops -mfpmath=sse -ffast-math -fno-unsafe-math-optimizations -msse3 -arch x86_64 -mmacosx-version-min=10.6"],
+        ["Platform", "darwin 10.8.0"],
+        ["Bits", "64"],
+        ["Mode", "Release"]
+    ],
+    [
+        "System",
+        ["CPU", "       Intel(R) Core(TM) i5-2435M CPU @ 2.40GHz"],
+        ["CPU ID", "GenuineIntel Family 6 Model 42 Stepping 7"],
+        ["CPUs", "4"],
+        ["Memory", "16.00GiB"],
+        ["Free Memory", "14.50GiB"],
+        ["Threads", "POSIX_THREADS"],
+        ["OS Version", "10.9"],
+        ["Has Battery", true],
+        ["On Battery", false],
+        ["UTC Offset", "1"],
+        ["PID", "233"],
+        ["CWD", "/Library/Application Support/FAHClient"],
+        ["OS", "Darwin 13.3.0 x86_64"],
+        ["OS Arch", "AMD64"],
+        ["GPUs", "0"],
+        ["CUDA", "Not detected"]
+    ]
+]

@@ -21,28 +21,35 @@
 
 package com.googlecode.jfold.exceptions;
 
+import com.wordnik.swagger.annotations.ApiModel;
+
 /**
  * <p>SlotOptionsException class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-public class SlotOptionsException extends Exception {
-
-    /**
-     * Creates a new instance of <code>SlotOptionsException</code> without
-     * detail message.
-     */
-    public SlotOptionsException() {
-    }
+@ApiModel(value = "Exception in slot-options request")
+public class SlotOptionsException extends CommandException {
 
     /**
      * Constructs an instance of <code>SlotOptionsException</code> with the
      * specified detail message.
      *
-     * @param msg the detail message.
+     * @param message the detail message.
      */
-    public SlotOptionsException(final String msg) {
-        super(msg);
+    public SlotOptionsException(final String message) {
+        super(message);
+    }
+
+    /**
+     * Constructs an instance of <code>SlotOptionsException</code> with the
+     * specified detail message and the cause of the Exception.
+     *
+     * @param message the detail message.
+     * @param cause the cause of the exception.
+     */
+    public SlotOptionsException(final String message, final Throwable cause) {
+        super(message, cause);
     }
 }

@@ -20,10 +20,10 @@
  */
 package com.googlecode.jfold.slot;
 
-import com.googlecode.jfold.slot.Slot;
-import com.googlecode.jfold.slot.SlotOptions;
 import com.googlecode.jfold.Connection;
 import com.googlecode.jfold.MockConnection;
+import com.googlecode.jfold.exceptions.SlotInfoException;
+import java.io.IOException;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
@@ -42,17 +42,13 @@ public class SlotTest {
     private static Slot instance;
     
     /**
-     * <p>Constructor for SlotTest.</p>
-     */
-    public SlotTest() {
-        super();
-    }
-    
-    /**
      * <p>setUpClass.</p>
+     *
+     * @throws java.io.IOException
+     * @throws com.googlecode.jfold.exceptions.SlotInfoException
      */
     @BeforeClass
-    public static void setUpClass() {
+    public static void setUpClass() throws IOException, SlotInfoException {
         Connection connection = new MockConnection();
         instance = connection.slotInfo().get(0);
     }
@@ -65,40 +61,40 @@ public class SlotTest {
     }
 
     /**
-     * Test of getId method, of class SlotImpl.
+     * Test of getId method, of class Slot.
      */
     @Test
     public void testGetId() {
         System.out.println("getId");
-        String expResult = "01";
+        String expResult = "00";
         String result = instance.getId();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getStatus method, of class SlotImpl.
+     * Test of getStatus method, of class Slot.
      */
     @Test
     public void testGetStatus() {
         System.out.println("getStatus");
-        String expResult = "FINISHING";
+        String expResult = "RUNNING";
         String result = instance.getStatus();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getDescription method, of class SlotImpl.
+     * Test of getDescription method, of class Slot.
      */
     @Test
     public void testGetDescription() {
         System.out.println("getDescription");
-        String expResult = "smp:4";
+        String expResult = "cpu:2";
         String result = instance.getDescription();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getOptions method, of class SlotImpl.
+     * Test of getOptions method, of class Slot.
      */
     @Test @Ignore
     public void testGetOptions() {

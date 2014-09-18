@@ -21,28 +21,35 @@
 
 package com.googlecode.jfold.exceptions;
 
+import com.wordnik.swagger.annotations.ApiModel;
+
 /**
  * <p>QueueInfoException class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-public class QueueInfoException extends Exception {
-
-    /**
-     * Creates a new instance of <code>QueueInfoException</code> without detail
-     * message.
-     */
-    public QueueInfoException() {
-    }
+@ApiModel(value = "Exception in queue-info request")
+public class QueueInfoException extends CommandException {
 
     /**
      * Constructs an instance of <code>QueueInfoException</code> with the
      * specified detail message.
      *
-     * @param msg the detail message.
+     * @param message the detail message.
      */
-    public QueueInfoException(final String msg) {
-        super(msg);
+    public QueueInfoException(final String message) {
+        super(message);
+    }
+
+    /**
+     * Constructs an instance of <code>QueueInfoException</code> with the
+     * specified detail message and the cause of the Exception.
+     *
+     * @param message the detail message.
+     * @param cause the cause of the exception.
+     */
+    public QueueInfoException(final String message, final Throwable cause) {
+        super(message, cause);
     }
 }

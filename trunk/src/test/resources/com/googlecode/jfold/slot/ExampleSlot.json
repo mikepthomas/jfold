@@ -1,12 +1,14 @@
 [
-  {
-    "id": "01",
-    "status": "FINISHING",
-    "description": "smp:4",
-    "options": {
-      "client-type": "beta",
-      "max-packet-size": "big",
-      "next-unit-percentage": "100"
+    {
+        "id": "00",
+        "status": "RUNNING",
+        "description": "cpu:2",
+        "options": {
+            "cpus": "-1",
+            "idle": false,
+            "paused": false
+        },
+        "reason": "",
+        "idle": false
     }
-  }
 ]
