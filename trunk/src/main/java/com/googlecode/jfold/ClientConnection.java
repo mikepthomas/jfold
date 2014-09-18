@@ -58,6 +58,10 @@ public class ClientConnection extends SocketConnection implements Connection {
 
     /** Constant <code>DATE_FORMAT="yyyy-MM-dd'T'HH:mm:ss'Z'"</code>. */
     public static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
+    /** Constant <code>DEFAULT_HOST="localhost"</code>. */
+    public static final String DEFAULT_HOST = "localhost";
+    /** Constant <code>DEFAULT_PORT=36330</code>. */
+    public static final int DEFAULT_PORT = 36330;
 
     /** Logger. */
     private static final Logger LOGGER = LoggerFactory.getLogger(
@@ -65,6 +69,16 @@ public class ClientConnection extends SocketConnection implements Connection {
 
     /** Object Mapper. */
     private final ObjectMapper mapper = new ObjectMapper();
+
+    /**
+     * <p>Default Constructor for ClientConnection.</p>
+     *
+     * @throws java.io.IOException
+     */
+    public ClientConnection()
+            throws IOException {
+        this(DEFAULT_HOST, DEFAULT_PORT);
+    }
 
     /**
      * <p>Constructor for ClientConnection.</p>
