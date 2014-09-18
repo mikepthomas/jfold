@@ -304,8 +304,8 @@ public class SimulationInfo implements Serializable {
      *
      * @return the <code>run_time</code> from <code>simulation-info</code>
      */
-    public final Date getRunTime() {
-        return new Date(runTime);
+    public final long getRunTime() {
+        return runTime;
     }
 
     /**
@@ -313,8 +313,8 @@ public class SimulationInfo implements Serializable {
      *
      * @return the <code>simulation_time</code> from <code>simulation-info</code>
      */
-    public final Date getSimulationTime() {
-        return new Date(simulationTime);
+    public final long getSimulationTime() {
+        return simulationTime;
     }
 
     /**

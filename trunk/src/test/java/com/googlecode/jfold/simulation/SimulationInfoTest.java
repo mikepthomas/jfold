@@ -24,11 +24,9 @@ import com.googlecode.jfold.Connection;
 import com.googlecode.jfold.MockConnection;
 import com.googlecode.jfold.exceptions.SimulationInfoException;
 import java.io.IOException;
-import java.util.Date;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -47,6 +45,7 @@ public class SimulationInfoTest {
      * <p>setUpClass.</p>
      *
      * @throws java.io.IOException
+     * @throws com.googlecode.jfold.exceptions.SimulationInfoException
      */
     @BeforeClass
     public static void setUpClass() throws IOException, SimulationInfoException {
@@ -240,22 +239,22 @@ public class SimulationInfoTest {
     /**
      * Test of getRunTime method, of class SimulationInfo.
      */
-    @Test @Ignore
+    @Test
     public void testGetRunTime() {
         System.out.println("getRunTime");
-        Date expResult = null;
-        Date result = instance.getRunTime();
+        long expResult = 0;
+        long result = instance.getRunTime();
         assertEquals(expResult, result);
     }
 
     /**
      * Test of getSimulationTime method, of class SimulationInfo.
      */
-    @Test @Ignore
+    @Test
     public void testGetSimulationTime() {
         System.out.println("getSimulationTime");
-        Date expResult = null;
-        Date result = instance.getSimulationTime();
+        long expResult = 0;
+        long result = instance.getSimulationTime();
         assertEquals(expResult, result);
     }
 
@@ -295,10 +294,30 @@ public class SimulationInfoTest {
     /**
      * Test of toString method, of class SimulationInfo.
      */
-    @Test @Ignore
+    @Test
     public void testToString() {
         System.out.println("toString");
-        String expResult = "";
+        String expResult = "user = montycrabapple\n" +
+                            "team = 39299\n" +
+                            "project = 9500\n" +
+                            "run = 850\n" +
+                            "clone = 1\n" +
+                            "gen = 290\n" +
+                            "coreType = 164\n" +
+                            "core = GRO_A4\n" +
+                            "description = null\n" +
+                            "totalIterations = 250000\n" +
+                            "iterationsDone = 40000\n" +
+                            "energy = 0\n" +
+                            "temperature = 0\n" +
+                            "startTime = Mon Sep 08 23:06:28 BST 2014\n" +
+                            "timeout = 0\n" +
+                            "deadline = 1410525028\n" +
+                            "runTime = 0\n" +
+                            "simulationTime = 0\n" +
+                            "eta = 17892\n" +
+                            "news = null\n" +
+                            "slot = 0";
         String result = instance.toString();
         assertEquals(expResult, result);
     }

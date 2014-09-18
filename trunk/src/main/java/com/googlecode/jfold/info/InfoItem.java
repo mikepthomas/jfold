@@ -140,8 +140,8 @@ public enum InfoItem {
      * Constructs an instance of <code>InfoItem</code> with the specified
      * category and key.
      *
-     * @param category the category.
-     * @param key the key.
+     * @param itemCategory the category.
+     * @param itemKey the key.
      */
     InfoItem(final InfoCategory itemCategory, final String itemKey) {
         this.category = itemCategory;
