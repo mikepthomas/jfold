@@ -42,30 +42,16 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class SocketConnection implements Connection {
 
-    /** Constant <code>DEFAULT_HOST="localhost"</code>. */
-    public static final String DEFAULT_HOST = "localhost";
-    /** Constant <code>DEFAULT_PORT=36330</code>. */
-    public static final int DEFAULT_PORT = 36330;
-
     /** Logger. */
     private static final Logger LOGGER = LoggerFactory.getLogger(
             SocketConnection.class);
 
     /** Socket to connect to F@H Client. */
-    private final Socket socket;
-    /** InputStream to send commands to. */
-    private final BufferedReader in;
+    private Socket socket = null;
     /** OutputStream to receive data from. */
-    private final PrintStream out;
-
-    /**
-     * <p>Default Constructor for SocketConnection.</p>
-     *
-     * @throws java.io.IOException a int.
-     */
-    public SocketConnection() throws IOException {
-        this(DEFAULT_HOST, DEFAULT_PORT);
-    }
+    private PrintStream out = null;
+    /** InputStream to send commands to. */
+    private BufferedReader in = null;
 
     /**
      * <p>Constructor for SocketConnection.</p>
@@ -78,15 +64,17 @@ public abstract class SocketConnection implements Connection {
             final String address, final int port) throws IOException {
         super();
 
-        socket = new Socket(address, port);
+        if (address != null) {
+            socket = new Socket(address, port);
 
-        out = new PrintStream(socket.getOutputStream(), true, ENCODING);
-        in = new BufferedReader(new InputStreamReader(socket.getInputStream(),
-                ENCODING));
+            out = new PrintStream(socket.getOutputStream(), true, ENCODING);
+            in = new BufferedReader(new InputStreamReader(socket.getInputStream(),
+                    ENCODING));
 
-        // Welcome to the Folding@home Client command server.
-        // TODO: check input
-        LOGGER.info(in.readLine());
+            // Welcome to the Folding@home Client command server.
+            // TODO: check input
+            LOGGER.info(in.readLine());
+        }
     }
 
     /**

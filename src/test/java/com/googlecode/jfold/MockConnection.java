@@ -45,7 +45,8 @@ import org.apache.commons.io.FileUtils;
 public class MockConnection extends ClientConnection implements Connection {
     
     public MockConnection() throws IOException {
-        super(DEFAULT_HOST, DEFAULT_PORT);
+        // Don't connect socket
+        super(null, 0);
     }
 
     @Override
