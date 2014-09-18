@@ -24,10 +24,7 @@ import com.googlecode.jfold.Connection;
 import com.googlecode.jfold.MockConnection;
 import com.googlecode.jfold.exceptions.QueueInfoException;
 import java.io.IOException;
-import java.net.Inet4Address;
-import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.Date;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
@@ -49,6 +46,7 @@ public class UnitTest {
      * <p>setUpClass.</p>
      *
      * @throws java.io.IOException
+     * @throws com.googlecode.jfold.exceptions.QueueInfoException
      */
     @BeforeClass
     public static void setUpClass() throws IOException, QueueInfoException {
@@ -64,7 +62,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getId method, of class UnitImpl.
+     * Test of getId method, of class Unit.
      */
     @Test
     public void testGetId() {
@@ -75,7 +73,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getState method, of class UnitImpl.
+     * Test of getState method, of class Unit.
      */
     @Test
     public void testGetState() {
@@ -86,7 +84,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getProject method, of class UnitImpl.
+     * Test of getProject method, of class Unit.
      */
     @Test
     public void testGetProject() {
@@ -97,7 +95,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getRun method, of class UnitImpl.
+     * Test of getRun method, of class Unit.
      */
     @Test
     public void testGetRun() {
@@ -108,7 +106,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getClone method, of class UnitImpl.
+     * Test of getClone method, of class Unit.
      */
     @Test
     public void testGetClone() {
@@ -119,7 +117,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getGen method, of class UnitImpl.
+     * Test of getGen method, of class Unit.
      */
     @Test
     public void testGetGen() {
@@ -130,7 +128,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getCore method, of class UnitImpl.
+     * Test of getCore method, of class Unit.
      */
     @Test
     public void testGetCore() {
@@ -141,7 +139,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getUnit method, of class UnitImpl.
+     * Test of getUnit method, of class Unit.
      */
     @Test
     public void testGetUnit() {
@@ -152,7 +150,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getPercentDone method, of class UnitImpl.
+     * Test of getPercentDone method, of class Unit.
      */
     @Test
     public void testGetPercentDone() {
@@ -163,7 +161,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getTotalFrames method, of class UnitImpl.
+     * Test of getTotalFrames method, of class Unit.
      */
     @Test
     public void testGetTotalFrames() {
@@ -174,7 +172,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getFramesDone method, of class UnitImpl.
+     * Test of getFramesDone method, of class Unit.
      */
     @Test
     public void testGetFramesDone() {
@@ -185,72 +183,66 @@ public class UnitTest {
     }
 
     /**
-     * Test of getAssigned method, of class UnitImpl.
+     * Test of getAssigned method, of class Unit.
      */
-    @Test @Ignore
+    @Test
     public void testGetAssigned() {
         System.out.println("getAssigned");
-        Date expResult = null;
-        Date result = instance.getAssigned();
+        String expResult = "2014-09-08T22:06:28Z";
+        String result = instance.getAssigned();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getTimeout method, of class UnitImpl.
+     * Test of getTimeout method, of class Unit.
      */
-    @Test @Ignore
+    @Test
     public void testGetTimeout() {
         System.out.println("getTimeout");
-        Date expResult = null;
-        Date result = instance.getTimeout();
+        String expResult = "2014-09-10T13:56:52Z";
+        String result = instance.getTimeout();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getDeadline method, of class UnitImpl.
+     * Test of getDeadline method, of class Unit.
      */
-    @Test @Ignore
+    @Test
     public void testGetDeadline() {
         System.out.println("getDeadline");
-        Date expResult = null;
-        Date result = instance.getDeadline();
+        String expResult = "2014-09-12T12:30:28Z";
+        String result = instance.getDeadline();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getWs method, of class UnitImpl.
+     * Test of getWs method, of class Unit.
      *
      * @throws java.net.UnknownHostException if any.
      */
     @Test
     public void testGetWs() throws UnknownHostException {
         System.out.println("getWs");
-        Inet4Address expResult = (Inet4Address) InetAddress.getByName("171.67.108.60");
-        Inet4Address result = instance.getWs();
+        String expResult = "171.67.108.60";
+        String result = instance.getWs();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getCs method, of class UnitImpl.
+     * Test of getCs method, of class Unit.
      *
      * @throws java.net.UnknownHostException if any.
      */
     @Test
     public void testGetCs() throws UnknownHostException {
         System.out.println("getCs");
-        Inet4Address expResult = (Inet4Address) InetAddress.getByName("171.65.103.160");
-        Inet4Address result = instance.getCs();
+        String expResult = "171.65.103.160";
+        String result = instance.getCs();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getWaitingOn method, of class UnitImpl.
+     * Test of getWaitingOn method, of class Unit.
      */
     @Test
     public void testGetWaitingOn() {
@@ -261,7 +253,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getAttempts method, of class UnitImpl.
+     * Test of getAttempts method, of class Unit.
      */
     @Test
     public void testGetAttempts() {
@@ -272,7 +264,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getNextAttempt method, of class UnitImpl.
+     * Test of getNextAttempt method, of class Unit.
      */
     @Test
     public void testGetNextAttempt() {
@@ -283,7 +275,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getSlot method, of class UnitImpl.
+     * Test of getSlot method, of class Unit.
      */
     @Test
     public void testGetSlot() {
@@ -294,7 +286,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getEta method, of class UnitImpl.
+     * Test of getEta method, of class Unit.
      */
     @Test
     public void testGetEta() {
@@ -305,7 +297,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getPpd method, of class UnitImpl.
+     * Test of getPpd method, of class Unit.
      */
     @Test
     public void testGetPpd() {
@@ -316,7 +308,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getTpf method, of class UnitImpl.
+     * Test of getTpf method, of class Unit.
      */
     @Test
     public void testGetTpf() {
@@ -327,7 +319,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getBaseCredit method, of class UnitImpl.
+     * Test of getBaseCredit method, of class Unit.
      */
     @Test
     public void testGetBaseCredit() {
@@ -338,7 +330,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getCreditEstimate method, of class UnitImpl.
+     * Test of getCreditEstimate method, of class Unit.
      */
     @Test
     public void testGetCreditEstimate() {
@@ -349,7 +341,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of getDescription method, of class UnitImpl.
+     * Test of getDescription method, of class Unit.
      */
     @Test
     public void testGetDescription() {
@@ -360,7 +352,7 @@ public class UnitTest {
     }
 
     /**
-     * Test of toString method, of class UnitImpl.
+     * Test of toString method, of class Unit.
      */
     @Test @Ignore
     public void testToString() {

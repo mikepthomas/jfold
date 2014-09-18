@@ -21,11 +21,6 @@
 package com.googlecode.jfold.unit;
 
 import java.io.Serializable;
-import java.net.Inet4Address;
-import java.net.UnknownHostException;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -294,8 +289,8 @@ public class Unit implements Serializable {
      *
      * @return the <code>assigned</code> from <code>queue-info</code>
      */
-    public final Date getAssigned() {
-        return new Date();
+    public final String getAssigned() {
+        return assigned;
     }
 
     /**
@@ -303,8 +298,8 @@ public class Unit implements Serializable {
      *
      * @return the <code>timeout</code> from <code>queue-info</code>
      */
-    public final Date getTimeout() {
-        return new Date();
+    public final String getTimeout() {
+        return timeout;
     }
 
     /**
@@ -312,8 +307,8 @@ public class Unit implements Serializable {
      *
      * @return the <code>deadline</code> from <code>queue-info</code>
      */
-    public final Date getDeadline() {
-        return new Date();
+    public final String getDeadline() {
+        return deadline;
     }
 
     /**
@@ -321,14 +316,8 @@ public class Unit implements Serializable {
      *
      * @return the <code>ws</code> from <code>queue-info</code>
      */
-    public final Inet4Address getWs() {
-        Inet4Address workServer = null;
-        try {
-            workServer = (Inet4Address) Inet4Address.getByName(ws);
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(Unit.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return workServer;
+    public final String getWs() {
+        return ws;
     }
 
     /**
@@ -336,14 +325,8 @@ public class Unit implements Serializable {
      *
      * @return the <code>cs</code> from <code>queue-info</code>
      */
-    public final Inet4Address getCs() {
-        Inet4Address collectionServer = null;
-        try {
-            collectionServer = (Inet4Address) Inet4Address.getByName(cs);
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(Unit.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return collectionServer;
+    public final String getCs() {
+        return cs;
     }
 
     /**
