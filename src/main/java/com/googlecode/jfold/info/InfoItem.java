@@ -127,24 +127,38 @@ public enum InfoItem {
 
 // </editor-fold>
 
+    /**
+     * Category.
+     */
     private final InfoCategory category;
+    /**
+     * Key.
+     */
     private final String key;
 
-    InfoItem(final InfoCategory category, final String key) {
-        this.category = category;
-        this.key = key;
+    /**
+     * Constructs an instance of <code>InfoItem</code> with the specified
+     * category and key.
+     *
+     * @param category the category.
+     * @param key the key.
+     */
+    InfoItem(final InfoCategory itemCategory, final String itemKey) {
+        this.category = itemCategory;
+        this.key = itemKey;
     }
 
     /**
-     * <p>Getter for the field <code>category</code>.</p>
+     * Retrieve the category type of this item.
      *
-     * @return a {@link com.googlecode.jfold.info.InfoCategory} object.
+     * @return InfoCategory category.
      */
     public InfoCategory getCategory() {
         return category;
     }
 
-    /** {@inheritDoc} */
+    /** {@inheritDoc}
+     * @return info item key. */
     @Override
     public String toString() {
         return key;

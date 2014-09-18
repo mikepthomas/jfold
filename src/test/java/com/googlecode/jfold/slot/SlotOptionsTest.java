@@ -20,9 +20,10 @@
  */
 package com.googlecode.jfold.slot;
 
-import com.googlecode.jfold.slot.SlotOptions;
 import com.googlecode.jfold.Connection;
 import com.googlecode.jfold.MockConnection;
+import com.googlecode.jfold.exceptions.SlotOptionsException;
+import java.io.IOException;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
@@ -40,17 +41,12 @@ public class SlotOptionsTest {
     private static SlotOptions instance;
     
     /**
-     * <p>Constructor for SlotOptionsTest.</p>
-     */
-    public SlotOptionsTest() {
-        super();
-    }
-    
-    /**
      * <p>setUpClass.</p>
+     *
+     * @throws java.io.IOException
      */
     @BeforeClass
-    public static void setUpClass() {
+    public static void setUpClass() throws IOException, SlotOptionsException {
         Connection connection = new MockConnection();
         instance = connection.slotOptions(0);
     }
@@ -68,7 +64,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetClientType() {
         System.out.println("getClientType");
-        String expResult = "normal";
+        String expResult = null;
         String result = instance.getClientType();
         assertEquals(expResult, result);
     }
@@ -79,7 +75,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetClientSubtype() {
         System.out.println("getClientSubtype");
-        String expResult = "SMP";
+        String expResult = null;
         String result = instance.getClientSubtype();
         assertEquals(expResult, result);
     }
@@ -101,7 +97,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetMaxPacketSize() {
         System.out.println("getMaxPacketSize");
-        String expResult = "normal";
+        String expResult = null;
         String result = instance.getMaxPacketSize();
         assertEquals(expResult, result);
     }
@@ -112,7 +108,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetCorePriority() {
         System.out.println("getCorePriority");
-        String expResult = "idle";
+        String expResult = null;
         String result = instance.getCorePriority();
         assertEquals(expResult, result);
     }
@@ -123,7 +119,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetNextUnitPercentage() {
         System.out.println("getNextUnitPercentage");
-        int expResult = 99;
+        int expResult = 0;
         int result = instance.getNextUnitPercentage();
         assertEquals(expResult, result);
     }
@@ -145,7 +141,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetCheckpoint() {
         System.out.println("getCheckpoint");
-        int expResult = 15;
+        int expResult = 0;
         int result = instance.getCheckpoint();
         assertEquals(expResult, result);
     }
@@ -156,7 +152,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetPauseOnStart() {
         System.out.println("getPauseOnStart");
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.getPauseOnStart();
         assertEquals(expResult, result);
     }
@@ -189,15 +185,15 @@ public class SlotOptionsTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        String expResult = "clientType = normal" +
-                           "\nclientSubtype = SMP" +
+        String expResult = "clientType = null" +
+                           "\nclientSubtype = null" +
                            "\nmachineId = 0" +
-                           "\nmaxPacketSize = normal" +
-                           "\ncorePriority = idle" +
-                           "\nnextUnitPercentage = 99" +
+                           "\nmaxPacketSize = null" +
+                           "\ncorePriority = null" +
+                           "\nnextUnitPercentage = 0" +
                            "\nmaxUnits = 0" +
-                           "\ncheckpoint = 15" +
-                           "\npauseOnStart = true" +
+                           "\ncheckpoint = 0" +
+                           "\npauseOnStart = false" +
                            "\ngpuVendorId = null" +
                            "\ngpuDeviceId = null";
         String result = instance.toString();

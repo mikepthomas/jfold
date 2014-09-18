@@ -21,28 +21,35 @@
 
 package com.googlecode.jfold.exceptions;
 
+import com.wordnik.swagger.annotations.ApiModel;
+
 /**
  * <p>PpdException class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-public class PpdException extends Exception {
+@ApiModel(value = "Exception in ppd request")
+public class PpdException extends CommandException {
 
     /**
-     * Creates a new instance of <code>PpdException</code> without detail
-     * message.
+     * Constructs an instance of <code>PpdException</code> with the
+     * specified detail message.
+     *
+     * @param message the detail message.
      */
-    public PpdException() {
+    public PpdException(final String message) {
+        super(message);
     }
 
     /**
-     * Constructs an instance of <code>PpdException</code> with the specified
-     * detail message.
+     * Constructs an instance of <code>PpdException</code> with the
+     * specified detail message and the cause of the Exception.
      *
-     * @param msg the detail message.
+     * @param message the detail message.
+     * @param cause the cause of the exception.
      */
-    public PpdException(final String msg) {
-        super(msg);
+    public PpdException(final String message, final Throwable cause) {
+        super(message, cause);
     }
 }

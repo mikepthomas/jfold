@@ -20,9 +20,10 @@
  */
 package com.googlecode.jfold.simulation;
 
-import com.googlecode.jfold.simulation.SimulationInfo;
 import com.googlecode.jfold.Connection;
 import com.googlecode.jfold.MockConnection;
+import com.googlecode.jfold.exceptions.SimulationInfoException;
+import java.io.IOException;
 import java.util.Date;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
@@ -43,17 +44,12 @@ public class SimulationInfoTest {
     public static SimulationInfo instance;
     
     /**
-     * <p>Constructor for SimulationInfoTest.</p>
-     */
-    public SimulationInfoTest() {
-        super();
-    }
-    
-    /**
      * <p>setUpClass.</p>
+     *
+     * @throws java.io.IOException
      */
     @BeforeClass
-    public static void setUpClass() {
+    public static void setUpClass() throws IOException, SimulationInfoException {
         Connection connection = new MockConnection();
         instance = connection.simulationInfo(0);
     }
@@ -93,7 +89,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetProject() {
         System.out.println("getProject");
-        int expResult = 7808;
+        int expResult = 9500;
         int result = instance.getProject();
         assertEquals(expResult, result);
     }
@@ -104,7 +100,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetRun() {
         System.out.println("getRun");
-        int expResult = 6;
+        int expResult = 850;
         int result = instance.getRun();
         assertEquals(expResult, result);
     }
@@ -115,7 +111,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetClone() {
         System.out.println("getClone");
-        int expResult = 193;
+        int expResult = 1;
         int result = instance.getClone();
         assertEquals(expResult, result);
     }
@@ -126,7 +122,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetGen() {
         System.out.println("getGen");
-        int expResult = 221;
+        int expResult = 290;
         int result = instance.getGen();
         assertEquals(expResult, result);
     }
@@ -170,7 +166,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetTotalIterations() {
         System.out.println("getTotalIterations");
-        int expResult = 1500;
+        int expResult = 250000;
         int result = instance.getTotalIterations();
         assertEquals(expResult, result);
     }
@@ -181,7 +177,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetIterationsDone() {
         System.out.println("getIterationsDone");
-        int expResult = 514;
+        int expResult = 40000;
         int result = instance.getIterationsDone();
         assertEquals(expResult, result);
     }
@@ -214,7 +210,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetStartTime() {
         System.out.println("getStartTime");
-        String expResult = "Tue Sep 17 19:43:46 BST 2013";
+        String expResult = "Mon Sep 08 23:06:28 BST 2014";
         String result = instance.getStartTime().toString();
         assertEquals(expResult, result);
     }
@@ -225,7 +221,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetTimeout() {
         System.out.println("getTimeout");
-        String expResult = "Thu Oct 03 19:30:52 BST 2013";
+        String expResult = "Mon Sep 08 23:06:28 BST 2014";
         String result = instance.getTimeout().toString();
         assertEquals(expResult, result);
     }
@@ -236,7 +232,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetDeadline() {
         System.out.println("getDeadline");
-        String expResult = "Thu Oct 03 20:13:15 BST 2013";
+        String expResult = "Thu Sep 25 06:55:13 BST 2014";
         String result = instance.getDeadline().toString();
         assertEquals(expResult, result);
     }
@@ -269,7 +265,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetEta() {
         System.out.println("getEta");
-        String expResult = "Tue Sep 17 19:45:34 BST 2013";
+        String expResult = "Mon Sep 08 23:06:45 BST 2014";
         String result = instance.getEta().toString();
         assertEquals(expResult, result);
     }
@@ -280,7 +276,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetNews() {
         System.out.println("getNews");
-        String expResult = "";
+        String expResult = null;
         String result = instance.getNews();
         assertEquals(expResult, result);
     }

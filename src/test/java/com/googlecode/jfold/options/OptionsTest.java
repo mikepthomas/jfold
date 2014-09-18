@@ -22,11 +22,11 @@ package com.googlecode.jfold.options;
 
 import com.googlecode.jfold.Connection;
 import com.googlecode.jfold.MockConnection;
-import java.net.InetAddress;
+import com.googlecode.jfold.exceptions.OptionsException;
+import java.io.IOException;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -42,17 +42,13 @@ public class OptionsTest {
     public static Options instance;
     
     /**
-     * <p>Constructor for OptionsTest.</p>
-     */
-    public OptionsTest() {
-        super();
-    }
-    
-    /**
      * <p>setUpClass.</p>
+     *
+     * @throws java.io.IOException
+     * @throws com.googlecode.jfold.exceptions.OptionsException
      */
     @BeforeClass
-    public static void setUpClass() {
+    public static void setUpClass() throws IOException, OptionsException {
         Connection connection = new MockConnection();
         instance = connection.options();
     }
@@ -65,7 +61,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getAssignmentServers method, of class OptionsImpl.
+     * Test of getAssignmentServers method, of class Options.
      */
     @Test
     public void testGetAssignmentServers() {
@@ -76,7 +72,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCaptureDirectory method, of class OptionsImpl.
+     * Test of getCaptureDirectory method, of class Options.
      */
     @Test
     public void testGetCaptureDirectory() {
@@ -87,7 +83,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCaptureSockets method, of class OptionsImpl.
+     * Test of getCaptureSockets method, of class Options.
      */
     @Test
     public void testGetCaptureSockets() {
@@ -98,7 +94,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCheckpoint method, of class OptionsImpl.
+     * Test of getCheckpoint method, of class Options.
      */
     @Test
     public void testGetCheckpoint() {
@@ -109,18 +105,18 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getChild method, of class OptionsImpl.
+     * Test of getChild method, of class Options.
      */
     @Test
     public void testGetChild() {
         System.out.println("getChild");
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.getChild();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getClientSubtype method, of class OptionsImpl.
+     * Test of getClientSubtype method, of class Options.
      */
     @Test
     public void testGetClientSubtype() {
@@ -131,7 +127,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getClientType method, of class OptionsImpl.
+     * Test of getClientType method, of class Options.
      */
     @Test
     public void testGetClientType() {
@@ -142,62 +138,62 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCommandAddress method, of class OptionsImpl.
+     * Test of getCommandAddress method, of class Options.
      */
-    @Test @Ignore
+    @Test
     public void testGetCommandAddress() {
         System.out.println("getCommandAddress");
-        InetAddress expResult = null;
-        InetAddress result = instance.getCommandAddress();
+        String expResult = "0.0.0.0";
+        String result = instance.getCommandAddress();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getCommandAllow method, of class OptionsImpl.
+     * Test of getCommandAllow method, of class Options.
      */
-    @Test @Ignore
+    @Test
     public void testGetCommandAllow() {
         System.out.println("getCommandAllow");
-        InetAddress expResult = null;
-        InetAddress result = instance.getCommandAllow();
+        String expResult = null;
+        String result = instance.getCommandAllow();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getCommandAllowNoPass method, of class OptionsImpl.
+     * Test of getCommandAllowNoPass method, of class Options.
      */
-    @Test @Ignore
+    @Test
     public void testGetCommandAllowNoPass() {
         System.out.println("getCommandAllowNoPass");
-        InetAddress expResult = null;
-        InetAddress result = instance.getCommandAllowNoPass();
+        String expResult = "127.0.0.1";
+        String result = instance.getCommandAllowNoPass();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getCommandDeny method, of class OptionsImpl.
+     * Test of getCommandDeny method, of class Options.
      */
-    @Test @Ignore
+    @Test
     public void testGetCommandDeny() {
         System.out.println("getCommandDeny");
-        InetAddress expResult = null;
-        InetAddress result = instance.getCommandDeny();
+        String expResult = null;
+        String result = instance.getCommandDeny();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getCommandDenyNoPass method, of class OptionsImpl.
+     * Test of getCommandDenyNoPass method, of class Options.
      */
-    @Test @Ignore
+    @Test
     public void testGetCommandDenyNoPass() {
         System.out.println("getCommandDenyNoPass");
-        InetAddress expResult = null;
-        InetAddress result = instance.getCommandDenyNoPass();
+        String expResult = "0/0";
+        String result = instance.getCommandDenyNoPass();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getCommandPort method, of class OptionsImpl.
+     * Test of getCommandPort method, of class Options.
      */
     @Test
     public void testGetCommandPort() {
@@ -208,7 +204,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getConfigRotate method, of class OptionsImpl.
+     * Test of getConfigRotate method, of class Options.
      */
     @Test
     public void testGetConfigRotate() {
@@ -219,7 +215,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getConfigRotateDir method, of class OptionsImpl.
+     * Test of getConfigRotateDir method, of class Options.
      */
     @Test
     public void testGetConfigRotateDir() {
@@ -230,7 +226,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getConfigRotateMax method, of class OptionsImpl.
+     * Test of getConfigRotateMax method, of class Options.
      */
     @Test
     public void testGetConfigRotateMax() {
@@ -241,7 +237,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCoreDir method, of class OptionsImpl.
+     * Test of getCoreDir method, of class Options.
      */
     @Test
     public void testGetCoreDir() {
@@ -252,7 +248,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCoreKey method, of class OptionsImpl.
+     * Test of getCoreKey method, of class Options.
      */
     @Test
     public void testGetCoreKey() {
@@ -263,7 +259,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCorePrep method, of class OptionsImpl.
+     * Test of getCorePrep method, of class Options.
      */
     @Test
     public void testGetCorePrep() {
@@ -274,7 +270,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCorePriority method, of class OptionsImpl.
+     * Test of getCorePriority method, of class Options.
      */
     @Test
     public void testGetCorePriority() {
@@ -285,18 +281,18 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCoreServer method, of class OptionsImpl.
+     * Test of getCoreServer method, of class Options.
      */
-    @Test @Ignore
+    @Test
     public void testGetCoreServer() {
         System.out.println("getCoreServer");
-        InetAddress expResult = null;
-        InetAddress result = instance.getCoreServer();
+        String expResult = null;
+        String result = instance.getCoreServer();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getCpuAffinity method, of class OptionsImpl.
+     * Test of getCpuAffinity method, of class Options.
      */
     @Test
     public void testGetCpuAffinity() {
@@ -307,7 +303,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCpuSpecies method, of class OptionsImpl.
+     * Test of getCpuSpecies method, of class Options.
      */
     @Test
     public void testGetCpuSpecies() {
@@ -318,7 +314,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCpuType method, of class OptionsImpl.
+     * Test of getCpuType method, of class Options.
      */
     @Test
     public void testGetCpuType() {
@@ -329,7 +325,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCpuUsage method, of class OptionsImpl.
+     * Test of getCpuUsage method, of class Options.
      */
     @Test
     public void testGetCpuUsage() {
@@ -340,7 +336,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCpus method, of class OptionsImpl.
+     * Test of getCpus method, of class Options.
      */
     @Test
     public void testGetCpus() {
@@ -351,7 +347,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCudaIndex method, of class OptionsImpl.
+     * Test of getCudaIndex method, of class Options.
      */
     @Test
     public void testGetCudaIndex() {
@@ -362,7 +358,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCycleRate method, of class OptionsImpl.
+     * Test of getCycleRate method, of class Options.
      */
     @Test
     public void testGetCycleRate() {
@@ -373,7 +369,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getCycles method, of class OptionsImpl.
+     * Test of getCycles method, of class Options.
      */
     @Test
     public void testGetCycles() {
@@ -384,7 +380,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getDaemon method, of class OptionsImpl.
+     * Test of getDaemon method, of class Options.
      */
     @Test
     public void testGetDaemon() {
@@ -395,7 +391,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getDataDirectory method, of class OptionsImpl.
+     * Test of getDataDirectory method, of class Options.
      */
     @Test
     public void testGetDataDirectory() {
@@ -406,7 +402,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getDebugSockets method, of class OptionsImpl.
+     * Test of getDebugSockets method, of class Options.
      */
     @Test
     public void testGetDebugSockets() {
@@ -417,7 +413,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getDumpAfterDeadline method, of class OptionsImpl.
+     * Test of getDumpAfterDeadline method, of class Options.
      */
     @Test
     public void testGetDumpAfterDeadline() {
@@ -428,7 +424,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getEval method, of class OptionsImpl.
+     * Test of getEval method, of class Options.
      */
     @Test
     public void testGetEval() {
@@ -439,7 +435,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getExceptionLocations method, of class OptionsImpl.
+     * Test of getExceptionLocations method, of class Options.
      */
     @Test
     public void testGetExceptionLocations() {
@@ -450,7 +446,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getExecDirectory method, of class OptionsImpl.
+     * Test of getExecDirectory method, of class Options.
      */
     @Test
     public void testGetExecDirectory() {
@@ -461,7 +457,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getExitWhenDone method, of class OptionsImpl.
+     * Test of getExitWhenDone method, of class Options.
      */
     @Test
     public void testGetExitWhenDone() {
@@ -472,7 +468,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getExtraCoreArgs method, of class OptionsImpl.
+     * Test of getExtraCoreArgs method, of class Options.
      */
     @Test
     public void testGetExtraCoreArgs() {
@@ -483,7 +479,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getForceWs method, of class OptionsImpl.
+     * Test of getForceWs method, of class Options.
      */
     @Test
     public void testGetForceWs() {
@@ -494,7 +490,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getGpu method, of class OptionsImpl.
+     * Test of getGpu method, of class Options.
      */
     @Test
     public void testGetGpu() {
@@ -505,7 +501,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getGpuAssignmentServers method, of class OptionsImpl.
+     * Test of getGpuAssignmentServers method, of class Options.
      */
     @Test
     public void testGetGpuAssignmentServers() {
@@ -516,7 +512,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getGpuIndex method, of class OptionsImpl.
+     * Test of getGpuIndex method, of class Options.
      */
     @Test
     public void testGetGpuIndex() {
@@ -527,7 +523,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getGpuUsage method, of class OptionsImpl.
+     * Test of getGpuUsage method, of class Options.
      */
     @Test
     public void testGetGpuUsage() {
@@ -538,7 +534,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLog method, of class OptionsImpl.
+     * Test of getLog method, of class Options.
      */
     @Test
     public void testGetLog() {
@@ -549,7 +545,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogColor method, of class OptionsImpl.
+     * Test of getLogColor method, of class Options.
      */
     @Test
     public void testGetLogColor() {
@@ -560,7 +556,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogCrlf method, of class OptionsImpl.
+     * Test of getLogCrlf method, of class Options.
      */
     @Test
     public void testGetLogCrlf() {
@@ -571,7 +567,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogDate method, of class OptionsImpl.
+     * Test of getLogDate method, of class Options.
      */
     @Test
     public void testGetLogDate() {
@@ -582,7 +578,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogDebug method, of class OptionsImpl.
+     * Test of getLogDebug method, of class Options.
      */
     @Test
     public void testGetLogDebug() {
@@ -593,7 +589,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogDomain method, of class OptionsImpl.
+     * Test of getLogDomain method, of class Options.
      */
     @Test
     public void testGetLogDomain() {
@@ -604,7 +600,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogDomainLevels method, of class OptionsImpl.
+     * Test of getLogDomainLevels method, of class Options.
      */
     @Test
     public void testGetLogDomainLevels() {
@@ -615,7 +611,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogHeader method, of class OptionsImpl.
+     * Test of getLogHeader method, of class Options.
      */
     @Test
     public void testGetLogHeader() {
@@ -626,7 +622,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogLevel method, of class OptionsImpl.
+     * Test of getLogLevel method, of class Options.
      */
     @Test
     public void testGetLogLevel() {
@@ -637,7 +633,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogNoInfoHeader method, of class OptionsImpl.
+     * Test of getLogNoInfoHeader method, of class Options.
      */
     @Test
     public void testGetLogNoInfoHeader() {
@@ -648,7 +644,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogRedirect method, of class OptionsImpl.
+     * Test of getLogRedirect method, of class Options.
      */
     @Test
     public void testGetLogRedirect() {
@@ -659,7 +655,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogRotate method, of class OptionsImpl.
+     * Test of getLogRotate method, of class Options.
      */
     @Test
     public void testGetLogRotate() {
@@ -670,7 +666,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogRotateDir method, of class OptionsImpl.
+     * Test of getLogRotateDir method, of class Options.
      */
     @Test
     public void testGetLogRotateDir() {
@@ -681,7 +677,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogRotateMax method, of class OptionsImpl.
+     * Test of getLogRotateMax method, of class Options.
      */
     @Test
     public void testGetLogRotateMax() {
@@ -692,7 +688,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogShortLevel method, of class OptionsImpl.
+     * Test of getLogShortLevel method, of class Options.
      */
     @Test
     public void testGetLogShortLevel() {
@@ -703,7 +699,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogSimpleDomains method, of class OptionsImpl.
+     * Test of getLogSimpleDomains method, of class Options.
      */
     @Test
     public void testGetLogSimpleDomains() {
@@ -714,7 +710,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogThreadId method, of class OptionsImpl.
+     * Test of getLogThreadId method, of class Options.
      */
     @Test
     public void testGetLogThreadId() {
@@ -725,7 +721,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogTime method, of class OptionsImpl.
+     * Test of getLogTime method, of class Options.
      */
     @Test
     public void testGetLogTime() {
@@ -736,7 +732,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogToScreen method, of class OptionsImpl.
+     * Test of getLogToScreen method, of class Options.
      */
     @Test
     public void testGetLogToScreen() {
@@ -747,7 +743,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getLogTruncate method, of class OptionsImpl.
+     * Test of getLogTruncate method, of class Options.
      */
     @Test
     public void testGetLogTruncate() {
@@ -758,7 +754,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getMachineId method, of class OptionsImpl.
+     * Test of getMachineId method, of class Options.
      */
     @Test
     public void testGetMachineId() {
@@ -769,7 +765,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getMaxDelay method, of class OptionsImpl.
+     * Test of getMaxDelay method, of class Options.
      */
     @Test
     public void testGetMaxDelay() {
@@ -780,7 +776,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getMaxPacketSize method, of class OptionsImpl.
+     * Test of getMaxPacketSize method, of class Options.
      */
     @Test
     public void testGetMaxPacketSize() {
@@ -791,7 +787,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getMaxQueue method, of class OptionsImpl.
+     * Test of getMaxQueue method, of class Options.
      */
     @Test
     public void testGetMaxQueue() {
@@ -802,7 +798,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getMaxShutdownWait method, of class OptionsImpl.
+     * Test of getMaxShutdownWait method, of class Options.
      */
     @Test
     public void testGetMaxShutdownWait() {
@@ -813,18 +809,18 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getMaxSlotErrors method, of class OptionsImpl.
+     * Test of getMaxSlotErrors method, of class Options.
      */
     @Test
     public void testGetMaxSlotErrors() {
         System.out.println("getMaxSlotErrors");
-        int expResult = 5;
+        int expResult = 10;
         int result = instance.getMaxSlotErrors();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getMaxUnitErrors method, of class OptionsImpl.
+     * Test of getMaxUnitErrors method, of class Options.
      */
     @Test
     public void testGetMaxUnitErrors() {
@@ -835,7 +831,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getMaxUnits method, of class OptionsImpl.
+     * Test of getMaxUnits method, of class Options.
      */
     @Test
     public void testGetMaxUnits() {
@@ -846,7 +842,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getMemory method, of class OptionsImpl.
+     * Test of getMemory method, of class Options.
      */
     @Test
     public void testGetMemory() {
@@ -857,7 +853,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getMinDelay method, of class OptionsImpl.
+     * Test of getMinDelay method, of class Options.
      */
     @Test
     public void testGetMinDelay() {
@@ -868,7 +864,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getNextUnitPercentage method, of class OptionsImpl.
+     * Test of getNextUnitPercentage method, of class Options.
      */
     @Test
     public void testGetNextUnitPercentage() {
@@ -879,7 +875,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getPriority method, of class OptionsImpl.
+     * Test of getPriority method, of class Options.
      */
     @Test
     public void testGetPriority() {
@@ -890,7 +886,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getNoAssembly method, of class OptionsImpl.
+     * Test of getNoAssembly method, of class Options.
      */
     @Test
     public void testGetNoAssembly() {
@@ -901,7 +897,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getOpenclIndex method, of class OptionsImpl.
+     * Test of getOpenclIndex method, of class Options.
      */
     @Test
     public void testGetOpenclIndex() {
@@ -912,7 +908,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getOsSpecies method, of class OptionsImpl.
+     * Test of getOsSpecies method, of class Options.
      */
     @Test
     public void testGetOsSpecies() {
@@ -923,7 +919,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getOsType method, of class OptionsImpl.
+     * Test of getOsType method, of class Options.
      */
     @Test
     public void testGetOsType() {
@@ -934,7 +930,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getPasskey method, of class OptionsImpl.
+     * Test of getPasskey method, of class Options.
      */
     @Test
     public void testGetPasskey() {
@@ -945,7 +941,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getPassword method, of class OptionsImpl.
+     * Test of getPassword method, of class Options.
      */
     @Test
     public void testGetPassword() {
@@ -956,7 +952,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getPauseOnBattery method, of class OptionsImpl.
+     * Test of getPauseOnBattery method, of class Options.
      */
     @Test
     public void testGetPauseOnBattery() {
@@ -967,7 +963,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getPauseOnStart method, of class OptionsImpl.
+     * Test of getPauseOnStart method, of class Options.
      */
     @Test
     public void testGetPauseOnStart() {
@@ -978,7 +974,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getPid method, of class OptionsImpl.
+     * Test of getPid method, of class Options.
      */
     @Test
     public void testGetPid() {
@@ -989,7 +985,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getPidFile method, of class OptionsImpl.
+     * Test of getPidFile method, of class Options.
      */
     @Test
     public void testGetPidFile() {
@@ -1000,7 +996,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getProjectKey method, of class OptionsImpl.
+     * Test of getProjectKey method, of class Options.
      */
     @Test
     public void testGetProjectKey() {
@@ -1011,18 +1007,18 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getProxy method, of class OptionsImpl.
+     * Test of getProxy method, of class Options.
      */
-    @Test @Ignore
+    @Test
     public void testGetProxy() {
         System.out.println("getProxy");
-        InetAddress expResult = null;
-        InetAddress result = instance.getProxy();
+        String expResult = ":8080";
+        String result = instance.getProxy();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getProxyEnable method, of class OptionsImpl.
+     * Test of getProxyEnable method, of class Options.
      */
     @Test
     public void testGetProxyEnable() {
@@ -1033,7 +1029,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getProxyPass method, of class OptionsImpl.
+     * Test of getProxyPass method, of class Options.
      */
     @Test
     public void testGetProxyPass() {
@@ -1044,7 +1040,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getProxyUser method, of class OptionsImpl.
+     * Test of getProxyUser method, of class Options.
      */
     @Test
     public void testGetProxyUser() {
@@ -1055,18 +1051,18 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getRespawn method, of class OptionsImpl.
+     * Test of getRespawn method, of class Options.
      */
     @Test
     public void testGetRespawn() {
         System.out.println("getRespawn");
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.getRespawn();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getScript method, of class OptionsImpl.
+     * Test of getScript method, of class Options.
      */
     @Test
     public void testGetScript() {
@@ -1077,7 +1073,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getService method, of class OptionsImpl.
+     * Test of getService method, of class Options.
      */
     @Test
     public void testGetService() {
@@ -1088,7 +1084,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getServiceDescription method, of class OptionsImpl.
+     * Test of getServiceDescription method, of class Options.
      */
     @Test
     public void testGetServiceDescription() {
@@ -1099,7 +1095,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getServiceRestart method, of class OptionsImpl.
+     * Test of getServiceRestart method, of class Options.
      */
     @Test
     public void testGetServiceRestart() {
@@ -1110,7 +1106,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getServiceRestartDelay method, of class OptionsImpl.
+     * Test of getServiceRestartDelay method, of class Options.
      */
     @Test
     public void testGetServiceRestartDelay() {
@@ -1121,7 +1117,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getSmp method, of class OptionsImpl.
+     * Test of getSmp method, of class Options.
      */
     @Test
     public void testGetSmp() {
@@ -1132,7 +1128,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getStackTraces method, of class OptionsImpl.
+     * Test of getStackTraces method, of class Options.
      */
     @Test
     public void testGetStackTraces() {
@@ -1143,7 +1139,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getTeam method, of class OptionsImpl.
+     * Test of getTeam method, of class Options.
      */
     @Test
     public void testGetTeam() {
@@ -1154,7 +1150,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getThreads method, of class OptionsImpl.
+     * Test of getThreads method, of class Options.
      */
     @Test
     public void testGetThreads() {
@@ -1165,7 +1161,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getUser method, of class OptionsImpl.
+     * Test of getUser method, of class Options.
      */
     @Test
     public void testGetUser() {
@@ -1176,7 +1172,7 @@ public class OptionsTest {
     }
 
     /**
-     * Test of getVerbosity method, of class OptionsImpl.
+     * Test of getVerbosity method, of class Options.
      */
     @Test
     public void testGetVerbosity() {

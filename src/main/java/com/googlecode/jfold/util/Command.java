@@ -97,7 +97,7 @@ public enum Command {
 
     /**
      * List or set options with their values.
-     * 
+     *
      * If no name arguments are given then all options with non-default values
      * will be listed. If the '-d' argument is given then even defaulted options
      * will be listed. If the '-a' option is given then unset options will also
@@ -154,7 +154,7 @@ public enum Command {
 
     /**
      * Modify an existing slot.
-     * 
+     *
      * Configuration options can be either set or reset using the same syntax
      * used by the 'options' command.
      */
@@ -162,7 +162,7 @@ public enum Command {
 
     /**
      * The first argument is the slot ID.
-     * 
+     *
      * See 'options' help for a description of the remaining arguments.
      */
     SLOT_OPTIONS("slot-options", ResponseType.PYON), // <slot> [-d | -a] | [name]...
@@ -191,7 +191,7 @@ public enum Command {
 
     /**
      * Print the date and time.
-     * 
+     *
      * Optionally, with 'format'. See: man strftime
      */
     DATE("date", ResponseType.VOID), // [format]
@@ -204,7 +204,7 @@ public enum Command {
 
     /**
      * If 'cond' evaluates to a non-empty string then evalute 'expr1' otherwise,
-     * if provided, evaluate 'expr2'
+     * if provided, evaluate 'expr2'.
      */
     IF("if", ResponseType.VOID), // <cond> <expr1> [expr2]
 
@@ -220,15 +220,38 @@ public enum Command {
     /** Subtract two values. */
     SUB("sub", ResponseType.VOID); // <number> <number>
 
+    /**
+     * Command.
+     */
     private final String command;
-    private final ResponseType responsetype;
+    /**
+     * Response Type.
+     */
+    private final ResponseType responseType;
 
-    Command(final String command, final ResponseType responseType) {
-        this.command = command;
-        this.responsetype = responseType;
+    /**
+     * Constructs an instance of <code>Command</code> with the specified
+     * command name and response type.
+     *
+     * @param fahCommand the Folding@home client command.
+     * @param commandResponseType the response type of the command.
+     */
+    Command(final String fahCommand, final ResponseType commandResponseType) {
+        this.command = fahCommand;
+        this.responseType = commandResponseType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * Retrieve the response type of this command.
+     *
+     * @return ResponseType type of response.
+     */
+    public ResponseType getResponseType() {
+        return responseType;
+    }
+
+    /** {@inheritDoc}
+     * @return command to send to client. */
     @Override
     public String toString() {
         return command;

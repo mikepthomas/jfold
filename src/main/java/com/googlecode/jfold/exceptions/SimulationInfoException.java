@@ -21,28 +21,35 @@
 
 package com.googlecode.jfold.exceptions;
 
+import com.wordnik.swagger.annotations.ApiModel;
+
 /**
  * <p>SimulationInfoException class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-public class SimulationInfoException extends Exception {
-
-    /**
-     * Creates a new instance of <code>SimulationInfoException</code> without
-     * detail message.
-     */
-    public SimulationInfoException() {
-    }
+@ApiModel(value = "Exception in simulation-info request")
+public class SimulationInfoException extends CommandException {
 
     /**
      * Constructs an instance of <code>SimulationInfoException</code> with the
      * specified detail message.
      *
-     * @param msg the detail message.
+     * @param message the detail message.
      */
-    public SimulationInfoException(final String msg) {
-        super(msg);
+    public SimulationInfoException(final String message) {
+        super(message);
+    }
+
+    /**
+     * Constructs an instance of <code>SimulationInfoException</code> with the
+     * specified detail message and the cause of the Exception.
+     *
+     * @param message the detail message.
+     * @param cause the cause of the exception.
+     */
+    public SimulationInfoException(final String message, final Throwable cause) {
+        super(message, cause);
     }
 }

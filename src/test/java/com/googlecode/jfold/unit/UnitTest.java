@@ -20,8 +20,10 @@
  */
 package com.googlecode.jfold.unit;
 
-import com.googlecode.jfold.unit.UnitImpl;
-import com.googlecode.jfold.examples.ExampleUnit;
+import com.googlecode.jfold.Connection;
+import com.googlecode.jfold.MockConnection;
+import com.googlecode.jfold.exceptions.QueueInfoException;
+import java.io.IOException;
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -41,21 +43,17 @@ import org.junit.Test;
  */
 public class UnitTest {
 
-    private static UnitImpl instance;
-
-    /**
-     * <p>Constructor for UnitTest.</p>
-     */
-    public UnitTest() {
-        super();
-    }
+    private static Unit instance;
 
     /**
      * <p>setUpClass.</p>
+     *
+     * @throws java.io.IOException
      */
     @BeforeClass
-    public static void setUpClass() {
-        instance = new ExampleUnit();
+    public static void setUpClass() throws IOException, QueueInfoException {
+        Connection connection = new MockConnection();
+        instance = connection.queueInfo().get(0);
     }
 
     /**
@@ -71,7 +69,7 @@ public class UnitTest {
     @Test
     public void testGetId() {
         System.out.println("getId");
-        String expResult = "01";
+        String expResult = "00";
         String result = instance.getId();
         assertEquals(expResult, result);
     }
@@ -93,7 +91,7 @@ public class UnitTest {
     @Test
     public void testGetProject() {
         System.out.println("getProject");
-        int expResult = 8004;
+        int expResult = 9500;
         int result = instance.getProject();
         assertEquals(expResult, result);
     }
@@ -104,7 +102,7 @@ public class UnitTest {
     @Test
     public void testGetRun() {
         System.out.println("getRun");
-        int expResult = 144;
+        int expResult = 850;
         int result = instance.getRun();
         assertEquals(expResult, result);
     }
@@ -115,7 +113,7 @@ public class UnitTest {
     @Test
     public void testGetClone() {
         System.out.println("getClone");
-        int expResult = 23;
+        int expResult = 1;
         int result = instance.getClone();
         assertEquals(expResult, result);
     }
@@ -126,7 +124,7 @@ public class UnitTest {
     @Test
     public void testGetGen() {
         System.out.println("getGen");
-        int expResult = 198;
+        int expResult = 290;
         int result = instance.getGen();
         assertEquals(expResult, result);
     }
@@ -148,7 +146,7 @@ public class UnitTest {
     @Test
     public void testGetUnit() {
         System.out.println("getUnit");
-        String expResult = "0x0000010b6652edcb4ee90281779a3dbf";
+        String expResult = "0x000001366652edcc53642c93bb74cd3a";
         String result = instance.getUnit();
         assertEquals(expResult, result);
     }
@@ -159,7 +157,7 @@ public class UnitTest {
     @Test
     public void testGetPercentDone() {
         System.out.println("getPercentDone");
-        String expResult = "49.53%";
+        String expResult = "17.79%";
         String result = instance.getPercentDone();
         assertEquals(expResult, result);
     }
@@ -170,7 +168,7 @@ public class UnitTest {
     @Test
     public void testGetTotalFrames() {
         System.out.println("getTotalFrames");
-        int expResult = 250;
+        int expResult = 250000;
         int result = instance.getTotalFrames();
         assertEquals(expResult, result);
     }
@@ -181,7 +179,7 @@ public class UnitTest {
     @Test
     public void testGetFramesDone() {
         System.out.println("getFramesDone");
-        int expResult = 122;
+        int expResult = 42500;
         int result = instance.getFramesDone();
         assertEquals(expResult, result);
     }
@@ -233,7 +231,7 @@ public class UnitTest {
     @Test
     public void testGetWs() throws UnknownHostException {
         System.out.println("getWs");
-        Inet4Address expResult = (Inet4Address) InetAddress.getByName("171.67.108.59");
+        Inet4Address expResult = (Inet4Address) InetAddress.getByName("171.67.108.60");
         Inet4Address result = instance.getWs();
         assertEquals(expResult, result);
     }
@@ -301,7 +299,7 @@ public class UnitTest {
     @Test
     public void testGetEta() {
         System.out.println("getEta");
-        String expResult = "1 hours 28 mins";
+        String expResult = "1 hours 49 mins";
         String result = instance.getEta();
         assertEquals(expResult, result);
     }
@@ -312,7 +310,7 @@ public class UnitTest {
     @Test
     public void testGetPpd() {
         System.out.println("getPpd");
-        double expResult = 3320.17;
+        double expResult = 1147.0;
         double result = instance.getPpd();
         assertEquals(expResult, result, 0.001);
     }
@@ -323,7 +321,7 @@ public class UnitTest {
     @Test
     public void testGetTpf() {
         System.out.println("getTpf");
-        String expResult = "1 mins 45 secs";
+        String expResult = "1 mins 20 secs";
         String result = instance.getTpf();
         assertEquals(expResult, result);
     }
@@ -334,7 +332,7 @@ public class UnitTest {
     @Test
     public void testGetBaseCredit() {
         System.out.println("getBaseCredit");
-        double expResult = 88.59;
+        double expResult = 106.00;
         double result = instance.getBaseCredit();
         assertEquals(expResult, result, 0.001);
     }
@@ -345,7 +343,7 @@ public class UnitTest {
     @Test
     public void testGetCreditEstimate() {
         System.out.println("getCreditEstimate");
-        double expResult = 403.49;
+        double expResult = 106.0;
         double result = instance.getCreditEstimate();
         assertEquals(expResult, result, 0.001);
     }
@@ -356,37 +354,7 @@ public class UnitTest {
     @Test
     public void testGetDescription() {
         System.out.println("getDescription");
-        String expResult = "The folding of B1 IgG binding domain of "
-            + "peptostreptococcal protein ( commonly referred as Protein L ) "
-            + "has been studied extensively using a variety of experimental "
-            + "techniques. It is a small two state folder which is used as a "
-            + "model system for characterizing the protein unfolded states, "
-            + "folding kinetics, Coil-globule transitions during folding etc. "
-            + "Recent work by a former Pande group Lab member (Vincent Voelz) "
-            + "studied the unfolded state dynamics and structure of Protein L "
-            + "using folding@home simulations and experiments. (Voelz et. al., "
-            + "The Journal of American Chemical Society, Vol. 132, Page "
-            + "4702-4709). \n\nIn this project, we perform "
-            + "constant-temperature simulations of the alpha/beta protein L, "
-            + "started from folded and unfolded states, using an explicit "
-            + "solvation model to elucidate the folding mechanism of this "
-            + "protein, which would help in interpreting and validating the "
-            + "vast amount of experimental data related to this protein. \n\n"
-            + "**Points and deadlines:**  \n\nproject\npoints\ndeadline\n"
-            + "timeout\nforcefield\ntemperature\n\np8001\n89\n4 days\n"
-            + "2 days\nff99sbILDN\n370K\n\np8004\n89\n4 days\n2 days\n"
-            + "ff99sbILDN\n370K\n\n### _Other details_\n\nThis project "
-            + "(p8004) is set for 88.59 points, a preferred deadline of 1.64 "
-            + "days, and a final deadline 3.54 days. This project uses the "
-            + "GRO-A4 FAH core software and is hosted by Folding@home server "
-            + "171.67.108.59.  \n\n### _Manager for this FAH project_\n\n"
-            + "![][3] Dr. Diwakar Shukla is a postdoctoral scholar in the lab "
-            + "of Vijay Pande at Stanford University. Dr. Shukla's research "
-            + "focuses on using large-scale simulation methods to unravel the "
-            + "mysteries of Alzheimer's Disease. We are continuing to use "
-            + "Folding@home in order to learn more about Alzheimer's Disease, "
-            + "in particular to discover new therapeutics, such as [this "
-            + "recent work from our group][4].\n";
+        String expResult = null;
         String result = instance.getDescription();
         assertEquals(expResult, result);
     }

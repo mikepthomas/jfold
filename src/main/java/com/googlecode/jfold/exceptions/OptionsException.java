@@ -21,28 +21,35 @@
 
 package com.googlecode.jfold.exceptions;
 
+import com.wordnik.swagger.annotations.ApiModel;
+
 /**
  * <p>OptionsException class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-public class OptionsException extends Exception {
-
-    /**
-     * Creates a new instance of <code>OptionsException</code> without detail
-     * message.
-     */
-    public OptionsException() {
-    }
+@ApiModel(value = "Exception in options request")
+public class OptionsException extends CommandException {
 
     /**
      * Constructs an instance of <code>OptionsException</code> with the
      * specified detail message.
      *
-     * @param msg the detail message.
+     * @param message the detail message.
      */
-    public OptionsException(final String msg) {
-        super(msg);
+    public OptionsException(final String message) {
+        super(message);
+    }
+
+    /**
+     * Constructs an instance of <code>OptionsException</code> with the
+     * specified detail message and the cause of the Exception.
+     *
+     * @param message the detail message.
+     * @param cause the cause of the exception.
+     */
+    public OptionsException(final String message, final Throwable cause) {
+        super(message, cause);
     }
 }

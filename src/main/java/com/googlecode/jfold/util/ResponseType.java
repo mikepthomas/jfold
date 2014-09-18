@@ -27,7 +27,10 @@ package com.googlecode.jfold.util;
  * @version $Id: $Id
  */
 public enum ResponseType {
+    /** PyON Response. */
     PYON,
+    /** String Response. */
     STRING,
+    /** Void Response. */
     VOID;
 }

@@ -20,57 +20,114 @@
  */
 package com.googlecode.jfold.slot;
 
+import com.wordnik.swagger.annotations.ApiModel;
+import com.wordnik.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
- * <p>Slot interface.</p>
+ * <p>Slot class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version $Id: $Id
+ * @version 7.4.4
  */
-public interface Slot {
+@ApiModel(value = "Folding@home Slot")
+@XmlRootElement(name = "slot")
+public class Slot implements Serializable {
+// <editor-fold defaultstate="collapsed" desc="Member Variables">
+    /**
+     * Identifier.
+     */
+    @ApiModelProperty(value = "Identifier", required = true)
+    @XmlElement(name = "id")
+    private String id;
+    /**
+     * Status.
+     */
+    @XmlElement(name = "status")
+    private String status;
+    /**
+     * Description.
+     */
+    @XmlElement(name = "description")
+    private String description;
+    /**
+     * SlotOptions.
+     */
+    @XmlElement(name = "options")
+    private SlotOptions options;
+    /**
+     * Reason.
+     */
+    @XmlElement(name = "reason")
+    private String reason;
+    /**
+     * Idle.
+     */
+    @XmlElement(name = "idle")
+    private boolean idle;
+// </editor-fold>
 
+// <editor-fold desc="Accessors">
     /**
      * Get the value of <code>id</code>.
      *
      * @return the <code>id</code> from <code>slot-info</code>
      */
-    String getId();
+    public final String getId() {
+        return id;
+    }
 
     /**
      * Get the value of <code>status</code>.
      *
      * @return the <code>status</code> from <code>slot-info</code>
      */
-    String getStatus();
+    public final String getStatus() {
+        return status;
+    }
 
     /**
      * Get the value of <code>description</code>.
      *
      * @return the <code>description</code> from <code>slot-info</code>
      */
-    String getDescription();
+    public final String getDescription() {
+        return description;
+    }
 
     /**
      * Get the value of <code>options</code>.
      *
      * @return the <code>options</code> from <code>slot-info</code>
      */
-    SlotOptions getOptions();
-    
+    public final SlotOptions getOptions() {
+        return options;
+    }
+
     /**
      * Get the value of <code>reason</code>.
      *
      * @return the <code>reason</code> from <code>slot-info</code>
      */
-    String getReason();
+    public final String getReason() {
+        return reason;
+    }
 
     /**
      * Get the value of <code>idle</code>.
      *
      * @return the <code>idle</code> from <code>slot-info</code>
      */
-    boolean getIdle();
+    public final boolean getIdle() {
+        return idle;
+    }
+// </editor-fold>
 
     /** {@inheritDoc} */
     @Override
-    String toString();
+    public final String toString() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

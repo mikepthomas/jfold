@@ -26,9 +26,13 @@ import com.googlecode.jfold.simulation.SimulationInfo;
 import com.googlecode.jfold.slot.Slot;
 import com.googlecode.jfold.slot.SlotOptions;
 import com.googlecode.jfold.unit.Unit;
+import com.googlecode.jfold.util.Command;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.apache.commons.io.FileUtils;
 
 /**
@@ -38,66 +42,49 @@ import org.apache.commons.io.FileUtils;
  * @version $Id: $Id
  * @since 1.0
  */
-public class MockConnection extends GsonConnection implements Connection {
-
-    /** {@inheritDoc} */
-    @Override
-    protected String getInfoOutput(String category, String key) {
-        return "http://folding.stanford.edu/";
-    }
+public class MockConnection extends ClientConnection implements Connection {
     
-    /** {@inheritDoc} */
-    @Override
-    protected String getInfoOutput() {
-        return getJson(InfoItem.class);
-    }
-    
-    /** {@inheritDoc} */
-    @Override
-    protected String getNumSlotsOutput() {
-        return "1";
+    public MockConnection() throws IOException {
+        super(DEFAULT_HOST, DEFAULT_PORT);
     }
 
-    /** {@inheritDoc} */
     @Override
-    protected String getOptionsOutput(boolean listDefault, boolean listUnset) {
-        return getJson(Options.class);
-    }
+    protected String sendCommand(Command command, List<String> args) {
+        switch (command) {
+            case INFO:
+                if (args.contains("Folding@home Client") && args.contains("Website")) {
+                    return "http://folding.stanford.edu/";
+                } else {
+                    return getJson(InfoItem.class);
+                }
 
-    /** {@inheritDoc} */
-    @Override
-    protected String getPpdOutput() {
-        return "0";
-    }
+            case NUM_SLOTS:
+                return "1";
 
-    /** {@inheritDoc} */
-    @Override
-    protected String getQueueInfoOutput() {
-        return getJson(Unit.class);
-    }
+            case OPTIONS:
+                return getJson(Options.class);
 
-    /** {@inheritDoc} */
-    @Override
-    protected String getSimulationInfoOutput(int slot) {
-        return getJson(SimulationInfo.class);
-    }
+            case PPD:
+                return "0";
 
-    /** {@inheritDoc} */
-    @Override
-    protected String getSlotInfoOutput() {
-        return getJson(Slot.class);
-    }
+            case QUEUE_INFO:
+                return getJson(Unit.class);
 
-    /** {@inheritDoc} */
-    @Override
-    protected String getSlotOptionsOutput(int slot) {
-        return getJson(SlotOptions.class);
-    }
+            case SIMULATION_INFO:
+                return getJson(SimulationInfo.class);
 
-    /** {@inheritDoc} */
-    @Override
-    protected String getUptimeOutput() {
-        return "9d  3h 32m 33s";
+            case SLOT_INFO:
+                return getJson(Slot.class);
+
+            case SLOT_OPTIONS:
+                return getJson(SlotOptions.class);
+
+            case UPTIME:
+                return "9d  3h 32m 33s";
+
+            default:
+                return null;
+        }
     }
 
     private String getJson(Class clazz)
@@ -106,7 +93,9 @@ public class MockConnection extends GsonConnection implements Connection {
             String filename = "Example" + clazz.getSimpleName() + ".json";
             URL url = clazz.getResource(filename);
             File file = FileUtils.toFile(url);
-            return FileUtils.readFileToString(file, ENCODING);
+            String json = FileUtils.readFileToString(file, ENCODING);
+            Logger.getLogger(this.getClass().getName()).log(Level.INFO, json);
+            return json;
         } catch (IOException e) {
             throw new UnsupportedOperationException(e);
         }

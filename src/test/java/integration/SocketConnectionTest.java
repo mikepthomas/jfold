@@ -21,7 +21,16 @@
 package integration;
 
 import com.googlecode.jfold.Connection;
+import com.googlecode.jfold.ClientConnection;
 import com.googlecode.jfold.SocketConnection;
+import com.googlecode.jfold.exceptions.InfoException;
+import com.googlecode.jfold.exceptions.NumSlotsException;
+import com.googlecode.jfold.exceptions.OptionsException;
+import com.googlecode.jfold.exceptions.PpdException;
+import com.googlecode.jfold.exceptions.SimulationInfoException;
+import com.googlecode.jfold.exceptions.SlotInfoException;
+import com.googlecode.jfold.exceptions.SlotOptionsException;
+import com.googlecode.jfold.exceptions.UptimeException;
 import com.googlecode.jfold.info.InfoItem;
 import java.io.IOException;
 import java.io.InputStream;
@@ -64,8 +73,16 @@ public class SocketConnectionTest extends TestCase {
 
     /**
      * Rigourous Test :-)
+     *
+     * @throws com.googlecode.jfold.exceptions.SlotInfoException
+     * @throws com.googlecode.jfold.exceptions.InfoException
+     * @throws com.googlecode.jfold.exceptions.NumSlotsException
+     * @throws com.googlecode.jfold.exceptions.OptionsException
+     * @throws com.googlecode.jfold.exceptions.PpdException
+     * @throws com.googlecode.jfold.exceptions.SlotOptionsException
+     * @throws com.googlecode.jfold.exceptions.SimulationInfoException
      */
-    public void testApp() {
+    public void testApp() throws SlotInfoException, InfoException, NumSlotsException, OptionsException, PpdException, SlotOptionsException, SimulationInfoException, UptimeException {
         Properties props = new Properties();
         InputStream input = SocketConnection.class.getResourceAsStream("/config.properties");
         try {
@@ -84,7 +101,7 @@ public class SocketConnectionTest extends TestCase {
         int retryRate = Integer.parseInt(props.getProperty("retry_rate"));
 
         try {
-            Connection connection = new SocketConnection(address, port, password, retryRate);
+            Connection connection = new ClientConnection(address, port);
 
             connection.info();
             connection.getInfo(InfoItem.CLIENT_WEBSITE);

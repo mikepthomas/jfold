@@ -18,46 +18,13 @@
  * along with jFold.  If not, see <http://www.gnu.org/licenses/>.
  * #L%
  */
-package com.googlecode.jfold.info;
 
 /**
- * <p>InfoCategory class.</p>
+ * Utility classes used within the jFold API.
+ *
+ * <p>These classes are used internally in the jFold API.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-public enum InfoCategory {
-// <editor-fold defaultstate="collapsed" desc="Info Categories">
-
-    /** Represents <code>Folding@home Client</code> category. */
-    CLIENT("Folding@home Client"),
-
-    /** Represents <code>Build</code> category. */
-    BUILD("Build"),
-
-    /** Represents <code>System</code> category. */
-    SYSTEM("System");
-
-// </editor-fold>
-
-    /**
-     * Info Category Key.
-     */
-    private final String key;
-
-    /**
-     * Constructs an instance of <code>InfoCategory</code> with the specified
-     * category key.
-     *
-     * @param categoryKey the category key.
-     */
-    InfoCategory(final String categoryKey) {
-        this.key = categoryKey;
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public String toString() {
-        return key;
-    }
-}
+package com.googlecode.jfold.util;
