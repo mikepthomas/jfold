@@ -44,8 +44,8 @@ public class SimulationInfoTest {
     /**
      * <p>setUpClass.</p>
      *
-     * @throws java.io.IOException
-     * @throws com.googlecode.jfold.exceptions.SimulationInfoException
+     * @throws java.io.IOException if any.
+     * @throws com.googlecode.jfold.exceptions.SimulationInfoException if any.
      */
     @BeforeClass
     public static void setUpClass() throws IOException, SimulationInfoException {

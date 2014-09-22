@@ -45,8 +45,8 @@ public class UnitTest {
     /**
      * <p>setUpClass.</p>
      *
-     * @throws java.io.IOException
-     * @throws com.googlecode.jfold.exceptions.QueueInfoException
+     * @throws java.io.IOException if any.
+     * @throws com.googlecode.jfold.exceptions.QueueInfoException if any.
      */
     @BeforeClass
     public static void setUpClass() throws IOException, QueueInfoException {

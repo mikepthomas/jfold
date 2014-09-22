@@ -44,8 +44,8 @@ public class OptionsTest {
     /**
      * <p>setUpClass.</p>
      *
-     * @throws java.io.IOException
-     * @throws com.googlecode.jfold.exceptions.OptionsException
+     * @throws java.io.IOException if any.
+     * @throws com.googlecode.jfold.exceptions.OptionsException if any.
      */
     @BeforeClass
     public static void setUpClass() throws IOException, OptionsException {

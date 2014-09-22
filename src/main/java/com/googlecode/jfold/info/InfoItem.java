@@ -157,8 +157,7 @@ public enum InfoItem {
         return category;
     }
 
-    /** {@inheritDoc}
-     * @return info item key. */
+    /** {@inheritDoc} */
     @Override
     public String toString() {
         return key;
