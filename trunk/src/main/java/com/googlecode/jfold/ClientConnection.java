@@ -75,7 +75,7 @@ public class ClientConnection extends SocketConnection implements Connection {
     /**
      * <p>Default Constructor for ClientConnection.</p>
      *
-     * @throws java.io.IOException on error
+     * @throws java.io.IOException if any.
      */
     public ClientConnection()
             throws IOException {

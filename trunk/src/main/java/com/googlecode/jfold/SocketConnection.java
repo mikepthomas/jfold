@@ -82,7 +82,7 @@ public abstract class SocketConnection implements Connection {
      *
      * @param command command to send to the client
      * @return String response from client
-     * @throws com.googlecode.jfold.exceptions.CommandException on error
+     * @throws com.googlecode.jfold.exceptions.CommandException if any.
      */
     protected String sendCommand(final Command command)
             throws CommandException {
@@ -95,7 +95,7 @@ public abstract class SocketConnection implements Connection {
      * @param command command to send to the client
      * @param args command arguments
      * @return String response from client
-     * @throws com.googlecode.jfold.exceptions.CommandException on error
+     * @throws com.googlecode.jfold.exceptions.CommandException if any.
      */
     protected String sendCommand(final Command command, final List<String> args)
             throws CommandException {

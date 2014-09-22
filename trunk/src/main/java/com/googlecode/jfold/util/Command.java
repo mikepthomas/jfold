@@ -250,8 +250,7 @@ public enum Command {
         return responseType;
     }
 
-    /** {@inheritDoc}
-     * @return command to send to client. */
+    /** {@inheritDoc} */
     @Override
     public String toString() {
         return command;

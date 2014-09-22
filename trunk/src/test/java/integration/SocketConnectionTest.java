@@ -77,13 +77,17 @@ public class SocketConnectionTest extends TestCase {
     /**
      * Rigourous Test :-)
      *
-     * @throws com.googlecode.jfold.exceptions.SlotInfoException
-     * @throws com.googlecode.jfold.exceptions.InfoException
-     * @throws com.googlecode.jfold.exceptions.NumSlotsException
-     * @throws com.googlecode.jfold.exceptions.OptionsException
-     * @throws com.googlecode.jfold.exceptions.PpdException
-     * @throws com.googlecode.jfold.exceptions.SlotOptionsException
-     * @throws com.googlecode.jfold.exceptions.SimulationInfoException
+     * @throws com.googlecode.jfold.exceptions.SlotInfoException if any.
+     * @throws com.googlecode.jfold.exceptions.InfoException if any.
+     * @throws com.googlecode.jfold.exceptions.NumSlotsException if any.
+     * @throws com.googlecode.jfold.exceptions.OptionsException if any.
+     * @throws com.googlecode.jfold.exceptions.PpdException if any.
+     * @throws com.googlecode.jfold.exceptions.SlotOptionsException if any.
+     * @throws com.googlecode.jfold.exceptions.SimulationInfoException if any.
+     * @throws com.googlecode.jfold.exceptions.UptimeException if any.
+     * @throws com.googlecode.jfold.exceptions.QueueInfoException if any.
+     * @throws com.googlecode.jfold.exceptions.UnpauseException if any.
+     * @throws com.googlecode.jfold.exceptions.PauseException if any.
      */
     public void testApp() throws SlotInfoException, InfoException, NumSlotsException, OptionsException, PpdException, SlotOptionsException, SimulationInfoException, UptimeException, QueueInfoException, UnpauseException, PauseException {
         Properties props = new Properties();

@@ -44,8 +44,8 @@ public class SlotTest {
     /**
      * <p>setUpClass.</p>
      *
-     * @throws java.io.IOException
-     * @throws com.googlecode.jfold.exceptions.SlotInfoException
+     * @throws java.io.IOException if any.
+     * @throws com.googlecode.jfold.exceptions.SlotInfoException if any.
      */
     @BeforeClass
     public static void setUpClass() throws IOException, SlotInfoException {

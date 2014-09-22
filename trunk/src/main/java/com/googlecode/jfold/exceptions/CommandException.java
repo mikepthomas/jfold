@@ -55,6 +55,7 @@ public class CommandException extends Exception {
         super(message, cause);
     }
 
+    /** {@inheritDoc} */
     @Override
     @XmlElement()
     @ApiModelProperty(value = "Error message", required = true)

@@ -98,7 +98,7 @@ public interface Connection {
      * @param category to return information from
      * @param key to return information from
      * @return String value from information
-     * @throws com.googlecode.jfold.exceptions.InfoException on error
+     * @throws com.googlecode.jfold.exceptions.InfoException if any.
      */
     String getInfo(String category, String key) throws InfoException;
 
@@ -107,7 +107,7 @@ public interface Connection {
      *
      * @param infoItem a {@link com.googlecode.jfold.info.InfoItem} object.
      * @return a {@link java.lang.String} object.
-     * @throws com.googlecode.jfold.exceptions.InfoException on error
+     * @throws com.googlecode.jfold.exceptions.InfoException if any.
      */
     String getInfo(InfoItem infoItem) throws InfoException;
 
@@ -115,7 +115,7 @@ public interface Connection {
      * List application information.
      *
      * @return List
-     * @throws com.googlecode.jfold.exceptions.InfoException on error
+     * @throws com.googlecode.jfold.exceptions.InfoException if any.
      */
     List info() throws InfoException;
 
@@ -138,7 +138,7 @@ public interface Connection {
      * Get number of slots.
      *
      * @return integer number of slots
-     * @throws com.googlecode.jfold.exceptions.NumSlotsException on error
+     * @throws com.googlecode.jfold.exceptions.NumSlotsException if any.
      */
     int numSlots() throws NumSlotsException;
 
@@ -163,7 +163,7 @@ public interface Connection {
      * List all options with their non-default values.
      *
      * @return Options
-     * @throws com.googlecode.jfold.exceptions.OptionsException on error
+     * @throws com.googlecode.jfold.exceptions.OptionsException if any.
      */
     Options options() throws OptionsException;
 
@@ -173,7 +173,7 @@ public interface Connection {
      * @param listDefault if true defaulted options will be listed
      * @param listUnset if true unset options will also be listed
      * @return Options
-     * @throws com.googlecode.jfold.exceptions.OptionsException on error
+     * @throws com.googlecode.jfold.exceptions.OptionsException if any.
      */
     Options options(boolean listDefault, boolean listUnset)
             throws OptionsException;
@@ -181,7 +181,7 @@ public interface Connection {
     /**
      * Pause all slots.
      *
-     * @throws com.googlecode.jfold.exceptions.PauseException on error
+     * @throws com.googlecode.jfold.exceptions.PauseException if any.
      */
     void pause() throws PauseException;
 
@@ -189,7 +189,7 @@ public interface Connection {
      * Pause requested slot.
      *
      * @param slot number
-     * @throws com.googlecode.jfold.exceptions.PauseException on error
+     * @throws com.googlecode.jfold.exceptions.PauseException if any.
      */
     void pause(int slot) throws PauseException;
 
@@ -197,7 +197,7 @@ public interface Connection {
      * Get current total estimated Points Per Day.
      *
      * @return points per day
-     * @throws com.googlecode.jfold.exceptions.PpdException on error
+     * @throws com.googlecode.jfold.exceptions.PpdException if any.
      */
     int ppd() throws PpdException;
 
@@ -205,7 +205,7 @@ public interface Connection {
      * Get work unit queue information.
      *
      * @return List Unit
-     * @throws com.googlecode.jfold.exceptions.QueueInfoException on error
+     * @throws com.googlecode.jfold.exceptions.QueueInfoException if any.
      */
     List<Unit> queueInfo() throws QueueInfoException;
 
@@ -242,7 +242,7 @@ public interface Connection {
      *
      * @param slot number
      * @return SimulationInfo
-     * @throws com.googlecode.jfold.exceptions.SimulationInfoException on error
+     * @throws com.googlecode.jfold.exceptions.SimulationInfoException if any.
      */
     SimulationInfo simulationInfo(int slot) throws SimulationInfoException;
 
@@ -265,7 +265,7 @@ public interface Connection {
      * Get slot information.
      *
      * @return List Slot
-     * @throws com.googlecode.jfold.exceptions.SlotInfoException on error
+     * @throws com.googlecode.jfold.exceptions.SlotInfoException if any.
      */
     List<Slot> slotInfo() throws SlotInfoException;
 
@@ -282,7 +282,7 @@ public interface Connection {
      *
      * @return SlotOptions options
      * @param slot a int.
-     * @throws com.googlecode.jfold.exceptions.SlotOptionsException on error
+     * @throws com.googlecode.jfold.exceptions.SlotOptionsException if any.
      */
     SlotOptions slotOptions(int slot) throws SlotOptionsException;
 
@@ -301,7 +301,7 @@ public interface Connection {
     /**
      * Unpause all slots.
      *
-     * @throws com.googlecode.jfold.exceptions.UnpauseException on error
+     * @throws com.googlecode.jfold.exceptions.UnpauseException if any.
      */
     void unpause() throws UnpauseException;
 
@@ -309,7 +309,7 @@ public interface Connection {
      * Unpause requested slot.
      *
      * @param slot number
-     * @throws com.googlecode.jfold.exceptions.UnpauseException on error
+     * @throws com.googlecode.jfold.exceptions.UnpauseException if any.
      */
     void unpause(int slot) throws UnpauseException;
 
@@ -317,7 +317,7 @@ public interface Connection {
      * Print application uptime.
      *
      * @return uptime value in "HH\h MM\m SS\s" format
-     * @throws com.googlecode.jfold.exceptions.UptimeException on error
+     * @throws com.googlecode.jfold.exceptions.UptimeException if any.
      */
     String uptime() throws UptimeException;
 

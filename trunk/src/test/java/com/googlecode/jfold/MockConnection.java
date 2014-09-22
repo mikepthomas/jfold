@@ -44,11 +44,17 @@ import org.apache.commons.io.FileUtils;
  */
 public class MockConnection extends ClientConnection implements Connection {
     
+    /**
+     * <p>Constructor for MockConnection.</p>
+     *
+     * @throws java.io.IOException if any.
+     */
     public MockConnection() throws IOException {
         // Don't connect socket
         super(null, 0);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected String sendCommand(Command command, List<String> args) {
         switch (command) {
