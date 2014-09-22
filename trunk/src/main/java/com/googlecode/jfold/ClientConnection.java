@@ -235,8 +235,7 @@ public class ClientConnection extends SocketConnection implements Connection {
     public final synchronized void pause() throws PauseException {
         try {
             sendCommand(Command.PAUSE);
-        }
-        catch (CommandException ex) {
+        } catch (CommandException ex) {
             throw new PauseException(ex.getMessage(), ex);
         }
     }
@@ -249,8 +248,7 @@ public class ClientConnection extends SocketConnection implements Connection {
                 add(String.valueOf(slot));
             } };
             sendCommand(Command.PAUSE, args);
-        }
-        catch (CommandException ex) {
+        } catch (CommandException ex) {
             throw new PauseException(ex.getMessage(), ex);
         }
     }
@@ -384,8 +382,7 @@ public class ClientConnection extends SocketConnection implements Connection {
     public final synchronized void unpause() throws UnpauseException {
         try {
             sendCommand(Command.UNPAUSE);
-        }
-        catch (CommandException ex) {
+        } catch (CommandException ex) {
             throw new UnpauseException(ex.getMessage(), ex);
         }
     }
@@ -399,8 +396,7 @@ public class ClientConnection extends SocketConnection implements Connection {
                 add(String.valueOf(slot));
             } };
             sendCommand(Command.UNPAUSE, args);
-        }
-        catch (CommandException ex) {
+        } catch (CommandException ex) {
             throw new UnpauseException(ex.getMessage(), ex);
         }
     }

@@ -42,9 +42,14 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class SocketConnection implements Connection {
 
+    /** Clear Screen. */
+    public static final String CLRSCR = "\033[H\033[2J";
+    /** Welcome Message. */
+    public static final String WELCOME =
+            "Welcome to the Folding@home Client command server.";
     /** Logger. */
-    private static final Logger LOGGER = LoggerFactory.getLogger(
-            SocketConnection.class);
+    private static final Logger LOGGER =
+            LoggerFactory.getLogger(SocketConnection.class);
 
     /** Socket to connect to F@H Client. */
     private Socket socket = null;
@@ -68,12 +73,15 @@ public abstract class SocketConnection implements Connection {
             socket = new Socket(address, port);
 
             out = new PrintStream(socket.getOutputStream(), true, ENCODING);
-            in = new BufferedReader(new InputStreamReader(socket.getInputStream(),
-                    ENCODING));
+            in = new BufferedReader(new InputStreamReader(
+                    socket.getInputStream(), ENCODING));
 
-            // Welcome to the Folding@home Client command server.
-            // TODO: check input
-            LOGGER.info(in.readLine());
+            String welcome = in.readLine();
+            LOGGER.info(welcome);
+            if (!(CLRSCR + WELCOME).equals(welcome)) {
+                throw new IOException(
+                        "Unexpected welcome message, check client version");
+            }
         }
     }
 
@@ -123,9 +131,10 @@ public abstract class SocketConnection implements Connection {
 
             case VOID:
                 try {
-                    in.skip(2); // ignore command prompt "> "
-                }
-                catch (IOException ex) {
+                    if (in.skip(2) != 2) {
+                        throw new IOException("Failed to ignore command prompt '>'");
+                    }
+                } catch (IOException ex) {
                     throw new CommandException(ex.getLocalizedMessage());
                 }
 
@@ -143,7 +152,9 @@ public abstract class SocketConnection implements Connection {
         StringBuilder stringBuilder = new StringBuilder();
 
         try {
-            in.skip(2); // ignore command prompt "> "
+            if (in.skip(2) != 2) {
+                throw new IOException("Failed to ignore command prompt '>'");
+            }
             char ch;
             while ((ch = (char) in.read()) != '>') {
                 stringBuilder.append((char) ch);
@@ -168,9 +179,11 @@ public abstract class SocketConnection implements Connection {
         StringBuilder stringBuilder = new StringBuilder();
 
         try {
-            in.skip(1); // ignore command prompt '>'
+            if (in.skip(1) != 1) {
+                throw new IOException("Failed to ignore command prompt '>'");
+            }
             String string;
-            while (!(string = in.readLine()).equals("---")) {
+            while (!"---".equals(string = in.readLine())) {
                 stringBuilder.append(string).append('\n');
             }
         } catch (IOException ex) {
