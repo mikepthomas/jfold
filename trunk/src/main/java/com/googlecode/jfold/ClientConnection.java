@@ -27,11 +27,13 @@ import com.googlecode.jfold.exceptions.CommandException;
 import com.googlecode.jfold.exceptions.InfoException;
 import com.googlecode.jfold.exceptions.NumSlotsException;
 import com.googlecode.jfold.exceptions.OptionsException;
+import com.googlecode.jfold.exceptions.PauseException;
 import com.googlecode.jfold.exceptions.PpdException;
 import com.googlecode.jfold.exceptions.QueueInfoException;
 import com.googlecode.jfold.exceptions.SimulationInfoException;
 import com.googlecode.jfold.exceptions.SlotInfoException;
 import com.googlecode.jfold.exceptions.SlotOptionsException;
+import com.googlecode.jfold.exceptions.UnpauseException;
 import com.googlecode.jfold.exceptions.UptimeException;
 import com.googlecode.jfold.info.InfoItem;
 import com.googlecode.jfold.options.Options;
@@ -52,7 +54,7 @@ import org.slf4j.LoggerFactory;
  * <p>ClientConnection class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version $Id: $Id
+ * @version 7.4.4
  */
 public class ClientConnection extends SocketConnection implements Connection {
 
@@ -230,14 +232,27 @@ public class ClientConnection extends SocketConnection implements Connection {
 
     /** {@inheritDoc} */
     @Override
-    public final synchronized void pause() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public final synchronized void pause() throws PauseException {
+        try {
+            sendCommand(Command.PAUSE);
+        }
+        catch (CommandException ex) {
+            throw new PauseException(ex.getMessage(), ex);
+        }
     }
 
     /** {@inheritDoc} */
     @Override
-    public final synchronized void pause(final int slot) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public final synchronized void pause(final int slot) throws PauseException {
+        try {
+            List<String> args = new ArrayList<String>() { {
+                add(String.valueOf(slot));
+            } };
+            sendCommand(Command.PAUSE, args);
+        }
+        catch (CommandException ex) {
+            throw new PauseException(ex.getMessage(), ex);
+        }
     }
 
     /** {@inheritDoc} */
@@ -366,14 +381,28 @@ public class ClientConnection extends SocketConnection implements Connection {
 
     /** {@inheritDoc} */
     @Override
-    public final synchronized void unpause() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public final synchronized void unpause() throws UnpauseException {
+        try {
+            sendCommand(Command.UNPAUSE);
+        }
+        catch (CommandException ex) {
+            throw new UnpauseException(ex.getMessage(), ex);
+        }
     }
 
     /** {@inheritDoc} */
     @Override
-    public final synchronized void unpause(final int slot) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public final synchronized void unpause(final int slot)
+            throws UnpauseException {
+        try {
+            List<String> args = new ArrayList<String>() { {
+                add(String.valueOf(slot));
+            } };
+            sendCommand(Command.UNPAUSE, args);
+        }
+        catch (CommandException ex) {
+            throw new UnpauseException(ex.getMessage(), ex);
+        }
     }
 
     /** {@inheritDoc} */

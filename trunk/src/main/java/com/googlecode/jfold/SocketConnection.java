@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  * <p>SocketConnection class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version $Id: $Id
+ * @version 7.4.4
  */
 public abstract class SocketConnection implements Connection {
 
@@ -102,7 +102,7 @@ public abstract class SocketConnection implements Connection {
         StringBuilder arguments = new StringBuilder();
 
         for (String arg : args) {
-            arguments.append(" \"").append(arg).append('"');
+            arguments.append(" '").append(arg).append("'");
         }
 
         // Send the command
@@ -121,6 +121,14 @@ public abstract class SocketConnection implements Connection {
             case STRING:
                 return getString();
 
+            case VOID:
+                try {
+                    in.skip(2); // ignore command prompt "> "
+                }
+                catch (IOException ex) {
+                    throw new CommandException(ex.getLocalizedMessage());
+                }
+
             default:
                 return null;
         }
@@ -135,7 +143,7 @@ public abstract class SocketConnection implements Connection {
         StringBuilder stringBuilder = new StringBuilder();
 
         try {
-            in.read(); // first char is '>'
+            in.skip(2); // ignore command prompt "> "
             char ch;
             while ((ch = (char) in.read()) != '>') {
                 stringBuilder.append((char) ch);
@@ -160,7 +168,7 @@ public abstract class SocketConnection implements Connection {
         StringBuilder stringBuilder = new StringBuilder();
 
         try {
-            in.read(); // first char is '>'
+            in.skip(1); // ignore command prompt '>'
             String string;
             while (!(string = in.readLine()).equals("---")) {
                 stringBuilder.append(string).append('\n');
