@@ -23,11 +23,13 @@ package com.googlecode.jfold;
 import com.googlecode.jfold.exceptions.InfoException;
 import com.googlecode.jfold.exceptions.NumSlotsException;
 import com.googlecode.jfold.exceptions.OptionsException;
+import com.googlecode.jfold.exceptions.PauseException;
 import com.googlecode.jfold.exceptions.PpdException;
 import com.googlecode.jfold.exceptions.QueueInfoException;
 import com.googlecode.jfold.exceptions.SimulationInfoException;
 import com.googlecode.jfold.exceptions.SlotInfoException;
 import com.googlecode.jfold.exceptions.SlotOptionsException;
+import com.googlecode.jfold.exceptions.UnpauseException;
 import com.googlecode.jfold.exceptions.UptimeException;
 import com.googlecode.jfold.info.InfoItem;
 import com.googlecode.jfold.options.Options;
@@ -43,7 +45,7 @@ import java.util.List;
  * <p>Connection interface.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.3.6
+ * @version 7.4.4
  */
 public interface Connection {
     /** Constant <code>ENCODING="UTF-8"</code>. */
@@ -178,15 +180,18 @@ public interface Connection {
 
     /**
      * Pause all slots.
+     *
+     * @throws com.googlecode.jfold.exceptions.PauseException on error
      */
-    void pause();
+    void pause() throws PauseException;
 
     /**
      * Pause requested slot.
      *
      * @param slot number
+     * @throws com.googlecode.jfold.exceptions.PauseException on error
      */
-    void pause(int slot);
+    void pause(int slot) throws PauseException;
 
     /**
      * Get current total estimated Points Per Day.
@@ -295,15 +300,18 @@ public interface Connection {
 
     /**
      * Unpause all slots.
+     *
+     * @throws com.googlecode.jfold.exceptions.UnpauseException on error
      */
-    void unpause();
+    void unpause() throws UnpauseException;
 
     /**
      * Unpause requested slot.
      *
      * @param slot number
+     * @throws com.googlecode.jfold.exceptions.UnpauseException on error
      */
-    void unpause(int slot);
+    void unpause(int slot) throws UnpauseException;
 
     /**
      * Print application uptime.

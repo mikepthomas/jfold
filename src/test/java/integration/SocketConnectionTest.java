@@ -26,10 +26,13 @@ import com.googlecode.jfold.SocketConnection;
 import com.googlecode.jfold.exceptions.InfoException;
 import com.googlecode.jfold.exceptions.NumSlotsException;
 import com.googlecode.jfold.exceptions.OptionsException;
+import com.googlecode.jfold.exceptions.PauseException;
 import com.googlecode.jfold.exceptions.PpdException;
+import com.googlecode.jfold.exceptions.QueueInfoException;
 import com.googlecode.jfold.exceptions.SimulationInfoException;
 import com.googlecode.jfold.exceptions.SlotInfoException;
 import com.googlecode.jfold.exceptions.SlotOptionsException;
+import com.googlecode.jfold.exceptions.UnpauseException;
 import com.googlecode.jfold.exceptions.UptimeException;
 import com.googlecode.jfold.info.InfoItem;
 import java.io.IOException;
@@ -82,7 +85,7 @@ public class SocketConnectionTest extends TestCase {
      * @throws com.googlecode.jfold.exceptions.SlotOptionsException
      * @throws com.googlecode.jfold.exceptions.SimulationInfoException
      */
-    public void testApp() throws SlotInfoException, InfoException, NumSlotsException, OptionsException, PpdException, SlotOptionsException, SimulationInfoException, UptimeException {
+    public void testApp() throws SlotInfoException, InfoException, NumSlotsException, OptionsException, PpdException, SlotOptionsException, SimulationInfoException, UptimeException, QueueInfoException, UnpauseException, PauseException {
         Properties props = new Properties();
         InputStream input = SocketConnection.class.getResourceAsStream("/config.properties");
         try {
@@ -110,9 +113,13 @@ public class SocketConnectionTest extends TestCase {
             connection.options(true, true);
             connection.ppd();
             connection.simulationInfo(0);
-            connection.slotInfo();
+            connection.queueInfo();
             connection.slotOptions(0);
             connection.uptime();
+            connection.unpause(0);
+            connection.slotInfo();
+            connection.pause(0);
+            connection.slotInfo();
         } catch (IOException ex) {
             logger.error(null, ex);
         }
