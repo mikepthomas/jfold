@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2014 Michael Thomas (mikepthomas@outlook.com)
+ * Copyright (C) 2012 - 2015 Michael Thomas (mikepthomas@outlook.com)
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,10 @@
  */
 package com.googlecode.jfold.util;
 
-import com.googlecode.jfold.exceptions.PyonParserException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -79,42 +82,52 @@ public final class PyonParser {
      *
      * @param pyon a {@link java.lang.String} object.
      * @return a {@link java.lang.String} object.
-     * @throws com.googlecode.jfold.exceptions.PyonParserException if any.
      */
-    public static String convert(final String pyon)
-            throws PyonParserException {
+    public static String convert(final String pyon) {
         // Check for valid PyON String
         if (!pyon.startsWith(PYON_1)) {
             LOGGER.warn("PyonParser cannot convert String: " + pyon);
-
             return pyon;
         }
 
         // Get PyON Body
-        String json = pyon.replaceAll(PYON_HEADER, "");
-        json = json.replaceAll(PYON_TRAILER, "");
+        String jsonString = pyon.replaceAll(PYON_HEADER, "");
+        jsonString = jsonString.replaceAll(PYON_TRAILER, "");
 
         // Check for PyON Error Message
         if (pyon.contains(PYON_ERROR)) {
-            throw new PyonParserException(json);
+            jsonString = jsonString.replaceAll("\"", "");
         }
 
-        // Format JSON
-        json = json.replaceAll("\\{", "{\n  ");
-        json = json.replaceAll(", ", ",\n  ");
-        json = json.replaceAll("\\}", "\n}");
+        // Add '\n' to make PyON to JSON replacements
+        jsonString = jsonString.replaceAll("\\[", "[\n");
+        jsonString = jsonString.replaceAll("\\]", "\n]");
+        jsonString = jsonString.replaceAll("\\{", "{\n");
+        jsonString = jsonString.replaceAll("\\}", "\n}");
+        jsonString = jsonString.replaceAll(", ", ",\n");
 
         // None is used instead of null
-        json = json.replaceAll(NONE, NULL);
+        jsonString = jsonString.replaceAll(NONE, NULL);
 
         // Boolean values start with an upper case letter as in Python.
-        json = json.replaceAll(PYON_TRUE, JSON_TRUE);
-        json = json.replaceAll(STRING_TRUE, JSON_TRUE);
-        json = json.replaceAll(PYON_FALSE, JSON_FALSE);
-        json = json.replaceAll(STRING_FALSE, JSON_FALSE);
+        jsonString = jsonString.replaceAll(PYON_TRUE, JSON_TRUE);
+        jsonString = jsonString.replaceAll(STRING_TRUE, JSON_TRUE);
+        jsonString = jsonString.replaceAll(PYON_FALSE, JSON_FALSE);
+        jsonString = jsonString.replaceAll(STRING_FALSE, JSON_FALSE);
 
-        LOGGER.debug("Parsed JSON: " + json);
+        // Format JSON
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectWriter writer = mapper.writerWithDefaultPrettyPrinter();
+        try {
+            JsonNode json = mapper.readValue(jsonString, JsonNode.class);
+            jsonString = writer.writeValueAsString(json);
+        }
+        catch (IOException ex) {
+            LOGGER.error("Unable to format json string", ex);
+        }
 
-        return json;
+        LOGGER.info("Parsed JSON:\n" + jsonString);
+
+        return jsonString;
     }
 }

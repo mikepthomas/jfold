@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2014 Michael Thomas (mikepthomas@outlook.com)
+ * Copyright (C) 2012 - 2015 Michael Thomas (mikepthomas@outlook.com)
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,6 +24,7 @@ package com.googlecode.jfold.exceptions;
 import com.wordnik.swagger.annotations.ApiModel;
 import com.wordnik.swagger.annotations.ApiModelProperty;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * <p>CommandException class.</p>
@@ -31,8 +32,16 @@ import javax.xml.bind.annotation.XmlElement;
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-@ApiModel(value = "Exception in command request")
+@ApiModel(value = "Exception in command")
+@XmlRootElement(name = "CommandException")
 public class CommandException extends Exception {
+
+    /**
+     * Constructs an instance of <code>PauseException</code>.
+     */
+    public CommandException() {
+        super();
+    }
 
     /**
      * Constructs an instance of <code>CommandException</code> with the
@@ -61,5 +70,13 @@ public class CommandException extends Exception {
     @ApiModelProperty(value = "Error message", required = true)
     public final String getMessage() {
         return super.getMessage();
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    @XmlElement()
+    @ApiModelProperty(value = "Stack Trace", required = true)
+    public final StackTraceElement[] getStackTrace() {
+        return super.getStackTrace();
     }
 }

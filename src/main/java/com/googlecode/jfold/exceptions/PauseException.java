@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2014 Michael Thomas (mikepthomas@outlook.com)
+ * Copyright (C) 2012 - 2015 Michael Thomas (mikepthomas@outlook.com)
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,6 +22,7 @@
 package com.googlecode.jfold.exceptions;
 
 import com.wordnik.swagger.annotations.ApiModel;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * <p>PauseException class.</p>
@@ -29,8 +30,16 @@ import com.wordnik.swagger.annotations.ApiModel;
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-@ApiModel(value = "Exception in info request")
+@ApiModel(value = "Exception in pause request")
+@XmlRootElement(name = "PauseException")
 public class PauseException extends CommandException {
+
+    /**
+     * Constructs an instance of <code>PauseException</code>.
+     */
+    public PauseException() {
+        super();
+    }
 
     /**
      * Constructs an instance of <code>PauseException</code> with the
