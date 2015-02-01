@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2014 Michael Thomas (mikepthomas@outlook.com)
+ * Copyright (C) 2012 - 2015 Michael Thomas (mikepthomas@outlook.com)
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,6 +22,7 @@
 package com.googlecode.jfold.exceptions;
 
 import com.wordnik.swagger.annotations.ApiModel;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * <p>OptionsException class.</p>
@@ -30,7 +31,15 @@ import com.wordnik.swagger.annotations.ApiModel;
  * @version $Id: $Id
  */
 @ApiModel(value = "Exception in options request")
+@XmlRootElement(name = "OptionsException")
 public class OptionsException extends CommandException {
+
+    /**
+     * Constructs an instance of <code>OptionsException</code>.
+     */
+    public OptionsException() {
+        super();
+    }
 
     /**
      * Constructs an instance of <code>OptionsException</code> with the

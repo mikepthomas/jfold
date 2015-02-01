@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2014 Michael Thomas (mikepthomas@outlook.com)
+ * Copyright (C) 2012 - 2015 Michael Thomas (mikepthomas@outlook.com)
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,6 @@
 package com.googlecode.jfold;
 
 import com.googlecode.jfold.exceptions.CommandException;
-import com.googlecode.jfold.exceptions.PyonParserException;
 import com.googlecode.jfold.util.Command;
 import com.googlecode.jfold.util.PyonParser;
 import java.io.BufferedReader;
@@ -44,12 +43,14 @@ public abstract class SocketConnection implements Connection {
 
     /** Clear Screen. */
     public static final String CLRSCR = "\033[H\033[2J";
+    /** Command Prompt. */
+    public static final String COMMAND_PROMPT = "> ";
     /** Welcome Message. */
-    public static final String WELCOME =
-            "Welcome to the Folding@home Client command server.";
+    public static final String WELCOME_MSG
+            = "Welcome to the Folding@home Client command server.";
     /** Logger. */
-    private static final Logger LOGGER =
-            LoggerFactory.getLogger(SocketConnection.class);
+    private static final Logger LOGGER
+            = LoggerFactory.getLogger(SocketConnection.class);
 
     /** Socket to connect to F@H Client. */
     private Socket socket = null;
@@ -78,7 +79,7 @@ public abstract class SocketConnection implements Connection {
 
             String welcome = in.readLine();
             LOGGER.info(welcome);
-            if (!(CLRSCR + WELCOME).equals(welcome)) {
+            if (!(CLRSCR + WELCOME_MSG).equals(welcome)) {
                 throw new IOException(
                         "Unexpected welcome message, check client version");
             }
@@ -114,32 +115,38 @@ public abstract class SocketConnection implements Connection {
         }
 
         // Send the command
-        out.println(command + arguments.toString());
-        LOGGER.info("Sent Command: " + command + arguments.toString());
+        try {
+            out.println(command + arguments.toString());
+            LOGGER.info("Sent Command: " + command + arguments.toString());
 
-        // Get the output
-        switch (command.getResponseType()) {
-            case PYON:
-                try {
+            if (in.skip(COMMAND_PROMPT.length()) != 2) {
+                throw new IOException("Failed to ignore command prompt \"> \"");
+            }
+
+            // Get the output
+            switch (command.getResponseType()) {
+                case PYON:
                     return PyonParser.convert(getPyon());
-                } catch (PyonParserException ex) {
-                    throw new CommandException(ex.getLocalizedMessage());
-                }
 
-            case STRING:
-                return getString();
+                case STRING:
+                    return getString();
 
-            case VOID:
-                try {
-                    if (in.skip(2) != 2) {
-                        throw new IOException("Failed to ignore command prompt '>'");
+                case VOID:
+                    in.mark(COMMAND_PROMPT.length());
+                    char[] cbuf = new char[COMMAND_PROMPT.length()];
+                    in.read(cbuf);
+                    in.reset();
+
+                    if (!String.valueOf(cbuf).equals(COMMAND_PROMPT)) {
+                        String error = PyonParser.convert(getPyon());
+                        throw new CommandException(error);
                     }
-                } catch (IOException ex) {
-                    throw new CommandException(ex.getLocalizedMessage());
-                }
 
-            default:
-                return null;
+                default:
+                    return null;
+            }
+        } catch (IOException ex) {
+            throw new CommandException(ex.getLocalizedMessage());
         }
     }
 
@@ -147,23 +154,20 @@ public abstract class SocketConnection implements Connection {
      * Receive a String response from the Folding@home Client.
      *
      * @return String response
+     * @throws java.io.IOException if any.
      */
-    private String getString() {
+    private String getString() throws IOException {
         StringBuilder stringBuilder = new StringBuilder();
 
-        try {
-            if (in.skip(2) != 2) {
-                throw new IOException("Failed to ignore command prompt '>'");
-            }
-            char ch;
-            while ((ch = (char) in.read()) != '>') {
-                stringBuilder.append((char) ch);
-            }
-        } catch (IOException ex) {
-            LOGGER.error(null, ex);
-        }
+        char ch;
+        do {
+            in.mark(1);
+            ch = (char) in.read();
+            stringBuilder.append(ch);
+        } while (ch != '>');
+        in.reset();
 
-        String string = stringBuilder.toString().trim();
+        String string = stringBuilder.toString().replace(ch, '\0').trim();
 
         LOGGER.info("Recieved String: " + string);
 
@@ -174,25 +178,19 @@ public abstract class SocketConnection implements Connection {
      * Receive a PyON response from the Folding@home Client.
      *
      * @return String response
+     * @throws java.io.IOException if any.
      */
-    private String getPyon() {
+    private String getPyon() throws IOException {
         StringBuilder stringBuilder = new StringBuilder();
 
-        try {
-            if (in.skip(1) != 1) {
-                throw new IOException("Failed to ignore command prompt '>'");
-            }
-            String string;
-            while (!"---".equals(string = in.readLine())) {
-                stringBuilder.append(string).append('\n');
-            }
-        } catch (IOException ex) {
-            LOGGER.error(null, ex);
+        String line;
+        while (!"---".equals(line = in.readLine())) {
+            stringBuilder.append(line).append('\n');
         }
 
         String string = stringBuilder.toString().trim();
 
-        LOGGER.info("Recieved PyON: " + string);
+        LOGGER.info("Recieved PyON:\n" + string);
 
         return string;
     }

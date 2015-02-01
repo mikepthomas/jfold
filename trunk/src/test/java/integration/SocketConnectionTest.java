@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2014 Michael Thomas (mikepthomas@outlook.com)
+ * Copyright (C) 2012 - 2015 Michael Thomas (mikepthomas@outlook.com)
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -111,7 +111,7 @@ public class SocketConnectionTest extends TestCase {
             Connection connection = new ClientConnection(address, port);
 
             connection.info();
-            connection.getInfo(InfoItem.CLIENT_WEBSITE);
+            connection.getInfo(InfoItem.SYSTEM_CPU);
             connection.numSlots();
             connection.options();
             connection.options(true, true);

@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2014 Michael Thomas (mikepthomas@outlook.com)
+ * Copyright (C) 2012 - 2015 Michael Thomas (mikepthomas@outlook.com)
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,6 +22,7 @@
 package com.googlecode.jfold.exceptions;
 
 import com.wordnik.swagger.annotations.ApiModel;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * <p>UnauseException class.</p>
@@ -29,8 +30,16 @@ import com.wordnik.swagger.annotations.ApiModel;
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-@ApiModel(value = "Exception in info request")
+@ApiModel(value = "Exception in unpause request")
+@XmlRootElement(name = "UnpauseException")
 public class UnpauseException extends CommandException {
+
+    /**
+     * Constructs an instance of <code>UnpauseException</code>.
+     */
+    public UnpauseException() {
+        super();
+    }
 
     /**
      * Constructs an instance of <code>UnauseException</code> with the
