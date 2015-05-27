@@ -27,6 +27,7 @@ import com.googlecode.jfold.exceptions.PauseException;
 import com.googlecode.jfold.exceptions.PpdException;
 import com.googlecode.jfold.exceptions.QueueInfoException;
 import com.googlecode.jfold.exceptions.SimulationInfoException;
+import com.googlecode.jfold.exceptions.SlotAddException;
 import com.googlecode.jfold.exceptions.SlotInfoException;
 import com.googlecode.jfold.exceptions.SlotOptionsException;
 import com.googlecode.jfold.exceptions.UnpauseException;
@@ -250,8 +251,9 @@ public interface Connection {
      * Add a new slot.
      *
      * @param type of slot
+     * @throws com.googlecode.jfold.exceptions.SlotAddException
      */
-    void slotAdd(String type);
+    void slotAdd(String type) throws SlotAddException;
 
     /**
      * Delete a slot.

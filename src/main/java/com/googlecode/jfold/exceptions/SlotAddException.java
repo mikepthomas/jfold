@@ -22,62 +22,43 @@
 package com.googlecode.jfold.exceptions;
 
 import com.wordnik.swagger.annotations.ApiModel;
-import com.wordnik.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * <p>CommandException class.</p>
+ * <p>SlotAddException class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-@ApiModel(value = "Exception in command")
-@XmlRootElement(name = "CommandException")
-public class CommandException extends IOException {
+@ApiModel(value = "Exception in slot-add request")
+@XmlRootElement(name = "SlotAddException")
+public class SlotAddException extends CommandException {
 
     /**
-     * Constructs an instance of <code>PauseException</code>.
+     * Constructs an instance of <code>SlotAddException</code>.
      */
-    public CommandException() {
+    public SlotAddException() {
         super();
     }
 
     /**
-     * Constructs an instance of <code>CommandException</code> with the
+     * Constructs an instance of <code>SlotAddException</code> with the
      * specified detail message.
      *
      * @param message the detail message.
      */
-    public CommandException(final String message) {
+    public SlotAddException(final String message) {
         super(message);
     }
 
     /**
-     * Constructs an instance of <code>InfoException</code> with the
+     * Constructs an instance of <code>SlotAddException</code> with the
      * specified detail message and the cause of the Exception.
      *
      * @param message the detail message.
      * @param cause the cause of the exception.
      */
-    public CommandException(final String message, final Throwable cause) {
+    public SlotAddException(final String message, final Throwable cause) {
         super(message, cause);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    @XmlElement()
-    @ApiModelProperty(value = "Error message", required = true)
-    public final String getMessage() {
-        return super.getMessage();
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    @XmlElement()
-    @ApiModelProperty(value = "Stack Trace", required = true)
-    public final StackTraceElement[] getStackTrace() {
-        return super.getStackTrace();
     }
 }

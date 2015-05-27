@@ -23,7 +23,6 @@ package com.googlecode.jfold;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
-import com.googlecode.jfold.exceptions.CommandException;
 import com.googlecode.jfold.exceptions.InfoException;
 import com.googlecode.jfold.exceptions.NumSlotsException;
 import com.googlecode.jfold.exceptions.OptionsException;
@@ -31,6 +30,7 @@ import com.googlecode.jfold.exceptions.PauseException;
 import com.googlecode.jfold.exceptions.PpdException;
 import com.googlecode.jfold.exceptions.QueueInfoException;
 import com.googlecode.jfold.exceptions.SimulationInfoException;
+import com.googlecode.jfold.exceptions.SlotAddException;
 import com.googlecode.jfold.exceptions.SlotInfoException;
 import com.googlecode.jfold.exceptions.SlotOptionsException;
 import com.googlecode.jfold.exceptions.UnpauseException;
@@ -145,7 +145,7 @@ public class ClientConnection extends SocketConnection implements Connection {
                 add(key);
             } };
             return sendCommand(Command.GET_INFO, args);
-        } catch (CommandException ex) {
+        } catch (IOException ex) {
             throw new InfoException(ex.getMessage(), ex);
         }
     }
@@ -162,7 +162,7 @@ public class ClientConnection extends SocketConnection implements Connection {
     public final synchronized List info() throws InfoException {
         try {
             return mapper.readValue(sendCommand(Command.INFO), List.class);
-        } catch (IOException | CommandException ex) {
+        } catch (IOException ex) {
             throw new InfoException(ex.getMessage(), ex);
         }
     }
@@ -186,7 +186,7 @@ public class ClientConnection extends SocketConnection implements Connection {
         try {
             return mapper.readValue(sendCommand(Command.NUM_SLOTS),
                     Integer.class);
-        } catch (IOException | CommandException ex) {
+        } catch (IOException ex) {
             throw new NumSlotsException(ex.getMessage(), ex);
         }
     }
@@ -225,7 +225,7 @@ public class ClientConnection extends SocketConnection implements Connection {
             }
             return mapper.readValue(sendCommand(Command.OPTIONS, args),
                     Options.class);
-        } catch (IOException | CommandException ex) {
+        } catch (IOException ex) {
             throw new OptionsException(ex.getMessage(), ex);
         }
     }
@@ -235,7 +235,7 @@ public class ClientConnection extends SocketConnection implements Connection {
     public final synchronized void pause() throws PauseException {
         try {
             sendCommand(Command.PAUSE);
-        } catch (CommandException ex) {
+        } catch (IOException ex) {
             throw new PauseException(ex.getMessage(), ex);
         }
     }
@@ -248,7 +248,7 @@ public class ClientConnection extends SocketConnection implements Connection {
                 add(String.valueOf(slot));
             } };
             sendCommand(Command.PAUSE, args);
-        } catch (CommandException ex) {
+        } catch (IOException ex) {
             throw new PauseException(ex.getMessage(), ex);
         }
     }
@@ -258,7 +258,7 @@ public class ClientConnection extends SocketConnection implements Connection {
     public final synchronized int ppd() throws PpdException {
         try {
             return mapper.readValue(sendCommand(Command.PPD), Integer.class);
-        } catch (IOException | CommandException ex) {
+        } catch (IOException ex) {
             throw new PpdException(ex.getMessage(), ex);
         }
     }
@@ -269,7 +269,7 @@ public class ClientConnection extends SocketConnection implements Connection {
         try {
             TypeReference type = new TypeReference<List<Unit>>() { };
             return mapper.readValue(sendCommand(Command.QUEUE_INFO), type);
-        } catch (IOException | CommandException ex) {
+        } catch (IOException ex) {
             throw new QueueInfoException(ex.getMessage(), ex);
         }
     }
@@ -314,15 +314,23 @@ public class ClientConnection extends SocketConnection implements Connection {
             } };
             return mapper.readValue(sendCommand(Command.SIMULATION_INFO, args),
                     SimulationInfo.class);
-        } catch (IOException | CommandException ex) {
+        } catch (IOException ex) {
             throw new SimulationInfoException(ex.getMessage(), ex);
         }
     }
 
     /** {@inheritDoc} */
     @Override
-    public final synchronized void slotAdd(final String type) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public final synchronized void slotAdd(final String type)
+            throws SlotAddException {
+        try {
+            List<String> args = new ArrayList<String>() { {
+                add(type);
+            } };
+            sendCommand(Command.SLOT_ADD, args);
+        } catch (IOException ex) {
+            throw new SlotAddException(ex.getMessage(), ex);
+        }
     }
 
     /** {@inheritDoc} */
@@ -337,7 +345,7 @@ public class ClientConnection extends SocketConnection implements Connection {
         try {
             TypeReference type = new TypeReference<List<Slot>>() { };
             return mapper.readValue(sendCommand(Command.SLOT_INFO), type);
-        } catch (IOException | CommandException ex) {
+        } catch (IOException ex) {
             throw new SlotInfoException(ex.getMessage(), ex);
         }
     }
@@ -360,7 +368,7 @@ public class ClientConnection extends SocketConnection implements Connection {
             } };
             return mapper.readValue(sendCommand(Command.SLOT_OPTIONS, args),
                     SlotOptions.class);
-        } catch (IOException | CommandException ex) {
+        } catch (IOException ex) {
             throw new SlotOptionsException(ex.getMessage(), ex);
         }
     }
@@ -382,7 +390,7 @@ public class ClientConnection extends SocketConnection implements Connection {
     public final synchronized void unpause() throws UnpauseException {
         try {
             sendCommand(Command.UNPAUSE);
-        } catch (CommandException ex) {
+        } catch (IOException ex) {
             throw new UnpauseException(ex.getMessage(), ex);
         }
     }
@@ -396,7 +404,7 @@ public class ClientConnection extends SocketConnection implements Connection {
                 add(String.valueOf(slot));
             } };
             sendCommand(Command.UNPAUSE, args);
-        } catch (CommandException ex) {
+        } catch (IOException ex) {
             throw new UnpauseException(ex.getMessage(), ex);
         }
     }
@@ -406,7 +414,7 @@ public class ClientConnection extends SocketConnection implements Connection {
     public final synchronized String uptime() throws UptimeException {
         try {
             return sendCommand(Command.UPTIME);
-        } catch (CommandException ex) {
+        } catch (IOException ex) {
             throw new UptimeException(ex.getMessage(), ex);
         }
     }
