@@ -1,0 +1,1 @@
+Java Library to connect to the Client Remote Interface in the new new Folding@Home v7 Client
