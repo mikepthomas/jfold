@@ -20,21 +20,21 @@
  */
 package integration;
 
-import com.googlecode.jfold.Connection;
-import com.googlecode.jfold.ClientConnection;
-import com.googlecode.jfold.SocketConnection;
-import com.googlecode.jfold.exceptions.InfoException;
-import com.googlecode.jfold.exceptions.NumSlotsException;
-import com.googlecode.jfold.exceptions.OptionsException;
-import com.googlecode.jfold.exceptions.PauseException;
-import com.googlecode.jfold.exceptions.PpdException;
-import com.googlecode.jfold.exceptions.QueueInfoException;
-import com.googlecode.jfold.exceptions.SimulationInfoException;
-import com.googlecode.jfold.exceptions.SlotInfoException;
-import com.googlecode.jfold.exceptions.SlotOptionsException;
-import com.googlecode.jfold.exceptions.UnpauseException;
-import com.googlecode.jfold.exceptions.UptimeException;
-import com.googlecode.jfold.info.InfoItem;
+import info.mikethomas.jfold.Connection;
+import info.mikethomas.jfold.ClientConnection;
+import info.mikethomas.jfold.SocketConnection;
+import info.mikethomas.jfold.exceptions.InfoException;
+import info.mikethomas.jfold.exceptions.NumSlotsException;
+import info.mikethomas.jfold.exceptions.OptionsException;
+import info.mikethomas.jfold.exceptions.PauseException;
+import info.mikethomas.jfold.exceptions.PpdException;
+import info.mikethomas.jfold.exceptions.QueueInfoException;
+import info.mikethomas.jfold.exceptions.SimulationInfoException;
+import info.mikethomas.jfold.exceptions.SlotInfoException;
+import info.mikethomas.jfold.exceptions.SlotOptionsException;
+import info.mikethomas.jfold.exceptions.UnpauseException;
+import info.mikethomas.jfold.exceptions.UptimeException;
+import info.mikethomas.jfold.info.InfoItem;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -77,17 +77,17 @@ public class SocketConnectionTest extends TestCase {
     /**
      * Rigourous Test :-)
      *
-     * @throws com.googlecode.jfold.exceptions.SlotInfoException if any.
-     * @throws com.googlecode.jfold.exceptions.InfoException if any.
-     * @throws com.googlecode.jfold.exceptions.NumSlotsException if any.
-     * @throws com.googlecode.jfold.exceptions.OptionsException if any.
-     * @throws com.googlecode.jfold.exceptions.PpdException if any.
-     * @throws com.googlecode.jfold.exceptions.SlotOptionsException if any.
-     * @throws com.googlecode.jfold.exceptions.SimulationInfoException if any.
-     * @throws com.googlecode.jfold.exceptions.UptimeException if any.
-     * @throws com.googlecode.jfold.exceptions.QueueInfoException if any.
-     * @throws com.googlecode.jfold.exceptions.UnpauseException if any.
-     * @throws com.googlecode.jfold.exceptions.PauseException if any.
+     * @throws info.mikethomas.jfold.exceptions.SlotInfoException if any.
+     * @throws info.mikethomas.jfold.exceptions.InfoException if any.
+     * @throws info.mikethomas.jfold.exceptions.NumSlotsException if any.
+     * @throws info.mikethomas.jfold.exceptions.OptionsException if any.
+     * @throws info.mikethomas.jfold.exceptions.PpdException if any.
+     * @throws info.mikethomas.jfold.exceptions.SlotOptionsException if any.
+     * @throws info.mikethomas.jfold.exceptions.SimulationInfoException if any.
+     * @throws info.mikethomas.jfold.exceptions.UptimeException if any.
+     * @throws info.mikethomas.jfold.exceptions.QueueInfoException if any.
+     * @throws info.mikethomas.jfold.exceptions.UnpauseException if any.
+     * @throws info.mikethomas.jfold.exceptions.PauseException if any.
      */
     public void testApp() throws SlotInfoException, InfoException, NumSlotsException, OptionsException, PpdException, SlotOptionsException, SimulationInfoException, UptimeException, QueueInfoException, UnpauseException, PauseException {
         Properties props = new Properties();
