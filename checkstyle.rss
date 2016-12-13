@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<rss version="0.91">
+  <channel>
+    <title>jFold - Checkstyle report</title>
+    <link>http://www.mikethomas.info/jFold</link>
+    <description>jFold - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2012 - 2016</copyright>
+    <item>
+      <title>File: 35,
+             Errors: 150,
+             Warnings: 0,
+             Infos: 0
+      </title>
+            <link>http://www.mikethomas.info/jFold/checkstyle.html</link>
+      <description>
+        <p>Click <a href="http://www.mikethomas.info/jFold/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.exceptions.UptimeException.java">info/mikethomas/jfold/exceptions/UptimeException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.exceptions.InfoException.java">info/mikethomas/jfold/exceptions/InfoException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.exceptions.PauseException.java">info/mikethomas/jfold/exceptions/PauseException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.exceptions.UnpauseException.java">info/mikethomas/jfold/exceptions/UnpauseException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.util.Command.java">info/mikethomas/jfold/util/Command.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  4
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.SocketConnection.java">info/mikethomas/jfold/SocketConnection.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.ClientConnection.java">info/mikethomas/jfold/ClientConnection.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.options.Options.java">info/mikethomas/jfold/options/Options.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  136
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.unit.package-info.java">info/mikethomas/jfold/unit/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.unit.Unit.java">info/mikethomas/jfold/unit/Unit.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.slot.Slot.java">info/mikethomas/jfold/slot/Slot.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.exceptions.package-info.java">info/mikethomas/jfold/exceptions/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.options.package-info.java">info/mikethomas/jfold/options/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.slot.SlotOptions.java">info/mikethomas/jfold/slot/SlotOptions.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.exceptions.CommandException.java">info/mikethomas/jfold/exceptions/CommandException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.simulation.package-info.java">info/mikethomas/jfold/simulation/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.util.package-info.java">info/mikethomas/jfold/util/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.exceptions.SlotAddException.java">info/mikethomas/jfold/exceptions/SlotAddException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.package-info.java">info/mikethomas/jfold/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.slot.package-info.java">info/mikethomas/jfold/slot/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.exceptions.SlotInfoException.java">info/mikethomas/jfold/exceptions/SlotInfoException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.exceptions.QueueInfoException.java">info/mikethomas/jfold/exceptions/QueueInfoException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.info.InfoCategory.java">info/mikethomas/jfold/info/InfoCategory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.info.package-info.java">info/mikethomas/jfold/info/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#config.properties">config.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.exceptions.SlotOptionsException.java">info/mikethomas/jfold/exceptions/SlotOptionsException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.simulation.SimulationInfo.java">info/mikethomas/jfold/simulation/SimulationInfo.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.util.PyonParser.java">info/mikethomas/jfold/util/PyonParser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.Connection.java">info/mikethomas/jfold/Connection.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.exceptions.PpdException.java">info/mikethomas/jfold/exceptions/PpdException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.exceptions.NumSlotsException.java">info/mikethomas/jfold/exceptions/NumSlotsException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.exceptions.OptionsException.java">info/mikethomas/jfold/exceptions/OptionsException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.exceptions.SimulationInfoException.java">info/mikethomas/jfold/exceptions/SimulationInfoException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.util.ResponseType.java">info/mikethomas/jfold/util/ResponseType.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.mikethomas.info/jFold/checkstyle.html#info.mikethomas.jfold.info.InfoItem.java">info/mikethomas/jfold/info/InfoItem.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+

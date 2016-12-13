@@ -1,0 +1,2746 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+
+<coverage line-rate="0.45674740484429066" branch-rate="0.11538461538461539" lines-covered="264" lines-valid="578" branches-covered="3" branches-valid="26" complexity="1.2712933753943219" version="2.1.1" timestamp="1481663957087">
+	<sources>
+		<source>--source</source>
+		<source>/Volumes/Documents/Repos/jfold/src/main/java</source>
+		<source>/Volumes/Documents/Repos/jfold/target/generated-sources/annotations</source>
+	</sources>
+	<packages>
+		<package name="info.mikethomas.jfold" line-rate="0.21264367816091953" branch-rate="0.13636363636363635" complexity="1.9876543209876543">
+			<classes>
+				<class name="info.mikethomas.jfold.ClientConnection" filename="info/mikethomas/jfold/ClientConnection.java" line-rate="0.19387755102040816" branch-rate="0.5" complexity="2.58974358974359">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="69" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="82" hits="0" branch="false"/>
+								<line number="83" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;I)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="73" hits="30" branch="false"/>
+								<line number="94" hits="30" branch="false"/>
+								<line number="96" hits="30" branch="false"/>
+								<line number="97" hits="30" branch="false"/>
+								<line number="98" hits="30" branch="false"/>
+							</lines>
+						</method>
+						<method name="bond" signature="(Ljava/net/Inet4Address;ILjava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="104" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="configured" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="110" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="doCycle" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="116" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="downloadCore" signature="(Ljava/lang/String;Ljava/net/URL;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="123" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="finish" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="129" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="finish" signature="(I)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="135" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getInfo" signature="(Linfo/mikethomas/jfold/info/InfoItem;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="157" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getInfo" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="143" hits="0" branch="false"/>
+								<line number="147" hits="0" branch="false"/>
+								<line number="148" hits="0" branch="false"/>
+								<line number="149" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="info" signature="()Ljava/util/List;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="164" hits="0" branch="false"/>
+								<line number="165" hits="0" branch="false"/>
+								<line number="166" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="inject" signature="(Ljava/net/Inet4Address;ILjava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="174" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="maskUnitState" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="180" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="numSlots" signature="()I" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="187" hits="0" branch="false"/>
+								<line number="189" hits="0" branch="false"/>
+								<line number="190" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="option" signature="(Ljava/lang/String;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="197" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="option" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="204" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="options" signature="()Linfo/mikethomas/jfold/options/Options;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="210" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="options" signature="(ZZ)Linfo/mikethomas/jfold/options/Options;" line-rate="0.5" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="219" hits="6" branch="false"/>
+								<line number="220" hits="6" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="221" hits="0" branch="false"/>
+								<line number="223" hits="6" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="224" hits="0" branch="false"/>
+								<line number="226" hits="6" branch="false"/>
+								<line number="228" hits="0" branch="false"/>
+								<line number="229" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="pause" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="237" hits="0" branch="false"/>
+								<line number="238" hits="0" branch="false"/>
+								<line number="239" hits="0" branch="false"/>
+								<line number="240" hits="0" branch="false"/>
+								<line number="241" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="pause" signature="(I)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="247" hits="0" branch="false"/>
+								<line number="250" hits="0" branch="false"/>
+								<line number="251" hits="0" branch="false"/>
+								<line number="252" hits="0" branch="false"/>
+								<line number="253" hits="0" branch="false"/>
+								<line number="254" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="ppd" signature="()I" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="260" hits="0" branch="false"/>
+								<line number="261" hits="0" branch="false"/>
+								<line number="262" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="queueInfo" signature="()Ljava/util/List;" line-rate="0.5" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="270" hits="6" branch="false"/>
+								<line number="271" hits="6" branch="false"/>
+								<line number="272" hits="0" branch="false"/>
+								<line number="273" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="requestId" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="280" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="requestWs" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="286" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="save" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="292" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="save" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="298" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="shutdown" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="304" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="simulationInfo" signature="(I)Linfo/mikethomas/jfold/simulation/SimulationInfo;" line-rate="0.5" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="312" hits="6" branch="false"/>
+								<line number="315" hits="6" branch="false"/>
+								<line number="317" hits="0" branch="false"/>
+								<line number="318" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="slotAdd" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="327" hits="0" branch="false"/>
+								<line number="330" hits="0" branch="false"/>
+								<line number="331" hits="0" branch="false"/>
+								<line number="332" hits="0" branch="false"/>
+								<line number="333" hits="0" branch="false"/>
+								<line number="334" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="slotDelete" signature="(I)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="339" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="slotInfo" signature="()Ljava/util/List;" line-rate="0.5" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="346" hits="6" branch="false"/>
+								<line number="347" hits="6" branch="false"/>
+								<line number="348" hits="0" branch="false"/>
+								<line number="349" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="slotModify" signature="(Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="357" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="slotOptions" signature="(I)Linfo/mikethomas/jfold/slot/SlotOptions;" line-rate="0.5" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="365" hits="6" branch="false"/>
+								<line number="369" hits="6" branch="false"/>
+								<line number="371" hits="0" branch="false"/>
+								<line number="372" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="trajectory" signature="(I)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="379" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="triggerSave" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="385" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="unpause" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="392" hits="0" branch="false"/>
+								<line number="393" hits="0" branch="false"/>
+								<line number="394" hits="0" branch="false"/>
+								<line number="395" hits="0" branch="false"/>
+								<line number="396" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="unpause" signature="(I)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="403" hits="0" branch="false"/>
+								<line number="406" hits="0" branch="false"/>
+								<line number="407" hits="0" branch="false"/>
+								<line number="408" hits="0" branch="false"/>
+								<line number="409" hits="0" branch="false"/>
+								<line number="410" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="uptime" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="416" hits="0" branch="false"/>
+								<line number="417" hits="0" branch="false"/>
+								<line number="418" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="waitForUnits" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="425" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="69" hits="6" branch="false"/>
+						<line number="73" hits="30" branch="false"/>
+						<line number="82" hits="0" branch="false"/>
+						<line number="83" hits="0" branch="false"/>
+						<line number="94" hits="30" branch="false"/>
+						<line number="96" hits="30" branch="false"/>
+						<line number="97" hits="30" branch="false"/>
+						<line number="98" hits="30" branch="false"/>
+						<line number="104" hits="0" branch="false"/>
+						<line number="110" hits="0" branch="false"/>
+						<line number="116" hits="0" branch="false"/>
+						<line number="123" hits="0" branch="false"/>
+						<line number="129" hits="0" branch="false"/>
+						<line number="135" hits="0" branch="false"/>
+						<line number="143" hits="0" branch="false"/>
+						<line number="147" hits="0" branch="false"/>
+						<line number="148" hits="0" branch="false"/>
+						<line number="149" hits="0" branch="false"/>
+						<line number="157" hits="0" branch="false"/>
+						<line number="164" hits="0" branch="false"/>
+						<line number="165" hits="0" branch="false"/>
+						<line number="166" hits="0" branch="false"/>
+						<line number="174" hits="0" branch="false"/>
+						<line number="180" hits="0" branch="false"/>
+						<line number="187" hits="0" branch="false"/>
+						<line number="189" hits="0" branch="false"/>
+						<line number="190" hits="0" branch="false"/>
+						<line number="197" hits="0" branch="false"/>
+						<line number="204" hits="0" branch="false"/>
+						<line number="210" hits="6" branch="false"/>
+						<line number="219" hits="6" branch="false"/>
+						<line number="220" hits="6" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="221" hits="0" branch="false"/>
+						<line number="223" hits="6" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="224" hits="0" branch="false"/>
+						<line number="226" hits="6" branch="false"/>
+						<line number="228" hits="0" branch="false"/>
+						<line number="229" hits="0" branch="false"/>
+						<line number="237" hits="0" branch="false"/>
+						<line number="238" hits="0" branch="false"/>
+						<line number="239" hits="0" branch="false"/>
+						<line number="240" hits="0" branch="false"/>
+						<line number="241" hits="0" branch="false"/>
+						<line number="247" hits="0" branch="false"/>
+						<line number="250" hits="0" branch="false"/>
+						<line number="251" hits="0" branch="false"/>
+						<line number="252" hits="0" branch="false"/>
+						<line number="253" hits="0" branch="false"/>
+						<line number="254" hits="0" branch="false"/>
+						<line number="260" hits="0" branch="false"/>
+						<line number="261" hits="0" branch="false"/>
+						<line number="262" hits="0" branch="false"/>
+						<line number="270" hits="6" branch="false"/>
+						<line number="271" hits="6" branch="false"/>
+						<line number="272" hits="0" branch="false"/>
+						<line number="273" hits="0" branch="false"/>
+						<line number="280" hits="0" branch="false"/>
+						<line number="286" hits="0" branch="false"/>
+						<line number="292" hits="0" branch="false"/>
+						<line number="298" hits="0" branch="false"/>
+						<line number="304" hits="0" branch="false"/>
+						<line number="312" hits="6" branch="false"/>
+						<line number="315" hits="6" branch="false"/>
+						<line number="317" hits="0" branch="false"/>
+						<line number="318" hits="0" branch="false"/>
+						<line number="327" hits="0" branch="false"/>
+						<line number="330" hits="0" branch="false"/>
+						<line number="331" hits="0" branch="false"/>
+						<line number="332" hits="0" branch="false"/>
+						<line number="333" hits="0" branch="false"/>
+						<line number="334" hits="0" branch="false"/>
+						<line number="339" hits="0" branch="false"/>
+						<line number="346" hits="6" branch="false"/>
+						<line number="347" hits="6" branch="false"/>
+						<line number="348" hits="0" branch="false"/>
+						<line number="349" hits="0" branch="false"/>
+						<line number="357" hits="0" branch="false"/>
+						<line number="365" hits="6" branch="false"/>
+						<line number="369" hits="6" branch="false"/>
+						<line number="371" hits="0" branch="false"/>
+						<line number="372" hits="0" branch="false"/>
+						<line number="379" hits="0" branch="false"/>
+						<line number="385" hits="0" branch="false"/>
+						<line number="392" hits="0" branch="false"/>
+						<line number="393" hits="0" branch="false"/>
+						<line number="394" hits="0" branch="false"/>
+						<line number="395" hits="0" branch="false"/>
+						<line number="396" hits="0" branch="false"/>
+						<line number="403" hits="0" branch="false"/>
+						<line number="406" hits="0" branch="false"/>
+						<line number="407" hits="0" branch="false"/>
+						<line number="408" hits="0" branch="false"/>
+						<line number="409" hits="0" branch="false"/>
+						<line number="410" hits="0" branch="false"/>
+						<line number="416" hits="0" branch="false"/>
+						<line number="417" hits="0" branch="false"/>
+						<line number="418" hits="0" branch="false"/>
+						<line number="425" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.ClientConnection$1" filename="info/mikethomas/jfold/ClientConnection.java" line-rate="0.0" branch-rate="1.0" complexity="2.58974358974359">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Linfo/mikethomas/jfold/ClientConnection;Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="143" hits="0" branch="false"/>
+								<line number="144" hits="0" branch="false"/>
+								<line number="145" hits="0" branch="false"/>
+								<line number="146" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="143" hits="0" branch="false"/>
+						<line number="144" hits="0" branch="false"/>
+						<line number="145" hits="0" branch="false"/>
+						<line number="146" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.ClientConnection$2" filename="info/mikethomas/jfold/ClientConnection.java" line-rate="0.0" branch-rate="1.0" complexity="2.58974358974359">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Linfo/mikethomas/jfold/ClientConnection;I)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="247" hits="0" branch="false"/>
+								<line number="248" hits="0" branch="false"/>
+								<line number="249" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="247" hits="0" branch="false"/>
+						<line number="248" hits="0" branch="false"/>
+						<line number="249" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.ClientConnection$3" filename="info/mikethomas/jfold/ClientConnection.java" line-rate="1.0" branch-rate="1.0" complexity="2.58974358974359">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Linfo/mikethomas/jfold/ClientConnection;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="270" hits="6" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="270" hits="6" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.ClientConnection$4" filename="info/mikethomas/jfold/ClientConnection.java" line-rate="1.0" branch-rate="1.0" complexity="2.58974358974359">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Linfo/mikethomas/jfold/ClientConnection;I)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="312" hits="6" branch="false"/>
+								<line number="313" hits="6" branch="false"/>
+								<line number="314" hits="6" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="312" hits="6" branch="false"/>
+						<line number="313" hits="6" branch="false"/>
+						<line number="314" hits="6" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.ClientConnection$5" filename="info/mikethomas/jfold/ClientConnection.java" line-rate="0.0" branch-rate="1.0" complexity="2.58974358974359">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Linfo/mikethomas/jfold/ClientConnection;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="327" hits="0" branch="false"/>
+								<line number="328" hits="0" branch="false"/>
+								<line number="329" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="327" hits="0" branch="false"/>
+						<line number="328" hits="0" branch="false"/>
+						<line number="329" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.ClientConnection$6" filename="info/mikethomas/jfold/ClientConnection.java" line-rate="1.0" branch-rate="1.0" complexity="2.58974358974359">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Linfo/mikethomas/jfold/ClientConnection;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="346" hits="6" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="346" hits="6" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.ClientConnection$7" filename="info/mikethomas/jfold/ClientConnection.java" line-rate="1.0" branch-rate="1.0" complexity="2.58974358974359">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Linfo/mikethomas/jfold/ClientConnection;I)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="365" hits="6" branch="false"/>
+								<line number="366" hits="6" branch="false"/>
+								<line number="367" hits="6" branch="false"/>
+								<line number="368" hits="6" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="365" hits="6" branch="false"/>
+						<line number="366" hits="6" branch="false"/>
+						<line number="367" hits="6" branch="false"/>
+						<line number="368" hits="6" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.ClientConnection$8" filename="info/mikethomas/jfold/ClientConnection.java" line-rate="0.0" branch-rate="1.0" complexity="2.58974358974359">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Linfo/mikethomas/jfold/ClientConnection;I)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="403" hits="0" branch="false"/>
+								<line number="404" hits="0" branch="false"/>
+								<line number="405" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="403" hits="0" branch="false"/>
+						<line number="404" hits="0" branch="false"/>
+						<line number="405" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.Connection" filename="info/mikethomas/jfold/Connection.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.SocketConnection" filename="info/mikethomas/jfold/SocketConnection.java" line-rate="0.16981132075471697" branch-rate="0.05555555555555555" complexity="4.6">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="52" hits="12" branch="false"/>
+								<line number="53" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;I)V" line-rate="0.42857142857142855" branch-rate="0.25" complexity="0">
+							<lines>
+								<line number="56" hits="30" branch="false"/>
+								<line number="58" hits="30" branch="false"/>
+								<line number="60" hits="30" branch="false"/>
+								<line number="71" hits="30" branch="false"/>
+								<line number="73" hits="30" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="74" hits="0" branch="false"/>
+								<line number="76" hits="0" branch="false"/>
+								<line number="77" hits="0" branch="false"/>
+								<line number="78" hits="0" branch="false"/>
+								<line number="80" hits="0" branch="false"/>
+								<line number="81" hits="0" branch="false"/>
+								<line number="82" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="83" hits="0" branch="false"/>
+								<line number="87" hits="30" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPyon" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="184" hits="0" branch="false"/>
+								<line number="187" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="188" hits="0" branch="false"/>
+								<line number="191" hits="0" branch="false"/>
+								<line number="193" hits="0" branch="false"/>
+								<line number="195" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="160" hits="0" branch="false"/>
+								<line number="164" hits="0" branch="false"/>
+								<line number="165" hits="0" branch="false"/>
+								<line number="166" hits="0" branch="false"/>
+								<line number="167" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="168" hits="0" branch="false"/>
+								<line number="170" hits="0" branch="false"/>
+								<line number="172" hits="0" branch="false"/>
+								<line number="174" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="sendCommand" signature="(Linfo/mikethomas/jfold/util/Command;)Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="98" hits="12" branch="false"/>
+							</lines>
+						</method>
+						<method name="sendCommand" signature="(Linfo/mikethomas/jfold/util/Command;Ljava/util/List;)Ljava/lang/String;" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="111" hits="0" branch="false"/>
+								<line number="113" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="114" hits="0" branch="false"/>
+								<line number="115" hits="0" branch="false"/>
+								<line number="119" hits="0" branch="false"/>
+								<line number="120" hits="0" branch="false"/>
+								<line number="122" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="123" hits="0" branch="false"/>
+								<line number="127" hits="0" branch="true" condition-coverage="0% (0/4)">
+									<conditions>
+										<condition number="0" type="switch" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="129" hits="0" branch="false"/>
+								<line number="132" hits="0" branch="false"/>
+								<line number="135" hits="0" branch="false"/>
+								<line number="136" hits="0" branch="false"/>
+								<line number="137" hits="0" branch="false"/>
+								<line number="138" hits="0" branch="false"/>
+								<line number="140" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="141" hits="0" branch="false"/>
+								<line number="142" hits="0" branch="false"/>
+								<line number="146" hits="0" branch="false"/>
+								<line number="148" hits="0" branch="false"/>
+								<line number="149" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="52" hits="12" branch="false"/>
+						<line number="53" hits="6" branch="false"/>
+						<line number="56" hits="30" branch="false"/>
+						<line number="58" hits="30" branch="false"/>
+						<line number="60" hits="30" branch="false"/>
+						<line number="71" hits="30" branch="false"/>
+						<line number="73" hits="30" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="74" hits="0" branch="false"/>
+						<line number="76" hits="0" branch="false"/>
+						<line number="77" hits="0" branch="false"/>
+						<line number="78" hits="0" branch="false"/>
+						<line number="80" hits="0" branch="false"/>
+						<line number="81" hits="0" branch="false"/>
+						<line number="82" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="83" hits="0" branch="false"/>
+						<line number="87" hits="30" branch="false"/>
+						<line number="98" hits="12" branch="false"/>
+						<line number="111" hits="0" branch="false"/>
+						<line number="113" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="114" hits="0" branch="false"/>
+						<line number="115" hits="0" branch="false"/>
+						<line number="119" hits="0" branch="false"/>
+						<line number="120" hits="0" branch="false"/>
+						<line number="122" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="123" hits="0" branch="false"/>
+						<line number="127" hits="0" branch="true" condition-coverage="0% (0/4)">
+							<conditions>
+								<condition number="0" type="switch" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="129" hits="0" branch="false"/>
+						<line number="132" hits="0" branch="false"/>
+						<line number="135" hits="0" branch="false"/>
+						<line number="136" hits="0" branch="false"/>
+						<line number="137" hits="0" branch="false"/>
+						<line number="138" hits="0" branch="false"/>
+						<line number="140" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="141" hits="0" branch="false"/>
+						<line number="142" hits="0" branch="false"/>
+						<line number="146" hits="0" branch="false"/>
+						<line number="148" hits="0" branch="false"/>
+						<line number="149" hits="0" branch="false"/>
+						<line number="160" hits="0" branch="false"/>
+						<line number="164" hits="0" branch="false"/>
+						<line number="165" hits="0" branch="false"/>
+						<line number="166" hits="0" branch="false"/>
+						<line number="167" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="168" hits="0" branch="false"/>
+						<line number="170" hits="0" branch="false"/>
+						<line number="172" hits="0" branch="false"/>
+						<line number="174" hits="0" branch="false"/>
+						<line number="184" hits="0" branch="false"/>
+						<line number="187" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="188" hits="0" branch="false"/>
+						<line number="191" hits="0" branch="false"/>
+						<line number="193" hits="0" branch="false"/>
+						<line number="195" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.SocketConnection$1" filename="info/mikethomas/jfold/SocketConnection.java" line-rate="0.0" branch-rate="1.0" complexity="4.6">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="127" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="127" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="info.mikethomas.jfold.exceptions" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+			<classes>
+				<class name="info.mikethomas.jfold.exceptions.CommandException" filename="info/mikethomas/jfold/exceptions/CommandException.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="44" hits="0" branch="false"/>
+								<line number="45" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="54" hits="0" branch="false"/>
+								<line number="55" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="65" hits="0" branch="false"/>
+								<line number="66" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMessage" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="73" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getStackTrace" signature="()[Ljava/lang/StackTraceElement;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="81" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="44" hits="0" branch="false"/>
+						<line number="45" hits="0" branch="false"/>
+						<line number="54" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="65" hits="0" branch="false"/>
+						<line number="66" hits="0" branch="false"/>
+						<line number="73" hits="0" branch="false"/>
+						<line number="81" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.exceptions.InfoException" filename="info/mikethomas/jfold/exceptions/InfoException.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="62" hits="0" branch="false"/>
+								<line number="63" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.exceptions.NumSlotsException" filename="info/mikethomas/jfold/exceptions/NumSlotsException.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="62" hits="0" branch="false"/>
+								<line number="63" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.exceptions.OptionsException" filename="info/mikethomas/jfold/exceptions/OptionsException.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="62" hits="0" branch="false"/>
+								<line number="63" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.exceptions.PauseException" filename="info/mikethomas/jfold/exceptions/PauseException.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="62" hits="0" branch="false"/>
+								<line number="63" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.exceptions.PpdException" filename="info/mikethomas/jfold/exceptions/PpdException.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="62" hits="0" branch="false"/>
+								<line number="63" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.exceptions.QueueInfoException" filename="info/mikethomas/jfold/exceptions/QueueInfoException.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="62" hits="0" branch="false"/>
+								<line number="63" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.exceptions.SimulationInfoException" filename="info/mikethomas/jfold/exceptions/SimulationInfoException.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="62" hits="0" branch="false"/>
+								<line number="63" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.exceptions.SlotAddException" filename="info/mikethomas/jfold/exceptions/SlotAddException.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="62" hits="0" branch="false"/>
+								<line number="63" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.exceptions.SlotInfoException" filename="info/mikethomas/jfold/exceptions/SlotInfoException.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="62" hits="0" branch="false"/>
+								<line number="63" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.exceptions.SlotOptionsException" filename="info/mikethomas/jfold/exceptions/SlotOptionsException.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="62" hits="0" branch="false"/>
+								<line number="63" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.exceptions.UnpauseException" filename="info/mikethomas/jfold/exceptions/UnpauseException.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="62" hits="0" branch="false"/>
+								<line number="63" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.exceptions.UptimeException" filename="info/mikethomas/jfold/exceptions/UptimeException.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="62" hits="0" branch="false"/>
+								<line number="63" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="info.mikethomas.jfold.info" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+			<classes>
+				<class name="info.mikethomas.jfold.info.InfoCategory" filename="info/mikethomas/jfold/info/InfoCategory.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="29" hits="0" branch="false"/>
+								<line number="33" hits="0" branch="false"/>
+								<line number="36" hits="0" branch="false"/>
+								<line number="39" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;ILjava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="54" hits="0" branch="false"/>
+								<line number="55" hits="0" branch="false"/>
+								<line number="56" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="61" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="valueOf" signature="(Ljava/lang/String;)Linfo/mikethomas/jfold/info/InfoCategory;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="values" signature="()[Linfo/mikethomas/jfold/info/InfoCategory;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="29" hits="0" branch="false"/>
+						<line number="33" hits="0" branch="false"/>
+						<line number="36" hits="0" branch="false"/>
+						<line number="39" hits="0" branch="false"/>
+						<line number="54" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="56" hits="0" branch="false"/>
+						<line number="61" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.info.InfoItem" filename="info/mikethomas/jfold/info/InfoItem.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="29" hits="0" branch="false"/>
+								<line number="33" hits="0" branch="false"/>
+								<line number="36" hits="0" branch="false"/>
+								<line number="39" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+								<line number="45" hits="0" branch="false"/>
+								<line number="51" hits="0" branch="false"/>
+								<line number="54" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="false"/>
+								<line number="60" hits="0" branch="false"/>
+								<line number="63" hits="0" branch="false"/>
+								<line number="66" hits="0" branch="false"/>
+								<line number="69" hits="0" branch="false"/>
+								<line number="72" hits="0" branch="false"/>
+								<line number="75" hits="0" branch="false"/>
+								<line number="78" hits="0" branch="false"/>
+								<line number="84" hits="0" branch="false"/>
+								<line number="87" hits="0" branch="false"/>
+								<line number="90" hits="0" branch="false"/>
+								<line number="93" hits="0" branch="false"/>
+								<line number="96" hits="0" branch="false"/>
+								<line number="99" hits="0" branch="false"/>
+								<line number="102" hits="0" branch="false"/>
+								<line number="105" hits="0" branch="false"/>
+								<line number="108" hits="0" branch="false"/>
+								<line number="111" hits="0" branch="false"/>
+								<line number="114" hits="0" branch="false"/>
+								<line number="117" hits="0" branch="false"/>
+								<line number="120" hits="0" branch="false"/>
+								<line number="123" hits="0" branch="false"/>
+								<line number="126" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;ILinfo/mikethomas/jfold/info/InfoCategory;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="146" hits="0" branch="false"/>
+								<line number="147" hits="0" branch="false"/>
+								<line number="148" hits="0" branch="false"/>
+								<line number="149" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCategory" signature="()Linfo/mikethomas/jfold/info/InfoCategory;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="157" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="163" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="valueOf" signature="(Ljava/lang/String;)Linfo/mikethomas/jfold/info/InfoItem;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="values" signature="()[Linfo/mikethomas/jfold/info/InfoItem;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="29" hits="0" branch="false"/>
+						<line number="33" hits="0" branch="false"/>
+						<line number="36" hits="0" branch="false"/>
+						<line number="39" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="45" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="54" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+						<line number="60" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+						<line number="66" hits="0" branch="false"/>
+						<line number="69" hits="0" branch="false"/>
+						<line number="72" hits="0" branch="false"/>
+						<line number="75" hits="0" branch="false"/>
+						<line number="78" hits="0" branch="false"/>
+						<line number="84" hits="0" branch="false"/>
+						<line number="87" hits="0" branch="false"/>
+						<line number="90" hits="0" branch="false"/>
+						<line number="93" hits="0" branch="false"/>
+						<line number="96" hits="0" branch="false"/>
+						<line number="99" hits="0" branch="false"/>
+						<line number="102" hits="0" branch="false"/>
+						<line number="105" hits="0" branch="false"/>
+						<line number="108" hits="0" branch="false"/>
+						<line number="111" hits="0" branch="false"/>
+						<line number="114" hits="0" branch="false"/>
+						<line number="117" hits="0" branch="false"/>
+						<line number="120" hits="0" branch="false"/>
+						<line number="123" hits="0" branch="false"/>
+						<line number="126" hits="0" branch="false"/>
+						<line number="146" hits="0" branch="false"/>
+						<line number="147" hits="0" branch="false"/>
+						<line number="148" hits="0" branch="false"/>
+						<line number="149" hits="0" branch="false"/>
+						<line number="157" hits="0" branch="false"/>
+						<line number="163" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="info.mikethomas.jfold.options" line-rate="0.9196428571428571" branch-rate="1.0" complexity="1.0">
+			<classes>
+				<class name="info.mikethomas.jfold.options.Options" filename="info/mikethomas/jfold/options/Options.java" line-rate="0.9196428571428571" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="37" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getAllow" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="359" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getAssignmentServers" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="368" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getAuthAs" signature="()Z" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="377" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCaptureDirectory" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="386" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCaptureOnError" signature="()Z" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="395" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCapturePackets" signature="()Z" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="404" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCaptureRequests" signature="()Z" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="413" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCaptureResponses" signature="()Z" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="422" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCaptureSockets" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="431" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCause" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="440" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCertificateFile" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="449" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCheckpoint" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="458" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getChild" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="467" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getClientSubtype" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="476" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getClientThreads" signature="()I" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="485" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getClientType" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="494" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCommandAddress" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="503" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCommandAllow" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="512" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCommandAllowNoPass" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="521" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCommandDeny" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="530" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCommandDenyNoPass" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="539" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCommandPort" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="548" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getConfigRotate" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="557" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getConfigRotateDir" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="566" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getConfigRotateMax" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="575" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCoreDir" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="584" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCoreKey" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="593" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCorePrep" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="602" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCorePriority" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="611" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCoreServer" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="620" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCpuAffinity" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="629" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCpuSpecies" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="638" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCpuType" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="647" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCpuUsage" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="656" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCpus" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="665" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCudaIndex" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="674" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCycleRate" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="683" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCycles" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="692" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDaemon" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="701" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDataDirectory" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="710" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDebugSockets" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="719" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDumpAfterDeadline" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="728" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getEval" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="737" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getExceptionLocations" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="746" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getExecDirectory" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="755" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getExitWhenDone" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="764" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getExtraCoreArgs" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="773" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getForceWs" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="782" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getGpu" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="791" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getGpuAssignmentServers" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="800" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getGpuIndex" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="809" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getGpuUsage" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="818" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLog" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="827" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogColor" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="836" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogCrlf" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="845" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogDate" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="854" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogDebug" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="863" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogDomain" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="872" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogDomainLevels" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="881" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogHeader" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="890" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogLevel" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="899" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogNoInfoHeader" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="908" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogRedirect" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="917" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogRotate" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="926" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogRotateDir" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="935" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogRotateMax" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="944" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogShortLevel" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="953" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogSimpleDomains" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="962" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogThreadId" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="971" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogTime" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="980" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogToScreen" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="989" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getLogTruncate" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="998" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMachineId" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1007" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMaxDelay" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1016" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMaxPacketSize" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1025" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMaxQueue" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1034" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMaxShutdownWait" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1043" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMaxSlotErrors" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1052" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMaxUnitErrors" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1061" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMaxUnits" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1070" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMemory" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1079" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMinDelay" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1088" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNextUnitPercentage" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1097" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNoAssembly" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1115" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getOpenclIndex" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1124" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getOsSpecies" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1133" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getOsType" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1142" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPasskey" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1151" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPassword" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1160" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPauseOnBattery" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1169" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPauseOnStart" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1178" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPid" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1187" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPidFile" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1196" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPriority" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1106" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getProjectKey" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1205" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getProxy" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1214" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getProxyEnable" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1223" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getProxyPass" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1232" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getProxyUser" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1241" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getRespawn" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1250" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getScript" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1259" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getService" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1268" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getServiceDescription" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1277" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getServiceRestart" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1286" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getServiceRestartDelay" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1295" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getSmp" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1304" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getStackTraces" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1313" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getTeam" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1322" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getThreads" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1331" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getUser" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1340" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getVerbosity" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="1349" hits="6" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="37" hits="6" branch="false"/>
+						<line number="359" hits="0" branch="false"/>
+						<line number="368" hits="6" branch="false"/>
+						<line number="377" hits="0" branch="false"/>
+						<line number="386" hits="6" branch="false"/>
+						<line number="395" hits="0" branch="false"/>
+						<line number="404" hits="0" branch="false"/>
+						<line number="413" hits="0" branch="false"/>
+						<line number="422" hits="0" branch="false"/>
+						<line number="431" hits="6" branch="false"/>
+						<line number="440" hits="0" branch="false"/>
+						<line number="449" hits="0" branch="false"/>
+						<line number="458" hits="6" branch="false"/>
+						<line number="467" hits="6" branch="false"/>
+						<line number="476" hits="6" branch="false"/>
+						<line number="485" hits="0" branch="false"/>
+						<line number="494" hits="6" branch="false"/>
+						<line number="503" hits="6" branch="false"/>
+						<line number="512" hits="6" branch="false"/>
+						<line number="521" hits="6" branch="false"/>
+						<line number="530" hits="6" branch="false"/>
+						<line number="539" hits="6" branch="false"/>
+						<line number="548" hits="6" branch="false"/>
+						<line number="557" hits="6" branch="false"/>
+						<line number="566" hits="6" branch="false"/>
+						<line number="575" hits="6" branch="false"/>
+						<line number="584" hits="6" branch="false"/>
+						<line number="593" hits="6" branch="false"/>
+						<line number="602" hits="6" branch="false"/>
+						<line number="611" hits="6" branch="false"/>
+						<line number="620" hits="6" branch="false"/>
+						<line number="629" hits="6" branch="false"/>
+						<line number="638" hits="6" branch="false"/>
+						<line number="647" hits="6" branch="false"/>
+						<line number="656" hits="6" branch="false"/>
+						<line number="665" hits="6" branch="false"/>
+						<line number="674" hits="6" branch="false"/>
+						<line number="683" hits="6" branch="false"/>
+						<line number="692" hits="6" branch="false"/>
+						<line number="701" hits="6" branch="false"/>
+						<line number="710" hits="6" branch="false"/>
+						<line number="719" hits="6" branch="false"/>
+						<line number="728" hits="6" branch="false"/>
+						<line number="737" hits="6" branch="false"/>
+						<line number="746" hits="6" branch="false"/>
+						<line number="755" hits="6" branch="false"/>
+						<line number="764" hits="6" branch="false"/>
+						<line number="773" hits="6" branch="false"/>
+						<line number="782" hits="6" branch="false"/>
+						<line number="791" hits="6" branch="false"/>
+						<line number="800" hits="6" branch="false"/>
+						<line number="809" hits="6" branch="false"/>
+						<line number="818" hits="6" branch="false"/>
+						<line number="827" hits="6" branch="false"/>
+						<line number="836" hits="6" branch="false"/>
+						<line number="845" hits="6" branch="false"/>
+						<line number="854" hits="6" branch="false"/>
+						<line number="863" hits="6" branch="false"/>
+						<line number="872" hits="6" branch="false"/>
+						<line number="881" hits="6" branch="false"/>
+						<line number="890" hits="6" branch="false"/>
+						<line number="899" hits="6" branch="false"/>
+						<line number="908" hits="6" branch="false"/>
+						<line number="917" hits="6" branch="false"/>
+						<line number="926" hits="6" branch="false"/>
+						<line number="935" hits="6" branch="false"/>
+						<line number="944" hits="6" branch="false"/>
+						<line number="953" hits="6" branch="false"/>
+						<line number="962" hits="6" branch="false"/>
+						<line number="971" hits="6" branch="false"/>
+						<line number="980" hits="6" branch="false"/>
+						<line number="989" hits="6" branch="false"/>
+						<line number="998" hits="6" branch="false"/>
+						<line number="1007" hits="6" branch="false"/>
+						<line number="1016" hits="6" branch="false"/>
+						<line number="1025" hits="6" branch="false"/>
+						<line number="1034" hits="6" branch="false"/>
+						<line number="1043" hits="6" branch="false"/>
+						<line number="1052" hits="6" branch="false"/>
+						<line number="1061" hits="6" branch="false"/>
+						<line number="1070" hits="6" branch="false"/>
+						<line number="1079" hits="6" branch="false"/>
+						<line number="1088" hits="6" branch="false"/>
+						<line number="1097" hits="6" branch="false"/>
+						<line number="1106" hits="6" branch="false"/>
+						<line number="1115" hits="6" branch="false"/>
+						<line number="1124" hits="6" branch="false"/>
+						<line number="1133" hits="6" branch="false"/>
+						<line number="1142" hits="6" branch="false"/>
+						<line number="1151" hits="6" branch="false"/>
+						<line number="1160" hits="6" branch="false"/>
+						<line number="1169" hits="6" branch="false"/>
+						<line number="1178" hits="6" branch="false"/>
+						<line number="1187" hits="6" branch="false"/>
+						<line number="1196" hits="6" branch="false"/>
+						<line number="1205" hits="6" branch="false"/>
+						<line number="1214" hits="6" branch="false"/>
+						<line number="1223" hits="6" branch="false"/>
+						<line number="1232" hits="6" branch="false"/>
+						<line number="1241" hits="6" branch="false"/>
+						<line number="1250" hits="6" branch="false"/>
+						<line number="1259" hits="6" branch="false"/>
+						<line number="1268" hits="6" branch="false"/>
+						<line number="1277" hits="6" branch="false"/>
+						<line number="1286" hits="6" branch="false"/>
+						<line number="1295" hits="6" branch="false"/>
+						<line number="1304" hits="6" branch="false"/>
+						<line number="1313" hits="6" branch="false"/>
+						<line number="1322" hits="6" branch="false"/>
+						<line number="1331" hits="6" branch="false"/>
+						<line number="1340" hits="6" branch="false"/>
+						<line number="1349" hits="6" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="info.mikethomas.jfold.simulation" line-rate="0.9583333333333334" branch-rate="1.0" complexity="1.0">
+			<classes>
+				<class name="info.mikethomas.jfold.simulation.SimulationInfo" filename="info/mikethomas/jfold/simulation/SimulationInfo.java" line-rate="0.9583333333333334" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="35" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getClone" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="200" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCore" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="227" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCoreType" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="218" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDeadline" signature="()Ljava/util/Date;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="299" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDescription" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="236" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getEnergy" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="263" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getEta" signature="()Ljava/util/Date;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="326" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getGen" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="209" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getIterationsDone" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="254" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNews" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="344" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getProgress" signature="()D" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="335" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getProject" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="182" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getRun" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="191" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getRunTime" signature="()J" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="308" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getSimulationTime" signature="()J" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="317" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getSlot" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="353" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getStartTime" signature="()Ljava/util/Date;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="281" hits="24" branch="false"/>
+							</lines>
+						</method>
+						<method name="getTeam" signature="()J" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="173" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getTemperature" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="272" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getTimeout" signature="()Ljava/util/Date;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="290" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getTotalIterations" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="245" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getUser" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="164" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="360" hits="6" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="35" hits="6" branch="false"/>
+						<line number="164" hits="6" branch="false"/>
+						<line number="173" hits="6" branch="false"/>
+						<line number="182" hits="6" branch="false"/>
+						<line number="191" hits="6" branch="false"/>
+						<line number="200" hits="6" branch="false"/>
+						<line number="209" hits="6" branch="false"/>
+						<line number="218" hits="6" branch="false"/>
+						<line number="227" hits="6" branch="false"/>
+						<line number="236" hits="6" branch="false"/>
+						<line number="245" hits="6" branch="false"/>
+						<line number="254" hits="6" branch="false"/>
+						<line number="263" hits="6" branch="false"/>
+						<line number="272" hits="6" branch="false"/>
+						<line number="281" hits="24" branch="false"/>
+						<line number="290" hits="6" branch="false"/>
+						<line number="299" hits="6" branch="false"/>
+						<line number="308" hits="6" branch="false"/>
+						<line number="317" hits="6" branch="false"/>
+						<line number="326" hits="6" branch="false"/>
+						<line number="335" hits="0" branch="false"/>
+						<line number="344" hits="6" branch="false"/>
+						<line number="353" hits="6" branch="false"/>
+						<line number="360" hits="6" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="info.mikethomas.jfold.slot" line-rate="0.7083333333333334" branch-rate="1.0" complexity="1.0454545454545454">
+			<classes>
+				<class name="info.mikethomas.jfold.slot.Slot" filename="info/mikethomas/jfold/slot/Slot.java" line-rate="0.5" branch-rate="1.0" complexity="1.1428571428571428">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="37" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDescription" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="97" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getId" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="79" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getIdle" signature="()Z" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="124" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getOptions" signature="()Linfo/mikethomas/jfold/slot/SlotOptions;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="106" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getReason" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="115" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getStatus" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="88" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="131" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="37" hits="6" branch="false"/>
+						<line number="79" hits="6" branch="false"/>
+						<line number="88" hits="6" branch="false"/>
+						<line number="97" hits="6" branch="false"/>
+						<line number="106" hits="0" branch="false"/>
+						<line number="115" hits="0" branch="false"/>
+						<line number="124" hits="0" branch="false"/>
+						<line number="131" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.slot.SlotOptions" filename="info/mikethomas/jfold/slot/SlotOptions.java" line-rate="0.8125" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="34" hits="12" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCheckpoint" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="178" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getClientSubtype" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="124" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getClientType" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="115" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCorePriority" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="151" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCpus" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="214" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getGpuDeviceId" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="205" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getGpuVendorId" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="196" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getIdle" signature="()Z" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="223" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMachineId" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="133" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMaxPacketSize" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="142" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMaxUnits" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="169" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNextUnitPercentage" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="160" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPauseOnStart" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="187" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPaused" signature="()Z" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="232" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="239" hits="6" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="34" hits="12" branch="false"/>
+						<line number="115" hits="6" branch="false"/>
+						<line number="124" hits="6" branch="false"/>
+						<line number="133" hits="6" branch="false"/>
+						<line number="142" hits="6" branch="false"/>
+						<line number="151" hits="6" branch="false"/>
+						<line number="160" hits="6" branch="false"/>
+						<line number="169" hits="6" branch="false"/>
+						<line number="178" hits="6" branch="false"/>
+						<line number="187" hits="6" branch="false"/>
+						<line number="196" hits="6" branch="false"/>
+						<line number="205" hits="6" branch="false"/>
+						<line number="214" hits="0" branch="false"/>
+						<line number="223" hits="0" branch="false"/>
+						<line number="232" hits="0" branch="false"/>
+						<line number="239" hits="6" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="info.mikethomas.jfold.unit" line-rate="0.9" branch-rate="1.0" complexity="1.0344827586206897">
+			<classes>
+				<class name="info.mikethomas.jfold.unit.Unit" filename="info/mikethomas/jfold/unit/Unit.java" line-rate="0.9" branch-rate="1.0" complexity="1.0344827586206897">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="34" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getAssigned" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="293" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getAttempts" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="347" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getBaseCredit" signature="()D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="410" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getClone" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="230" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCore" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="248" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCreditEstimate" signature="()D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="419" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCs" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="329" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDeadline" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="311" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDescription" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="428" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getError" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="203" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getEta" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="383" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getFramesDone" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="284" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getGen" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="239" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getId" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="185" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNextAttempt" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="356" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPercentDone" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="266" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPpd" signature="()D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="392" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getProject" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="212" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getRun" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="221" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getSlot" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="374" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getState" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="194" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getTimeRemaining" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="365" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getTimeout" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="302" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getTotalFrames" signature="()I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="275" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getTpf" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="401" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getUnit" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="257" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getWaitingOn" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="338" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getWs" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="320" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="435" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="34" hits="6" branch="false"/>
+						<line number="185" hits="6" branch="false"/>
+						<line number="194" hits="6" branch="false"/>
+						<line number="203" hits="0" branch="false"/>
+						<line number="212" hits="6" branch="false"/>
+						<line number="221" hits="6" branch="false"/>
+						<line number="230" hits="6" branch="false"/>
+						<line number="239" hits="6" branch="false"/>
+						<line number="248" hits="6" branch="false"/>
+						<line number="257" hits="6" branch="false"/>
+						<line number="266" hits="6" branch="false"/>
+						<line number="275" hits="6" branch="false"/>
+						<line number="284" hits="6" branch="false"/>
+						<line number="293" hits="6" branch="false"/>
+						<line number="302" hits="6" branch="false"/>
+						<line number="311" hits="6" branch="false"/>
+						<line number="320" hits="6" branch="false"/>
+						<line number="329" hits="6" branch="false"/>
+						<line number="338" hits="6" branch="false"/>
+						<line number="347" hits="6" branch="false"/>
+						<line number="356" hits="6" branch="false"/>
+						<line number="365" hits="0" branch="false"/>
+						<line number="374" hits="6" branch="false"/>
+						<line number="383" hits="6" branch="false"/>
+						<line number="392" hits="6" branch="false"/>
+						<line number="401" hits="6" branch="false"/>
+						<line number="410" hits="6" branch="false"/>
+						<line number="419" hits="6" branch="false"/>
+						<line number="428" hits="6" branch="false"/>
+						<line number="435" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="info.mikethomas.jfold.util" line-rate="0.6404494382022472" branch-rate="0.0" complexity="1.8">
+			<classes>
+				<class name="info.mikethomas.jfold.util.Command" filename="info/mikethomas/jfold/util/Command.java" line-rate="0.9636363636363636" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="29" hits="12" branch="false"/>
+								<line number="32" hits="6" branch="false"/>
+								<line number="35" hits="6" branch="false"/>
+								<line number="38" hits="6" branch="false"/>
+								<line number="41" hits="6" branch="false"/>
+								<line number="44" hits="6" branch="false"/>
+								<line number="47" hits="6" branch="false"/>
+								<line number="53" hits="6" branch="false"/>
+								<line number="56" hits="6" branch="false"/>
+								<line number="60" hits="6" branch="false"/>
+								<line number="66" hits="6" branch="false"/>
+								<line number="69" hits="6" branch="false"/>
+								<line number="72" hits="6" branch="false"/>
+								<line number="75" hits="6" branch="false"/>
+								<line number="78" hits="6" branch="false"/>
+								<line number="81" hits="6" branch="false"/>
+								<line number="87" hits="6" branch="false"/>
+								<line number="90" hits="6" branch="false"/>
+								<line number="93" hits="6" branch="false"/>
+								<line number="96" hits="6" branch="false"/>
+								<line number="115" hits="6" branch="false"/>
+								<line number="118" hits="6" branch="false"/>
+								<line number="121" hits="6" branch="false"/>
+								<line number="124" hits="6" branch="false"/>
+								<line number="127" hits="6" branch="false"/>
+								<line number="130" hits="6" branch="false"/>
+								<line number="136" hits="6" branch="false"/>
+								<line number="139" hits="6" branch="false"/>
+								<line number="142" hits="6" branch="false"/>
+								<line number="147" hits="6" branch="false"/>
+								<line number="150" hits="6" branch="false"/>
+								<line number="153" hits="6" branch="false"/>
+								<line number="161" hits="6" branch="false"/>
+								<line number="168" hits="6" branch="false"/>
+								<line number="171" hits="6" branch="false"/>
+								<line number="174" hits="6" branch="false"/>
+								<line number="177" hits="6" branch="false"/>
+								<line number="180" hits="6" branch="false"/>
+								<line number="183" hits="6" branch="false"/>
+								<line number="187" hits="6" branch="false"/>
+								<line number="190" hits="6" branch="false"/>
+								<line number="197" hits="6" branch="false"/>
+								<line number="200" hits="6" branch="false"/>
+								<line number="203" hits="6" branch="false"/>
+								<line number="209" hits="6" branch="false"/>
+								<line number="212" hits="6" branch="false"/>
+								<line number="215" hits="6" branch="false"/>
+								<line number="218" hits="6" branch="false"/>
+								<line number="221" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;ILjava/lang/String;Linfo/mikethomas/jfold/util/ResponseType;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="239" hits="288" branch="false"/>
+								<line number="240" hits="288" branch="false"/>
+								<line number="241" hits="288" branch="false"/>
+								<line number="242" hits="288" branch="false"/>
+							</lines>
+						</method>
+						<method name="getResponseType" signature="()Linfo/mikethomas/jfold/util/ResponseType;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="250" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="256" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="valueOf" signature="(Ljava/lang/String;)Linfo/mikethomas/jfold/util/Command;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="values" signature="()[Linfo/mikethomas/jfold/util/Command;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="29" hits="12" branch="false"/>
+						<line number="32" hits="6" branch="false"/>
+						<line number="35" hits="6" branch="false"/>
+						<line number="38" hits="6" branch="false"/>
+						<line number="41" hits="6" branch="false"/>
+						<line number="44" hits="6" branch="false"/>
+						<line number="47" hits="6" branch="false"/>
+						<line number="53" hits="6" branch="false"/>
+						<line number="56" hits="6" branch="false"/>
+						<line number="60" hits="6" branch="false"/>
+						<line number="66" hits="6" branch="false"/>
+						<line number="69" hits="6" branch="false"/>
+						<line number="72" hits="6" branch="false"/>
+						<line number="75" hits="6" branch="false"/>
+						<line number="78" hits="6" branch="false"/>
+						<line number="81" hits="6" branch="false"/>
+						<line number="87" hits="6" branch="false"/>
+						<line number="90" hits="6" branch="false"/>
+						<line number="93" hits="6" branch="false"/>
+						<line number="96" hits="6" branch="false"/>
+						<line number="115" hits="6" branch="false"/>
+						<line number="118" hits="6" branch="false"/>
+						<line number="121" hits="6" branch="false"/>
+						<line number="124" hits="6" branch="false"/>
+						<line number="127" hits="6" branch="false"/>
+						<line number="130" hits="6" branch="false"/>
+						<line number="136" hits="6" branch="false"/>
+						<line number="139" hits="6" branch="false"/>
+						<line number="142" hits="6" branch="false"/>
+						<line number="147" hits="6" branch="false"/>
+						<line number="150" hits="6" branch="false"/>
+						<line number="153" hits="6" branch="false"/>
+						<line number="161" hits="6" branch="false"/>
+						<line number="168" hits="6" branch="false"/>
+						<line number="171" hits="6" branch="false"/>
+						<line number="174" hits="6" branch="false"/>
+						<line number="177" hits="6" branch="false"/>
+						<line number="180" hits="6" branch="false"/>
+						<line number="183" hits="6" branch="false"/>
+						<line number="187" hits="6" branch="false"/>
+						<line number="190" hits="6" branch="false"/>
+						<line number="197" hits="6" branch="false"/>
+						<line number="200" hits="6" branch="false"/>
+						<line number="203" hits="6" branch="false"/>
+						<line number="209" hits="6" branch="false"/>
+						<line number="212" hits="6" branch="false"/>
+						<line number="215" hits="6" branch="false"/>
+						<line number="218" hits="6" branch="false"/>
+						<line number="221" hits="6" branch="false"/>
+						<line number="239" hits="288" branch="false"/>
+						<line number="240" hits="288" branch="false"/>
+						<line number="241" hits="288" branch="false"/>
+						<line number="242" hits="288" branch="false"/>
+						<line number="250" hits="0" branch="false"/>
+						<line number="256" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.util.PyonParser" filename="info/mikethomas/jfold/util/PyonParser.java" line-rate="0.0" branch-rate="0.0" complexity="3.0">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="48" hits="0" branch="false"/>
+								<line number="70" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="77" hits="0" branch="false"/>
+								<line number="78" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="convert" signature="(Ljava/lang/String;)Ljava/lang/String;" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="88" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="89" hits="0" branch="false"/>
+								<line number="90" hits="0" branch="false"/>
+								<line number="94" hits="0" branch="false"/>
+								<line number="95" hits="0" branch="false"/>
+								<line number="98" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="99" hits="0" branch="false"/>
+								<line number="103" hits="0" branch="false"/>
+								<line number="104" hits="0" branch="false"/>
+								<line number="105" hits="0" branch="false"/>
+								<line number="106" hits="0" branch="false"/>
+								<line number="107" hits="0" branch="false"/>
+								<line number="110" hits="0" branch="false"/>
+								<line number="113" hits="0" branch="false"/>
+								<line number="114" hits="0" branch="false"/>
+								<line number="115" hits="0" branch="false"/>
+								<line number="116" hits="0" branch="false"/>
+								<line number="119" hits="0" branch="false"/>
+								<line number="120" hits="0" branch="false"/>
+								<line number="122" hits="0" branch="false"/>
+								<line number="123" hits="0" branch="false"/>
+								<line number="125" hits="0" branch="false"/>
+								<line number="126" hits="0" branch="false"/>
+								<line number="127" hits="0" branch="false"/>
+								<line number="129" hits="0" branch="false"/>
+								<line number="131" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="48" hits="0" branch="false"/>
+						<line number="70" hits="0" branch="false"/>
+						<line number="77" hits="0" branch="false"/>
+						<line number="78" hits="0" branch="false"/>
+						<line number="88" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="89" hits="0" branch="false"/>
+						<line number="90" hits="0" branch="false"/>
+						<line number="94" hits="0" branch="false"/>
+						<line number="95" hits="0" branch="false"/>
+						<line number="98" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="99" hits="0" branch="false"/>
+						<line number="103" hits="0" branch="false"/>
+						<line number="104" hits="0" branch="false"/>
+						<line number="105" hits="0" branch="false"/>
+						<line number="106" hits="0" branch="false"/>
+						<line number="107" hits="0" branch="false"/>
+						<line number="110" hits="0" branch="false"/>
+						<line number="113" hits="0" branch="false"/>
+						<line number="114" hits="0" branch="false"/>
+						<line number="115" hits="0" branch="false"/>
+						<line number="116" hits="0" branch="false"/>
+						<line number="119" hits="0" branch="false"/>
+						<line number="120" hits="0" branch="false"/>
+						<line number="122" hits="0" branch="false"/>
+						<line number="123" hits="0" branch="false"/>
+						<line number="125" hits="0" branch="false"/>
+						<line number="126" hits="0" branch="false"/>
+						<line number="127" hits="0" branch="false"/>
+						<line number="129" hits="0" branch="false"/>
+						<line number="131" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="info.mikethomas.jfold.util.ResponseType" filename="info/mikethomas/jfold/util/ResponseType.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="29" hits="24" branch="false"/>
+								<line number="31" hits="6" branch="false"/>
+								<line number="33" hits="6" branch="false"/>
+								<line number="35" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;I)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="valueOf" signature="(Ljava/lang/String;)Linfo/mikethomas/jfold/util/ResponseType;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="values" signature="()[Linfo/mikethomas/jfold/util/ResponseType;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="29" hits="24" branch="false"/>
+						<line number="31" hits="6" branch="false"/>
+						<line number="33" hits="6" branch="false"/>
+						<line number="35" hits="6" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+	</packages>
+</coverage>
