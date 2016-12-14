@@ -19,7 +19,7 @@
         Java Library to connect to the Client Remote Interface
         in the new new Folding@Home V7 Client
     </description>
-    <url>${project.domain.reports}/${project.name}</url>
+    <url>http://${project.domain.reports}/${project.name}</url>
     <inceptionYear>2012</inceptionYear>
     <organization/>
     <licenses>
@@ -55,40 +55,40 @@
     <modules/>
 
     <scm>
-        <connection>scm:git:git://github.com/mikepthomas/jfold.git</connection>
-        <developerConnection>scm:git:git@github.com:mikepthomas/jfold.git</developerConnection>
+        <connection>scm:git:git://${project.domain.source}.git</connection>
+        <developerConnection>scm:git:git@github.com:mikepthomas/${project.artifactId}.git</developerConnection>
         <tag>master</tag>
-        <url>${project.domain.source}/jfold</url>
+        <url>https://${project.domain.source}</url>
     </scm>
     <issueManagement>
         <system>GitHub Issues</system>
-        <url>${project.domain.source}/jfold/issues</url>
+        <url>https://${project.domain.source}/issues</url>
     </issueManagement>
     <ciManagement>
-        <system>Jenkins</system>
-        <url>${project.domain.reports}/jenkins/job/${project.name}</url>
+        <system>Travis</system>
+        <url>https://travis-ci.org/mikepthomas/${project.artifactId}</url>
     </ciManagement>
     <distributionManagement>
         <repository>
             <id>sonatype-nexus-staging</id>
             <name>Nexus Staging Repository</name>
-            <url>${project.domain.deployment}/service/local/staging/deploy/maven2</url>
+            <url>https://${project.domain.deployment}/service/local/staging/deploy/maven2</url>
         </repository>
         <snapshotRepository>
             <id>sonatype-nexus-snapshots</id>
             <name>Nexus Snapshots Repository</name>
-            <url>${project.domain.deployment}/content/repositories/snapshots</url>
+            <url>https://${project.domain.deployment}/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <project.domain.deployment>https://oss.sonatype.org</project.domain.deployment>
-        <project.domain.reports>http://www.mikethomas.info</project.domain.reports>
-        <project.domain.source>https://github.com/mikepthomas</project.domain.source>
+        <project.domain.deployment>oss.sonatype.org</project.domain.deployment>
+        <project.domain.reports>www.mikethomas.info</project.domain.reports>
+        <project.domain.source>github.com/mikepthomas/${project.artifactId}</project.domain.source>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Dependency Versions -->
@@ -279,7 +279,7 @@
                 <artifactId>maven-changelog-plugin</artifactId>
                 <version>${version.maven-changelog-plugin}</version>
                 <configuration>
-                    <displayChangeSetDetailUrl>${project.domain.source}/source/detail?r=%REV%</displayChangeSetDetailUrl>
+                    <displayChangeSetDetailUrl>https://${project.domain.source}/source/detail?r=%REV%</displayChangeSetDetailUrl>
                     <displayFileDetailUrl>${project.scm.url}%FILE%</displayFileDetailUrl>
                     <displayFileRevDetailUrl>${project.scm.url}%FILE%?r=%REV%</displayFileRevDetailUrl>
                     <outputEncoding>${project.reporting.outputEncoding}</outputEncoding>
@@ -455,9 +455,6 @@
     <profiles>
         <profile>
             <id>debug-profile</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <build>
                 <plugins>
                     <plugin>
@@ -501,6 +498,8 @@
                         <artifactId>site-maven-plugin</artifactId>
                         <version>0.12</version>
                         <configuration>
+                            <server>github</server>
+                            <merge>true</merge>
                             <message>Creating site for ${project.version}</message>
                         </configuration>
                         <executions>
@@ -509,13 +508,6 @@
                                     <goal>site</goal>
                                 </goals>
                                 <phase>site-deploy</phase>
-                                <configuration>
-                                    <server>github</server>
-                                    <!-- The commit message -->
-                                    <message>Building site for my project</message>
-                                    <!-- Use merge or override the content -->
-                                    <merge>true</merge>
-                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
@@ -574,13 +566,6 @@
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <skipTests>false</skipTests>
-                        </configuration>
                     </plugin>
                     <plugin>
                         <inherited>true</inherited>
