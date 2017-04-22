@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2015 Michael Thomas (mikepthomas@outlook.com)
+ * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,8 +20,6 @@
  */
 package info.mikethomas.jfold.slot;
 
-import com.wordnik.swagger.annotations.ApiModel;
-import com.wordnik.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -32,14 +30,12 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version 7.4.4
  */
-@ApiModel(value = "Folding@home Slot")
 @XmlRootElement(name = "slot")
 public class Slot implements Serializable {
 // <editor-fold defaultstate="collapsed" desc="Member Variables">
     /**
      * Identifier.
      */
-    @ApiModelProperty(value = "Identifier", required = true)
     @XmlElement(name = "id")
     private String id;
     /**

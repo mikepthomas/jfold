@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2015 Michael Thomas (mikepthomas@outlook.com)
+ * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,6 @@
 
 package info.mikethomas.jfold.exceptions;
 
-import com.wordnik.swagger.annotations.ApiModel;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -30,7 +29,6 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version $Id: $Id
  */
-@ApiModel(value = "Exception in ppd request")
 @XmlRootElement(name = "PpdException")
 public class PpdException extends CommandException {
 

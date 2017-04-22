@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2015 Michael Thomas (mikepthomas@outlook.com)
+ * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -251,7 +251,7 @@ public interface Connection {
      * Add a new slot.
      *
      * @param type of slot
-     * @throws info.mikethomas.jfold.exceptions.SlotAddException
+     * @throws info.mikethomas.jfold.exceptions.SlotAddException if any.
      */
     void slotAdd(String type) throws SlotAddException;
 
