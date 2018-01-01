@@ -18,41 +18,35 @@
  * along with jFold.  If not, see <http://www.gnu.org/licenses/>.
  * #L%
  */
+package info.mikethomas.jfold.util;
 
-package info.mikethomas.jfold.exceptions;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
 
-import lombok.NoArgsConstructor;
+import lombok.Synchronized;
 
 /**
- * <p>PpdException class.</p>
+ * <p>DateAdapter class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version 7.4.4
  */
-@NoArgsConstructor
-@XmlRootElement(name = "PpdException")
-public class PpdException extends CommandException {
+public class DateAdapter extends XmlAdapter<String, Date> {
 
-    /**
-     * Constructs an instance of <code>PpdException</code> with the
-     * specified detail message.
-     *
-     * @param message the detail message.
-     */
-    public PpdException(final String message) {
-        super(message);
+    private final SimpleDateFormat dateFormat =
+            new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+
+    @Override
+    @Synchronized
+    public final String marshal(final Date value) throws Exception {
+        return dateFormat.format(value);
     }
 
-    /**
-     * Constructs an instance of <code>PpdException</code> with the
-     * specified detail message and the cause of the Exception.
-     *
-     * @param message the detail message.
-     * @param cause the cause of the exception.
-     */
-    public PpdException(final String message, final Throwable cause) {
-        super(message, cause);
+    @Override
+    @Synchronized
+    public final Date unmarshal(final String value) throws Exception {
+        return dateFormat.parse(value);
     }
 }

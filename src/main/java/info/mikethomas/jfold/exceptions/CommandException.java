@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,24 +22,21 @@
 package info.mikethomas.jfold.exceptions;
 
 import java.io.IOException;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import lombok.NoArgsConstructor;
 
 /**
  * <p>CommandException class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version $Id: $Id
+ * @version 7.4.4
  */
+@NoArgsConstructor
 @XmlRootElement(name = "CommandException")
 public class CommandException extends IOException {
-
-    /**
-     * Constructs an instance of <code>PauseException</code>.
-     */
-    public CommandException() {
-        super();
-    }
 
     /**
      * Constructs an instance of <code>CommandException</code> with the
@@ -52,7 +49,7 @@ public class CommandException extends IOException {
     }
 
     /**
-     * Constructs an instance of <code>InfoException</code> with the
+     * Constructs an instance of <code>CommandException</code> with the
      * specified detail message and the cause of the Exception.
      *
      * @param message the detail message.
@@ -64,15 +61,8 @@ public class CommandException extends IOException {
 
     /** {@inheritDoc} */
     @Override
-    @XmlElement()
+    @XmlElement
     public final String getMessage() {
         return super.getMessage();
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    @XmlElement()
-    public final StackTraceElement[] getStackTrace() {
-        return super.getStackTrace();
     }
 }

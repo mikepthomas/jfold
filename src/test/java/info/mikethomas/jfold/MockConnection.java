@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,8 +20,6 @@
  */
 package info.mikethomas.jfold;
 
-import info.mikethomas.jfold.ClientConnection;
-import info.mikethomas.jfold.Connection;
 import info.mikethomas.jfold.info.InfoItem;
 import info.mikethomas.jfold.options.Options;
 import info.mikethomas.jfold.simulation.SimulationInfo;
@@ -29,23 +27,25 @@ import info.mikethomas.jfold.slot.Slot;
 import info.mikethomas.jfold.slot.SlotOptions;
 import info.mikethomas.jfold.unit.Unit;
 import info.mikethomas.jfold.util.Command;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import lombok.extern.slf4j.XSlf4j;
+
 import org.apache.commons.io.FileUtils;
 
 /**
  * <p>MockConnection class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version $Id: $Id
- * @since 1.0
+ * @version 7.4.4
  */
+@XSlf4j
 public class MockConnection extends ClientConnection implements Connection {
-    
+
     /**
      * <p>Constructor for MockConnection.</p>
      *
@@ -96,14 +96,13 @@ public class MockConnection extends ClientConnection implements Connection {
         }
     }
 
-    private String getJson(Class clazz)
-    {
+    private String getJson(Class clazz) {
         try {
             String filename = "Example" + clazz.getSimpleName() + ".json";
             URL url = clazz.getResource(filename);
             File file = FileUtils.toFile(url);
             String json = FileUtils.readFileToString(file, ENCODING);
-            Logger.getLogger(this.getClass().getName()).log(Level.INFO, json);
+            log.info(json);
             return json;
         } catch (IOException e) {
             throw new UnsupportedOperationException(e);

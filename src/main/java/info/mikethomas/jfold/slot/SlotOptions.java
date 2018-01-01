@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,8 +21,12 @@
 package info.mikethomas.jfold.slot;
 
 import java.io.Serializable;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import lombok.Getter;
+import lombok.ToString;
 
 /**
  * <p>SlotOptions class.</p>
@@ -30,222 +34,120 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version 7.4.4
  */
+@Getter
+@ToString
 @XmlRootElement(name = "slot-options")
 public class SlotOptions implements Serializable {
-// <editor-fold defaultstate="collapsed" desc="Member Variables">
+
     /**
      * Client type.
+     *
+     * @return the <code>client-type</code> from <code>slot-options</code>
      */
     @XmlElement(name = "client-type")
     private String clientType;
+
     /**
      * Client sub-type.
-     */
-    @XmlElement(name = "client-subtype")
-    private String clientSubtype;
-    /**
-     * Machine identifier.
-     */
-    @XmlElement(name = "machine-id")
-    private int machineId;
-    /**
-     * Maximum packet size.
-     */
-    @XmlElement(name = "max-packet-size")
-    private String maxPacketSize;
-    /**
-     * Core priority.
-     */
-    @XmlElement(name = "core-priority")
-    private String corePriority;
-    /**
-     * Next unit percentage.
-     */
-    @XmlElement(name = "next-unit-percentage")
-    private int nextUnitPercentage;
-    /**
-     * Maximum units.
-     */
-    @XmlElement(name = "max-units")
-    private int maxUnits;
-    /**
-     * Checkpoint.
-     */
-    @XmlElement(name = "checkpoint")
-    private int checkpoint;
-    /**
-     * Pause on start.
-     */
-    @XmlElement(name = "pause-on-start")
-    private boolean pauseOnStart;
-    /**
-     * Graphics processor vendor identifier.
-     */
-    @XmlElement(name = "gpu-vendor-id")
-    private String gpuVendorId;
-    /**
-     * Graphics processor device identifier.
-     */
-    @XmlElement(name = "gpu-device-id")
-    private String gpuDeviceId;
-    /**
-     * CPUs.
-     */
-    @XmlElement(name = "cpus")
-    private String cpus;
-    /**
-     * Idle.
-     */
-    @XmlElement(name = "idle")
-    private boolean idle;
-    /**
-     * Paused.
-     */
-    @XmlElement(name = "paused")
-    private boolean paused;
-// </editor-fold>
-
-// <editor-fold desc="Accessors">
-    /**
-     * Get the value of <code>client-type</code>.
-     *
-     * @return the <code>client-type</code> from <code>slot-options</code>
-     */
-    public final String getClientType() {
-        return clientType;
-    }
-
-    /**
-     * Get the value of <code>client-subtype</code>.
      *
      * @return the <code>client-subtype</code> from <code>slot-options</code>
      */
-    public final String getClientSubtype() {
-        return clientSubtype;
-    }
+    @XmlElement(name = "client-subtype")
+    private String clientSubtype;
 
     /**
-     * Get the value of <code>machine-id</code>.
+     * Machine identifier.
      *
      * @return the <code>machine-id</code> from <code>slot-options</code>
      */
-    public final int getMachineId() {
-        return machineId;
-    }
+    @XmlElement(name = "machine-id")
+    private Integer machineId;
 
     /**
-     * Get the value of <code>max-packet-size</code>.
+     * Maximum packet size.
      *
      * @return the <code>max-packet-size</code> from <code>slot-options</code>
      */
-    public final String getMaxPacketSize() {
-        return maxPacketSize;
-    }
+    @XmlElement(name = "max-packet-size")
+    private String maxPacketSize;
 
     /**
-     * Get the value of <code>core-priority</code>.
+     * Core priority.
      *
      * @return the <code>core-priority</code> from <code>slot-options</code>
      */
-    public final String getCorePriority() {
-        return corePriority;
-    }
+    @XmlElement(name = "core-priority")
+    private String corePriority;
 
     /**
-     * Get the value of <code>next-unit-percentage</code>.
+     * Next unit percentage.
      *
      * @return the <code>next-unit-percentage</code> from <code>slot-options</code>
      */
-    public final int getNextUnitPercentage() {
-        return nextUnitPercentage;
-    }
+    @XmlElement(name = "next-unit-percentage")
+    private Integer nextUnitPercentage;
 
     /**
-     * Get the value of <code>max-units</code>.
+     * Maximum units.
      *
      * @return the <code>max-units</code> from <code>slot-options</code>
      */
-    public final int getMaxUnits() {
-        return maxUnits;
-    }
+    @XmlElement(name = "max-units")
+    private Integer maxUnits;
 
     /**
-     * Get the value of <code>checkpoint</code>.
+     * Checkpoint.
      *
      * @return the <code>checkpoint</code> from <code>slot-options</code>
      */
-    public final int getCheckpoint() {
-        return checkpoint;
-    }
+    @XmlElement
+    private Integer checkpoint;
 
     /**
-     * Get the value of <code>pause-on-start</code>.
+     * Pause on start.
      *
      * @return the <code>pause-on-start</code> from <code>slot-options</code>
      */
-    public final boolean getPauseOnStart() {
-        return pauseOnStart;
-    }
+    @XmlElement(name = "pause-on-start")
+    private Boolean pauseOnStart;
 
     /**
-     * Get the value of <code>gpu-vendor-id</code>.
+     * Graphics processor vendor identifier.
      *
      * @return the <code>client-type</code> from <code>slot-options</code>
      */
-    public final String getGpuVendorId() {
-        return gpuVendorId;
-    }
+    @XmlElement(name = "gpu-vendor-id")
+    private String gpuVendorId;
 
     /**
-     * Get the value of <code>gpu-device-id</code>.
+     * Graphics processor device identifier.
      *
      * @return the <code>gpu-device-id</code> from <code>slot-options</code>
      */
-    public final String getGpuDeviceId() {
-        return gpuDeviceId;
-    }
+    @XmlElement(name = "gpu-device-id")
+    private String gpuDeviceId;
 
     /**
-     * Get the value of <code>cpus</code>.
+     * CPUs.
      *
      * @return the <code>cpus</code> from <code>slot-options</code>
      */
-    public final String getCpus() {
-        return cpus;
-    }
+    @XmlElement
+    private String cpus;
 
     /**
-     * Get the value of <code>idle</code>.
+     * Idle.
      *
      * @return the <code>idle</code> from <code>slot-options</code>
      */
-    public final boolean getIdle() {
-        return idle;
-    }
+    @XmlElement
+    private Boolean idle;
 
     /**
-     * Get the value of <code>paused</code>.
+     * Paused.
      *
      * @return the <code>paused</code> from <code>slot-options</code>
      */
-    public final boolean getPaused() {
-        return paused;
-    }
-// </editor-fold>
-
-    /** {@inheritDoc} */
-    @Override
-    public final String toString() {
-        return "clientType = " + clientType
-                + "\nclientSubtype = " + clientSubtype
-                + "\nmachineId = " + machineId
-                + "\nmaxPacketSize = " + maxPacketSize
-                + "\ncorePriority = " + corePriority
-                + "\nnextUnitPercentage = " + nextUnitPercentage
-                + "\nmaxUnits = " + maxUnits
-                + "\ncheckpoint = " + checkpoint
-                + "\npauseOnStart = " + pauseOnStart
-                + "\ngpuVendorId = " + gpuVendorId
-                + "\ngpuDeviceId = " + gpuDeviceId;
-    }
+    @XmlElement
+    private Boolean paused;
 }

@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,16 +23,20 @@ package info.mikethomas.jfold.util;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+
 import java.io.IOException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import lombok.experimental.UtilityClass;
+import lombok.extern.slf4j.XSlf4j;
 
 /**
  * <p>PyonParser class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version $Id: $Id
+ * @version 7.4.4
  */
+@XSlf4j
+@UtilityClass
 public final class PyonParser {
 
     /** Constant <code>PYON_1</code>. */
@@ -66,27 +70,16 @@ public final class PyonParser {
     /** Constant <code>STRING_FALSE</code>. */
     public static final String STRING_FALSE = "\"(.*)\": \"false\"";
 
-    /** Logger. */
-    private static final Logger LOGGER = LoggerFactory.getLogger(
-            PyonParser.class);
-
-    /**
-     * Utility classes should not be constructed.
-     */
-    private PyonParser() {
-        super();
-    }
-
     /**
      * <p>Convert a PyON String to JSON.</p>
      *
      * @param pyon a {@link java.lang.String} object.
      * @return a {@link java.lang.String} object.
      */
-    public static String convert(final String pyon) {
+    public String convert(final String pyon) {
         // Check for valid PyON String
         if (!pyon.startsWith(PYON_1)) {
-            LOGGER.warn("PyonParser cannot convert String: " + pyon);
+            log.warn("PyonParser cannot convert String: " + pyon);
             return pyon;
         }
 
@@ -121,12 +114,11 @@ public final class PyonParser {
         try {
             JsonNode json = mapper.readValue(jsonString, JsonNode.class);
             jsonString = writer.writeValueAsString(json);
-        }
-        catch (IOException ex) {
-            LOGGER.error("Unable to format json string", ex);
+        } catch (IOException ex) {
+            log.error("Unable to format json string", ex);
         }
 
-        LOGGER.info("Parsed JSON:\n" + jsonString);
+        log.info("Parsed JSON:\n" + jsonString);
 
         return jsonString;
     }

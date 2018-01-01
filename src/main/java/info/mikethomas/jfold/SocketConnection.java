@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,6 +23,7 @@ package info.mikethomas.jfold;
 import info.mikethomas.jfold.exceptions.CommandException;
 import info.mikethomas.jfold.util.Command;
 import info.mikethomas.jfold.util.PyonParser;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -30,8 +31,10 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import lombok.extern.slf4j.XSlf4j;
+
+import org.slf4j.profiler.Profiler;
 
 /**
  * <p>SocketConnection class.</p>
@@ -39,6 +42,7 @@ import org.slf4j.LoggerFactory;
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version 7.4.4
  */
+@XSlf4j
 public abstract class SocketConnection implements Connection {
 
     /** Clear Screen. */
@@ -48,9 +52,6 @@ public abstract class SocketConnection implements Connection {
     /** Welcome Message. */
     public static final String WELCOME_MSG
             = "Welcome to the Folding@home Client command server.";
-    /** Logger. */
-    private static final Logger LOGGER
-            = LoggerFactory.getLogger(SocketConnection.class);
 
     /** Socket to connect to F@H Client. */
     private Socket socket = null;
@@ -78,7 +79,7 @@ public abstract class SocketConnection implements Connection {
                     socket.getInputStream(), ENCODING));
 
             String welcome = in.readLine();
-            LOGGER.info(welcome);
+            log.info(welcome);
             if (!(CLRSCR + WELCOME_MSG).equals(welcome)) {
                 throw new IOException(
                         "Unexpected welcome message, check client version");
@@ -108,6 +109,10 @@ public abstract class SocketConnection implements Connection {
      */
     protected String sendCommand(final Command command, final List<String> args)
             throws CommandException {
+
+        Profiler profiler = new Profiler(command.toString());
+        profiler.setLogger(log);
+
         StringBuilder arguments = new StringBuilder();
 
         for (String arg : args) {
@@ -116,8 +121,9 @@ public abstract class SocketConnection implements Connection {
 
         // Send the command
         try {
+            profiler.start("Send Command");
             out.println(command + arguments.toString());
-            LOGGER.info("Sent Command: " + command + arguments.toString());
+            log.info("Sent Command: " + command + arguments.toString());
 
             if (in.skip(COMMAND_PROMPT.length()) != 2) {
                 throw new IOException("Failed to ignore command prompt \"> \"");
@@ -126,10 +132,18 @@ public abstract class SocketConnection implements Connection {
             // Get the output
             switch (command.getResponseType()) {
                 case PYON:
-                    return PyonParser.convert(getPyon());
+                    profiler.start("Get PyON Response");
+                    String pyon = getPyon();
+                    profiler.start("Convert to JSON");
+                    String json = PyonParser.convert(pyon);
+                    profiler.stop().log();
+                    return json;
 
                 case STRING:
-                    return getString();
+                    profiler.start("Get String Response");
+                    String response = getString();
+                    profiler.stop().log();
+                    return response;
 
                 case VOID:
                     in.mark(COMMAND_PROMPT.length());
@@ -143,6 +157,7 @@ public abstract class SocketConnection implements Connection {
                     }
 
                 default:
+                    profiler.stop().log();
                     return null;
             }
         } catch (IOException ex) {
@@ -169,7 +184,7 @@ public abstract class SocketConnection implements Connection {
 
         String string = stringBuilder.toString().replace(ch, '\0').trim();
 
-        LOGGER.info("Recieved String: " + string);
+        log.info("Recieved String: " + string);
 
         return string;
     }
@@ -181,6 +196,8 @@ public abstract class SocketConnection implements Connection {
      * @throws java.io.IOException if any.
      */
     private String getPyon() throws IOException {
+        log.entry();
+
         StringBuilder stringBuilder = new StringBuilder();
 
         String line;
@@ -189,9 +206,7 @@ public abstract class SocketConnection implements Connection {
         }
 
         String string = stringBuilder.toString().trim();
-
-        LOGGER.info("Recieved PyON:\n" + string);
-
+        log.exit(string);
         return string;
     }
 }

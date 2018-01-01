@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,6 +23,7 @@ package info.mikethomas.jfold;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
+
 import info.mikethomas.jfold.exceptions.InfoException;
 import info.mikethomas.jfold.exceptions.NumSlotsException;
 import info.mikethomas.jfold.exceptions.OptionsException;
@@ -42,13 +43,12 @@ import info.mikethomas.jfold.slot.Slot;
 import info.mikethomas.jfold.slot.SlotOptions;
 import info.mikethomas.jfold.unit.Unit;
 import info.mikethomas.jfold.util.Command;
+
 import java.io.IOException;
 import java.net.Inet4Address;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * <p>ClientConnection class.</p>
@@ -58,16 +58,10 @@ import org.slf4j.LoggerFactory;
  */
 public class ClientConnection extends SocketConnection implements Connection {
 
-    /** Constant <code>DATE_FORMAT="yyyy-MM-dd'T'HH:mm:ss'Z'"</code>. */
-    public static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
     /** Constant <code>DEFAULT_HOST="localhost"</code>. */
     public static final String DEFAULT_HOST = "localhost";
     /** Constant <code>DEFAULT_PORT=36330</code>. */
     public static final int DEFAULT_PORT = 36330;
-
-    /** Logger. */
-    private static final Logger LOGGER = LoggerFactory.getLogger(
-            ClientConnection.class);
 
     /** Object Mapper. */
     private final ObjectMapper mapper = new ObjectMapper();
@@ -77,8 +71,7 @@ public class ClientConnection extends SocketConnection implements Connection {
      *
      * @throws java.io.IOException if any.
      */
-    public ClientConnection()
-            throws IOException {
+    public ClientConnection() throws IOException {
         this(DEFAULT_HOST, DEFAULT_PORT);
     }
 
@@ -93,8 +86,7 @@ public class ClientConnection extends SocketConnection implements Connection {
             throws IOException {
         super(address, port);
 
-        JaxbAnnotationModule module = new JaxbAnnotationModule();
-        mapper.registerModule(module);
+        mapper.registerModule(new JaxbAnnotationModule());
     }
 
     /** {@inheritDoc} */

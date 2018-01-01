@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,13 +20,19 @@
  */
 package info.mikethomas.jfold.info;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
  * <p>InfoItem class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version $Id: $Id
+ * @version 7.4.4
  */
+@AllArgsConstructor
+@Getter
 public enum InfoItem {
+
 // <editor-fold defaultstate="collapsed" desc="Client Info Items">
 
     /** Item <code>Website</code> in <code>Folding@home Client</code>. */
@@ -128,34 +134,18 @@ public enum InfoItem {
 // </editor-fold>
 
     /**
-     * Category.
-     */
-    private final InfoCategory category;
-    /**
-     * Key.
-     */
-    private final String key;
-
-    /**
-     * Constructs an instance of <code>InfoItem</code> with the specified
-     * category and key.
-     *
-     * @param itemCategory the category.
-     * @param itemKey the key.
-     */
-    InfoItem(final InfoCategory itemCategory, final String itemKey) {
-        this.category = itemCategory;
-        this.key = itemKey;
-    }
-
-    /**
-     * Retrieve the category type of this item.
+     * Category type of this item.
      *
      * @return InfoCategory category.
      */
-    public InfoCategory getCategory() {
-        return category;
-    }
+    private final InfoCategory category;
+
+    /**
+     * Key.
+     *
+     * @return String key.
+     */
+    private final String key;
 
     /** {@inheritDoc} */
     @Override

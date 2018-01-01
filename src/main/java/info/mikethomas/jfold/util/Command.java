@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,13 +20,20 @@
  */
 package info.mikethomas.jfold.util;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
  * <p>Command class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.3.6
+ * @version 7.4.4
  */
+@AllArgsConstructor
+@Getter
 public enum Command {
+
+// <editor-fold defaultstate="collapsed" desc="Commands">
 
     /** Authenticate. */
     AUTH("auth", ResponseType.VOID),
@@ -220,35 +227,21 @@ public enum Command {
     /** Subtract two values. */
     SUB("sub", ResponseType.VOID); // <number> <number>
 
+// </editor-fold>
+
     /**
      * Command.
+     *
+     * @return String Folding@Home command.
      */
     private final String command;
-    /**
-     * Response Type.
-     */
-    private final ResponseType responseType;
 
     /**
-     * Constructs an instance of <code>Command</code> with the specified
-     * command name and response type.
-     *
-     * @param fahCommand the Folding@home client command.
-     * @param commandResponseType the response type of the command.
-     */
-    Command(final String fahCommand, final ResponseType commandResponseType) {
-        this.command = fahCommand;
-        this.responseType = commandResponseType;
-    }
-
-    /**
-     * Retrieve the response type of this command.
+     * Response type of this command.
      *
      * @return ResponseType type of response.
      */
-    public ResponseType getResponseType() {
-        return responseType;
-    }
+    private final ResponseType responseType;
 
     /** {@inheritDoc} */
     @Override

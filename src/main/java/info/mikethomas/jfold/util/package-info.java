@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,6 +25,6 @@
  * <p>These classes are used internally in the jFold API.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version $Id: $Id
+ * @version 7.4.4
  */
 package info.mikethomas.jfold.util;

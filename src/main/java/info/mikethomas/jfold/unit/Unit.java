@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,418 +20,254 @@
  */
 package info.mikethomas.jfold.unit;
 
+import info.mikethomas.jfold.util.DateAdapter;
+
 import java.io.Serializable;
+import java.net.InetAddress;
+import java.util.Date;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import lombok.Getter;
+import lombok.ToString;
 
 /**
- * <p>Unit class.</p>
+ * <p>Represents a Folding@Home Work Unit.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version 7.4.4
  */
+@Getter
+@ToString
 @XmlRootElement(name = "unit")
 public class Unit implements Serializable {
-// <editor-fold defaultstate="collapsed" desc="Member Variables">
+
     /**
      * Identifier.
-     */
-    @XmlElement(name = "id")
-    private String id;
-    /**
-     * Unit state.
-     */
-    @XmlElement(name = "state")
-    private String state;
-    /**
-     * Unit error.
-     */
-    @XmlElement(name = "error")
-    private String error;
-    /**
-     * Project this Unit belongs to.
-     */
-    @XmlElement(name = "project")
-    private int project;
-    /**
-     * Run of the Project.
-     */
-    @XmlElement(name = "run")
-    private int run;
-    /**
-     * Clone of the Project.
-     */
-    @XmlElement(name = "clone")
-    private int clone;
-    /**
-     * Generation of the Project.
-     */
-    @XmlElement(name = "gen")
-    private int gen;
-    /**
-     * Core Identifier.
-     */
-    @XmlElement(name = "core")
-    private String core;
-    /**
-     * Unique ID of the unit.
-     */
-    @XmlElement(name = "unit")
-    private String unit;
-    /**
-     * Percentage of work completed.
-     */
-    @XmlElement(name = "percentdone")
-    private String percentDone;
-    /**
-     * Total number of frames in this Unit.
-     */
-    @XmlElement(name = "totalframes")
-    private int totalFrames;
-    /**
-     * Number of frames completed.
-     */
-    @XmlElement(name = "framesdone")
-    private int framesDone;
-    /**
-     * Time and date this work unit was assigned.
-     */
-    @XmlElement(name = "assigned")
-    private String assigned;
-    /**
-     * Time and date this work unit expires.
-     */
-    @XmlElement(name = "timeout")
-    private String timeout;
-    /**
-     * Time and date this work unit needs to be completed by.
-     */
-    @XmlElement(name = "deadline")
-    private String deadline;
-    /**
-     * Work server.
-     */
-    @XmlElement(name = "ws")
-    private String ws;
-    /**
-     * Collection server.
-     */
-    @XmlElement(name = "cs")
-    private String cs;
-    /**
-     * Reason the Unit is waiting.
-     */
-    @XmlElement(name = "waitingon")
-    private String waitingOn;
-    /**
-     * Number of attempts to send completed Unit to collection server.
-     */
-    @XmlElement(name = "attempts")
-    private int attempts;
-    /**
-     * Time until the next attempt to send completed Unit to collection server.
-     */
-    @XmlElement(name = "nextattempt")
-    private String nextAttempt;
-    /**
-     * Time remaining.
-     */
-    @XmlElement(name = "timeremaining")
-    private String timeRemaining;
-    /**
-     * Slot number this Unit belongs to.
-     */
-    @XmlElement(name = "slot")
-    private int slot;
-    /**
-     * Estimated time of arrival.
-     */
-    @XmlElement(name = "eta")
-    private String eta;
-    /**
-     * Points per day.
-     */
-    @XmlElement(name = "ppd")
-    private double ppd;
-    /**
-     * Time per frame.
-     */
-    @XmlElement(name = "tpf")
-    private String tpf;
-    /**
-     * Baseline number of points awarded for completion of this Unit.
-     */
-    @XmlElement(name = "basecredit")
-    private double baseCredit;
-    /**
-     * Estimated number of points awarded for completion of this Unit.
-     */
-    @XmlElement(name = "creditestimate")
-    private double creditEstimate;
-    /**
-     * Project Description.
-     */
-    @XmlElement(name = "description")
-    private String description;
-// </editor-fold>
-
-// <editor-fold desc="Accessors">
-    /**
-     * Get the value of <code>id</code>.
      *
      * @return the <code>id</code> from <code>queue-info</code>
      */
-    public final String getId() {
-        return id;
-    }
+    @XmlElement
+    private String id;
 
     /**
-     * Get the value of <code>state</code>.
+     * Unit state.
      *
      * @return the <code>state</code> from <code>queue-info</code>
      */
-    public final String getState() {
-        return state;
-    }
+    @XmlElement
+    private String state;
 
     /**
-     * Get the value of <code>error</code>.
+     * Unit error.
      *
      * @return the <code>error</code> from <code>queue-info</code>
      */
-    public final String getError() {
-        return error;
-    }
+    @XmlElement
+    private String error;
 
     /**
-     * Get the value of <code>project</code>.
+     * Project this Unit belongs to.
      *
      * @return the <code>project</code> from <code>queue-info</code>
      */
-    public final int getProject() {
-        return project;
-    }
+    @XmlElement
+    private int project;
 
     /**
-     * Get the value of <code>run</code>.
+     * Run of the Project.
      *
      * @return the <code>run</code> from <code>queue-info</code>
      */
-    public final int getRun() {
-        return run;
-    }
+    @XmlElement
+    private int run;
 
     /**
-     * Get the value of <code>clone</code>.
+     * Clone of the Project.
      *
      * @return the <code>clone</code> from <code>queue-info</code>
      */
-    public final int getClone() {
-        return clone;
-    }
+    @XmlElement
+    private int clone;
 
     /**
-     * Get the value of <code>gen</code>.
+     * Generation of the Project.
      *
      * @return the <code>gen</code> from <code>queue-info</code>
      */
-    public final int getGen() {
-        return gen;
-    }
+    @XmlElement
+    private int gen;
 
     /**
-     * Get the value of <code>core</code>.
+     * Core Identifier.
      *
      * @return the <code>core</code> from <code>queue-info</code>
      */
-    public final String getCore() {
-        return core;
-    }
+    @XmlElement
+    private String core;
 
     /**
-     * Get the value of <code>unit</code>.
+     * Unique ID of the unit.
      *
      * @return the <code>unit</code> from <code>queue-info</code>
      */
-    public final String getUnit() {
-        return unit;
-    }
+    @XmlElement
+    private String unit;
 
     /**
-     * Get the value of <code>percentdone</code>.
+     * Percentage of work completed.
      *
      * @return the <code>percentdone</code> from <code>queue-info</code>
      */
-    public final String getPercentDone() {
-        return percentDone;
-    }
+    @XmlElement(name = "percentdone")
+    private String percentDone;
 
     /**
-     * Get the value of <code>totalframes</code>.
+     * Total number of frames in this Unit.
      *
      * @return the <code>totalframes</code> from <code>queue-info</code>
      */
-    public final int getTotalFrames() {
-        return totalFrames;
-    }
+    @XmlElement(name = "totalframes")
+    private int totalFrames;
 
     /**
-     * Get the value of <code>framesdone</code>.
+     * Number of frames completed.
      *
      * @return the <code>framesdone</code> from <code>queue-info</code>
      */
-    public final int getFramesDone() {
-        return framesDone;
-    }
+    @XmlElement(name = "framesdone")
+    private int framesDone;
 
     /**
-     * Get the value of <code>assigned</code>.
+     * Time and date this work unit was assigned.
      *
      * @return the <code>assigned</code> from <code>queue-info</code>
      */
-    public final String getAssigned() {
-        return assigned;
-    }
+    @XmlElement
+    @XmlJavaTypeAdapter(DateAdapter.class)
+    private Date assigned;
 
     /**
-     * Get the value of <code>timeout</code>.
+     * Time and date this work unit expires.
      *
      * @return the <code>timeout</code> from <code>queue-info</code>
      */
-    public final String getTimeout() {
-        return timeout;
-    }
+    @XmlElement
+    @XmlJavaTypeAdapter(DateAdapter.class)
+    private Date timeout;
 
     /**
-     * Get the value of <code>deadline</code>.
+     * Time and date this work unit needs to be completed by.
      *
      * @return the <code>deadline</code> from <code>queue-info</code>
      */
-    public final String getDeadline() {
-        return deadline;
-    }
+    @XmlElement
+    @XmlJavaTypeAdapter(DateAdapter.class)
+    private Date deadline;
 
     /**
-     * Get the value of <code>ws</code>.
+     * Work server.
      *
      * @return the <code>ws</code> from <code>queue-info</code>
      */
-    public final String getWs() {
-        return ws;
-    }
+    @XmlElement
+    private InetAddress ws;
 
     /**
-     * Get the value of <code>cs</code>.
+     * Collection server.
      *
      * @return the <code>cs</code> from <code>queue-info</code>
      */
-    public final String getCs() {
-        return cs;
-    }
+    @XmlElement
+    private InetAddress cs;
 
     /**
-     * Get the value of <code>waitingon</code>.
+     * Reason the Unit is waiting.
      *
      * @return the <code>waitingon</code> from <code>queue-info</code>
      */
-    public final String getWaitingOn() {
-        return waitingOn;
-    }
+    @XmlElement(name = "waitingon")
+    private String waitingOn;
 
     /**
-     * Get the value of <code>attempts</code>.
+     * Number of attempts to send completed Unit to collection server.
      *
      * @return the <code>attempts</code> from <code>queue-info</code>
      */
-    public final int getAttempts() {
-        return attempts;
-    }
+    @XmlElement
+    private int attempts;
 
     /**
-     * Get the value of <code>nextattempt</code>.
+     * Time until the next attempt to send completed Unit to collection server.
      *
      * @return the <code>nextattempt</code> from <code>queue-info</code>
      */
-    public final String getNextAttempt() {
-        return nextAttempt;
-    }
+    @XmlElement(name = "nextattempt")
+    private String nextAttempt;
 
     /**
-     * Get the value of <code>timeremaining</code>.
+     * Time remaining.
      *
      * @return the <code>timeremaining</code> from <code>queue-info</code>
      */
-    public final String getTimeRemaining() {
-        return timeRemaining;
-    }
+    @XmlElement(name = "timeremaining")
+    private String timeRemaining;
 
     /**
-     * Get the value of <code>slot</code>.
+     * Slot number this Unit belongs to.
      *
      * @return the <code>slot</code> from <code>queue-info</code>
      */
-    public final int getSlot() {
-        return slot;
-    }
+    @XmlElement
+    private String slot;
 
     /**
-     * Get the value of <code>eta</code>.
+     * Estimated time of arrival.
      *
      * @return the <code>eta</code> from <code>queue-info</code>
      */
-    public final String getEta() {
-        return eta;
-    }
+    @XmlElement
+    private String eta;
 
     /**
-     * Get the value of <code>ppd</code>.
+     * Points per day.
      *
      * @return the <code>ppd</code> from <code>queue-info</code>
      */
-    public final double getPpd() {
-        return ppd;
-    }
+    @XmlElement
+    private double ppd;
 
     /**
-     * Get the value of <code>tpf</code>.
+     * Time per frame.
      *
      * @return the <code>tpf</code> from <code>queue-info</code>
      */
-    public final String getTpf() {
-        return tpf;
-    }
+    @XmlElement
+    private String tpf;
 
     /**
-     * Get the value of <code>basecredit</code>.
+     * Baseline number of points awarded for completion of this Unit.
      *
      * @return the <code>basecredit</code> from <code>queue-info</code>
      */
-    public final double getBaseCredit() {
-        return baseCredit;
-    }
+    @XmlElement(name = "basecredit")
+    private double baseCredit;
 
     /**
-     * Get the value of <code>creditestimate</code>.
+     * Estimated number of points awarded for completion of this Unit.
      *
      * @return the <code>creditestimate</code> from <code>queue-info</code>
      */
-    public final double getCreditEstimate() {
-        return creditEstimate;
-    }
+    @XmlElement(name = "creditestimate")
+    private double creditEstimate;
 
     /**
-     * Get the value of <code>description</code>.
+     * Project Description.
      *
      * @return the <code>description</code> from <code>queue-info</code>
      */
-    public final String getDescription() {
-        return description;
-    }
-// </editor-fold>
-
-    /** {@inheritDoc} */
-    @Override
-    public final String toString() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    @XmlElement
+    private String description;
 }

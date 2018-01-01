@@ -2,13 +2,20 @@
     {
         "id": "00",
         "status": "RUNNING",
-        "description": "cpu:2",
+        "description": "cpu:1",
         "options": {
-            "cpus": "-1",
-            "idle": false,
             "paused": false
         },
         "reason": "",
+        "idle": false
+    }, {
+        "id": "01",
+        "status": "PAUSED",
+        "description": "cpu:1",
+        "options": {
+            "paused": true
+        },
+        "reason": "by user",
         "idle": false
     }
 ]

@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,12 +20,12 @@
  */
 package info.mikethomas.jfold.simulation;
 
-import info.mikethomas.jfold.simulation.SimulationInfo;
 import info.mikethomas.jfold.Connection;
 import info.mikethomas.jfold.MockConnection;
 import info.mikethomas.jfold.exceptions.SimulationInfoException;
+
 import java.io.IOException;
-import org.junit.AfterClass;
+
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -34,14 +34,13 @@ import org.junit.Test;
  * <p>SimulationInfoTest class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version $Id: $Id
- * @since 1.0
+ * @version 7.4.4
  */
 public class SimulationInfoTest {
-    
+
     /** Constant <code>instance</code> */
     public static SimulationInfo instance;
-    
+
     /**
      * <p>setUpClass.</p>
      *
@@ -52,13 +51,6 @@ public class SimulationInfoTest {
     public static void setUpClass() throws IOException, SimulationInfoException {
         Connection connection = new MockConnection();
         instance = connection.simulationInfo(0);
-    }
-    
-    /**
-     * <p>tearDownClass.</p>
-     */
-    @AfterClass
-    public static void tearDownClass() {
     }
 
     /**
@@ -104,7 +96,7 @@ public class SimulationInfoTest {
         int result = instance.getRun();
         assertEquals(expResult, result);
     }
-    
+
     /**
      * Test of getClone method, of class SimulationInfo.
      */
@@ -210,7 +202,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetStartTime() {
         System.out.println("getStartTime");
-        String expResult = "Mon Sep 08 23:06:28 BST 2014";
+        String expResult = "Mon Sep 08 22:06:28 BST 2014";
         String result = instance.getStartTime().toString();
         assertEquals(expResult, result);
     }
@@ -221,8 +213,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetTimeout() {
         System.out.println("getTimeout");
-        String expResult = "Mon Sep 08 23:06:28 BST 2014";
-        String result = instance.getTimeout().toString();
+        long expResult = 0;
+        long result = instance.getTimeout();
         assertEquals(expResult, result);
     }
 
@@ -232,8 +224,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetDeadline() {
         System.out.println("getDeadline");
-        String expResult = "Thu Sep 25 06:55:13 BST 2014";
-        String result = instance.getDeadline().toString();
+        long expResult = 1410525028;
+        long result = instance.getDeadline();
         assertEquals(expResult, result);
     }
 
@@ -243,9 +235,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetRunTime() {
         System.out.println("getRunTime");
-        long expResult = 0;
-        long result = instance.getRunTime();
-        assertEquals(expResult, result);
+        assertNull(instance.getRunTime());
     }
 
     /**
@@ -254,9 +244,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetSimulationTime() {
         System.out.println("getSimulationTime");
-        long expResult = 0;
-        long result = instance.getSimulationTime();
-        assertEquals(expResult, result);
+        assertNull(instance.getSimulationTime());
     }
 
     /**
@@ -265,8 +253,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetEta() {
         System.out.println("getEta");
-        String expResult = "Mon Sep 08 23:06:45 BST 2014";
-        String result = instance.getEta().toString();
+        long expResult = 17892;
+        long result = instance.getEta();
         assertEquals(expResult, result);
     }
 
@@ -298,27 +286,29 @@ public class SimulationInfoTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        String expResult = "user = montycrabapple\n" +
-                            "team = 39299\n" +
-                            "project = 9500\n" +
-                            "run = 850\n" +
-                            "clone = 1\n" +
-                            "gen = 290\n" +
-                            "coreType = 164\n" +
-                            "core = GRO_A4\n" +
-                            "description = null\n" +
-                            "totalIterations = 250000\n" +
-                            "iterationsDone = 40000\n" +
-                            "energy = 0\n" +
-                            "temperature = 0\n" +
-                            "startTime = Mon Sep 08 23:06:28 BST 2014\n" +
-                            "timeout = 0\n" +
-                            "deadline = 1410525028\n" +
-                            "runTime = 0\n" +
-                            "simulationTime = 0\n" +
-                            "eta = 17892\n" +
-                            "news = null\n" +
-                            "slot = 0";
+        String expResult = "SimulationInfo("
+                + "user=montycrabapple, "
+                + "team=39299, "
+                + "project=9500, "
+                + "run=850, "
+                + "clone=1, "
+                + "gen=290, "
+                + "coreType=164, "
+                + "core=GRO_A4, "
+                + "description=null, "
+                + "totalIterations=250000, "
+                + "iterationsDone=40000, "
+                + "energy=0, "
+                + "temperature=0, "
+                + "startTime=Mon Sep 08 22:06:28 BST 2014, "
+                + "timeout=0, "
+                + "deadline=1410525028, "
+                + "runTime=null, "
+                + "simulationTime=null, "
+                + "eta=17892, "
+                + "progress=0.16, "
+                + "news=null, "
+                + "slot=0)";
         String result = instance.toString();
         assertEquals(expResult, result);
     }

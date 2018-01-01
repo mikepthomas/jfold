@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,13 +20,13 @@
  */
 package info.mikethomas.jfold.unit;
 
-import info.mikethomas.jfold.unit.Unit;
 import info.mikethomas.jfold.Connection;
 import info.mikethomas.jfold.MockConnection;
 import info.mikethomas.jfold.exceptions.QueueInfoException;
+
 import java.io.IOException;
 import java.net.UnknownHostException;
-import org.junit.AfterClass;
+
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -36,11 +36,11 @@ import org.junit.Test;
  * <p>UnitTest class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version $Id: $Id
- * @since 1.0
+ * @version 7.4.4
  */
 public class UnitTest {
 
+    /** Constant <code>instance</code> */
     private static Unit instance;
 
     /**
@@ -53,13 +53,6 @@ public class UnitTest {
     public static void setUpClass() throws IOException, QueueInfoException {
         Connection connection = new MockConnection();
         instance = connection.queueInfo().get(0);
-    }
-
-    /**
-     * <p>tearDownClass.</p>
-     */
-    @AfterClass
-    public static void tearDownClass() {
     }
 
     /**
@@ -189,8 +182,8 @@ public class UnitTest {
     @Test
     public void testGetAssigned() {
         System.out.println("getAssigned");
-        String expResult = "2014-09-08T22:06:28Z";
-        String result = instance.getAssigned();
+        String expResult = "Mon Sep 08 22:06:28 BST 2014";
+        String result = instance.getAssigned().toString();
         assertEquals(expResult, result);
     }
 
@@ -200,8 +193,8 @@ public class UnitTest {
     @Test
     public void testGetTimeout() {
         System.out.println("getTimeout");
-        String expResult = "2014-09-10T13:56:52Z";
-        String result = instance.getTimeout();
+        String expResult = "Wed Sep 10 13:56:52 BST 2014";
+        String result = instance.getTimeout().toString();
         assertEquals(expResult, result);
     }
 
@@ -211,8 +204,8 @@ public class UnitTest {
     @Test
     public void testGetDeadline() {
         System.out.println("getDeadline");
-        String expResult = "2014-09-12T12:30:28Z";
-        String result = instance.getDeadline();
+        String expResult = "Fri Sep 12 12:30:28 BST 2014";
+        String result = instance.getDeadline().toString();
         assertEquals(expResult, result);
     }
 
@@ -225,7 +218,7 @@ public class UnitTest {
     public void testGetWs() throws UnknownHostException {
         System.out.println("getWs");
         String expResult = "171.67.108.60";
-        String result = instance.getWs();
+        String result = instance.getWs().getHostAddress();
         assertEquals(expResult, result);
     }
 
@@ -238,7 +231,7 @@ public class UnitTest {
     public void testGetCs() throws UnknownHostException {
         System.out.println("getCs");
         String expResult = "171.65.103.160";
-        String result = instance.getCs();
+        String result = instance.getCs().getHostAddress();
         assertEquals(expResult, result);
     }
 
@@ -281,8 +274,8 @@ public class UnitTest {
     @Test
     public void testGetSlot() {
         System.out.println("getSlot");
-        int expResult = 0;
-        int result = instance.getSlot();
+        String expResult = "00";
+        String result = instance.getSlot();
         assertEquals(expResult, result);
     }
 

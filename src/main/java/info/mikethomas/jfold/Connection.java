@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,6 +38,7 @@ import info.mikethomas.jfold.simulation.SimulationInfo;
 import info.mikethomas.jfold.slot.Slot;
 import info.mikethomas.jfold.slot.SlotOptions;
 import info.mikethomas.jfold.unit.Unit;
+
 import java.net.Inet4Address;
 import java.net.URL;
 import java.util.List;
@@ -49,6 +50,7 @@ import java.util.List;
  * @version 7.4.4
  */
 public interface Connection {
+
     /** Constant <code>ENCODING="UTF-8"</code>. */
     String ENCODING = "UTF-8";
 

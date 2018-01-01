@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,8 +21,12 @@
 package info.mikethomas.jfold.options;
 
 import java.io.Serializable;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import lombok.Getter;
+import lombok.ToString;
 
 /**
  * <p>Options class.</p>
@@ -30,1319 +34,1160 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version 7.4.4
  */
+@Getter
+@ToString
 @XmlRootElement(name = "options")
 public class Options implements Serializable {
-// <editor-fold defaultstate="collapsed" desc="Member Variables">
-    @XmlElement(name = "allow")
-    private String allow;
-    @XmlElement(name = "assignment-servers")
-    private String assignmentServers;
-    @XmlElement(name = "auth-as")
-    private boolean authAs;
-    @XmlElement(name = "capture-directory")
-    private String captureDirectory;
-    @XmlElement(name = "capture-on-error")
-    private boolean captureOnError;
-    @XmlElement(name = "capture-packets")
-    private boolean capturePackets;
-    @XmlElement(name = "capture-requests")
-    private boolean captureRequests;
-    @XmlElement(name = "capture-responses")
-    private boolean captureResponses;
-    @XmlElement(name = "capture-sockets")
-    private boolean captureSockets;
-    @XmlElement(name = "cause")
-    private String cause;
-    @XmlElement(name = "certificate-file")
-    private String certificateFile;
-    @XmlElement(name = "checkpoint")
-    private int checkpoint;
-    @XmlElement(name = "child")
-    private boolean child;
-    @XmlElement(name = "client-subtype")
-    private String clientSubtype;
-    @XmlElement(name = "client-threads")
-    private int clientThreads;
-    @XmlElement(name = "client-type")
-    private String clientType;
-    @XmlElement(name = "command-address")
-    private String commandAddress;
-    /**
-     * @deprecated
-     */
-    @XmlElement(name = "command-allow")
-    private String commandAllow;
-    @XmlElement(name = "command-allow-no-pass")
-    private String commandAllowNoPass;
-    /**
-     * @deprecated
-     */
-    @XmlElement(name = "command-deny")
-    private String commandDeny;
-    @XmlElement(name = "deny")
-    private String deny;
-    @XmlElement(name = "command-deny-no-pass")
-    private String commandDenyNoPass;
-    @XmlElement(name = "command-enable")
-    private boolean commandEnable;
-    @XmlElement(name = "command-port")
-    private int commandPort;
-    @XmlElement(name = "config-rotate")
-    private boolean configRotate;
-    @XmlElement(name = "config-rotate-dir")
-    private String configRotateDir;
-    @XmlElement(name = "config-rotate-max")
-    private int configRotateMax;
-    @XmlElement(name = "connection-timeout")
-    private int connectionTimeout;
-    @XmlElement(name = "core-dir")
-    private String coreDir;
-    @XmlElement(name = "core-exec")
-    private String coreExec;
-    @XmlElement(name = "core-key")
-    private String coreKey;
-    @XmlElement(name = "core-prep")
-    private String corePrep;
-    @XmlElement(name = "core-priority")
-    private String corePriority;
-    @XmlElement(name = "core-server")
-    private String coreServer;
-    @XmlElement(name = "core-wrapper-exec")
-    private String coreWrapperExec;
-    @XmlElement(name = "cpu-affinity")
-    private boolean cpuAffinity;
-    @XmlElement(name = "cpu-species")
-    private String cpuSpecies;
-    @XmlElement(name = "cpu-type")
-    private String cpuType;
-    @XmlElement(name = "cpu-usage")
-    private int cpuUsage;
-    @XmlElement(name = "cpus")
-    private int cpus;
-    @XmlElement(name = "crl-file")
-    private String crlFile;
-    @XmlElement(name = "cuda-index")
-    private int cudaIndex;
-    @XmlElement(name = "cycle-rate")
-    private int cycleRate;
-    @XmlElement(name = "cycles")
-    private int cycles;
-    @XmlElement(name = "daemon")
-    private boolean daemon;
-    @XmlElement(name = "data-directory")
-    private String dataDirectory;
-    @XmlElement(name = "debug-sockets")
-    private boolean debugSockets;
-    @XmlElement(name = "disable-sleep-when-active")
-    private boolean disableSleepWhenActive;
-    @XmlElement(name = "dump-after-deadline")
-    private boolean dumpAfterDeadline;
-    @XmlElement(name = "eval")
-    private String eval;
-    @XmlElement(name = "exception-locations")
-    private boolean exceptionLocations;
-    @XmlElement(name = "exec-directory")
-    private String execDirectory;
-    @XmlElement(name = "exit-when-done")
-    private boolean exitWhenDone;
-    @XmlElement(name = "extra-core-args")
-    private String extraCoreArgs;
-    @XmlElement(name = "fold-anon")
-    private boolean foldAnon;
-    @XmlElement(name = "force-ws")
-    private boolean forceWs;
-    @XmlElement(name = "fork")
-    private boolean fork;
-    @XmlElement(name = "gpu")
-    private boolean gpu;
-    @XmlElement(name = "gpu-assignment-servers")
-    private String gpuAssignmentServers;
-    @XmlElement(name = "gpu-index")
-    private String gpuIndex;
-    @XmlElement(name = "gpu-usage")
-    private int gpuUsage;
-    @XmlElement(name = "http-addresses")
-    private String httpAddresses;
-    @XmlElement(name = "https-addresses")
-    private String httpsAddresses;
-    @XmlElement(name = "idle")
-    private boolean idle;
-    @XmlElement(name = "log")
-    private String log;
-    @XmlElement(name = "log-color")
-    private boolean logColor;
-    @XmlElement(name = "log-crlf")
-    private boolean logCrlf;
-    @XmlElement(name = "log-date")
-    private boolean logDate;
-    @XmlElement(name = "log-date-periodically")
-    private int logDatePeriodically;
-    @XmlElement(name = "log-debug")
-    private boolean logDebug;
-    @XmlElement(name = "log-domain")
-    private boolean logDomain;
-    @XmlElement(name = "log-domain-levels")
-    private boolean logDomainLevels;
-    @XmlElement(name = "log-header")
-    private boolean logHeader;
-    @XmlElement(name = "log-level")
-    private boolean logLevel;
-    @XmlElement(name = "log-no-info-header")
-    private boolean logNoInfoHeader;
-    @XmlElement(name = "log-redirect")
-    private boolean logRedirect;
-    @XmlElement(name = "log-rotate")
-    private boolean logRotate;
-    @XmlElement(name = "log-rotate-dir")
-    private String logRotateDir;
-    @XmlElement(name = "log-rotate-max")
-    private int logRotateMax;
-    @XmlElement(name = "log-short-level")
-    private boolean logShortLevel;
-    @XmlElement(name = "log-simple-domains")
-    private boolean logSimpleDomains;
-    @XmlElement(name = "log-thread-id")
-    private boolean logThreadId;
-    @XmlElement(name = "log-thread-prefix")
-    private boolean logThreadPrefix;
-    @XmlElement(name = "log-time")
-    private boolean logTime;
-    @XmlElement(name = "log-to-screen")
-    private boolean logToScreen;
-    @XmlElement(name = "log-truncate")
-    private boolean logTruncate;
-    @XmlElement(name = "machine-id")
-    private int machineId;
-    /**
-     * @deprecated
-     */
-    @XmlElement(name = "max-delay")
-    private int maxDelay;
-    @XmlElement(name = "max-connect-time")
-    private int maxConnectTime;
-    @XmlElement(name = "max-connections")
-    private int maxConnections;
-    @XmlElement(name = "max-packet-size")
-    private String maxPacketSize;
-    @XmlElement(name = "max-queue")
-    private int maxQueue;
-    @XmlElement(name = "max-request-length")
-    private int maxRequestLength;
-    @XmlElement(name = "max-shutdown-wait")
-    private int maxShutdownWait;
-    @XmlElement(name = "max-slot-errors")
-    private int maxSlotErrors;
-    @XmlElement(name = "max-unit-errors")
-    private int maxUnitErrors;
-    @XmlElement(name = "max-units")
-    private int maxUnits;
-    @XmlElement(name = "memory")
-    private String memory;
-    /**
-     * @deprecated
-     */
-    @XmlElement(name = "min-delay")
-    private int minDelay;
-    @XmlElement(name = "min-connect-time")
-    private int minConnectTime;
-    @XmlElement(name = "next-unit-percentage")
-    private int nextUnitPercentage;
-    @XmlElement(name = "priority")
-    private String priority;
-    @XmlElement(name = "no-assembly")
-    private boolean noAssembly;
-    @XmlElement(name = "open-web-control")
-    private boolean openWebControl;
-    @XmlElement(name = "opencl-index")
-    private int openclIndex;
-    @XmlElement(name = "os-species")
-    private String osSpecies;
-    @XmlElement(name = "os-type")
-    private String osType;
-    @XmlElement(name = "passkey")
-    private String passkey;
-    @XmlElement(name = "password")
-    private String password;
-    @XmlElement(name = "pause-on-battery")
-    private boolean pauseOnBattery;
-    @XmlElement(name = "pause-on-start")
-    private boolean pauseOnStart;
-    @XmlElement(name = "paused")
-    private boolean paused;
-    @XmlElement(name = "pid")
-    private boolean pid;
-    @XmlElement(name = "pid-file")
-    private String pidFile;
-    @XmlElement(name = "power")
-    private String power;
-    @XmlElement(name = "private-key-file")
-    private String privateKeyFile;
-    @XmlElement(name = "project-key")
-    private int projectKey;
-    /**
-     * Proxy server address.
-     */
-    @XmlElement(name = "proxy")
-    private String proxy;
-    @XmlElement(name = "proxy-enable")
-    private boolean proxyEnable;
-    @XmlElement(name = "proxy-pass")
-    private String proxyPass;
-    @XmlElement(name = "proxy-user")
-    private String proxyUser;
-    @XmlElement(name = "respawn")
-    private boolean respawn;
-    @XmlElement(name = "run-as")
-    private String runAs;
-    @XmlElement(name = "script")
-    private String script;
-    @XmlElement(name = "service")
-    private boolean service;
-    /**
-     * @deprecated
-     */
-    @XmlElement(name = "service-description")
-    private String serviceDescription;
-    /**
-     * @deprecated
-     */
-    @XmlElement(name = "service-restart")
-    private boolean serviceRestart;
-    @XmlElement(name = "service-restart-delay")
-    /**
-     * @deprecated
-     */
-    private int serviceRestartDelay;
-    @XmlElement(name = "session-cookie")
-    private String sessionCookie;
-    @XmlElement(name = "session-lifetime")
-    private int sessionLifetime;
-    @XmlElement(name = "session-timeout")
-    private int sessionTimeout;
-    @XmlElement(name = "smp")
-    private boolean smp;
-    @XmlElement(name = "stack-traces")
-    private boolean stackTraces;
-    @XmlElement(name = "stall-detection-enabled")
-    private boolean stallDetectionEnabled;
-    @XmlElement(name = "stall-percent")
-    private int stallPercent;
-    @XmlElement(name = "stall-timeout")
-    private int stallTimeout;
-    @XmlElement(name = "team")
-    private int team;
-    @XmlElement(name = "threads")
-    private int threads;
-    @XmlElement(name = "user")
-    private String user;
-    @XmlElement(name = "verbosity")
-    private int verbosity;
-    @XmlElement(name = "web-allow")
-    private String webAllow;
-    @XmlElement(name = "web-deny")
-    private String webDeny;
-    @XmlElement(name = "web-enable")
-    private boolean webEnable;
-// </editor-fold>
 
-// <editor-fold desc="Accessors">
     /**
-     * Get the value of <code>allow</code>.
+     * Allow.
      *
      * @return the <code>allow</code> from <code>options</code>
      */
-    public final String getAllow() {
-        return allow;
-    }
+    @XmlElement
+    private String allow;
 
     /**
-     * Get the value of <code>assignment-servers</code>.
+     * Assignment servers.
      *
      * @return the <code>assignment-servers</code> from <code>options</code>
      */
-    public final String getAssignmentServers() {
-        return assignmentServers;
-    }
+    @XmlElement(name = "assignment-servers")
+    private String assignmentServers;
 
     /**
-     * Get the value of <code>auth-as</code>.
+     * Auth as.
      *
      * @return the <code>auth-as</code> from <code>options</code>
      */
-    public final boolean getAuthAs() {
-        return authAs;
-    }
+    @XmlElement(name = "auth-as")
+    private Boolean authAs;
 
     /**
-     * Get the value of <code>capture-directory</code>.
+     * Capture directory.
      *
      * @return the <code>capture-directory</code> from <code>options</code>
      */
-    public final String getCaptureDirectory() {
-        return captureDirectory;
-    }
+    @XmlElement(name = "capture-directory")
+    private String captureDirectory;
 
     /**
-     * Get the value of <code>capture-on-error</code>.
+     * Capture on error.
      *
      * @return the <code>capture-on-error</code> from <code>options</code>
      */
-    public final boolean getCaptureOnError() {
-        return captureOnError;
-    }
+    @XmlElement(name = "capture-on-error")
+    private Boolean captureOnError;
 
     /**
-     * Get the value of <code>capture-packets</code>.
+     * Capture packets.
      *
      * @return the <code>capture-packets</code> from <code>options</code>
      */
-    public final boolean getCapturePackets() {
-        return capturePackets;
-    }
+    @XmlElement(name = "capture-packets")
+    private Boolean capturePackets;
 
     /**
-     * Get the value of <code>capture-requests</code>.
+     * Capture requests.
      *
      * @return the <code>capture-requests</code> from <code>options</code>
      */
-    public final boolean getCaptureRequests() {
-        return captureRequests;
-    }
+    @XmlElement(name = "capture-requests")
+    private Boolean captureRequests;
 
     /**
-     * Get the value of <code>capture-responses</code>.
+     * Capture responses.
      *
      * @return the <code>capture-responses</code> from <code>options</code>
      */
-    public final boolean getCaptureResponses() {
-        return captureResponses;
-    }
+    @XmlElement(name = "capture-responses")
+    private Boolean captureResponses;
 
     /**
-     * Get the value of <code>capture-sockets</code>.
+     * Capture sockets.
      *
      * @return the <code>capture-sockets</code> from <code>options</code>
      */
-    public final boolean getCaptureSockets() {
-        return captureSockets;
-    }
+    @XmlElement(name = "capture-sockets")
+    private Boolean captureSockets;
 
     /**
-     * Get the value of <code>cause</code>.
+     * Cause.
      *
      * @return the <code>cause</code> from <code>options</code>
      */
-    public final String getCause() {
-        return cause;
-    }
+    @XmlElement
+    private String cause;
 
     /**
-     * Get the value of <code>certificate-file</code>.
+     * Certificate file.
      *
      * @return the <code>certificate-file</code> from <code>options</code>
      */
-    public final String getCertificateFile() {
-        return certificateFile;
-    }
+    @XmlElement(name = "certificate-file")
+    private String certificateFile;
 
     /**
-     * Get the value of <code>checkpoint</code>.
+     * Checkpoint.
      *
      * @return the <code>checkpoint</code> from <code>options</code>
      */
-    public final int getCheckpoint() {
-        return checkpoint;
-    }
+    @XmlElement
+    private int checkpoint;
 
     /**
-     * Get the value of <code>child</code>.
+     * Child.
      *
      * @return the <code>child</code> from <code>options</code>
      */
-    public final boolean getChild() {
-        return child;
-    }
+    @XmlElement
+    private Boolean child;
 
     /**
-     * Get the value of <code>client-subtype</code>.
+     * Client subtype.
      *
      * @return the <code>client-subtype</code> from <code>options</code>
      */
-    public final String getClientSubtype() {
-        return clientSubtype;
-    }
+    @XmlElement(name = "client-subtype")
+    private String clientSubtype;
 
     /**
-     * Get the value of <code>client-threads</code>.
+     * Client threads.
      *
      * @return the <code>client-threads</code> from <code>options</code>
      */
-    public final int getClientThreads() {
-        return clientThreads;
-    }
+    @XmlElement(name = "client-threads")
+    private int clientThreads;
 
     /**
-     * Get the value of <code>client-type</code>.
+     * Client type.
      *
      * @return the <code>client-type</code> from <code>options</code>
      */
-    public final String getClientType() {
-        return clientType;
-    }
+    @XmlElement(name = "client-type")
+    private String clientType;
 
     /**
-     * Get the value of <code>command-address</code>.
+     * Command address.
      *
      * @return the <code>command-address</code> from <code>options</code>
      */
-    public final String getCommandAddress() {
-        return commandAddress;
-    }
+    @XmlElement(name = "command-address")
+    private String commandAddress;
+
 
     /**
-     * Get the value of <code>command-allow</code>.
+     * Command allow.
      *
+     * @deprecated
      * @return the <code>command-allow</code> from <code>options</code>
      */
-    public final String getCommandAllow() {
-        return commandAllow;
-    }
+    @XmlElement(name = "command-allow")
+    private String commandAllow;
 
     /**
-     * Get the value of <code>command-allow-no-pass</code>.
+     * Command allow no pass.
      *
      * @return the <code>command-allow-no-pass</code> from <code>options</code>
      */
-    public final String getCommandAllowNoPass() {
-        return commandAllowNoPass;
-    }
+    @XmlElement(name = "command-allow-no-pass")
+    private String commandAllowNoPass;
 
     /**
-     * Get the value of <code>command-deny</code>.
+     * Command deny.
      *
+     * @deprecated
      * @return the <code>command-deny</code> from <code>options</code>
      */
-    public final String getCommandDeny() {
-        return commandDeny;
-    }
+    @XmlElement(name = "command-deny")
+    private String commandDeny;
 
     /**
-     * Get the value of <code>command-deny-no-pass</code>.
+     * Deny.
+     *
+     * @return the <code>deny</code> from <code>options</code>
+     */
+    @XmlElement
+    private String deny;
+
+    /**
+     * Command deny no pass.
      *
      * @return the <code>command-deny-no-pass</code> from <code>options</code>
      */
-    public final String getCommandDenyNoPass() {
-        return commandDenyNoPass;
-    }
+    @XmlElement(name = "command-deny-no-pass")
+    private String commandDenyNoPass;
 
     /**
-     * Get the value of <code>command-port</code>.
+     * Command enable.
+     *
+     * @return the <code>command-enable</code> from <code>options</code>
+     */
+    @XmlElement(name = "command-enable")
+    private Boolean commandEnable;
+
+    /**
+     * Command port.
      *
      * @return the <code>command-port</code> from <code>options</code>
      */
-    public final int getCommandPort() {
-        return commandPort;
-    }
+    @XmlElement(name = "command-port")
+    private int commandPort;
 
     /**
-     * Get the value of <code>config-rotate</code>.
+     * Config rotate.
      *
      * @return the <code>config-rotate</code> from <code>options</code>
      */
-    public final boolean getConfigRotate() {
-        return configRotate;
-    }
+    @XmlElement(name = "config-rotate")
+    private Boolean configRotate;
 
     /**
-     * Get the value of <code>config-rotate-dir</code>.
+     * Config rotate dir.
      *
      * @return the <code>config-rotate-dir</code> from <code>options</code>
      */
-    public final String getConfigRotateDir() {
-        return configRotateDir;
-    }
+    @XmlElement(name = "config-rotate-dir")
+    private String configRotateDir;
 
     /**
-     * Get the value of <code>config-rotate-max</code>.
+     * Config rotate max.
      *
      * @return the <code>config-rotate-max</code> from <code>options</code>
      */
-    public final int getConfigRotateMax() {
-        return configRotateMax;
-    }
+    @XmlElement(name = "config-rotate-max")
+    private int configRotateMax;
 
     /**
-     * Get the value of <code>core-dir</code>.
+     * Connection timeout.
+     *
+     * @return the <code>connection-timeout</code> from <code>options</code>
+     */
+    @XmlElement(name = "connection-timeout")
+    private int connectionTimeout;
+
+    /**
+     * Core dir.
      *
      * @return the <code>core-dir</code> from <code>options</code>
      */
-    public final String getCoreDir() {
-        return coreDir;
-    }
+    @XmlElement(name = "core-dir")
+    private String coreDir;
 
     /**
-     * Get the value of <code>core-key</code>.
+     * Core exec.
+     *
+     * @return the <code>core-exec</code> from <code>options</code>
+     */
+    @XmlElement(name = "core-exec")
+    private String coreExec;
+
+    /**
+     * Core key.
      *
      * @return the <code>core-key</code> from <code>options</code>
      */
-    public final String getCoreKey() {
-        return coreKey;
-    }
+    @XmlElement(name = "core-key")
+    private String coreKey;
 
     /**
-     * Get the value of <code>core-prep</code>.
+     * Core prep.
      *
      * @return the <code>core-prep</code> from <code>options</code>
      */
-    public final String getCorePrep() {
-        return corePrep;
-    }
+    @XmlElement(name = "core-prep")
+    private String corePrep;
 
     /**
-     * Get the value of <code>core-priority</code>.
+     * Core priority.
      *
      * @return the <code>core-priority</code> from <code>options</code>
      */
-    public final String getCorePriority() {
-        return corePriority;
-    }
+    @XmlElement(name = "core-priority")
+    private String corePriority;
 
     /**
-     * Get the value of <code>core-server</code>.
+     * Core server.
      *
      * @return the <code>core-server</code> from <code>options</code>
      */
-    public final String getCoreServer() {
-        return coreServer;
-    }
+    @XmlElement(name = "core-server")
+    private String coreServer;
 
     /**
-     * Get the value of <code>cpu-affinity</code>.
+     * Core wrapper exec.
+     *
+     * @return the <code>core-wrapper-exec</code> from <code>options</code>
+     */
+    @XmlElement(name = "core-wrapper-exec")
+    private String coreWrapperExec;
+
+    /**
+     * CPU affinity.
      *
      * @return the <code>cpu-affinity</code> from <code>options</code>
      */
-    public final boolean getCpuAffinity() {
-        return cpuAffinity;
-    }
+    @XmlElement(name = "cpu-affinity")
+    private Boolean cpuAffinity;
 
     /**
-     * Get the value of <code>cpu-species</code>.
+     * CPU species.
      *
      * @return the <code>cpu-species</code> from <code>options</code>
      */
-    public final String getCpuSpecies() {
-        return cpuSpecies;
-    }
+    @XmlElement(name = "cpu-species")
+    private String cpuSpecies;
 
     /**
-     * Get the value of <code>cpu-type</code>.
+     * CPU type.
      *
      * @return the <code>cpu-type</code> from <code>options</code>
      */
-    public final String getCpuType() {
-        return cpuType;
-    }
+    @XmlElement(name = "cpu-type")
+    private String cpuType;
 
     /**
-     * Get the value of <code>cpu-usage</code>.
+     * CPU usage.
      *
      * @return the <code>cpu-usage</code> from <code>options</code>
      */
-    public final int getCpuUsage() {
-        return cpuUsage;
-    }
+    @XmlElement(name = "cpu-usage")
+    private int cpuUsage;
 
     /**
-     * Get the value of <code>cpus</code>.
+     * CPUs.
      *
      * @return the <code>cpus</code> from <code>options</code>
      */
-    public final int getCpus() {
-        return cpus;
-    }
+    @XmlElement
+    private int cpus;
 
     /**
-     * Get the value of <code>cuda-index</code>.
+     * CRL file.
+     *
+     * @return the <code>crl-file</code> from <code>options</code>
+     */
+    @XmlElement(name = "crl-file")
+    private String crlFile;
+
+    /**
+     * CUDA index.
      *
      * @return the <code>cuda-index</code> from <code>options</code>
      */
-    public final int getCudaIndex() {
-        return cudaIndex;
-    }
+    @XmlElement(name = "cuda-index")
+    private int cudaIndex;
 
     /**
-     * Get the value of <code>cycle-rate</code>.
+     * Cycle rate.
      *
      * @return the <code>cycle-rate</code> from <code>options</code>
      */
-    public final int getCycleRate() {
-        return cycleRate;
-    }
+    @XmlElement(name = "cycle-rate")
+    private int cycleRate;
 
     /**
-     * Get the value of <code>cycles</code>.
+     * Cycles.
      *
      * @return the <code>cycles</code> from <code>options</code>
      */
-    public final int getCycles() {
-        return cycles;
-    }
+    @XmlElement
+    private int cycles;
 
     /**
-     * Get the value of <code>daemon</code>.
+     * Daemon.
      *
      * @return the <code>daemon</code> from <code>options</code>
      */
-    public final boolean getDaemon() {
-        return daemon;
-    }
+    @XmlElement
+    private Boolean daemon;
 
     /**
-     * Get the value of <code>data-directory</code>.
+     * Data directory.
      *
      * @return the <code>data-directory</code> from <code>options</code>
      */
-    public final String getDataDirectory() {
-        return dataDirectory;
-    }
+    @XmlElement(name = "data-directory")
+    private String dataDirectory;
 
     /**
-     * Get the value of <code>debug-sockets</code>.
+     * Debug sockets.
      *
      * @return the <code>debug-sockets</code> from <code>options</code>
      */
-    public final boolean getDebugSockets() {
-        return debugSockets;
-    }
+    @XmlElement(name = "debug-sockets")
+    private Boolean debugSockets;
 
     /**
-     * Get the value of <code>dump-after-deadline</code>.
+     * Disable sleep when active.
+     *
+     * @return the <code>disable-sleep-when-active</code> from <code>options</code>
+     */
+    @XmlElement(name = "disable-sleep-when-active")
+    private Boolean disableSleepWhenActive;
+
+    /**
+     * Dump after deadline.
      *
      * @return the <code>dump-after-deadline</code> from <code>options</code>
      */
-    public final boolean getDumpAfterDeadline() {
-        return dumpAfterDeadline;
-    }
+    @XmlElement(name = "dump-after-deadline")
+    private Boolean dumpAfterDeadline;
 
     /**
-     * Get the value of <code>eval</code>.
+     * Eval.
      *
      * @return the <code>eval</code> from <code>options</code>
      */
-    public final String getEval() {
-        return eval;
-    }
+    @XmlElement
+    private String eval;
 
     /**
-     * Get the value of <code>exception-locations</code>.
+     * Exception locations.
      *
      * @return the <code>exception-locations</code> from <code>options</code>
      */
-    public final boolean getExceptionLocations() {
-        return exceptionLocations;
-    }
+    @XmlElement(name = "exception-locations")
+    private Boolean exceptionLocations;
 
     /**
-     * Get the value of <code>exec-directory</code>.
+     * Exec directory.
      *
      * @return the <code>exec-directory</code> from <code>options</code>
      */
-    public final String getExecDirectory() {
-        return execDirectory;
-    }
+    @XmlElement(name = "exec-directory")
+    private String execDirectory;
 
     /**
-     * Get the value of <code>exit-when-done</code>.
+     * Exit when done.
      *
      * @return the <code>exit-when-done</code> from <code>options</code>
      */
-    public final boolean getExitWhenDone() {
-        return exitWhenDone;
-    }
+    @XmlElement(name = "exit-when-done")
+    private Boolean exitWhenDone;
 
     /**
-     * Get the value of <code>extra-core-args</code>.
+     * Extra core args.
      *
      * @return the <code>extra-core-args</code> from <code>options</code>
      */
-    public final String getExtraCoreArgs() {
-        return extraCoreArgs;
-    }
+    @XmlElement(name = "extra-core-args")
+    private String extraCoreArgs;
 
     /**
-     * Get the value of <code>force-ws</code>.
+     * Fold anon.
+     *
+     * @return the <code>fold-anon</code> from <code>options</code>
+     */
+    @XmlElement(name = "fold-anon")
+    private Boolean foldAnon;
+
+    /**
+     * Force WS.
      *
      * @return the <code>force-ws</code> from <code>options</code>
      */
-    public final boolean getForceWs() {
-        return forceWs;
-    }
+    @XmlElement(name = "force-ws")
+    private Boolean forceWs;
 
     /**
-     * Get the value of <code>gpu</code>.
+     * Fork.
+     *
+     * @return the <code>fork</code> from <code>options</code>
+     */
+    @XmlElement
+    private Boolean fork;
+
+    /**
+     * GPU.
      *
      * @return the <code>gpu</code> from <code>options</code>
      */
-    public final boolean getGpu() {
-        return gpu;
-    }
+    @XmlElement
+    private Boolean gpu;
 
     /**
-     * Get the value of <code>gpu-assignment-servers</code>.
+     * GPU assignment servers.
      *
      * @return the <code>gpu-assignment-servers</code> from <code>options</code>
      */
-    public final String getGpuAssignmentServers() {
-        return assignmentServers;
-    }
+    @XmlElement(name = "gpu-assignment-servers")
+    private String gpuAssignmentServers;
 
     /**
-     * Get the value of <code>gpu-index</code>.
+     * GPU index.
      *
      * @return the <code>gpu-index</code> from <code>options</code>
      */
-    public final String getGpuIndex() {
-        return gpuIndex;
-    }
+    @XmlElement(name = "gpu-index")
+    private String gpuIndex;
 
     /**
-     * Get the value of <code>gpu-usage</code>.
+     * GPU usage.
      *
      * @return the <code>gpu-usage</code> from <code>options</code>
      */
-    public final int getGpuUsage() {
-        return gpuUsage;
-    }
+    @XmlElement(name = "gpu-usage")
+    private int gpuUsage;
 
     /**
-     * Get the value of <code>log</code>.
+     * HTTP addresses.
+     *
+     * @return the <code>http-addresses</code> from <code>options</code>
+     */
+    @XmlElement(name = "http-addresses")
+    private String httpAddresses;
+
+    /**
+     * HTTPS addresses.
+     *
+     * @return the <code>https-addresses</code> from <code>options</code>
+     */
+    @XmlElement(name = "https-addresses")
+    private String httpsAddresses;
+
+    /**
+     * Idle.
+     *
+     * @return the <code>idle</code> from <code>options</code>
+     */
+    @XmlElement
+    private Boolean idle;
+
+    /**
+     * Log.
      *
      * @return the <code>log</code> from <code>options</code>
      */
-    public final String getLog() {
-        return log;
-    }
+    @XmlElement
+    private String log;
 
     /**
-     * Get the value of <code>log-color</code>.
+     * Log color.
      *
      * @return the <code>log-color</code> from <code>options</code>
      */
-    public final boolean getLogColor() {
-        return logColor;
-    }
+    @XmlElement(name = "log-color")
+    private Boolean logColor;
 
     /**
-     * Get the value of <code>log-crlf</code>.
+     * Log CRLF.
      *
      * @return the <code>log-crlf</code> from <code>options</code>
      */
-    public final boolean getLogCrlf() {
-        return logCrlf;
-    }
+    @XmlElement(name = "log-crlf")
+    private Boolean logCrlf;
 
     /**
-     * Get the value of <code>log-date</code>.
+     * Log date.
      *
      * @return the <code>log-date</code> from <code>options</code>
      */
-    public final boolean getLogDate() {
-        return logDate;
-    }
+    @XmlElement(name = "log-date")
+    private Boolean logDate;
 
     /**
-     * Get the value of <code>log-debug</code>.
+     * Log date periodically.
+     *
+     * @return the <code>log-date-periodically</code> from <code>options</code>
+     */
+    @XmlElement(name = "log-date-periodically")
+    private int logDatePeriodically;
+
+    /**
+     * Log debug.
      *
      * @return the <code>log-debug</code> from <code>options</code>
      */
-    public final boolean getLogDebug() {
-        return logDebug;
-    }
+    @XmlElement(name = "log-debug")
+    private Boolean logDebug;
 
     /**
-     * Get the value of <code>log-domain</code>.
+     * Log domain.
      *
      * @return the <code>log-domain</code> from <code>options</code>
      */
-    public final boolean getLogDomain() {
-        return logDomain;
-    }
+    @XmlElement(name = "log-domain")
+    private Boolean logDomain;
 
     /**
-     * Get the value of <code>log-domain-levels</code>.
+     * Log domain levels.
      *
      * @return the <code>log-domain-levels</code> from <code>options</code>
      */
-    public final boolean getLogDomainLevels() {
-        return logDomainLevels;
-    }
+    @XmlElement(name = "log-domain-levels")
+    private Boolean logDomainLevels;
 
     /**
-     * Get the value of <code>log-header</code>.
+     * Log header.
      *
      * @return the <code>log-header</code> from <code>options</code>
      */
-    public final boolean getLogHeader() {
-        return logHeader;
-    }
+    @XmlElement(name = "log-header")
+    private Boolean logHeader;
 
     /**
-     * Get the value of <code>log-level</code>.
+     * Log level.
      *
      * @return the <code>log-level</code> from <code>options</code>
      */
-    public final boolean getLogLevel() {
-        return logLevel;
-    }
+    @XmlElement(name = "log-level")
+    private Boolean logLevel;
 
     /**
-     * Get the value of <code>log-no-info-header</code>.
+     * Log no info header.
      *
      * @return the <code>log-no-info-header</code> from <code>options</code>
      */
-    public final boolean getLogNoInfoHeader() {
-        return logNoInfoHeader;
-    }
+    @XmlElement(name = "log-no-info-header")
+    private Boolean logNoInfoHeader;
 
     /**
-     * Get the value of <code>log-redirect</code>.
+     * Log redirect.
      *
      * @return the <code>log-redirect</code> from <code>options</code>
      */
-    public final boolean getLogRedirect() {
-        return logRedirect;
-    }
+    @XmlElement(name = "log-redirect")
+    private Boolean logRedirect;
 
     /**
-     * Get the value of <code>log-rotate</code>.
+     * Log rotate.
      *
      * @return the <code>log-rotate</code> from <code>options</code>
      */
-    public final boolean getLogRotate() {
-        return logRotate;
-    }
+    @XmlElement(name = "log-rotate")
+    private Boolean logRotate;
 
     /**
-     * Get the value of <code>log-rotate-dir</code>.
+     * Log rotate dir.
      *
      * @return the <code>log-rotate-dir</code> from <code>options</code>
      */
-    public final String getLogRotateDir() {
-        return logRotateDir;
-    }
+    @XmlElement(name = "log-rotate-dir")
+    private String logRotateDir;
 
     /**
-     * Get the value of <code>log-rotate-max</code>.
+     * Log rotate max.
      *
      * @return the <code>log-rotate-max</code> from <code>options</code>
      */
-    public final int getLogRotateMax() {
-        return logRotateMax;
-    }
+    @XmlElement(name = "log-rotate-max")
+    private int logRotateMax;
 
     /**
-     * Get the value of <code>log-short-level</code>.
+     * Log short level.
      *
      * @return the <code>log-short-level</code> from <code>options</code>
      */
-    public final boolean getLogShortLevel() {
-        return logShortLevel;
-    }
+    @XmlElement(name = "log-short-level")
+    private Boolean logShortLevel;
 
     /**
-     * Get the value of <code>log-simple-domains</code>.
+     * Log simple domains.
      *
      * @return the <code>log-simple-domains</code> from <code>options</code>
      */
-    public final boolean getLogSimpleDomains() {
-        return logSimpleDomains;
-    }
+    @XmlElement(name = "log-simple-domains")
+    private Boolean logSimpleDomains;
 
     /**
-     * Get the value of <code>log-thread-id</code>.
+     * Log thread id.
      *
      * @return the <code>log-thread-id</code> from <code>options</code>
      */
-    public final boolean getLogThreadId() {
-        return logThreadId;
-    }
+    @XmlElement(name = "log-thread-id")
+    private Boolean logThreadId;
 
     /**
-     * Get the value of <code>log-time</code>.
+     * Log thread prefix.
+     *
+     * @return the <code>log-thread-prefix</code> from <code>options</code>
+     */
+    @XmlElement(name = "log-thread-prefix")
+    private Boolean logThreadPrefix;
+
+    /**
+     * Log time.
      *
      * @return the <code>log-time</code> from <code>options</code>
      */
-    public final boolean getLogTime() {
-        return logTime;
-    }
+    @XmlElement(name = "log-time")
+    private Boolean logTime;
 
     /**
-     * Get the value of <code>log-to-screen</code>.
+     * Log to screen.
      *
      * @return the <code>log-to-screen</code> from <code>options</code>
      */
-    public final boolean getLogToScreen() {
-        return logToScreen;
-    }
+    @XmlElement(name = "log-to-screen")
+    private Boolean logToScreen;
 
     /**
-     * Get the value of <code>log-truncate</code>.
+     * Log truncate.
      *
      * @return the <code>log-truncate</code> from <code>options</code>
      */
-    public final boolean getLogTruncate() {
-        return logTruncate;
-    }
+    @XmlElement(name = "log-truncate")
+    private Boolean logTruncate;
 
     /**
-     * Get the value of <code>machine-id</code>.
+     * Machine id.
      *
      * @return the <code>machine-id</code> from <code>options</code>
      */
-    public final int getMachineId() {
-        return machineId;
-    }
+    @XmlElement(name = "machine-id")
+    private int machineId;
 
     /**
-     * Get the value of <code>max-delay</code>.
+     * Max delay.
      *
+     * @deprecated
      * @return the <code>max-delay</code> from <code>options</code>
      */
-    public final int getMaxDelay() {
-        return maxDelay;
-    }
+    @XmlElement(name = "max-delay")
+    private int maxDelay;
 
     /**
-     * Get the value of <code>max-packet-size</code>.
+     * Max connect time.
+     *
+     * @return the <code>max-connect-time</code> from <code>options</code>
+     */
+    @XmlElement(name = "max-connect-time")
+    private int maxConnectTime;
+
+    /**
+     * Max connections.
+     *
+     * @return the <code>max-connections</code> from <code>options</code>
+     */
+    @XmlElement(name = "max-connections")
+    private int maxConnections;
+
+    /**
+     * Max packet size
      *
      * @return the <code>max-packet-size</code> from <code>options</code>
      */
-    public final String getMaxPacketSize() {
-        return maxPacketSize;
-    }
+    @XmlElement(name = "max-packet-size")
+    private String maxPacketSize;
 
     /**
-     * Get the value of <code>max-queue</code>.
+     * Max queue.
      *
      * @return the <code>max-queue</code> from <code>options</code>
      */
-    public final int getMaxQueue() {
-        return maxQueue;
-    }
+    @XmlElement(name = "max-queue")
+    private int maxQueue;
 
     /**
-     * Get the value of <code>max-shutdown-wait</code>.
+     * Max request length.
+     *
+     * @return the <code>max-request-length</code> from <code>options</code>
+     */
+    @XmlElement(name = "max-request-length")
+    private int maxRequestLength;
+
+    /**
+     * Max shutdown wait.
      *
      * @return the <code>max-shutdown-wait</code> from <code>options</code>
      */
-    public final int getMaxShutdownWait() {
-        return maxShutdownWait;
-    }
+    @XmlElement(name = "max-shutdown-wait")
+    private int maxShutdownWait;
 
     /**
-     * Get the value of <code>max-slot-errors</code>.
+     * Max slot errors.
      *
      * @return the <code>max-slot-errors</code> from <code>options</code>
      */
-    public final int getMaxSlotErrors() {
-        return maxSlotErrors;
-    }
+    @XmlElement(name = "max-slot-errors")
+    private int maxSlotErrors;
 
     /**
-     * Get the value of <code>max-unit-errors</code>.
+     * Max unit errors.
      *
      * @return the <code>max-unit-errors</code> from <code>options</code>
      */
-    public final int getMaxUnitErrors() {
-        return maxUnitErrors;
-    }
+    @XmlElement(name = "max-unit-errors")
+    private int maxUnitErrors;
 
     /**
-     * Get the value of <code>max-units</code>.
+     * Max units.
      *
      * @return the <code>max-units</code> from <code>options</code>
      */
-    public final int getMaxUnits() {
-        return maxUnits;
-    }
+    @XmlElement(name = "max-units")
+    private int maxUnits;
 
     /**
-     * Get the value of <code>memory</code>.
+     * Memory.
      *
      * @return the <code>memory</code> from <code>options</code>
      */
-    public final String getMemory() {
-        return memory;
-    }
+    @XmlElement
+    private String memory;
 
     /**
-     * Get the value of <code>min-delay</code>.
+     * Min delay.
      *
+     * @deprecated
      * @return the <code>min-delay</code> from <code>options</code>
      */
-    public final int getMinDelay() {
-        return minDelay;
-    }
+    @XmlElement(name = "min-delay")
+    private int minDelay;
 
     /**
-     * Get the value of <code>next-unit-percentage</code>.
+     * Min connect time.
+     *
+     * @return the <code>min-connect-time</code> from <code>options</code>
+     */
+    @XmlElement(name = "min-connect-time")
+    private int minConnectTime;
+
+    /**
+     * Next unit percentage.
      *
      * @return the <code>next-unit-percentage</code> from <code>options</code>
      */
-    public final int getNextUnitPercentage() {
-        return nextUnitPercentage;
-    }
+    @XmlElement(name = "next-unit-percentage")
+    private int nextUnitPercentage;
 
     /**
-     * Get the value of <code>priority</code>.
+     * Priority.
      *
      * @return the <code>priority</code> from <code>options</code>
      */
-    public final String getPriority() {
-        return priority;
-    }
+    @XmlElement
+    private String priority;
 
     /**
-     * Get the value of <code>no-assembly</code>.
+     * No assembly.
      *
      * @return the <code>no-assembly</code> from <code>options</code>
      */
-    public final boolean getNoAssembly() {
-        return noAssembly;
-    }
+    @XmlElement(name = "no-assembly")
+    private Boolean noAssembly;
 
     /**
-     * Get the value of <code>opencl-index</code>.
+     * Open web control.
+     *
+     * @return the <code>open-web-control</code> from <code>options</code>
+     */
+    @XmlElement(name = "open-web-control")
+    private Boolean openWebControl;
+
+    /**
+     * OpenCL Index.
      *
      * @return the <code>opencl-index</code> from <code>options</code>
      */
-    public final int getOpenclIndex() {
-        return openclIndex;
-    }
+    @XmlElement(name = "opencl-index")
+    private int openclIndex;
 
     /**
-     * Get the value of <code>os-species</code>.
+     * OS Species.
      *
      * @return the <code>os-species</code> from <code>options</code>
      */
-    public final String getOsSpecies() {
-        return osSpecies;
-    }
+    @XmlElement(name = "os-species")
+    private String osSpecies;
 
     /**
-     * Get the value of <code>os-type</code>.
+     * OS type.
      *
      * @return the <code>os-type</code> from <code>options</code>
      */
-    public final String getOsType() {
-        return osType;
-    }
+    @XmlElement(name = "os-type")
+    private String osType;
 
     /**
-     * Get the value of <code>passkey</code>.
+     * Passkey.
      *
      * @return the <code>passkey</code> from <code>options</code>
      */
-    public final String getPasskey() {
-        return passkey;
-    }
+    @XmlElement
+    private String passkey;
 
     /**
-     * Get the value of <code>password</code>.
+     * Password.
      *
      * @return the <code>password</code> from <code>options</code>
      */
-    public final String getPassword() {
-        return password;
-    }
+    @XmlElement
+    private String password;
 
     /**
-     * Get the value of <code>pause-on-battery</code>.
+     * Pause on battery.
      *
      * @return the <code>pause-on-battery</code> from <code>options</code>
      */
-    public final boolean getPauseOnBattery() {
-        return pauseOnBattery;
-    }
+    @XmlElement(name = "pause-on-battery")
+    private Boolean pauseOnBattery;
 
     /**
-     * Get the value of <code>pause-on-start</code>.
+     * Pause on start.
      *
      * @return the <code>pause-on-start</code> from <code>options</code>
      */
-    public final boolean getPauseOnStart() {
-        return pauseOnStart;
-    }
+    @XmlElement(name = "pause-on-start")
+    private Boolean pauseOnStart;
 
     /**
-     * Get the value of <code>pid</code>.
+     * Paused.
+     *
+     * @return the <code>paused</code> from <code>options</code>
+     */
+    @XmlElement
+    private Boolean paused;
+
+    /**
+     * PID.
      *
      * @return the <code>pid</code> from <code>options</code>
      */
-    public final boolean getPid() {
-        return pid;
-    }
+    @XmlElement
+    private Boolean pid;
 
     /**
-     * Get the value of <code>pid-file</code>.
+     * PID file.
      *
      * @return the <code>pid-file</code> from <code>options</code>
      */
-    public final String getPidFile() {
-        return pidFile;
-    }
+    @XmlElement(name = "pid-file")
+    private String pidFile;
 
     /**
-     * Get the value of <code>project-key</code>.
+     * Power.
+     *
+     * @return the <code>power</code> from <code>options</code>
+     */
+    @XmlElement
+    private String power;
+
+    /**
+     * Private key file.
+     *
+     * @return the <code>private-key-file</code> from <code>options</code>
+     */
+    @XmlElement(name = "private-key-file")
+    private String privateKeyFile;
+
+    /**
+     * Project key.
      *
      * @return the <code>project-key</code> from <code>options</code>
      */
-    public final int getProjectKey() {
-        return projectKey;
-    }
+    @XmlElement(name = "project-key")
+    private int projectKey;
 
     /**
-     * Get the value of <code>proxy</code>.
+     * Proxy server address.
      *
      * @return the <code>proxy</code> from <code>options</code>
      */
-    public final String getProxy() {
-        return proxy;
-    }
+    @XmlElement
+    private String proxy;
 
     /**
-     * Get the value of <code>proxy-enable</code>.
+     * Proxy enable.
      *
      * @return the <code>proxy-enable</code> from <code>options</code>
      */
-    public final boolean getProxyEnable() {
-        return proxyEnable;
-    }
+    @XmlElement(name = "proxy-enable")
+    private Boolean proxyEnable;
 
     /**
-     * Get the value of <code>proxy-pass</code>.
+     * Proxy pass.
      *
      * @return the <code>proxy-pass</code> from <code>options</code>
      */
-    public final String getProxyPass() {
-        return proxyPass;
-    }
+    @XmlElement(name = "proxy-pass")
+    private String proxyPass;
 
     /**
-     * Get the value of <code>proxy-user</code>.
+     * Proxy user.
      *
      * @return the <code>proxy-user</code> from <code>options</code>
      */
-    public final String getProxyUser() {
-        return proxyUser;
-    }
+    @XmlElement(name = "proxy-user")
+    private String proxyUser;
 
     /**
-     * Get the value of <code>respawn</code>.
+     * Respawn.
      *
      * @return the <code>respawn</code> from <code>options</code>
      */
-    public final boolean getRespawn() {
-        return respawn;
-    }
+    @XmlElement
+    private Boolean respawn;
 
     /**
-     * Get the value of <code>script</code>.
+     * Run as.
+     *
+     * @return the <code>run-as</code> from <code>options</code>
+     */
+    @XmlElement(name = "run-as")
+    private String runAs;
+
+    /**
+     * Script.
      *
      * @return the <code>script</code> from <code>options</code>
      */
-    public final String getScript() {
-        return script;
-    }
+    @XmlElement
+    private String script;
 
     /**
-     * Get the value of <code>service</code>.
+     * Service.
      *
      * @return the <code>service</code> from <code>options</code>
      */
-    public final boolean getService() {
-        return service;
-    }
+    @XmlElement
+    private Boolean service;
 
     /**
-     * Get the value of <code>service-description</code>.
+     * Service description.
      *
+     * @deprecated
      * @return the <code>service-description</code> from <code>options</code>
      */
-    public final String getServiceDescription() {
-        return serviceDescription;
-    }
+    @XmlElement(name = "service-description")
+    private String serviceDescription;
 
     /**
-     * Get the value of <code>service-restart</code>.
+     * Service restart.
      *
+     * @deprecated
      * @return the <code>service-restart</code> from <code>options</code>
      */
-    public final boolean getServiceRestart() {
-        return serviceRestart;
-    }
+    @XmlElement(name = "service-restart")
+    private Boolean serviceRestart;
 
     /**
-     * Get the value of <code>service-restart-delay</code>.
+     * Service restart delay.
      *
+     * @deprecated
      * @return the <code>service-restart-delay</code> from <code>options</code>
      */
-    public final int getServiceRestartDelay() {
-        return serviceRestartDelay;
-    }
+    @XmlElement(name = "service-restart-delay")
+    private int serviceRestartDelay;
 
     /**
-     * Get the value of <code>smp</code>.
+     * Session cookie.
+     *
+     * @return the <code>session-cookie</code> from <code>options</code>
+     */
+    @XmlElement(name = "session-cookie")
+    private String sessionCookie;
+
+    /**
+     * Session lifetime.
+     *
+     * @return the <code>session-lifetime</code> from <code>options</code>
+     */
+    @XmlElement(name = "session-lifetime")
+    private int sessionLifetime;
+
+    /**
+     * Session timeout.
+     *
+     * @return the <code>session-timeout</code> from <code>options</code>
+     */
+    @XmlElement(name = "session-timeout")
+    private int sessionTimeout;
+
+    /**
+     * SMP.
      *
      * @return the <code>smp</code> from <code>options</code>
      */
-    public final boolean getSmp() {
-        return smp;
-    }
+    @XmlElement
+    private Boolean smp;
 
     /**
-     * Get the value of <code>stack-traces</code>.
+     * Stack traces.
      *
      * @return the <code>stack-traces</code> from <code>options</code>
      */
-    public final boolean getStackTraces() {
-        return stackTraces;
-    }
+    @XmlElement(name = "stack-traces")
+    private Boolean stackTraces;
 
     /**
-     * Get the value of <code>team</code>.
+     * Stall detection enabled.
+     *
+     * @return the <code>stall-detection-enabled</code> from <code>options</code>
+     */
+    @XmlElement(name = "stall-detection-enabled")
+    private Boolean stallDetectionEnabled;
+
+    /**
+     * Stall percent.
+     *
+     * @return the <code>stall-percent</code> from <code>options</code>
+     */
+    @XmlElement(name = "stall-percent")
+    private int stallPercent;
+
+    /**
+     * Stall timeout.
+     *
+     * @return the <code>stall-timeout</code> from <code>options</code>
+     */
+    @XmlElement(name = "stall-timeout")
+    private int stallTimeout;
+
+    /**
+     * Team.
      *
      * @return the <code>team</code> from <code>options</code>
      */
-    public final int getTeam() {
-        return team;
-    }
+    @XmlElement
+    private int team;
 
     /**
-     * Get the value of <code>threads</code>.
+     * Threads.
      *
      * @return the <code>threads</code> from <code>options</code>
      */
-    public final int getThreads() {
-        return threads;
-    }
+    @XmlElement
+    private int threads;
 
     /**
-     * Get the value of <code>user</code>.
+     * User.
      *
      * @return the <code>user</code> from <code>options</code>
      */
-    public final String getUser() {
-        return user;
-    }
+    @XmlElement
+    private String user;
 
     /**
-     * Get the value of <code>verbosity</code>.
+     * Verbosity.
      *
      * @return the <code>verbosity</code> from <code>options</code>
      */
-    public final int getVerbosity() {
-        return verbosity;
-    }
-// </editor-fold>
+    @XmlElement
+    private int verbosity;
+
+    /**
+     * Web allow.
+     *
+     * @return the <code>web-allow</code> from <code>options</code>
+     */
+    @XmlElement(name = "web-allow")
+    private String webAllow;
+
+    /**
+     * Web deny.
+     *
+     * @return the <code>web-deny</code> from <code>options</code>
+     */
+    @XmlElement(name = "web-deny")
+    private String webDeny;
+
+    /**
+     * Web enable.
+     *
+     * @return the <code>web-enable</code> from <code>options</code>
+     */
+    @XmlElement(name = "web-enable")
+    private Boolean webEnable;
 }

@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,8 +21,12 @@
 package info.mikethomas.jfold.slot;
 
 import java.io.Serializable;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import lombok.Getter;
+import lombok.ToString;
 
 /**
  * <p>Slot class.</p>
@@ -30,100 +34,56 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version 7.4.4
  */
+@Getter
+@ToString
 @XmlRootElement(name = "slot")
 public class Slot implements Serializable {
-// <editor-fold defaultstate="collapsed" desc="Member Variables">
+
     /**
      * Identifier.
-     */
-    @XmlElement(name = "id")
-    private String id;
-    /**
-     * Status.
-     */
-    @XmlElement(name = "status")
-    private String status;
-    /**
-     * Description.
-     */
-    @XmlElement(name = "description")
-    private String description;
-    /**
-     * SlotOptions.
-     */
-    @XmlElement(name = "options")
-    private SlotOptions options;
-    /**
-     * Reason.
-     */
-    @XmlElement(name = "reason")
-    private String reason;
-    /**
-     * Idle.
-     */
-    @XmlElement(name = "idle")
-    private boolean idle;
-// </editor-fold>
-
-// <editor-fold desc="Accessors">
-    /**
-     * Get the value of <code>id</code>.
      *
      * @return the <code>id</code> from <code>slot-info</code>
      */
-    public final String getId() {
-        return id;
-    }
+    @XmlElement
+    private String id;
 
     /**
-     * Get the value of <code>status</code>.
+     * Status.
      *
      * @return the <code>status</code> from <code>slot-info</code>
      */
-    public final String getStatus() {
-        return status;
-    }
+    @XmlElement
+    private String status;
 
     /**
-     * Get the value of <code>description</code>.
+     * Description.
      *
      * @return the <code>description</code> from <code>slot-info</code>
      */
-    public final String getDescription() {
-        return description;
-    }
+    @XmlElement
+    private String description;
 
     /**
-     * Get the value of <code>options</code>.
+     * Slot Options.
      *
      * @return the <code>options</code> from <code>slot-info</code>
      */
-    public final SlotOptions getOptions() {
-        return options;
-    }
+    @XmlElement
+    private SlotOptions options;
 
     /**
-     * Get the value of <code>reason</code>.
+     * Reason.
      *
      * @return the <code>reason</code> from <code>slot-info</code>
      */
-    public final String getReason() {
-        return reason;
-    }
+    @XmlElement
+    private String reason;
 
     /**
-     * Get the value of <code>idle</code>.
+     * Idle.
      *
      * @return the <code>idle</code> from <code>slot-info</code>
      */
-    public final boolean getIdle() {
-        return idle;
-    }
-// </editor-fold>
-
-    /** {@inheritDoc} */
-    @Override
-    public final String toString() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    @XmlElement
+    private Boolean idle;
 }

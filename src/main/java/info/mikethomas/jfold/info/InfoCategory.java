@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,13 +20,19 @@
  */
 package info.mikethomas.jfold.info;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
  * <p>InfoCategory class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version $Id: $Id
+ * @version 7.4.4
  */
+@AllArgsConstructor
+@Getter
 public enum InfoCategory {
+
 // <editor-fold defaultstate="collapsed" desc="Info Categories">
 
     /** Represents <code>Folding@home Client</code> category. */
@@ -42,18 +48,10 @@ public enum InfoCategory {
 
     /**
      * Info Category Key.
+     *
+     * @return String key.
      */
     private final String key;
-
-    /**
-     * Constructs an instance of <code>InfoCategory</code> with the specified
-     * category key.
-     *
-     * @param categoryKey the category key.
-     */
-    InfoCategory(final String categoryKey) {
-        this.key = categoryKey;
-    }
 
     /** {@inheritDoc} */
     @Override

@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,12 +20,12 @@
  */
 package info.mikethomas.jfold.slot;
 
-import info.mikethomas.jfold.slot.SlotOptions;
 import info.mikethomas.jfold.Connection;
 import info.mikethomas.jfold.MockConnection;
 import info.mikethomas.jfold.exceptions.SlotOptionsException;
+
 import java.io.IOException;
-import org.junit.AfterClass;
+
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -34,13 +34,13 @@ import org.junit.Test;
  * <p>SlotOptionsTest class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version $Id: $Id
- * @since 1.0
+ * @version 7.4.4
  */
 public class SlotOptionsTest {
-    
+
+    /** Constant <code>instance</code> */
     private static SlotOptions instance;
-    
+
     /**
      * <p>setUpClass.</p>
      *
@@ -51,13 +51,6 @@ public class SlotOptionsTest {
     public static void setUpClass() throws IOException, SlotOptionsException {
         Connection connection = new MockConnection();
         instance = connection.slotOptions(0);
-    }
-    
-    /**
-     * <p>tearDownClass.</p>
-     */
-    @AfterClass
-    public static void tearDownClass() {
     }
 
     /**
@@ -121,9 +114,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetNextUnitPercentage() {
         System.out.println("getNextUnitPercentage");
-        int expResult = 0;
-        int result = instance.getNextUnitPercentage();
-        assertEquals(expResult, result);
+        assertNull(instance.getNextUnitPercentage());
     }
 
     /**
@@ -132,9 +123,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetMaxUnits() {
         System.out.println("getMaxUnits");
-        int expResult = 0;
-        int result = instance.getMaxUnits();
-        assertEquals(expResult, result);
+        assertNull(instance.getMaxUnits());
     }
 
     /**
@@ -143,9 +132,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetCheckpoint() {
         System.out.println("getCheckpoint");
-        int expResult = 0;
-        int result = instance.getCheckpoint();
-        assertEquals(expResult, result);
+        assertNull(instance.getCheckpoint());
     }
 
     /**
@@ -154,9 +141,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetPauseOnStart() {
         System.out.println("getPauseOnStart");
-        boolean expResult = false;
-        boolean result = instance.getPauseOnStart();
-        assertEquals(expResult, result);
+        assertNull(instance.getPauseOnStart());
     }
 
     /**
@@ -187,17 +172,21 @@ public class SlotOptionsTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        String expResult = "clientType = null" +
-                           "\nclientSubtype = null" +
-                           "\nmachineId = 0" +
-                           "\nmaxPacketSize = null" +
-                           "\ncorePriority = null" +
-                           "\nnextUnitPercentage = 0" +
-                           "\nmaxUnits = 0" +
-                           "\ncheckpoint = 0" +
-                           "\npauseOnStart = false" +
-                           "\ngpuVendorId = null" +
-                           "\ngpuDeviceId = null";
+        String expResult = "SlotOptions("
+                + "clientType=null, "
+                + "clientSubtype=null, "
+                + "machineId=0, "
+                + "maxPacketSize=null, "
+                + "corePriority=null, "
+                + "nextUnitPercentage=null, "
+                + "maxUnits=null, "
+                + "checkpoint=null, "
+                + "pauseOnStart=null, "
+                + "gpuVendorId=null, "
+                + "gpuDeviceId=null, "
+                + "cpus=-1, "
+                + "idle=false, "
+                + "paused=false)";
         String result = instance.toString();
         assertEquals(expResult, result);
     }

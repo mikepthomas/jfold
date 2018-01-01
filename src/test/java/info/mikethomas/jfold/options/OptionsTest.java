@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,12 +20,12 @@
  */
 package info.mikethomas.jfold.options;
 
-import info.mikethomas.jfold.options.Options;
 import info.mikethomas.jfold.Connection;
 import info.mikethomas.jfold.MockConnection;
 import info.mikethomas.jfold.exceptions.OptionsException;
+
 import java.io.IOException;
-import org.junit.AfterClass;
+
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -34,14 +34,13 @@ import org.junit.Test;
  * <p>OptionsTest class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version $Id: $Id
- * @since 1.0
+ * @version 7.4.4
  */
 public class OptionsTest {
-    
+
     /** Constant <code>instance</code> */
     public static Options instance;
-    
+
     /**
      * <p>setUpClass.</p>
      *
@@ -52,13 +51,6 @@ public class OptionsTest {
     public static void setUpClass() throws IOException, OptionsException {
         Connection connection = new MockConnection();
         instance = connection.options();
-    }
-    
-    /**
-     * <p>tearDownClass.</p>
-     */
-    @AfterClass
-    public static void tearDownClass() {
     }
 
     /**
@@ -485,9 +477,7 @@ public class OptionsTest {
     @Test
     public void testGetForceWs() {
         System.out.println("getForceWs");
-        boolean expResult = false;
-        boolean result = instance.getForceWs();
-        assertEquals(expResult, result);
+        assertNull(instance.getForceWs());
     }
 
     /**
@@ -507,7 +497,7 @@ public class OptionsTest {
     @Test
     public void testGetGpuAssignmentServers() {
         System.out.println("getGpuAssignmentServers");
-        String expResult = "assign3.stanford.edu:8080 assign4.stanford.edu:80";
+        String expResult = "assign-GPU.stanford.edu:80 assign-GPU2.stanford.edu:80";
         String result = instance.getGpuAssignmentServers();
         assertEquals(expResult, result);
     }
@@ -606,9 +596,7 @@ public class OptionsTest {
     @Test
     public void testGetLogDomainLevels() {
         System.out.println("getLogDomainLevels");
-        boolean expResult = false;
-        boolean result = instance.getLogDomainLevels();
-        assertEquals(expResult, result);
+        assertNull(instance.getLogDomainLevels());
     }
 
     /**
@@ -1101,9 +1089,7 @@ public class OptionsTest {
     @Test
     public void testGetServiceRestart() {
         System.out.println("getServiceRestart");
-        boolean expResult = false;
-        boolean result = instance.getServiceRestart();
-        assertEquals(expResult, result);
+        assertNull(instance.getServiceRestart());
     }
 
     /**

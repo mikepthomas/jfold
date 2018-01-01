@@ -3,7 +3,7 @@
   #%L
   This file is part of jFold.
   %%
-  Copyright (C) 2012 - 2017 Mike Thomas <mikepthomas@outlook.com>
+  Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
   %%
   jFold is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -22,7 +22,8 @@
 <document outputName="${project.name}"
           xmlns="http://maven.apache.org/DOCUMENT/1.0.1"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/DOCUMENT/1.0.1 http://maven.apache.org/xsd/document-1.0.1.xsd">
+          xsi:schemaLocation="http://maven.apache.org/DOCUMENT/1.0.1
+                              http://maven.apache.org/xsd/document-1.0.1.xsd">
     <meta>
         <title>${project.name}</title>
         <author>${project.developers[0].name}</author>
@@ -40,6 +41,6 @@
         <projectName>${project.name}</projectName>
 
         <companyName>${project.developers[0].name}</companyName>
-        <companyLogo>http://www.stanford.edu/group/pandegroup/title4.jpg</companyLogo>
+        <companyLogo>http://stanford.edu/group/pandegroup/folding/FAHlogoML.jpg</companyLogo>
     </cover>
 </document>
