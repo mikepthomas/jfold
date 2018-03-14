@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SimulationInfo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jFold</a> &gt; <a href="index.source.html" class="el_package">info.mikethomas.jfold.simulation</a> &gt; <span class="el_source">SimulationInfo.java</span></div><h1>SimulationInfo.java</h1><pre class="source lang-java linenums">/*
+ * #%L
+ * This file is part of jFold.
+ * %%
+ * Copyright (C) 2012 - 2018 Mike Thomas &lt;mikepthomas@outlook.com&gt;
+ * %%
+ * jFold is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * %
+ * jFold is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * %
+ * You should have received a copy of the GNU General Public License
+ * along with jFold.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ * #L%
+ */
+package info.mikethomas.jfold.simulation;
+
+import info.mikethomas.jfold.util.DateAdapter;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import lombok.Getter;
+import lombok.ToString;
+
+/**
+ * &lt;p&gt;SimulationInfo class.&lt;/p&gt;
+ *
+ * @author Michael Thomas (mikepthomas@outlook.com)
+ * @version 7.4.4
+ */
+@Getter
+<span class="fc" id="L42">@ToString</span>
+@XmlRootElement(name = &quot;simulation-info&quot;)
+<span class="fc" id="L44">public class SimulationInfo implements Serializable {</span>
+
+    /**
+     * User name.
+     *
+     * @return the &lt;code&gt;user&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L52">    private String user;</span>
+
+    /**
+     * Team name.
+     *
+     * @return the &lt;code&gt;team&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L60">    private long team;</span>
+
+    /**
+     * Project this Simulation belongs to.
+     *
+     * @return the &lt;code&gt;project&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L68">    private int project;</span>
+
+    /**
+     * Run of the Project.
+     *
+     * @return the &lt;code&gt;run&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L76">    private int run;</span>
+
+    /**
+     * Clone of the Project.
+     *
+     * @return the &lt;code&gt;clone&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L84">    private int clone;</span>
+
+    /**
+     * Generation of the Project.
+     *
+     * @return the &lt;code&gt;gen&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L92">    private int gen;</span>
+
+    /**
+     * Core type.
+     *
+     * @return the &lt;code&gt;core_type&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;core_type&quot;)
+<span class="fc" id="L100">    private int coreType;</span>
+
+    /**
+     * Core identifier.
+     *
+     * @return the &lt;code&gt;core&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L108">    private String core;</span>
+
+    /**
+     * Project Description.
+     *
+     * @deprecated
+     * @return the &lt;code&gt;description&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L117">    private String description;</span>
+
+    /**
+     * Total number of iterations in this Simulation.
+     *
+     * @return the &lt;code&gt;total_iterations&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;total_iterations&quot;)
+<span class="fc" id="L125">    private int totalIterations;</span>
+
+    /**
+     * Number of iterations completed.
+     *
+     * @return the &lt;code&gt;iterations_done&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;iterations_done&quot;)
+<span class="fc" id="L133">    private int iterationsDone;</span>
+
+    /**
+     * Energy.
+     *
+     * @return the &lt;code&gt;energy&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L141">    private int energy;</span>
+
+    /**
+     * Temperature.
+     *
+     * @return the &lt;code&gt;temperature&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L149">    private int temperature;</span>
+
+    /**
+     * Time and date this Simulation started.
+     *
+     * @return the &lt;code&gt;start_time&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;start_time&quot;)
+    @XmlJavaTypeAdapter(DateAdapter.class)
+<span class="fc" id="L158">    private Date startTime;</span>
+
+    /**
+     * Time and date this Simulation expires.
+     *
+     * @return the &lt;code&gt;timeout&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L166">    private long timeout;</span>
+
+    /**
+     * Time and date this Simulation needs to be completed by.
+     *
+     * @return the &lt;code&gt;deadline&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L174">    private long deadline;</span>
+
+    /**
+     * Time and date this Simulation has been running for.
+     *
+     * @deprecated
+     * @return the &lt;code&gt;run_time&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;run_time&quot;)
+<span class="fc" id="L183">    private Long runTime;</span>
+
+    /**
+     * Simulation time.
+     *
+     * @deprecated
+     * @return the &lt;code&gt;simulation_time&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;simulation_time&quot;)
+<span class="fc" id="L192">    private Long simulationTime;</span>
+
+    /**
+     * Estimated time of arrival.
+     *
+     * @return the &lt;code&gt;eta&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L200">    private long eta;</span>
+
+    /**
+     * Progress.
+     *
+     * @return the &lt;code&gt;progress&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L208">    private double progress;</span>
+
+    /**
+     * Simulation news.
+     *
+     * @deprecated
+     * @return the &lt;code&gt;news&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L217">    private String news;</span>
+
+    /**
+     * Slot number.
+     *
+     * @return the &lt;code&gt;slot&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L225">    private int slot;</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

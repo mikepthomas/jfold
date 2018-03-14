@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Command.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jFold</a> &gt; <a href="index.source.html" class="el_package">info.mikethomas.jfold.util</a> &gt; <span class="el_source">Command.java</span></div><h1>Command.java</h1><pre class="source lang-java linenums">/*
+ * #%L
+ * This file is part of jFold.
+ * %%
+ * Copyright (C) 2012 - 2018 Mike Thomas &lt;mikepthomas@outlook.com&gt;
+ * %%
+ * jFold is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * %
+ * jFold is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * %
+ * You should have received a copy of the GNU General Public License
+ * along with jFold.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ * #L%
+ */
+package info.mikethomas.jfold.util;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+/**
+ * &lt;p&gt;Command class.&lt;/p&gt;
+ *
+ * @author Michael Thomas (mikepthomas@outlook.com)
+ * @version 7.4.4
+ */
+<span class="fc" id="L32">@AllArgsConstructor</span>
+@Getter
+public enum Command {
+
+// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Commands&quot;&gt;
+
+    /** Authenticate. */
+<span class="fc" id="L39">    AUTH(&quot;auth&quot;, ResponseType.VOID),</span>
+
+    /** Error message. */
+<span class="fc" id="L42">    ERROR(&quot;error&quot;, ResponseType.PYON),</span>
+
+    /** Exit the command processor. */
+<span class="fc" id="L45">    EXIT(&quot;exit&quot;, ResponseType.VOID),</span>
+
+    /** Prints an increasing heartbeat count. */
+<span class="fc" id="L48">    HEARTBEAT(&quot;heartbeat&quot;, ResponseType.PYON),</span>
+
+    /** Enable/disable log updates. */
+<span class="fc" id="L51">    LOG_UPDATES(&quot;log-updates&quot;, ResponseType.PYON), // start | restart | stop</span>
+
+    /** Exit the command processor. */
+<span class="fc" id="L54">    QUIT(&quot;quit&quot;, ResponseType.VOID),</span>
+
+    /**
+     * Unpause all slots which are paused waiting for a screensaver and pause
+     * them again on disconnect.
+     */
+<span class="fc" id="L60">    SCREENSAVER(&quot;screensaver&quot;, ResponseType.VOID),</span>
+
+    /** Enable/disable updates. */
+<span class="fc" id="L63">    UPDATES(&quot;updates&quot;, ResponseType.VOID), // add &lt;id&gt; &lt;rate&gt; &lt;expression&gt; | del &lt;id&gt; | list | clear | reset</span>
+
+    // Folding@home Client:
+    /** Bond a packet file to a outgoing debug socket connection. */
+<span class="fc" id="L67">    BOND(&quot;bond&quot;, ResponseType.VOID), // &lt;ip&gt;:&lt;port&gt; &lt;input&gt; [output] [ip:port]</span>
+
+    /**
+     * Return a PyON message indicating if the client has set a user, team or
+     * passkey.
+     */
+<span class="fc" id="L73">    CONFIGURED(&quot;configured&quot;, ResponseType.PYON),</span>
+
+    /** Run one client cycle. */
+<span class="fc" id="L76">    DO_CYCLE(&quot;do-cycle&quot;, ResponseType.VOID),</span>
+
+    /** Download a core. */
+<span class="fc" id="L79">    DOWNLOAD_CORE(&quot;download-core&quot;, ResponseType.VOID), // &lt;type&gt; &lt;url&gt;</span>
+
+    /** Finish all or one slot(s). */
+<span class="fc" id="L82">    FINISH(&quot;finish&quot;, ResponseType.VOID), // [slot]</span>
+
+    /** Print application information. */
+<span class="fc" id="L85">    GET_INFO(&quot;get-info&quot;, ResponseType.STRING), // &lt;category&gt; &lt;key&gt;</span>
+
+    /** Print application information in PyON format. */
+<span class="fc" id="L88">    INFO(&quot;info&quot;, ResponseType.PYON),</span>
+
+    /**
+     * Inject a packet file to a listening debug socket. Will wait until packet
+     * is processed.
+     */
+<span class="fc" id="L94">    INJECT(&quot;inject&quot;, ResponseType.VOID), // &lt;ip&gt;:&lt;port&gt; &lt;input&gt; [output] [ip:port]</span>
+
+    /** Disable specified unit states. */
+<span class="fc" id="L97">    MASK_UNIT_STATE(&quot;mask-unit-state&quot;, ResponseType.VOID),</span>
+
+    /** Get number of slots in PyON format. */
+<span class="fc" id="L100">    NUM_SLOTS(&quot;num-slots&quot;, ResponseType.PYON),</span>
+
+    /** Get or set a configuration option. */
+<span class="fc" id="L103">    OPTION(&quot;option&quot;, ResponseType.STRING), // &lt;name&gt; [value]</span>
+
+    /**
+     * List or set options with their values.
+     *
+     * If no name arguments are given then all options with non-default values
+     * will be listed. If the '-d' argument is given then even defaulted options
+     * will be listed. If the '-a' option is given then unset options will also
+     * be listed. Otherwise, if option names are provided only those options
+     * will be listed.
+     * The special name '*' lists all options which have not yet been listed and
+     * is affected by the '-d' and '-a' options.
+     * If a name argument is followed directly by an equal sign then the rest of
+     * the argument will be used to set the option's value. If instead a name
+     * argument is followed immediately by a '!' then the option will be reset
+     * to its default value.
+     * Options which are set or reset will also be listed.
+     * Options are listed as a PyON format dictionary.
+     */
+<span class="fc" id="L122">    OPTIONS(&quot;options&quot;, ResponseType.PYON),</span>
+
+    /** Pause all or one slot(s). */
+<span class="fc" id="L125">    PAUSE(&quot;pause&quot;, ResponseType.VOID), // [slot]</span>
+
+    /** Get current total estimated Points Per Day. */
+<span class="fc" id="L128">    PPD(&quot;ppd&quot;, ResponseType.PYON),</span>
+
+    /** Get work unit queue information in PyON format. */
+<span class="fc" id="L131">    QUEUE_INFO(&quot;queue-info&quot;, ResponseType.PYON),</span>
+
+    /** Request an ID from the assignment server. */
+<span class="fc" id="L134">    REQUEST_ID(&quot;request-id&quot;, ResponseType.VOID),</span>
+
+    /** Request work server assignment from the assignment server. */
+<span class="fc" id="L137">    REQUEST_WS(&quot;request-ws&quot;, ResponseType.VOID),</span>
+
+    /**
+     * Save the configuration either to the specified file or to the file the
+     * configuration was last loaded from.
+     */
+<span class="fc" id="L143">    SAVE(&quot;save&quot;, ResponseType.VOID), // [file]</span>
+
+    /** Shutdown the application. */
+<span class="fc" id="L146">    SHUTDOWN(&quot;shutdown&quot;, ResponseType.VOID),</span>
+
+    /** Get current simulation information. */
+<span class="fc" id="L149">    SIMULATION_INFO(&quot;simulation-info&quot;, ResponseType.PYON), // &lt;slot id&gt;</span>
+
+    /**
+     * Add a new slot. Configuration options for the new slot can be provided.
+     */
+<span class="fc" id="L154">    SLOT_ADD(&quot;slot-add&quot;, ResponseType.VOID), // &lt;type&gt; [&lt;name&gt;=&lt;value&gt;]...</span>
+
+    /** Delete a slot. If it is running a unit it will be stopped. */
+<span class="fc" id="L157">    SLOT_DELETE(&quot;slot-delete&quot;, ResponseType.VOID), // &lt;slot&gt;</span>
+
+    /** Get slot information in PyON format. */
+<span class="fc" id="L160">    SLOT_INFO(&quot;slot-info&quot;, ResponseType.PYON),</span>
+
+    /**
+     * Modify an existing slot.
+     *
+     * Configuration options can be either set or reset using the same syntax
+     * used by the 'options' command.
+     */
+<span class="fc" id="L168">    SLOT_MODIFY(&quot;slot-modify&quot;, ResponseType.VOID), // &lt;id&gt; &lt;type&gt; [&lt;name&gt;&lt;! | =&lt;value&gt;&gt;]...</span>
+
+    /**
+     * The first argument is the slot ID.
+     *
+     * See 'options' help for a description of the remaining arguments.
+     */
+<span class="fc" id="L175">    SLOT_OPTIONS(&quot;slot-options&quot;, ResponseType.PYON), // &lt;slot&gt; [-d | -a] | [name]...</span>
+
+    /** Get current protein trajectory. */
+<span class="fc" id="L178">    TRAJECTORY(&quot;trajectory&quot;, ResponseType.VOID), // &lt;slot id&gt;</span>
+
+    /** Trigger config save after a delay. */
+<span class="fc" id="L181">    TRIGGER_SAVE(&quot;trigger-save&quot;, ResponseType.VOID),</span>
+
+    /** Unpause all or one slot(s). */
+<span class="fc" id="L184">    UNPAUSE(&quot;unpause&quot;, ResponseType.VOID), // [slot]</span>
+
+    /** Print application uptime. */
+<span class="fc" id="L187">    UPTIME(&quot;uptime&quot;, ResponseType.STRING),</span>
+
+    /** Wait for all running units to finish. */
+<span class="fc" id="L190">    WAIT_FOR_UNITS(&quot;wait-for-units&quot;, ResponseType.VOID),</span>
+
+    // Standard Commands:
+    /** Add two values. */
+<span class="fc" id="L194">    ADD(&quot;add&quot;, ResponseType.VOID), // &lt;number&gt; &lt;number&gt;</span>
+
+    /** Clear the screen. */
+<span class="fc" id="L197">    CLEAR(&quot;clear&quot;, ResponseType.VOID),</span>
+
+    /**
+     * Print the date and time.
+     *
+     * Optionally, with 'format'. See: man strftime
+     */
+<span class="fc" id="L204">    DATE(&quot;date&quot;, ResponseType.VOID), // [format]</span>
+
+    /** Divide two values. */
+<span class="fc" id="L207">    DIV(&quot;div&quot;, ResponseType.VOID), // &lt;number&gt; &lt;number&gt;</span>
+
+    /** Evaluate all arguments. */
+<span class="fc" id="L210">    EVAL(&quot;eval&quot;, ResponseType.VOID), // [expr]...</span>
+
+    /**
+     * If 'cond' evaluates to a non-empty string then evalute 'expr1' otherwise,
+     * if provided, evaluate 'expr2'.
+     */
+<span class="fc" id="L216">    IF(&quot;if&quot;, ResponseType.VOID), // &lt;cond&gt; &lt;expr1&gt; [expr2]</span>
+
+    /** Multiply two values. */
+<span class="fc" id="L219">    MUL(&quot;mul&quot;, ResponseType.VOID), // &lt;number&gt; &lt;number&gt;</span>
+
+    /** Invert the truth value of the argument. */
+<span class="fc" id="L222">    NOT(&quot;not&quot;, ResponseType.VOID), // &lt;expr&gt;</span>
+
+    /** Sleep for a number of seconds. */
+<span class="fc" id="L225">    SLEEP(&quot;sleep&quot;, ResponseType.VOID), // &lt;seconds&gt;</span>
+
+    /** Subtract two values. */
+<span class="fc" id="L228">    SUB(&quot;sub&quot;, ResponseType.VOID); // &lt;number&gt; &lt;number&gt;</span>
+
+// &lt;/editor-fold&gt;
+
+    /**
+     * Command.
+     *
+     * @return String Folding@Home command.
+     */
+<span class="nc" id="L237">    private final String command;</span>
+
+    /**
+     * Response type of this command.
+     *
+     * @return ResponseType type of response.
+     */
+<span class="fc" id="L244">    private final ResponseType responseType;</span>
+
+    /** {@inheritDoc} */
+    @Override
+    public String toString() {
+<span class="fc" id="L249">        return command;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

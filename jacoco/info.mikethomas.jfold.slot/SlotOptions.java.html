@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SlotOptions.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jFold</a> &gt; <a href="index.source.html" class="el_package">info.mikethomas.jfold.slot</a> &gt; <span class="el_source">SlotOptions.java</span></div><h1>SlotOptions.java</h1><pre class="source lang-java linenums">/*
+ * #%L
+ * This file is part of jFold.
+ * %%
+ * Copyright (C) 2012 - 2018 Mike Thomas &lt;mikepthomas@outlook.com&gt;
+ * %%
+ * jFold is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * %
+ * jFold is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * %
+ * You should have received a copy of the GNU General Public License
+ * along with jFold.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ * #L%
+ */
+package info.mikethomas.jfold.slot;
+
+import java.io.Serializable;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import lombok.Getter;
+import lombok.ToString;
+
+/**
+ * &lt;p&gt;SlotOptions class.&lt;/p&gt;
+ *
+ * @author Michael Thomas (mikepthomas@outlook.com)
+ * @version 7.4.4
+ */
+@Getter
+<span class="fc" id="L38">@ToString</span>
+@XmlRootElement(name = &quot;slot-options&quot;)
+<span class="fc" id="L40">public class SlotOptions implements Serializable {</span>
+
+    /**
+     * Client type.
+     *
+     * @return the &lt;code&gt;client-type&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;client-type&quot;)
+<span class="fc" id="L48">    private String clientType;</span>
+
+    /**
+     * Client sub-type.
+     *
+     * @return the &lt;code&gt;client-subtype&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;client-subtype&quot;)
+<span class="fc" id="L56">    private String clientSubtype;</span>
+
+    /**
+     * Machine identifier.
+     *
+     * @return the &lt;code&gt;machine-id&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;machine-id&quot;)
+<span class="fc" id="L64">    private Integer machineId;</span>
+
+    /**
+     * Maximum packet size.
+     *
+     * @return the &lt;code&gt;max-packet-size&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;max-packet-size&quot;)
+<span class="fc" id="L72">    private String maxPacketSize;</span>
+
+    /**
+     * Core priority.
+     *
+     * @return the &lt;code&gt;core-priority&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;core-priority&quot;)
+<span class="fc" id="L80">    private String corePriority;</span>
+
+    /**
+     * Next unit percentage.
+     *
+     * @return the &lt;code&gt;next-unit-percentage&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;next-unit-percentage&quot;)
+<span class="fc" id="L88">    private Integer nextUnitPercentage;</span>
+
+    /**
+     * Maximum units.
+     *
+     * @return the &lt;code&gt;max-units&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;max-units&quot;)
+<span class="fc" id="L96">    private Integer maxUnits;</span>
+
+    /**
+     * Checkpoint.
+     *
+     * @return the &lt;code&gt;checkpoint&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L104">    private Integer checkpoint;</span>
+
+    /**
+     * Pause on start.
+     *
+     * @return the &lt;code&gt;pause-on-start&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;pause-on-start&quot;)
+<span class="fc" id="L112">    private Boolean pauseOnStart;</span>
+
+    /**
+     * Graphics processor vendor identifier.
+     *
+     * @return the &lt;code&gt;client-type&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;gpu-vendor-id&quot;)
+<span class="fc" id="L120">    private String gpuVendorId;</span>
+
+    /**
+     * Graphics processor device identifier.
+     *
+     * @return the &lt;code&gt;gpu-device-id&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
+     */
+    @XmlElement(name = &quot;gpu-device-id&quot;)
+<span class="fc" id="L128">    private String gpuDeviceId;</span>
+
+    /**
+     * CPUs.
+     *
+     * @return the &lt;code&gt;cpus&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L136">    private String cpus;</span>
+
+    /**
+     * Idle.
+     *
+     * @return the &lt;code&gt;idle&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L144">    private Boolean idle;</span>
+
+    /**
+     * Paused.
+     *
+     * @return the &lt;code&gt;paused&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
+     */
+    @XmlElement
+<span class="fc" id="L152">    private Boolean paused;</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

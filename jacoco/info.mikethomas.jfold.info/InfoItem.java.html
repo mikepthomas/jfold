@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>InfoItem.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jFold</a> &gt; <a href="index.source.html" class="el_package">info.mikethomas.jfold.info</a> &gt; <span class="el_source">InfoItem.java</span></div><h1>InfoItem.java</h1><pre class="source lang-java linenums">/*
+ * #%L
+ * This file is part of jFold.
+ * %%
+ * Copyright (C) 2012 - 2018 Mike Thomas &lt;mikepthomas@outlook.com&gt;
+ * %%
+ * jFold is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * %
+ * jFold is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * %
+ * You should have received a copy of the GNU General Public License
+ * along with jFold.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ * #L%
+ */
+package info.mikethomas.jfold.info;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+/**
+ * &lt;p&gt;InfoItem class.&lt;/p&gt;
+ *
+ * @author Michael Thomas (mikepthomas@outlook.com)
+ * @version 7.4.4
+ */
+<span class="fc" id="L32">@AllArgsConstructor</span>
+@Getter
+public enum InfoItem {
+
+// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Client Info Items&quot;&gt;
+
+    /** Item &lt;code&gt;Website&lt;/code&gt; in &lt;code&gt;Folding@home Client&lt;/code&gt;. */
+<span class="fc" id="L39">    CLIENT_WEBSITE(InfoCategory.CLIENT, &quot;Website&quot;),</span>
+
+    /** Item &lt;code&gt;Copyright&lt;/code&gt; in &lt;code&gt;Folding@home Client&lt;/code&gt;. */
+<span class="fc" id="L42">    CLIENT_COPYRIGHT(InfoCategory.CLIENT, &quot;Copyright&quot;),</span>
+
+    /** Item &lt;code&gt;Author&lt;/code&gt; in &lt;code&gt;Folding@home Client&lt;/code&gt;. */
+<span class="fc" id="L45">    CLIENT_AUTHOR(InfoCategory.CLIENT, &quot;Author&quot;),</span>
+
+    /** Item &lt;code&gt;Args&lt;/code&gt; in &lt;code&gt;Folding@home Client&lt;/code&gt;. */
+<span class="fc" id="L48">    CLIENT_ARGS(InfoCategory.CLIENT, &quot;Args&quot;),</span>
+
+    /** Item &lt;code&gt;Config&lt;/code&gt; in &lt;code&gt;Folding@home Client&lt;/code&gt;. */
+<span class="fc" id="L51">    CLIENT_CONFIG(InfoCategory.CLIENT, &quot;Config&quot;),</span>
+
+// &lt;/editor-fold&gt;
+// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Build Info Items&quot;&gt;
+
+    /** Item &lt;code&gt;Build&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
+<span class="fc" id="L57">    BUILD_VERSION(InfoCategory.BUILD, &quot;Build&quot;),</span>
+
+    /** Item &lt;code&gt;Date&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
+<span class="fc" id="L60">    BUILD_DATE(InfoCategory.BUILD, &quot;Date&quot;),</span>
+
+    /** Item &lt;code&gt;Time&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
+<span class="fc" id="L63">    BUILD_TIME(InfoCategory.BUILD, &quot;Time&quot;),</span>
+
+    /** Item &lt;code&gt;SVN Rev&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
+<span class="fc" id="L66">    BUILD_SVN_REV(InfoCategory.BUILD, &quot;SVN Rev&quot;),</span>
+
+    /** Item &lt;code&gt;Branch&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
+<span class="fc" id="L69">    BUILD_BRANCH(InfoCategory.BUILD, &quot;Branch&quot;),</span>
+
+    /** Item &lt;code&gt;Compiler&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
+<span class="fc" id="L72">    BUILD_COMPILER(InfoCategory.BUILD, &quot;Compiler&quot;),</span>
+
+    /** Item &lt;code&gt;Options&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
+<span class="fc" id="L75">    BUILD_OPTIONS(InfoCategory.BUILD, &quot;Options&quot;),</span>
+
+    /** Item &lt;code&gt;Platform&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
+<span class="fc" id="L78">    BUILD_PLATFORM(InfoCategory.BUILD, &quot;Platform&quot;),</span>
+
+    /** Item &lt;code&gt;Bits&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
+<span class="fc" id="L81">    BUILD_BITS(InfoCategory.BUILD, &quot;Bits&quot;),</span>
+
+    /** Item &lt;code&gt;Mode&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
+<span class="fc" id="L84">    BUILD_MODE(InfoCategory.BUILD, &quot;Mode&quot;),</span>
+
+// &lt;/editor-fold&gt;
+// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;System Info Items&quot;&gt;
+
+    /** Item &lt;code&gt;CPU&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
+<span class="fc" id="L90">    SYSTEM_CPU(InfoCategory.SYSTEM, &quot;CPU&quot;),</span>
+
+    /** Item &lt;code&gt;CPU ID&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
+<span class="fc" id="L93">    SYSTEM_CPU_ID(InfoCategory.SYSTEM, &quot;CPU ID&quot;),</span>
+
+    /** Item &lt;code&gt;CPUs&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
+<span class="fc" id="L96">    SYSTEM_CPUS(InfoCategory.SYSTEM, &quot;CPUs&quot;),</span>
+
+    /** Item &lt;code&gt;Memory&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
+<span class="fc" id="L99">    SYSTEM_MEMORY(InfoCategory.SYSTEM, &quot;Memory&quot;),</span>
+
+    /** Item &lt;code&gt;Free Memory&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
+<span class="fc" id="L102">    SYSTEM_FREE_MEMORY(InfoCategory.SYSTEM, &quot;Free Memory&quot;),</span>
+
+    /** Item &lt;code&gt;Threads&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
+<span class="fc" id="L105">    SYSTEM_THREADS(InfoCategory.SYSTEM, &quot;Threads&quot;),</span>
+
+    /** Item &lt;code&gt;Has Battery&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
+<span class="fc" id="L108">    SYSTEM_HAS_BATTERY(InfoCategory.SYSTEM, &quot;Has Battery&quot;),</span>
+
+    /** Item &lt;code&gt;On Battery&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
+<span class="fc" id="L111">    SYSTEM_ON_BATTERY(InfoCategory.SYSTEM, &quot;On Battery&quot;),</span>
+
+    /** Item &lt;code&gt;UTC offset&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
+<span class="fc" id="L114">    SYSTEM_UTC_OFFSET(InfoCategory.SYSTEM, &quot;UTC offset&quot;),</span>
+
+    /** Item &lt;code&gt;PID&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
+<span class="fc" id="L117">    SYSTEM_PID(InfoCategory.SYSTEM, &quot;PID&quot;),</span>
+
+    /** Item &lt;code&gt;CWD&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
+<span class="fc" id="L120">    SYSTEM_CWD(InfoCategory.SYSTEM, &quot;CWD&quot;),</span>
+
+    /** Item &lt;code&gt;OS&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
+<span class="fc" id="L123">    SYSTEM_OS(InfoCategory.SYSTEM, &quot;OS&quot;),</span>
+
+    /** Item &lt;code&gt;OS Arch&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
+<span class="fc" id="L126">    SYSTEM_OS_ARCH(InfoCategory.SYSTEM, &quot;OS Arch&quot;),</span>
+
+    /** Item &lt;code&gt;GPUs&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
+<span class="fc" id="L129">    SYSTEM_GPUS(InfoCategory.SYSTEM, &quot;GPUs&quot;),</span>
+
+    /** Item &lt;code&gt;CUDA&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
+<span class="fc" id="L132">    SYSTEM_CUDA(InfoCategory.SYSTEM, &quot;CUDA&quot;);</span>
+
+// &lt;/editor-fold&gt;
+
+    /**
+     * Category type of this item.
+     *
+     * @return InfoCategory category.
+     */
+<span class="fc" id="L141">    private final InfoCategory category;</span>
+
+    /**
+     * Key.
+     *
+     * @return String key.
+     */
+<span class="nc" id="L148">    private final String key;</span>
+
+    /** {@inheritDoc} */
+    @Override
+    public String toString() {
+<span class="fc" id="L153">        return key;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

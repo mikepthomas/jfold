@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SocketConnection.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">jFold</a> &gt; <a href="index.source.html" class="el_package">info.mikethomas.jfold</a> &gt; <span class="el_source">SocketConnection.java</span></div><h1>SocketConnection.java</h1><pre class="source lang-java linenums">/*
+ * #%L
+ * This file is part of jFold.
+ * %%
+ * Copyright (C) 2012 - 2018 Mike Thomas &lt;mikepthomas@outlook.com&gt;
+ * %%
+ * jFold is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * %
+ * jFold is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * %
+ * You should have received a copy of the GNU General Public License
+ * along with jFold.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ * #L%
+ */
+package info.mikethomas.jfold;
+
+import info.mikethomas.jfold.exceptions.CommandException;
+import info.mikethomas.jfold.util.Command;
+import info.mikethomas.jfold.util.PyonParser;
+
+import java.io.IOException;
+import java.io.PrintStream;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import lombok.extern.slf4j.XSlf4j;
+
+import org.slf4j.profiler.Profiler;
+
+/**
+ * &lt;p&gt;SocketConnection class.&lt;/p&gt;
+ *
+ * @author Michael Thomas (mikepthomas@outlook.com)
+ * @version 7.4.4
+ */
+<span class="fc" id="L44">@XSlf4j</span>
+public class SocketConnection {
+
+    /** Clear Screen. */
+    public static final String CLRSCR = &quot;\033[H\033[2J&quot;;
+    /** Command Prompt. */
+    public static final String COMMAND_PROMPT = &quot;&gt; &quot;;
+    /** Encoding. */
+    public static final String ENCODING = &quot;UTF-8&quot;;
+    /** Welcome Message. */
+    public static final String WELCOME_MSG
+            = &quot;Welcome to the Folding@home Client command server.&quot;;
+
+    /** Socket to connect to F@H Client. */
+<span class="fc" id="L58">    private Socket socket = null;</span>
+    /** OutputStream to send commands to. */
+<span class="fc" id="L60">    private PrintStream out = null;</span>
+    /** InputStream to receive data from. */
+<span class="fc" id="L62">    private Scanner in = null;</span>
+
+    /**
+     * &lt;p&gt;Constructor for SocketConnection.&lt;/p&gt;
+     *
+     * @param address a {@link java.lang.String} object.
+     * @param port a int.
+     * @throws java.io.IOException a int.
+     */
+    public SocketConnection(
+            final String address, final int port) throws IOException {
+<span class="fc" id="L73">        super();</span>
+
+<span class="fc bfc" id="L75" title="All 2 branches covered.">        if (address != null) {</span>
+<span class="fc" id="L76">            socket = new Socket(address, port);</span>
+
+<span class="fc" id="L78">            out = new PrintStream(socket.getOutputStream(), true, ENCODING);</span>
+<span class="fc" id="L79">            in = new Scanner(socket.getInputStream(), ENCODING);</span>
+<span class="fc" id="L80">            in.useDelimiter(COMMAND_PROMPT);</span>
+
+<span class="fc" id="L82">            String welcome = in.nextLine();</span>
+<span class="fc" id="L83">            log.info(welcome);</span>
+<span class="pc bpc" id="L84" title="1 of 2 branches missed.">            if (!(CLRSCR + WELCOME_MSG).equals(welcome)) {</span>
+<span class="nc" id="L85">                throw new IOException(</span>
+                        &quot;Unexpected welcome message, check client version&quot;);
+            }
+        }
+<span class="fc" id="L89">    }</span>
+
+    /**
+     * Send a command to the Folding@home Client.
+     *
+     * @param command command to send to the client
+     * @return String response from client
+     * @throws info.mikethomas.jfold.exceptions.CommandException if any.
+     */
+    protected String sendCommand(final Command command)
+            throws CommandException {
+<span class="fc" id="L100">        return sendCommand(command, new ArrayList&lt;&gt;());</span>
+    }
+
+    /**
+     * Send a command to the Folding@home Client with arguments.
+     *
+     * @param command command to send to the client
+     * @param args command arguments
+     * @return String response from client
+     * @throws info.mikethomas.jfold.exceptions.CommandException if any.
+     */
+    protected String sendCommand(final Command command,
+            final List&lt;String&gt; args) throws CommandException {
+<span class="fc" id="L113">        log.entry(command, args);</span>
+
+<span class="fc" id="L115">        Profiler profiler = new Profiler(command.toString());</span>
+<span class="fc" id="L116">        profiler.setLogger(log);</span>
+
+<span class="fc" id="L118">        StringBuilder arguments = new StringBuilder();</span>
+<span class="fc" id="L119">        args.forEach(arg -&gt; arguments.append(&quot; '&quot;).append(arg).append(&quot;'&quot;));</span>
+
+        // Send the command
+<span class="fc" id="L122">        profiler.start(&quot;Send Command&quot;);</span>
+<span class="fc" id="L123">        out.println(command + arguments.toString());</span>
+<span class="fc" id="L124">        log.info(&quot;Sent Command: {} {}&quot;, command, arguments.toString());</span>
+
+        // Get the output
+<span class="fc" id="L127">        String response = &quot;&quot;;</span>
+<span class="pc bfc" id="L128" title="All 2 branches covered.">        switch (command.getResponseType()) {</span>
+            case PYON:
+            case STRING:
+<span class="fc" id="L131">                profiler.start(&quot;Get Response&quot;);</span>
+<span class="fc" id="L132">                response = in.next().replaceFirst(COMMAND_PROMPT, &quot;&quot;);</span>
+<span class="fc bfc" id="L133" title="All 2 branches covered.">                if (response.startsWith(PyonParser.PYON_1)) {</span>
+<span class="fc" id="L134">                    profiler.start(&quot;Convert to JSON&quot;);</span>
+<span class="fc" id="L135">                    response = PyonParser.convert(response);</span>
+<span class="fc bfc" id="L136" title="All 2 branches covered.">                } else if (response.equals(&quot;&quot;)) {</span>
+                    // TODO: remove dirty hack to stop ObjectMapper breaking
+<span class="fc" id="L138">                    response = &quot;[]&quot;;</span>
+                }
+
+            default:
+<span class="fc" id="L142">                log.info(&quot;Recieved Response: {}&quot;, response);</span>
+<span class="fc" id="L143">                profiler.stop().log();</span>
+        }
+<span class="fc" id="L145">        return log.exit(response);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>
