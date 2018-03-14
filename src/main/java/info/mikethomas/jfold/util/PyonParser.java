@@ -77,6 +77,8 @@ public final class PyonParser {
      * @return a {@link java.lang.String} object.
      */
     public String convert(final String pyon) {
+        log.entry(pyon);
+
         // Check for valid PyON String
         if (!pyon.startsWith(PYON_1)) {
             log.warn("PyonParser cannot convert String: " + pyon);
@@ -84,42 +86,40 @@ public final class PyonParser {
         }
 
         // Get PyON Body
-        String jsonString = pyon.replaceAll(PYON_HEADER, "");
-        jsonString = jsonString.replaceAll(PYON_TRAILER, "");
+        String json = pyon.replaceAll(PYON_HEADER, "");
+        json = json.replaceAll(PYON_TRAILER, "");
 
         // Check for PyON Error Message
         if (pyon.contains(PYON_ERROR)) {
-            jsonString = jsonString.replaceAll("\"", "");
+            json = json.replaceAll("\"", "");
         }
 
         // Add '\n' to make PyON to JSON replacements
-        jsonString = jsonString.replaceAll("\\[", "[\n");
-        jsonString = jsonString.replaceAll("\\]", "\n]");
-        jsonString = jsonString.replaceAll("\\{", "{\n");
-        jsonString = jsonString.replaceAll("\\}", "\n}");
-        jsonString = jsonString.replaceAll(", ", ",\n");
+        json = json.replaceAll("\\[", "[\n");
+        json = json.replaceAll("\\]", "\n]");
+        json = json.replaceAll("\\{", "{\n");
+        json = json.replaceAll("\\}", "\n}");
+        json = json.replaceAll(", ", ",\n");
 
         // None is used instead of null
-        jsonString = jsonString.replaceAll(NONE, NULL);
+        json = json.replaceAll(NONE, NULL);
 
         // Boolean values start with an upper case letter as in Python.
-        jsonString = jsonString.replaceAll(PYON_TRUE, JSON_TRUE);
-        jsonString = jsonString.replaceAll(STRING_TRUE, JSON_TRUE);
-        jsonString = jsonString.replaceAll(PYON_FALSE, JSON_FALSE);
-        jsonString = jsonString.replaceAll(STRING_FALSE, JSON_FALSE);
+        json = json.replaceAll(PYON_TRUE, JSON_TRUE);
+        json = json.replaceAll(STRING_TRUE, JSON_TRUE);
+        json = json.replaceAll(PYON_FALSE, JSON_FALSE);
+        json = json.replaceAll(STRING_FALSE, JSON_FALSE);
 
         // Format JSON
         ObjectMapper mapper = new ObjectMapper();
         ObjectWriter writer = mapper.writerWithDefaultPrettyPrinter();
         try {
-            JsonNode json = mapper.readValue(jsonString, JsonNode.class);
-            jsonString = writer.writeValueAsString(json);
+            JsonNode jsonNode = mapper.readValue(json, JsonNode.class);
+            json = writer.writeValueAsString(jsonNode);
         } catch (IOException ex) {
             log.error("Unable to format json string", ex);
         }
 
-        log.info("Parsed JSON:\n" + jsonString);
-
-        return jsonString;
+        return log.exit(json);
     }
 }

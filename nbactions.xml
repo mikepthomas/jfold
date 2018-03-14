@@ -53,4 +53,16 @@
             <activatedProfile>release-profile</activatedProfile>
         </activatedProfiles>
     </action>
+    <action>
+        <actionName>CUSTOM-Deploy to OSS</actionName>
+        <displayName>Deploy to OSS</displayName>
+        <recursive>false</recursive>
+        <goals>
+            <goal>clean</goal>
+            <goal>deploy</goal>
+        </goals>
+        <activatedProfiles>
+            <activatedProfile>release-profile</activatedProfile>
+        </activatedProfiles>
+    </action>
 </actions>

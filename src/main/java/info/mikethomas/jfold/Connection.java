@@ -51,9 +51,6 @@ import java.util.List;
  */
 public interface Connection {
 
-    /** Constant <code>ENCODING="UTF-8"</code>. */
-    String ENCODING = "UTF-8";
-
     /**
      * Bond a packet file to a outgoing debug socket connection.
      *
