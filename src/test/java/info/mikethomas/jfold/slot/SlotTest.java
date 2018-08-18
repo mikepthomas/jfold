@@ -20,7 +20,6 @@
  */
 package info.mikethomas.jfold.slot;
 
-import info.mikethomas.jfold.Connection;
 import info.mikethomas.jfold.MockConnection;
 import info.mikethomas.jfold.exceptions.SlotInfoException;
 
@@ -49,7 +48,7 @@ public class SlotTest {
      */
     @BeforeAll
     public static void setUpClass() throws IOException, SlotInfoException {
-        Connection connection = new MockConnection();
+        var connection = new MockConnection();
         instance = connection.slotInfo().get(1);
     }
 
@@ -59,8 +58,8 @@ public class SlotTest {
     @Test
     public void testGetId() {
         System.out.println("getId");
-        String expResult = "01";
-        String result = instance.getId();
+        var expResult = "01";
+        var result = instance.getId();
         assertEquals(expResult, result);
     }
 
@@ -70,8 +69,8 @@ public class SlotTest {
     @Test
     public void testGetStatus() {
         System.out.println("getStatus");
-        String expResult = "PAUSED";
-        String result = instance.getStatus();
+        var expResult = "PAUSED";
+        var result = instance.getStatus();
         assertEquals(expResult, result);
     }
 
@@ -81,8 +80,8 @@ public class SlotTest {
     @Test
     public void testGetDescription() {
         System.out.println("getDescription");
-        String expResult = "cpu:1";
-        String result = instance.getDescription();
+        var expResult = "cpu:1";
+        var result = instance.getDescription();
         assertEquals(expResult, result);
     }
 
@@ -92,8 +91,8 @@ public class SlotTest {
     @Test
     public void testGetOptions() {
         System.out.println("getOptions");
-        boolean expResult = true;
-        SlotOptions result = instance.getOptions();
+        var expResult = true;
+        var result = instance.getOptions();
         assertNotNull(result);
         assertEquals(expResult, result.getPaused());
     }

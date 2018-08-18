@@ -20,11 +20,12 @@
  */
 package info.mikethomas.jfold.simulation;
 
-import info.mikethomas.jfold.Connection;
 import info.mikethomas.jfold.MockConnection;
 import info.mikethomas.jfold.exceptions.SimulationInfoException;
+import info.mikethomas.jfold.util.DateAdapter;
 
 import java.io.IOException;
+import java.text.ParseException;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeAll;
@@ -49,7 +50,7 @@ public class SimulationInfoTest {
      */
     @BeforeAll
     public static void setUpClass() throws IOException, SimulationInfoException {
-        Connection connection = new MockConnection();
+        var connection = new MockConnection();
         instance = connection.simulationInfo(0);
     }
 
@@ -59,8 +60,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetUser() {
         System.out.println("getUser");
-        String expResult = "montycrabapple";
-        String result = instance.getUser();
+        var expResult = "montycrabapple";
+        var result = instance.getUser();
         assertEquals(expResult, result);
     }
 
@@ -70,8 +71,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetTeam() {
         System.out.println("getTeam");
-        long expResult = 39299;
-        long result = instance.getTeam();
+        var expResult = 39299;
+        var result = instance.getTeam();
         assertEquals(expResult, result);
     }
 
@@ -81,8 +82,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetProject() {
         System.out.println("getProject");
-        int expResult = 9500;
-        int result = instance.getProject();
+        var expResult = 9500;
+        var result = instance.getProject();
         assertEquals(expResult, result);
     }
 
@@ -92,8 +93,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetRun() {
         System.out.println("getRun");
-        int expResult = 850;
-        int result = instance.getRun();
+        var expResult = 850;
+        var result = instance.getRun();
         assertEquals(expResult, result);
     }
 
@@ -103,8 +104,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetClone() {
         System.out.println("getClone");
-        int expResult = 1;
-        int result = instance.getClone();
+        var expResult = 1;
+        var result = instance.getClone();
         assertEquals(expResult, result);
     }
 
@@ -114,8 +115,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetGen() {
         System.out.println("getGen");
-        int expResult = 290;
-        int result = instance.getGen();
+        var expResult = 290;
+        var result = instance.getGen();
         assertEquals(expResult, result);
     }
 
@@ -125,8 +126,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetCoreType() {
         System.out.println("getCoreType");
-        int expResult = 164;
-        int result = instance.getCoreType();
+        var expResult = 164;
+        var result = instance.getCoreType();
         assertEquals(expResult, result);
     }
 
@@ -136,8 +137,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetCore() {
         System.out.println("getCore");
-        String expResult = "GRO_A4";
-        String result = instance.getCore();
+        var expResult = "GRO_A4";
+        var result = instance.getCore();
         assertEquals(expResult, result);
     }
 
@@ -147,9 +148,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetDescription() {
         System.out.println("getDescription");
-        String expResult = null;
-        String result = instance.getDescription();
-        assertEquals(expResult, result);
+        assertNull(instance.getDescription());
     }
 
     /**
@@ -158,8 +157,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetTotalIterations() {
         System.out.println("getTotalIterations");
-        int expResult = 250000;
-        int result = instance.getTotalIterations();
+        var expResult = 250000;
+        var result = instance.getTotalIterations();
         assertEquals(expResult, result);
     }
 
@@ -169,8 +168,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetIterationsDone() {
         System.out.println("getIterationsDone");
-        int expResult = 40000;
-        int result = instance.getIterationsDone();
+        var expResult = 40000;
+        var result = instance.getIterationsDone();
         assertEquals(expResult, result);
     }
 
@@ -180,8 +179,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetEnergy() {
         System.out.println("getEnergy");
-        int expResult = 0;
-        int result = instance.getEnergy();
+        var expResult = 0;
+        var result = instance.getEnergy();
         assertEquals(expResult, result);
     }
 
@@ -191,19 +190,21 @@ public class SimulationInfoTest {
     @Test
     public void testGetTemperature() {
         System.out.println("getTemperature");
-        int expResult = 0;
-        int result = instance.getTemperature();
+        var expResult = 0;
+        var result = instance.getTemperature();
         assertEquals(expResult, result);
     }
 
     /**
      * Test of getStartTime method, of class SimulationInfo.
+     *
+     * @throws java.text.ParseException if any.
      */
     @Test
-    public void testGetStartTime() {
+    public void testGetStartTime() throws ParseException {
         System.out.println("getStartTime");
-        String expResult = "Mon Sep 08 22:06:28 BST 2014";
-        String result = instance.getStartTime().toString();
+        var expResult = DateAdapter.DATE_FORMAT.parse("2014-09-08T22:06:28Z");
+        var result = instance.getStartTime();
         assertEquals(expResult, result);
     }
 
@@ -213,8 +214,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetTimeout() {
         System.out.println("getTimeout");
-        long expResult = 0;
-        long result = instance.getTimeout();
+        var expResult = 0;
+        var result = instance.getTimeout();
         assertEquals(expResult, result);
     }
 
@@ -224,8 +225,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetDeadline() {
         System.out.println("getDeadline");
-        long expResult = 1410525028;
-        long result = instance.getDeadline();
+        var expResult = 1410525028;
+        var result = instance.getDeadline();
         assertEquals(expResult, result);
     }
 
@@ -253,8 +254,8 @@ public class SimulationInfoTest {
     @Test
     public void testGetEta() {
         System.out.println("getEta");
-        long expResult = 17892;
-        long result = instance.getEta();
+        var expResult = 17892;
+        var result = instance.getEta();
         assertEquals(expResult, result);
     }
 
@@ -264,9 +265,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetNews() {
         System.out.println("getNews");
-        String expResult = null;
-        String result = instance.getNews();
-        assertEquals(expResult, result);
+        assertNull(instance.getNews());
     }
 
     /**
@@ -275,18 +274,21 @@ public class SimulationInfoTest {
     @Test
     public void testGetSlot() {
         System.out.println("getSlot");
-        int expResult = 0;
-        int result = instance.getSlot();
+        var expResult = 0;
+        var result = instance.getSlot();
         assertEquals(expResult, result);
     }
 
     /**
      * Test of toString method, of class SimulationInfo.
+     *
+     * @throws java.text.ParseException if any.
      */
     @Test
-    public void testToString() {
+    public void testToString() throws ParseException {
         System.out.println("toString");
-        String expResult = "SimulationInfo("
+        var startTime = DateAdapter.DATE_FORMAT.parse("2014-09-08T22:06:28Z");
+        var expResult = "SimulationInfo("
                 + "user=montycrabapple, "
                 + "team=39299, "
                 + "project=9500, "
@@ -300,7 +302,7 @@ public class SimulationInfoTest {
                 + "iterationsDone=40000, "
                 + "energy=0, "
                 + "temperature=0, "
-                + "startTime=Mon Sep 08 22:06:28 BST 2014, "
+                + "startTime=" + startTime + ", "
                 + "timeout=0, "
                 + "deadline=1410525028, "
                 + "runTime=null, "
@@ -309,7 +311,7 @@ public class SimulationInfoTest {
                 + "progress=0.16, "
                 + "news=null, "
                 + "slot=0)";
-        String result = instance.toString();
+        var result = instance.toString();
         assertEquals(expResult, result);
     }
 }

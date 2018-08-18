@@ -20,12 +20,9 @@
  */
 package info.mikethomas.jfold;
 
-import info.mikethomas.jfold.Connection;
-import info.mikethomas.jfold.ClientConnection;
 import info.mikethomas.jfold.info.InfoItem;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 
 import org.junit.jupiter.api.Test;
@@ -45,18 +42,18 @@ public class SocketConnectionIT {
      */
     @Test
     public void testApp() throws IOException {
-        Properties props = new Properties();
-        String config = "/config.properties";
-        try (InputStream input = this.getClass().getResourceAsStream(config)) {
+        var props = new Properties();
+        var config = "/config.properties";
+        try (var input = this.getClass().getResourceAsStream(config)) {
             props.load(input);
         }
 
-        String address = props.getProperty("address");
-        int port = Integer.parseInt(props.getProperty("port"));
-        String password = props.getProperty("password");
-        int retryRate = Integer.parseInt(props.getProperty("retry_rate"));
+        var address = props.getProperty("address");
+        var port = Integer.parseInt(props.getProperty("port"));
+        var password = props.getProperty("password");
+        var retryRate = Integer.parseInt(props.getProperty("retry_rate"));
 
-        Connection connection = new ClientConnection(address, port);
+        var connection = new ClientConnection(address, port);
         connection.info();
         connection.getInfo(InfoItem.SYSTEM_CPU);
         connection.numSlots();

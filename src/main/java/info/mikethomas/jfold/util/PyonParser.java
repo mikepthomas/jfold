@@ -21,7 +21,6 @@
 package info.mikethomas.jfold.util;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 
@@ -113,7 +112,7 @@ public final class PyonParser {
                 .replaceAll(STRING_FALSE, JSON_FALSE);
 
         // Format JSON
-        var mapper = new ObjectMapper();
+        var mapper = JacksonUtil.getObjectMapper();
         var writer = mapper.writerWithDefaultPrettyPrinter();
         try {
             var jsonNode = mapper.readValue(json, JsonNode.class);

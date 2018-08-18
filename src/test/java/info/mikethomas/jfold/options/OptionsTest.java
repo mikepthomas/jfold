@@ -20,7 +20,6 @@
  */
 package info.mikethomas.jfold.options;
 
-import info.mikethomas.jfold.Connection;
 import info.mikethomas.jfold.MockConnection;
 import info.mikethomas.jfold.exceptions.OptionsException;
 
@@ -49,7 +48,7 @@ public class OptionsTest {
      */
     @BeforeAll
     public static void setUpClass() throws IOException, OptionsException {
-        Connection connection = new MockConnection();
+        var connection = new MockConnection();
         instance = connection.options();
     }
 
@@ -59,8 +58,8 @@ public class OptionsTest {
     @Test
     public void testGetAssignmentServers() {
         System.out.println("getAssignmentServers");
-        String expResult = "assign3.stanford.edu:8080 assign4.stanford.edu:80";
-        String result = instance.getAssignmentServers();
+        var expResult = "assign3.stanford.edu:8080 assign4.stanford.edu:80";
+        var result = instance.getAssignmentServers();
         assertEquals(expResult, result);
     }
 
@@ -70,8 +69,8 @@ public class OptionsTest {
     @Test
     public void testGetCaptureDirectory() {
         System.out.println("getCaptureDirectory");
-        String expResult = "capture";
-        String result = instance.getCaptureDirectory();
+        var expResult = "capture";
+        var result = instance.getCaptureDirectory();
         assertEquals(expResult, result);
     }
 
@@ -81,8 +80,8 @@ public class OptionsTest {
     @Test
     public void testGetCaptureSockets() {
         System.out.println("getCaptureSockets");
-        boolean expResult = false;
-        boolean result = instance.getCaptureSockets();
+        var expResult = false;
+        var result = instance.getCaptureSockets();
         assertEquals(expResult, result);
     }
 
@@ -92,8 +91,8 @@ public class OptionsTest {
     @Test
     public void testGetCheckpoint() {
         System.out.println("getCheckpoint");
-        int expResult = 15;
-        int result = instance.getCheckpoint();
+        var expResult = 15;
+        var result = instance.getCheckpoint();
         assertEquals(expResult, result);
     }
 
@@ -103,8 +102,8 @@ public class OptionsTest {
     @Test
     public void testGetChild() {
         System.out.println("getChild");
-        boolean expResult = true;
-        boolean result = instance.getChild();
+        var expResult = true;
+        var result = instance.getChild();
         assertEquals(expResult, result);
     }
 
@@ -114,8 +113,8 @@ public class OptionsTest {
     @Test
     public void testGetClientSubtype() {
         System.out.println("getClientSubtype");
-        String expResult = "MACOSX";
-        String result = instance.getClientSubtype();
+        var expResult = "MACOSX";
+        var result = instance.getClientSubtype();
         assertEquals(expResult, result);
     }
 
@@ -125,8 +124,8 @@ public class OptionsTest {
     @Test
     public void testGetClientType() {
         System.out.println("getClientType");
-        String expResult = "normal";
-        String result = instance.getClientType();
+        var expResult = "normal";
+        var result = instance.getClientType();
         assertEquals(expResult, result);
     }
 
@@ -136,8 +135,8 @@ public class OptionsTest {
     @Test
     public void testGetCommandAddress() {
         System.out.println("getCommandAddress");
-        String expResult = "0.0.0.0";
-        String result = instance.getCommandAddress();
+        var expResult = "0.0.0.0";
+        var result = instance.getCommandAddress();
         assertEquals(expResult, result);
     }
 
@@ -147,9 +146,7 @@ public class OptionsTest {
     @Test
     public void testGetCommandAllow() {
         System.out.println("getCommandAllow");
-        String expResult = null;
-        String result = instance.getCommandAllow();
-        assertEquals(expResult, result);
+        assertNull(instance.getCommandAllow());
     }
 
     /**
@@ -158,8 +155,8 @@ public class OptionsTest {
     @Test
     public void testGetCommandAllowNoPass() {
         System.out.println("getCommandAllowNoPass");
-        String expResult = "127.0.0.1";
-        String result = instance.getCommandAllowNoPass();
+        var expResult = "127.0.0.1";
+        var result = instance.getCommandAllowNoPass();
         assertEquals(expResult, result);
     }
 
@@ -169,9 +166,7 @@ public class OptionsTest {
     @Test
     public void testGetCommandDeny() {
         System.out.println("getCommandDeny");
-        String expResult = null;
-        String result = instance.getCommandDeny();
-        assertEquals(expResult, result);
+        assertNull(instance.getCommandDeny());
     }
 
     /**
@@ -180,8 +175,8 @@ public class OptionsTest {
     @Test
     public void testGetCommandDenyNoPass() {
         System.out.println("getCommandDenyNoPass");
-        String expResult = "0/0";
-        String result = instance.getCommandDenyNoPass();
+        var expResult = "0/0";
+        var result = instance.getCommandDenyNoPass();
         assertEquals(expResult, result);
     }
 
@@ -191,8 +186,8 @@ public class OptionsTest {
     @Test
     public void testGetCommandPort() {
         System.out.println("getCommandPort");
-        int expResult = 36330;
-        int result = instance.getCommandPort();
+        var expResult = 36330;
+        var result = instance.getCommandPort();
         assertEquals(expResult, result);
     }
 
@@ -202,8 +197,8 @@ public class OptionsTest {
     @Test
     public void testGetConfigRotate() {
         System.out.println("getConfigRotate");
-        boolean expResult = true;
-        boolean result = instance.getConfigRotate();
+        var expResult = true;
+        var result = instance.getConfigRotate();
         assertEquals(expResult, result);
     }
 
@@ -213,8 +208,8 @@ public class OptionsTest {
     @Test
     public void testGetConfigRotateDir() {
         System.out.println("getConfigRotateDir");
-        String expResult = "configs";
-        String result = instance.getConfigRotateDir();
+        var expResult = "configs";
+        var result = instance.getConfigRotateDir();
         assertEquals(expResult, result);
     }
 
@@ -224,8 +219,8 @@ public class OptionsTest {
     @Test
     public void testGetConfigRotateMax() {
         System.out.println("getConfigRotateMax");
-        int expResult = 16;
-        int result = instance.getConfigRotateMax();
+        var expResult = 16;
+        var result = instance.getConfigRotateMax();
         assertEquals(expResult, result);
     }
 
@@ -235,8 +230,8 @@ public class OptionsTest {
     @Test
     public void testGetCoreDir() {
         System.out.println("getCoreDir");
-        String expResult = "cores";
-        String result = instance.getCoreDir();
+        var expResult = "cores";
+        var result = instance.getCoreDir();
         assertEquals(expResult, result);
     }
 
@@ -246,9 +241,7 @@ public class OptionsTest {
     @Test
     public void testGetCoreKey() {
         System.out.println("getCoreKey");
-        String expResult = null;
-        String result = instance.getCoreKey();
-        assertEquals(expResult, result);
+        assertNull(instance.getCoreKey());
     }
 
     /**
@@ -257,9 +250,7 @@ public class OptionsTest {
     @Test
     public void testGetCorePrep() {
         System.out.println("getCorePrep");
-        String expResult = null;
-        String result = instance.getCorePrep();
-        assertEquals(expResult, result);
+        assertNull(instance.getCorePrep());
     }
 
     /**
@@ -268,8 +259,8 @@ public class OptionsTest {
     @Test
     public void testGetCorePriority() {
         System.out.println("getCorePriority");
-        String expResult = "idle";
-        String result = instance.getCorePriority();
+        var expResult = "idle";
+        var result = instance.getCorePriority();
         assertEquals(expResult, result);
     }
 
@@ -279,9 +270,7 @@ public class OptionsTest {
     @Test
     public void testGetCoreServer() {
         System.out.println("getCoreServer");
-        String expResult = null;
-        String result = instance.getCoreServer();
-        assertEquals(expResult, result);
+        assertNull(instance.getCoreServer());
     }
 
     /**
@@ -290,8 +279,8 @@ public class OptionsTest {
     @Test
     public void testGetCpuAffinity() {
         System.out.println("getCpuAffinity");
-        boolean expResult = false;
-        boolean result = instance.getCpuAffinity();
+        var expResult = false;
+        var result = instance.getCpuAffinity();
         assertEquals(expResult, result);
     }
 
@@ -301,8 +290,8 @@ public class OptionsTest {
     @Test
     public void testGetCpuSpecies() {
         System.out.println("getCpuSpecies");
-        String expResult = "X86_PENTIUM_II";
-        String result = instance.getCpuSpecies();
+        var expResult = "X86_PENTIUM_II";
+        var result = instance.getCpuSpecies();
         assertEquals(expResult, result);
     }
 
@@ -312,8 +301,8 @@ public class OptionsTest {
     @Test
     public void testGetCpuType() {
         System.out.println("getCpuType");
-        String expResult = "AMD64";
-        String result = instance.getCpuType();
+        var expResult = "AMD64";
+        var result = instance.getCpuType();
         assertEquals(expResult, result);
     }
 
@@ -323,8 +312,8 @@ public class OptionsTest {
     @Test
     public void testGetCpuUsage() {
         System.out.println("getCpuUsage");
-        int expResult = 100;
-        int result = instance.getCpuUsage();
+        var expResult = 100;
+        var result = instance.getCpuUsage();
         assertEquals(expResult, result);
     }
 
@@ -334,8 +323,8 @@ public class OptionsTest {
     @Test
     public void testGetCpus() {
         System.out.println("getCpus");
-        int expResult = -1;
-        int result = instance.getCpus();
+        var expResult = -1;
+        var result = instance.getCpus();
         assertEquals(expResult, result);
     }
 
@@ -345,8 +334,8 @@ public class OptionsTest {
     @Test
     public void testGetCudaIndex() {
         System.out.println("getCudaIndex");
-        int expResult = 0;
-        int result = instance.getCudaIndex();
+        var expResult = 0;
+        var result = instance.getCudaIndex();
         assertEquals(expResult, result);
     }
 
@@ -356,8 +345,8 @@ public class OptionsTest {
     @Test
     public void testGetCycleRate() {
         System.out.println("getCycleRate");
-        int expResult = 4;
-        int result = instance.getCycleRate();
+        var expResult = 4;
+        var result = instance.getCycleRate();
         assertEquals(expResult, result);
     }
 
@@ -367,8 +356,8 @@ public class OptionsTest {
     @Test
     public void testGetCycles() {
         System.out.println("getCycles");
-        int expResult = -1;
-        int result = instance.getCycles();
+        var expResult = -1;
+        var result = instance.getCycles();
         assertEquals(expResult, result);
     }
 
@@ -378,8 +367,8 @@ public class OptionsTest {
     @Test
     public void testGetDaemon() {
         System.out.println("getDaemon");
-        boolean expResult = false;
-        boolean result = instance.getDaemon();
+        var expResult = false;
+        var result = instance.getDaemon();
         assertEquals(expResult, result);
     }
 
@@ -389,8 +378,8 @@ public class OptionsTest {
     @Test
     public void testGetDataDirectory() {
         System.out.println("getDataDirectory");
-        String expResult = ".";
-        String result = instance.getDataDirectory();
+        var expResult = ".";
+        var result = instance.getDataDirectory();
         assertEquals(expResult, result);
     }
 
@@ -400,8 +389,8 @@ public class OptionsTest {
     @Test
     public void testGetDebugSockets() {
         System.out.println("getDebugSockets");
-        boolean expResult = false;
-        boolean result = instance.getDebugSockets();
+        var expResult = false;
+        var result = instance.getDebugSockets();
         assertEquals(expResult, result);
     }
 
@@ -411,8 +400,8 @@ public class OptionsTest {
     @Test
     public void testGetDumpAfterDeadline() {
         System.out.println("getDumpAfterDeadline");
-        boolean expResult = true;
-        boolean result = instance.getDumpAfterDeadline();
+        var expResult = true;
+        var result = instance.getDumpAfterDeadline();
         assertEquals(expResult, result);
     }
 
@@ -422,9 +411,7 @@ public class OptionsTest {
     @Test
     public void testGetEval() {
         System.out.println("getEval");
-        String expResult = null;
-        String result = instance.getEval();
-        assertEquals(expResult, result);
+        assertNull(instance.getEval());
     }
 
     /**
@@ -433,8 +420,8 @@ public class OptionsTest {
     @Test
     public void testGetExceptionLocations() {
         System.out.println("getExceptionLocations");
-        boolean expResult = true;
-        boolean result = instance.getExceptionLocations();
+        var expResult = true;
+        var result = instance.getExceptionLocations();
         assertEquals(expResult, result);
     }
 
@@ -444,8 +431,8 @@ public class OptionsTest {
     @Test
     public void testGetExecDirectory() {
         System.out.println("getExecDirectory");
-        String expResult = "/usr/bin";
-        String result = instance.getExecDirectory();
+        var expResult = "/usr/bin";
+        var result = instance.getExecDirectory();
         assertEquals(expResult, result);
     }
 
@@ -455,8 +442,8 @@ public class OptionsTest {
     @Test
     public void testGetExitWhenDone() {
         System.out.println("getExitWhenDone");
-        boolean expResult = false;
-        boolean result = instance.getExitWhenDone();
+        var expResult = false;
+        var result = instance.getExitWhenDone();
         assertEquals(expResult, result);
     }
 
@@ -466,9 +453,7 @@ public class OptionsTest {
     @Test
     public void testGetExtraCoreArgs() {
         System.out.println("getExtraCoreArgs");
-        String expResult = null;
-        String result = instance.getExtraCoreArgs();
-        assertEquals(expResult, result);
+        assertNull(instance.getExtraCoreArgs());
     }
 
     /**
@@ -486,8 +471,8 @@ public class OptionsTest {
     @Test
     public void testGetGpu() {
         System.out.println("getGpu");
-        boolean expResult = false;
-        boolean result = instance.getGpu();
+        var expResult = false;
+        var result = instance.getGpu();
         assertEquals(expResult, result);
     }
 
@@ -497,8 +482,8 @@ public class OptionsTest {
     @Test
     public void testGetGpuAssignmentServers() {
         System.out.println("getGpuAssignmentServers");
-        String expResult = "assign-GPU.stanford.edu:80 assign-GPU2.stanford.edu:80";
-        String result = instance.getGpuAssignmentServers();
+        var expResult = "assign-GPU.stanford.edu:80 assign-GPU2.stanford.edu:80";
+        var result = instance.getGpuAssignmentServers();
         assertEquals(expResult, result);
     }
 
@@ -508,9 +493,7 @@ public class OptionsTest {
     @Test
     public void testGetGpuIndex() {
         System.out.println("getGpuIndex");
-        String expResult = null;
-        String result = instance.getGpuIndex();
-        assertEquals(expResult, result);
+        assertNull(instance.getGpuIndex());
     }
 
     /**
@@ -519,8 +502,8 @@ public class OptionsTest {
     @Test
     public void testGetGpuUsage() {
         System.out.println("getGpuUsage");
-        int expResult = 100;
-        int result = instance.getGpuUsage();
+        var expResult = 100;
+        var result = instance.getGpuUsage();
         assertEquals(expResult, result);
     }
 
@@ -530,8 +513,8 @@ public class OptionsTest {
     @Test
     public void testGetLog() {
         System.out.println("getLog");
-        String expResult = "log.txt";
-        String result = instance.getLog();
+        var expResult = "log.txt";
+        var result = instance.getLog();
         assertEquals(expResult, result);
     }
 
@@ -541,8 +524,8 @@ public class OptionsTest {
     @Test
     public void testGetLogColor() {
         System.out.println("getLogColor");
-        boolean expResult = true;
-        boolean result = instance.getLogColor();
+        var expResult = true;
+        var result = instance.getLogColor();
         assertEquals(expResult, result);
     }
 
@@ -552,8 +535,8 @@ public class OptionsTest {
     @Test
     public void testGetLogCrlf() {
         System.out.println("getLogCrlf");
-        boolean expResult = false;
-        boolean result = instance.getLogCrlf();
+        var expResult = false;
+        var result = instance.getLogCrlf();
         assertEquals(expResult, result);
     }
 
@@ -563,8 +546,8 @@ public class OptionsTest {
     @Test
     public void testGetLogDate() {
         System.out.println("getLogDate");
-        boolean expResult = false;
-        boolean result = instance.getLogDate();
+        var expResult = false;
+        var result = instance.getLogDate();
         assertEquals(expResult, result);
     }
 
@@ -574,8 +557,8 @@ public class OptionsTest {
     @Test
     public void testGetLogDebug() {
         System.out.println("getLogDebug");
-        boolean expResult = true;
-        boolean result = instance.getLogDebug();
+        var expResult = true;
+        var result = instance.getLogDebug();
         assertEquals(expResult, result);
     }
 
@@ -585,8 +568,8 @@ public class OptionsTest {
     @Test
     public void testGetLogDomain() {
         System.out.println("getLogDomain");
-        boolean expResult = false;
-        boolean result = instance.getLogDomain();
+        var expResult = false;
+        var result = instance.getLogDomain();
         assertEquals(expResult, result);
     }
 
@@ -605,8 +588,8 @@ public class OptionsTest {
     @Test
     public void testGetLogHeader() {
         System.out.println("getLogHeader");
-        boolean expResult = true;
-        boolean result = instance.getLogHeader();
+        var expResult = true;
+        var result = instance.getLogHeader();
         assertEquals(expResult, result);
     }
 
@@ -616,8 +599,8 @@ public class OptionsTest {
     @Test
     public void testGetLogLevel() {
         System.out.println("getLogLevel");
-        boolean expResult = true;
-        boolean result = instance.getLogLevel();
+        var expResult = true;
+        var result = instance.getLogLevel();
         assertEquals(expResult, result);
     }
 
@@ -627,8 +610,8 @@ public class OptionsTest {
     @Test
     public void testGetLogNoInfoHeader() {
         System.out.println("getLogNoInfoHeader");
-        boolean expResult = true;
-        boolean result = instance.getLogNoInfoHeader();
+        var expResult = true;
+        var result = instance.getLogNoInfoHeader();
         assertEquals(expResult, result);
     }
 
@@ -638,8 +621,8 @@ public class OptionsTest {
     @Test
     public void testGetLogRedirect() {
         System.out.println("getLogRedirect");
-        boolean expResult = false;
-        boolean result = instance.getLogRedirect();
+        var expResult = false;
+        var result = instance.getLogRedirect();
         assertEquals(expResult, result);
     }
 
@@ -649,8 +632,8 @@ public class OptionsTest {
     @Test
     public void testGetLogRotate() {
         System.out.println("getLogRotate");
-        boolean expResult = true;
-        boolean result = instance.getLogRotate();
+        var expResult = true;
+        var result = instance.getLogRotate();
         assertEquals(expResult, result);
     }
 
@@ -660,8 +643,8 @@ public class OptionsTest {
     @Test
     public void testGetLogRotateDir() {
         System.out.println("getLogRotateDir");
-        String expResult = "logs";
-        String result = instance.getLogRotateDir();
+        var expResult = "logs";
+        var result = instance.getLogRotateDir();
         assertEquals(expResult, result);
     }
 
@@ -671,8 +654,8 @@ public class OptionsTest {
     @Test
     public void testGetLogRotateMax() {
         System.out.println("getLogRotateMax");
-        int expResult = 16;
-        int result = instance.getLogRotateMax();
+        var expResult = 16;
+        var result = instance.getLogRotateMax();
         assertEquals(expResult, result);
     }
 
@@ -682,8 +665,8 @@ public class OptionsTest {
     @Test
     public void testGetLogShortLevel() {
         System.out.println("getLogShortLevel");
-        boolean expResult = false;
-        boolean result = instance.getLogShortLevel();
+        var expResult = false;
+        var result = instance.getLogShortLevel();
         assertEquals(expResult, result);
     }
 
@@ -693,8 +676,8 @@ public class OptionsTest {
     @Test
     public void testGetLogSimpleDomains() {
         System.out.println("getLogSimpleDomains");
-        boolean expResult = true;
-        boolean result = instance.getLogSimpleDomains();
+        var expResult = true;
+        var result = instance.getLogSimpleDomains();
         assertEquals(expResult, result);
     }
 
@@ -704,8 +687,8 @@ public class OptionsTest {
     @Test
     public void testGetLogThreadId() {
         System.out.println("getLogThreadId");
-        boolean expResult = false;
-        boolean result = instance.getLogThreadId();
+        var expResult = false;
+        var result = instance.getLogThreadId();
         assertEquals(expResult, result);
     }
 
@@ -715,8 +698,8 @@ public class OptionsTest {
     @Test
     public void testGetLogTime() {
         System.out.println("getLogTime");
-        boolean expResult = true;
-        boolean result = instance.getLogTime();
+        var expResult = true;
+        var result = instance.getLogTime();
         assertEquals(expResult, result);
     }
 
@@ -726,8 +709,8 @@ public class OptionsTest {
     @Test
     public void testGetLogToScreen() {
         System.out.println("getLogToScreen");
-        boolean expResult = true;
-        boolean result = instance.getLogToScreen();
+        var expResult = true;
+        var result = instance.getLogToScreen();
         assertEquals(expResult, result);
     }
 
@@ -737,8 +720,8 @@ public class OptionsTest {
     @Test
     public void testGetLogTruncate() {
         System.out.println("getLogTruncate");
-        boolean expResult = false;
-        boolean result = instance.getLogTruncate();
+        var expResult = false;
+        var result = instance.getLogTruncate();
         assertEquals(expResult, result);
     }
 
@@ -748,8 +731,8 @@ public class OptionsTest {
     @Test
     public void testGetMachineId() {
         System.out.println("getMachineId");
-        int expResult = 0;
-        int result = instance.getMachineId();
+        var expResult = 0;
+        var result = instance.getMachineId();
         assertEquals(expResult, result);
     }
 
@@ -759,8 +742,8 @@ public class OptionsTest {
     @Test
     public void testGetMaxDelay() {
         System.out.println("getMaxDelay");
-        int expResult = 0;
-        int result = instance.getMaxDelay();
+        var expResult = 0;
+        var result = instance.getMaxDelay();
         assertEquals(expResult, result);
     }
 
@@ -770,8 +753,8 @@ public class OptionsTest {
     @Test
     public void testGetMaxPacketSize() {
         System.out.println("getMaxPacketSize");
-        String expResult = "normal";
-        String result = instance.getMaxPacketSize();
+        var expResult = "normal";
+        var result = instance.getMaxPacketSize();
         assertEquals(expResult, result);
     }
 
@@ -781,8 +764,8 @@ public class OptionsTest {
     @Test
     public void testGetMaxQueue() {
         System.out.println("getMaxQueue");
-        int expResult = 16;
-        int result = instance.getMaxQueue();
+        var expResult = 16;
+        var result = instance.getMaxQueue();
         assertEquals(expResult, result);
     }
 
@@ -792,8 +775,8 @@ public class OptionsTest {
     @Test
     public void testGetMaxShutdownWait() {
         System.out.println("getMaxShutdownWait");
-        int expResult = 60;
-        int result = instance.getMaxShutdownWait();
+        var expResult = 60;
+        var result = instance.getMaxShutdownWait();
         assertEquals(expResult, result);
     }
 
@@ -803,8 +786,8 @@ public class OptionsTest {
     @Test
     public void testGetMaxSlotErrors() {
         System.out.println("getMaxSlotErrors");
-        int expResult = 10;
-        int result = instance.getMaxSlotErrors();
+        var expResult = 10;
+        var result = instance.getMaxSlotErrors();
         assertEquals(expResult, result);
     }
 
@@ -814,8 +797,8 @@ public class OptionsTest {
     @Test
     public void testGetMaxUnitErrors() {
         System.out.println("getMaxUnitErrors");
-        int expResult = 5;
-        int result = instance.getMaxUnitErrors();
+        var expResult = 5;
+        var result = instance.getMaxUnitErrors();
         assertEquals(expResult, result);
     }
 
@@ -825,8 +808,8 @@ public class OptionsTest {
     @Test
     public void testGetMaxUnits() {
         System.out.println("getMaxUnits");
-        int expResult = 0;
-        int result = instance.getMaxUnits();
+        var expResult = 0;
+        var result = instance.getMaxUnits();
         assertEquals(expResult, result);
     }
 
@@ -836,9 +819,7 @@ public class OptionsTest {
     @Test
     public void testGetMemory() {
         System.out.println("getMemory");
-        String expResult = null;
-        String result = instance.getMemory();
-        assertEquals(expResult, result);
+        assertNull(instance.getMemory());
     }
 
     /**
@@ -847,8 +828,8 @@ public class OptionsTest {
     @Test
     public void testGetMinDelay() {
         System.out.println("getMinDelay");
-        int expResult = 0;
-        int result = instance.getMinDelay();
+        var expResult = 0;
+        var result = instance.getMinDelay();
         assertEquals(expResult, result);
     }
 
@@ -858,8 +839,8 @@ public class OptionsTest {
     @Test
     public void testGetNextUnitPercentage() {
         System.out.println("getNextUnitPercentage");
-        int expResult = 99;
-        int result = instance.getNextUnitPercentage();
+        var expResult = 99;
+        var result = instance.getNextUnitPercentage();
         assertEquals(expResult, result);
     }
 
@@ -869,9 +850,7 @@ public class OptionsTest {
     @Test
     public void testGetPriority() {
         System.out.println("getPriority");
-        String expResult = null;
-        String result = instance.getPriority();
-        assertEquals(expResult, result);
+        assertNull(instance.getPriority());
     }
 
     /**
@@ -880,8 +859,8 @@ public class OptionsTest {
     @Test
     public void testGetNoAssembly() {
         System.out.println("getNoAssembly");
-        boolean expResult = false;
-        boolean result = instance.getNoAssembly();
+        var expResult = false;
+        var result = instance.getNoAssembly();
         assertEquals(expResult, result);
     }
 
@@ -891,8 +870,8 @@ public class OptionsTest {
     @Test
     public void testGetOpenclIndex() {
         System.out.println("getOpenclIndex");
-        int expResult = 0;
-        int result = instance.getOpenclIndex();
+        var expResult = 0;
+        var result = instance.getOpenclIndex();
         assertEquals(expResult, result);
     }
 
@@ -902,8 +881,8 @@ public class OptionsTest {
     @Test
     public void testGetOsSpecies() {
         System.out.println("getOsSpecies");
-        String expResult = "UNKNOWN";
-        String result = instance.getOsSpecies();
+        var expResult = "UNKNOWN";
+        var result = instance.getOsSpecies();
         assertEquals(expResult, result);
     }
 
@@ -913,8 +892,8 @@ public class OptionsTest {
     @Test
     public void testGetOsType() {
         System.out.println("getOsType");
-        String expResult = "MACOSX";
-        String result = instance.getOsType();
+        var expResult = "MACOSX";
+        var result = instance.getOsType();
         assertEquals(expResult, result);
     }
 
@@ -924,8 +903,8 @@ public class OptionsTest {
     @Test
     public void testGetPasskey() {
         System.out.println("getPasskey");
-        String expResult = "passkey";
-        String result = instance.getPasskey();
+        var expResult = "passkey";
+        var result = instance.getPasskey();
         assertEquals(expResult, result);
     }
 
@@ -935,9 +914,7 @@ public class OptionsTest {
     @Test
     public void testGetPassword() {
         System.out.println("getPassword");
-        String expResult = null;
-        String result = instance.getPassword();
-        assertEquals(expResult, result);
+        assertNull(instance.getPassword());
     }
 
     /**
@@ -946,8 +923,8 @@ public class OptionsTest {
     @Test
     public void testGetPauseOnBattery() {
         System.out.println("getPauseOnBattery");
-        boolean expResult = true;
-        boolean result = instance.getPauseOnBattery();
+        var expResult = true;
+        var result = instance.getPauseOnBattery();
         assertEquals(expResult, result);
     }
 
@@ -957,8 +934,8 @@ public class OptionsTest {
     @Test
     public void testGetPauseOnStart() {
         System.out.println("getPauseOnStart");
-        boolean expResult = false;
-        boolean result = instance.getPauseOnStart();
+        var expResult = false;
+        var result = instance.getPauseOnStart();
         assertEquals(expResult, result);
     }
 
@@ -968,8 +945,8 @@ public class OptionsTest {
     @Test
     public void testGetPid() {
         System.out.println("getPid");
-        boolean expResult = false;
-        boolean result = instance.getPid();
+        var expResult = false;
+        var result = instance.getPid();
         assertEquals(expResult, result);
     }
 
@@ -979,8 +956,8 @@ public class OptionsTest {
     @Test
     public void testGetPidFile() {
         System.out.println("getPidFile");
-        String expResult = "Folding@home Client.pid";
-        String result = instance.getPidFile();
+        var expResult = "Folding@home Client.pid";
+        var result = instance.getPidFile();
         assertEquals(expResult, result);
     }
 
@@ -990,8 +967,8 @@ public class OptionsTest {
     @Test
     public void testGetProjectKey() {
         System.out.println("getProjectKey");
-        int expResult = 0;
-        int result = instance.getProjectKey();
+        var expResult = 0;
+        var result = instance.getProjectKey();
         assertEquals(expResult, result);
     }
 
@@ -1001,8 +978,8 @@ public class OptionsTest {
     @Test
     public void testGetProxy() {
         System.out.println("getProxy");
-        String expResult = ":8080";
-        String result = instance.getProxy();
+        var expResult = ":8080";
+        var result = instance.getProxy();
         assertEquals(expResult, result);
     }
 
@@ -1012,8 +989,8 @@ public class OptionsTest {
     @Test
     public void testGetProxyEnable() {
         System.out.println("getProxyEnable");
-        boolean expResult = false;
-        boolean result = instance.getProxyEnable();
+        var expResult = false;
+        var result = instance.getProxyEnable();
         assertEquals(expResult, result);
     }
 
@@ -1023,8 +1000,8 @@ public class OptionsTest {
     @Test
     public void testGetProxyPass() {
         System.out.println("getProxyPass");
-        String expResult = "";
-        String result = instance.getProxyPass();
+        var expResult = "";
+        var result = instance.getProxyPass();
         assertEquals(expResult, result);
     }
 
@@ -1034,8 +1011,8 @@ public class OptionsTest {
     @Test
     public void testGetProxyUser() {
         System.out.println("getProxyUser");
-        String expResult = "";
-        String result = instance.getProxyUser();
+        var expResult = "";
+        var result = instance.getProxyUser();
         assertEquals(expResult, result);
     }
 
@@ -1045,8 +1022,8 @@ public class OptionsTest {
     @Test
     public void testGetRespawn() {
         System.out.println("getRespawn");
-        boolean expResult = true;
-        boolean result = instance.getRespawn();
+        var expResult = true;
+        var result = instance.getRespawn();
         assertEquals(expResult, result);
     }
 
@@ -1056,9 +1033,7 @@ public class OptionsTest {
     @Test
     public void testGetScript() {
         System.out.println("getScript");
-        String expResult = null;
-        String result = instance.getScript();
-        assertEquals(expResult, result);
+        assertNull(instance.getScript());
     }
 
     /**
@@ -1067,8 +1042,8 @@ public class OptionsTest {
     @Test
     public void testGetService() {
         System.out.println("getService");
-        boolean expResult = false;
-        boolean result = instance.getService();
+        var expResult = false;
+        var result = instance.getService();
         assertEquals(expResult, result);
     }
 
@@ -1078,9 +1053,7 @@ public class OptionsTest {
     @Test
     public void testGetServiceDescription() {
         System.out.println("getServiceDescription");
-        String expResult = null;
-        String result = instance.getServiceDescription();
-        assertEquals(expResult, result);
+        assertNull(instance.getServiceDescription());
     }
 
     /**
@@ -1098,8 +1071,8 @@ public class OptionsTest {
     @Test
     public void testGetServiceRestartDelay() {
         System.out.println("getServiceRestartDelay");
-        int expResult = 0;
-        int result = instance.getServiceRestartDelay();
+        var expResult = 0;
+        var result = instance.getServiceRestartDelay();
         assertEquals(expResult, result);
     }
 
@@ -1109,8 +1082,8 @@ public class OptionsTest {
     @Test
     public void testGetSmp() {
         System.out.println("getSmp");
-        boolean expResult = true;
-        boolean result = instance.getSmp();
+        var expResult = true;
+        var result = instance.getSmp();
         assertEquals(expResult, result);
     }
 
@@ -1120,8 +1093,8 @@ public class OptionsTest {
     @Test
     public void testGetStackTraces() {
         System.out.println("getStackTraces");
-        boolean expResult = false;
-        boolean result = instance.getStackTraces();
+        var expResult = false;
+        var result = instance.getStackTraces();
         assertEquals(expResult, result);
     }
 
@@ -1131,8 +1104,8 @@ public class OptionsTest {
     @Test
     public void testGetTeam() {
         System.out.println("getTeam");
-        int expResult = 39299;
-        int result = instance.getTeam();
+        var expResult = 39299;
+        var result = instance.getTeam();
         assertEquals(expResult, result);
     }
 
@@ -1142,8 +1115,8 @@ public class OptionsTest {
     @Test
     public void testGetThreads() {
         System.out.println("getThreads");
-        int expResult = 4;
-        int result = instance.getThreads();
+        var expResult = 4;
+        var result = instance.getThreads();
         assertEquals(expResult, result);
     }
 
@@ -1153,8 +1126,8 @@ public class OptionsTest {
     @Test
     public void testGetUser() {
         System.out.println("getUser");
-        String expResult = "montycrabapple";
-        String result = instance.getUser();
+        var expResult = "montycrabapple";
+        var result = instance.getUser();
         assertEquals(expResult, result);
     }
 
@@ -1164,8 +1137,8 @@ public class OptionsTest {
     @Test
     public void testGetVerbosity() {
         System.out.println("getVerbosity");
-        int expResult = 3;
-        int result = instance.getVerbosity();
+        var expResult = 3;
+        var result = instance.getVerbosity();
         assertEquals(expResult, result);
     }
 }

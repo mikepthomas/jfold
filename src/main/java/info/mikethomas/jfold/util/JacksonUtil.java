@@ -20,36 +20,31 @@
  */
 package info.mikethomas.jfold.util;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-
-import lombok.Synchronized;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
+import lombok.experimental.UtilityClass;
 
 /**
- * <p>DateAdapter class.</p>
+ * <p>JacksonUtil class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version 7.4.4
  */
-public class DateAdapter extends XmlAdapter<String, Date> {
+@UtilityClass
+public class JacksonUtil {
 
-    /**
-     * Date format used by the Folding@Home client.
-     */
-    public static final SimpleDateFormat DATE_FORMAT =
-            new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+    private ObjectMapper mapper;
 
-    @Override
-    @Synchronized
-    public final String marshal(final Date value) throws Exception {
-        return DATE_FORMAT.format(value);
+    public ObjectMapper getObjectMapper() {
+        if (mapper == null) {
+            setupMapper();
+        }
+        return mapper;
     }
 
-    @Override
-    @Synchronized
-    public final Date unmarshal(final String value) throws Exception {
-        return DATE_FORMAT.parse(value);
+    private void setupMapper() {
+        mapper = new ObjectMapper();
+        mapper.registerModule(new JaxbAnnotationModule());
+        mapper.setDateFormat(DateAdapter.DATE_FORMAT);
     }
 }

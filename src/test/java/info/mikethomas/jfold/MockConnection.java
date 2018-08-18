@@ -28,9 +28,7 @@ import info.mikethomas.jfold.slot.SlotOptions;
 import info.mikethomas.jfold.unit.Unit;
 import info.mikethomas.jfold.util.Command;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
 
 import lombok.extern.slf4j.XSlf4j;
@@ -98,10 +96,10 @@ public class MockConnection extends ClientConnection implements Connection {
 
     private String getJson(Class clazz) {
         try {
-            String filename = "Example" + clazz.getSimpleName() + ".json";
-            URL url = clazz.getResource(filename);
-            File file = FileUtils.toFile(url);
-            String json = FileUtils.readFileToString(file, ENCODING);
+            var filename = "Example" + clazz.getSimpleName() + ".json";
+            var url = clazz.getResource(filename);
+            var file = FileUtils.toFile(url);
+            var json = FileUtils.readFileToString(file, ENCODING);
             log.info(json);
             return json;
         } catch (IOException e) {

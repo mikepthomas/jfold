@@ -22,7 +22,6 @@ package info.mikethomas.jfold;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
 
 import info.mikethomas.jfold.exceptions.InfoException;
 import info.mikethomas.jfold.exceptions.NumSlotsException;
@@ -39,6 +38,7 @@ import info.mikethomas.jfold.slot.Slot;
 import info.mikethomas.jfold.slot.SlotOptions;
 import info.mikethomas.jfold.unit.Unit;
 import info.mikethomas.jfold.util.Command;
+import info.mikethomas.jfold.util.JacksonUtil;
 
 import java.io.IOException;
 import java.net.Inet4Address;
@@ -61,7 +61,7 @@ public class ClientConnection extends SocketConnection implements Connection {
     public static final int DEFAULT_PORT = 36330;
 
     /** Object Mapper. */
-    private final ObjectMapper mapper = new ObjectMapper();
+    private final ObjectMapper mapper = JacksonUtil.getObjectMapper();
 
     /**
      * <p>Default Constructor for ClientConnection.</p>
@@ -82,8 +82,6 @@ public class ClientConnection extends SocketConnection implements Connection {
     public ClientConnection(final String address, final int port)
             throws IOException {
         super(address, port);
-
-        mapper.registerModule(new JaxbAnnotationModule());
     }
 
     /** {@inheritDoc} */

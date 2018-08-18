@@ -20,7 +20,6 @@
  */
 package info.mikethomas.jfold.slot;
 
-import info.mikethomas.jfold.Connection;
 import info.mikethomas.jfold.MockConnection;
 import info.mikethomas.jfold.exceptions.SlotOptionsException;
 
@@ -49,7 +48,7 @@ public class SlotOptionsTest {
      */
     @BeforeAll
     public static void setUpClass() throws IOException, SlotOptionsException {
-        Connection connection = new MockConnection();
+        var connection = new MockConnection();
         instance = connection.slotOptions(0);
     }
 
@@ -59,9 +58,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetClientType() {
         System.out.println("getClientType");
-        String expResult = null;
-        String result = instance.getClientType();
-        assertEquals(expResult, result);
+        assertNull(instance.getClientType());
     }
 
     /**
@@ -70,9 +67,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetClientSubtype() {
         System.out.println("getClientSubtype");
-        String expResult = null;
-        String result = instance.getClientSubtype();
-        assertEquals(expResult, result);
+        assertNull(instance.getClientSubtype());
     }
 
     /**
@@ -92,9 +87,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetMaxPacketSize() {
         System.out.println("getMaxPacketSize");
-        String expResult = null;
-        String result = instance.getMaxPacketSize();
-        assertEquals(expResult, result);
+        assertNull(instance.getMaxPacketSize());
     }
 
     /**
@@ -103,9 +96,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetCorePriority() {
         System.out.println("getCorePriority");
-        String expResult = null;
-        String result = instance.getCorePriority();
-        assertEquals(expResult, result);
+        assertNull(instance.getCorePriority());
     }
 
     /**
@@ -150,9 +141,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetGpuVendorId() {
         System.out.println("getGpuVendorId");
-        String expResult = null;
-        String result = instance.getGpuVendorId();
-        assertEquals(expResult, result);
+        assertNull(instance.getGpuVendorId());
     }
 
     /**
@@ -161,9 +150,7 @@ public class SlotOptionsTest {
     @Test
     public void testGetGpuDeviceId() {
         System.out.println("getGpuDeviceId");
-        String expResult = null;
-        String result = instance.getGpuDeviceId();
-        assertEquals(expResult, result);
+        assertNull(instance.getGpuDeviceId());
     }
 
     /**
@@ -172,7 +159,7 @@ public class SlotOptionsTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        String expResult = "SlotOptions("
+        var expResult = "SlotOptions("
                 + "clientType=null, "
                 + "clientSubtype=null, "
                 + "machineId=0, "
@@ -187,7 +174,7 @@ public class SlotOptionsTest {
                 + "cpus=-1, "
                 + "idle=false, "
                 + "paused=false)";
-        String result = instance.toString();
+        var result = instance.toString();
         assertEquals(expResult, result);
     }
 }
