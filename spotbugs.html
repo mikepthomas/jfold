@@ -166,8 +166,8 @@
 <th>Errors</th>
 <th>Missing Classes</th></tr>
 <tr class="b">
-<td>29</td>
-<td>4</td>
+<td>30</td>
+<td>5</td>
 <td>0</td>
 <td>0</td></tr></table></div>
 <div class="section">
@@ -181,17 +181,20 @@
 <td>1</td></tr>
 <tr class="a">
 <td><a href="#info.mikethomas.jfold.unit.Unit">info.mikethomas.jfold.unit.Unit</a></td>
-<td>3</td></tr></table></div><a name="info.mikethomas.jfold.simulation.SimulationInfo"></a>
+<td>3</td></tr>
+<tr class="b">
+<td><a href="#info.mikethomas.jfold.util.DateAdapter">info.mikethomas.jfold.util.DateAdapter</a></td>
+<td>1</td></tr></table></div><a name="info.mikethomas.jfold.simulation.SimulationInfo"></a>
 <div class="section">
 <h3><a name="info.mikethomas.jfold.simulation.SimulationInfo"></a>info.mikethomas.jfold.simulation.SimulationInfo</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="a">
+<tr class="b">
 <td>info.mikethomas.jfold.simulation.SimulationInfo.getStartTime() may expose internal representation by returning SimulationInfo.startTime</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP">EI_EXPOSE_REP</a></td>
@@ -200,30 +203,45 @@
 <div class="section">
 <h3><a name="info.mikethomas.jfold.unit.Unit"></a>info.mikethomas.jfold.unit.Unit</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="a">
+<tr class="b">
 <td>info.mikethomas.jfold.unit.Unit.getAssigned() may expose internal representation by returning Unit.assigned</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP">EI_EXPOSE_REP</a></td>
 <td><a href="./xref/info/mikethomas/jfold/unit/Unit.html#L150">150</a></td>
 <td>Medium</td></tr>
-<tr class="b">
+<tr class="a">
 <td>info.mikethomas.jfold.unit.Unit.getDeadline() may expose internal representation by returning Unit.deadline</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP">EI_EXPOSE_REP</a></td>
 <td><a href="./xref/info/mikethomas/jfold/unit/Unit.html#L168">168</a></td>
 <td>Medium</td></tr>
-<tr class="a">
+<tr class="b">
 <td>info.mikethomas.jfold.unit.Unit.getTimeout() may expose internal representation by returning Unit.timeout</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP">EI_EXPOSE_REP</a></td>
 <td><a href="./xref/info/mikethomas/jfold/unit/Unit.html#L159">159</a></td>
-<td>Medium</td></tr></table></div>
+<td>Medium</td></tr></table></div><a name="info.mikethomas.jfold.util.DateAdapter"></a>
+<div class="section">
+<h3><a name="info.mikethomas.jfold.util.DateAdapter"></a>info.mikethomas.jfold.util.DateAdapter</h3>
+<table border="0" class="table table-striped">
+<tr class="a">
+<th>Bug</th>
+<th>Category</th>
+<th>Details</th>
+<th>Line</th>
+<th>Priority</th></tr>
+<tr class="b">
+<td>info.mikethomas.jfold.util.DateAdapter.DATE_FORMAT is a static field of type java.text.DateFormat, which isn't thread safe</td>
+<td>MT_CORRECTNESS</td>
+<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#STCAL_STATIC_SIMPLE_DATE_FORMAT_INSTANCE">STCAL_STATIC_SIMPLE_DATE_FORMAT_INSTANCE</a></td>
+<td>Not available</td>
+<td>High</td></tr></table></div>
         </div>
       </div>
     </div>
