@@ -87,9 +87,6 @@
         <project.domain.source>https://github.com</project.domain.source>
         <project.repository.path>mikepthomas/${project.artifactId}</project.repository.path>
 
-        <!-- Dependency Versions -->
-        <version.org.slf4j>1.7.25</version.org.slf4j>
-
         <!-- Plugin Versions -->
         <version.maven-changelog-plugin>2.3</version.maven-changelog-plugin>
         <version.maven-javadoc-plugin>3.0.1</version.maven-javadoc-plugin>
@@ -122,7 +119,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-ext</artifactId>
-            <version>${version.org.slf4j}</version>
+            <version>1.7.25</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -587,7 +584,9 @@
                             <message>Creating site for ${project.version}</message>
                             <repositoryName>jfold</repositoryName>
                             <repositoryOwner>mikepthomas</repositoryOwner>
-                            <excludes>**/.DS_Store</excludes>
+                            <excludes>
+                                <exclude>**/.DS_Store</exclude>
+                            </excludes>
                         </configuration>
                         <executions>
                             <execution>
