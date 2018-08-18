@@ -23,15 +23,11 @@ package info.mikethomas.jfold;
 import info.mikethomas.jfold.exceptions.InfoException;
 import info.mikethomas.jfold.exceptions.NumSlotsException;
 import info.mikethomas.jfold.exceptions.OptionsException;
-import info.mikethomas.jfold.exceptions.PauseException;
 import info.mikethomas.jfold.exceptions.PpdException;
 import info.mikethomas.jfold.exceptions.QueueInfoException;
 import info.mikethomas.jfold.exceptions.SimulationInfoException;
-import info.mikethomas.jfold.exceptions.SlotAddException;
 import info.mikethomas.jfold.exceptions.SlotInfoException;
 import info.mikethomas.jfold.exceptions.SlotOptionsException;
-import info.mikethomas.jfold.exceptions.UnpauseException;
-import info.mikethomas.jfold.exceptions.UptimeException;
 import info.mikethomas.jfold.info.InfoItem;
 import info.mikethomas.jfold.options.Options;
 import info.mikethomas.jfold.simulation.SimulationInfo;
@@ -180,18 +176,15 @@ public interface Connection {
 
     /**
      * Pause all slots.
-     *
-     * @throws info.mikethomas.jfold.exceptions.PauseException if any.
      */
-    void pause() throws PauseException;
+    void pause();
 
     /**
      * Pause requested slot.
      *
      * @param slot number
-     * @throws info.mikethomas.jfold.exceptions.PauseException if any.
      */
-    void pause(int slot) throws PauseException;
+    void pause(int slot);
 
     /**
      * Get current total estimated Points Per Day.
@@ -250,9 +243,8 @@ public interface Connection {
      * Add a new slot.
      *
      * @param type of slot
-     * @throws info.mikethomas.jfold.exceptions.SlotAddException if any.
      */
-    void slotAdd(String type) throws SlotAddException;
+    void slotAdd(String type);
 
     /**
      * Delete a slot.
@@ -301,26 +293,22 @@ public interface Connection {
 
     /**
      * Unpause all slots.
-     *
-     * @throws info.mikethomas.jfold.exceptions.UnpauseException if any.
      */
-    void unpause() throws UnpauseException;
+    void unpause();
 
     /**
      * Unpause requested slot.
      *
      * @param slot number
-     * @throws info.mikethomas.jfold.exceptions.UnpauseException if any.
      */
-    void unpause(int slot) throws UnpauseException;
+    void unpause(int slot);
 
     /**
      * Print application uptime.
      *
      * @return uptime value in "HH\h MM\m SS\s" format
-     * @throws info.mikethomas.jfold.exceptions.UptimeException if any.
      */
-    String uptime() throws UptimeException;
+    String uptime();
 
     /**
      * Wait for all running units to finish.

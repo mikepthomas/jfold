@@ -35,14 +35,14 @@
     <skin>
         <groupId>org.apache.maven.skins</groupId>
         <artifactId>maven-fluido-skin</artifactId>
-        <version>1.6</version>
+        <version>1.7</version>
     </skin>
 
     <body>
         <head>
             <![CDATA[
             <style>
-                .topBarEnabled a:first-child img {
+                .topBarEnabled > a img {
                     position: fixed !important;
                 }
             </style>

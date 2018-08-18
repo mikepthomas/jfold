@@ -22,7 +22,6 @@ package info.mikethomas.jfold.util;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 
 import java.io.IOException;
 
@@ -81,40 +80,43 @@ public final class PyonParser {
 
         // Check for valid PyON String
         if (!pyon.startsWith(PYON_1)) {
-            log.warn("PyonParser cannot convert String: " + pyon);
+            log.warn("PyonParser cannot convert String: {}", pyon);
             return pyon;
         }
 
         // Get PyON Body
-        String json = pyon.replaceAll(PYON_HEADER, "");
-        json = json.replaceAll(PYON_TRAILER, "");
+        var json = pyon
+                .replaceAll(PYON_HEADER, "")
+                .replaceAll(PYON_TRAILER, "");
 
         // Check for PyON Error Message
         if (pyon.contains(PYON_ERROR)) {
             json = json.replaceAll("\"", "");
         }
 
-        // Add '\n' to make PyON to JSON replacements
-        json = json.replaceAll("\\[", "[\n");
-        json = json.replaceAll("\\]", "\n]");
-        json = json.replaceAll("\\{", "{\n");
-        json = json.replaceAll("\\}", "\n}");
-        json = json.replaceAll(", ", ",\n");
+        // Add '\n' to make format of PyON to JSON replacements nicer
+        json = json
+                .replaceAll("\\[", "[\n") // New Line after Start Array
+                .replaceAll("\\]", "\n]") // New Line after End Array
+                .replaceAll("\\{", "{\n") // New Line after Start Object
+                .replaceAll("\\}", "\n}") // New Line after End Object
+                .replaceAll(", ", ",\n");
 
         // None is used instead of null
         json = json.replaceAll(NONE, NULL);
 
         // Boolean values start with an upper case letter as in Python.
-        json = json.replaceAll(PYON_TRUE, JSON_TRUE);
-        json = json.replaceAll(STRING_TRUE, JSON_TRUE);
-        json = json.replaceAll(PYON_FALSE, JSON_FALSE);
-        json = json.replaceAll(STRING_FALSE, JSON_FALSE);
+        json = json
+                .replaceAll(PYON_TRUE, JSON_TRUE)
+                .replaceAll(STRING_TRUE, JSON_TRUE)
+                .replaceAll(PYON_FALSE, JSON_FALSE)
+                .replaceAll(STRING_FALSE, JSON_FALSE);
 
         // Format JSON
-        ObjectMapper mapper = new ObjectMapper();
-        ObjectWriter writer = mapper.writerWithDefaultPrettyPrinter();
+        var mapper = new ObjectMapper();
+        var writer = mapper.writerWithDefaultPrettyPrinter();
         try {
-            JsonNode jsonNode = mapper.readValue(json, JsonNode.class);
+            var jsonNode = mapper.readValue(json, JsonNode.class);
             json = writer.writeValueAsString(jsonNode);
         } catch (IOException ex) {
             log.error("Unable to format json string", ex);

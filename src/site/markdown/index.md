@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <!--
   #%L
   This file is part of jFold.
@@ -20,9 +19,20 @@
   #L%
   -->
 
-<!DOCTYPE suppressions PUBLIC "-//Puppy Crawl//DTD Suppressions 1.1//EN"
-"http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
-<suppressions>
-    <suppress checks="NewlineAtEndOfFile" files=".java" />
-    <suppress checks="NewlineAtEndOfFile" files=".properties" />
-</suppressions>
+## About jFold
+
+Java Library to connect to the Client Remote Interface in v7 of the Folding@Home
+Client.
+
+### Client Remote Interface
+
+jFold is an API written in the Java programming language aiming to implement the
+**Socket Interface** of the
+[3rd party FAHClient API](https://github.com/FoldingAtHome/fah-control/wiki/3rd-party-FAHClient-API)
+using the guidelines set out by Stanford University.
+
+_________________________________________________________________________________
+
+Copyright &copy; Michael Thomas
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)

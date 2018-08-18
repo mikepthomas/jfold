@@ -182,6 +182,7 @@ public class Options implements Serializable {
      * @deprecated
      * @return the <code>command-allow</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "command-allow")
     private String commandAllow;
 
@@ -199,6 +200,7 @@ public class Options implements Serializable {
      * @deprecated
      * @return the <code>command-deny</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "command-deny")
     private String commandDeny;
 
@@ -744,6 +746,7 @@ public class Options implements Serializable {
      * @deprecated
      * @return the <code>max-delay</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "max-delay")
     private int maxDelay;
 
@@ -764,7 +767,7 @@ public class Options implements Serializable {
     private int maxConnections;
 
     /**
-     * Max packet size
+     * Max packet size.
      *
      * @return the <code>max-packet-size</code> from <code>options</code>
      */
@@ -833,6 +836,7 @@ public class Options implements Serializable {
      * @deprecated
      * @return the <code>min-delay</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "min-delay")
     private int minDelay;
 
@@ -1050,6 +1054,7 @@ public class Options implements Serializable {
      * @deprecated
      * @return the <code>service-description</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "service-description")
     private String serviceDescription;
 
@@ -1059,6 +1064,7 @@ public class Options implements Serializable {
      * @deprecated
      * @return the <code>service-restart</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "service-restart")
     private Boolean serviceRestart;
 
@@ -1068,6 +1074,7 @@ public class Options implements Serializable {
      * @deprecated
      * @return the <code>service-restart-delay</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "service-restart-delay")
     private int serviceRestartDelay;
 

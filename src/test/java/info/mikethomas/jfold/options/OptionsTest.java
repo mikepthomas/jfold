@@ -26,9 +26,9 @@ import info.mikethomas.jfold.exceptions.OptionsException;
 
 import java.io.IOException;
 
-import static org.junit.Assert.*;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 /**
  * <p>OptionsTest class.</p>
@@ -47,7 +47,7 @@ public class OptionsTest {
      * @throws java.io.IOException if any.
      * @throws info.mikethomas.jfold.exceptions.OptionsException if any.
      */
-    @BeforeClass
+    @BeforeAll
     public static void setUpClass() throws IOException, OptionsException {
         Connection connection = new MockConnection();
         instance = connection.options();

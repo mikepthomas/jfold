@@ -26,9 +26,9 @@ import info.mikethomas.jfold.exceptions.SlotInfoException;
 
 import java.io.IOException;
 
-import static org.junit.Assert.*;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 /**
  * <p>SlotTest class.</p>
@@ -47,7 +47,7 @@ public class SlotTest {
      * @throws java.io.IOException if any.
      * @throws info.mikethomas.jfold.exceptions.SlotInfoException if any.
      */
-    @BeforeClass
+    @BeforeAll
     public static void setUpClass() throws IOException, SlotInfoException {
         Connection connection = new MockConnection();
         instance = connection.slotInfo().get(1);

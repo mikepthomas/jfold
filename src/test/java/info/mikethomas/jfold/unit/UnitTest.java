@@ -27,10 +27,10 @@ import info.mikethomas.jfold.exceptions.QueueInfoException;
 import java.io.IOException;
 import java.net.UnknownHostException;
 
-import static org.junit.Assert.*;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * <p>UnitTest class.</p>
@@ -49,7 +49,7 @@ public class UnitTest {
      * @throws java.io.IOException if any.
      * @throws info.mikethomas.jfold.exceptions.QueueInfoException if any.
      */
-    @BeforeClass
+    @BeforeAll
     public static void setUpClass() throws IOException, QueueInfoException {
         Connection connection = new MockConnection();
         instance = connection.queueInfo().get(0);
@@ -348,7 +348,8 @@ public class UnitTest {
     /**
      * Test of toString method, of class Unit.
      */
-    @Test @Ignore
+    @Disabled
+    @Test
     public void testToString() {
         System.out.println("toString");
         String expResult = "";

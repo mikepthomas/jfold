@@ -35,6 +35,9 @@ import lombok.Synchronized;
  */
 public class DateAdapter extends XmlAdapter<String, Date> {
 
+    /**
+     * Date format used by the Folding@Home client.
+     */
     private final SimpleDateFormat dateFormat =
             new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 

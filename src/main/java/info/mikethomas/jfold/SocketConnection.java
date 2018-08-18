@@ -20,7 +20,6 @@
  */
 package info.mikethomas.jfold;
 
-import info.mikethomas.jfold.exceptions.CommandException;
 import info.mikethomas.jfold.util.Command;
 import info.mikethomas.jfold.util.PyonParser;
 
@@ -54,7 +53,7 @@ public class SocketConnection {
     public static final String WELCOME_MSG
             = "Welcome to the Folding@home Client command server.";
 
-    /** Socket to connect to F@H Client. */
+    /** Socket to connect to the Folding@Home client. */
     private Socket socket = null;
     /** OutputStream to send commands to. */
     private PrintStream out = null;
@@ -79,7 +78,7 @@ public class SocketConnection {
             in = new Scanner(socket.getInputStream(), ENCODING);
             in.useDelimiter(COMMAND_PROMPT);
 
-            String welcome = in.nextLine();
+            var welcome = in.nextLine();
             log.info(welcome);
             if (!(CLRSCR + WELCOME_MSG).equals(welcome)) {
                 throw new IOException(
@@ -93,10 +92,8 @@ public class SocketConnection {
      *
      * @param command command to send to the client
      * @return String response from client
-     * @throws info.mikethomas.jfold.exceptions.CommandException if any.
      */
-    protected String sendCommand(final Command command)
-            throws CommandException {
+    protected String sendCommand(final Command command) {
         return sendCommand(command, new ArrayList<>());
     }
 
@@ -106,25 +103,24 @@ public class SocketConnection {
      * @param command command to send to the client
      * @param args command arguments
      * @return String response from client
-     * @throws info.mikethomas.jfold.exceptions.CommandException if any.
      */
     protected String sendCommand(final Command command,
-            final List<String> args) throws CommandException {
+            final List<String> args) {
         log.entry(command, args);
 
-        Profiler profiler = new Profiler(command.toString());
+        var profiler = new Profiler(command.toString());
         profiler.setLogger(log);
 
-        StringBuilder arguments = new StringBuilder();
+        var arguments = new StringBuilder();
         args.forEach(arg -> arguments.append(" '").append(arg).append("'"));
 
         // Send the command
         profiler.start("Send Command");
         out.println(command + arguments.toString());
-        log.info("Sent Command: {} {}", command, arguments.toString());
+        log.info("Sent Command: {}{}", command, arguments);
 
         // Get the output
-        String response = "";
+        var response = "";
         switch (command.getResponseType()) {
             case PYON:
             case STRING:
@@ -135,7 +131,16 @@ public class SocketConnection {
                     response = PyonParser.convert(response);
                 } else if (response.equals("")) {
                     // TODO: remove dirty hack to stop ObjectMapper breaking
-                    response = "[]";
+                    switch (command) {
+                        case SIMULATION_INFO:
+                            response = "{}";
+                            break;
+                        case SLOT_INFO:
+                            response = "[]";
+                            break;
+                        default:
+                            break;
+                    }
                 }
 
             default:

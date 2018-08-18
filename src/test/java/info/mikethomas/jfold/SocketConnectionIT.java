@@ -18,7 +18,7 @@
  * along with jFold.  If not, see <http://www.gnu.org/licenses/>.
  * #L%
  */
-package integration;
+package info.mikethomas.jfold;
 
 import info.mikethomas.jfold.Connection;
 import info.mikethomas.jfold.ClientConnection;
@@ -28,9 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit test for simple App.
@@ -38,31 +36,14 @@ import junit.framework.TestSuite;
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version 7.4.4
  */
-public class SocketConnectionTest extends TestCase {
-
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public SocketConnectionTest(String testName) {
-        super(testName);
-    }
-
-    /**
-     * <p>suite.</p>
-     *
-     * @return the suite of tests being tested
-     */
-    public static Test suite() {
-        return new TestSuite(SocketConnectionTest.class);
-    }
+public class SocketConnectionIT {
 
     /**
      * Rigourous Test :-)
      *
      * @throws java.io.IOException if any.
      */
+    @Test
     public void testApp() throws IOException {
         Properties props = new Properties();
         String config = "/config.properties";

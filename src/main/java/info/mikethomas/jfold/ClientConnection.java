@@ -27,15 +27,11 @@ import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
 import info.mikethomas.jfold.exceptions.InfoException;
 import info.mikethomas.jfold.exceptions.NumSlotsException;
 import info.mikethomas.jfold.exceptions.OptionsException;
-import info.mikethomas.jfold.exceptions.PauseException;
 import info.mikethomas.jfold.exceptions.PpdException;
 import info.mikethomas.jfold.exceptions.QueueInfoException;
 import info.mikethomas.jfold.exceptions.SimulationInfoException;
-import info.mikethomas.jfold.exceptions.SlotAddException;
 import info.mikethomas.jfold.exceptions.SlotInfoException;
 import info.mikethomas.jfold.exceptions.SlotOptionsException;
-import info.mikethomas.jfold.exceptions.UnpauseException;
-import info.mikethomas.jfold.exceptions.UptimeException;
 import info.mikethomas.jfold.info.InfoItem;
 import info.mikethomas.jfold.options.Options;
 import info.mikethomas.jfold.simulation.SimulationInfo;
@@ -48,6 +44,7 @@ import java.io.IOException;
 import java.net.Inet4Address;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -130,16 +127,12 @@ public class ClientConnection extends SocketConnection implements Connection {
     /** {@inheritDoc} */
     @Override
     public final synchronized String getInfo(
-            final String category, final String key) throws InfoException {
-        try {
-            List<String> args = new ArrayList<String>() { {
-                add(category);
-                add(key);
-            } };
-            return sendCommand(Command.GET_INFO, args);
-        } catch (IOException ex) {
-            throw new InfoException(ex.getMessage(), ex);
-        }
+            final String category, final String key) {
+        var args = new ArrayList<String>() { {
+            add(category);
+            add(key);
+        } };
+        return sendCommand(Command.GET_INFO, args);
     }
 
     /** {@inheritDoc} */
@@ -208,7 +201,7 @@ public class ClientConnection extends SocketConnection implements Connection {
             final boolean listDefault, final boolean listUnset)
             throws OptionsException {
         try {
-            List<String> args = new ArrayList<>();
+            var args = new ArrayList<String>();
             if (listDefault) {
                 args.add("-d");
             }
@@ -224,25 +217,15 @@ public class ClientConnection extends SocketConnection implements Connection {
 
     /** {@inheritDoc} */
     @Override
-    public final synchronized void pause() throws PauseException {
-        try {
-            sendCommand(Command.PAUSE);
-        } catch (IOException ex) {
-            throw new PauseException(ex.getMessage(), ex);
-        }
+    public final synchronized void pause() {
+        sendCommand(Command.PAUSE);
     }
 
     /** {@inheritDoc} */
     @Override
-    public final synchronized void pause(final int slot) throws PauseException {
-        try {
-            List<String> args = new ArrayList<String>() { {
-                add(String.valueOf(slot));
-            } };
-            sendCommand(Command.PAUSE, args);
-        } catch (IOException ex) {
-            throw new PauseException(ex.getMessage(), ex);
-        }
+    public final synchronized void pause(final int slot) {
+        var args = Collections.singletonList(String.valueOf(slot));
+        sendCommand(Command.PAUSE, args);
     }
 
     /** {@inheritDoc} */
@@ -259,7 +242,7 @@ public class ClientConnection extends SocketConnection implements Connection {
     @Override
     public final synchronized List<Unit> queueInfo() throws QueueInfoException {
         try {
-            TypeReference type = new TypeReference<List<Unit>>() { };
+            var type = new TypeReference<List<Unit>>() { };
             return mapper.readValue(sendCommand(Command.QUEUE_INFO), type);
         } catch (IOException ex) {
             throw new QueueInfoException(ex.getMessage(), ex);
@@ -301,9 +284,7 @@ public class ClientConnection extends SocketConnection implements Connection {
     public final synchronized SimulationInfo simulationInfo(
             final int slot) throws SimulationInfoException {
         try {
-            List<String> args = new ArrayList<String>() { {
-                add(String.valueOf(slot));
-            } };
+            var args = Collections.singletonList(String.valueOf(slot));
             return mapper.readValue(sendCommand(Command.SIMULATION_INFO, args),
                     SimulationInfo.class);
         } catch (IOException ex) {
@@ -313,16 +294,9 @@ public class ClientConnection extends SocketConnection implements Connection {
 
     /** {@inheritDoc} */
     @Override
-    public final synchronized void slotAdd(final String type)
-            throws SlotAddException {
-        try {
-            List<String> args = new ArrayList<String>() { {
-                add(type);
-            } };
-            sendCommand(Command.SLOT_ADD, args);
-        } catch (IOException ex) {
-            throw new SlotAddException(ex.getMessage(), ex);
-        }
+    public final synchronized void slotAdd(final String type) {
+        var args = Collections.singletonList(type);
+        sendCommand(Command.SLOT_ADD, args);
     }
 
     /** {@inheritDoc} */
@@ -335,7 +309,7 @@ public class ClientConnection extends SocketConnection implements Connection {
     @Override
     public final synchronized List<Slot> slotInfo() throws SlotInfoException {
         try {
-            TypeReference type = new TypeReference<List<Slot>>() { };
+            var type = new TypeReference<List<Slot>>() { };
             return mapper.readValue(sendCommand(Command.SLOT_INFO), type);
         } catch (IOException ex) {
             throw new SlotInfoException(ex.getMessage(), ex);
@@ -354,7 +328,7 @@ public class ClientConnection extends SocketConnection implements Connection {
     public final synchronized SlotOptions slotOptions(final int slot)
             throws SlotOptionsException {
         try {
-            List<String> args = new ArrayList<String>() { {
+            var args = new ArrayList<String>() { {
                 add(String.valueOf(slot));
                 add("-a");
             } };
@@ -379,36 +353,21 @@ public class ClientConnection extends SocketConnection implements Connection {
 
     /** {@inheritDoc} */
     @Override
-    public final synchronized void unpause() throws UnpauseException {
-        try {
-            sendCommand(Command.UNPAUSE);
-        } catch (IOException ex) {
-            throw new UnpauseException(ex.getMessage(), ex);
-        }
+    public final synchronized void unpause() {
+        sendCommand(Command.UNPAUSE);
     }
 
     /** {@inheritDoc} */
     @Override
-    public final synchronized void unpause(final int slot)
-            throws UnpauseException {
-        try {
-            List<String> args = new ArrayList<String>() { {
-                add(String.valueOf(slot));
-            } };
-            sendCommand(Command.UNPAUSE, args);
-        } catch (IOException ex) {
-            throw new UnpauseException(ex.getMessage(), ex);
-        }
+    public final synchronized void unpause(final int slot) {
+        var args = Collections.singletonList(String.valueOf(slot));
+        sendCommand(Command.UNPAUSE, args);
     }
 
     /** {@inheritDoc} */
     @Override
-    public final synchronized String uptime() throws UptimeException {
-        try {
-            return sendCommand(Command.UPTIME);
-        } catch (IOException ex) {
-            throw new UptimeException(ex.getMessage(), ex);
-        }
+    public final synchronized String uptime() {
+        return sendCommand(Command.UPTIME);
     }
 
     /** {@inheritDoc} */

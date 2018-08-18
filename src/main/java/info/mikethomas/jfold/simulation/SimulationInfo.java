@@ -113,6 +113,7 @@ public class SimulationInfo implements Serializable {
      * @deprecated
      * @return the <code>description</code> from <code>simulation-info</code>
      */
+    @Deprecated
     @XmlElement
     private String description;
 
@@ -179,6 +180,7 @@ public class SimulationInfo implements Serializable {
      * @deprecated
      * @return the <code>run_time</code> from <code>simulation-info</code>
      */
+    @Deprecated
     @XmlElement(name = "run_time")
     private Long runTime;
 
@@ -188,6 +190,7 @@ public class SimulationInfo implements Serializable {
      * @deprecated
      * @return the <code>simulation_time</code> from <code>simulation-info</code>
      */
+    @Deprecated
     @XmlElement(name = "simulation_time")
     private Long simulationTime;
 
@@ -213,6 +216,7 @@ public class SimulationInfo implements Serializable {
      * @deprecated
      * @return the <code>news</code> from <code>simulation-info</code>
      */
+    @Deprecated
     @XmlElement
     private String news;
 
