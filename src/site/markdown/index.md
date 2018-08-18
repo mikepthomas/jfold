@@ -36,3 +36,4 @@ ________________________________________________________________________________
 Copyright &copy; Michael Thomas
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Build Status](https://travis-ci.org/mikepthomas/jfold.svg?branch=develop)](https://travis-ci.org/mikepthomas/jfold)
