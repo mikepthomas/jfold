@@ -182,8 +182,9 @@ import lombok.ToString;
      * @deprecated
      * @return the &lt;code&gt;command-allow&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
+    @Deprecated
     @XmlElement(name = &quot;command-allow&quot;)
-<span class="fc" id="L186">    private String commandAllow;</span>
+<span class="fc" id="L187">    private String commandAllow;</span>
 
     /**
      * Command allow no pass.
@@ -191,7 +192,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;command-allow-no-pass&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;command-allow-no-pass&quot;)
-<span class="fc" id="L194">    private String commandAllowNoPass;</span>
+<span class="fc" id="L195">    private String commandAllowNoPass;</span>
 
     /**
      * Command deny.
@@ -199,8 +200,9 @@ import lombok.ToString;
      * @deprecated
      * @return the &lt;code&gt;command-deny&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
+    @Deprecated
     @XmlElement(name = &quot;command-deny&quot;)
-<span class="fc" id="L203">    private String commandDeny;</span>
+<span class="fc" id="L205">    private String commandDeny;</span>
 
     /**
      * Deny.
@@ -208,7 +210,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;deny&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="nc" id="L211">    private String deny;</span>
+<span class="nc" id="L213">    private String deny;</span>
 
     /**
      * Command deny no pass.
@@ -216,7 +218,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;command-deny-no-pass&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;command-deny-no-pass&quot;)
-<span class="fc" id="L219">    private String commandDenyNoPass;</span>
+<span class="fc" id="L221">    private String commandDenyNoPass;</span>
 
     /**
      * Command enable.
@@ -224,7 +226,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;command-enable&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;command-enable&quot;)
-<span class="nc" id="L227">    private Boolean commandEnable;</span>
+<span class="nc" id="L229">    private Boolean commandEnable;</span>
 
     /**
      * Command port.
@@ -232,7 +234,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;command-port&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;command-port&quot;)
-<span class="fc" id="L235">    private int commandPort;</span>
+<span class="fc" id="L237">    private int commandPort;</span>
 
     /**
      * Config rotate.
@@ -240,7 +242,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;config-rotate&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;config-rotate&quot;)
-<span class="fc" id="L243">    private Boolean configRotate;</span>
+<span class="fc" id="L245">    private Boolean configRotate;</span>
 
     /**
      * Config rotate dir.
@@ -248,7 +250,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;config-rotate-dir&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;config-rotate-dir&quot;)
-<span class="fc" id="L251">    private String configRotateDir;</span>
+<span class="fc" id="L253">    private String configRotateDir;</span>
 
     /**
      * Config rotate max.
@@ -256,7 +258,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;config-rotate-max&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;config-rotate-max&quot;)
-<span class="fc" id="L259">    private int configRotateMax;</span>
+<span class="fc" id="L261">    private int configRotateMax;</span>
 
     /**
      * Connection timeout.
@@ -264,7 +266,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;connection-timeout&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;connection-timeout&quot;)
-<span class="nc" id="L267">    private int connectionTimeout;</span>
+<span class="nc" id="L269">    private int connectionTimeout;</span>
 
     /**
      * Core dir.
@@ -272,7 +274,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;core-dir&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;core-dir&quot;)
-<span class="fc" id="L275">    private String coreDir;</span>
+<span class="fc" id="L277">    private String coreDir;</span>
 
     /**
      * Core exec.
@@ -280,7 +282,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;core-exec&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;core-exec&quot;)
-<span class="nc" id="L283">    private String coreExec;</span>
+<span class="nc" id="L285">    private String coreExec;</span>
 
     /**
      * Core key.
@@ -288,7 +290,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;core-key&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;core-key&quot;)
-<span class="fc" id="L291">    private String coreKey;</span>
+<span class="fc" id="L293">    private String coreKey;</span>
 
     /**
      * Core prep.
@@ -296,7 +298,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;core-prep&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;core-prep&quot;)
-<span class="fc" id="L299">    private String corePrep;</span>
+<span class="fc" id="L301">    private String corePrep;</span>
 
     /**
      * Core priority.
@@ -304,7 +306,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;core-priority&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;core-priority&quot;)
-<span class="fc" id="L307">    private String corePriority;</span>
+<span class="fc" id="L309">    private String corePriority;</span>
 
     /**
      * Core server.
@@ -312,7 +314,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;core-server&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;core-server&quot;)
-<span class="fc" id="L315">    private String coreServer;</span>
+<span class="fc" id="L317">    private String coreServer;</span>
 
     /**
      * Core wrapper exec.
@@ -320,7 +322,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;core-wrapper-exec&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;core-wrapper-exec&quot;)
-<span class="nc" id="L323">    private String coreWrapperExec;</span>
+<span class="nc" id="L325">    private String coreWrapperExec;</span>
 
     /**
      * CPU affinity.
@@ -328,7 +330,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;cpu-affinity&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;cpu-affinity&quot;)
-<span class="fc" id="L331">    private Boolean cpuAffinity;</span>
+<span class="fc" id="L333">    private Boolean cpuAffinity;</span>
 
     /**
      * CPU species.
@@ -336,7 +338,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;cpu-species&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;cpu-species&quot;)
-<span class="fc" id="L339">    private String cpuSpecies;</span>
+<span class="fc" id="L341">    private String cpuSpecies;</span>
 
     /**
      * CPU type.
@@ -344,7 +346,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;cpu-type&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;cpu-type&quot;)
-<span class="fc" id="L347">    private String cpuType;</span>
+<span class="fc" id="L349">    private String cpuType;</span>
 
     /**
      * CPU usage.
@@ -352,7 +354,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;cpu-usage&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;cpu-usage&quot;)
-<span class="fc" id="L355">    private int cpuUsage;</span>
+<span class="fc" id="L357">    private int cpuUsage;</span>
 
     /**
      * CPUs.
@@ -360,7 +362,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;cpus&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L363">    private int cpus;</span>
+<span class="fc" id="L365">    private int cpus;</span>
 
     /**
      * CRL file.
@@ -368,7 +370,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;crl-file&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;crl-file&quot;)
-<span class="nc" id="L371">    private String crlFile;</span>
+<span class="nc" id="L373">    private String crlFile;</span>
 
     /**
      * CUDA index.
@@ -376,7 +378,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;cuda-index&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;cuda-index&quot;)
-<span class="fc" id="L379">    private int cudaIndex;</span>
+<span class="fc" id="L381">    private int cudaIndex;</span>
 
     /**
      * Cycle rate.
@@ -384,7 +386,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;cycle-rate&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;cycle-rate&quot;)
-<span class="fc" id="L387">    private int cycleRate;</span>
+<span class="fc" id="L389">    private int cycleRate;</span>
 
     /**
      * Cycles.
@@ -392,7 +394,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;cycles&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L395">    private int cycles;</span>
+<span class="fc" id="L397">    private int cycles;</span>
 
     /**
      * Daemon.
@@ -400,7 +402,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;daemon&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L403">    private Boolean daemon;</span>
+<span class="fc" id="L405">    private Boolean daemon;</span>
 
     /**
      * Data directory.
@@ -408,7 +410,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;data-directory&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;data-directory&quot;)
-<span class="fc" id="L411">    private String dataDirectory;</span>
+<span class="fc" id="L413">    private String dataDirectory;</span>
 
     /**
      * Debug sockets.
@@ -416,7 +418,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;debug-sockets&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;debug-sockets&quot;)
-<span class="fc" id="L419">    private Boolean debugSockets;</span>
+<span class="fc" id="L421">    private Boolean debugSockets;</span>
 
     /**
      * Disable sleep when active.
@@ -424,7 +426,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;disable-sleep-when-active&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;disable-sleep-when-active&quot;)
-<span class="nc" id="L427">    private Boolean disableSleepWhenActive;</span>
+<span class="nc" id="L429">    private Boolean disableSleepWhenActive;</span>
 
     /**
      * Dump after deadline.
@@ -432,7 +434,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;dump-after-deadline&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;dump-after-deadline&quot;)
-<span class="fc" id="L435">    private Boolean dumpAfterDeadline;</span>
+<span class="fc" id="L437">    private Boolean dumpAfterDeadline;</span>
 
     /**
      * Eval.
@@ -440,7 +442,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;eval&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L443">    private String eval;</span>
+<span class="fc" id="L445">    private String eval;</span>
 
     /**
      * Exception locations.
@@ -448,7 +450,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;exception-locations&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;exception-locations&quot;)
-<span class="fc" id="L451">    private Boolean exceptionLocations;</span>
+<span class="fc" id="L453">    private Boolean exceptionLocations;</span>
 
     /**
      * Exec directory.
@@ -456,7 +458,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;exec-directory&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;exec-directory&quot;)
-<span class="fc" id="L459">    private String execDirectory;</span>
+<span class="fc" id="L461">    private String execDirectory;</span>
 
     /**
      * Exit when done.
@@ -464,7 +466,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;exit-when-done&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;exit-when-done&quot;)
-<span class="fc" id="L467">    private Boolean exitWhenDone;</span>
+<span class="fc" id="L469">    private Boolean exitWhenDone;</span>
 
     /**
      * Extra core args.
@@ -472,7 +474,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;extra-core-args&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;extra-core-args&quot;)
-<span class="fc" id="L475">    private String extraCoreArgs;</span>
+<span class="fc" id="L477">    private String extraCoreArgs;</span>
 
     /**
      * Fold anon.
@@ -480,7 +482,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;fold-anon&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;fold-anon&quot;)
-<span class="nc" id="L483">    private Boolean foldAnon;</span>
+<span class="nc" id="L485">    private Boolean foldAnon;</span>
 
     /**
      * Force WS.
@@ -488,7 +490,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;force-ws&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;force-ws&quot;)
-<span class="fc" id="L491">    private Boolean forceWs;</span>
+<span class="fc" id="L493">    private Boolean forceWs;</span>
 
     /**
      * Fork.
@@ -496,7 +498,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;fork&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="nc" id="L499">    private Boolean fork;</span>
+<span class="nc" id="L501">    private Boolean fork;</span>
 
     /**
      * GPU.
@@ -504,7 +506,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;gpu&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L507">    private Boolean gpu;</span>
+<span class="fc" id="L509">    private Boolean gpu;</span>
 
     /**
      * GPU assignment servers.
@@ -512,7 +514,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;gpu-assignment-servers&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;gpu-assignment-servers&quot;)
-<span class="fc" id="L515">    private String gpuAssignmentServers;</span>
+<span class="fc" id="L517">    private String gpuAssignmentServers;</span>
 
     /**
      * GPU index.
@@ -520,7 +522,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;gpu-index&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;gpu-index&quot;)
-<span class="fc" id="L523">    private String gpuIndex;</span>
+<span class="fc" id="L525">    private String gpuIndex;</span>
 
     /**
      * GPU usage.
@@ -528,7 +530,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;gpu-usage&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;gpu-usage&quot;)
-<span class="fc" id="L531">    private int gpuUsage;</span>
+<span class="fc" id="L533">    private int gpuUsage;</span>
 
     /**
      * HTTP addresses.
@@ -536,7 +538,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;http-addresses&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;http-addresses&quot;)
-<span class="nc" id="L539">    private String httpAddresses;</span>
+<span class="nc" id="L541">    private String httpAddresses;</span>
 
     /**
      * HTTPS addresses.
@@ -544,7 +546,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;https-addresses&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;https-addresses&quot;)
-<span class="nc" id="L547">    private String httpsAddresses;</span>
+<span class="nc" id="L549">    private String httpsAddresses;</span>
 
     /**
      * Idle.
@@ -552,7 +554,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;idle&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="nc" id="L555">    private Boolean idle;</span>
+<span class="nc" id="L557">    private Boolean idle;</span>
 
     /**
      * Log.
@@ -560,7 +562,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L563">    private String log;</span>
+<span class="fc" id="L565">    private String log;</span>
 
     /**
      * Log color.
@@ -568,7 +570,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-color&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-color&quot;)
-<span class="fc" id="L571">    private Boolean logColor;</span>
+<span class="fc" id="L573">    private Boolean logColor;</span>
 
     /**
      * Log CRLF.
@@ -576,7 +578,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-crlf&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-crlf&quot;)
-<span class="fc" id="L579">    private Boolean logCrlf;</span>
+<span class="fc" id="L581">    private Boolean logCrlf;</span>
 
     /**
      * Log date.
@@ -584,7 +586,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-date&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-date&quot;)
-<span class="fc" id="L587">    private Boolean logDate;</span>
+<span class="fc" id="L589">    private Boolean logDate;</span>
 
     /**
      * Log date periodically.
@@ -592,7 +594,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-date-periodically&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-date-periodically&quot;)
-<span class="nc" id="L595">    private int logDatePeriodically;</span>
+<span class="nc" id="L597">    private int logDatePeriodically;</span>
 
     /**
      * Log debug.
@@ -600,7 +602,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-debug&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-debug&quot;)
-<span class="fc" id="L603">    private Boolean logDebug;</span>
+<span class="fc" id="L605">    private Boolean logDebug;</span>
 
     /**
      * Log domain.
@@ -608,7 +610,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-domain&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-domain&quot;)
-<span class="fc" id="L611">    private Boolean logDomain;</span>
+<span class="fc" id="L613">    private Boolean logDomain;</span>
 
     /**
      * Log domain levels.
@@ -616,7 +618,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-domain-levels&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-domain-levels&quot;)
-<span class="fc" id="L619">    private Boolean logDomainLevels;</span>
+<span class="fc" id="L621">    private Boolean logDomainLevels;</span>
 
     /**
      * Log header.
@@ -624,7 +626,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-header&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-header&quot;)
-<span class="fc" id="L627">    private Boolean logHeader;</span>
+<span class="fc" id="L629">    private Boolean logHeader;</span>
 
     /**
      * Log level.
@@ -632,7 +634,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-level&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-level&quot;)
-<span class="fc" id="L635">    private Boolean logLevel;</span>
+<span class="fc" id="L637">    private Boolean logLevel;</span>
 
     /**
      * Log no info header.
@@ -640,7 +642,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-no-info-header&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-no-info-header&quot;)
-<span class="fc" id="L643">    private Boolean logNoInfoHeader;</span>
+<span class="fc" id="L645">    private Boolean logNoInfoHeader;</span>
 
     /**
      * Log redirect.
@@ -648,7 +650,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-redirect&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-redirect&quot;)
-<span class="fc" id="L651">    private Boolean logRedirect;</span>
+<span class="fc" id="L653">    private Boolean logRedirect;</span>
 
     /**
      * Log rotate.
@@ -656,7 +658,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-rotate&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-rotate&quot;)
-<span class="fc" id="L659">    private Boolean logRotate;</span>
+<span class="fc" id="L661">    private Boolean logRotate;</span>
 
     /**
      * Log rotate dir.
@@ -664,7 +666,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-rotate-dir&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-rotate-dir&quot;)
-<span class="fc" id="L667">    private String logRotateDir;</span>
+<span class="fc" id="L669">    private String logRotateDir;</span>
 
     /**
      * Log rotate max.
@@ -672,7 +674,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-rotate-max&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-rotate-max&quot;)
-<span class="fc" id="L675">    private int logRotateMax;</span>
+<span class="fc" id="L677">    private int logRotateMax;</span>
 
     /**
      * Log short level.
@@ -680,7 +682,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-short-level&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-short-level&quot;)
-<span class="fc" id="L683">    private Boolean logShortLevel;</span>
+<span class="fc" id="L685">    private Boolean logShortLevel;</span>
 
     /**
      * Log simple domains.
@@ -688,7 +690,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-simple-domains&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-simple-domains&quot;)
-<span class="fc" id="L691">    private Boolean logSimpleDomains;</span>
+<span class="fc" id="L693">    private Boolean logSimpleDomains;</span>
 
     /**
      * Log thread id.
@@ -696,7 +698,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-thread-id&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-thread-id&quot;)
-<span class="fc" id="L699">    private Boolean logThreadId;</span>
+<span class="fc" id="L701">    private Boolean logThreadId;</span>
 
     /**
      * Log thread prefix.
@@ -704,7 +706,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-thread-prefix&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-thread-prefix&quot;)
-<span class="nc" id="L707">    private Boolean logThreadPrefix;</span>
+<span class="nc" id="L709">    private Boolean logThreadPrefix;</span>
 
     /**
      * Log time.
@@ -712,7 +714,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-time&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-time&quot;)
-<span class="fc" id="L715">    private Boolean logTime;</span>
+<span class="fc" id="L717">    private Boolean logTime;</span>
 
     /**
      * Log to screen.
@@ -720,7 +722,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-to-screen&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-to-screen&quot;)
-<span class="fc" id="L723">    private Boolean logToScreen;</span>
+<span class="fc" id="L725">    private Boolean logToScreen;</span>
 
     /**
      * Log truncate.
@@ -728,7 +730,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;log-truncate&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-truncate&quot;)
-<span class="fc" id="L731">    private Boolean logTruncate;</span>
+<span class="fc" id="L733">    private Boolean logTruncate;</span>
 
     /**
      * Machine id.
@@ -736,7 +738,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;machine-id&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;machine-id&quot;)
-<span class="fc" id="L739">    private int machineId;</span>
+<span class="fc" id="L741">    private int machineId;</span>
 
     /**
      * Max delay.
@@ -744,8 +746,9 @@ import lombok.ToString;
      * @deprecated
      * @return the &lt;code&gt;max-delay&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
+    @Deprecated
     @XmlElement(name = &quot;max-delay&quot;)
-<span class="fc" id="L748">    private int maxDelay;</span>
+<span class="fc" id="L751">    private int maxDelay;</span>
 
     /**
      * Max connect time.
@@ -753,7 +756,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;max-connect-time&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-connect-time&quot;)
-<span class="nc" id="L756">    private int maxConnectTime;</span>
+<span class="nc" id="L759">    private int maxConnectTime;</span>
 
     /**
      * Max connections.
@@ -761,15 +764,15 @@ import lombok.ToString;
      * @return the &lt;code&gt;max-connections&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-connections&quot;)
-<span class="nc" id="L764">    private int maxConnections;</span>
+<span class="nc" id="L767">    private int maxConnections;</span>
 
     /**
-     * Max packet size
+     * Max packet size.
      *
      * @return the &lt;code&gt;max-packet-size&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-packet-size&quot;)
-<span class="fc" id="L772">    private String maxPacketSize;</span>
+<span class="fc" id="L775">    private String maxPacketSize;</span>
 
     /**
      * Max queue.
@@ -777,7 +780,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;max-queue&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-queue&quot;)
-<span class="fc" id="L780">    private int maxQueue;</span>
+<span class="fc" id="L783">    private int maxQueue;</span>
 
     /**
      * Max request length.
@@ -785,7 +788,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;max-request-length&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-request-length&quot;)
-<span class="nc" id="L788">    private int maxRequestLength;</span>
+<span class="nc" id="L791">    private int maxRequestLength;</span>
 
     /**
      * Max shutdown wait.
@@ -793,7 +796,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;max-shutdown-wait&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-shutdown-wait&quot;)
-<span class="fc" id="L796">    private int maxShutdownWait;</span>
+<span class="fc" id="L799">    private int maxShutdownWait;</span>
 
     /**
      * Max slot errors.
@@ -801,7 +804,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;max-slot-errors&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-slot-errors&quot;)
-<span class="fc" id="L804">    private int maxSlotErrors;</span>
+<span class="fc" id="L807">    private int maxSlotErrors;</span>
 
     /**
      * Max unit errors.
@@ -809,7 +812,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;max-unit-errors&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-unit-errors&quot;)
-<span class="fc" id="L812">    private int maxUnitErrors;</span>
+<span class="fc" id="L815">    private int maxUnitErrors;</span>
 
     /**
      * Max units.
@@ -817,7 +820,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;max-units&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-units&quot;)
-<span class="fc" id="L820">    private int maxUnits;</span>
+<span class="fc" id="L823">    private int maxUnits;</span>
 
     /**
      * Memory.
@@ -825,7 +828,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;memory&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L828">    private String memory;</span>
+<span class="fc" id="L831">    private String memory;</span>
 
     /**
      * Min delay.
@@ -833,8 +836,9 @@ import lombok.ToString;
      * @deprecated
      * @return the &lt;code&gt;min-delay&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
+    @Deprecated
     @XmlElement(name = &quot;min-delay&quot;)
-<span class="fc" id="L837">    private int minDelay;</span>
+<span class="fc" id="L841">    private int minDelay;</span>
 
     /**
      * Min connect time.
@@ -842,7 +846,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;min-connect-time&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;min-connect-time&quot;)
-<span class="nc" id="L845">    private int minConnectTime;</span>
+<span class="nc" id="L849">    private int minConnectTime;</span>
 
     /**
      * Next unit percentage.
@@ -850,7 +854,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;next-unit-percentage&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;next-unit-percentage&quot;)
-<span class="fc" id="L853">    private int nextUnitPercentage;</span>
+<span class="fc" id="L857">    private int nextUnitPercentage;</span>
 
     /**
      * Priority.
@@ -858,7 +862,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;priority&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L861">    private String priority;</span>
+<span class="fc" id="L865">    private String priority;</span>
 
     /**
      * No assembly.
@@ -866,7 +870,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;no-assembly&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;no-assembly&quot;)
-<span class="fc" id="L869">    private Boolean noAssembly;</span>
+<span class="fc" id="L873">    private Boolean noAssembly;</span>
 
     /**
      * Open web control.
@@ -874,7 +878,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;open-web-control&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;open-web-control&quot;)
-<span class="nc" id="L877">    private Boolean openWebControl;</span>
+<span class="nc" id="L881">    private Boolean openWebControl;</span>
 
     /**
      * OpenCL Index.
@@ -882,7 +886,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;opencl-index&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;opencl-index&quot;)
-<span class="fc" id="L885">    private int openclIndex;</span>
+<span class="fc" id="L889">    private int openclIndex;</span>
 
     /**
      * OS Species.
@@ -890,7 +894,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;os-species&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;os-species&quot;)
-<span class="fc" id="L893">    private String osSpecies;</span>
+<span class="fc" id="L897">    private String osSpecies;</span>
 
     /**
      * OS type.
@@ -898,7 +902,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;os-type&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;os-type&quot;)
-<span class="fc" id="L901">    private String osType;</span>
+<span class="fc" id="L905">    private String osType;</span>
 
     /**
      * Passkey.
@@ -906,7 +910,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;passkey&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L909">    private String passkey;</span>
+<span class="fc" id="L913">    private String passkey;</span>
 
     /**
      * Password.
@@ -914,7 +918,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;password&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L917">    private String password;</span>
+<span class="fc" id="L921">    private String password;</span>
 
     /**
      * Pause on battery.
@@ -922,7 +926,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;pause-on-battery&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;pause-on-battery&quot;)
-<span class="fc" id="L925">    private Boolean pauseOnBattery;</span>
+<span class="fc" id="L929">    private Boolean pauseOnBattery;</span>
 
     /**
      * Pause on start.
@@ -930,7 +934,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;pause-on-start&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;pause-on-start&quot;)
-<span class="fc" id="L933">    private Boolean pauseOnStart;</span>
+<span class="fc" id="L937">    private Boolean pauseOnStart;</span>
 
     /**
      * Paused.
@@ -938,7 +942,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;paused&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="nc" id="L941">    private Boolean paused;</span>
+<span class="nc" id="L945">    private Boolean paused;</span>
 
     /**
      * PID.
@@ -946,7 +950,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;pid&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L949">    private Boolean pid;</span>
+<span class="fc" id="L953">    private Boolean pid;</span>
 
     /**
      * PID file.
@@ -954,7 +958,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;pid-file&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;pid-file&quot;)
-<span class="fc" id="L957">    private String pidFile;</span>
+<span class="fc" id="L961">    private String pidFile;</span>
 
     /**
      * Power.
@@ -962,7 +966,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;power&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="nc" id="L965">    private String power;</span>
+<span class="nc" id="L969">    private String power;</span>
 
     /**
      * Private key file.
@@ -970,7 +974,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;private-key-file&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;private-key-file&quot;)
-<span class="nc" id="L973">    private String privateKeyFile;</span>
+<span class="nc" id="L977">    private String privateKeyFile;</span>
 
     /**
      * Project key.
@@ -978,7 +982,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;project-key&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;project-key&quot;)
-<span class="fc" id="L981">    private int projectKey;</span>
+<span class="fc" id="L985">    private int projectKey;</span>
 
     /**
      * Proxy server address.
@@ -986,7 +990,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;proxy&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L989">    private String proxy;</span>
+<span class="fc" id="L993">    private String proxy;</span>
 
     /**
      * Proxy enable.
@@ -994,7 +998,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;proxy-enable&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;proxy-enable&quot;)
-<span class="fc" id="L997">    private Boolean proxyEnable;</span>
+<span class="fc" id="L1001">    private Boolean proxyEnable;</span>
 
     /**
      * Proxy pass.
@@ -1002,7 +1006,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;proxy-pass&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;proxy-pass&quot;)
-<span class="fc" id="L1005">    private String proxyPass;</span>
+<span class="fc" id="L1009">    private String proxyPass;</span>
 
     /**
      * Proxy user.
@@ -1010,7 +1014,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;proxy-user&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;proxy-user&quot;)
-<span class="fc" id="L1013">    private String proxyUser;</span>
+<span class="fc" id="L1017">    private String proxyUser;</span>
 
     /**
      * Respawn.
@@ -1018,7 +1022,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;respawn&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L1021">    private Boolean respawn;</span>
+<span class="fc" id="L1025">    private Boolean respawn;</span>
 
     /**
      * Run as.
@@ -1026,7 +1030,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;run-as&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;run-as&quot;)
-<span class="nc" id="L1029">    private String runAs;</span>
+<span class="nc" id="L1033">    private String runAs;</span>
 
     /**
      * Script.
@@ -1034,7 +1038,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;script&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L1037">    private String script;</span>
+<span class="fc" id="L1041">    private String script;</span>
 
     /**
      * Service.
@@ -1042,7 +1046,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;service&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L1045">    private Boolean service;</span>
+<span class="fc" id="L1049">    private Boolean service;</span>
 
     /**
      * Service description.
@@ -1050,8 +1054,9 @@ import lombok.ToString;
      * @deprecated
      * @return the &lt;code&gt;service-description&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
+    @Deprecated
     @XmlElement(name = &quot;service-description&quot;)
-<span class="fc" id="L1054">    private String serviceDescription;</span>
+<span class="fc" id="L1059">    private String serviceDescription;</span>
 
     /**
      * Service restart.
@@ -1059,8 +1064,9 @@ import lombok.ToString;
      * @deprecated
      * @return the &lt;code&gt;service-restart&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
+    @Deprecated
     @XmlElement(name = &quot;service-restart&quot;)
-<span class="fc" id="L1063">    private Boolean serviceRestart;</span>
+<span class="fc" id="L1069">    private Boolean serviceRestart;</span>
 
     /**
      * Service restart delay.
@@ -1068,8 +1074,9 @@ import lombok.ToString;
      * @deprecated
      * @return the &lt;code&gt;service-restart-delay&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
+    @Deprecated
     @XmlElement(name = &quot;service-restart-delay&quot;)
-<span class="fc" id="L1072">    private int serviceRestartDelay;</span>
+<span class="fc" id="L1079">    private int serviceRestartDelay;</span>
 
     /**
      * Session cookie.
@@ -1077,7 +1084,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;session-cookie&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;session-cookie&quot;)
-<span class="nc" id="L1080">    private String sessionCookie;</span>
+<span class="nc" id="L1087">    private String sessionCookie;</span>
 
     /**
      * Session lifetime.
@@ -1085,7 +1092,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;session-lifetime&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;session-lifetime&quot;)
-<span class="nc" id="L1088">    private int sessionLifetime;</span>
+<span class="nc" id="L1095">    private int sessionLifetime;</span>
 
     /**
      * Session timeout.
@@ -1093,7 +1100,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;session-timeout&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;session-timeout&quot;)
-<span class="nc" id="L1096">    private int sessionTimeout;</span>
+<span class="nc" id="L1103">    private int sessionTimeout;</span>
 
     /**
      * SMP.
@@ -1101,7 +1108,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;smp&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L1104">    private Boolean smp;</span>
+<span class="fc" id="L1111">    private Boolean smp;</span>
 
     /**
      * Stack traces.
@@ -1109,7 +1116,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;stack-traces&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;stack-traces&quot;)
-<span class="fc" id="L1112">    private Boolean stackTraces;</span>
+<span class="fc" id="L1119">    private Boolean stackTraces;</span>
 
     /**
      * Stall detection enabled.
@@ -1117,7 +1124,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;stall-detection-enabled&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;stall-detection-enabled&quot;)
-<span class="nc" id="L1120">    private Boolean stallDetectionEnabled;</span>
+<span class="nc" id="L1127">    private Boolean stallDetectionEnabled;</span>
 
     /**
      * Stall percent.
@@ -1125,7 +1132,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;stall-percent&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;stall-percent&quot;)
-<span class="nc" id="L1128">    private int stallPercent;</span>
+<span class="nc" id="L1135">    private int stallPercent;</span>
 
     /**
      * Stall timeout.
@@ -1133,7 +1140,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;stall-timeout&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;stall-timeout&quot;)
-<span class="nc" id="L1136">    private int stallTimeout;</span>
+<span class="nc" id="L1143">    private int stallTimeout;</span>
 
     /**
      * Team.
@@ -1141,7 +1148,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;team&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L1144">    private int team;</span>
+<span class="fc" id="L1151">    private int team;</span>
 
     /**
      * Threads.
@@ -1149,7 +1156,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;threads&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L1152">    private int threads;</span>
+<span class="fc" id="L1159">    private int threads;</span>
 
     /**
      * User.
@@ -1157,7 +1164,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;user&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L1160">    private String user;</span>
+<span class="fc" id="L1167">    private String user;</span>
 
     /**
      * Verbosity.
@@ -1165,7 +1172,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;verbosity&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L1168">    private int verbosity;</span>
+<span class="fc" id="L1175">    private int verbosity;</span>
 
     /**
      * Web allow.
@@ -1173,7 +1180,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;web-allow&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;web-allow&quot;)
-<span class="nc" id="L1176">    private String webAllow;</span>
+<span class="nc" id="L1183">    private String webAllow;</span>
 
     /**
      * Web deny.
@@ -1181,7 +1188,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;web-deny&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;web-deny&quot;)
-<span class="nc" id="L1184">    private String webDeny;</span>
+<span class="nc" id="L1191">    private String webDeny;</span>
 
     /**
      * Web enable.
@@ -1189,6 +1196,6 @@ import lombok.ToString;
      * @return the &lt;code&gt;web-enable&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;web-enable&quot;)
-<span class="nc" id="L1192">    private Boolean webEnable;</span>
+<span class="nc" id="L1199">    private Boolean webEnable;</span>
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>

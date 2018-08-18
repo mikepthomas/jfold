@@ -35,19 +35,22 @@ import lombok.Synchronized;
  */
 <span class="fc" id="L36">public class DateAdapter extends XmlAdapter&lt;String, Date&gt; {</span>
 
-<span class="fc" id="L38">    private final SimpleDateFormat dateFormat =</span>
+    /**
+     * Date format used by the Folding@Home client.
+     */
+<span class="fc" id="L41">    private final SimpleDateFormat dateFormat =</span>
             new SimpleDateFormat(&quot;yyyy-MM-dd'T'HH:mm:ss'Z'&quot;);
 
     @Override
-<span class="pc" id="L42">    @Synchronized</span>
+<span class="pc" id="L45">    @Synchronized</span>
     public final String marshal(final Date value) throws Exception {
-<span class="nc" id="L44">        return dateFormat.format(value);</span>
+<span class="nc" id="L47">        return dateFormat.format(value);</span>
     }
 
     @Override
-<span class="fc" id="L48">    @Synchronized</span>
+<span class="fc" id="L51">    @Synchronized</span>
     public final Date unmarshal(final String value) throws Exception {
-<span class="fc" id="L50">        return dateFormat.parse(value);</span>
+<span class="fc" id="L53">        return dateFormat.parse(value);</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>
