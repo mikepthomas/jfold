@@ -1,1 +1,3 @@
-language: openjdk10
+language: java
+jdk:
+  - oraclejdk10
