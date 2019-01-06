@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2018 Mike Thomas &lt;mikepthomas@outlook.com&gt;
+ * Copyright (C) 2012 - 2019 Mike Thomas &lt;mikepthomas@outlook.com&gt;
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ import org.slf4j.profiler.Profiler;
  * &lt;p&gt;SocketConnection class.&lt;/p&gt;
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.4.4
+ * @version 7.5.1
  */
 <span class="fc" id="L43">@XSlf4j</span>
 public class SocketConnection {
@@ -54,11 +54,11 @@ public class SocketConnection {
             = &quot;Welcome to the Folding@home Client command server.&quot;;
 
     /** Socket to connect to the Folding@Home client. */
-<span class="fc" id="L57">    private Socket socket = null;</span>
+    private Socket socket;
     /** OutputStream to send commands to. */
-<span class="fc" id="L59">    private PrintStream out = null;</span>
+    private PrintStream out;
     /** InputStream to receive data from. */
-<span class="fc" id="L61">    private Scanner in = null;</span>
+    private Scanner in;
 
     /**
      * &lt;p&gt;Constructor for SocketConnection.&lt;/p&gt;
@@ -121,7 +121,7 @@ public class SocketConnection {
 
         // Get the output
 <span class="fc" id="L123">        var response = &quot;&quot;;</span>
-<span class="pc bfc" id="L124" title="All 2 branches covered.">        switch (command.getResponseType()) {</span>
+<span class="fc bfc" id="L124" title="All 2 branches covered.">        switch (command.getResponseType()) {</span>
             case PYON:
             case STRING:
 <span class="fc" id="L127">                profiler.start(&quot;Get Response&quot;);</span>
@@ -129,7 +129,7 @@ public class SocketConnection {
 <span class="fc bfc" id="L129" title="All 2 branches covered.">                if (response.startsWith(PyonParser.PYON_1)) {</span>
 <span class="fc" id="L130">                    profiler.start(&quot;Convert to JSON&quot;);</span>
 <span class="fc" id="L131">                    response = PyonParser.convert(response);</span>
-<span class="fc bfc" id="L132" title="All 2 branches covered.">                } else if (response.equals(&quot;&quot;)) {</span>
+<span class="fc bfc" id="L132" title="All 2 branches covered.">                } else if (response.equals(&quot;\n&quot;)) {</span>
                     // TODO: remove dirty hack to stop ObjectMapper breaking
 <span class="pc bpc" id="L134" title="2 of 3 branches missed.">                    switch (command) {</span>
                         case SIMULATION_INFO:
@@ -150,4 +150,4 @@ public class SocketConnection {
 <span class="fc" id="L150">        return log.exit(response);</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

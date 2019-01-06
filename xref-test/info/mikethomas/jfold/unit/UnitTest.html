@@ -10,7 +10,7 @@
 <a class="jxr_linenumber" name="L2" href="#L2">2</a>   <em class="jxr_comment"> * #%L</em>
 <a class="jxr_linenumber" name="L3" href="#L3">3</a>   <em class="jxr_comment"> * This file is part of jFold.</em>
 <a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_comment"> * %%</em>
-<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <em class="jxr_comment"> * Copyright (C) 2012 - 2018 Mike Thomas &lt;mikepthomas@outlook.com&gt;</em>
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <em class="jxr_comment"> * Copyright (C) 2012 - 2019 Mike Thomas &lt;mikepthomas@outlook.com&gt;</em>
 <a class="jxr_linenumber" name="L6" href="#L6">6</a>   <em class="jxr_comment"> * %%</em>
 <a class="jxr_linenumber" name="L7" href="#L7">7</a>   <em class="jxr_comment"> * jFold is free software: you can redistribute it and/or modify</em>
 <a class="jxr_linenumber" name="L8" href="#L8">8</a>   <em class="jxr_comment"> * it under the terms of the GNU General Public License as published by</em>
@@ -23,7 +23,7 @@
 <a class="jxr_linenumber" name="L15" href="#L15">15</a>  <em class="jxr_comment"> * GNU General Public License for more details.</em>
 <a class="jxr_linenumber" name="L16" href="#L16">16</a>  <em class="jxr_comment"> * %</em>
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>  <em class="jxr_comment"> * You should have received a copy of the GNU General Public License</em>
-<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_comment"> * along with jFold.  If not, see &lt;<a href="http://www.gnu.org/licenses/&gt;" target="alexandria_uri">http://www.gnu.org/licenses/&gt;</a>.</em>
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_comment"> * along with jFold.  If not, see &lt;<a href="http://www.gnu.org/licenses/&gt;." target="alexandria_uri">http://www.gnu.org/licenses/&gt;.</a></em>
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_comment"> * #L%</em>
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_comment"> */</em>
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>  <strong class="jxr_keyword">package</strong> info.mikethomas.jfold.unit;
@@ -45,9 +45,9 @@
 <a class="jxr_linenumber" name="L37" href="#L37">37</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;UnitTest class.&lt;/p&gt;</em>
 <a class="jxr_linenumber" name="L38" href="#L38">38</a>  <em class="jxr_javadoccomment"> *</em>
 <a class="jxr_linenumber" name="L39" href="#L39">39</a>  <em class="jxr_javadoccomment"> * @author Michael Thomas (mikepthomas@outlook.com)</em>
-<a class="jxr_linenumber" name="L40" href="#L40">40</a>  <em class="jxr_javadoccomment"> * @version 7.4.4</em>
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>  <em class="jxr_javadoccomment"> * @version 7.5.1</em>
 <a class="jxr_linenumber" name="L41" href="#L41">41</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L42" href="#L42">42</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../info/mikethomas/jfold/unit/UnitTest.html">UnitTest</a> {
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a name="UnitTest" href="../../../../info/mikethomas/jfold/unit/UnitTest.html#UnitTest">UnitTest</a> {
 <a class="jxr_linenumber" name="L43" href="#L43">43</a>  
 <a class="jxr_linenumber" name="L44" href="#L44">44</a>      <em class="jxr_javadoccomment">/** Constant &lt;code&gt;instance&lt;/code&gt; */</em>
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Unit instance;
@@ -60,7 +60,7 @@
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>  <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L53" href="#L53">53</a>      @BeforeAll
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> setUpClass() <strong class="jxr_keyword">throws</strong> IOException, QueueInfoException {
-<a class="jxr_linenumber" name="L55" href="#L55">55</a>          <strong class="jxr_keyword">var</strong> connection = <strong class="jxr_keyword">new</strong> <a href="../../../../info/mikethomas/jfold/MockConnection.html">MockConnection</a>();
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>          <strong class="jxr_keyword">var</strong> connection = <strong class="jxr_keyword">new</strong> <a name="MockConnection" href="../../../../info/mikethomas/jfold/MockConnection.html#MockConnection">MockConnection</a>();
 <a class="jxr_linenumber" name="L56" href="#L56">56</a>          instance = connection.queueInfo().get(0);
 <a class="jxr_linenumber" name="L57" href="#L57">57</a>      }
 <a class="jxr_linenumber" name="L58" href="#L58">58</a>  
@@ -92,7 +92,7 @@
 <a class="jxr_linenumber" name="L84" href="#L84">84</a>      @Test
 <a class="jxr_linenumber" name="L85" href="#L85">85</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetProject() {
 <a class="jxr_linenumber" name="L86" href="#L86">86</a>          System.out.println(<span class="jxr_string">"getProject"</span>);
-<a class="jxr_linenumber" name="L87" href="#L87">87</a>          <strong class="jxr_keyword">var</strong> expResult = 9500;
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>          <strong class="jxr_keyword">var</strong> expResult = 13812;
 <a class="jxr_linenumber" name="L88" href="#L88">88</a>          <strong class="jxr_keyword">var</strong> result = instance.getProject();
 <a class="jxr_linenumber" name="L89" href="#L89">89</a>          assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L90" href="#L90">90</a>      }
@@ -103,7 +103,7 @@
 <a class="jxr_linenumber" name="L95" href="#L95">95</a>      @Test
 <a class="jxr_linenumber" name="L96" href="#L96">96</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetRun() {
 <a class="jxr_linenumber" name="L97" href="#L97">97</a>          System.out.println(<span class="jxr_string">"getRun"</span>);
-<a class="jxr_linenumber" name="L98" href="#L98">98</a>          <strong class="jxr_keyword">var</strong> expResult = 850;
+<a class="jxr_linenumber" name="L98" href="#L98">98</a>          <strong class="jxr_keyword">var</strong> expResult = 0;
 <a class="jxr_linenumber" name="L99" href="#L99">99</a>          <strong class="jxr_keyword">var</strong> result = instance.getRun();
 <a class="jxr_linenumber" name="L100" href="#L100">100</a>         assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L101" href="#L101">101</a>     }
@@ -114,7 +114,7 @@
 <a class="jxr_linenumber" name="L106" href="#L106">106</a>     @Test
 <a class="jxr_linenumber" name="L107" href="#L107">107</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetClone() {
 <a class="jxr_linenumber" name="L108" href="#L108">108</a>         System.out.println(<span class="jxr_string">"getClone"</span>);
-<a class="jxr_linenumber" name="L109" href="#L109">109</a>         <strong class="jxr_keyword">var</strong> expResult = 1;
+<a class="jxr_linenumber" name="L109" href="#L109">109</a>         <strong class="jxr_keyword">var</strong> expResult = 572;
 <a class="jxr_linenumber" name="L110" href="#L110">110</a>         <strong class="jxr_keyword">var</strong> result = instance.getClone();
 <a class="jxr_linenumber" name="L111" href="#L111">111</a>         assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L112" href="#L112">112</a>     }
@@ -125,7 +125,7 @@
 <a class="jxr_linenumber" name="L117" href="#L117">117</a>     @Test
 <a class="jxr_linenumber" name="L118" href="#L118">118</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetGen() {
 <a class="jxr_linenumber" name="L119" href="#L119">119</a>         System.out.println(<span class="jxr_string">"getGen"</span>);
-<a class="jxr_linenumber" name="L120" href="#L120">120</a>         <strong class="jxr_keyword">var</strong> expResult = 290;
+<a class="jxr_linenumber" name="L120" href="#L120">120</a>         <strong class="jxr_keyword">var</strong> expResult = 323;
 <a class="jxr_linenumber" name="L121" href="#L121">121</a>         <strong class="jxr_keyword">var</strong> result = instance.getGen();
 <a class="jxr_linenumber" name="L122" href="#L122">122</a>         assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L123" href="#L123">123</a>     }
@@ -136,7 +136,7 @@
 <a class="jxr_linenumber" name="L128" href="#L128">128</a>     @Test
 <a class="jxr_linenumber" name="L129" href="#L129">129</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetCore() {
 <a class="jxr_linenumber" name="L130" href="#L130">130</a>         System.out.println(<span class="jxr_string">"getCore"</span>);
-<a class="jxr_linenumber" name="L131" href="#L131">131</a>         <strong class="jxr_keyword">var</strong> expResult = <span class="jxr_string">"0xa4"</span>;
+<a class="jxr_linenumber" name="L131" href="#L131">131</a>         <strong class="jxr_keyword">var</strong> expResult = <span class="jxr_string">"0xa7"</span>;
 <a class="jxr_linenumber" name="L132" href="#L132">132</a>         <strong class="jxr_keyword">var</strong> result = instance.getCore();
 <a class="jxr_linenumber" name="L133" href="#L133">133</a>         assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L134" href="#L134">134</a>     }
@@ -147,7 +147,7 @@
 <a class="jxr_linenumber" name="L139" href="#L139">139</a>     @Test
 <a class="jxr_linenumber" name="L140" href="#L140">140</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetUnit() {
 <a class="jxr_linenumber" name="L141" href="#L141">141</a>         System.out.println(<span class="jxr_string">"getUnit"</span>);
-<a class="jxr_linenumber" name="L142" href="#L142">142</a>         <strong class="jxr_keyword">var</strong> expResult = <span class="jxr_string">"0x000001366652edcc53642c93bb74cd3a"</span>;
+<a class="jxr_linenumber" name="L142" href="#L142">142</a>         <strong class="jxr_keyword">var</strong> expResult = <span class="jxr_string">"0x0000018c80fccb025a981913b4143b0f"</span>;
 <a class="jxr_linenumber" name="L143" href="#L143">143</a>         <strong class="jxr_keyword">var</strong> result = instance.getUnit();
 <a class="jxr_linenumber" name="L144" href="#L144">144</a>         assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L145" href="#L145">145</a>     }
@@ -158,7 +158,7 @@
 <a class="jxr_linenumber" name="L150" href="#L150">150</a>     @Test
 <a class="jxr_linenumber" name="L151" href="#L151">151</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetPercentDone() {
 <a class="jxr_linenumber" name="L152" href="#L152">152</a>         System.out.println(<span class="jxr_string">"getPercentDone"</span>);
-<a class="jxr_linenumber" name="L153" href="#L153">153</a>         <strong class="jxr_keyword">var</strong> expResult = <span class="jxr_string">"17.79%"</span>;
+<a class="jxr_linenumber" name="L153" href="#L153">153</a>         <strong class="jxr_keyword">var</strong> expResult = <span class="jxr_string">"0.50%"</span>;
 <a class="jxr_linenumber" name="L154" href="#L154">154</a>         <strong class="jxr_keyword">var</strong> result = instance.getPercentDone();
 <a class="jxr_linenumber" name="L155" href="#L155">155</a>         assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L156" href="#L156">156</a>     }
@@ -169,7 +169,7 @@
 <a class="jxr_linenumber" name="L161" href="#L161">161</a>     @Test
 <a class="jxr_linenumber" name="L162" href="#L162">162</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetTotalFrames() {
 <a class="jxr_linenumber" name="L163" href="#L163">163</a>         System.out.println(<span class="jxr_string">"getTotalFrames"</span>);
-<a class="jxr_linenumber" name="L164" href="#L164">164</a>         <strong class="jxr_keyword">var</strong> expResult = 250000;
+<a class="jxr_linenumber" name="L164" href="#L164">164</a>         <strong class="jxr_keyword">var</strong> expResult = 0;
 <a class="jxr_linenumber" name="L165" href="#L165">165</a>         <strong class="jxr_keyword">var</strong> result = instance.getTotalFrames();
 <a class="jxr_linenumber" name="L166" href="#L166">166</a>         assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L167" href="#L167">167</a>     }
@@ -180,7 +180,7 @@
 <a class="jxr_linenumber" name="L172" href="#L172">172</a>     @Test
 <a class="jxr_linenumber" name="L173" href="#L173">173</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetFramesDone() {
 <a class="jxr_linenumber" name="L174" href="#L174">174</a>         System.out.println(<span class="jxr_string">"getFramesDone"</span>);
-<a class="jxr_linenumber" name="L175" href="#L175">175</a>         <strong class="jxr_keyword">var</strong> expResult = 42500;
+<a class="jxr_linenumber" name="L175" href="#L175">175</a>         <strong class="jxr_keyword">var</strong> expResult = 0;
 <a class="jxr_linenumber" name="L176" href="#L176">176</a>         <strong class="jxr_keyword">var</strong> result = instance.getFramesDone();
 <a class="jxr_linenumber" name="L177" href="#L177">177</a>         assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L178" href="#L178">178</a>     }
@@ -193,7 +193,7 @@
 <a class="jxr_linenumber" name="L185" href="#L185">185</a>     @Test
 <a class="jxr_linenumber" name="L186" href="#L186">186</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetAssigned() <strong class="jxr_keyword">throws</strong> ParseException {
 <a class="jxr_linenumber" name="L187" href="#L187">187</a>         System.out.println(<span class="jxr_string">"getAssigned"</span>);
-<a class="jxr_linenumber" name="L188" href="#L188">188</a>         <strong class="jxr_keyword">var</strong> expResult = DateAdapter.DATE_FORMAT.parse(<span class="jxr_string">"2014-09-08T22:06:28Z"</span>);
+<a class="jxr_linenumber" name="L188" href="#L188">188</a>         <strong class="jxr_keyword">var</strong> expResult = DateAdapter.DATE_FORMAT.parse(<span class="jxr_string">"2019-01-02T19:02:49Z"</span>);
 <a class="jxr_linenumber" name="L189" href="#L189">189</a>         <strong class="jxr_keyword">var</strong> result = instance.getAssigned();
 <a class="jxr_linenumber" name="L190" href="#L190">190</a>         assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L191" href="#L191">191</a>     }
@@ -206,7 +206,7 @@
 <a class="jxr_linenumber" name="L198" href="#L198">198</a>     @Test
 <a class="jxr_linenumber" name="L199" href="#L199">199</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetTimeout() <strong class="jxr_keyword">throws</strong> ParseException {
 <a class="jxr_linenumber" name="L200" href="#L200">200</a>         System.out.println(<span class="jxr_string">"getTimeout"</span>);
-<a class="jxr_linenumber" name="L201" href="#L201">201</a>         <strong class="jxr_keyword">var</strong> expResult = DateAdapter.DATE_FORMAT.parse(<span class="jxr_string">"2014-09-10T13:56:52Z"</span>);
+<a class="jxr_linenumber" name="L201" href="#L201">201</a>         <strong class="jxr_keyword">var</strong> expResult = DateAdapter.DATE_FORMAT.parse(<span class="jxr_string">"2019-01-07T19:02:49Z"</span>);
 <a class="jxr_linenumber" name="L202" href="#L202">202</a>         <strong class="jxr_keyword">var</strong> result = instance.getTimeout();
 <a class="jxr_linenumber" name="L203" href="#L203">203</a>         assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L204" href="#L204">204</a>     }
@@ -219,7 +219,7 @@
 <a class="jxr_linenumber" name="L211" href="#L211">211</a>     @Test
 <a class="jxr_linenumber" name="L212" href="#L212">212</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetDeadline() <strong class="jxr_keyword">throws</strong> ParseException {
 <a class="jxr_linenumber" name="L213" href="#L213">213</a>         System.out.println(<span class="jxr_string">"getDeadline"</span>);
-<a class="jxr_linenumber" name="L214" href="#L214">214</a>         <strong class="jxr_keyword">var</strong> expResult = DateAdapter.DATE_FORMAT.parse(<span class="jxr_string">"2014-09-12T12:30:28Z"</span>);
+<a class="jxr_linenumber" name="L214" href="#L214">214</a>         <strong class="jxr_keyword">var</strong> expResult = DateAdapter.DATE_FORMAT.parse(<span class="jxr_string">"2019-01-09T19:02:49Z"</span>);
 <a class="jxr_linenumber" name="L215" href="#L215">215</a>         <strong class="jxr_keyword">var</strong> result = instance.getDeadline();
 <a class="jxr_linenumber" name="L216" href="#L216">216</a>         assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L217" href="#L217">217</a>     }
@@ -232,7 +232,7 @@
 <a class="jxr_linenumber" name="L224" href="#L224">224</a>     @Test
 <a class="jxr_linenumber" name="L225" href="#L225">225</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetWs() <strong class="jxr_keyword">throws</strong> UnknownHostException {
 <a class="jxr_linenumber" name="L226" href="#L226">226</a>         System.out.println(<span class="jxr_string">"getWs"</span>);
-<a class="jxr_linenumber" name="L227" href="#L227">227</a>         <strong class="jxr_keyword">var</strong> expResult = <span class="jxr_string">"171.67.108.60"</span>;
+<a class="jxr_linenumber" name="L227" href="#L227">227</a>         <strong class="jxr_keyword">var</strong> expResult = <span class="jxr_string">"128.252.203.2"</span>;
 <a class="jxr_linenumber" name="L228" href="#L228">228</a>         <strong class="jxr_keyword">var</strong> result = instance.getWs().getHostAddress();
 <a class="jxr_linenumber" name="L229" href="#L229">229</a>         assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L230" href="#L230">230</a>     }
@@ -245,7 +245,7 @@
 <a class="jxr_linenumber" name="L237" href="#L237">237</a>     @Test
 <a class="jxr_linenumber" name="L238" href="#L238">238</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetCs() <strong class="jxr_keyword">throws</strong> UnknownHostException {
 <a class="jxr_linenumber" name="L239" href="#L239">239</a>         System.out.println(<span class="jxr_string">"getCs"</span>);
-<a class="jxr_linenumber" name="L240" href="#L240">240</a>         <strong class="jxr_keyword">var</strong> expResult = <span class="jxr_string">"171.65.103.160"</span>;
+<a class="jxr_linenumber" name="L240" href="#L240">240</a>         <strong class="jxr_keyword">var</strong> expResult = <span class="jxr_string">"0.0.0.0"</span>;
 <a class="jxr_linenumber" name="L241" href="#L241">241</a>         <strong class="jxr_keyword">var</strong> result = instance.getCs().getHostAddress();
 <a class="jxr_linenumber" name="L242" href="#L242">242</a>         assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L243" href="#L243">243</a>     }
@@ -300,7 +300,7 @@
 <a class="jxr_linenumber" name="L292" href="#L292">292</a>     @Test
 <a class="jxr_linenumber" name="L293" href="#L293">293</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetEta() {
 <a class="jxr_linenumber" name="L294" href="#L294">294</a>         System.out.println(<span class="jxr_string">"getEta"</span>);
-<a class="jxr_linenumber" name="L295" href="#L295">295</a>         <strong class="jxr_keyword">var</strong> expResult = <span class="jxr_string">"1 hours 49 mins"</span>;
+<a class="jxr_linenumber" name="L295" href="#L295">295</a>         <strong class="jxr_keyword">var</strong> expResult = <span class="jxr_string">"4.98 days"</span>;
 <a class="jxr_linenumber" name="L296" href="#L296">296</a>         <strong class="jxr_keyword">var</strong> result = instance.getEta();
 <a class="jxr_linenumber" name="L297" href="#L297">297</a>         assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L298" href="#L298">298</a>     }
@@ -311,7 +311,7 @@
 <a class="jxr_linenumber" name="L303" href="#L303">303</a>     @Test
 <a class="jxr_linenumber" name="L304" href="#L304">304</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetPpd() {
 <a class="jxr_linenumber" name="L305" href="#L305">305</a>         System.out.println(<span class="jxr_string">"getPpd"</span>);
-<a class="jxr_linenumber" name="L306" href="#L306">306</a>         <strong class="jxr_keyword">var</strong> expResult = 1147.0;
+<a class="jxr_linenumber" name="L306" href="#L306">306</a>         <strong class="jxr_keyword">var</strong> expResult = 348.0;
 <a class="jxr_linenumber" name="L307" href="#L307">307</a>         <strong class="jxr_keyword">var</strong> result = instance.getPpd();
 <a class="jxr_linenumber" name="L308" href="#L308">308</a>         assertEquals(expResult, result, 0.001);
 <a class="jxr_linenumber" name="L309" href="#L309">309</a>     }
@@ -322,7 +322,7 @@
 <a class="jxr_linenumber" name="L314" href="#L314">314</a>     @Test
 <a class="jxr_linenumber" name="L315" href="#L315">315</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetTpf() {
 <a class="jxr_linenumber" name="L316" href="#L316">316</a>         System.out.println(<span class="jxr_string">"getTpf"</span>);
-<a class="jxr_linenumber" name="L317" href="#L317">317</a>         <strong class="jxr_keyword">var</strong> expResult = <span class="jxr_string">"1 mins 20 secs"</span>;
+<a class="jxr_linenumber" name="L317" href="#L317">317</a>         <strong class="jxr_keyword">var</strong> expResult = <span class="jxr_string">"1 hours 12 mins"</span>;
 <a class="jxr_linenumber" name="L318" href="#L318">318</a>         <strong class="jxr_keyword">var</strong> result = instance.getTpf();
 <a class="jxr_linenumber" name="L319" href="#L319">319</a>         assertEquals(expResult, result);
 <a class="jxr_linenumber" name="L320" href="#L320">320</a>     }
@@ -333,7 +333,7 @@
 <a class="jxr_linenumber" name="L325" href="#L325">325</a>     @Test
 <a class="jxr_linenumber" name="L326" href="#L326">326</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetBaseCredit() {
 <a class="jxr_linenumber" name="L327" href="#L327">327</a>         System.out.println(<span class="jxr_string">"getBaseCredit"</span>);
-<a class="jxr_linenumber" name="L328" href="#L328">328</a>         <strong class="jxr_keyword">var</strong> expResult = 106.00;
+<a class="jxr_linenumber" name="L328" href="#L328">328</a>         <strong class="jxr_keyword">var</strong> expResult = 1740.0;
 <a class="jxr_linenumber" name="L329" href="#L329">329</a>         <strong class="jxr_keyword">var</strong> result = instance.getBaseCredit();
 <a class="jxr_linenumber" name="L330" href="#L330">330</a>         assertEquals(expResult, result, 0.001);
 <a class="jxr_linenumber" name="L331" href="#L331">331</a>     }
@@ -344,7 +344,7 @@
 <a class="jxr_linenumber" name="L336" href="#L336">336</a>     @Test
 <a class="jxr_linenumber" name="L337" href="#L337">337</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetCreditEstimate() {
 <a class="jxr_linenumber" name="L338" href="#L338">338</a>         System.out.println(<span class="jxr_string">"getCreditEstimate"</span>);
-<a class="jxr_linenumber" name="L339" href="#L339">339</a>         <strong class="jxr_keyword">var</strong> expResult = 106.0;
+<a class="jxr_linenumber" name="L339" href="#L339">339</a>         <strong class="jxr_keyword">var</strong> expResult = 1740.0;
 <a class="jxr_linenumber" name="L340" href="#L340">340</a>         <strong class="jxr_keyword">var</strong> result = instance.getCreditEstimate();
 <a class="jxr_linenumber" name="L341" href="#L341">341</a>         assertEquals(expResult, result, 0.001);
 <a class="jxr_linenumber" name="L342" href="#L342">342</a>     }
@@ -374,6 +374,6 @@
 <a class="jxr_linenumber" name="L366" href="#L366">366</a> }
 </pre>
 <hr/>
-<div id="footer">Copyright &#169; 2012&#x2013;2018 <a href="http://www.mikethomas.info">Mike Thomas</a>. All rights reserved.</div>
+<div id="footer">Copyright &#169; 2012&#x2013;2019 <a href="http://www.mikethomas.info">Mike Thomas</a>. All rights reserved.</div>
 </body>
 </html>

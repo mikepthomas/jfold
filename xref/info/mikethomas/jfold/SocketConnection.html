@@ -10,7 +10,7 @@
 <a class="jxr_linenumber" name="L2" href="#L2">2</a>   <em class="jxr_comment"> * #%L</em>
 <a class="jxr_linenumber" name="L3" href="#L3">3</a>   <em class="jxr_comment"> * This file is part of jFold.</em>
 <a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_comment"> * %%</em>
-<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <em class="jxr_comment"> * Copyright (C) 2012 - 2018 Mike Thomas &lt;mikepthomas@outlook.com&gt;</em>
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <em class="jxr_comment"> * Copyright (C) 2012 - 2019 Mike Thomas &lt;mikepthomas@outlook.com&gt;</em>
 <a class="jxr_linenumber" name="L6" href="#L6">6</a>   <em class="jxr_comment"> * %%</em>
 <a class="jxr_linenumber" name="L7" href="#L7">7</a>   <em class="jxr_comment"> * jFold is free software: you can redistribute it and/or modify</em>
 <a class="jxr_linenumber" name="L8" href="#L8">8</a>   <em class="jxr_comment"> * it under the terms of the GNU General Public License as published by</em>
@@ -23,7 +23,7 @@
 <a class="jxr_linenumber" name="L15" href="#L15">15</a>  <em class="jxr_comment"> * GNU General Public License for more details.</em>
 <a class="jxr_linenumber" name="L16" href="#L16">16</a>  <em class="jxr_comment"> * %</em>
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>  <em class="jxr_comment"> * You should have received a copy of the GNU General Public License</em>
-<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_comment"> * along with jFold.  If not, see &lt;<a href="http://www.gnu.org/licenses/&gt;" target="alexandria_uri">http://www.gnu.org/licenses/&gt;</a>.</em>
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_comment"> * along with jFold.  If not, see &lt;<a href="http://www.gnu.org/licenses/&gt;." target="alexandria_uri">http://www.gnu.org/licenses/&gt;.</a></em>
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_comment"> * #L%</em>
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_comment"> */</em>
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>  <strong class="jxr_keyword">package</strong> info.mikethomas.jfold;
@@ -46,10 +46,10 @@
 <a class="jxr_linenumber" name="L38" href="#L38">38</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;SocketConnection class.&lt;/p&gt;</em>
 <a class="jxr_linenumber" name="L39" href="#L39">39</a>  <em class="jxr_javadoccomment"> *</em>
 <a class="jxr_linenumber" name="L40" href="#L40">40</a>  <em class="jxr_javadoccomment"> * @author Michael Thomas (mikepthomas@outlook.com)</em>
-<a class="jxr_linenumber" name="L41" href="#L41">41</a>  <em class="jxr_javadoccomment"> * @version 7.4.4</em>
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>  <em class="jxr_javadoccomment"> * @version 7.5.1</em>
 <a class="jxr_linenumber" name="L42" href="#L42">42</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L43" href="#L43">43</a>  @XSlf4j
-<a class="jxr_linenumber" name="L44" href="#L44">44</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../info/mikethomas/jfold/SocketConnection.html">SocketConnection</a> {
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a name="SocketConnection" href="../../../info/mikethomas/jfold/SocketConnection.html#SocketConnection">SocketConnection</a> {
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>  
 <a class="jxr_linenumber" name="L46" href="#L46">46</a>      <em class="jxr_javadoccomment">/** Clear Screen. */</em>
 <a class="jxr_linenumber" name="L47" href="#L47">47</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String CLRSCR = <span class="jxr_string">"\033[H\033[2J"</span>;
@@ -62,11 +62,11 @@
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>              = <span class="jxr_string">"Welcome to the Folding@home Client command server."</span>;
 <a class="jxr_linenumber" name="L55" href="#L55">55</a>  
 <a class="jxr_linenumber" name="L56" href="#L56">56</a>      <em class="jxr_javadoccomment">/** Socket to connect to the Folding@Home client. */</em>
-<a class="jxr_linenumber" name="L57" href="#L57">57</a>      <strong class="jxr_keyword">private</strong> Socket socket = <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>      <strong class="jxr_keyword">private</strong> Socket socket;
 <a class="jxr_linenumber" name="L58" href="#L58">58</a>      <em class="jxr_javadoccomment">/** OutputStream to send commands to. */</em>
-<a class="jxr_linenumber" name="L59" href="#L59">59</a>      <strong class="jxr_keyword">private</strong> PrintStream out = <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>      <strong class="jxr_keyword">private</strong> PrintStream out;
 <a class="jxr_linenumber" name="L60" href="#L60">60</a>      <em class="jxr_javadoccomment">/** InputStream to receive data from. */</em>
-<a class="jxr_linenumber" name="L61" href="#L61">61</a>      <strong class="jxr_keyword">private</strong> Scanner in = <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>      <strong class="jxr_keyword">private</strong> Scanner in;
 <a class="jxr_linenumber" name="L62" href="#L62">62</a>  
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>      <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>  <em class="jxr_javadoccomment">     * &lt;p&gt;Constructor for SocketConnection.&lt;/p&gt;</em>
@@ -75,7 +75,7 @@
 <a class="jxr_linenumber" name="L67" href="#L67">67</a>  <em class="jxr_javadoccomment">     * @param port a int.</em>
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>  <em class="jxr_javadoccomment">     * @throws java.io.IOException a int.</em>
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="L70" href="#L70">70</a>      <strong class="jxr_keyword">public</strong> <a href="../../../info/mikethomas/jfold/SocketConnection.html">SocketConnection</a>(
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>      <strong class="jxr_keyword">public</strong> <a name="SocketConnection" href="../../../info/mikethomas/jfold/SocketConnection.html#SocketConnection">SocketConnection</a>(
 <a class="jxr_linenumber" name="L71" href="#L71">71</a>              <strong class="jxr_keyword">final</strong> String address, <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> port) <strong class="jxr_keyword">throws</strong> IOException {
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>          <strong class="jxr_keyword">super</strong>();
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>  
@@ -101,7 +101,7 @@
 <a class="jxr_linenumber" name="L93" href="#L93">93</a>  <em class="jxr_javadoccomment">     * @param command command to send to the client</em>
 <a class="jxr_linenumber" name="L94" href="#L94">94</a>  <em class="jxr_javadoccomment">     * @return String response from client</em>
 <a class="jxr_linenumber" name="L95" href="#L95">95</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="L96" href="#L96">96</a>      <strong class="jxr_keyword">protected</strong> String sendCommand(<strong class="jxr_keyword">final</strong> <a href="../../../info/mikethomas/jfold/util/Command.html">Command</a> command) {
+<a class="jxr_linenumber" name="L96" href="#L96">96</a>      <strong class="jxr_keyword">protected</strong> String sendCommand(<strong class="jxr_keyword">final</strong> <a name="Command" href="../../../info/mikethomas/jfold/util/Command.html#Command">Command</a> command) {
 <a class="jxr_linenumber" name="L97" href="#L97">97</a>          <strong class="jxr_keyword">return</strong> sendCommand(command, <strong class="jxr_keyword">new</strong> ArrayList&lt;&gt;());
 <a class="jxr_linenumber" name="L98" href="#L98">98</a>      }
 <a class="jxr_linenumber" name="L99" href="#L99">99</a>  
@@ -112,7 +112,7 @@
 <a class="jxr_linenumber" name="L104" href="#L104">104</a> <em class="jxr_javadoccomment">     * @param args command arguments</em>
 <a class="jxr_linenumber" name="L105" href="#L105">105</a> <em class="jxr_javadoccomment">     * @return String response from client</em>
 <a class="jxr_linenumber" name="L106" href="#L106">106</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="L107" href="#L107">107</a>     <strong class="jxr_keyword">protected</strong> String sendCommand(<strong class="jxr_keyword">final</strong> <a href="../../../info/mikethomas/jfold/util/Command.html">Command</a> command,
+<a class="jxr_linenumber" name="L107" href="#L107">107</a>     <strong class="jxr_keyword">protected</strong> String sendCommand(<strong class="jxr_keyword">final</strong> <a name="Command" href="../../../info/mikethomas/jfold/util/Command.html#Command">Command</a> command,
 <a class="jxr_linenumber" name="L108" href="#L108">108</a>             <strong class="jxr_keyword">final</strong> List&lt;String&gt; args) {
 <a class="jxr_linenumber" name="L109" href="#L109">109</a>         log.entry(command, args);
 <a class="jxr_linenumber" name="L110" href="#L110">110</a> 
@@ -137,7 +137,7 @@
 <a class="jxr_linenumber" name="L129" href="#L129">129</a>                 <strong class="jxr_keyword">if</strong> (response.startsWith(PyonParser.PYON_1)) {
 <a class="jxr_linenumber" name="L130" href="#L130">130</a>                     profiler.start(<span class="jxr_string">"Convert to JSON"</span>);
 <a class="jxr_linenumber" name="L131" href="#L131">131</a>                     response = PyonParser.convert(response);
-<a class="jxr_linenumber" name="L132" href="#L132">132</a>                 } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (response.equals(<span class="jxr_string">""</span>)) {
+<a class="jxr_linenumber" name="L132" href="#L132">132</a>                 } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (response.equals(<span class="jxr_string">"\n"</span>)) {
 <a class="jxr_linenumber" name="L133" href="#L133">133</a>                     <em class="jxr_comment">// TODO: remove dirty hack to stop ObjectMapper breaking</em>
 <a class="jxr_linenumber" name="L134" href="#L134">134</a>                     <strong class="jxr_keyword">switch</strong> (command) {
 <a class="jxr_linenumber" name="L135" href="#L135">135</a>                         <strong class="jxr_keyword">case</strong> SIMULATION_INFO:
@@ -160,6 +160,6 @@
 <a class="jxr_linenumber" name="L152" href="#L152">152</a> }
 </pre>
 <hr/>
-<div id="footer">Copyright &#169; 2012&#x2013;2018 <a href="http://www.mikethomas.info">Mike Thomas</a>. All rights reserved.</div>
+<div id="footer">Copyright &#169; 2012&#x2013;2019 <a href="http://www.mikethomas.info">Mike Thomas</a>. All rights reserved.</div>
 </body>
 </html>
