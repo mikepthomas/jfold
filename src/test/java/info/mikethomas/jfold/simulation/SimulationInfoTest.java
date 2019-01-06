@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2019 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ import org.junit.jupiter.api.Test;
  * <p>SimulationInfoTest class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.4.4
+ * @version 7.5.1
  */
 public class SimulationInfoTest {
 
@@ -82,7 +82,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetProject() {
         System.out.println("getProject");
-        var expResult = 9500;
+        var expResult = 13812;
         var result = instance.getProject();
         assertEquals(expResult, result);
     }
@@ -93,7 +93,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetRun() {
         System.out.println("getRun");
-        var expResult = 850;
+        var expResult = 0;
         var result = instance.getRun();
         assertEquals(expResult, result);
     }
@@ -104,7 +104,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetClone() {
         System.out.println("getClone");
-        var expResult = 1;
+        var expResult = 572;
         var result = instance.getClone();
         assertEquals(expResult, result);
     }
@@ -115,7 +115,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetGen() {
         System.out.println("getGen");
-        var expResult = 290;
+        var expResult = 323;
         var result = instance.getGen();
         assertEquals(expResult, result);
     }
@@ -126,7 +126,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetCoreType() {
         System.out.println("getCoreType");
-        var expResult = 164;
+        var expResult = 167;
         var result = instance.getCoreType();
         assertEquals(expResult, result);
     }
@@ -137,7 +137,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetCore() {
         System.out.println("getCore");
-        var expResult = "GRO_A4";
+        var expResult = "GRO_A7";
         var result = instance.getCore();
         assertEquals(expResult, result);
     }
@@ -157,7 +157,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetTotalIterations() {
         System.out.println("getTotalIterations");
-        var expResult = 250000;
+        var expResult = 100;
         var result = instance.getTotalIterations();
         assertEquals(expResult, result);
     }
@@ -168,7 +168,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetIterationsDone() {
         System.out.println("getIterationsDone");
-        var expResult = 40000;
+        var expResult = 0;
         var result = instance.getIterationsDone();
         assertEquals(expResult, result);
     }
@@ -203,7 +203,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetStartTime() throws ParseException {
         System.out.println("getStartTime");
-        var expResult = DateAdapter.DATE_FORMAT.parse("2014-09-08T22:06:28Z");
+        var expResult = DateAdapter.DATE_FORMAT.parse("2019-01-02T19:02:49Z");
         var result = instance.getStartTime();
         assertEquals(expResult, result);
     }
@@ -225,7 +225,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetDeadline() {
         System.out.println("getDeadline");
-        var expResult = 1410525028;
+        var expResult = 1547060569;
         var result = instance.getDeadline();
         assertEquals(expResult, result);
     }
@@ -254,7 +254,7 @@ public class SimulationInfoTest {
     @Test
     public void testGetEta() {
         System.out.println("getEta");
-        var expResult = 17892;
+        var expResult = 430283;
         var result = instance.getEta();
         assertEquals(expResult, result);
     }
@@ -287,28 +287,28 @@ public class SimulationInfoTest {
     @Test
     public void testToString() throws ParseException {
         System.out.println("toString");
-        var startTime = DateAdapter.DATE_FORMAT.parse("2014-09-08T22:06:28Z");
+        var startTime = DateAdapter.DATE_FORMAT.parse("2019-01-02T19:02:49Z");
         var expResult = "SimulationInfo("
                 + "user=montycrabapple, "
                 + "team=39299, "
-                + "project=9500, "
-                + "run=850, "
-                + "clone=1, "
-                + "gen=290, "
-                + "coreType=164, "
-                + "core=GRO_A4, "
+                + "project=13812, "
+                + "run=0, "
+                + "clone=572, "
+                + "gen=323, "
+                + "coreType=167, "
+                + "core=GRO_A7, "
                 + "description=null, "
-                + "totalIterations=250000, "
-                + "iterationsDone=40000, "
+                + "totalIterations=100, "
+                + "iterationsDone=0, "
                 + "energy=0, "
                 + "temperature=0, "
                 + "startTime=" + startTime + ", "
                 + "timeout=0, "
-                + "deadline=1410525028, "
+                + "deadline=1547060569, "
                 + "runTime=null, "
                 + "simulationTime=null, "
-                + "eta=17892, "
-                + "progress=0.16, "
+                + "eta=430283, "
+                + "progress=0.003975, "
                 + "news=null, "
                 + "slot=0)";
         var result = instance.toString();

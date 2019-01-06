@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2019 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ import org.junit.jupiter.api.Test;
  * <p>OptionsTest class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.4.4
+ * @version 7.5.1
  */
 public class OptionsTest {
 
@@ -58,7 +58,7 @@ public class OptionsTest {
     @Test
     public void testGetAssignmentServers() {
         System.out.println("getAssignmentServers");
-        var expResult = "assign3.stanford.edu:8080 assign4.stanford.edu:80";
+        var expResult = "assign1.foldingathome.org:8080 assign2.foldingathome.org:80";
         var result = instance.getAssignmentServers();
         assertEquals(expResult, result);
     }
@@ -102,7 +102,7 @@ public class OptionsTest {
     @Test
     public void testGetChild() {
         System.out.println("getChild");
-        var expResult = true;
+        var expResult = false;
         var result = instance.getChild();
         assertEquals(expResult, result);
     }
@@ -431,7 +431,7 @@ public class OptionsTest {
     @Test
     public void testGetExecDirectory() {
         System.out.println("getExecDirectory");
-        var expResult = "/usr/bin";
+        var expResult = "/usr/local/bin";
         var result = instance.getExecDirectory();
         assertEquals(expResult, result);
     }
@@ -482,9 +482,8 @@ public class OptionsTest {
     @Test
     public void testGetGpuAssignmentServers() {
         System.out.println("getGpuAssignmentServers");
-        var expResult = "assign-GPU.stanford.edu:80 assign-GPU2.stanford.edu:80";
         var result = instance.getGpuAssignmentServers();
-        assertEquals(expResult, result);
+        assertNull(result);
     }
 
     /**
@@ -557,9 +556,8 @@ public class OptionsTest {
     @Test
     public void testGetLogDebug() {
         System.out.println("getLogDebug");
-        var expResult = true;
         var result = instance.getLogDebug();
-        assertEquals(expResult, result);
+        assertNull(result);
     }
 
     /**
@@ -903,7 +901,7 @@ public class OptionsTest {
     @Test
     public void testGetPasskey() {
         System.out.println("getPasskey");
-        var expResult = "passkey";
+        var expResult = "redacted";
         var result = instance.getPasskey();
         assertEquals(expResult, result);
     }
@@ -1022,7 +1020,7 @@ public class OptionsTest {
     @Test
     public void testGetRespawn() {
         System.out.println("getRespawn");
-        var expResult = true;
+        var expResult = false;
         var result = instance.getRespawn();
         assertEquals(expResult, result);
     }
@@ -1115,7 +1113,7 @@ public class OptionsTest {
     @Test
     public void testGetThreads() {
         System.out.println("getThreads");
-        var expResult = 4;
+        var expResult = 0;
         var result = instance.getThreads();
         assertEquals(expResult, result);
     }

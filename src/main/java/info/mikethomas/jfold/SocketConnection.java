@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2019 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ import org.slf4j.profiler.Profiler;
  * <p>SocketConnection class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.4.4
+ * @version 7.5.1
  */
 @XSlf4j
 public class SocketConnection {
@@ -54,11 +54,11 @@ public class SocketConnection {
             = "Welcome to the Folding@home Client command server.";
 
     /** Socket to connect to the Folding@Home client. */
-    private Socket socket = null;
+    private Socket socket;
     /** OutputStream to send commands to. */
-    private PrintStream out = null;
+    private PrintStream out;
     /** InputStream to receive data from. */
-    private Scanner in = null;
+    private Scanner in;
 
     /**
      * <p>Constructor for SocketConnection.</p>
@@ -129,7 +129,7 @@ public class SocketConnection {
                 if (response.startsWith(PyonParser.PYON_1)) {
                     profiler.start("Convert to JSON");
                     response = PyonParser.convert(response);
-                } else if (response.equals("")) {
+                } else if (response.equals("\n")) {
                     // TODO: remove dirty hack to stop ObjectMapper breaking
                     switch (command) {
                         case SIMULATION_INFO:

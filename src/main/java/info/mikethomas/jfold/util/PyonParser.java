@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2019 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,14 +31,14 @@ import lombok.extern.slf4j.XSlf4j;
  * <p>PyonParser class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.4.4
+ * @version 7.5.1
  */
 @XSlf4j
 @UtilityClass
 public final class PyonParser {
 
     /** Constant <code>PYON_1</code>. */
-    public static final String PYON_1 = "PyON 1 ";
+    public static final String PYON_1 = "\nPyON 1 ";
     /** Constant <code>PYON_HEADER</code>. */
     public static final String PYON_HEADER = PYON_1 + "(.*)\n";
     /** Constant <code>PYON_TRAILER</code>. */

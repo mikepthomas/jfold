@@ -2,8 +2,9 @@
     {
         "id": "00",
         "status": "RUNNING",
-        "description": "cpu:1",
+        "description": "cpu:2",
         "options": {
+            "cpus": "-1",
             "paused": false
         },
         "reason": "",
@@ -11,8 +12,9 @@
     }, {
         "id": "01",
         "status": "PAUSED",
-        "description": "cpu:1",
+        "description": "cpu:2",
         "options": {
+            "cpus": "-1",
             "paused": true
         },
         "reason": "by user",

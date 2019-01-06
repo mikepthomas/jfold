@@ -1,22 +1,23 @@
 [
     [
         "Folding@home Client",
-        ["Website", "http://folding.stanford.edu/"],
-        ["Copyright", "(c) 2009-2014 Stanford University"],
+        ["Website", "https://foldingathome.org/"],
+        ["Copyright", "(c) 2009-2018 foldingathome.org"],
         ["Author", "Joseph Coffland <joseph@cauldrondevelopment.com>"],
-        ["Args", " --child --lifeline 99 --respawn"],
+        ["Args", ""],
         ["Config", "/Library/Application Support/FAHClient/config.xml"]
     ],
     [
         "Build",
-        ["Version", "7.4.4"],
-        ["Date", "Mar  4 2014"],
-        ["Time", "20:27:54"],
-        ["SVN Rev", "4130"],
-        ["Branch", "fah/trunk/client"],
-        ["Compiler", "GNU 4.2.1 (Apple Inc. build 5666) (dot 3)"],
-        ["Options", "-std=gnu++98 -O3 -funroll-loops -mfpmath=sse -ffast-math -fno-unsafe-math-optimizations -msse3 -arch x86_64 -mmacosx-version-min=10.6"],
-        ["Platform", "darwin 10.8.0"],
+        ["Version", "7.5.1"],
+        ["Date", "May 11 2018"],
+        ["Time", "12:57:01"],
+        ["Repository", "Git"],
+        ["Revision", "4705bf53c635f88b8fe85af7675557e15d491ff0"],
+        ["Branch", "master"],
+        ["Compiler", "GNU 4.2.1 Compatible Apple LLVM 7.3.0 (clang-703.0.31)"],
+        ["Options", "-std=gnu++98 -O3 -funroll-loops -mmacosx-version-min=10.6 -Wno-unused-local-typedefs"],
+        ["Platform", "darwin 15.6.0"],
         ["Bits", "64"],
         ["Mode", "Release"]
     ],
@@ -26,17 +27,18 @@
         ["CPU ID", "GenuineIntel Family 6 Model 42 Stepping 7"],
         ["CPUs", "4"],
         ["Memory", "16.00GiB"],
-        ["Free Memory", "14.24GiB"],
+        ["Free Memory", "149.16MiB",
         ["Threads", "POSIX_THREADS"],
         ["OS Version", "10.13"],
         ["Has Battery", "true"],
         ["On Battery", "false"],
         ["UTC Offset", "0"],
-        ["PID", "300"],
+        ["PID", "30150"],
         ["CWD", "/Library/Application Support/FAHClient"],
-        ["OS", "Darwin 17.0.0 x86_64"],
+        ["OS", "Darwin 17.7.0 x86_64"],
         ["OS Arch", "AMD64"],
         ["GPUs", "0"],
-        ["CUDA", "Not detected"]
+        ["CUDA", "Not detected: Failed to open dynamic library 'libcuda.dylib': dlopen(libcuda.dylib,\n1): image not found"],
+        ["OpenCL", "Not detected: Failed to open dynamic library 'libOpenCL.dylib': dlopen(libOpenCL.dylib,\n1): image not found"]
     ]
 ]

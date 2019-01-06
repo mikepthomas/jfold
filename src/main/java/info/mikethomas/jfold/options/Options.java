@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2019 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ import lombok.ToString;
  * <p>Options class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.4.4
+ * @version 7.5.1
  */
 @Getter
 @ToString
@@ -429,6 +429,15 @@ public class Options implements Serializable {
     private Boolean disableSleepWhenActive;
 
     /**
+     * Disable viz.
+     *
+     * @return the <code>disable-viz</code> from <code>options</code>
+     * @since 7.5.1
+     */
+    @XmlElement(name = "disable-viz")
+    private Boolean disableViz;
+
+    /**
      * Dump after deadline.
      *
      * @return the <code>dump-after-deadline</code> from <code>options</code>
@@ -531,6 +540,15 @@ public class Options implements Serializable {
      */
     @XmlElement(name = "gpu-usage")
     private int gpuUsage;
+
+    /**
+     * GUI enabled.
+     *
+     * @return the <code>gui-enabled</code> from <code>options</code>
+     * @since 7.5.1
+     */
+    @XmlElement(name = "gui-enabled")
+    private Boolean guiEnabled;
 
     /**
      * HTTP addresses.

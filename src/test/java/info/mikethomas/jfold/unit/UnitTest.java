@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2018 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2019 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ import org.junit.jupiter.api.Test;
  * <p>UnitTest class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.4.4
+ * @version 7.5.1
  */
 public class UnitTest {
 
@@ -84,7 +84,7 @@ public class UnitTest {
     @Test
     public void testGetProject() {
         System.out.println("getProject");
-        var expResult = 9500;
+        var expResult = 13812;
         var result = instance.getProject();
         assertEquals(expResult, result);
     }
@@ -95,7 +95,7 @@ public class UnitTest {
     @Test
     public void testGetRun() {
         System.out.println("getRun");
-        var expResult = 850;
+        var expResult = 0;
         var result = instance.getRun();
         assertEquals(expResult, result);
     }
@@ -106,7 +106,7 @@ public class UnitTest {
     @Test
     public void testGetClone() {
         System.out.println("getClone");
-        var expResult = 1;
+        var expResult = 572;
         var result = instance.getClone();
         assertEquals(expResult, result);
     }
@@ -117,7 +117,7 @@ public class UnitTest {
     @Test
     public void testGetGen() {
         System.out.println("getGen");
-        var expResult = 290;
+        var expResult = 323;
         var result = instance.getGen();
         assertEquals(expResult, result);
     }
@@ -128,7 +128,7 @@ public class UnitTest {
     @Test
     public void testGetCore() {
         System.out.println("getCore");
-        var expResult = "0xa4";
+        var expResult = "0xa7";
         var result = instance.getCore();
         assertEquals(expResult, result);
     }
@@ -139,7 +139,7 @@ public class UnitTest {
     @Test
     public void testGetUnit() {
         System.out.println("getUnit");
-        var expResult = "0x000001366652edcc53642c93bb74cd3a";
+        var expResult = "0x0000018c80fccb025a981913b4143b0f";
         var result = instance.getUnit();
         assertEquals(expResult, result);
     }
@@ -150,7 +150,7 @@ public class UnitTest {
     @Test
     public void testGetPercentDone() {
         System.out.println("getPercentDone");
-        var expResult = "17.79%";
+        var expResult = "0.50%";
         var result = instance.getPercentDone();
         assertEquals(expResult, result);
     }
@@ -161,7 +161,7 @@ public class UnitTest {
     @Test
     public void testGetTotalFrames() {
         System.out.println("getTotalFrames");
-        var expResult = 250000;
+        var expResult = 0;
         var result = instance.getTotalFrames();
         assertEquals(expResult, result);
     }
@@ -172,7 +172,7 @@ public class UnitTest {
     @Test
     public void testGetFramesDone() {
         System.out.println("getFramesDone");
-        var expResult = 42500;
+        var expResult = 0;
         var result = instance.getFramesDone();
         assertEquals(expResult, result);
     }
@@ -185,7 +185,7 @@ public class UnitTest {
     @Test
     public void testGetAssigned() throws ParseException {
         System.out.println("getAssigned");
-        var expResult = DateAdapter.DATE_FORMAT.parse("2014-09-08T22:06:28Z");
+        var expResult = DateAdapter.DATE_FORMAT.parse("2019-01-02T19:02:49Z");
         var result = instance.getAssigned();
         assertEquals(expResult, result);
     }
@@ -198,7 +198,7 @@ public class UnitTest {
     @Test
     public void testGetTimeout() throws ParseException {
         System.out.println("getTimeout");
-        var expResult = DateAdapter.DATE_FORMAT.parse("2014-09-10T13:56:52Z");
+        var expResult = DateAdapter.DATE_FORMAT.parse("2019-01-07T19:02:49Z");
         var result = instance.getTimeout();
         assertEquals(expResult, result);
     }
@@ -211,7 +211,7 @@ public class UnitTest {
     @Test
     public void testGetDeadline() throws ParseException {
         System.out.println("getDeadline");
-        var expResult = DateAdapter.DATE_FORMAT.parse("2014-09-12T12:30:28Z");
+        var expResult = DateAdapter.DATE_FORMAT.parse("2019-01-09T19:02:49Z");
         var result = instance.getDeadline();
         assertEquals(expResult, result);
     }
@@ -224,7 +224,7 @@ public class UnitTest {
     @Test
     public void testGetWs() throws UnknownHostException {
         System.out.println("getWs");
-        var expResult = "171.67.108.60";
+        var expResult = "128.252.203.2";
         var result = instance.getWs().getHostAddress();
         assertEquals(expResult, result);
     }
@@ -237,7 +237,7 @@ public class UnitTest {
     @Test
     public void testGetCs() throws UnknownHostException {
         System.out.println("getCs");
-        var expResult = "171.65.103.160";
+        var expResult = "0.0.0.0";
         var result = instance.getCs().getHostAddress();
         assertEquals(expResult, result);
     }
@@ -292,7 +292,7 @@ public class UnitTest {
     @Test
     public void testGetEta() {
         System.out.println("getEta");
-        var expResult = "1 hours 49 mins";
+        var expResult = "4.98 days";
         var result = instance.getEta();
         assertEquals(expResult, result);
     }
@@ -303,7 +303,7 @@ public class UnitTest {
     @Test
     public void testGetPpd() {
         System.out.println("getPpd");
-        var expResult = 1147.0;
+        var expResult = 348.0;
         var result = instance.getPpd();
         assertEquals(expResult, result, 0.001);
     }
@@ -314,7 +314,7 @@ public class UnitTest {
     @Test
     public void testGetTpf() {
         System.out.println("getTpf");
-        var expResult = "1 mins 20 secs";
+        var expResult = "1 hours 12 mins";
         var result = instance.getTpf();
         assertEquals(expResult, result);
     }
@@ -325,7 +325,7 @@ public class UnitTest {
     @Test
     public void testGetBaseCredit() {
         System.out.println("getBaseCredit");
-        var expResult = 106.00;
+        var expResult = 1740.0;
         var result = instance.getBaseCredit();
         assertEquals(expResult, result, 0.001);
     }
@@ -336,7 +336,7 @@ public class UnitTest {
     @Test
     public void testGetCreditEstimate() {
         System.out.println("getCreditEstimate");
-        var expResult = 106.0;
+        var expResult = 1740.0;
         var result = instance.getCreditEstimate();
         assertEquals(expResult, result, 0.001);
     }
