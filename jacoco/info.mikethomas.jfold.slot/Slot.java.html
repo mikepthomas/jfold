@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2019 Mike Thomas &lt;mikepthomas@outlook.com&gt;
+ * Copyright (C) 2012 - 2024 Mike Thomas &lt;mikepthomas@outlook.com&gt;
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,8 +22,8 @@ package info.mikethomas.jfold.slot;
 
 import java.io.Serializable;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import lombok.Getter;
 import lombok.ToString;
@@ -32,12 +32,12 @@ import lombok.ToString;
  * &lt;p&gt;Slot class.&lt;/p&gt;
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.5.1
+<span class="nc" id="L35"> * @version 7.6.21</span>
  */
 @Getter
-<span class="nc" id="L38">@ToString</span>
+@ToString
 @XmlRootElement(name = &quot;slot&quot;)
-<span class="fc" id="L40">public class Slot implements Serializable {</span>
+public class Slot implements Serializable {
 
     /**
      * Identifier.
@@ -45,7 +45,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;id&lt;/code&gt; from &lt;code&gt;slot-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L48">    private String id;</span>
+    private String id;
 
     /**
      * Status.
@@ -53,7 +53,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;status&lt;/code&gt; from &lt;code&gt;slot-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L56">    private String status;</span>
+    private String status;
 
     /**
      * Description.
@@ -61,7 +61,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;description&lt;/code&gt; from &lt;code&gt;slot-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L64">    private String description;</span>
+    private String description;
 
     /**
      * Slot Options.
@@ -69,22 +69,22 @@ import lombok.ToString;
      * @return the &lt;code&gt;options&lt;/code&gt; from &lt;code&gt;slot-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L72">    private SlotOptions options;</span>
+    private SlotOptions options;
 
-    /**
+<span class="nc" id="L74">    /**</span>
      * Reason.
      *
      * @return the &lt;code&gt;reason&lt;/code&gt; from &lt;code&gt;slot-info&lt;/code&gt;
      */
     @XmlElement
-<span class="nc" id="L80">    private String reason;</span>
+    private String reason;
 
     /**
      * Idle.
-     *
+<span class="nc" id="L84">     *</span>
      * @return the &lt;code&gt;idle&lt;/code&gt; from &lt;code&gt;slot-info&lt;/code&gt;
      */
     @XmlElement
-<span class="nc" id="L88">    private Boolean idle;</span>
+    private Boolean idle;
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

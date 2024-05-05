@@ -32,10 +32,10 @@ import lombok.extern.slf4j.XSlf4j;
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version 7.5.1
- */
-<span class="fc" id="L36">@XSlf4j</span>
+<span class="nc" id="L35"> */</span>
+@XSlf4j
 @UtilityClass
-<span class="nc" id="L38">public final class PyonParser {</span>
+public final class PyonParser {
 
     /** Constant &lt;code&gt;PYON_1&lt;/code&gt;. */
     public static final String PYON_1 = &quot;\nPyON 1 &quot;;
@@ -47,12 +47,12 @@ import lombok.extern.slf4j.XSlf4j;
     /** Constant &lt;code&gt;ERROR&lt;/code&gt;. */
     public static final String ERROR = &quot;error&quot;;
     /** Constant &lt;code&gt;PYON_ERROR&lt;/code&gt;. */
-<span class="fc" id="L50">    public static final String PYON_ERROR = PYON_HEADER.replace(&quot;(.*)&quot;, ERROR);</span>
+    public static final String PYON_ERROR = PYON_HEADER.replace(&quot;(.*)&quot;, ERROR);
 
     /** Constant &lt;code&gt;NONE&lt;/code&gt;. */
     public static final String NONE = &quot;\&quot;(.*)\&quot;: None&quot;;
     /** Constant &lt;code&gt;NULL&lt;/code&gt;. */
-    public static final String NULL = &quot;\&quot;$1\&quot;: null&quot;;
+<span class="nc" id="L55">    public static final String NULL = &quot;\&quot;$1\&quot;: null&quot;;</span>
 
     /** Constant &lt;code&gt;JSON_TRUE&lt;/code&gt;. */
     public static final String JSON_TRUE = &quot;\&quot;$1\&quot;: true&quot;;
@@ -75,53 +75,53 @@ import lombok.extern.slf4j.XSlf4j;
      * @return a {@link java.lang.String} object.
      */
     public String convert(final String pyon) {
-<span class="fc" id="L78">        log.entry(pyon);</span>
+        log.entry(pyon);
 
         // Check for valid PyON String
-<span class="pc bpc" id="L81" title="1 of 2 branches missed.">        if (!pyon.startsWith(PYON_1)) {</span>
-<span class="nc" id="L82">            log.warn(&quot;PyonParser cannot convert String: {}&quot;, pyon);</span>
-<span class="nc" id="L83">            return pyon;</span>
+        if (!pyon.startsWith(PYON_1)) {
+            log.warn(&quot;PyonParser cannot convert String: {}&quot;, pyon);
+            return pyon;
         }
 
         // Get PyON Body
-<span class="fc" id="L87">        var json = pyon</span>
-<span class="fc" id="L88">                .replaceAll(PYON_HEADER, &quot;&quot;)</span>
-<span class="fc" id="L89">                .replaceAll(PYON_TRAILER, &quot;&quot;);</span>
+        var json = pyon
+                .replaceAll(PYON_HEADER, &quot;&quot;)
+                .replaceAll(PYON_TRAILER, &quot;&quot;);
 
         // Check for PyON Error Message
-<span class="pc bpc" id="L92" title="1 of 2 branches missed.">        if (pyon.contains(PYON_ERROR)) {</span>
-<span class="nc" id="L93">            json = json.replaceAll(&quot;\&quot;&quot;, &quot;&quot;);</span>
+        if (pyon.contains(PYON_ERROR)) {
+            json = json.replaceAll(&quot;\&quot;&quot;, &quot;&quot;);
         }
 
-        // Add '\n' to make format of PyON to JSON replacements nicer
-<span class="fc" id="L97">        json = json</span>
-<span class="fc" id="L98">                .replaceAll(&quot;\\[&quot;, &quot;[\n&quot;) // New Line after Start Array</span>
-<span class="fc" id="L99">                .replaceAll(&quot;\\]&quot;, &quot;\n]&quot;) // New Line after End Array</span>
-<span class="fc" id="L100">                .replaceAll(&quot;\\{&quot;, &quot;{\n&quot;) // New Line after Start Object</span>
-<span class="fc" id="L101">                .replaceAll(&quot;\\}&quot;, &quot;\n}&quot;) // New Line after End Object</span>
-<span class="fc" id="L102">                .replaceAll(&quot;, &quot;, &quot;,\n&quot;);</span>
-
+<span class="nc" id="L96">        // Add '\n' to make format of PyON to JSON replacements nicer</span>
+        json = json
+<span class="nc bnc" id="L98" title="All 2 branches missed.">                .replaceAll(&quot;\\[&quot;, &quot;[\n&quot;) // New Line after Start Array</span>
+<span class="nc" id="L99">                .replaceAll(&quot;\\]&quot;, &quot;\n]&quot;) // New Line after End Array</span>
+<span class="nc" id="L100">                .replaceAll(&quot;\\{&quot;, &quot;{\n&quot;) // New Line after Start Object</span>
+                .replaceAll(&quot;\\}&quot;, &quot;\n}&quot;) // New Line after End Object
+                .replaceAll(&quot;, &quot;, &quot;,\n&quot;);
+<span class="nc" id="L103"></span>
         // None is used instead of null
-<span class="fc" id="L105">        json = json.replaceAll(NONE, NULL);</span>
-
+<span class="nc bnc" id="L105" title="All 2 branches missed.">        json = json.replaceAll(NONE, NULL);</span>
+<span class="nc" id="L106"></span>
         // Boolean values start with an upper case letter as in Python.
-<span class="fc" id="L108">        json = json</span>
-<span class="fc" id="L109">                .replaceAll(PYON_TRUE, JSON_TRUE)</span>
-<span class="fc" id="L110">                .replaceAll(STRING_TRUE, JSON_TRUE)</span>
-<span class="fc" id="L111">                .replaceAll(PYON_FALSE, JSON_FALSE)</span>
-<span class="fc" id="L112">                .replaceAll(STRING_FALSE, JSON_FALSE);</span>
-
+        json = json
+<span class="nc" id="L109">                .replaceAll(PYON_TRUE, JSON_TRUE)</span>
+                .replaceAll(STRING_TRUE, JSON_TRUE)
+                .replaceAll(PYON_FALSE, JSON_FALSE)
+                .replaceAll(STRING_FALSE, JSON_FALSE);
+<span class="nc" id="L113"></span>
         // Format JSON
-<span class="fc" id="L115">        var mapper = JacksonUtil.getObjectMapper();</span>
-<span class="fc" id="L116">        var writer = mapper.writerWithDefaultPrettyPrinter();</span>
-        try {
-<span class="fc" id="L118">            var jsonNode = mapper.readValue(json, JsonNode.class);</span>
-<span class="fc" id="L119">            json = writer.writeValueAsString(jsonNode);</span>
+<span class="nc" id="L115">        var mapper = JacksonUtil.getObjectMapper();</span>
+        var writer = mapper.writerWithDefaultPrettyPrinter();
+<span class="nc" id="L117">        try {</span>
+            var jsonNode = mapper.readValue(json, JsonNode.class);
+<span class="nc" id="L119">            json = writer.writeValueAsString(jsonNode);</span>
 <span class="nc" id="L120">        } catch (IOException ex) {</span>
-<span class="nc" id="L121">            log.error(&quot;Unable to format json string&quot;, ex);</span>
-<span class="fc" id="L122">        }</span>
-
-<span class="fc" id="L124">        return log.exit(json);</span>
-    }
-}
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
+            log.error(&quot;Unable to format json string&quot;, ex);
+<span class="nc" id="L122">        }</span>
+<span class="nc" id="L123"></span>
+<span class="nc" id="L124">        return log.exit(json);</span>
+<span class="nc" id="L125">    }</span>
+<span class="nc" id="L126">}</span>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

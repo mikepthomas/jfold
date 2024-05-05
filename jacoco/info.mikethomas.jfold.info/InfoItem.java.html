@@ -27,109 +27,109 @@ import lombok.Getter;
  * &lt;p&gt;InfoItem class.&lt;/p&gt;
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.5.1
+<span class="nc" id="L30"> * @version 7.5.1</span>
  */
-<span class="fc" id="L32">@AllArgsConstructor</span>
+@AllArgsConstructor
 @Getter
 public enum InfoItem {
-
+<span class="nc" id="L35"></span>
 // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Client Info Items&quot;&gt;
 
-    /** Item &lt;code&gt;Website&lt;/code&gt; in &lt;code&gt;Folding@home Client&lt;/code&gt;. */
-<span class="fc" id="L39">    CLIENT_WEBSITE(InfoCategory.CLIENT, &quot;Website&quot;),</span>
+<span class="nc" id="L38">    /** Item &lt;code&gt;Website&lt;/code&gt; in &lt;code&gt;Folding@home Client&lt;/code&gt;. */</span>
+    CLIENT_WEBSITE(InfoCategory.CLIENT, &quot;Website&quot;),
 
-    /** Item &lt;code&gt;Copyright&lt;/code&gt; in &lt;code&gt;Folding@home Client&lt;/code&gt;. */
-<span class="fc" id="L42">    CLIENT_COPYRIGHT(InfoCategory.CLIENT, &quot;Copyright&quot;),</span>
+<span class="nc" id="L41">    /** Item &lt;code&gt;Copyright&lt;/code&gt; in &lt;code&gt;Folding@home Client&lt;/code&gt;. */</span>
+    CLIENT_COPYRIGHT(InfoCategory.CLIENT, &quot;Copyright&quot;),
 
-    /** Item &lt;code&gt;Author&lt;/code&gt; in &lt;code&gt;Folding@home Client&lt;/code&gt;. */
-<span class="fc" id="L45">    CLIENT_AUTHOR(InfoCategory.CLIENT, &quot;Author&quot;),</span>
+<span class="nc" id="L44">    /** Item &lt;code&gt;Author&lt;/code&gt; in &lt;code&gt;Folding@home Client&lt;/code&gt;. */</span>
+    CLIENT_AUTHOR(InfoCategory.CLIENT, &quot;Author&quot;),
 
-    /** Item &lt;code&gt;Args&lt;/code&gt; in &lt;code&gt;Folding@home Client&lt;/code&gt;. */
-<span class="fc" id="L48">    CLIENT_ARGS(InfoCategory.CLIENT, &quot;Args&quot;),</span>
+<span class="nc" id="L47">    /** Item &lt;code&gt;Args&lt;/code&gt; in &lt;code&gt;Folding@home Client&lt;/code&gt;. */</span>
+    CLIENT_ARGS(InfoCategory.CLIENT, &quot;Args&quot;),
 
     /** Item &lt;code&gt;Config&lt;/code&gt; in &lt;code&gt;Folding@home Client&lt;/code&gt;. */
-<span class="fc" id="L51">    CLIENT_CONFIG(InfoCategory.CLIENT, &quot;Config&quot;),</span>
+    CLIENT_CONFIG(InfoCategory.CLIENT, &quot;Config&quot;),
 
-// &lt;/editor-fold&gt;
+<span class="nc" id="L53">// &lt;/editor-fold&gt;</span>
 // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Build Info Items&quot;&gt;
 
-    /** Item &lt;code&gt;Build&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
-<span class="fc" id="L57">    BUILD_VERSION(InfoCategory.BUILD, &quot;Build&quot;),</span>
+<span class="nc" id="L56">    /** Item &lt;code&gt;Build&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */</span>
+    BUILD_VERSION(InfoCategory.BUILD, &quot;Build&quot;),
 
-    /** Item &lt;code&gt;Date&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
-<span class="fc" id="L60">    BUILD_DATE(InfoCategory.BUILD, &quot;Date&quot;),</span>
+<span class="nc" id="L59">    /** Item &lt;code&gt;Date&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */</span>
+    BUILD_DATE(InfoCategory.BUILD, &quot;Date&quot;),
 
-    /** Item &lt;code&gt;Time&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
-<span class="fc" id="L63">    BUILD_TIME(InfoCategory.BUILD, &quot;Time&quot;),</span>
+<span class="nc" id="L62">    /** Item &lt;code&gt;Time&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */</span>
+    BUILD_TIME(InfoCategory.BUILD, &quot;Time&quot;),
 
-    /** Item &lt;code&gt;SVN Rev&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
-<span class="fc" id="L66">    BUILD_SVN_REV(InfoCategory.BUILD, &quot;SVN Rev&quot;),</span>
+<span class="nc" id="L65">    /** Item &lt;code&gt;SVN Rev&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */</span>
+    BUILD_SVN_REV(InfoCategory.BUILD, &quot;SVN Rev&quot;),
 
-    /** Item &lt;code&gt;Branch&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
-<span class="fc" id="L69">    BUILD_BRANCH(InfoCategory.BUILD, &quot;Branch&quot;),</span>
+<span class="nc" id="L68">    /** Item &lt;code&gt;Branch&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */</span>
+    BUILD_BRANCH(InfoCategory.BUILD, &quot;Branch&quot;),
 
-    /** Item &lt;code&gt;Compiler&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
-<span class="fc" id="L72">    BUILD_COMPILER(InfoCategory.BUILD, &quot;Compiler&quot;),</span>
+<span class="nc" id="L71">    /** Item &lt;code&gt;Compiler&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */</span>
+    BUILD_COMPILER(InfoCategory.BUILD, &quot;Compiler&quot;),
 
-    /** Item &lt;code&gt;Options&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
-<span class="fc" id="L75">    BUILD_OPTIONS(InfoCategory.BUILD, &quot;Options&quot;),</span>
+<span class="nc" id="L74">    /** Item &lt;code&gt;Options&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */</span>
+    BUILD_OPTIONS(InfoCategory.BUILD, &quot;Options&quot;),
 
-    /** Item &lt;code&gt;Platform&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
-<span class="fc" id="L78">    BUILD_PLATFORM(InfoCategory.BUILD, &quot;Platform&quot;),</span>
+<span class="nc" id="L77">    /** Item &lt;code&gt;Platform&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */</span>
+    BUILD_PLATFORM(InfoCategory.BUILD, &quot;Platform&quot;),
 
-    /** Item &lt;code&gt;Bits&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
-<span class="fc" id="L81">    BUILD_BITS(InfoCategory.BUILD, &quot;Bits&quot;),</span>
+<span class="nc" id="L80">    /** Item &lt;code&gt;Bits&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */</span>
+    BUILD_BITS(InfoCategory.BUILD, &quot;Bits&quot;),
 
     /** Item &lt;code&gt;Mode&lt;/code&gt; in &lt;code&gt;Build&lt;/code&gt;. */
-<span class="fc" id="L84">    BUILD_MODE(InfoCategory.BUILD, &quot;Mode&quot;),</span>
+    BUILD_MODE(InfoCategory.BUILD, &quot;Mode&quot;),
 
-// &lt;/editor-fold&gt;
+<span class="nc" id="L86">// &lt;/editor-fold&gt;</span>
 // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;System Info Items&quot;&gt;
 
-    /** Item &lt;code&gt;CPU&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
-<span class="fc" id="L90">    SYSTEM_CPU(InfoCategory.SYSTEM, &quot;CPU&quot;),</span>
+<span class="nc" id="L89">    /** Item &lt;code&gt;CPU&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */</span>
+    SYSTEM_CPU(InfoCategory.SYSTEM, &quot;CPU&quot;),
 
-    /** Item &lt;code&gt;CPU ID&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
-<span class="fc" id="L93">    SYSTEM_CPU_ID(InfoCategory.SYSTEM, &quot;CPU ID&quot;),</span>
+<span class="nc" id="L92">    /** Item &lt;code&gt;CPU ID&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */</span>
+    SYSTEM_CPU_ID(InfoCategory.SYSTEM, &quot;CPU ID&quot;),
 
-    /** Item &lt;code&gt;CPUs&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
-<span class="fc" id="L96">    SYSTEM_CPUS(InfoCategory.SYSTEM, &quot;CPUs&quot;),</span>
+<span class="nc" id="L95">    /** Item &lt;code&gt;CPUs&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */</span>
+    SYSTEM_CPUS(InfoCategory.SYSTEM, &quot;CPUs&quot;),
 
-    /** Item &lt;code&gt;Memory&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
-<span class="fc" id="L99">    SYSTEM_MEMORY(InfoCategory.SYSTEM, &quot;Memory&quot;),</span>
+<span class="nc" id="L98">    /** Item &lt;code&gt;Memory&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */</span>
+    SYSTEM_MEMORY(InfoCategory.SYSTEM, &quot;Memory&quot;),
 
-    /** Item &lt;code&gt;Free Memory&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
-<span class="fc" id="L102">    SYSTEM_FREE_MEMORY(InfoCategory.SYSTEM, &quot;Free Memory&quot;),</span>
+<span class="nc" id="L101">    /** Item &lt;code&gt;Free Memory&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */</span>
+    SYSTEM_FREE_MEMORY(InfoCategory.SYSTEM, &quot;Free Memory&quot;),
 
-    /** Item &lt;code&gt;Threads&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
-<span class="fc" id="L105">    SYSTEM_THREADS(InfoCategory.SYSTEM, &quot;Threads&quot;),</span>
+<span class="nc" id="L104">    /** Item &lt;code&gt;Threads&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */</span>
+    SYSTEM_THREADS(InfoCategory.SYSTEM, &quot;Threads&quot;),
 
-    /** Item &lt;code&gt;Has Battery&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
-<span class="fc" id="L108">    SYSTEM_HAS_BATTERY(InfoCategory.SYSTEM, &quot;Has Battery&quot;),</span>
+<span class="nc" id="L107">    /** Item &lt;code&gt;Has Battery&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */</span>
+    SYSTEM_HAS_BATTERY(InfoCategory.SYSTEM, &quot;Has Battery&quot;),
 
-    /** Item &lt;code&gt;On Battery&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
-<span class="fc" id="L111">    SYSTEM_ON_BATTERY(InfoCategory.SYSTEM, &quot;On Battery&quot;),</span>
+<span class="nc" id="L110">    /** Item &lt;code&gt;On Battery&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */</span>
+    SYSTEM_ON_BATTERY(InfoCategory.SYSTEM, &quot;On Battery&quot;),
 
-    /** Item &lt;code&gt;UTC offset&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
-<span class="fc" id="L114">    SYSTEM_UTC_OFFSET(InfoCategory.SYSTEM, &quot;UTC offset&quot;),</span>
+<span class="nc" id="L113">    /** Item &lt;code&gt;UTC offset&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */</span>
+    SYSTEM_UTC_OFFSET(InfoCategory.SYSTEM, &quot;UTC offset&quot;),
 
-    /** Item &lt;code&gt;PID&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
-<span class="fc" id="L117">    SYSTEM_PID(InfoCategory.SYSTEM, &quot;PID&quot;),</span>
+<span class="nc" id="L116">    /** Item &lt;code&gt;PID&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */</span>
+    SYSTEM_PID(InfoCategory.SYSTEM, &quot;PID&quot;),
 
-    /** Item &lt;code&gt;CWD&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
-<span class="fc" id="L120">    SYSTEM_CWD(InfoCategory.SYSTEM, &quot;CWD&quot;),</span>
+<span class="nc" id="L119">    /** Item &lt;code&gt;CWD&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */</span>
+    SYSTEM_CWD(InfoCategory.SYSTEM, &quot;CWD&quot;),
 
-    /** Item &lt;code&gt;OS&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
-<span class="fc" id="L123">    SYSTEM_OS(InfoCategory.SYSTEM, &quot;OS&quot;),</span>
+<span class="nc" id="L122">    /** Item &lt;code&gt;OS&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */</span>
+    SYSTEM_OS(InfoCategory.SYSTEM, &quot;OS&quot;),
 
-    /** Item &lt;code&gt;OS Arch&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
-<span class="fc" id="L126">    SYSTEM_OS_ARCH(InfoCategory.SYSTEM, &quot;OS Arch&quot;),</span>
+<span class="nc" id="L125">    /** Item &lt;code&gt;OS Arch&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */</span>
+    SYSTEM_OS_ARCH(InfoCategory.SYSTEM, &quot;OS Arch&quot;),
 
-    /** Item &lt;code&gt;GPUs&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
-<span class="fc" id="L129">    SYSTEM_GPUS(InfoCategory.SYSTEM, &quot;GPUs&quot;),</span>
+<span class="nc" id="L128">    /** Item &lt;code&gt;GPUs&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */</span>
+    SYSTEM_GPUS(InfoCategory.SYSTEM, &quot;GPUs&quot;),
 
     /** Item &lt;code&gt;CUDA&lt;/code&gt; in &lt;code&gt;System&lt;/code&gt;. */
-<span class="fc" id="L132">    SYSTEM_CUDA(InfoCategory.SYSTEM, &quot;CUDA&quot;);</span>
+    SYSTEM_CUDA(InfoCategory.SYSTEM, &quot;CUDA&quot;);
 
 // &lt;/editor-fold&gt;
 
@@ -138,19 +138,19 @@ public enum InfoItem {
      *
      * @return InfoCategory category.
      */
-<span class="fc" id="L141">    private final InfoCategory category;</span>
+    private final InfoCategory category;
 
     /**
-     * Key.
+<span class="nc" id="L144">     * Key.</span>
      *
      * @return String key.
      */
 <span class="nc" id="L148">    private final String key;</span>
-
-    /** {@inheritDoc} */
-    @Override
+<span class="nc" id="L149"></span>
+<span class="nc" id="L150">    /** {@inheritDoc} */</span>
+<span class="nc" id="L151">    @Override</span>
     public String toString() {
-<span class="fc" id="L153">        return key;</span>
+        return key;
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

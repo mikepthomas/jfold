@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2019 Mike Thomas &lt;mikepthomas@outlook.com&gt;
+ * Copyright (C) 2012 - 2024 Mike Thomas &lt;mikepthomas@outlook.com&gt;
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,34 +20,40 @@
  */
 package info.mikethomas.jfold.util;
 
-import com.fasterxml.jackson.core.JsonParser.Feature;
+import com.fasterxml.jackson.core.json.JsonReadFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
+import com.fasterxml.jackson.module.jakarta.xmlbind.JakartaXmlBindAnnotationModule;
+
 import lombok.experimental.UtilityClass;
 
 /**
  * &lt;p&gt;JacksonUtil class.&lt;/p&gt;
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.5.1
+ * @version 7.6.21
  */
 @UtilityClass
-<span class="nc" id="L35">public class JacksonUtil {</span>
+public class JacksonUtil {
 
     private ObjectMapper mapper;
 
+    /**
+     * &lt;p&gt;getObjectMapper.&lt;/p&gt;
+     *
+<span class="nc bnc" id="L43" title="All 2 branches missed.">     * @return a {@link com.fasterxml.jackson.databind.ObjectMapper} object</span>
+<span class="nc" id="L44">     */</span>
     public ObjectMapper getObjectMapper() {
-<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (mapper == null) {</span>
-<span class="fc" id="L41">            setupMapper();</span>
+<span class="nc" id="L46">        if (mapper == null) {</span>
+            setupMapper();
         }
-<span class="fc" id="L43">        return mapper;</span>
-    }
-
-    private void setupMapper() {
-<span class="fc" id="L47">        mapper = new ObjectMapper();</span>
-<span class="fc" id="L48">        mapper.configure(Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);</span>
-<span class="fc" id="L49">        mapper.registerModule(new JaxbAnnotationModule());</span>
-<span class="fc" id="L50">        mapper.setDateFormat(DateAdapter.DATE_FORMAT);</span>
-<span class="fc" id="L51">    }</span>
-}
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
+        return mapper;
+<span class="nc" id="L50">    }</span>
+<span class="nc" id="L51"></span>
+<span class="nc" id="L52">    private void setupMapper() {</span>
+<span class="nc" id="L53">        mapper = new ObjectMapper();</span>
+<span class="nc" id="L54">        mapper.configure(JsonReadFeature.ALLOW_BACKSLASH_ESCAPING_ANY_CHARACTER.mappedFeature(), true);</span>
+        mapper.registerModule(new JakartaXmlBindAnnotationModule());
+        mapper.setDateFormat(DateAdapter.DATE_FORMAT);
+<span class="nc" id="L57">    }</span>
+<span class="nc" id="L58">}</span>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2019 Mike Thomas &lt;mikepthomas@outlook.com&gt;
+ * Copyright (C) 2012 - 2024 Mike Thomas &lt;mikepthomas@outlook.com&gt;
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,9 +38,9 @@ import org.slf4j.profiler.Profiler;
  * &lt;p&gt;SocketConnection class.&lt;/p&gt;
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.5.1
- */
-<span class="fc" id="L43">@XSlf4j</span>
+ * @version 7.6.21
+<span class="nc" id="L42"> */</span>
+@XSlf4j
 public class SocketConnection {
 
     /** Clear Screen. */
@@ -51,7 +51,7 @@ public class SocketConnection {
     public static final String ENCODING = &quot;UTF-8&quot;;
     /** Welcome Message. */
     public static final String WELCOME_MSG
-            = &quot;Welcome to the Folding@home Client command server.&quot;;
+            = &quot;Welcome to the FAHClient command server.&quot;;
 
     /** Socket to connect to the Folding@Home client. */
     private Socket socket;
@@ -69,36 +69,36 @@ public class SocketConnection {
      */
     public SocketConnection(
             final String address, final int port) throws IOException {
-<span class="fc" id="L72">        super();</span>
+        super();
 
-<span class="fc bfc" id="L74" title="All 2 branches covered.">        if (address != null) {</span>
-<span class="fc" id="L75">            socket = new Socket(address, port);</span>
+        if (address != null) {
+            socket = new Socket(address, port);
 
-<span class="fc" id="L77">            out = new PrintStream(socket.getOutputStream(), true, ENCODING);</span>
-<span class="fc" id="L78">            in = new Scanner(socket.getInputStream(), ENCODING);</span>
-<span class="fc" id="L79">            in.useDelimiter(COMMAND_PROMPT);</span>
-
-<span class="fc" id="L81">            var welcome = in.nextLine();</span>
-<span class="fc" id="L82">            log.info(welcome);</span>
-<span class="pc bpc" id="L83" title="1 of 2 branches missed.">            if (!(CLRSCR + WELCOME_MSG).equals(welcome)) {</span>
+            out = new PrintStream(socket.getOutputStream(), true, ENCODING);
+            in = new Scanner(socket.getInputStream(), ENCODING);
+            in.useDelimiter(COMMAND_PROMPT);
+<span class="nc" id="L80"></span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">            var welcome = in.nextLine();</span>
+<span class="nc" id="L82">            log.info(welcome);</span>
+<span class="nc" id="L83">            if (!(CLRSCR + WELCOME_MSG).equals(welcome)) {</span>
 <span class="nc" id="L84">                throw new IOException(</span>
-                        &quot;Unexpected welcome message, check client version&quot;);
-            }
-        }
-<span class="fc" id="L88">    }</span>
-
+<span class="nc" id="L85">                        &quot;Unexpected welcome message, check client version&quot;);</span>
+<span class="nc" id="L86">            }</span>
+<span class="nc" id="L87">        }</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">    }</span>
+<span class="nc" id="L89"></span>
     /**
      * Send a command to the Folding@home Client.
-     *
+<span class="nc" id="L92">     *</span>
      * @param command command to send to the client
      * @return String response from client
      */
     protected String sendCommand(final Command command) {
-<span class="fc" id="L97">        return sendCommand(command, new ArrayList&lt;&gt;());</span>
+        return sendCommand(command, new ArrayList&lt;&gt;());
     }
 
     /**
-     * Send a command to the Folding@home Client with arguments.
+<span class="nc" id="L101">     * Send a command to the Folding@home Client with arguments.</span>
      *
      * @param command command to send to the client
      * @param args command arguments
@@ -106,48 +106,48 @@ public class SocketConnection {
      */
     protected String sendCommand(final Command command,
             final List&lt;String&gt; args) {
-<span class="fc" id="L109">        log.entry(command, args);</span>
+        log.entry(command, args);
 
-<span class="fc" id="L111">        var profiler = new Profiler(command.toString());</span>
-<span class="fc" id="L112">        profiler.setLogger(log);</span>
-
-<span class="fc" id="L114">        var arguments = new StringBuilder();</span>
-<span class="fc" id="L115">        args.forEach(arg -&gt; arguments.append(&quot; '&quot;).append(arg).append(&quot;'&quot;));</span>
-
+        var profiler = new Profiler(command.toString());
+<span class="nc" id="L112">        profiler.setLogger(log);</span>
+<span class="nc" id="L113"></span>
+<span class="nc" id="L114">        var arguments = new StringBuilder();</span>
+<span class="nc" id="L115">        args.forEach(arg -&gt; arguments.append(&quot; '&quot;).append(arg).append(&quot;'&quot;));</span>
+<span class="nc" id="L116"></span>
         // Send the command
-<span class="fc" id="L118">        profiler.start(&quot;Send Command&quot;);</span>
-<span class="fc" id="L119">        out.println(command + arguments.toString());</span>
-<span class="fc" id="L120">        log.info(&quot;Sent Command: {}{}&quot;, command, arguments);</span>
+<span class="nc" id="L118">        profiler.start(&quot;Send Command&quot;);</span>
+<span class="nc" id="L119">        out.println(command + arguments.toString());</span>
+<span class="nc" id="L120">        log.info(&quot;Sent Command: {}{}&quot;, command, arguments);</span>
 
-        // Get the output
-<span class="fc" id="L123">        var response = &quot;&quot;;</span>
-<span class="fc bfc" id="L124" title="All 2 branches covered.">        switch (command.getResponseType()) {</span>
+<span class="nc" id="L122">        // Get the output</span>
+<span class="nc bnc" id="L123" title="All 2 branches missed.">        var response = &quot;&quot;;</span>
+        switch (command.getResponseType()) {
             case PYON:
-            case STRING:
-<span class="fc" id="L127">                profiler.start(&quot;Get Response&quot;);</span>
-<span class="fc" id="L128">                response = in.next().replaceFirst(COMMAND_PROMPT, &quot;&quot;);</span>
-<span class="fc bfc" id="L129" title="All 2 branches covered.">                if (response.startsWith(PyonParser.PYON_1)) {</span>
-<span class="fc" id="L130">                    profiler.start(&quot;Convert to JSON&quot;);</span>
-<span class="fc" id="L131">                    response = PyonParser.convert(response);</span>
-<span class="fc bfc" id="L132" title="All 2 branches covered.">                } else if (response.equals(&quot;\n&quot;)) {</span>
-                    // TODO: remove dirty hack to stop ObjectMapper breaking
-<span class="pc bpc" id="L134" title="2 of 3 branches missed.">                    switch (command) {</span>
-                        case SIMULATION_INFO:
+<span class="nc" id="L126">            case STRING:</span>
+<span class="nc" id="L127">                profiler.start(&quot;Get Response&quot;);</span>
+<span class="nc bnc" id="L128" title="All 2 branches missed.">                response = in.next().replaceFirst(COMMAND_PROMPT, &quot;&quot;);</span>
+<span class="nc" id="L129">                if (response.startsWith(PyonParser.PYON_1)) {</span>
+<span class="nc" id="L130">                    profiler.start(&quot;Convert to JSON&quot;);</span>
+<span class="nc bnc" id="L131" title="All 2 branches missed.">                    response = PyonParser.convert(response);</span>
+                } else if (response.equals(&quot;\n&quot;)) {
+<span class="nc bnc" id="L133" title="All 3 branches missed.">                    // TODO: remove dirty hack to stop ObjectMapper breaking</span>
+                    switch (command) {
+<span class="nc" id="L135">                        case SIMULATION_INFO:</span>
 <span class="nc" id="L136">                            response = &quot;{}&quot;;</span>
-<span class="nc" id="L137">                            break;</span>
-                        case SLOT_INFO:
-<span class="fc" id="L139">                            response = &quot;[]&quot;;</span>
-<span class="fc" id="L140">                            break;</span>
+                            break;
+<span class="nc" id="L138">                        case SLOT_INFO:</span>
+<span class="nc" id="L139">                            response = &quot;[]&quot;;</span>
+                            break;
                         default:
                             break;
                     }
                 }
-
-            default:
-<span class="fc" id="L147">                log.info(&quot;Recieved Response: {}&quot;, response);</span>
-<span class="fc" id="L148">                profiler.stop().log();</span>
+<span class="nc" id="L145"></span>
+<span class="nc" id="L146">            default:</span>
+                log.info(&quot;Recieved Response: {}&quot;, response);
+<span class="nc" id="L148">                profiler.stop().log();</span>
         }
-<span class="fc" id="L150">        return log.exit(response);</span>
+        return log.exit(response);
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

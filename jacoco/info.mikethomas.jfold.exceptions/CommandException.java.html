@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2019 Mike Thomas &lt;mikepthomas@outlook.com&gt;
+ * Copyright (C) 2012 - 2024 Mike Thomas &lt;mikepthomas@outlook.com&gt;
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,8 +23,8 @@ package info.mikethomas.jfold.exceptions;
 
 import java.io.IOException;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import lombok.NoArgsConstructor;
 
@@ -32,38 +32,38 @@ import lombok.NoArgsConstructor;
  * &lt;p&gt;CommandException class.&lt;/p&gt;
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.5.1
+ * @version 7.6.21
  */
-<span class="nc" id="L37">@NoArgsConstructor</span>
+@NoArgsConstructor
 @XmlRootElement(name = &quot;CommandException&quot;)
 public class CommandException extends IOException {
 
     /**
      * Constructs an instance of &lt;code&gt;CommandException&lt;/code&gt; with the
-     * specified detail message.
-     *
+<span class="nc" id="L43">     * specified detail message.</span>
+<span class="nc" id="L44">     *</span>
      * @param message the detail message.
      */
     public CommandException(final String message) {
-<span class="nc" id="L48">        super(message);</span>
-<span class="nc" id="L49">    }</span>
+        super(message);
+    }
 
     /**
      * Constructs an instance of &lt;code&gt;CommandException&lt;/code&gt; with the
      * specified detail message and the cause of the Exception.
-     *
-     * @param message the detail message.
+<span class="nc" id="L54">     *</span>
+<span class="nc" id="L55">     * @param message the detail message.</span>
      * @param cause the cause of the exception.
      */
     public CommandException(final String message, final Throwable cause) {
-<span class="nc" id="L59">        super(message, cause);</span>
-<span class="nc" id="L60">    }</span>
+        super(message, cause);
+    }
 
     /** {@inheritDoc} */
-    @Override
+<span class="nc" id="L63">    @Override</span>
     @XmlElement
     public final String getMessage() {
-<span class="nc" id="L66">        return super.getMessage();</span>
-    }
-}
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
+        return super.getMessage();
+<span class="nc" id="L67">    }</span>
+<span class="nc" id="L68">}</span>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

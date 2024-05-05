@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2019 Mike Thomas &lt;mikepthomas@outlook.com&gt;
+ * Copyright (C) 2012 - 2024 Mike Thomas &lt;mikepthomas@outlook.com&gt;
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@ import info.mikethomas.jfold.util.DateAdapter;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import lombok.Getter;
 import lombok.ToString;
@@ -35,13 +35,13 @@ import lombok.ToString;
 /**
  * &lt;p&gt;SimulationInfo class.&lt;/p&gt;
  *
- * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.5.1
+<span class="nc" id="L38"> * @author Michael Thomas (mikepthomas@outlook.com)</span>
+ * @version 7.6.21
  */
 @Getter
-<span class="fc" id="L42">@ToString</span>
+@ToString
 @XmlRootElement(name = &quot;simulation-info&quot;)
-<span class="fc" id="L44">public class SimulationInfo implements Serializable {</span>
+public class SimulationInfo implements Serializable {
 
     /**
      * User name.
@@ -49,7 +49,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;user&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L52">    private String user;</span>
+    private String user;
 
     /**
      * Team name.
@@ -57,7 +57,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;team&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L60">    private long team;</span>
+    private long team;
 
     /**
      * Project this Simulation belongs to.
@@ -65,7 +65,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;project&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L68">    private int project;</span>
+    private int project;
 
     /**
      * Run of the Project.
@@ -73,7 +73,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;run&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L76">    private int run;</span>
+    private int run;
 
     /**
      * Clone of the Project.
@@ -81,7 +81,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;clone&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L84">    private int clone;</span>
+    private int clone;
 
     /**
      * Generation of the Project.
@@ -89,7 +89,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;gen&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L92">    private int gen;</span>
+    private int gen;
 
     /**
      * Core type.
@@ -97,7 +97,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;core_type&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement(name = &quot;core_type&quot;)
-<span class="fc" id="L100">    private int coreType;</span>
+    private int coreType;
 
     /**
      * Core identifier.
@@ -105,17 +105,17 @@ import lombok.ToString;
      * @return the &lt;code&gt;core&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L108">    private String core;</span>
+    private String core;
 
     /**
      * Project Description.
      *
-     * @deprecated
+     * @deprecated no longer returned by simulation-info
      * @return the &lt;code&gt;description&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @Deprecated
     @XmlElement
-<span class="fc" id="L118">    private String description;</span>
+    private String description;
 
     /**
      * Total number of iterations in this Simulation.
@@ -123,7 +123,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;total_iterations&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement(name = &quot;total_iterations&quot;)
-<span class="fc" id="L126">    private int totalIterations;</span>
+    private int totalIterations;
 
     /**
      * Number of iterations completed.
@@ -131,7 +131,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;iterations_done&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement(name = &quot;iterations_done&quot;)
-<span class="fc" id="L134">    private int iterationsDone;</span>
+    private int iterationsDone;
 
     /**
      * Energy.
@@ -139,7 +139,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;energy&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L142">    private int energy;</span>
+    private int energy;
 
     /**
      * Temperature.
@@ -147,7 +147,7 @@ import lombok.ToString;
      * @return the &lt;code&gt;temperature&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L150">    private int temperature;</span>
+    private int temperature;
 
     /**
      * Time and date this Simulation started.
@@ -156,7 +156,7 @@ import lombok.ToString;
      */
     @XmlElement(name = &quot;start_time&quot;)
     @XmlJavaTypeAdapter(DateAdapter.class)
-<span class="fc" id="L159">    private Date startTime;</span>
+    private Date startTime;
 
     /**
      * Time and date this Simulation expires.
@@ -164,61 +164,61 @@ import lombok.ToString;
      * @return the &lt;code&gt;timeout&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L167">    private long timeout;</span>
+    private long timeout;
 
     /**
-     * Time and date this Simulation needs to be completed by.
+<span class="nc" id="L170">     * Time and date this Simulation needs to be completed by.</span>
      *
      * @return the &lt;code&gt;deadline&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L175">    private long deadline;</span>
+    private long deadline;
 
     /**
      * Time and date this Simulation has been running for.
      *
-     * @deprecated
+<span class="nc" id="L180">     * @deprecated no longer returned by simulation-info</span>
      * @return the &lt;code&gt;run_time&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @Deprecated
     @XmlElement(name = &quot;run_time&quot;)
-<span class="fc" id="L185">    private Long runTime;</span>
+    private Long runTime;
 
     /**
      * Simulation time.
      *
-     * @deprecated
+<span class="nc" id="L190">     * @deprecated no longer returned by simulation-info</span>
      * @return the &lt;code&gt;simulation_time&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @Deprecated
     @XmlElement(name = &quot;simulation_time&quot;)
-<span class="fc" id="L195">    private Long simulationTime;</span>
+    private Long simulationTime;
 
     /**
      * Estimated time of arrival.
      *
-     * @return the &lt;code&gt;eta&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
+<span class="nc" id="L200">     * @return the &lt;code&gt;eta&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;</span>
      */
     @XmlElement
-<span class="fc" id="L203">    private long eta;</span>
+    private long eta;
 
     /**
      * Progress.
      *
      * @return the &lt;code&gt;progress&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
-    @XmlElement
-<span class="fc" id="L211">    private double progress;</span>
+<span class="nc" id="L210">    @XmlElement</span>
+    private double progress;
 
     /**
      * Simulation news.
      *
-     * @deprecated
+     * @deprecated no longer returned by simulation-info
      * @return the &lt;code&gt;news&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @Deprecated
-    @XmlElement
-<span class="fc" id="L221">    private String news;</span>
+<span class="nc" id="L220">    @XmlElement</span>
+    private String news;
 
     /**
      * Slot number.
@@ -226,6 +226,6 @@ import lombok.ToString;
      * @return the &lt;code&gt;slot&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-<span class="fc" id="L229">    private int slot;</span>
-}
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
+    private int slot;
+<span class="nc" id="L230">}</span>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
