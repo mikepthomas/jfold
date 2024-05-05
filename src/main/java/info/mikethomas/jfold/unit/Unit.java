@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2019 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2024 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,9 +26,9 @@ import java.io.Serializable;
 import java.net.InetAddress;
 import java.util.Date;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import lombok.Getter;
 import lombok.ToString;
@@ -37,7 +37,7 @@ import lombok.ToString;
  * <p>Represents a Folding@Home Work Unit.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.5.1
+ * @version 7.6.21
  */
 @Getter
 @ToString
@@ -125,6 +125,54 @@ public class Unit implements Serializable {
     private String percentDone;
 
     /**
+     * Estimated time of arrival.
+     *
+     * @return the <code>eta</code> from <code>queue-info</code>
+     */
+    @XmlElement
+    private String eta;
+
+    /**
+     * Points per day.
+     *
+     * @return the <code>ppd</code> from <code>queue-info</code>
+     */
+    @XmlElement
+    private double ppd;
+
+    /**
+     * Estimated number of points awarded for completion of this Unit.
+     *
+     * @return the <code>creditestimate</code> from <code>queue-info</code>
+     */
+    @XmlElement(name = "creditestimate")
+    private double creditEstimate;
+
+    /**
+     * Reason the Unit is waiting.
+     *
+     * @return the <code>waitingon</code> from <code>queue-info</code>
+     */
+    @XmlElement(name = "waitingon")
+    private String waitingOn;
+
+    /**
+     * Time until the next attempt to send completed Unit to collection server.
+     *
+     * @return the <code>nextattempt</code> from <code>queue-info</code>
+     */
+    @XmlElement(name = "nextattempt")
+    private String nextAttempt;
+
+    /**
+     * Time remaining.
+     *
+     * @return the <code>timeremaining</code> from <code>queue-info</code>
+     */
+    @XmlElement(name = "timeremaining")
+    private String timeRemaining;
+
+    /**
      * Total number of frames in this Unit.
      *
      * @return the <code>totalframes</code> from <code>queue-info</code>
@@ -184,14 +232,6 @@ public class Unit implements Serializable {
     private InetAddress cs;
 
     /**
-     * Reason the Unit is waiting.
-     *
-     * @return the <code>waitingon</code> from <code>queue-info</code>
-     */
-    @XmlElement(name = "waitingon")
-    private String waitingOn;
-
-    /**
      * Number of attempts to send completed Unit to collection server.
      *
      * @return the <code>attempts</code> from <code>queue-info</code>
@@ -200,44 +240,12 @@ public class Unit implements Serializable {
     private int attempts;
 
     /**
-     * Time until the next attempt to send completed Unit to collection server.
-     *
-     * @return the <code>nextattempt</code> from <code>queue-info</code>
-     */
-    @XmlElement(name = "nextattempt")
-    private String nextAttempt;
-
-    /**
-     * Time remaining.
-     *
-     * @return the <code>timeremaining</code> from <code>queue-info</code>
-     */
-    @XmlElement(name = "timeremaining")
-    private String timeRemaining;
-
-    /**
      * Slot number this Unit belongs to.
      *
      * @return the <code>slot</code> from <code>queue-info</code>
      */
     @XmlElement
     private String slot;
-
-    /**
-     * Estimated time of arrival.
-     *
-     * @return the <code>eta</code> from <code>queue-info</code>
-     */
-    @XmlElement
-    private String eta;
-
-    /**
-     * Points per day.
-     *
-     * @return the <code>ppd</code> from <code>queue-info</code>
-     */
-    @XmlElement
-    private double ppd;
 
     /**
      * Time per frame.
@@ -256,18 +264,12 @@ public class Unit implements Serializable {
     private double baseCredit;
 
     /**
-     * Estimated number of points awarded for completion of this Unit.
-     *
-     * @return the <code>creditestimate</code> from <code>queue-info</code>
-     */
-    @XmlElement(name = "creditestimate")
-    private double creditEstimate;
-
-    /**
      * Project Description.
      *
+     * @deprecated no longer returned by queue-info
      * @return the <code>description</code> from <code>queue-info</code>
      */
+    @Deprecated
     @XmlElement
     private String description;
 }

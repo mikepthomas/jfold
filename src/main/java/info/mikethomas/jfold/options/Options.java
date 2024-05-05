@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2019 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2024 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,8 +22,8 @@ package info.mikethomas.jfold.options;
 
 import java.io.Serializable;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import lombok.Getter;
 import lombok.ToString;
@@ -32,7 +32,7 @@ import lombok.ToString;
  * <p>Options class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.5.1
+ * @version 7.6.21
  */
 @Getter
 @ToString
@@ -48,18 +48,31 @@ public class Options implements Serializable {
     private String allow;
 
     /**
+     * AutoConf.
+     *
+     * @return the <code>auto-conf</code> from <code>options</code>
+     * @since 7.6.21
+     */
+    @XmlElement(name = "auto-conf")
+    private Boolean autoConf;
+
+    /**
      * Assignment servers.
      *
+     * @deprecated no longer returned by options
      * @return the <code>assignment-servers</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "assignment-servers")
     private String assignmentServers;
 
     /**
      * Auth as.
      *
+     * @deprecated no longer returned by options
      * @return the <code>auth-as</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "auth-as")
     private Boolean authAs;
 
@@ -179,7 +192,7 @@ public class Options implements Serializable {
     /**
      * Command allow.
      *
-     * @deprecated
+     * @deprecated no longer returned by options
      * @return the <code>command-allow</code> from <code>options</code>
      */
     @Deprecated
@@ -197,7 +210,7 @@ public class Options implements Serializable {
     /**
      * Command deny.
      *
-     * @deprecated
+     * @deprecated no longer returned by options
      * @return the <code>command-deny</code> from <code>options</code>
      */
     @Deprecated
@@ -271,32 +284,40 @@ public class Options implements Serializable {
     /**
      * Core dir.
      *
+     * @deprecated no longer returned by options
      * @return the <code>core-dir</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "core-dir")
     private String coreDir;
 
     /**
      * Core exec.
      *
+     * @deprecated no longer returned by options
      * @return the <code>core-exec</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "core-exec")
     private String coreExec;
 
     /**
      * Core key.
      *
+     * @deprecated no longer returned by options
      * @return the <code>core-key</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "core-key")
     private String coreKey;
 
     /**
      * Core prep.
      *
+     * @deprecated no longer returned by options
      * @return the <code>core-prep</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "core-prep")
     private String corePrep;
 
@@ -311,24 +332,30 @@ public class Options implements Serializable {
     /**
      * Core server.
      *
+     * @deprecated no longer returned by options
      * @return the <code>core-server</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "core-server")
     private String coreServer;
 
     /**
      * Core wrapper exec.
      *
+     * @deprecated no longer returned by options
      * @return the <code>core-wrapper-exec</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "core-wrapper-exec")
     private String coreWrapperExec;
 
     /**
      * CPU affinity.
      *
+     * @deprecated no longer returned by options
      * @return the <code>cpu-affinity</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "cpu-affinity")
     private Boolean cpuAffinity;
 
@@ -407,8 +434,10 @@ public class Options implements Serializable {
     /**
      * Data directory.
      *
+     * @deprecated no longer returned by options
      * @return the <code>data-directory</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "data-directory")
     private String dataDirectory;
 
@@ -448,8 +477,10 @@ public class Options implements Serializable {
     /**
      * Eval.
      *
+     * @deprecated no longer returned by options
      * @return the <code>eval</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement
     private String eval;
 
@@ -464,8 +495,10 @@ public class Options implements Serializable {
     /**
      * Exec directory.
      *
+     * @deprecated no longer returned by options
      * @return the <code>exec-directory</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "exec-directory")
     private String execDirectory;
 
@@ -496,8 +529,10 @@ public class Options implements Serializable {
     /**
      * Force WS.
      *
+     * @deprecated no longer returned by options
      * @return the <code>force-ws</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "force-ws")
     private Boolean forceWs;
 
@@ -518,10 +553,21 @@ public class Options implements Serializable {
     private Boolean gpu;
 
     /**
+     * GPU beta.
+     *
+     * @return the <code>gpu-beta</code> from <code>options</code>
+     * @since 7.6.21
+     */
+    @XmlElement(name = "gpu-beta")
+    private String gpuBeta;
+
+    /**
      * GPU assignment servers.
      *
+     * @deprecated no longer returned by options
      * @return the <code>gpu-assignment-servers</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "gpu-assignment-servers")
     private String gpuAssignmentServers;
 
@@ -575,6 +621,15 @@ public class Options implements Serializable {
     private Boolean idle;
 
     /**
+     * Idle Seconds.
+     *
+     * @return the <code>idle-seconds</code> from <code>options</code>
+     * @since 7.6.21
+     */
+    @XmlElement(name = "idle-seconds")
+    private int idleSeconds;
+
+    /**
      * Log.
      *
      * @return the <code>log</code> from <code>options</code>
@@ -617,8 +672,10 @@ public class Options implements Serializable {
     /**
      * Log debug.
      *
+     * @deprecated no longer returned by options
      * @return the <code>log-debug</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement(name = "log-debug")
     private Boolean logDebug;
 
@@ -761,7 +818,7 @@ public class Options implements Serializable {
     /**
      * Max delay.
      *
-     * @deprecated
+     * @deprecated no longer returned by options
      * @return the <code>max-delay</code> from <code>options</code>
      */
     @Deprecated
@@ -851,7 +908,7 @@ public class Options implements Serializable {
     /**
      * Min delay.
      *
-     * @deprecated
+     * @deprecated no longer returned by options
      * @return the <code>min-delay</code> from <code>options</code>
      */
     @Deprecated
@@ -963,6 +1020,24 @@ public class Options implements Serializable {
     private Boolean paused;
 
     /**
+     * PCI Bus.
+     *
+     * @return the <code>pci-bus</code> from <code>options</code>
+     * @since 7.6.21
+     */
+    @XmlElement(name = "pci-bus")
+    private String pciBus;
+
+    /**
+     * PCI Slot.
+     *
+     * @return the <code>pci-slot</code> from <code>options</code>
+     * @since 7.6.21
+     */
+    @XmlElement(name = "pci-slot")
+    private String pciSlot;
+
+    /**
      * PID.
      *
      * @return the <code>pid</code> from <code>options</code>
@@ -1053,8 +1128,10 @@ public class Options implements Serializable {
     /**
      * Script.
      *
+     * @deprecated no longer returned by options
      * @return the <code>script</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement
     private String script;
 
@@ -1069,7 +1146,7 @@ public class Options implements Serializable {
     /**
      * Service description.
      *
-     * @deprecated
+     * @deprecated no longer returned by options
      * @return the <code>service-description</code> from <code>options</code>
      */
     @Deprecated
@@ -1079,7 +1156,7 @@ public class Options implements Serializable {
     /**
      * Service restart.
      *
-     * @deprecated
+     * @deprecated no longer returned by options
      * @return the <code>service-restart</code> from <code>options</code>
      */
     @Deprecated
@@ -1089,7 +1166,7 @@ public class Options implements Serializable {
     /**
      * Service restart delay.
      *
-     * @deprecated
+     * @deprecated no longer returned by options
      * @return the <code>service-restart-delay</code> from <code>options</code>
      */
     @Deprecated
@@ -1119,6 +1196,15 @@ public class Options implements Serializable {
      */
     @XmlElement(name = "session-timeout")
     private int sessionTimeout;
+
+    /**
+     * Set Group.
+     *
+     * @return the <code>set-group</code> from <code>options</code>
+     * @since 7.6.21
+     */
+    @XmlElement(name = "set-group")
+    private String setGroup;
 
     /**
      * SMP.
@@ -1171,8 +1257,10 @@ public class Options implements Serializable {
     /**
      * Threads.
      *
+     * @deprecated no longer returned by options
      * @return the <code>threads</code> from <code>options</code>
      */
+    @Deprecated
     @XmlElement
     private int threads;
 

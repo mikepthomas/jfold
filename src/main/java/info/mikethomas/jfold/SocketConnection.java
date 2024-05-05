@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2019 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2024 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ import org.slf4j.profiler.Profiler;
  * <p>SocketConnection class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.5.1
+ * @version 7.6.21
  */
 @XSlf4j
 public class SocketConnection {
@@ -51,7 +51,7 @@ public class SocketConnection {
     public static final String ENCODING = "UTF-8";
     /** Welcome Message. */
     public static final String WELCOME_MSG
-            = "Welcome to the Folding@home Client command server.";
+            = "Welcome to the FAHClient command server.";
 
     /** Socket to connect to the Folding@Home client. */
     private Socket socket;

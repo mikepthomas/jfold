@@ -2,7 +2,7 @@
   #%L
   This file is part of jFold.
   %%
-  Copyright (C) 2012 - 2019 Mike Thomas <mikepthomas@outlook.com>
+  Copyright (C) 2012 - 2024 Mike Thomas <mikepthomas@outlook.com>
   %%
   jFold is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -36,4 +36,3 @@ ________________________________________________________________________________
 Copyright &copy; Michael Thomas
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Build Status](https://travis-ci.org/mikepthomas/jfold.svg?branch=develop)](https://travis-ci.org/mikepthomas/jfold)

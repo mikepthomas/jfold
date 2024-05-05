@@ -2,7 +2,7 @@
  * #%L
  * This file is part of jFold.
  * %%
- * Copyright (C) 2012 - 2019 Mike Thomas <mikepthomas@outlook.com>
+ * Copyright (C) 2012 - 2024 Mike Thomas <mikepthomas@outlook.com>
  * %%
  * jFold is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@ import info.mikethomas.jfold.util.DateAdapter;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import lombok.Getter;
 import lombok.ToString;
@@ -36,7 +36,7 @@ import lombok.ToString;
  * <p>SimulationInfo class.</p>
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
- * @version 7.5.1
+ * @version 7.6.21
  */
 @Getter
 @ToString
@@ -110,7 +110,7 @@ public class SimulationInfo implements Serializable {
     /**
      * Project Description.
      *
-     * @deprecated
+     * @deprecated no longer returned by simulation-info
      * @return the <code>description</code> from <code>simulation-info</code>
      */
     @Deprecated
@@ -177,7 +177,7 @@ public class SimulationInfo implements Serializable {
     /**
      * Time and date this Simulation has been running for.
      *
-     * @deprecated
+     * @deprecated no longer returned by simulation-info
      * @return the <code>run_time</code> from <code>simulation-info</code>
      */
     @Deprecated
@@ -187,7 +187,7 @@ public class SimulationInfo implements Serializable {
     /**
      * Simulation time.
      *
-     * @deprecated
+     * @deprecated no longer returned by simulation-info
      * @return the <code>simulation_time</code> from <code>simulation-info</code>
      */
     @Deprecated
@@ -213,7 +213,7 @@ public class SimulationInfo implements Serializable {
     /**
      * Simulation news.
      *
-     * @deprecated
+     * @deprecated no longer returned by simulation-info
      * @return the <code>news</code> from <code>simulation-info</code>
      */
     @Deprecated
