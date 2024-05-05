@@ -32,12 +32,12 @@ import lombok.ToString;
  * &lt;p&gt;Slot class.&lt;/p&gt;
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
-<span class="nc" id="L35"> * @version 7.6.21</span>
+ * @version 7.6.21
  */
 @Getter
-@ToString
+<span class="nc" id="L38">@ToString</span>
 @XmlRootElement(name = &quot;slot&quot;)
-public class Slot implements Serializable {
+<span class="fc" id="L40">public class Slot implements Serializable {</span>
 
     /**
      * Identifier.
@@ -45,7 +45,7 @@ public class Slot implements Serializable {
      * @return the &lt;code&gt;id&lt;/code&gt; from &lt;code&gt;slot-info&lt;/code&gt;
      */
     @XmlElement
-    private String id;
+<span class="fc" id="L48">    private String id;</span>
 
     /**
      * Status.
@@ -53,7 +53,7 @@ public class Slot implements Serializable {
      * @return the &lt;code&gt;status&lt;/code&gt; from &lt;code&gt;slot-info&lt;/code&gt;
      */
     @XmlElement
-    private String status;
+<span class="fc" id="L56">    private String status;</span>
 
     /**
      * Description.
@@ -61,7 +61,7 @@ public class Slot implements Serializable {
      * @return the &lt;code&gt;description&lt;/code&gt; from &lt;code&gt;slot-info&lt;/code&gt;
      */
     @XmlElement
-    private String description;
+<span class="fc" id="L64">    private String description;</span>
 
     /**
      * Slot Options.
@@ -69,22 +69,22 @@ public class Slot implements Serializable {
      * @return the &lt;code&gt;options&lt;/code&gt; from &lt;code&gt;slot-info&lt;/code&gt;
      */
     @XmlElement
-    private SlotOptions options;
+<span class="fc" id="L72">    private SlotOptions options;</span>
 
-<span class="nc" id="L74">    /**</span>
+    /**
      * Reason.
      *
      * @return the &lt;code&gt;reason&lt;/code&gt; from &lt;code&gt;slot-info&lt;/code&gt;
      */
     @XmlElement
-    private String reason;
+<span class="nc" id="L80">    private String reason;</span>
 
     /**
      * Idle.
-<span class="nc" id="L84">     *</span>
+     *
      * @return the &lt;code&gt;idle&lt;/code&gt; from &lt;code&gt;slot-info&lt;/code&gt;
      */
     @XmlElement
-    private Boolean idle;
+<span class="nc" id="L88">    private Boolean idle;</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

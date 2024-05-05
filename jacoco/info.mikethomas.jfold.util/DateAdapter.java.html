@@ -31,28 +31,28 @@ import lombok.Synchronized;
  * &lt;p&gt;DateAdapter class.&lt;/p&gt;
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
-<span class="nc" id="L34"> * @version 7.6.21</span>
-<span class="nc" id="L35"> */</span>
-public class DateAdapter extends XmlAdapter&lt;String, Date&gt; {
+ * @version 7.6.21
+ */
+<span class="fc" id="L36">public class DateAdapter extends XmlAdapter&lt;String, Date&gt; {</span>
 
     /**
      * Date format used by the Folding@Home client.
-<span class="nc" id="L40">     */</span>
-    public static final SimpleDateFormat DATE_FORMAT =
+     */
+<span class="fc" id="L41">    public static final SimpleDateFormat DATE_FORMAT =</span>
             new SimpleDateFormat(&quot;yyyy-MM-dd'T'HH:mm:ss'Z'&quot;);
 
     /** {@inheritDoc} */
     @Override
-    @Synchronized
-<span class="nc" id="L47">    public final String marshal(final Date value) throws Exception {</span>
+<span class="pc" id="L46">    @Synchronized</span>
+    public final String marshal(final Date value) throws Exception {
 <span class="nc" id="L48">        return DATE_FORMAT.format(value);</span>
     }
 
     /** {@inheritDoc} */
     @Override
-    @Synchronized
+<span class="fc" id="L53">    @Synchronized</span>
     public final Date unmarshal(final String value) throws Exception {
-        return DATE_FORMAT.parse(value);
+<span class="fc" id="L55">        return DATE_FORMAT.parse(value);</span>
     }
-<span class="nc" id="L57">}</span>
+}
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

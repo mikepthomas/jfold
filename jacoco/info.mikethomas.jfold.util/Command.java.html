@@ -27,85 +27,85 @@ import lombok.Getter;
  * &lt;p&gt;Command class.&lt;/p&gt;
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
-<span class="nc" id="L30"> * @version 7.6.21</span>
+ * @version 7.6.21
  */
-@AllArgsConstructor
+<span class="fc" id="L32">@AllArgsConstructor</span>
 @Getter
 public enum Command {
-<span class="nc" id="L35"></span>
+
 // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Commands&quot;&gt;
 
-<span class="nc" id="L38">    /** Authenticate. */</span>
-    AUTH(&quot;auth&quot;, ResponseType.VOID),
+    /** Authenticate. */
+<span class="fc" id="L39">    AUTH(&quot;auth&quot;, ResponseType.VOID),</span>
 
-<span class="nc" id="L41">    /** Error message. */</span>
-    ERROR(&quot;error&quot;, ResponseType.PYON),
-
-<span class="nc" id="L44">    /** Exit the command processor. */</span>
-    EXIT(&quot;exit&quot;, ResponseType.VOID),
-
-<span class="nc" id="L47">    /** Prints an increasing heartbeat count. */</span>
-    HEARTBEAT(&quot;heartbeat&quot;, ResponseType.PYON),
-
-    /** Enable/disable log updates. */
-<span class="nc" id="L51">    LOG_UPDATES(&quot;log-updates&quot;, ResponseType.PYON), // start | restart | stop</span>
+    /** Error message. */
+<span class="fc" id="L42">    ERROR(&quot;error&quot;, ResponseType.PYON),</span>
 
     /** Exit the command processor. */
-    QUIT(&quot;quit&quot;, ResponseType.VOID),
-<span class="nc" id="L55"></span>
+<span class="fc" id="L45">    EXIT(&quot;exit&quot;, ResponseType.VOID),</span>
+
+    /** Prints an increasing heartbeat count. */
+<span class="fc" id="L48">    HEARTBEAT(&quot;heartbeat&quot;, ResponseType.PYON),</span>
+
+    /** Enable/disable log updates. */
+<span class="fc" id="L51">    LOG_UPDATES(&quot;log-updates&quot;, ResponseType.PYON), // start | restart | stop</span>
+
+    /** Exit the command processor. */
+<span class="fc" id="L54">    QUIT(&quot;quit&quot;, ResponseType.VOID),</span>
+
     /**
      * Unpause all slots which are paused waiting for a screensaver and pause
-<span class="nc" id="L58">     * them again on disconnect.</span>
+     * them again on disconnect.
      */
-    SCREENSAVER(&quot;screensaver&quot;, ResponseType.VOID),
+<span class="fc" id="L60">    SCREENSAVER(&quot;screensaver&quot;, ResponseType.VOID),</span>
 
     /** Enable/disable updates. */
-<span class="nc" id="L63">    UPDATES(&quot;updates&quot;, ResponseType.VOID), // add &lt;id&gt; &lt;rate&gt; &lt;expression&gt; | del &lt;id&gt; | list | clear | reset</span>
+<span class="fc" id="L63">    UPDATES(&quot;updates&quot;, ResponseType.VOID), // add &lt;id&gt; &lt;rate&gt; &lt;expression&gt; | del &lt;id&gt; | list | clear | reset</span>
 
     // Folding@home Client:
     /** Bond a packet file to a outgoing debug socket connection. */
-    BOND(&quot;bond&quot;, ResponseType.VOID), // &lt;ip&gt;:&lt;port&gt; &lt;input&gt; [output] [ip:port]
-<span class="nc" id="L68"></span>
+<span class="fc" id="L67">    BOND(&quot;bond&quot;, ResponseType.VOID), // &lt;ip&gt;:&lt;port&gt; &lt;input&gt; [output] [ip:port]</span>
+
     /**
      * Return a PyON message indicating if the client has set a user, team or
-<span class="nc" id="L71">     * passkey.</span>
+     * passkey.
      */
-    CONFIGURED(&quot;configured&quot;, ResponseType.PYON),
+<span class="fc" id="L73">    CONFIGURED(&quot;configured&quot;, ResponseType.PYON),</span>
 
     /** Run one client cycle. */
-<span class="nc" id="L76">    DO_CYCLE(&quot;do-cycle&quot;, ResponseType.VOID),</span>
+<span class="fc" id="L76">    DO_CYCLE(&quot;do-cycle&quot;, ResponseType.VOID),</span>
 
     /**
      * Download a core.
      *
-<span class="nc" id="L81">     * @deprecated Command no longer supported.</span>
+     * @deprecated Command no longer supported.
      */
-    @Deprecated
+<span class="fc" id="L83">    @Deprecated</span>
     DOWNLOAD_CORE(&quot;download-core&quot;, ResponseType.VOID), // &lt;type&gt; &lt;url&gt;
-<span class="nc" id="L85"></span>
-    /** Finish all or one slot(s). */
-    FINISH(&quot;finish&quot;, ResponseType.VOID), // [slot]
 
-<span class="nc" id="L89">    /** Print application information. */</span>
-    GET_INFO(&quot;get-info&quot;, ResponseType.STRING), // &lt;category&gt; &lt;key&gt;
+    /** Finish all or one slot(s). */
+<span class="fc" id="L87">    FINISH(&quot;finish&quot;, ResponseType.VOID), // [slot]</span>
+
+    /** Print application information. */
+<span class="fc" id="L90">    GET_INFO(&quot;get-info&quot;, ResponseType.STRING), // &lt;category&gt; &lt;key&gt;</span>
 
     /** Print application information in PyON format. */
-<span class="nc" id="L93">    INFO(&quot;info&quot;, ResponseType.PYON),</span>
+<span class="fc" id="L93">    INFO(&quot;info&quot;, ResponseType.PYON),</span>
 
     /**
      * Inject a packet file to a listening debug socket. Will wait until packet
-<span class="nc" id="L97">     * is processed.</span>
+     * is processed.
      */
-    INJECT(&quot;inject&quot;, ResponseType.VOID), // &lt;ip&gt;:&lt;port&gt; &lt;input&gt; [output] [ip:port]
-<span class="nc" id="L100"></span>
+<span class="fc" id="L99">    INJECT(&quot;inject&quot;, ResponseType.VOID), // &lt;ip&gt;:&lt;port&gt; &lt;input&gt; [output] [ip:port]</span>
+
     /** Disable specified unit states. */
-    MASK_UNIT_STATE(&quot;mask-unit-state&quot;, ResponseType.VOID),
-<span class="nc" id="L103"></span>
+<span class="fc" id="L102">    MASK_UNIT_STATE(&quot;mask-unit-state&quot;, ResponseType.VOID),</span>
+
     /** Get number of slots in PyON format. */
-    NUM_SLOTS(&quot;num-slots&quot;, ResponseType.PYON),
+<span class="fc" id="L105">    NUM_SLOTS(&quot;num-slots&quot;, ResponseType.PYON),</span>
 
     /** Get or set a configuration option. */
-    OPTION(&quot;option&quot;, ResponseType.STRING), // &lt;name&gt; [value]
+<span class="fc" id="L108">    OPTION(&quot;option&quot;, ResponseType.STRING), // &lt;name&gt; [value]</span>
 
     /**
      * List or set options with their values.
@@ -118,119 +118,119 @@ public enum Command {
      * The special name '*' lists all options which have not yet been listed and
      * is affected by the '-d' and '-a' options.
      * If a name argument is followed directly by an equal sign then the rest of
-<span class="nc" id="L121">     * the argument will be used to set the option's value. If instead a name</span>
+     * the argument will be used to set the option's value. If instead a name
      * argument is followed immediately by a '!' then the option will be reset
      * to its default value.
-<span class="nc" id="L124">     * Options which are set or reset will also be listed.</span>
+     * Options which are set or reset will also be listed.
      * Options are listed as a PyON format dictionary.
      */
-    OPTIONS(&quot;options&quot;, ResponseType.PYON),
-<span class="nc" id="L128"></span>
-    /** Pause all or one slot(s). */
-    PAUSE(&quot;pause&quot;, ResponseType.VOID), // [slot]
-<span class="nc" id="L131"></span>
-    /** Get current total estimated Points Per Day. */
-    PPD(&quot;ppd&quot;, ResponseType.PYON),
-<span class="nc" id="L134"></span>
-    /** Get work unit queue information in PyON format. */
-    QUEUE_INFO(&quot;queue-info&quot;, ResponseType.PYON),
-<span class="nc" id="L137"></span>
-    /** Request an ID from the assignment server. */
-    REQUEST_ID(&quot;request-id&quot;, ResponseType.VOID),
+<span class="fc" id="L127">    OPTIONS(&quot;options&quot;, ResponseType.PYON),</span>
 
-<span class="nc" id="L141">    /** Request work server assignment from the assignment server. */</span>
-    REQUEST_WS(&quot;request-ws&quot;, ResponseType.VOID),
+    /** Pause all or one slot(s). */
+<span class="fc" id="L130">    PAUSE(&quot;pause&quot;, ResponseType.VOID), // [slot]</span>
+
+    /** Get current total estimated Points Per Day. */
+<span class="fc" id="L133">    PPD(&quot;ppd&quot;, ResponseType.PYON),</span>
+
+    /** Get work unit queue information in PyON format. */
+<span class="fc" id="L136">    QUEUE_INFO(&quot;queue-info&quot;, ResponseType.PYON),</span>
+
+    /** Request an ID from the assignment server. */
+<span class="fc" id="L139">    REQUEST_ID(&quot;request-id&quot;, ResponseType.VOID),</span>
+
+    /** Request work server assignment from the assignment server. */
+<span class="fc" id="L142">    REQUEST_WS(&quot;request-ws&quot;, ResponseType.VOID),</span>
 
     /**
-<span class="nc" id="L145">     * Save the configuration either to the specified file or to the file the</span>
+     * Save the configuration either to the specified file or to the file the
      * configuration was last loaded from.
      */
-<span class="nc" id="L148">    SAVE(&quot;save&quot;, ResponseType.VOID), // [file]</span>
+<span class="fc" id="L148">    SAVE(&quot;save&quot;, ResponseType.VOID), // [file]</span>
 
     /** Shutdown the application. */
-    SHUTDOWN(&quot;shutdown&quot;, ResponseType.VOID),
-<span class="nc" id="L152"></span>
-    /** Get current simulation information. */
-    SIMULATION_INFO(&quot;simulation-info&quot;, ResponseType.PYON), // &lt;slot id&gt;
+<span class="fc" id="L151">    SHUTDOWN(&quot;shutdown&quot;, ResponseType.VOID),</span>
 
-<span class="nc" id="L156">    /**</span>
+    /** Get current simulation information. */
+<span class="fc" id="L154">    SIMULATION_INFO(&quot;simulation-info&quot;, ResponseType.PYON), // &lt;slot id&gt;</span>
+
+    /**
      * Add a new slot. Configuration options for the new slot can be provided.
      */
-    SLOT_ADD(&quot;slot-add&quot;, ResponseType.VOID), // &lt;type&gt; [&lt;name&gt;=&lt;value&gt;]...
-<span class="nc" id="L160"></span>
+<span class="fc" id="L159">    SLOT_ADD(&quot;slot-add&quot;, ResponseType.VOID), // &lt;type&gt; [&lt;name&gt;=&lt;value&gt;]...</span>
+
     /** Delete a slot. If it is running a unit it will be stopped. */
-    SLOT_DELETE(&quot;slot-delete&quot;, ResponseType.VOID), // &lt;slot&gt;
+<span class="fc" id="L162">    SLOT_DELETE(&quot;slot-delete&quot;, ResponseType.VOID), // &lt;slot&gt;</span>
 
     /** Get slot information in PyON format. */
-    SLOT_INFO(&quot;slot-info&quot;, ResponseType.PYON),
-<span class="nc" id="L166"></span>
+<span class="fc" id="L165">    SLOT_INFO(&quot;slot-info&quot;, ResponseType.PYON),</span>
+
     /**
      * Modify an existing slot.
      *
      * Configuration options can be either set or reset using the same syntax
      * used by the 'options' command.
-<span class="nc" id="L172">     */</span>
-    SLOT_MODIFY(&quot;slot-modify&quot;, ResponseType.VOID), // &lt;id&gt; &lt;type&gt; [&lt;name&gt;&lt;! | =&lt;value&gt;&gt;]...
+     */
+<span class="fc" id="L173">    SLOT_MODIFY(&quot;slot-modify&quot;, ResponseType.VOID), // &lt;id&gt; &lt;type&gt; [&lt;name&gt;&lt;! | =&lt;value&gt;&gt;]...</span>
 
     /**
-<span class="nc" id="L176">     * The first argument is the slot ID.</span>
+     * The first argument is the slot ID.
      *
      * See 'options' help for a description of the remaining arguments.
      */
-<span class="nc" id="L180">    SLOT_OPTIONS(&quot;slot-options&quot;, ResponseType.PYON), // &lt;slot&gt; [-d | -a] | [name]...</span>
+<span class="fc" id="L180">    SLOT_OPTIONS(&quot;slot-options&quot;, ResponseType.PYON), // &lt;slot&gt; [-d | -a] | [name]...</span>
 
     /** Get current protein trajectory. */
-<span class="nc" id="L183">    TRAJECTORY(&quot;trajectory&quot;, ResponseType.VOID), // &lt;slot id&gt;</span>
+<span class="fc" id="L183">    TRAJECTORY(&quot;trajectory&quot;, ResponseType.VOID), // &lt;slot id&gt;</span>
 
     /** Trigger config save after a delay. */
-    TRIGGER_SAVE(&quot;trigger-save&quot;, ResponseType.VOID),
-<span class="nc" id="L187"></span>
+<span class="fc" id="L186">    TRIGGER_SAVE(&quot;trigger-save&quot;, ResponseType.VOID),</span>
+
     /** Unpause all or one slot(s). */
-    UNPAUSE(&quot;unpause&quot;, ResponseType.VOID), // [slot]
-<span class="nc" id="L190"></span>
+<span class="fc" id="L189">    UNPAUSE(&quot;unpause&quot;, ResponseType.VOID), // [slot]</span>
+
     /** Print application uptime. */
-    UPTIME(&quot;uptime&quot;, ResponseType.STRING),
+<span class="fc" id="L192">    UPTIME(&quot;uptime&quot;, ResponseType.STRING),</span>
 
     /** Wait for all running units to finish. */
-<span class="nc" id="L195">    WAIT_FOR_UNITS(&quot;wait-for-units&quot;, ResponseType.VOID),</span>
+<span class="fc" id="L195">    WAIT_FOR_UNITS(&quot;wait-for-units&quot;, ResponseType.VOID),</span>
 
     // Standard Commands:
     /** Add two values. */
-<span class="nc" id="L199">    ADD(&quot;add&quot;, ResponseType.VOID), // &lt;number&gt; &lt;number&gt;</span>
+<span class="fc" id="L199">    ADD(&quot;add&quot;, ResponseType.VOID), // &lt;number&gt; &lt;number&gt;</span>
 
     /** Clear the screen. */
-    CLEAR(&quot;clear&quot;, ResponseType.VOID),
+<span class="fc" id="L202">    CLEAR(&quot;clear&quot;, ResponseType.VOID),</span>
 
-<span class="nc" id="L204">    /**</span>
+    /**
      * Print the date and time.
      *
      * Optionally, with 'format'. See: man strftime
-<span class="nc" id="L208">     */</span>
-    DATE(&quot;date&quot;, ResponseType.VOID), // [format]
+     */
+<span class="fc" id="L209">    DATE(&quot;date&quot;, ResponseType.VOID), // [format]</span>
 
     /** Divide two values. */
-<span class="nc" id="L212">    DIV(&quot;div&quot;, ResponseType.VOID), // &lt;number&gt; &lt;number&gt;</span>
+<span class="fc" id="L212">    DIV(&quot;div&quot;, ResponseType.VOID), // &lt;number&gt; &lt;number&gt;</span>
 
     /** Evaluate all arguments. */
-    EVAL(&quot;eval&quot;, ResponseType.VOID), // [expr]...
+<span class="fc" id="L215">    EVAL(&quot;eval&quot;, ResponseType.VOID), // [expr]...</span>
 
-<span class="nc" id="L217">    /**</span>
+    /**
      * If 'cond' evaluates to a non-empty string then evalute 'expr1' otherwise,
      * if provided, evaluate 'expr2'.
      */
-<span class="nc" id="L221">    IF(&quot;if&quot;, ResponseType.VOID), // &lt;cond&gt; &lt;expr1&gt; [expr2]</span>
+<span class="fc" id="L221">    IF(&quot;if&quot;, ResponseType.VOID), // &lt;cond&gt; &lt;expr1&gt; [expr2]</span>
 
     /** Multiply two values. */
-    MUL(&quot;mul&quot;, ResponseType.VOID), // &lt;number&gt; &lt;number&gt;
-<span class="nc" id="L225"></span>
-    /** Invert the truth value of the argument. */
-    NOT(&quot;not&quot;, ResponseType.VOID), // &lt;expr&gt;
+<span class="fc" id="L224">    MUL(&quot;mul&quot;, ResponseType.VOID), // &lt;number&gt; &lt;number&gt;</span>
 
-<span class="nc" id="L229">    /** Sleep for a number of seconds. */</span>
-    SLEEP(&quot;sleep&quot;, ResponseType.VOID), // &lt;seconds&gt;
+    /** Invert the truth value of the argument. */
+<span class="fc" id="L227">    NOT(&quot;not&quot;, ResponseType.VOID), // &lt;expr&gt;</span>
+
+    /** Sleep for a number of seconds. */
+<span class="fc" id="L230">    SLEEP(&quot;sleep&quot;, ResponseType.VOID), // &lt;seconds&gt;</span>
 
     /** Subtract two values. */
-<span class="nc" id="L233">    SUB(&quot;sub&quot;, ResponseType.VOID); // &lt;number&gt; &lt;number&gt;</span>
+<span class="fc" id="L233">    SUB(&quot;sub&quot;, ResponseType.VOID); // &lt;number&gt; &lt;number&gt;</span>
 
 // &lt;/editor-fold&gt;
 
@@ -239,19 +239,19 @@ public enum Command {
      *
      * @return String Folding@Home command.
      */
-    private final String command;
+<span class="nc" id="L242">    private final String command;</span>
 
     /**
      * Response type of this command.
      *
      * @return ResponseType type of response.
      */
-    private final ResponseType responseType;
-<span class="nc" id="L250"></span>
+<span class="nc" id="L249">    private final ResponseType responseType;</span>
+
     /** {@inheritDoc} */
     @Override
     public String toString() {
 <span class="nc" id="L254">        return command;</span>
-<span class="nc" id="L255">    }</span>
-<span class="nc" id="L256">}</span>
+    }
+}
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

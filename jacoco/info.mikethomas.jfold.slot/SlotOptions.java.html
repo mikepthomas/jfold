@@ -32,12 +32,12 @@ import lombok.ToString;
  * &lt;p&gt;SlotOptions class.&lt;/p&gt;
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
-<span class="nc" id="L35"> * @version 7.6.21</span>
+ * @version 7.6.21
  */
 @Getter
-@ToString
+<span class="fc" id="L38">@ToString</span>
 @XmlRootElement(name = &quot;slot-options&quot;)
-public class SlotOptions implements Serializable {
+<span class="fc" id="L40">public class SlotOptions implements Serializable {</span>
 
     /**
      * Client type.
@@ -45,7 +45,7 @@ public class SlotOptions implements Serializable {
      * @return the &lt;code&gt;client-type&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
      */
     @XmlElement(name = &quot;client-type&quot;)
-    private String clientType;
+<span class="fc" id="L48">    private String clientType;</span>
 
     /**
      * Client sub-type.
@@ -53,7 +53,7 @@ public class SlotOptions implements Serializable {
      * @return the &lt;code&gt;client-subtype&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
      */
     @XmlElement(name = &quot;client-subtype&quot;)
-    private String clientSubtype;
+<span class="fc" id="L56">    private String clientSubtype;</span>
 
     /**
      * Machine identifier.
@@ -61,7 +61,7 @@ public class SlotOptions implements Serializable {
      * @return the &lt;code&gt;machine-id&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
      */
     @XmlElement(name = &quot;machine-id&quot;)
-    private Integer machineId;
+<span class="fc" id="L64">    private Integer machineId;</span>
 
     /**
      * Maximum packet size.
@@ -69,7 +69,7 @@ public class SlotOptions implements Serializable {
      * @return the &lt;code&gt;max-packet-size&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-packet-size&quot;)
-    private String maxPacketSize;
+<span class="fc" id="L72">    private String maxPacketSize;</span>
 
     /**
      * Core priority.
@@ -77,7 +77,7 @@ public class SlotOptions implements Serializable {
      * @return the &lt;code&gt;core-priority&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
      */
     @XmlElement(name = &quot;core-priority&quot;)
-    private String corePriority;
+<span class="fc" id="L80">    private String corePriority;</span>
 
     /**
      * Next unit percentage.
@@ -85,7 +85,7 @@ public class SlotOptions implements Serializable {
      * @return the &lt;code&gt;next-unit-percentage&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
      */
     @XmlElement(name = &quot;next-unit-percentage&quot;)
-    private Integer nextUnitPercentage;
+<span class="fc" id="L88">    private Integer nextUnitPercentage;</span>
 
     /**
      * Maximum units.
@@ -93,7 +93,7 @@ public class SlotOptions implements Serializable {
      * @return the &lt;code&gt;max-units&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-units&quot;)
-    private Integer maxUnits;
+<span class="fc" id="L96">    private Integer maxUnits;</span>
 
     /**
      * Checkpoint.
@@ -101,7 +101,7 @@ public class SlotOptions implements Serializable {
      * @return the &lt;code&gt;checkpoint&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
      */
     @XmlElement
-    private Integer checkpoint;
+<span class="fc" id="L104">    private Integer checkpoint;</span>
 
     /**
      * Pause on start.
@@ -109,31 +109,31 @@ public class SlotOptions implements Serializable {
      * @return the &lt;code&gt;pause-on-start&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
      */
     @XmlElement(name = &quot;pause-on-start&quot;)
-    private Boolean pauseOnStart;
+<span class="fc" id="L112">    private Boolean pauseOnStart;</span>
 
-<span class="nc" id="L114">    /**</span>
+    /**
      * Graphics processor vendor identifier.
      *
      * @return the &lt;code&gt;client-type&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
      */
     @XmlElement(name = &quot;gpu-vendor-id&quot;)
-    private String gpuVendorId;
+<span class="fc" id="L120">    private String gpuVendorId;</span>
 
     /**
      * Graphics processor device identifier.
-<span class="nc" id="L124">     *</span>
+     *
      * @return the &lt;code&gt;gpu-device-id&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
      */
     @XmlElement(name = &quot;gpu-device-id&quot;)
-    private String gpuDeviceId;
+<span class="fc" id="L128">    private String gpuDeviceId;</span>
 
     /**
      * CPUs.
      *
      * @return the &lt;code&gt;cpus&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
-<span class="nc" id="L134">     */</span>
+     */
     @XmlElement
-    private String cpus;
+<span class="fc" id="L136">    private String cpus;</span>
 
     /**
      * Idle.
@@ -141,7 +141,7 @@ public class SlotOptions implements Serializable {
      * @return the &lt;code&gt;idle&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
      */
     @XmlElement
-<span class="nc" id="L144">    private Boolean idle;</span>
+<span class="fc" id="L144">    private Boolean idle;</span>
 
     /**
      * Paused.
@@ -149,6 +149,6 @@ public class SlotOptions implements Serializable {
      * @return the &lt;code&gt;paused&lt;/code&gt; from &lt;code&gt;slot-options&lt;/code&gt;
      */
     @XmlElement
-    private Boolean paused;
+<span class="fc" id="L152">    private Boolean paused;</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -31,26 +31,26 @@ import lombok.NoArgsConstructor;
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version 7.6.21
  */
-@NoArgsConstructor
+<span class="nc" id="L34">@NoArgsConstructor</span>
 @XmlRootElement(name = &quot;UptimeException&quot;)
 public class UptimeException extends CommandException {
 
     /**
      * Constructs an instance of &lt;code&gt;UptimeException&lt;/code&gt; with the
      * specified detail message.
-<span class="nc" id="L41">     *</span>
-<span class="nc" id="L42">     * @param message the detail message.</span>
+     *
+     * @param message the detail message.
      */
     public UptimeException(final String message) {
-        super(message);
-    }
+<span class="nc" id="L45">        super(message);</span>
+<span class="nc" id="L46">    }</span>
 
     /**
      * Constructs an instance of &lt;code&gt;UptimeException&lt;/code&gt; with the
      * specified detail message and the cause of the Exception.
      *
-<span class="nc" id="L52">     * @param message the detail message.</span>
-<span class="nc" id="L53">     * @param cause the cause of the exception.</span>
+     * @param message the detail message.
+     * @param cause the cause of the exception.
      */
     public UptimeException(final String message, final Throwable cause) {
 <span class="nc" id="L56">        super(message, cause);</span>

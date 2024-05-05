@@ -32,12 +32,12 @@ import lombok.ToString;
  * &lt;p&gt;Options class.&lt;/p&gt;
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
-<span class="nc" id="L35"> * @version 7.6.21</span>
+ * @version 7.6.21
  */
 @Getter
-@ToString
+<span class="nc" id="L38">@ToString</span>
 @XmlRootElement(name = &quot;options&quot;)
-public class Options implements Serializable {
+<span class="fc" id="L40">public class Options implements Serializable {</span>
 
     /**
      * Allow.
@@ -45,7 +45,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;allow&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private String allow;
+<span class="nc" id="L48">    private String allow;</span>
 
     /**
      * AutoConf.
@@ -54,7 +54,7 @@ public class Options implements Serializable {
      * @since 7.6.21
      */
     @XmlElement(name = &quot;auto-conf&quot;)
-    private Boolean autoConf;
+<span class="nc" id="L57">    private Boolean autoConf;</span>
 
     /**
      * Assignment servers.
@@ -64,7 +64,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;assignment-servers&quot;)
-    private String assignmentServers;
+<span class="fc" id="L67">    private String assignmentServers;</span>
 
     /**
      * Auth as.
@@ -74,7 +74,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;auth-as&quot;)
-    private Boolean authAs;
+<span class="nc" id="L77">    private Boolean authAs;</span>
 
     /**
      * Capture directory.
@@ -82,7 +82,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;capture-directory&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;capture-directory&quot;)
-    private String captureDirectory;
+<span class="fc" id="L85">    private String captureDirectory;</span>
 
     /**
      * Capture on error.
@@ -90,7 +90,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;capture-on-error&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;capture-on-error&quot;)
-    private Boolean captureOnError;
+<span class="nc" id="L93">    private Boolean captureOnError;</span>
 
     /**
      * Capture packets.
@@ -98,7 +98,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;capture-packets&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;capture-packets&quot;)
-    private Boolean capturePackets;
+<span class="nc" id="L101">    private Boolean capturePackets;</span>
 
     /**
      * Capture requests.
@@ -106,7 +106,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;capture-requests&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;capture-requests&quot;)
-    private Boolean captureRequests;
+<span class="nc" id="L109">    private Boolean captureRequests;</span>
 
     /**
      * Capture responses.
@@ -114,7 +114,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;capture-responses&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;capture-responses&quot;)
-    private Boolean captureResponses;
+<span class="nc" id="L117">    private Boolean captureResponses;</span>
 
     /**
      * Capture sockets.
@@ -122,7 +122,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;capture-sockets&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;capture-sockets&quot;)
-    private Boolean captureSockets;
+<span class="fc" id="L125">    private Boolean captureSockets;</span>
 
     /**
      * Cause.
@@ -130,7 +130,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;cause&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private String cause;
+<span class="nc" id="L133">    private String cause;</span>
 
     /**
      * Certificate file.
@@ -138,7 +138,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;certificate-file&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;certificate-file&quot;)
-    private String certificateFile;
+<span class="nc" id="L141">    private String certificateFile;</span>
 
     /**
      * Checkpoint.
@@ -146,7 +146,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;checkpoint&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private int checkpoint;
+<span class="fc" id="L149">    private int checkpoint;</span>
 
     /**
      * Child.
@@ -154,7 +154,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;child&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private Boolean child;
+<span class="fc" id="L157">    private Boolean child;</span>
 
     /**
      * Client subtype.
@@ -162,7 +162,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;client-subtype&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;client-subtype&quot;)
-    private String clientSubtype;
+<span class="fc" id="L165">    private String clientSubtype;</span>
 
     /**
      * Client threads.
@@ -170,7 +170,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;client-threads&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;client-threads&quot;)
-    private int clientThreads;
+<span class="nc" id="L173">    private int clientThreads;</span>
 
     /**
      * Client type.
@@ -178,7 +178,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;client-type&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;client-type&quot;)
-    private String clientType;
+<span class="fc" id="L181">    private String clientType;</span>
 
     /**
      * Command address.
@@ -186,7 +186,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;command-address&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;command-address&quot;)
-    private String commandAddress;
+<span class="fc" id="L189">    private String commandAddress;</span>
 
 
     /**
@@ -197,7 +197,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;command-allow&quot;)
-    private String commandAllow;
+<span class="fc" id="L200">    private String commandAllow;</span>
 
     /**
      * Command allow no pass.
@@ -205,7 +205,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;command-allow-no-pass&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;command-allow-no-pass&quot;)
-    private String commandAllowNoPass;
+<span class="fc" id="L208">    private String commandAllowNoPass;</span>
 
     /**
      * Command deny.
@@ -215,7 +215,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;command-deny&quot;)
-    private String commandDeny;
+<span class="fc" id="L218">    private String commandDeny;</span>
 
     /**
      * Deny.
@@ -223,7 +223,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;deny&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private String deny;
+<span class="nc" id="L226">    private String deny;</span>
 
     /**
      * Command deny no pass.
@@ -231,7 +231,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;command-deny-no-pass&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;command-deny-no-pass&quot;)
-    private String commandDenyNoPass;
+<span class="fc" id="L234">    private String commandDenyNoPass;</span>
 
     /**
      * Command enable.
@@ -239,7 +239,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;command-enable&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;command-enable&quot;)
-    private Boolean commandEnable;
+<span class="nc" id="L242">    private Boolean commandEnable;</span>
 
     /**
      * Command port.
@@ -247,7 +247,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;command-port&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;command-port&quot;)
-    private int commandPort;
+<span class="fc" id="L250">    private int commandPort;</span>
 
     /**
      * Config rotate.
@@ -255,7 +255,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;config-rotate&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;config-rotate&quot;)
-    private Boolean configRotate;
+<span class="fc" id="L258">    private Boolean configRotate;</span>
 
     /**
      * Config rotate dir.
@@ -263,7 +263,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;config-rotate-dir&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;config-rotate-dir&quot;)
-    private String configRotateDir;
+<span class="fc" id="L266">    private String configRotateDir;</span>
 
     /**
      * Config rotate max.
@@ -271,7 +271,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;config-rotate-max&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;config-rotate-max&quot;)
-    private int configRotateMax;
+<span class="fc" id="L274">    private int configRotateMax;</span>
 
     /**
      * Connection timeout.
@@ -279,7 +279,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;connection-timeout&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;connection-timeout&quot;)
-    private int connectionTimeout;
+<span class="nc" id="L282">    private int connectionTimeout;</span>
 
     /**
      * Core dir.
@@ -289,7 +289,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;core-dir&quot;)
-    private String coreDir;
+<span class="fc" id="L292">    private String coreDir;</span>
 
     /**
      * Core exec.
@@ -299,7 +299,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;core-exec&quot;)
-    private String coreExec;
+<span class="nc" id="L302">    private String coreExec;</span>
 
     /**
      * Core key.
@@ -309,7 +309,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;core-key&quot;)
-    private String coreKey;
+<span class="fc" id="L312">    private String coreKey;</span>
 
     /**
      * Core prep.
@@ -319,7 +319,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;core-prep&quot;)
-    private String corePrep;
+<span class="fc" id="L322">    private String corePrep;</span>
 
     /**
      * Core priority.
@@ -327,7 +327,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;core-priority&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;core-priority&quot;)
-    private String corePriority;
+<span class="fc" id="L330">    private String corePriority;</span>
 
     /**
      * Core server.
@@ -337,7 +337,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;core-server&quot;)
-    private String coreServer;
+<span class="fc" id="L340">    private String coreServer;</span>
 
     /**
      * Core wrapper exec.
@@ -347,7 +347,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;core-wrapper-exec&quot;)
-    private String coreWrapperExec;
+<span class="nc" id="L350">    private String coreWrapperExec;</span>
 
     /**
      * CPU affinity.
@@ -357,7 +357,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;cpu-affinity&quot;)
-    private Boolean cpuAffinity;
+<span class="fc" id="L360">    private Boolean cpuAffinity;</span>
 
     /**
      * CPU species.
@@ -365,7 +365,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;cpu-species&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;cpu-species&quot;)
-    private String cpuSpecies;
+<span class="fc" id="L368">    private String cpuSpecies;</span>
 
     /**
      * CPU type.
@@ -373,7 +373,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;cpu-type&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;cpu-type&quot;)
-    private String cpuType;
+<span class="fc" id="L376">    private String cpuType;</span>
 
     /**
      * CPU usage.
@@ -381,7 +381,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;cpu-usage&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;cpu-usage&quot;)
-    private int cpuUsage;
+<span class="fc" id="L384">    private int cpuUsage;</span>
 
     /**
      * CPUs.
@@ -389,7 +389,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;cpus&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private int cpus;
+<span class="fc" id="L392">    private int cpus;</span>
 
     /**
      * CRL file.
@@ -397,7 +397,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;crl-file&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;crl-file&quot;)
-    private String crlFile;
+<span class="nc" id="L400">    private String crlFile;</span>
 
     /**
      * CUDA index.
@@ -405,7 +405,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;cuda-index&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;cuda-index&quot;)
-    private int cudaIndex;
+<span class="fc" id="L408">    private int cudaIndex;</span>
 
     /**
      * Cycle rate.
@@ -413,7 +413,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;cycle-rate&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;cycle-rate&quot;)
-    private int cycleRate;
+<span class="fc" id="L416">    private int cycleRate;</span>
 
     /**
      * Cycles.
@@ -421,7 +421,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;cycles&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private int cycles;
+<span class="fc" id="L424">    private int cycles;</span>
 
     /**
      * Daemon.
@@ -429,7 +429,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;daemon&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private Boolean daemon;
+<span class="fc" id="L432">    private Boolean daemon;</span>
 
     /**
      * Data directory.
@@ -439,7 +439,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;data-directory&quot;)
-    private String dataDirectory;
+<span class="fc" id="L442">    private String dataDirectory;</span>
 
     /**
      * Debug sockets.
@@ -447,7 +447,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;debug-sockets&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;debug-sockets&quot;)
-    private Boolean debugSockets;
+<span class="fc" id="L450">    private Boolean debugSockets;</span>
 
     /**
      * Disable sleep when active.
@@ -455,7 +455,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;disable-sleep-when-active&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;disable-sleep-when-active&quot;)
-    private Boolean disableSleepWhenActive;
+<span class="nc" id="L458">    private Boolean disableSleepWhenActive;</span>
 
     /**
      * Disable viz.
@@ -464,7 +464,7 @@ public class Options implements Serializable {
      * @since 7.5.1
      */
     @XmlElement(name = &quot;disable-viz&quot;)
-    private Boolean disableViz;
+<span class="nc" id="L467">    private Boolean disableViz;</span>
 
     /**
      * Dump after deadline.
@@ -472,7 +472,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;dump-after-deadline&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;dump-after-deadline&quot;)
-    private Boolean dumpAfterDeadline;
+<span class="fc" id="L475">    private Boolean dumpAfterDeadline;</span>
 
     /**
      * Eval.
@@ -482,7 +482,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement
-    private String eval;
+<span class="fc" id="L485">    private String eval;</span>
 
     /**
      * Exception locations.
@@ -490,7 +490,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;exception-locations&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;exception-locations&quot;)
-    private Boolean exceptionLocations;
+<span class="fc" id="L493">    private Boolean exceptionLocations;</span>
 
     /**
      * Exec directory.
@@ -500,7 +500,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;exec-directory&quot;)
-    private String execDirectory;
+<span class="fc" id="L503">    private String execDirectory;</span>
 
     /**
      * Exit when done.
@@ -508,7 +508,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;exit-when-done&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;exit-when-done&quot;)
-    private Boolean exitWhenDone;
+<span class="fc" id="L511">    private Boolean exitWhenDone;</span>
 
     /**
      * Extra core args.
@@ -516,7 +516,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;extra-core-args&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;extra-core-args&quot;)
-    private String extraCoreArgs;
+<span class="fc" id="L519">    private String extraCoreArgs;</span>
 
     /**
      * Fold anon.
@@ -524,7 +524,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;fold-anon&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;fold-anon&quot;)
-    private Boolean foldAnon;
+<span class="nc" id="L527">    private Boolean foldAnon;</span>
 
     /**
      * Force WS.
@@ -534,7 +534,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;force-ws&quot;)
-    private Boolean forceWs;
+<span class="fc" id="L537">    private Boolean forceWs;</span>
 
     /**
      * Fork.
@@ -542,7 +542,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;fork&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private Boolean fork;
+<span class="nc" id="L545">    private Boolean fork;</span>
 
     /**
      * GPU.
@@ -550,7 +550,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;gpu&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private Boolean gpu;
+<span class="fc" id="L553">    private Boolean gpu;</span>
 
     /**
      * GPU beta.
@@ -559,7 +559,7 @@ public class Options implements Serializable {
      * @since 7.6.21
      */
     @XmlElement(name = &quot;gpu-beta&quot;)
-    private String gpuBeta;
+<span class="nc" id="L562">    private String gpuBeta;</span>
 
     /**
      * GPU assignment servers.
@@ -569,7 +569,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;gpu-assignment-servers&quot;)
-    private String gpuAssignmentServers;
+<span class="fc" id="L572">    private String gpuAssignmentServers;</span>
 
     /**
      * GPU index.
@@ -577,7 +577,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;gpu-index&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;gpu-index&quot;)
-    private String gpuIndex;
+<span class="fc" id="L580">    private String gpuIndex;</span>
 
     /**
      * GPU usage.
@@ -585,7 +585,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;gpu-usage&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;gpu-usage&quot;)
-    private int gpuUsage;
+<span class="fc" id="L588">    private int gpuUsage;</span>
 
     /**
      * GUI enabled.
@@ -594,7 +594,7 @@ public class Options implements Serializable {
      * @since 7.5.1
      */
     @XmlElement(name = &quot;gui-enabled&quot;)
-    private Boolean guiEnabled;
+<span class="nc" id="L597">    private Boolean guiEnabled;</span>
 
     /**
      * HTTP addresses.
@@ -602,7 +602,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;http-addresses&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;http-addresses&quot;)
-    private String httpAddresses;
+<span class="nc" id="L605">    private String httpAddresses;</span>
 
     /**
      * HTTPS addresses.
@@ -610,7 +610,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;https-addresses&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;https-addresses&quot;)
-    private String httpsAddresses;
+<span class="nc" id="L613">    private String httpsAddresses;</span>
 
     /**
      * Idle.
@@ -618,7 +618,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;idle&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private Boolean idle;
+<span class="nc" id="L621">    private Boolean idle;</span>
 
     /**
      * Idle Seconds.
@@ -627,7 +627,7 @@ public class Options implements Serializable {
      * @since 7.6.21
      */
     @XmlElement(name = &quot;idle-seconds&quot;)
-    private int idleSeconds;
+<span class="nc" id="L630">    private int idleSeconds;</span>
 
     /**
      * Log.
@@ -635,7 +635,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private String log;
+<span class="fc" id="L638">    private String log;</span>
 
     /**
      * Log color.
@@ -643,7 +643,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-color&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-color&quot;)
-    private Boolean logColor;
+<span class="fc" id="L646">    private Boolean logColor;</span>
 
     /**
      * Log CRLF.
@@ -651,7 +651,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-crlf&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-crlf&quot;)
-    private Boolean logCrlf;
+<span class="fc" id="L654">    private Boolean logCrlf;</span>
 
     /**
      * Log date.
@@ -659,7 +659,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-date&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-date&quot;)
-    private Boolean logDate;
+<span class="fc" id="L662">    private Boolean logDate;</span>
 
     /**
      * Log date periodically.
@@ -667,7 +667,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-date-periodically&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-date-periodically&quot;)
-    private int logDatePeriodically;
+<span class="nc" id="L670">    private int logDatePeriodically;</span>
 
     /**
      * Log debug.
@@ -677,7 +677,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;log-debug&quot;)
-    private Boolean logDebug;
+<span class="fc" id="L680">    private Boolean logDebug;</span>
 
     /**
      * Log domain.
@@ -685,7 +685,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-domain&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-domain&quot;)
-    private Boolean logDomain;
+<span class="fc" id="L688">    private Boolean logDomain;</span>
 
     /**
      * Log domain levels.
@@ -693,7 +693,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-domain-levels&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-domain-levels&quot;)
-    private Boolean logDomainLevels;
+<span class="fc" id="L696">    private Boolean logDomainLevels;</span>
 
     /**
      * Log header.
@@ -701,7 +701,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-header&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-header&quot;)
-    private Boolean logHeader;
+<span class="fc" id="L704">    private Boolean logHeader;</span>
 
     /**
      * Log level.
@@ -709,7 +709,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-level&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-level&quot;)
-    private Boolean logLevel;
+<span class="fc" id="L712">    private Boolean logLevel;</span>
 
     /**
      * Log no info header.
@@ -717,7 +717,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-no-info-header&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-no-info-header&quot;)
-    private Boolean logNoInfoHeader;
+<span class="fc" id="L720">    private Boolean logNoInfoHeader;</span>
 
     /**
      * Log redirect.
@@ -725,7 +725,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-redirect&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-redirect&quot;)
-    private Boolean logRedirect;
+<span class="fc" id="L728">    private Boolean logRedirect;</span>
 
     /**
      * Log rotate.
@@ -733,7 +733,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-rotate&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-rotate&quot;)
-    private Boolean logRotate;
+<span class="fc" id="L736">    private Boolean logRotate;</span>
 
     /**
      * Log rotate dir.
@@ -741,7 +741,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-rotate-dir&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-rotate-dir&quot;)
-    private String logRotateDir;
+<span class="fc" id="L744">    private String logRotateDir;</span>
 
     /**
      * Log rotate max.
@@ -749,7 +749,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-rotate-max&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-rotate-max&quot;)
-    private int logRotateMax;
+<span class="fc" id="L752">    private int logRotateMax;</span>
 
     /**
      * Log short level.
@@ -757,7 +757,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-short-level&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-short-level&quot;)
-    private Boolean logShortLevel;
+<span class="fc" id="L760">    private Boolean logShortLevel;</span>
 
     /**
      * Log simple domains.
@@ -765,7 +765,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-simple-domains&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-simple-domains&quot;)
-    private Boolean logSimpleDomains;
+<span class="fc" id="L768">    private Boolean logSimpleDomains;</span>
 
     /**
      * Log thread id.
@@ -773,7 +773,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-thread-id&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-thread-id&quot;)
-    private Boolean logThreadId;
+<span class="fc" id="L776">    private Boolean logThreadId;</span>
 
     /**
      * Log thread prefix.
@@ -781,7 +781,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-thread-prefix&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-thread-prefix&quot;)
-    private Boolean logThreadPrefix;
+<span class="nc" id="L784">    private Boolean logThreadPrefix;</span>
 
     /**
      * Log time.
@@ -789,7 +789,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-time&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-time&quot;)
-    private Boolean logTime;
+<span class="fc" id="L792">    private Boolean logTime;</span>
 
     /**
      * Log to screen.
@@ -797,7 +797,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-to-screen&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-to-screen&quot;)
-    private Boolean logToScreen;
+<span class="fc" id="L800">    private Boolean logToScreen;</span>
 
     /**
      * Log truncate.
@@ -805,7 +805,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;log-truncate&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;log-truncate&quot;)
-    private Boolean logTruncate;
+<span class="fc" id="L808">    private Boolean logTruncate;</span>
 
     /**
      * Machine id.
@@ -813,7 +813,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;machine-id&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;machine-id&quot;)
-    private int machineId;
+<span class="fc" id="L816">    private int machineId;</span>
 
     /**
      * Max delay.
@@ -823,7 +823,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;max-delay&quot;)
-    private int maxDelay;
+<span class="fc" id="L826">    private int maxDelay;</span>
 
     /**
      * Max connect time.
@@ -831,7 +831,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;max-connect-time&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-connect-time&quot;)
-    private int maxConnectTime;
+<span class="nc" id="L834">    private int maxConnectTime;</span>
 
     /**
      * Max connections.
@@ -839,7 +839,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;max-connections&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-connections&quot;)
-    private int maxConnections;
+<span class="nc" id="L842">    private int maxConnections;</span>
 
     /**
      * Max packet size.
@@ -847,7 +847,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;max-packet-size&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-packet-size&quot;)
-    private String maxPacketSize;
+<span class="fc" id="L850">    private String maxPacketSize;</span>
 
     /**
      * Max queue.
@@ -855,7 +855,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;max-queue&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-queue&quot;)
-    private int maxQueue;
+<span class="fc" id="L858">    private int maxQueue;</span>
 
     /**
      * Max request length.
@@ -863,7 +863,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;max-request-length&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-request-length&quot;)
-    private int maxRequestLength;
+<span class="nc" id="L866">    private int maxRequestLength;</span>
 
     /**
      * Max shutdown wait.
@@ -871,7 +871,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;max-shutdown-wait&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-shutdown-wait&quot;)
-    private int maxShutdownWait;
+<span class="fc" id="L874">    private int maxShutdownWait;</span>
 
     /**
      * Max slot errors.
@@ -879,15 +879,15 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;max-slot-errors&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-slot-errors&quot;)
-    private int maxSlotErrors;
+<span class="fc" id="L882">    private int maxSlotErrors;</span>
 
     /**
      * Max unit errors.
      *
-<span class="nc" id="L887">     * @return the &lt;code&gt;max-unit-errors&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;</span>
+     * @return the &lt;code&gt;max-unit-errors&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-unit-errors&quot;)
-    private int maxUnitErrors;
+<span class="fc" id="L890">    private int maxUnitErrors;</span>
 
     /**
      * Max units.
@@ -895,7 +895,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;max-units&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;max-units&quot;)
-<span class="nc" id="L898">    private int maxUnits;</span>
+<span class="fc" id="L898">    private int maxUnits;</span>
 
     /**
      * Memory.
@@ -903,25 +903,25 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;memory&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private String memory;
+<span class="fc" id="L906">    private String memory;</span>
 
     /**
      * Min delay.
-<span class="nc" id="L910">     *</span>
+     *
      * @deprecated no longer returned by options
      * @return the &lt;code&gt;min-delay&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @Deprecated
     @XmlElement(name = &quot;min-delay&quot;)
-    private int minDelay;
+<span class="fc" id="L916">    private int minDelay;</span>
 
     /**
      * Min connect time.
      *
      * @return the &lt;code&gt;min-connect-time&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
-<span class="nc" id="L922">     */</span>
+     */
     @XmlElement(name = &quot;min-connect-time&quot;)
-    private int minConnectTime;
+<span class="nc" id="L924">    private int minConnectTime;</span>
 
     /**
      * Next unit percentage.
@@ -929,7 +929,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;next-unit-percentage&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;next-unit-percentage&quot;)
-<span class="nc" id="L932">    private int nextUnitPercentage;</span>
+<span class="fc" id="L932">    private int nextUnitPercentage;</span>
 
     /**
      * Priority.
@@ -937,31 +937,31 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;priority&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private String priority;
+<span class="fc" id="L940">    private String priority;</span>
 
-<span class="nc" id="L942">    /**</span>
+    /**
      * No assembly.
      *
      * @return the &lt;code&gt;no-assembly&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;no-assembly&quot;)
-    private Boolean noAssembly;
+<span class="fc" id="L948">    private Boolean noAssembly;</span>
 
     /**
      * Open web control.
-<span class="nc" id="L952">     *</span>
+     *
      * @return the &lt;code&gt;open-web-control&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;open-web-control&quot;)
-    private Boolean openWebControl;
+<span class="nc" id="L956">    private Boolean openWebControl;</span>
 
     /**
      * OpenCL Index.
      *
      * @return the &lt;code&gt;opencl-index&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
-<span class="nc" id="L962">     */</span>
+     */
     @XmlElement(name = &quot;opencl-index&quot;)
-    private int openclIndex;
+<span class="fc" id="L964">    private int openclIndex;</span>
 
     /**
      * OS Species.
@@ -969,7 +969,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;os-species&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;os-species&quot;)
-<span class="nc" id="L972">    private String osSpecies;</span>
+<span class="fc" id="L972">    private String osSpecies;</span>
 
     /**
      * OS type.
@@ -977,31 +977,31 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;os-type&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;os-type&quot;)
-    private String osType;
+<span class="fc" id="L980">    private String osType;</span>
 
-<span class="nc" id="L982">    /**</span>
+    /**
      * Passkey.
      *
      * @return the &lt;code&gt;passkey&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private String passkey;
+<span class="fc" id="L988">    private String passkey;</span>
 
     /**
      * Password.
-<span class="nc" id="L992">     *</span>
+     *
      * @return the &lt;code&gt;password&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private String password;
+<span class="fc" id="L996">    private String password;</span>
 
     /**
      * Pause on battery.
      *
      * @return the &lt;code&gt;pause-on-battery&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
-<span class="nc" id="L1002">     */</span>
+     */
     @XmlElement(name = &quot;pause-on-battery&quot;)
-    private Boolean pauseOnBattery;
+<span class="fc" id="L1004">    private Boolean pauseOnBattery;</span>
 
     /**
      * Pause on start.
@@ -1009,7 +1009,7 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;pause-on-start&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;pause-on-start&quot;)
-<span class="nc" id="L1012">    private Boolean pauseOnStart;</span>
+<span class="fc" id="L1012">    private Boolean pauseOnStart;</span>
 
     /**
      * Paused.
@@ -1017,41 +1017,41 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;paused&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private Boolean paused;
+<span class="nc" id="L1020">    private Boolean paused;</span>
 
-<span class="nc" id="L1022">    /**</span>
+    /**
      * PCI Bus.
      *
      * @return the &lt;code&gt;pci-bus&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      * @since 7.6.21
      */
     @XmlElement(name = &quot;pci-bus&quot;)
-    private String pciBus;
+<span class="nc" id="L1029">    private String pciBus;</span>
 
     /**
-<span class="nc" id="L1032">     * PCI Slot.</span>
+     * PCI Slot.
      *
      * @return the &lt;code&gt;pci-slot&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      * @since 7.6.21
      */
     @XmlElement(name = &quot;pci-slot&quot;)
-    private String pciSlot;
+<span class="nc" id="L1038">    private String pciSlot;</span>
 
     /**
      * PID.
-<span class="nc" id="L1042">     *</span>
+     *
      * @return the &lt;code&gt;pid&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private Boolean pid;
+<span class="fc" id="L1046">    private Boolean pid;</span>
 
     /**
      * PID file.
      *
      * @return the &lt;code&gt;pid-file&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
-<span class="nc" id="L1052">     */</span>
+     */
     @XmlElement(name = &quot;pid-file&quot;)
-    private String pidFile;
+<span class="fc" id="L1054">    private String pidFile;</span>
 
     /**
      * Power.
@@ -1067,23 +1067,23 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;private-key-file&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;private-key-file&quot;)
-    private String privateKeyFile;
+<span class="nc" id="L1070">    private String privateKeyFile;</span>
 
     /**
      * Project key.
-<span class="nc" id="L1074">     *</span>
+     *
      * @return the &lt;code&gt;project-key&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;project-key&quot;)
-    private int projectKey;
+<span class="fc" id="L1078">    private int projectKey;</span>
 
     /**
      * Proxy server address.
      *
      * @return the &lt;code&gt;proxy&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
-<span class="nc" id="L1084">     */</span>
+     */
     @XmlElement
-    private String proxy;
+<span class="fc" id="L1086">    private String proxy;</span>
 
     /**
      * Proxy enable.
@@ -1091,31 +1091,31 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;proxy-enable&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;proxy-enable&quot;)
-    private Boolean proxyEnable;
+<span class="fc" id="L1094">    private Boolean proxyEnable;</span>
 
-<span class="nc" id="L1096">    /**</span>
+    /**
      * Proxy pass.
      *
      * @return the &lt;code&gt;proxy-pass&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;proxy-pass&quot;)
-    private String proxyPass;
+<span class="fc" id="L1102">    private String proxyPass;</span>
 
     /**
      * Proxy user.
-<span class="nc" id="L1106">     *</span>
+     *
      * @return the &lt;code&gt;proxy-user&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;proxy-user&quot;)
-    private String proxyUser;
+<span class="fc" id="L1110">    private String proxyUser;</span>
 
     /**
      * Respawn.
      *
      * @return the &lt;code&gt;respawn&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
-<span class="nc" id="L1116">     */</span>
+     */
     @XmlElement
-    private Boolean respawn;
+<span class="fc" id="L1118">    private Boolean respawn;</span>
 
     /**
      * Run as.
@@ -1133,7 +1133,7 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement
-<span class="nc" id="L1136">    private String script;</span>
+<span class="fc" id="L1136">    private String script;</span>
 
     /**
      * Service.
@@ -1141,9 +1141,9 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;service&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private Boolean service;
+<span class="fc" id="L1144">    private Boolean service;</span>
 
-<span class="nc" id="L1146">    /**</span>
+    /**
      * Service description.
      *
      * @deprecated no longer returned by options
@@ -1151,9 +1151,9 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;service-description&quot;)
-    private String serviceDescription;
+<span class="fc" id="L1154">    private String serviceDescription;</span>
 
-<span class="nc" id="L1156">    /**</span>
+    /**
      * Service restart.
      *
      * @deprecated no longer returned by options
@@ -1161,9 +1161,9 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;service-restart&quot;)
-    private Boolean serviceRestart;
+<span class="fc" id="L1164">    private Boolean serviceRestart;</span>
 
-<span class="nc" id="L1166">    /**</span>
+    /**
      * Service restart delay.
      *
      * @deprecated no longer returned by options
@@ -1171,23 +1171,23 @@ public class Options implements Serializable {
      */
     @Deprecated
     @XmlElement(name = &quot;service-restart-delay&quot;)
-    private int serviceRestartDelay;
+<span class="fc" id="L1174">    private int serviceRestartDelay;</span>
 
-<span class="nc" id="L1176">    /**</span>
+    /**
      * Session cookie.
      *
      * @return the &lt;code&gt;session-cookie&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;session-cookie&quot;)
-    private String sessionCookie;
+<span class="nc" id="L1182">    private String sessionCookie;</span>
 
     /**
      * Session lifetime.
      *
      * @return the &lt;code&gt;session-lifetime&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
-<span class="nc" id="L1188">     */</span>
+     */
     @XmlElement(name = &quot;session-lifetime&quot;)
-    private int sessionLifetime;
+<span class="nc" id="L1190">    private int sessionLifetime;</span>
 
     /**
      * Session timeout.
@@ -1195,24 +1195,24 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;session-timeout&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;session-timeout&quot;)
-    private int sessionTimeout;
+<span class="nc" id="L1198">    private int sessionTimeout;</span>
 
-<span class="nc" id="L1200">    /**</span>
+    /**
      * Set Group.
      *
      * @return the &lt;code&gt;set-group&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      * @since 7.6.21
      */
     @XmlElement(name = &quot;set-group&quot;)
-    private String setGroup;
+<span class="nc" id="L1207">    private String setGroup;</span>
 
     /**
      * SMP.
      *
-<span class="nc" id="L1212">     * @return the &lt;code&gt;smp&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;</span>
+     * @return the &lt;code&gt;smp&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private Boolean smp;
+<span class="fc" id="L1215">    private Boolean smp;</span>
 
     /**
      * Stack traces.
@@ -1220,31 +1220,31 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;stack-traces&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;stack-traces&quot;)
-    private Boolean stackTraces;
-<span class="nc" id="L1224"></span>
+<span class="fc" id="L1223">    private Boolean stackTraces;</span>
+
     /**
      * Stall detection enabled.
      *
      * @return the &lt;code&gt;stall-detection-enabled&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;stall-detection-enabled&quot;)
-    private Boolean stallDetectionEnabled;
+<span class="nc" id="L1231">    private Boolean stallDetectionEnabled;</span>
 
     /**
-<span class="nc" id="L1234">     * Stall percent.</span>
+     * Stall percent.
      *
      * @return the &lt;code&gt;stall-percent&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;stall-percent&quot;)
-    private int stallPercent;
+<span class="nc" id="L1239">    private int stallPercent;</span>
 
     /**
      * Stall timeout.
      *
      * @return the &lt;code&gt;stall-timeout&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
-<span class="nc" id="L1246">    @XmlElement(name = &quot;stall-timeout&quot;)</span>
-    private int stallTimeout;
+    @XmlElement(name = &quot;stall-timeout&quot;)
+<span class="nc" id="L1247">    private int stallTimeout;</span>
 
     /**
      * Team.
@@ -1252,33 +1252,33 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;team&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private int team;
+<span class="fc" id="L1255">    private int team;</span>
 
     /**
-<span class="nc" id="L1258">     * Threads.</span>
+     * Threads.
      *
      * @deprecated no longer returned by options
      * @return the &lt;code&gt;threads&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @Deprecated
     @XmlElement
-    private int threads;
+<span class="fc" id="L1265">    private int threads;</span>
 
     /**
      * User.
      *
-<span class="nc" id="L1270">     * @return the &lt;code&gt;user&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;</span>
+     * @return the &lt;code&gt;user&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement
-    private String user;
+<span class="fc" id="L1273">    private String user;</span>
 
     /**
      * Verbosity.
      *
      * @return the &lt;code&gt;verbosity&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
-<span class="nc" id="L1280">    @XmlElement</span>
-    private int verbosity;
+    @XmlElement
+<span class="fc" id="L1281">    private int verbosity;</span>
 
     /**
      * Web allow.
@@ -1286,22 +1286,22 @@ public class Options implements Serializable {
      * @return the &lt;code&gt;web-allow&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;web-allow&quot;)
-    private String webAllow;
-<span class="nc" id="L1290"></span>
+<span class="nc" id="L1289">    private String webAllow;</span>
+
     /**
      * Web deny.
      *
      * @return the &lt;code&gt;web-deny&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;web-deny&quot;)
-    private String webDeny;
+<span class="nc" id="L1297">    private String webDeny;</span>
 
     /**
-<span class="nc" id="L1300">     * Web enable.</span>
+     * Web enable.
      *
      * @return the &lt;code&gt;web-enable&lt;/code&gt; from &lt;code&gt;options&lt;/code&gt;
      */
     @XmlElement(name = &quot;web-enable&quot;)
-    private Boolean webEnable;
+<span class="nc" id="L1305">    private Boolean webEnable;</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

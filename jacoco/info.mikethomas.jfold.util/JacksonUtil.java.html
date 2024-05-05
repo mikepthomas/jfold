@@ -33,27 +33,27 @@ import lombok.experimental.UtilityClass;
  * @version 7.6.21
  */
 @UtilityClass
-public class JacksonUtil {
+<span class="nc" id="L36">public class JacksonUtil {</span>
 
     private ObjectMapper mapper;
 
     /**
      * &lt;p&gt;getObjectMapper.&lt;/p&gt;
      *
-<span class="nc bnc" id="L43" title="All 2 branches missed.">     * @return a {@link com.fasterxml.jackson.databind.ObjectMapper} object</span>
-<span class="nc" id="L44">     */</span>
+     * @return a {@link com.fasterxml.jackson.databind.ObjectMapper} object
+     */
     public ObjectMapper getObjectMapper() {
-<span class="nc" id="L46">        if (mapper == null) {</span>
-            setupMapper();
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (mapper == null) {</span>
+<span class="fc" id="L47">            setupMapper();</span>
         }
-        return mapper;
-<span class="nc" id="L50">    }</span>
-<span class="nc" id="L51"></span>
-<span class="nc" id="L52">    private void setupMapper() {</span>
-<span class="nc" id="L53">        mapper = new ObjectMapper();</span>
-<span class="nc" id="L54">        mapper.configure(JsonReadFeature.ALLOW_BACKSLASH_ESCAPING_ANY_CHARACTER.mappedFeature(), true);</span>
-        mapper.registerModule(new JakartaXmlBindAnnotationModule());
-        mapper.setDateFormat(DateAdapter.DATE_FORMAT);
-<span class="nc" id="L57">    }</span>
-<span class="nc" id="L58">}</span>
+<span class="fc" id="L49">        return mapper;</span>
+    }
+
+    private void setupMapper() {
+<span class="fc" id="L53">        mapper = new ObjectMapper();</span>
+<span class="fc" id="L54">        mapper.configure(JsonReadFeature.ALLOW_BACKSLASH_ESCAPING_ANY_CHARACTER.mappedFeature(), true);</span>
+<span class="fc" id="L55">        mapper.registerModule(new JakartaXmlBindAnnotationModule());</span>
+<span class="fc" id="L56">        mapper.setDateFormat(DateAdapter.DATE_FORMAT);</span>
+<span class="fc" id="L57">    }</span>
+}
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

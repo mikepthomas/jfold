@@ -35,13 +35,13 @@ import lombok.ToString;
 /**
  * &lt;p&gt;SimulationInfo class.&lt;/p&gt;
  *
-<span class="nc" id="L38"> * @author Michael Thomas (mikepthomas@outlook.com)</span>
+ * @author Michael Thomas (mikepthomas@outlook.com)
  * @version 7.6.21
  */
 @Getter
-@ToString
+<span class="fc" id="L42">@ToString</span>
 @XmlRootElement(name = &quot;simulation-info&quot;)
-public class SimulationInfo implements Serializable {
+<span class="fc" id="L44">public class SimulationInfo implements Serializable {</span>
 
     /**
      * User name.
@@ -49,7 +49,7 @@ public class SimulationInfo implements Serializable {
      * @return the &lt;code&gt;user&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-    private String user;
+<span class="fc" id="L52">    private String user;</span>
 
     /**
      * Team name.
@@ -57,7 +57,7 @@ public class SimulationInfo implements Serializable {
      * @return the &lt;code&gt;team&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-    private long team;
+<span class="fc" id="L60">    private long team;</span>
 
     /**
      * Project this Simulation belongs to.
@@ -65,7 +65,7 @@ public class SimulationInfo implements Serializable {
      * @return the &lt;code&gt;project&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-    private int project;
+<span class="fc" id="L68">    private int project;</span>
 
     /**
      * Run of the Project.
@@ -73,7 +73,7 @@ public class SimulationInfo implements Serializable {
      * @return the &lt;code&gt;run&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-    private int run;
+<span class="fc" id="L76">    private int run;</span>
 
     /**
      * Clone of the Project.
@@ -81,7 +81,7 @@ public class SimulationInfo implements Serializable {
      * @return the &lt;code&gt;clone&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-    private int clone;
+<span class="fc" id="L84">    private int clone;</span>
 
     /**
      * Generation of the Project.
@@ -89,7 +89,7 @@ public class SimulationInfo implements Serializable {
      * @return the &lt;code&gt;gen&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-    private int gen;
+<span class="fc" id="L92">    private int gen;</span>
 
     /**
      * Core type.
@@ -97,7 +97,7 @@ public class SimulationInfo implements Serializable {
      * @return the &lt;code&gt;core_type&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement(name = &quot;core_type&quot;)
-    private int coreType;
+<span class="fc" id="L100">    private int coreType;</span>
 
     /**
      * Core identifier.
@@ -105,7 +105,7 @@ public class SimulationInfo implements Serializable {
      * @return the &lt;code&gt;core&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-    private String core;
+<span class="fc" id="L108">    private String core;</span>
 
     /**
      * Project Description.
@@ -115,7 +115,7 @@ public class SimulationInfo implements Serializable {
      */
     @Deprecated
     @XmlElement
-    private String description;
+<span class="fc" id="L118">    private String description;</span>
 
     /**
      * Total number of iterations in this Simulation.
@@ -123,7 +123,7 @@ public class SimulationInfo implements Serializable {
      * @return the &lt;code&gt;total_iterations&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement(name = &quot;total_iterations&quot;)
-    private int totalIterations;
+<span class="fc" id="L126">    private int totalIterations;</span>
 
     /**
      * Number of iterations completed.
@@ -131,7 +131,7 @@ public class SimulationInfo implements Serializable {
      * @return the &lt;code&gt;iterations_done&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement(name = &quot;iterations_done&quot;)
-    private int iterationsDone;
+<span class="fc" id="L134">    private int iterationsDone;</span>
 
     /**
      * Energy.
@@ -139,7 +139,7 @@ public class SimulationInfo implements Serializable {
      * @return the &lt;code&gt;energy&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-    private int energy;
+<span class="fc" id="L142">    private int energy;</span>
 
     /**
      * Temperature.
@@ -147,7 +147,7 @@ public class SimulationInfo implements Serializable {
      * @return the &lt;code&gt;temperature&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-    private int temperature;
+<span class="fc" id="L150">    private int temperature;</span>
 
     /**
      * Time and date this Simulation started.
@@ -156,7 +156,7 @@ public class SimulationInfo implements Serializable {
      */
     @XmlElement(name = &quot;start_time&quot;)
     @XmlJavaTypeAdapter(DateAdapter.class)
-    private Date startTime;
+<span class="fc" id="L159">    private Date startTime;</span>
 
     /**
      * Time and date this Simulation expires.
@@ -164,51 +164,51 @@ public class SimulationInfo implements Serializable {
      * @return the &lt;code&gt;timeout&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-    private long timeout;
+<span class="fc" id="L167">    private long timeout;</span>
 
     /**
-<span class="nc" id="L170">     * Time and date this Simulation needs to be completed by.</span>
+     * Time and date this Simulation needs to be completed by.
      *
      * @return the &lt;code&gt;deadline&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-    private long deadline;
+<span class="fc" id="L175">    private long deadline;</span>
 
     /**
      * Time and date this Simulation has been running for.
      *
-<span class="nc" id="L180">     * @deprecated no longer returned by simulation-info</span>
+     * @deprecated no longer returned by simulation-info
      * @return the &lt;code&gt;run_time&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @Deprecated
     @XmlElement(name = &quot;run_time&quot;)
-    private Long runTime;
+<span class="fc" id="L185">    private Long runTime;</span>
 
     /**
      * Simulation time.
      *
-<span class="nc" id="L190">     * @deprecated no longer returned by simulation-info</span>
+     * @deprecated no longer returned by simulation-info
      * @return the &lt;code&gt;simulation_time&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @Deprecated
     @XmlElement(name = &quot;simulation_time&quot;)
-    private Long simulationTime;
+<span class="fc" id="L195">    private Long simulationTime;</span>
 
     /**
      * Estimated time of arrival.
      *
-<span class="nc" id="L200">     * @return the &lt;code&gt;eta&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;</span>
+     * @return the &lt;code&gt;eta&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-    private long eta;
+<span class="fc" id="L203">    private long eta;</span>
 
     /**
      * Progress.
      *
      * @return the &lt;code&gt;progress&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
-<span class="nc" id="L210">    @XmlElement</span>
-    private double progress;
+    @XmlElement
+<span class="fc" id="L211">    private double progress;</span>
 
     /**
      * Simulation news.
@@ -217,8 +217,8 @@ public class SimulationInfo implements Serializable {
      * @return the &lt;code&gt;news&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @Deprecated
-<span class="nc" id="L220">    @XmlElement</span>
-    private String news;
+    @XmlElement
+<span class="fc" id="L221">    private String news;</span>
 
     /**
      * Slot number.
@@ -226,6 +226,6 @@ public class SimulationInfo implements Serializable {
      * @return the &lt;code&gt;slot&lt;/code&gt; from &lt;code&gt;simulation-info&lt;/code&gt;
      */
     @XmlElement
-    private int slot;
-<span class="nc" id="L230">}</span>
+<span class="fc" id="L229">    private int slot;</span>
+}
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -34,36 +34,36 @@ import lombok.NoArgsConstructor;
  * @author Michael Thomas (mikepthomas@outlook.com)
  * @version 7.6.21
  */
-@NoArgsConstructor
+<span class="nc" id="L37">@NoArgsConstructor</span>
 @XmlRootElement(name = &quot;CommandException&quot;)
 public class CommandException extends IOException {
 
     /**
      * Constructs an instance of &lt;code&gt;CommandException&lt;/code&gt; with the
-<span class="nc" id="L43">     * specified detail message.</span>
-<span class="nc" id="L44">     *</span>
+     * specified detail message.
+     *
      * @param message the detail message.
      */
     public CommandException(final String message) {
-        super(message);
-    }
+<span class="nc" id="L48">        super(message);</span>
+<span class="nc" id="L49">    }</span>
 
     /**
      * Constructs an instance of &lt;code&gt;CommandException&lt;/code&gt; with the
      * specified detail message and the cause of the Exception.
-<span class="nc" id="L54">     *</span>
-<span class="nc" id="L55">     * @param message the detail message.</span>
+     *
+     * @param message the detail message.
      * @param cause the cause of the exception.
      */
     public CommandException(final String message, final Throwable cause) {
-        super(message, cause);
-    }
+<span class="nc" id="L59">        super(message, cause);</span>
+<span class="nc" id="L60">    }</span>
 
     /** {@inheritDoc} */
-<span class="nc" id="L63">    @Override</span>
+    @Override
     @XmlElement
     public final String getMessage() {
-        return super.getMessage();
-<span class="nc" id="L67">    }</span>
-<span class="nc" id="L68">}</span>
+<span class="nc" id="L66">        return super.getMessage();</span>
+    }
+}
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

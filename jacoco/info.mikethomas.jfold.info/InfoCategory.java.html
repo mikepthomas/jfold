@@ -27,22 +27,22 @@ import lombok.Getter;
  * &lt;p&gt;InfoCategory class.&lt;/p&gt;
  *
  * @author Michael Thomas (mikepthomas@outlook.com)
-<span class="nc" id="L30"> * @version 7.5.1</span>
+ * @version 7.5.1
  */
-@AllArgsConstructor
+<span class="nc" id="L32">@AllArgsConstructor</span>
 @Getter
 public enum InfoCategory {
-<span class="nc" id="L35"></span>
+
 // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Info Categories&quot;&gt;
 
-<span class="nc" id="L38">    /** Represents &lt;code&gt;Folding@home Client&lt;/code&gt; category. */</span>
-    CLIENT(&quot;Folding@home Client&quot;),
+    /** Represents &lt;code&gt;Folding@home Client&lt;/code&gt; category. */
+<span class="nc" id="L39">    CLIENT(&quot;Folding@home Client&quot;),</span>
 
-<span class="nc" id="L41">    /** Represents &lt;code&gt;Build&lt;/code&gt; category. */</span>
-    BUILD(&quot;Build&quot;),
+    /** Represents &lt;code&gt;Build&lt;/code&gt; category. */
+<span class="nc" id="L42">    BUILD(&quot;Build&quot;),</span>
 
     /** Represents &lt;code&gt;System&lt;/code&gt; category. */
-    SYSTEM(&quot;System&quot;);
+<span class="nc" id="L45">    SYSTEM(&quot;System&quot;);</span>
 
 // &lt;/editor-fold&gt;
 
@@ -50,12 +50,12 @@ public enum InfoCategory {
      * Info Category Key.
      *
      * @return String key.
-<span class="nc" id="L53">     */</span>
-    private final String key;
+     */
+<span class="nc" id="L54">    private final String key;</span>
 
     /** {@inheritDoc} */
-<span class="nc" id="L57">    @Override</span>
-<span class="nc" id="L58">    public String toString() {</span>
+    @Override
+    public String toString() {
 <span class="nc" id="L59">        return key;</span>
     }
 }
