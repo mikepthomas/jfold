@@ -71,16 +71,16 @@ public class SocketConnection {
             final String address, final int port) throws IOException {
 <span class="fc" id="L72">        super();</span>
 
-<span class="pc bpc" id="L74" title="1 of 2 branches missed.">        if (address != null) {</span>
-<span class="nc" id="L75">            socket = new Socket(address, port);</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        if (address != null) {</span>
+<span class="fc" id="L75">            socket = new Socket(address, port);</span>
 
-<span class="nc" id="L77">            out = new PrintStream(socket.getOutputStream(), true, ENCODING);</span>
-<span class="nc" id="L78">            in = new Scanner(socket.getInputStream(), ENCODING);</span>
-<span class="nc" id="L79">            in.useDelimiter(COMMAND_PROMPT);</span>
+<span class="fc" id="L77">            out = new PrintStream(socket.getOutputStream(), true, ENCODING);</span>
+<span class="fc" id="L78">            in = new Scanner(socket.getInputStream(), ENCODING);</span>
+<span class="fc" id="L79">            in.useDelimiter(COMMAND_PROMPT);</span>
 
-<span class="nc" id="L81">            var welcome = in.nextLine();</span>
-<span class="nc" id="L82">            log.info(welcome);</span>
-<span class="nc bnc" id="L83" title="All 2 branches missed.">            if (!(CLRSCR + WELCOME_MSG).equals(welcome)) {</span>
+<span class="fc" id="L81">            var welcome = in.nextLine();</span>
+<span class="fc" id="L82">            log.info(welcome);</span>
+<span class="pc bpc" id="L83" title="1 of 2 branches missed.">            if (!(CLRSCR + WELCOME_MSG).equals(welcome)) {</span>
 <span class="nc" id="L84">                throw new IOException(</span>
                         &quot;Unexpected welcome message, check client version&quot;);
             }
@@ -106,48 +106,48 @@ public class SocketConnection {
      */
     protected String sendCommand(final Command command,
             final List&lt;String&gt; args) {
-<span class="nc" id="L109">        log.entry(command, args);</span>
+<span class="fc" id="L109">        log.entry(command, args);</span>
 
-<span class="nc" id="L111">        var profiler = new Profiler(command.toString());</span>
-<span class="nc" id="L112">        profiler.setLogger(log);</span>
+<span class="fc" id="L111">        var profiler = new Profiler(command.toString());</span>
+<span class="fc" id="L112">        profiler.setLogger(log);</span>
 
-<span class="nc" id="L114">        var arguments = new StringBuilder();</span>
-<span class="nc" id="L115">        args.forEach(arg -&gt; arguments.append(&quot; '&quot;).append(arg).append(&quot;'&quot;));</span>
+<span class="fc" id="L114">        var arguments = new StringBuilder();</span>
+<span class="fc" id="L115">        args.forEach(arg -&gt; arguments.append(&quot; '&quot;).append(arg).append(&quot;'&quot;));</span>
 
         // Send the command
-<span class="nc" id="L118">        profiler.start(&quot;Send Command&quot;);</span>
-<span class="nc" id="L119">        out.println(command + arguments.toString());</span>
-<span class="nc" id="L120">        log.info(&quot;Sent Command: {}{}&quot;, command, arguments);</span>
+<span class="fc" id="L118">        profiler.start(&quot;Send Command&quot;);</span>
+<span class="fc" id="L119">        out.println(command + arguments.toString());</span>
+<span class="fc" id="L120">        log.info(&quot;Sent Command: {}{}&quot;, command, arguments);</span>
 
         // Get the output
-<span class="nc" id="L123">        var response = &quot;&quot;;</span>
-<span class="nc bnc" id="L124" title="All 2 branches missed.">        switch (command.getResponseType()) {</span>
+<span class="fc" id="L123">        var response = &quot;&quot;;</span>
+<span class="fc bfc" id="L124" title="All 2 branches covered.">        switch (command.getResponseType()) {</span>
             case PYON:
             case STRING:
-<span class="nc" id="L127">                profiler.start(&quot;Get Response&quot;);</span>
-<span class="nc" id="L128">                response = in.next().replaceFirst(COMMAND_PROMPT, &quot;&quot;);</span>
-<span class="nc bnc" id="L129" title="All 2 branches missed.">                if (response.startsWith(PyonParser.PYON_1)) {</span>
-<span class="nc" id="L130">                    profiler.start(&quot;Convert to JSON&quot;);</span>
-<span class="nc" id="L131">                    response = PyonParser.convert(response);</span>
-<span class="nc bnc" id="L132" title="All 2 branches missed.">                } else if (response.equals(&quot;\n&quot;)) {</span>
+<span class="fc" id="L127">                profiler.start(&quot;Get Response&quot;);</span>
+<span class="fc" id="L128">                response = in.next().replaceFirst(COMMAND_PROMPT, &quot;&quot;);</span>
+<span class="fc bfc" id="L129" title="All 2 branches covered.">                if (response.startsWith(PyonParser.PYON_1)) {</span>
+<span class="fc" id="L130">                    profiler.start(&quot;Convert to JSON&quot;);</span>
+<span class="fc" id="L131">                    response = PyonParser.convert(response);</span>
+<span class="fc bfc" id="L132" title="All 2 branches covered.">                } else if (response.equals(&quot;\n&quot;)) {</span>
                     // TODO: remove dirty hack to stop ObjectMapper breaking
-<span class="nc bnc" id="L134" title="All 3 branches missed.">                    switch (command) {</span>
+<span class="pc bpc" id="L134" title="2 of 3 branches missed.">                    switch (command) {</span>
                         case SIMULATION_INFO:
 <span class="nc" id="L136">                            response = &quot;{}&quot;;</span>
 <span class="nc" id="L137">                            break;</span>
                         case SLOT_INFO:
-<span class="nc" id="L139">                            response = &quot;[]&quot;;</span>
-<span class="nc" id="L140">                            break;</span>
+<span class="fc" id="L139">                            response = &quot;[]&quot;;</span>
+<span class="fc" id="L140">                            break;</span>
                         default:
                             break;
                     }
                 }
 
             default:
-<span class="nc" id="L147">                log.info(&quot;Recieved Response: {}&quot;, response);</span>
-<span class="nc" id="L148">                profiler.stop().log();</span>
+<span class="fc" id="L147">                log.info(&quot;Recieved Response: {}&quot;, response);</span>
+<span class="fc" id="L148">                profiler.stop().log();</span>
         }
-<span class="nc" id="L150">        return log.exit(response);</span>
+<span class="fc" id="L150">        return log.exit(response);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

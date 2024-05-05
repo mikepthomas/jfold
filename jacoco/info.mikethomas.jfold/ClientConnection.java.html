@@ -126,25 +126,25 @@ public class ClientConnection extends SocketConnection implements Connection {
     @Override
     public final synchronized String getInfo(
             final String category, final String key) {
-<span class="nc" id="L129">        var args = new ArrayList&lt;String&gt;() { {</span>
-<span class="nc" id="L130">            add(category);</span>
-<span class="nc" id="L131">            add(key);</span>
-<span class="nc" id="L132">        } };</span>
-<span class="nc" id="L133">        return sendCommand(Command.GET_INFO, args);</span>
+<span class="fc" id="L129">        var args = new ArrayList&lt;String&gt;() { {</span>
+<span class="fc" id="L130">            add(category);</span>
+<span class="fc" id="L131">            add(key);</span>
+<span class="fc" id="L132">        } };</span>
+<span class="fc" id="L133">        return sendCommand(Command.GET_INFO, args);</span>
     }
 
     /** {@inheritDoc} */
     @Override
     public final synchronized String getInfo(final InfoItem infoItem)
             throws InfoException {
-<span class="nc" id="L140">        return getInfo(infoItem.getCategory().toString(), infoItem.toString());</span>
+<span class="fc" id="L140">        return getInfo(infoItem.getCategory().toString(), infoItem.toString());</span>
     }
 
     /** {@inheritDoc} */
     @Override
     public final synchronized List info() throws InfoException {
         try {
-<span class="nc" id="L147">            return mapper.readValue(sendCommand(Command.INFO), List.class);</span>
+<span class="fc" id="L147">            return mapper.readValue(sendCommand(Command.INFO), List.class);</span>
 <span class="nc" id="L148">        } catch (IOException ex) {</span>
 <span class="nc" id="L149">            throw new InfoException(ex.getMessage(), ex);</span>
         }
@@ -167,7 +167,7 @@ public class ClientConnection extends SocketConnection implements Connection {
     @Override
     public final synchronized int numSlots() throws NumSlotsException {
         try {
-<span class="nc" id="L170">            return mapper.readValue(sendCommand(Command.NUM_SLOTS),</span>
+<span class="fc" id="L170">            return mapper.readValue(sendCommand(Command.NUM_SLOTS),</span>
                     Integer.class);
 <span class="nc" id="L172">        } catch (IOException ex) {</span>
 <span class="nc" id="L173">            throw new NumSlotsException(ex.getMessage(), ex);</span>
@@ -200,11 +200,11 @@ public class ClientConnection extends SocketConnection implements Connection {
             throws OptionsException {
         try {
 <span class="fc" id="L202">            var args = new ArrayList&lt;String&gt;();</span>
-<span class="pc bpc" id="L203" title="1 of 2 branches missed.">            if (listDefault) {</span>
-<span class="nc" id="L204">                args.add(&quot;-d&quot;);</span>
+<span class="fc bfc" id="L203" title="All 2 branches covered.">            if (listDefault) {</span>
+<span class="fc" id="L204">                args.add(&quot;-d&quot;);</span>
             }
-<span class="pc bpc" id="L206" title="1 of 2 branches missed.">            if (listUnset) {</span>
-<span class="nc" id="L207">                args.add(&quot;-a&quot;);</span>
+<span class="fc bfc" id="L206" title="All 2 branches covered.">            if (listUnset) {</span>
+<span class="fc" id="L207">                args.add(&quot;-a&quot;);</span>
             }
 <span class="fc" id="L209">            return mapper.readValue(sendCommand(Command.OPTIONS, args),</span>
                     Options.class);
@@ -222,15 +222,15 @@ public class ClientConnection extends SocketConnection implements Connection {
     /** {@inheritDoc} */
     @Override
     public final synchronized void pause(final int slot) {
-<span class="nc" id="L225">        var args = Collections.singletonList(String.valueOf(slot));</span>
-<span class="nc" id="L226">        sendCommand(Command.PAUSE, args);</span>
-<span class="nc" id="L227">    }</span>
+<span class="fc" id="L225">        var args = Collections.singletonList(String.valueOf(slot));</span>
+<span class="fc" id="L226">        sendCommand(Command.PAUSE, args);</span>
+<span class="fc" id="L227">    }</span>
 
     /** {@inheritDoc} */
     @Override
     public final synchronized int ppd() throws PpdException {
         try {
-<span class="nc" id="L233">            return mapper.readValue(sendCommand(Command.PPD), Integer.class);</span>
+<span class="fc" id="L233">            return mapper.readValue(sendCommand(Command.PPD), Integer.class);</span>
 <span class="nc" id="L234">        } catch (IOException ex) {</span>
 <span class="nc" id="L235">            throw new PpdException(ex.getMessage(), ex);</span>
         }
@@ -358,14 +358,14 @@ public class ClientConnection extends SocketConnection implements Connection {
     /** {@inheritDoc} */
     @Override
     public final synchronized void unpause(final int slot) {
-<span class="nc" id="L361">        var args = Collections.singletonList(String.valueOf(slot));</span>
-<span class="nc" id="L362">        sendCommand(Command.UNPAUSE, args);</span>
-<span class="nc" id="L363">    }</span>
+<span class="fc" id="L361">        var args = Collections.singletonList(String.valueOf(slot));</span>
+<span class="fc" id="L362">        sendCommand(Command.UNPAUSE, args);</span>
+<span class="fc" id="L363">    }</span>
 
     /** {@inheritDoc} */
     @Override
     public final synchronized String uptime() {
-<span class="nc" id="L368">        return sendCommand(Command.UPTIME);</span>
+<span class="fc" id="L368">        return sendCommand(Command.UPTIME);</span>
     }
 
     /** {@inheritDoc} */
